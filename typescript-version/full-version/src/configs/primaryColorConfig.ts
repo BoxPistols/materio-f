@@ -24,9 +24,9 @@ type PrimaryColorSchemeOverride = {
 const primaryColorConfig = [
   {
     name: 'primary-1',
-    light: '#42a5f5',
-    main: '#1976d2',
-    dark: '#1565c0'
+    light: '#9564FF',
+    main: '#8146FF',
+    dark: '#6C3BD6'
   },
   {
     name: 'primary-2',

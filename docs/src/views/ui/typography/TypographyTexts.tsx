@@ -16,28 +16,28 @@ const TypographyTexts = () => {
           </Grid>
           <Grid item xs={12} sm={10}>
             <Typography variant='subtitle1'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
-            <Typography variant='body2'>font-size: / line-height: / font-weight: 400</Typography>
+            <Typography variant='body2'>font-size: 16px / line-height: 28px / font-weight: 400</Typography>
           </Grid>
           <Grid item xs={12} sm={2}>
             <Typography>subtitle2</Typography>
           </Grid>
           <Grid item xs={12} sm={10}>
             <Typography variant='subtitle2'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
-            <Typography variant='body2'>font-size: / line-height: / font-weight: 500</Typography>
+            <Typography variant='body2'>font-size: 14px / line-height: 20px / font-weight: 500</Typography>
           </Grid>
           <Grid item xs={12} sm={2}>
             <Typography>body1</Typography>
           </Grid>
           <Grid item xs={12} sm={10}>
             <Typography variant='body1'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
-            <Typography variant='body2'>font-size: / line-height: / font-weight: 400</Typography>
+            <Typography variant='body2'>font-size: 16px / line-height: 24px / font-weight: 400</Typography>
           </Grid>
           <Grid item xs={12} sm={2}>
             <Typography>body2</Typography>
           </Grid>
           <Grid item xs={12} sm={10}>
             <Typography variant='body2'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
-            <Typography variant='body2'>font-size: / line-height: / font-weight: 400</Typography>
+            <Typography variant='body2'>font-size: 14px / line-height: 22px / font-weight: 400</Typography>
           </Grid>
           <Grid item xs={12} sm={2}>
             <Typography>button</Typography>
@@ -45,7 +45,7 @@ const TypographyTexts = () => {
           <Grid item xs={12} sm={10}>
             <Typography variant='button'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
             <Typography variant='body2'>
-              font-size: / line-height: / font-weight: 500 / text-transform: uppercase
+              font-size: 14px / line-height: 20px / font-weight: 500 / text-transform: none
             </Typography>
           </Grid>
           <Grid item xs={12} sm={2}>
@@ -53,7 +53,7 @@ const TypographyTexts = () => {
           </Grid>
           <Grid item xs={12} sm={10}>
             <Typography variant='caption'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
-            <Typography variant='body2'>font-size: / line-height: / font-weight: 400</Typography>
+            <Typography variant='body2'>font-size: 12px / line-height: 14px / font-weight: 400</Typography>
           </Grid>
           <Grid item xs={12} sm={2}>
             <Typography>overline</Typography>
@@ -61,7 +61,7 @@ const TypographyTexts = () => {
           <Grid item xs={12} sm={10}>
             <Typography variant='overline'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
             <Typography variant='body2'>
-              font-size: / line-height: / font-weight: 400 / text-transform: uppercase
+              font-size: 12px / line-height: 14px / font-weight: 400 / text-transform: uppercase / letter-spacing: 1px
             </Typography>
           </Grid>
         </Grid>

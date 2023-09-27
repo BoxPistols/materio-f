@@ -1,15 +1,41 @@
 // MUI Imports
-import type { Theme } from '@mui/material'
+import { deepmerge } from '@mui/utils'
+import type { Theme } from '@mui/material/styles'
+import type { PaletteMode } from '@mui/material'
+
+// Type Imports
+import type { MainColor } from '@core/types'
 
 // Theme Options Imports
 import overrides from './overrides'
+import colorSchemes from './colorSchemes'
 import spacing from './spacing'
+import shadows from './shadows'
+import customShadows from './customShadows'
+import typography from './typography'
 
-const theme = (direction: Theme['direction']): Theme => {
+const theme = (direction: Theme['direction'], mode: PaletteMode, userMainColors: MainColor): Theme => {
+  const mainColors: MainColor = deepmerge(
+    {
+      light: '58 53 65',
+      dark: '231 227 252',
+      lightShadow: '58 53 65',
+      darkShadow: '19 17 32'
+    },
+    userMainColors
+  )
+
   return {
     direction,
     components: overrides(),
-    ...spacing
+    colorSchemes: colorSchemes(mainColors),
+    ...spacing,
+    shape: {
+      borderRadius: 6
+    },
+    shadows: shadows(mode, mainColors),
+    customShadows: customShadows(mode, mainColors),
+    typography
   } as Theme
 }
 
