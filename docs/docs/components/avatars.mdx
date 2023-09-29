@@ -19,6 +19,8 @@ import AvatarsLetter from '@docPages/components/avatars/AvatarsLetter'
 import SourceCodeAvatarsLetter from '!!raw-loader!@docPages/components/avatars/AvatarsLetter'
 import AvatarsGrouped from '@docPages/components/avatars/AvatarsGrouped'
 import SourceCodeAvatarsGrouped from '!!raw-loader!@docPages/components/avatars/AvatarsGrouped'
+import AvatarsVariants from '@docPages/components/avatars/AvatarsVariants'
+import SourceCodeAvatarsVariants from '!!raw-loader!@docPages/components/avatars/AvatarsVariants'
 import AvatarsWithBadge from '@docPages/components/avatars/AvatarsWithBadge'
 import SourceCodeAvatarsWithBadge from '!!raw-loader!@docPages/components/avatars/AvatarsWithBadge'
 import AvatarsGroupedPullUp from '@docPages/components/avatars/AvatarsGroupedPullUp'
@@ -83,6 +85,17 @@ import SourceCodeAvatarsGroupedPullUpWithTooltip from '!!raw-loader!@docPages/co
         Pass an icon as a child of <code>Avatar</code> component to make an icon avatar.
       </Typography>
       <AvatarsIcon />
+    </CardSnippet>
+  </Grid>
+  <Grid item xs={12} md={6}>
+    <CardSnippet
+      title="Variants"
+      code={SourceCodeAvatarsVariants}
+    >
+      <Typography className='mbe-4'>
+        Use <code>variant={`{'square' | 'rounded'}`}</code> prop with <code>Avatar</code> component for different variants.
+      </Typography>
+      <AvatarsVariants />
     </CardSnippet>
   </Grid>
   <Grid item xs={12} md={6}>
