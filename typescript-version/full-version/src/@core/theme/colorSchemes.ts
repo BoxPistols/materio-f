@@ -68,9 +68,12 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
         text: {
           primary: `rgb(${mainLightColor} / 0.87)`,
           secondary: `rgb(${mainLightColor} / 0.6)`,
-          disabled: `rgb(${mainLightColor} / 0.38)`
+          disabled: `rgb(${mainLightColor} / 0.38)`,
+          primaryChannel: mainLightColor,
+          secondaryChannel: mainLightColor
         },
         divider: `rgb(${mainLightColor} / 0.16)`,
+        dividerChannel: mainLightColor,
         background: {
           default: '#F4F5FA',
           paper: '#FFFFFF'
@@ -81,7 +84,9 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
           selected: `rgb(${mainLightColor} / 0.08)`,
           disabled: `rgb(${mainLightColor} / 0.26)`,
           disabledBackground: `rgb(${mainLightColor} / 0.12)`,
-          focus: `rgb(${mainLightColor} / 0.12)`
+          focus: `rgb(${mainLightColor} / 0.12)`,
+          activeChannel: mainLightColor,
+          selectedChannel: mainLightColor
         },
         SnackbarContent: {
           bg: '#1A0E33',
@@ -156,9 +161,12 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
         text: {
           primary: `rgb(${mainDarkColor} / 0.87)`,
           secondary: `rgb(${mainDarkColor} / 0.6)`,
-          disabled: `rgb(${mainDarkColor} / 0.38)`
+          disabled: `rgb(${mainDarkColor} / 0.38)`,
+          primaryChannel: mainDarkColor,
+          secondaryChannel: mainDarkColor
         },
         divider: `rgb(${mainDarkColor} / 0.16)`,
+        dividerChannel: mainDarkColor,
         background: {
           default: '#28243D',
           paper: '#312D4B'
@@ -169,7 +177,9 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
           selected: `rgb(${mainDarkColor} / 0.08)`,
           disabled: `rgb(${mainDarkColor} / 0.26)`,
           disabledBackground: `rgb(${mainDarkColor} / 0.12)`,
-          focus: `rgb(${mainDarkColor} / 0.12)`
+          focus: `rgb(${mainDarkColor} / 0.12)`,
+          activeChannel: mainDarkColor,
+          selectedChannel: mainDarkColor
         },
         SnackbarContent: {
           bg: '#F7F4FF',
