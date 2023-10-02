@@ -55,4 +55,10 @@ declare module '@mui/material/styles' {
   }
 }
 
+declare module '@mui/material/Chip' {
+  interface ChipPropsVariantOverrides {
+    tonal: true
+  }
+}
+
 export {}

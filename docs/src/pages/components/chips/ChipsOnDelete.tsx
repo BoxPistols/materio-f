@@ -16,13 +16,13 @@ const ChipsOnDelete = () => {
 
   return (
     <div className='flex gap-4 flex-col'>
-      <Typography className='font-medium'>Default</Typography>
+      <Typography className='font-medium'>Default close with Outlined Variant</Typography>
       <div className='flex gap-4'>
         <Chip label='Basic' variant='outlined' onDelete={handleDelete} />
         <Chip label='Primary' color='primary' variant='outlined' onDelete={handleDelete} />
         <Chip label='Secondary' color='secondary' variant='outlined' onDelete={handleDelete} />
       </div>
-      <Typography className='font-medium'>Custom</Typography>
+      <Typography className='font-medium'>Custom close with Filled Variant</Typography>
       <div className='flex gap-4'>
         <Chip label='Basic' onDelete={handleDelete} deleteIcon={<Icon icon='mdi:delete-outline' />} />
         <Chip label='Primary' color='primary' onDelete={handleDelete} deleteIcon={<Icon icon='mdi:delete-outline' />} />
@@ -31,6 +31,28 @@ const ChipsOnDelete = () => {
           color='secondary'
           onDelete={handleDelete}
           deleteIcon={<Icon icon='mdi:delete-outline' />}
+        />
+      </div>
+      <Typography className='font-medium'>Custom close with Tonal Variant</Typography>
+      <div className='flex gap-4'>
+        <Chip
+          label='Default'
+          variant='tonal'
+          onDelete={handleDelete}
+          deleteIcon={<Icon icon='mdi:delete-empty-outline' />}
+        />
+        <Chip
+          label='Primary'
+          color='primary'
+          variant='tonal'
+          onDelete={handleDelete}
+          deleteIcon={<Icon icon='mdi:delete-empty-outline' />}
+        />
+        <Chip
+          label='Secondary'
+          color='secondary'
+          variant='tonal' onDelete={handleDelete}
+          deleteIcon={<Icon icon='mdi:delete-empty-outline' />}
         />
       </div>
     </div>
