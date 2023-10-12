@@ -31,7 +31,14 @@ const theme = (direction: Theme['direction'], mode: PaletteMode, userMainColors:
     colorSchemes: colorSchemes(mainColors),
     ...spacing,
     shape: {
-      borderRadius: 6
+      borderRadius: 6,
+      customBorderRadius: {
+        xs: 2,
+        sm: 5,
+        md: 6,
+        lg: 8,
+        xl: 10
+      }
     },
     shadows: shadows(mode, mainColors),
     customShadows: customShadows(mode, mainColors),

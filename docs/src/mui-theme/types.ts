@@ -14,6 +14,16 @@ declare module '@mui/material/styles' {
       lg: string
       xl: string
     }
+    shape: {
+      borderRadius: number
+      customBorderRadius: {
+        xs: number
+        sm: number
+        md: number
+        lg: number
+        xl: number
+      }
+    }
   }
   interface ThemeOptions {
     customShadows?: {
@@ -22,6 +32,16 @@ declare module '@mui/material/styles' {
       md?: string
       lg?: string
       xl?: string
+    }
+    shape?: {
+      borderRadius?: number
+      customBorderRadius?: {
+        xs?: number
+        sm?: number
+        md?: number
+        lg?: number
+        xl?: number
+      }
     }
   }
 

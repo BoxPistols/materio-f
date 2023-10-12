@@ -48,7 +48,14 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     colorSchemes: colorSchemes(mainColors),
     ...spacing,
     shape: {
-      borderRadius: 6
+      borderRadius: 6,
+      customBorderRadius: {
+        xs: 2,
+        sm: 5,
+        md: 6,
+        lg: 8,
+        xl: 10
+      }
     },
     shadows: shadows(colorMode, mainColors),
     customShadows: customShadows(colorMode, mainColors),
