@@ -4,7 +4,8 @@ import type { Theme } from '@mui/material/styles'
 import type { PaletteMode } from '@mui/material'
 
 // Type Imports
-import type { MainColor } from '@core/types'
+import type { Settings } from '@core/contexts/settingsContext'
+import type { MainColor, Skin } from '@core/types'
 
 // Theme Options Imports
 import overrides from './overrides'
@@ -14,7 +15,12 @@ import shadows from './shadows'
 import customShadows from './customShadows'
 import typography from './typography'
 
-const theme = (direction: Theme['direction'], mode: PaletteMode, userMainColors: MainColor): Theme => {
+const theme = (
+  settings: Settings,
+  mode: PaletteMode,
+  direction: Theme['direction'],
+  userMainColors: MainColor
+): Theme => {
   const mainColors: MainColor = deepmerge(
     {
       light: '58 53 65',
@@ -27,7 +33,7 @@ const theme = (direction: Theme['direction'], mode: PaletteMode, userMainColors:
 
   return {
     direction,
-    components: overrides(),
+    components: overrides(settings.skin as Skin),
     colorSchemes: colorSchemes(mainColors),
     ...spacing,
     shape: {

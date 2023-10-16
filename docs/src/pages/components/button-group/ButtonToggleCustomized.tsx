@@ -3,18 +3,24 @@ import React, { useState } from 'react'
 import type { MouseEvent } from 'react'
 
 // MUI Imports
-import Divider from '@mui/material/Divider'
 import { styled } from '@mui/material/styles'
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+import MuiToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import MuiToggleButton from '@mui/material/ToggleButton'
+import type { ToggleButtonGroupProps } from '@mui/material/ToggleButtonGroup'
 import type { ToggleButtonProps } from '@mui/material/ToggleButton'
 
 // Icon Imports
 import Icon from '@core/components/IconifyIcon'
 
+// Styled ToggleButtonGroup component
+const ToggleButtonGroup = styled(MuiToggleButtonGroup)<ToggleButtonGroupProps>(({ theme }) => ({
+  padding: theme.spacing(1.75),
+  border: '1px solid var(--mui-palette-divider)'
+}))
+
 // Styled ToggleButton component
 const ToggleButton = styled(MuiToggleButton)<ToggleButtonProps>(({ theme }) => ({
-  margin: theme.spacing(1),
+  margin: '0 !important',
   border: 'none !important',
   padding: theme.spacing(2),
   '&:not(:first-of-type)': {
@@ -39,7 +45,7 @@ const ButtonToggleCustomized = () => {
   }
 
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap gap-4'>
       <ToggleButtonGroup exclusive value={alignment} onChange={handleAlignment} aria-label='text alignment'>
         <ToggleButton value='left' aria-label='left aligned'>
           <Icon icon='mdi:format-align-left' />
@@ -54,7 +60,6 @@ const ButtonToggleCustomized = () => {
           <Icon icon='mdi:format-align-justify' />
         </ToggleButton>
       </ToggleButtonGroup>
-      <Divider flexItem orientation='vertical' className='m-1'/>
       <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label='text alignment'>
         <ToggleButton value='bold' aria-label='bold'>
           <Icon icon='mdi:format-bold' />

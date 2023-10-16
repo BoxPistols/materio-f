@@ -29,9 +29,9 @@ const CardVerticalRatings = () => {
           easy and simple.
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button>Location</Button>
-        <Button>Review</Button>
+      <CardActions className='card-actions-dense'>
+        <Button size='small'>Location</Button>
+        <Button size='small'>Review</Button>
       </CardActions>
     </Card>
   )

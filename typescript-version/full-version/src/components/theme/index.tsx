@@ -73,7 +73,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }
 
   // Merge the primary color scheme override with the core theme
-  const coreTheme = deepmerge(defaultCoreTheme(direction, mode, mainColors), getPrimaryColorScheme(settings))
+  const coreTheme = deepmerge(defaultCoreTheme(settings, mode, direction, mainColors), getPrimaryColorScheme(settings))
   let theme = extendTheme(coreTheme)
 
   if (themeConfig.responsiveFontSizes) {

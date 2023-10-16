@@ -10,6 +10,9 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContentText from '@mui/material/DialogContentText'
 import type { DialogProps } from '@mui/material/Dialog'
 
+// Third-party Imports
+import classnames from 'classnames'
+
 const DialogsScroll = () => {
   // States
   const [open, setOpen] = useState<boolean>(false)
@@ -61,9 +64,9 @@ const DialogsScroll = () => {
             )}
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+        <DialogActions className={classnames('dialog-actions-dense', { '!pt-2.5': scroll === 'paper' })}>
+          <Button size='small' onClick={handleClose}>Cancel</Button>
+          <Button size='small' onClick={handleClose}>Subscribe</Button>
         </DialogActions>
       </Dialog>
     </div>

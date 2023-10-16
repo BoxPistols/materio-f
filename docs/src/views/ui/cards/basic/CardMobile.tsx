@@ -66,9 +66,10 @@ const CardMobile = () => {
               <Typography className='font-medium'>$899</Typography>
             </div>
           </CardContent>
-          <CardActions className='justify-between'>
-            <Button startIcon={<Icon icon='mdi:add-shopping-cart' />}>Add to Cart</Button>
+          <CardActions className='justify-between card-actions-dense'>
+            <Button size='small' startIcon={<Icon icon='mdi:add-shopping-cart' />}>Add to Cart</Button>
             <IconButton
+              size='small'
               id='share-button'
               aria-haspopup='true'
               {...(open && { 'aria-expanded': true, 'aria-controls': 'share-menu' })}

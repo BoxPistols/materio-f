@@ -41,8 +41,8 @@ const DialogsConfirmation = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions className='dialog-actions-dense'>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose}>Agree</Button>
+          <Button size='small' onClick={handleClose}>Disagree</Button>
+          <Button size='small' onClick={handleClose}>Agree</Button>
         </DialogActions>
       </Dialog>
     </>

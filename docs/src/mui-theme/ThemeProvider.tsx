@@ -44,7 +44,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const { colorMode } = useColorMode()
 
   const theme = extendTheme({
-    components: overrides(),
+    components: overrides('default'),
     colorSchemes: colorSchemes(mainColors),
     ...spacing,
     shape: {

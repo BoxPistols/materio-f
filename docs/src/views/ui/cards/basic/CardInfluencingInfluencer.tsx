@@ -25,8 +25,8 @@ const CardInfluencingInfluencer = () => {
           rundown of some of the best systems available.
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button>Read More</Button>
+      <CardActions className='card-actions-dense'>
+        <Button size='small'>Read More</Button>
       </CardActions>
     </Card>
   )

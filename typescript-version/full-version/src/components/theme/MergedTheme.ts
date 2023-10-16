@@ -12,24 +12,23 @@ import type { Theme } from '@mui/material/styles'
 import type { PaletteMode } from '@mui/material'
 
 // Type Imports
+import type { Settings } from '@core/contexts/settingsContext'
 import type { MainColor } from '@core/types'
 
 // Core Theme Imports
 import coreTheme from '@core/theme'
 
-const mainColors: MainColor = {
-  // light: '58 53 65',
-  // dark: '231 227 252',
-  // lightShadow: '58 53 65',
-  // darkShadow: '19 17 32'
-}
-
-const mergedTheme = (direction: Theme['direction'], mode: PaletteMode) => {
+const mergedTheme = (
+  settings: Settings,
+  mode: PaletteMode,
+  direction: Theme['direction'],
+  mainColors: MainColor
+): Theme => {
   const userTheme: Theme = {
     // Write your overrides here.
   } as Theme
 
-  return deepmerge(coreTheme(direction, mode, mainColors), userTheme)
+  return deepmerge(coreTheme(settings, mode, direction, mainColors), userTheme)
 }
 
 export default mergedTheme

@@ -32,9 +32,9 @@ const CardWithCollapse = () => {
           Although cards can support multiple actions, UI controls, and an overflow menu.
         </Typography>
       </CardContent>
-      <CardActions className='justify-between'>
-        <Button onClick={() => setExpanded(!expanded)}>Details</Button>
-        <IconButton onClick={() => setExpanded(!expanded)}>
+      <CardActions className='justify-between card-actions-dense'>
+        <Button size='small' onClick={() => setExpanded(!expanded)}>Details</Button>
+        <IconButton size='small' onClick={() => setExpanded(!expanded)}>
           <Icon icon={expanded ? 'mdi:chevron-up' : 'mdi:chevron-down'} />
         </IconButton>
       </CardActions>

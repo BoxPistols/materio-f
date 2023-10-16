@@ -11,7 +11,7 @@ import type { ButtonProps } from '@mui/material/Button'
 const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: theme.palette.getContrastText(purple[500]),
   backgroundColor: purple[500],
-  '&:hover': {
+  '&:hover, &:active, &.Mui-focusVisible': {
     backgroundColor: purple[700]
   }
 }))
@@ -48,8 +48,12 @@ const BootstrapButton = styled(Button)<ButtonProps>({
     backgroundColor: '#0062cc',
     borderColor: '#005cbf'
   },
-  '&:focus': {
+  '&:focus, &.Mui-focusVisible': {
     boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)'
+  },
+  '&.Mui-focusVisible': {
+    backgroundColor: '#0069d9',
+    borderColor: '#0062cc'
   }
 })
 

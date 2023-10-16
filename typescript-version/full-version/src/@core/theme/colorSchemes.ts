@@ -88,9 +88,37 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
           activeChannel: mainLightColor,
           selectedChannel: mainLightColor
         },
+        Alert: {
+          errorColor: 'var(--mui-palette-error-main)',
+          warningColor: 'var(--mui-palette-warning-main)',
+          infoColor: 'var(--mui-palette-info-main)',
+          successColor: 'var(--mui-palette-success-main)',
+          errorStandardBg: 'var(--mui-palette-error-lightOpacity)',
+          warningStandardBg: 'var(--mui-palette-warning-lightOpacity)',
+          infoStandardBg: 'var(--mui-palette-info-lightOpacity)',
+          successStandardBg: 'var(--mui-palette-success-lightOpacity)',
+          errorFilledColor: 'var(--mui-palette-error-contrastText)',
+          warningFilledColor: 'var(--mui-palette-warning-contrastText)',
+          infoFilledColor: 'var(--mui-palette-info-contrastText)',
+          successFilledColor: 'var(--mui-palette-success-contrastText)',
+          errorFilledBg: 'var(--mui-palette-error-main)',
+          warningFilledBg: 'var(--mui-palette-warning-main)',
+          infoFilledBg: 'var(--mui-palette-info-main)',
+          successFilledBg: 'var(--mui-palette-success-main)'
+        },
         SnackbarContent: {
           bg: '#1A0E33',
           color: '#FFFFFF'
+        },
+        Switch: {
+          defaultColor: 'var(--mui-palette-common-white)',
+          defaultDisabledColor: 'var(--mui-palette-common-white)',
+          primaryDisabledColor: 'var(--mui-palette-common-white)',
+          secondaryDisabledColor: 'var(--mui-palette-common-white)',
+          errorDisabledColor: 'var(--mui-palette-common-white)',
+          warningDisabledColor: 'var(--mui-palette-common-white)',
+          infoDisabledColor: 'var(--mui-palette-common-white)',
+          successDisabledColor: 'var(--mui-palette-common-white)'
         },
         customColors: {
           chatBg: '#F7F6FA',
@@ -181,9 +209,37 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
           activeChannel: mainDarkColor,
           selectedChannel: mainDarkColor
         },
+        Alert: {
+          errorColor: 'var(--mui-palette-error-main)',
+          warningColor: 'var(--mui-palette-warning-main)',
+          infoColor: 'var(--mui-palette-info-main)',
+          successColor: 'var(--mui-palette-success-main)',
+          errorStandardBg: 'var(--mui-palette-error-lightOpacity)',
+          warningStandardBg: 'var(--mui-palette-warning-lightOpacity)',
+          infoStandardBg: 'var(--mui-palette-info-lightOpacity)',
+          successStandardBg: 'var(--mui-palette-success-lightOpacity)',
+          errorFilledColor: 'var(--mui-palette-error-contrastText)',
+          warningFilledColor: 'var(--mui-palette-warning-contrastText)',
+          infoFilledColor: 'var(--mui-palette-info-contrastText)',
+          successFilledColor: 'var(--mui-palette-success-contrastText)',
+          errorFilledBg: 'var(--mui-palette-error-main)',
+          warningFilledBg: 'var(--mui-palette-warning-main)',
+          infoFilledBg: 'var(--mui-palette-info-main)',
+          successFilledBg: 'var(--mui-palette-success-main)'
+        },
         SnackbarContent: {
           bg: '#F7F4FF',
           color: '#312D4B'
+        },
+        Switch: {
+          defaultColor: 'var(--mui-palette-common-white)',
+          defaultDisabledColor: 'var(--mui-palette-common-white)',
+          primaryDisabledColor: 'var(--mui-palette-common-white)',
+          secondaryDisabledColor: 'var(--mui-palette-common-white)',
+          errorDisabledColor: 'var(--mui-palette-common-white)',
+          warningDisabledColor: 'var(--mui-palette-common-white)',
+          infoDisabledColor: 'var(--mui-palette-common-white)',
+          successDisabledColor: 'var(--mui-palette-common-white)'
         },
         customColors: {
           chatBg: '#373452',

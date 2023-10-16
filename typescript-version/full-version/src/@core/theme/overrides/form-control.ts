@@ -5,11 +5,14 @@ const formControl: Theme['components'] = {
   MuiFormControlLabel: {
     styleOverrides: {
       root: {
-        '&.Mui-disabled': {
-          opacity: 0.45,
-          '& .MuiFormControlLabel-label': {
-            color: 'var(--mui-palette-text-primary)'
-          }
+        '&.Mui-disabled .MuiFormControlLabel-label': {
+          color: 'var(--mui-palette-text-primary)'
+        },
+        '&.Mui-disabled:not(:has(.MuiSwitch-switchBase))': {
+          opacity: 0.45
+        },
+        '&.Mui-disabled:has(.MuiSwitch-switchBase) .MuiFormControlLabel-label': {
+          opacity: 0.45
         }
       }
     }

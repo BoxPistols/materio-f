@@ -18,10 +18,11 @@ import Icon from '@core/components/IconifyIcon'
 // Styled component for Accordion component
 const Accordion = styled(MuiAccordion)<AccordionProps>(({ theme }) => ({
   boxShadow: 'none !important',
-  border:
-    theme.palette.mode === 'light' ? `1px solid ${theme.palette.grey[300]}` : `1px solid ${theme.palette.divider}`,
+  border: `1px solid ${theme.palette.divider} !important`,
+  borderRadius: '0 !important',
+  overflow: 'hidden',
   '&:not(:last-of-type)': {
-    borderBottom: 0
+    borderBottom: '0 !important'
   },
   '&:before': {
     display: 'none'
@@ -30,34 +31,21 @@ const Accordion = styled(MuiAccordion)<AccordionProps>(({ theme }) => ({
     margin: 'auto'
   },
   '&:first-of-type': {
-    '& .MuiButtonBase-root': {
-      borderTopLeftRadius: theme.shape.borderRadius,
-      borderTopRightRadius: theme.shape.borderRadius
-    }
+    borderTopLeftRadius: 'var(--mui-shape-borderRadius) !important',
+    borderTopRightRadius: 'var(--mui-shape-borderRadius) !important'
   },
   '&:last-of-type': {
-    '& .MuiAccordionSummary-root:not(.Mui-expanded)': {
-      borderBottomLeftRadius: theme.shape.borderRadius,
-      borderBottomRightRadius: theme.shape.borderRadius
-    }
+    borderBottomLeftRadius: 'var(--mui-shape-borderRadius) !important',
+    borderBottomRightRadius: 'var(--mui-shape-borderRadius) !important'
   }
 }))
 
 // Styled component for AccordionSummary component
 const AccordionSummary = styled(MuiAccordionSummary)<AccordionSummaryProps>(({ theme }) => ({
   marginBottom: -1,
-  padding: theme.spacing(0, 4),
-  minHeight: theme.spacing(12),
-  transition: 'min-height 0.15s ease-in-out',
-  backgroundColor: theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.background.default,
-  borderBottom:
-    theme.palette.mode === 'light' ? `1px solid ${theme.palette.grey[300]}` : `1px solid ${theme.palette.divider}`,
-  '&.Mui-expanded': {
-    minHeight: theme.spacing(12)
-  },
-  '& .MuiAccordionSummary-content.Mui-expanded': {
-    margin: '12px 0'
-  }
+  transition: 'none',
+  backgroundColor: 'var(--mui-palette-customColors-greyLightBg)',
+  borderBottom: `1px solid ${theme.palette.divider} !important`
 }))
 
 // Styled component for AccordionDetails component

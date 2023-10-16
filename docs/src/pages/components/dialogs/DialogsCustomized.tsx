@@ -60,8 +60,8 @@ const DialogsCustomized = () => {
             chocolate bar chocolate marzipan candy fruitcake jujubes.
           </Typography>
         </DialogContent>
-        <DialogActions className='p-4'>
-          <Button onClick={handleClose}>Save changes</Button>
+        <DialogActions className='p-4 !pt-4'>
+          <Button size='small' onClick={handleClose}>Save changes</Button>
         </DialogActions>
       </Dialog>
     </>
