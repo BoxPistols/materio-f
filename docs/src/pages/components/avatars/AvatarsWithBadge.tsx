@@ -10,13 +10,13 @@ import { styled } from '@mui/material/styles'
 import styles from './styles.module.css'
 
 // Styled component for badge content area
-const BadgeContentSpan = styled('span')(({ theme }) => ({
+const BadgeContentSpan = styled('span')({
   width: 8,
   height: 8,
   borderRadius: '50%',
-  backgroundColor: theme.palette.success.main,
-  boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
-}))
+  backgroundColor: 'var(--mui-palette-success-main)',
+  boxShadow: '0 0 0 2px var(--mui-palette-background-paper)',
+})
 
 const AvatarsWithBadge = () => {
   return (
@@ -29,7 +29,7 @@ const AvatarsWithBadge = () => {
           horizontal: 'right'
         }}
       >
-        <Avatar alt='Marie Garza' src='/assets/avatars/2.png' />
+        <Avatar alt='Marie Garza' src='/images/avatars/2.png' />
       </Badge>
       <Badge
         overlap='circular'
@@ -40,12 +40,12 @@ const AvatarsWithBadge = () => {
         badgeContent={
           <Avatar
             alt='Marie Garza'
-            src='/assets/avatars/2.png'
+            src='/images/avatars/2.png'
             className={styles.avatarBadge}
           />
         }
       >
-        <Avatar alt='Olivia Sparks' src='/assets/avatars/4.png' />
+        <Avatar alt='Olivia Sparks' src='/images/avatars/4.png' />
       </Badge>
     </div>
   )

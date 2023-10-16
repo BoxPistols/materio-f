@@ -4,8 +4,9 @@ import type { KeyboardEvent, MouseEvent, TouchEvent } from 'react'
 
 // MUI Imports
 import Grow from '@mui/material/Grow'
-import Paper from '@mui/material/Paper'
+import MuiPaper, { PaperProps } from '@mui/material/Paper'
 import Button from '@mui/material/Button'
+import { styled } from '@mui/material/styles'
 import Popper from '@mui/material/Popper'
 import MenuList from '@mui/material/MenuList'
 import MenuItem from '@mui/material/MenuItem'
@@ -13,6 +14,11 @@ import ClickAwayListener from '@mui/material/ClickAwayListener'
 
 // Styles Imports
 import styles from './styles.module.css'
+
+// Styled Paper component
+const Paper = styled(MuiPaper)<PaperProps>({
+  boxShadow: 'var(--mui-customShadows-lg)'
+})
 
 const MenuComposition = () => {
   // States

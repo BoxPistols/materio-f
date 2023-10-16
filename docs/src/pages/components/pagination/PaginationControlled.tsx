@@ -17,7 +17,7 @@ const PaginationControlled = () => {
   return (
     <>
       <Typography className='mbe-2'>Page: {page}</Typography>
-      <Pagination count={10} page={page} onChange={handleChange} />
+      <Pagination count={10} page={page} onChange={handleChange} variant='tonal' color='primary' />
     </>
   )
 }

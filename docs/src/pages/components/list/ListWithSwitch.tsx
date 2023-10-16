@@ -34,7 +34,7 @@ const ListWithSwitch = () => {
     <List subheader={<ListSubheader>Settings</ListSubheader>}>
       <ListItem>
         <ListItemIcon>
-          <Icon icon='mdi:wifi' fontSize='1.25rem' />
+          <Icon icon='mdi:wifi' />
         </ListItemIcon>
         <ListItemText primary='Wi-Fi' />
         <ListItemSecondaryAction>
@@ -43,7 +43,7 @@ const ListWithSwitch = () => {
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <Icon icon='mdi:bluetooth' fontSize='1.25rem' />
+          <Icon icon='mdi:bluetooth' />
         </ListItemIcon>
         <ListItemText primary='Bluetooth' />
         <ListItemSecondaryAction>
@@ -52,7 +52,7 @@ const ListWithSwitch = () => {
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <Icon icon='mdi:map-marker-outline' fontSize='1.25rem' />
+          <Icon icon='mdi:map-marker-outline' />
         </ListItemIcon>
         <ListItemText primary='Location' />
         <ListItemSecondaryAction>
@@ -61,7 +61,7 @@ const ListWithSwitch = () => {
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <Icon icon='mdi:airplane' fontSize='1.25rem' />
+          <Icon icon='mdi:airplane' />
         </ListItemIcon>
         <ListItemText primary='Airplane Mode' />
         <ListItemSecondaryAction>
@@ -70,7 +70,7 @@ const ListWithSwitch = () => {
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <Icon icon='mdi:broadcast' fontSize='1.25rem' />
+          <Icon icon='mdi:broadcast' />
         </ListItemIcon>
         <ListItemText primary='Hotspot' />
         <ListItemSecondaryAction>
@@ -79,7 +79,7 @@ const ListWithSwitch = () => {
       </ListItem>
       <ListItem>
         <ListItemIcon>
-          <Icon icon='mdi:minus-circle-outline' fontSize='1.25rem' />
+          <Icon icon='mdi:minus-circle-outline' />
         </ListItemIcon>
         <ListItemText primary='Do not disturb' />
         <ListItemSecondaryAction>

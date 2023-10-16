@@ -27,7 +27,7 @@ const ListNested = () => {
         <ListItem disablePadding>
           <ListItemButton onClick={handleClick}>
             <ListItemIcon>
-              <Icon icon='mdi:email-outline' fontSize='1.25rem' />
+              <Icon icon='mdi:email-outline' />
             </ListItemIcon>
             <ListItemText primary='Inbox' />
             <Icon icon={open ? 'mdi:chevron-up' : 'mdi:chevron-down'} />
@@ -38,7 +38,7 @@ const ListNested = () => {
             <ListItem disablePadding>
               <ListItemButton className='pis-8'>
                 <ListItemIcon className='mie-4'>
-                  <Icon icon='mdi:send-clock' fontSize='1.25rem' />
+                  <Icon icon='mdi:send-clock' />
                 </ListItemIcon>
                 <ListItemText primary='Scheduled' />
               </ListItemButton>
@@ -48,7 +48,7 @@ const ListNested = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:content-copy' fontSize='1.25rem' />
+              <Icon icon='mdi:content-copy' />
             </ListItemIcon>
             <ListItemText primary='Draft' />
           </ListItemButton>
@@ -59,7 +59,7 @@ const ListNested = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:clock-outline' fontSize='1.25rem' />
+              <Icon icon='mdi:clock-outline' />
             </ListItemIcon>
             <ListItemText primary='Snoozed' />
           </ListItemButton>
@@ -67,7 +67,7 @@ const ListNested = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:alert-circle-outline' fontSize='1.25rem' />
+              <Icon icon='mdi:alert-circle-outline' />
             </ListItemIcon>
             <ListItemText primary='Spam' />
           </ListItemButton>

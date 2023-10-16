@@ -67,19 +67,19 @@ const MenuCustomized = () => {
       >
         <MenuItem>
           <ListItemIcon>
-            <Icon icon='mdi:send' fontSize='1.25rem' />
+            <Icon icon='mdi:send' fontSize='1.375rem' />
           </ListItemIcon>
           <ListItemText primary='Sent mail' />
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
-            <Icon icon='mdi:email-open' fontSize='1.25rem' />
+            <Icon icon='mdi:email-open' fontSize='1.375rem' />
           </ListItemIcon>
           <ListItemText primary='Drafts' />
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
-            <Icon icon='mdi:inbox-arrow-down' fontSize='1.25rem' />
+            <Icon icon='mdi:inbox-arrow-down' fontSize='1.375rem' />
           </ListItemIcon>
           <ListItemText primary='Inbox' />
         </MenuItem>

@@ -16,7 +16,13 @@ import dialog from './dialog'
 import drawer from './drawer'
 import formControl from './form-control'
 import iconButton from './icon-button'
+import input from './input'
+import list from './list'
+import menu from './menu'
+import pagination from './pagination'
 import paper from './paper'
+import Radio from './radio'
+import Select from './select'
 import switchOverrides from './switch'
 import tabs from './tabs'
 import toggleButton from './toggle-button'
@@ -27,7 +33,7 @@ const overrides = (skin: Skin) => {
     {},
     accordion(skin),
     Alerts,
-    Autocomplete,
+    Autocomplete(skin),
     avatar,
     backdrop,
     button,
@@ -39,7 +45,13 @@ const overrides = (skin: Skin) => {
     drawer(skin),
     formControl,
     iconButton,
+    input,
+    list,
+    menu(skin),
+    pagination,
     paper,
+    Radio,
+    Select,
     switchOverrides,
     tabs,
     toggleButton,

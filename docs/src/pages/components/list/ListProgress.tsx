@@ -2,7 +2,6 @@
 import React from 'react'
 
 // MUI Imports
-import Avatar from '@mui/material/Avatar'
 import ListItem from '@mui/material/ListItem'
 import { styled } from '@mui/material/styles'
 import List from '@mui/material/List'
@@ -13,6 +12,9 @@ import type { ListProps } from '@mui/material/List'
 
 // Type Imports
 import type { ThemeColor } from '@core/types'
+
+// Component Imports
+import CustomAvatar from '@docComponents/mui/Avatar'
 
 // Icon Imports
 import Icon from '@core/components/IconifyIcon'
@@ -90,9 +92,9 @@ const ListProgress = () => {
         return (
           <ListItem key={index}>
             <ListItemAvatar className='flex gap-5 items-center w-full'>
-              <Avatar variant='rounded' className='w-9 h-9'>
+              <CustomAvatar skin='light' color={course.variant} variant='rounded' className='w-9 h-9'>
                 <Icon icon={course.icon} />
-              </Avatar>
+              </CustomAvatar>
               <div className='w-full'>
                 <ListItemText primary={course.description}></ListItemText>
                 <LinearProgress value={course.progress} variant='determinate' color={course.variant} />

@@ -106,6 +106,14 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
           infoFilledBg: 'var(--mui-palette-info-main)',
           successFilledBg: 'var(--mui-palette-success-main)'
         },
+        Avatar: {
+          defaultBg: '#F0EFF0'
+        },
+        FilledInput: {
+          bg: `rgb(${mainLightColor} / 0.04)`,
+          hoverBg: `rgb(${mainLightColor} / 0.08)`,
+          disabledBg: `rgb(${mainLightColor} / 0.12)`
+        },
         SnackbarContent: {
           bg: '#1A0E33',
           color: '#FFFFFF'
@@ -123,6 +131,7 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
         customColors: {
           chatBg: '#F7F6FA',
           greyLightBg: '#FAFAFA',
+          inputBorder: `rgb(${mainLightColor} / 0.28)`,
           tableHeaderBg: '#F6F7FB',
           tooltipBg: '#1A0E33',
           tooltipText: '#FFFFFF',
@@ -227,6 +236,14 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
           infoFilledBg: 'var(--mui-palette-info-main)',
           successFilledBg: 'var(--mui-palette-success-main)'
         },
+        Avatar: {
+          defaultBg: '#3F3B59'
+        },
+        FilledInput: {
+          bg: `rgb(${mainDarkColor} / 0.04)`,
+          hoverBg: `rgb(${mainDarkColor} / 0.08)`,
+          disabledBg: `rgb(${mainDarkColor} / 0.12)`
+        },
         SnackbarContent: {
           bg: '#F7F4FF',
           color: '#312D4B'
@@ -244,6 +261,7 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
         customColors: {
           chatBg: '#373452',
           greyLightBg: '#373350',
+          inputBorder: `rgb(${mainDarkColor} / 0.28)`,
           tableHeaderBg: '#3D3759',
           tooltipBg: '#F7F4FF',
           tooltipText: '#312D4B',

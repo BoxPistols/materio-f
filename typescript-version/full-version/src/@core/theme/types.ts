@@ -57,6 +57,7 @@ declare module '@mui/material/styles' {
     customColors: {
       chatBg: string
       greyLightBg: string
+      inputBorder: string
       tableHeaderBg: string
       tooltipBg: string
       tooltipText: string
@@ -67,6 +68,7 @@ declare module '@mui/material/styles' {
     customColors?: {
       chatBg?: string
       greyLightBg?: string
+      inputBorder?: string
       tableHeaderBg?: string
       tooltipBg?: string
       tooltipText?: string
@@ -77,6 +79,12 @@ declare module '@mui/material/styles' {
 
 declare module '@mui/material/Chip' {
   interface ChipPropsVariantOverrides {
+    tonal: true
+  }
+}
+
+declare module '@mui/material/Pagination' {
+  interface PaginationPropsVariantOverrides {
     tonal: true
   }
 }

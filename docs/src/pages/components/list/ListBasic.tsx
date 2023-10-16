@@ -22,7 +22,7 @@ const ListBasic = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:email-outline' fontSize='1.25rem' />
+              <Icon icon='mdi:email-outline' />
             </ListItemIcon>
             <ListItemText primary='Inbox' />
           </ListItemButton>
@@ -30,7 +30,7 @@ const ListBasic = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:content-copy' fontSize='1.25rem' />
+              <Icon icon='mdi:content-copy' />
             </ListItemIcon>
             <ListItemText primary='Draft' />
           </ListItemButton>
@@ -41,7 +41,7 @@ const ListBasic = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <Icon icon='mdi:clock-outline' fontSize='1.25rem' />
+              <Icon icon='mdi:clock-outline' />
             </ListItemIcon>
             <ListItemText primary='Snoozed' />
           </ListItemButton>
@@ -49,7 +49,7 @@ const ListBasic = () => {
         <ListItem disablePadding>
           <ListItemButton component='a' href='#simple-list' className={styles.listItemButton}>
             <ListItemIcon>
-              <Icon icon='mdi:alert-circle-outline' fontSize='1.25rem' />
+              <Icon icon='mdi:alert-circle-outline' />
             </ListItemIcon>
             <ListItemText primary='Spam' />
           </ListItemButton>
