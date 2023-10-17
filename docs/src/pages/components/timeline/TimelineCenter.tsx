@@ -19,7 +19,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent'
 import LinearProgress from '@mui/material/LinearProgress'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import type { TimelineProps } from '@mui/lab/Timeline'
-import type { Theme } from '@mui/material'
+import type { Theme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -110,8 +110,8 @@ const TimelineCenter = () => {
           </TimelineOppositeContent>
         )}
         <TimelineSeparator>
-          <TimelineDot color='error'>
-            <Icon icon='mdi:file-word-outline' fontSize='1.25rem' />
+          <TimelineDot color='error' variant='tonal'>
+            <Icon icon='mdi:file-word-outline' />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -149,7 +149,7 @@ const TimelineCenter = () => {
           </TimelineOppositeContent>
         )}
         <TimelineSeparator>
-          <TimelineDot color='success'>
+          <TimelineDot color='success' variant='tonal'>
             <Icon icon='mdi:image-outline' />
           </TimelineDot>
           <TimelineConnector />
@@ -188,7 +188,7 @@ const TimelineCenter = () => {
           </TimelineOppositeContent>
         )}
         <TimelineSeparator>
-          <TimelineDot color='warning'>
+          <TimelineDot color='warning' variant='tonal'>
             <Icon icon='mdi:star-outline' />
           </TimelineDot>
           <TimelineConnector />
@@ -240,7 +240,7 @@ const TimelineCenter = () => {
           </TimelineOppositeContent>
         )}
         <TimelineSeparator>
-          <TimelineDot color='info'>
+          <TimelineDot color='info' variant='tonal'>
             <Icon icon='mdi:chart-pie-outline' />
           </TimelineDot>
           <TimelineConnector />
@@ -299,7 +299,7 @@ const TimelineCenter = () => {
           </TimelineOppositeContent>
         )}
         <TimelineSeparator>
-          <TimelineDot color='primary'>
+          <TimelineDot color='primary' variant='tonal'>
             <Icon icon='mdi:folder-outline' />
           </TimelineDot>
           <TimelineConnector />

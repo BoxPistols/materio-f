@@ -16,6 +16,7 @@ import {
 } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import type {} from '@mui/material/themeCssVarsAugmentation' //! Do not remove this import otherwise you will get type errors while making a production build
+import type {} from '@mui/lab/themeAugmentation'
 import type { PaletteMode } from '@mui/material'
 
 // Third-party Imports

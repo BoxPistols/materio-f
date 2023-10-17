@@ -128,12 +128,14 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
           infoDisabledColor: 'var(--mui-palette-common-white)',
           successDisabledColor: 'var(--mui-palette-common-white)'
         },
+        Tooltip: {
+          bg: '#1A0E33'
+        },
         customColors: {
           chatBg: '#F7F6FA',
           greyLightBg: '#FAFAFA',
           inputBorder: `rgb(${mainLightColor} / 0.28)`,
           tableHeaderBg: '#F6F7FB',
-          tooltipBg: '#1A0E33',
           tooltipText: '#FFFFFF',
           trackBg: '#F0F2F8'
         }
@@ -258,12 +260,14 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
           infoDisabledColor: 'var(--mui-palette-common-white)',
           successDisabledColor: 'var(--mui-palette-common-white)'
         },
+        Tooltip: {
+          bg: '#F7F4FF'
+        },
         customColors: {
           chatBg: '#373452',
           greyLightBg: '#373350',
           inputBorder: `rgb(${mainDarkColor} / 0.28)`,
           tableHeaderBg: '#3D3759',
-          tooltipBg: '#F7F4FF',
           tooltipText: '#312D4B',
           trackBg: '#474360'
         }

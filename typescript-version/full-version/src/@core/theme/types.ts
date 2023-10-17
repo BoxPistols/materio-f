@@ -59,7 +59,6 @@ declare module '@mui/material/styles' {
       greyLightBg: string
       inputBorder: string
       tableHeaderBg: string
-      tooltipBg: string
       tooltipText: string
       trackBg: string
     }
@@ -70,7 +69,6 @@ declare module '@mui/material/styles' {
       greyLightBg?: string
       inputBorder?: string
       tableHeaderBg?: string
-      tooltipBg?: string
       tooltipText?: string
       trackBg?: string
     }
@@ -85,6 +83,12 @@ declare module '@mui/material/Chip' {
 
 declare module '@mui/material/Pagination' {
   interface PaginationPropsVariantOverrides {
+    tonal: true
+  }
+}
+
+declare module '@mui/lab/TimelineDot' {
+  interface TimelineDotPropsVariantOverrides {
     tonal: true
   }
 }

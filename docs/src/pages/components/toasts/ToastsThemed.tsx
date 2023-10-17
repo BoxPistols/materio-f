@@ -24,6 +24,7 @@ const ToastsThemed = () => {
         border: `1px solid ${theme.palette.primary.main}`,
         backgroundColor: theme.palette.primary.contrastText
       },
+      className: 'custom-toast',
       theme: 'colored',
       closeButton: false,
       progressStyle: {

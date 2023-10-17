@@ -7,6 +7,8 @@ import Alerts from './alerts'
 import Autocomplete from './autocomplete'
 import avatar from './avatar'
 import backdrop from './backdrop'
+import badges from './badges'
+import breadcrumbs from './breadcrumbs'
 import button from './button'
 import buttonGroup from './button-group'
 import card from './card'
@@ -23,9 +25,13 @@ import pagination from './pagination'
 import paper from './paper'
 import Radio from './radio'
 import Select from './select'
+import slider from './slider'
+import snackbar from './snackbar'
 import switchOverrides from './switch'
 import tabs from './tabs'
+import timeline from './timeline'
 import toggleButton from './toggle-button'
+import tooltip from './tooltip'
 import typography from './typography'
 
 const overrides = (skin: Skin) => {
@@ -36,6 +42,8 @@ const overrides = (skin: Skin) => {
     Autocomplete(skin),
     avatar,
     backdrop,
+    badges,
+    breadcrumbs,
     button,
     buttonGroup,
     card(skin),
@@ -52,9 +60,13 @@ const overrides = (skin: Skin) => {
     paper,
     Radio,
     Select,
+    slider,
+    snackbar(skin),
     switchOverrides,
     tabs,
+    timeline,
     toggleButton,
+    tooltip,
     typography
   )
 }

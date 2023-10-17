@@ -33,7 +33,7 @@ const valuetext = (value: number) => {
 const SliderVertical = () => {
   return (
     <div className={styles.sliderVertical}>
-      <Slider orientation='vertical' getAriaValueText={valuetext} defaultValue={30} aria-labelledby='vertical-slider' className='mie-8'/>
+      <Slider orientation='vertical' size='small' getAriaValueText={valuetext} defaultValue={30} aria-labelledby='vertical-slider' className='mie-8'/>
       <Slider
         disabled
         defaultValue={30}

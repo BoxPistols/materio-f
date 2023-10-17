@@ -18,7 +18,9 @@ const ToastsBlank = () => {
       <Icon icon='mdi:checkbox-blank-outline' fontSize='2rem' className='mbe-2'/>
       <Typography className='font-medium mbe-4'>Blank</Typography>
       <Typography className='mbe-3'>The most basic variant does not have an icon.</Typography>
-      <Button className='mbe-8' variant='contained' onClick={() => toast('Blank Toast')}>
+      <Button className='mbe-8' variant='contained' onClick={() => toast('Blank Toast', {
+        hideProgressBar: false
+      })}>
         Blank
       </Button>
     </div>

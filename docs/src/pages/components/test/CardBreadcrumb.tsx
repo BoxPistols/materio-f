@@ -41,7 +41,7 @@ const CardBreadcrumb = () => {
           <Typography>Breadcrumb</Typography>
         </Breadcrumbs>
 
-        <Breadcrumbs aria-label='breadcrumb' separator={<Icon icon='mdi:chevron-right' fontSize='1.25rem' />}>
+        <Breadcrumbs aria-label='breadcrumb' separator={<Icon icon='mdi:chevron-right'/>}>
           <a href='/' onClick={handleClick}>
             MUI
           </a>
@@ -53,7 +53,7 @@ const CardBreadcrumb = () => {
 
         <Breadcrumbs aria-label='breadcrumb' className='mbs-2'>
           <a href='/' onClick={handleClick} className='flex items-center'>
-            <Icon icon='mdi:home-outline' fontSize='1.25rem' />
+            <Icon icon='mdi:home-outline'/>
             MUI
           </a>
           <a href='/' onClick={handleClick} className='flex items-center'>

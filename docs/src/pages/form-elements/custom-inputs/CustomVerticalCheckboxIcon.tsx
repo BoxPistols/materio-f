@@ -58,7 +58,7 @@ const CustomVerticalCheckboxIcon = () => {
         let asset
 
         if (item.asset && typeof item.asset === 'string') {
-          asset = <Icon icon={item.asset} />
+          asset = <Icon icon={item.asset} fontSize='1.75rem' />
         }
 
         return (

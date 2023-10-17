@@ -25,7 +25,7 @@ const ToastsCustom = () => {
               <Typography variant='caption'>Sure! 8:30pm works great!</Typography>
             </div>
           </div>
-          <IconButton onClick={() => toast.dismiss(t.toastProps.toastId)}>
+          <IconButton onClick={() => toast.dismiss(t.toastProps.toastId)} size='small'>
             <Icon icon='mdi:close' fontSize='1.25rem' />
           </IconButton>
         </div>

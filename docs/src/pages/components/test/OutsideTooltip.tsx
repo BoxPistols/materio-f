@@ -12,8 +12,7 @@ const LightTooltip = styled((props: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: props.className }} className='mie-4' />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    borderRadius: 4,
-    boxShadow: theme.shadows[2],
+    boxShadow: theme.customShadows.sm,
     color: theme.palette.common.black,
     backgroundColor: theme.palette.common.white
   }

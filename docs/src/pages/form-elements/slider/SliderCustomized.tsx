@@ -45,10 +45,11 @@ const Slider = styled(MuiSlider)<SliderProps>(({ theme }) => ({
   '& .MuiSlider-thumb': {
     width: 28,
     height: 28,
+    border: 'none',
     backgroundColor: theme.palette.common.white,
     boxShadow: '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)',
-    '&:focus, &:hover, &.Mui-active': {
-      boxShadow: '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.02)',
+    '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
+      boxShadow: '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.02) !important',
 
       // Reset on touch devices, it doesn't add specificity
       '@media (hover: none)': {
@@ -57,7 +58,7 @@ const Slider = styled(MuiSlider)<SliderProps>(({ theme }) => ({
     }
   },
   '& .MuiSlider-valueLabel': {
-    top: -6,
+    top: 0,
     fontSize: 12,
     fontWeight: 'normal',
     backgroundColor: 'unset',
