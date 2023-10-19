@@ -23,8 +23,8 @@ const iconStyles = (theme: Theme) => ({
   fontSize: '1.5rem',
   position: 'absolute',
   right: '1rem',
-  top: 'calc(50% - 0.5rem)',
-  cursor: 'pointer'
+  top: 'calc(50% - 0.6rem)',
+  pointerEvents: 'none'
 })
 
 const select: Theme['components'] = {

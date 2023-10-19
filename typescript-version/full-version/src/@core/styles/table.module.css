@@ -1,6 +1,7 @@
 .table {
   inline-size: 100%;
   border-collapse: collapse;
+  font-size: 0.875rem;
   white-space: nowrap;
 
   [align='right'] > * {
@@ -18,11 +19,52 @@
   th {
     font-weight: 500;
     text-align: start;
+    block-size: 56px;
+    &:not(:first-of-type):not(:last-of-type) {
+      padding-block: 0.5rem;
+      padding-inline: 1rem;
+    }
+    &:first-of-type {
+      &:not(:has(input[type='checkbox'])) {
+        padding-block: 0.5rem;
+        padding-inline: 1.25rem 1rem;
+      }
+      &:has(input[type='checkbox']) {
+        padding-inline-start: 0.75rem;
+      }
+    }
+    &:last-of-type {
+      padding-block: 0.5rem;
+      padding-inline: 1rem 1.25rem;
+    }
   }
 }
 
 .tbody {
   color: var(--mui-palette-text-secondary);
+
+  th,
+  td {
+    line-height: 1.428;
+    block-size: 50px;
+    &:not(:first-of-type):not(:last-of-type) {
+      padding-block: 0.5rem;
+      padding-inline: 1rem;
+    }
+    &:first-of-type {
+      &:not(:has(input[type='checkbox'])) {
+        padding-block: 0.5rem;
+        padding-inline: 1.25rem 1rem;
+      }
+      &:has(input[type='checkbox']) {
+        padding-inline-start: 0.75rem;
+      }
+    }
+    &:last-of-type {
+      padding-block: 0.5rem;
+      padding-inline: 1rem 1.25rem;
+    }
+  }
 
   tr:not(:last-child) {
     border-block-end: 1px solid var(--border-color);

@@ -28,6 +28,7 @@ import Select from './select'
 import slider from './slider'
 import snackbar from './snackbar'
 import switchOverrides from './switch'
+import tablePagination from './table-pagination'
 import tabs from './tabs'
 import timeline from './timeline'
 import toggleButton from './toggle-button'
@@ -63,6 +64,7 @@ const overrides = (skin: Skin) => {
     slider,
     snackbar(skin),
     switchOverrides,
+    tablePagination,
     tabs,
     timeline,
     toggleButton,
