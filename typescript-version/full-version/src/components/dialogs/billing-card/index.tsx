@@ -1,5 +1,7 @@
+'use client'
+
 // React Imports
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // MUI Imports
 import Grid from '@mui/material/Grid'
@@ -22,28 +24,27 @@ import classnames from 'classnames'
 // Type Imports
 import type { ThemeColor } from '@core/types'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
 // Style Imports
 import styles from '@components/dialogs/styles.module.css'
 
-type Props = {
-  open: boolean
-  setOpen: (open: boolean) => void
-  data?: {
-    cardNumber?: string
-    name?: string
-    expiryDate?: string
-    cardCvv?: string
-    imgSrc?: string
-    imgAlt?: string
-    cardStatus?: string
-    badgeColor?: ThemeColor
-  }
+type BillingCardData = {
+  cardNumber?: string
+  name?: string
+  expiryDate?: string
+  cardCvv?: string
+  imgSrc?: string
+  imgAlt?: string
+  cardStatus?: string
+  badgeColor?: ThemeColor
 }
 
-const initialCardData: Props['data'] = {
+type BillingCardProps = {
+  open: boolean
+  setOpen: (open: boolean) => void
+  data?: BillingCardData
+}
+
+const initialCardData: BillingCardProps['data'] = {
   cardNumber: '',
   name: '',
   expiryDate: '',
@@ -54,9 +55,9 @@ const initialCardData: Props['data'] = {
   badgeColor: 'primary'
 }
 
-const BillingCard = ({ open, setOpen, data }: Props) => {
+const BillingCard = ({ open, setOpen, data }: BillingCardProps) => {
   // States
-  const [cardData, setCardData] = useState(Object.assign(initialCardData, data))
+  const [cardData, setCardData] = useState(initialCardData)
 
   // Hooks
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
@@ -66,15 +67,21 @@ const BillingCard = ({ open, setOpen, data }: Props) => {
     setCardData(initialCardData)
   }
 
+  useEffect(() => {
+    setCardData(data ?? initialCardData)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open])
+
   return (
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle
+        variant='h5'
         className={classnames('flex flex-col gap-2 text-center', styles.dialogTitle, {
           [styles.smDialogTitle]: isBelowSmScreen
         })}
       >
         {data ? 'Edit Card' : 'Add Card'}
-        <Typography component='span' className='flex flex-col text-center'>
+        <Typography component='span' variant='body2' className='flex flex-col text-center'>
           {data ? 'Edit your saved card details' : 'Add card for future billing'}
         </Typography>
       </DialogTitle>
@@ -85,7 +92,7 @@ const BillingCard = ({ open, setOpen, data }: Props) => {
           })}
         >
           <IconButton onClick={handleClose} className={styles.closeIcon}>
-            <Icon icon='mdi:close' />
+            <i className='ri-close-line' />
           </IconButton>
           <Grid container spacing={5}>
             <Grid item xs={12}>

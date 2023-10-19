@@ -25,14 +25,11 @@ import type { Theme } from '@mui/material/styles'
 // Third-party Imports
 import classnames from 'classnames'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
 // Style Imports
 import styles from '@components/dialogs/styles.module.css'
 import themeConfig from '@configs/themeConfig'
 
-type Props = {
+type ShareProjectProps = {
   open: boolean
   setOpen: (open: boolean) => void
 }
@@ -127,7 +124,7 @@ const autocompleteOptions: OptionsType[] = [
   }
 ]
 
-const ShareProject = ({ open, setOpen }: Props) => {
+const ShareProject = ({ open, setOpen }: ShareProjectProps) => {
   // States
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -144,12 +141,13 @@ const ShareProject = ({ open, setOpen }: Props) => {
   return (
     <Dialog fullWidth maxWidth='md' scroll='body' open={open} onClose={() => setOpen(false)}>
       <DialogTitle
+        variant='h5'
         className={classnames('flex gap-2 flex-col text-center', styles.dialogTitle, {
           [styles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Share Project
-        <Typography component='span' className='flex flex-col text-center'>
+        <Typography component='span' variant='body2' className='flex flex-col text-center'>
           Share project with the team members
         </Typography>
       </DialogTitle>
@@ -159,7 +157,7 @@ const ShareProject = ({ open, setOpen }: Props) => {
         })}
       >
         <IconButton onClick={() => setOpen(false)} className={styles.closeIcon}>
-          <Icon icon='mdi:close' />
+          <i className='ri-close-line' />
         </IconButton>
         <div className='flex flex-col gap-2'>
           <InputLabel htmlFor='add-member' className='inline-flex'>
@@ -183,25 +181,29 @@ const ShareProject = ({ open, setOpen }: Props) => {
           />
         </div>
         <div className='flex flex-col gap-3'>
-          <Typography>{`${data.length} Members`}</Typography>
+          <Typography variant='h6'>{`${data.length} Members`}</Typography>
           <div className='flex flex-col flex-wrap gap-4'>
             {data.map((member, index) => (
               <div key={index} className='flex items-center w-full gap-4'>
                 <Avatar src={`/images/avatars/${member.avatar}`} alt={member.name} />
                 <div className='flex justify-between items-center w-full overflow-hidden'>
                   <div className='flex flex-col items-start overflow-hidden'>
-                    <Typography className='truncate w-full'>{member.name}</Typography>
-                    <Typography className='truncate w-full'>{member.email}</Typography>
+                    <Typography variant='body2' className={classnames('truncate w-full', styles.textPrimary)}>
+                      {member.name}
+                    </Typography>
+                    <Typography variant='body2' className='truncate w-full'>
+                      {member.email}
+                    </Typography>
                   </div>
                   {isBelowSmScreen ? (
                     <IconButton size='small' onClick={handleClick}>
-                      <Icon icon='mdi:chevron-down' fontSize='1.25rem' />
+                      <i className='ri-arrow-down-s-line text-xl' />
                     </IconButton>
                   ) : (
                     <Button
                       color='secondary'
                       onClick={handleClick}
-                      endIcon={<Icon icon='mdi:chevron-down' fontSize='1.25rem' />}
+                      endIcon={<i className='ri-arrow-down-s-line text-xl' />}
                     >
                       {member.value}
                     </Button>
@@ -234,11 +236,14 @@ const ShareProject = ({ open, setOpen }: Props) => {
         </div>
         <div className='flex items-center justify-between flex-wrap'>
           <div className='flex items-center flex-grow gap-2'>
-            <Icon icon='mdi:account-multiple-outline' fontSize='1.25rem' />
-            <Typography>{`Public to ${themeConfig.templateName} - ThemeSelection`}</Typography>
+            <i className='ri-group-line text-xl' />
+            <Typography
+              variant='body2'
+              className={styles.textPrimary}
+            >{`Public to ${themeConfig.templateName} - ThemeSelection`}</Typography>
           </div>
           <Button variant='outlined' className='flex'>
-            <Icon icon='mdi:link-variant' fontSize='1.25rem' />
+            <i className='ri-link text-xl' />
             Copy Project Link
           </Button>
         </div>

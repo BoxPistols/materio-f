@@ -1,6 +1,9 @@
 // Next Imports
 import { cookies } from 'next/headers'
 
+// MUI Imports
+import Button from '@mui/material/Button'
+
 // Type Imports
 import type { ChildrenType } from '@core/types'
 import type { Locale } from '@configs/i18n'
@@ -18,38 +21,46 @@ import Navbar from '@components/layout/vertical/Navbar'
 import VerticalFooter from '@components/layout/vertical/Footer'
 import HorizontalFooter from '@components/layout/horizontal/Footer'
 import Customizer from '@core/components/customizer'
-
-// Config Imports
-import { i18n } from '@configs/i18n'
+import ScrollToTop from '@core/components/scroll-to-top'
 
 // Util Imports
 import { getDirection } from '@/utils/get-direction'
+import { getDictionary } from '@/utils/get-dictionary'
 
-export async function generateStaticParams() {
-  return i18n.locales.map(locale => ({ lang: locale }))
-}
-
-const Layout = ({ children, params }: ChildrenType & { params: { lang: Locale } }) => {
+const Layout = async ({ children, params }: ChildrenType & { params: { lang: Locale } }) => {
   const direction = getDirection(params.lang)
+  const dictionary = await getDictionary(params.lang)
   const cookieStore = cookies()
 
   const settingsCookie = JSON.parse(cookieStore.get('settings')?.value || '{}')
 
   return (
-    <Providers settingsCookie={settingsCookie}>
+    <Providers settingsCookie={settingsCookie} direction={direction}>
       <LayoutWrapper
         settingsCookie={settingsCookie}
         verticalLayout={
-          <VerticalLayout navigation={<Navigation />} navbar={<Navbar />} footer={<VerticalFooter />}>
+          <VerticalLayout
+            navigation={<Navigation dictionary={dictionary} />}
+            navbar={<Navbar />}
+            footer={<VerticalFooter />}
+          >
             {children}
           </VerticalLayout>
         }
         horizontalLayout={
-          <HorizontalLayout header={<Header />} footer={<HorizontalFooter />}>
+          <HorizontalLayout header={<Header dictionary={dictionary} />} footer={<HorizontalFooter />}>
             {children}
           </HorizontalLayout>
         }
       />
+      <ScrollToTop className='mui-fixed'>
+        <Button
+          variant='contained'
+          className='w-10 h-10 rounded-full p-0 min-w-0 flex items-center justify-center cursor-pointer'
+        >
+          <i className='ri-arrow-up-line' />
+        </Button>
+      </ScrollToTop>
       <Customizer dir={direction} />
     </Providers>
   )

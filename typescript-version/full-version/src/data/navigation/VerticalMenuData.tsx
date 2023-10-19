@@ -1,17 +1,11 @@
 // Type Imports
 import type { VerticalMenuDataType } from '@/types/menuTypes'
-import type { Locale } from '@configs/i18n'
+import type { Dictionary } from '@core/types'
 
 // Icon Imports
 import LinkExternalIcon from '@layouts/svg/LinkExternal'
 
-// Util Imports
-import { getDictionary } from '@/utils/get-dictionary'
-
-const VerticalMenuData = (locale: Locale): VerticalMenuDataType[] => {
-  // Get dictionary based on locale
-  const dictionary = getDictionary(locale)
-
+const VerticalMenuData = ({ dictionary }: { dictionary: Dictionary }): VerticalMenuDataType[] => {
   return [
     // This is how you will normally render submenu
     {
@@ -87,28 +81,7 @@ const VerticalMenuData = (locale: Locale): VerticalMenuDataType[] => {
             },
             {
               label: dictionary['navigation'].view,
-              children: [
-                {
-                  label: dictionary['navigation'].overview,
-                  href: '/apps/user/view/overview'
-                },
-                {
-                  label: dictionary['navigation'].security,
-                  href: '/apps/user/view/security'
-                },
-                {
-                  label: dictionary['navigation'].billingPlans,
-                  href: '/apps/user/view/billing'
-                },
-                {
-                  label: dictionary['navigation'].notifications,
-                  href: '/apps/user/view/notifications'
-                },
-                {
-                  label: dictionary['navigation'].connections,
-                  href: '/apps/user/view/connections'
-                }
-              ]
+              href: '/apps/user/view'
             }
           ]
         },
@@ -130,50 +103,11 @@ const VerticalMenuData = (locale: Locale): VerticalMenuDataType[] => {
           children: [
             {
               label: dictionary['navigation'].userProfile,
-              children: [
-                {
-                  label: dictionary['navigation'].profile,
-                  href: '/pages/user-profile/profile'
-                },
-                {
-                  label: dictionary['navigation'].teams,
-                  href: '/pages/user-profile/teams'
-                },
-                {
-                  label: dictionary['navigation'].projects,
-                  href: '/pages/user-profile/projects'
-                },
-                {
-                  label: dictionary['navigation'].connections,
-                  href: '/pages/user-profile/connections'
-                }
-              ]
+              href: '/pages/user-profile'
             },
             {
               label: dictionary['navigation'].accountSettings,
-              children: [
-                {
-                  label: dictionary['navigation'].account,
-                  href: '/pages/account-settings/account'
-                },
-                {
-                  label: dictionary['navigation'].security,
-                  href: '/pages/account-settings/security'
-                },
-                {
-                  label: dictionary['navigation'].billingPlans,
-                  href: '/pages/account-settings/billing-plans'
-                },
-                {
-                  label: dictionary['navigation'].notifications,
-                  href: '/pages/account-settings/notifications'
-                },
-
-                {
-                  label: dictionary['navigation'].connections,
-                  href: '/pages/account-settings/connections'
-                }
-              ]
+              href: '/pages/account-settings'
             },
             {
               label: dictionary['navigation'].faq,

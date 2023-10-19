@@ -1,9 +1,6 @@
 // React Imports
 import { useState } from 'react'
 
-// Next Imports
-import { usePathname } from 'next/navigation'
-
 // MUI Imports
 import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
@@ -30,13 +27,6 @@ import Database from './Database'
 import Billing from './Billing'
 import Submit from './Submit'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
-// Util Imports
-import { getLocale } from '@/utils/get-locale'
-import { getDirection } from '@/utils/get-direction'
-
 // Styled Component Imports
 import StepperWrapper from '@core/styles/stepper'
 
@@ -44,9 +34,10 @@ import StepperWrapper from '@core/styles/stepper'
 import styles from './styles.module.css'
 import globalDialogStyles from '@components/dialogs/styles.module.css'
 
-type Props = {
+type CreateAppProps = {
   open: boolean
   setOpen: (open: boolean) => void
+  direction: Direction
 }
 
 type stepperProps = {
@@ -58,28 +49,28 @@ type stepperProps = {
 
 const steps: stepperProps[] = [
   {
-    icon: 'mdi:file-document-outline',
+    icon: 'ri-file-list-2-line',
     title: 'Details',
     subtitle: 'Enter Details'
   },
   {
-    icon: 'mdi:cube-outline',
+    icon: 'ri-box-3-line',
     title: 'FrameWorks',
     subtitle: 'Select Framework',
     active: true
   },
   {
-    icon: 'mdi:database-outline',
+    icon: 'ri-database-2-line',
     title: 'Database',
     subtitle: 'Select Database'
   },
   {
-    icon: 'mdi:credit-card-outline',
+    icon: 'ri-bank-card-2-line',
     title: 'Billing',
     subtitle: 'Payment Details'
   },
   {
-    icon: 'mdi:check',
+    icon: 'ri-check-line',
     title: 'Submit',
     subtitle: 'Submit'
   }
@@ -148,16 +139,13 @@ const renderStepCount = (
   }
 }
 
-const CreateApp = ({ open, setOpen }: Props) => {
+const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
   // States
   const [activeStep, setActiveStep] = useState(0)
 
   // Hooks
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
   const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
-  const pathname = usePathname()
-  const locale = getLocale(pathname)
-  const direction = getDirection(locale)
 
   const handleClose = () => {
     setOpen(false)
@@ -185,12 +173,13 @@ const CreateApp = ({ open, setOpen }: Props) => {
   return (
     <Dialog fullWidth maxWidth='md' open={open} onClose={handleClose}>
       <DialogTitle
+        variant='h5'
         className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
           [globalDialogStyles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Create App
-        <Typography component='span' className='flex flex-col text-center'>
+        <Typography component='span' variant='body2' className='flex flex-col text-center'>
           Provide data with this form to create your app.
         </Typography>
       </DialogTitle>
@@ -200,7 +189,7 @@ const CreateApp = ({ open, setOpen }: Props) => {
         })}
       >
         <IconButton onClick={handleClose} className={styles.closeIcon}>
-          <Icon icon='mdi:close' />
+          <i className='ri-close-line' />
         </IconButton>
         <div className={classnames('flex gap-y-6', { 'flex-col': isBelowMdScreen })}>
           <StepperWrapper>
@@ -217,11 +206,13 @@ const CreateApp = ({ open, setOpen }: Props) => {
                     <StepLabel icon={<></>} className='p-0 cursor-pointer'>
                       <div className='step-label gap-4'>
                         <Avatar variant='rounded' className={classnames({ [styles.activeStep]: activeStep === index })}>
-                          <Icon icon={label.icon as string} />
+                          <i className={label.icon as string} />
                         </Avatar>
                         <div className='flex flex-col'>
-                          <Typography className='step-title'>{label.title}</Typography>
-                          <Typography className='step-subtitle'>{label.subtitle}</Typography>
+                          <Typography variant='body2' className={styles.textPrimary}>
+                            {label.title}
+                          </Typography>
+                          <Typography variant='caption'>{label.subtitle}</Typography>
                         </div>
                       </div>
                     </StepLabel>

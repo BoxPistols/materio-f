@@ -1,3 +1,5 @@
+'use client'
+
 // Next Imports
 import Link from 'next/link'
 
@@ -10,9 +12,6 @@ import Button from '@mui/material/Button'
 import Avatar from '@mui/material/Avatar'
 import Grid from '@mui/material/Grid'
 import Chip from '@mui/material/Chip'
-
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
 
 // Type Imports
 import type { ProfileTeamsTechType, ProfileConnectionsType } from '@/types/pages/profileTypes'
@@ -49,7 +48,7 @@ const ConnectionsTeams = (props: Props) => {
                     </div>
                   </div>
                   <Button variant={connection.isFriend ? 'contained' : 'outlined'}>
-                    <Icon icon={connection.isFriend ? 'mdi:account-outline' : 'mdi:account-plus-outline'} />
+                    <i className={connection.isFriend ? 'ri-user-3-line' : 'ri-user-add-line'} />
                   </Button>
                 </div>
               ))}

@@ -17,9 +17,9 @@ const ToastifyWrapper = styled('div')(({ theme }) => {
       minBlockSize: 44,
       borderRadius: 'var(--mui-shape-borderRadius)',
       padding: theme.spacing(1.5, 2.5),
+      backgroundColor: 'var(--mui-palette-background-paper)',
       boxShadow: settings.skin === 'bordered' ? 'none' : 'var(--mui-customShadows-md)',
       border: settings.skin === 'bordered' ? `1px solid ${theme.palette.divider}` : 'none',
-      backgroundColor: 'var(--mui-palette-background-paper)',
       '&:not(.custom-toast)': {
         '& .Toastify__toast-body': {
           color: 'var(--mui-palette-text-primary)'

@@ -11,14 +11,11 @@ import type { Theme } from '@mui/material/styles'
 // Third-party Imports
 import classnames from 'classnames'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
 // Style Imports
 import styles from './styles.module.css'
 import globalDialogStyles from '@components/dialogs/styles.module.css'
 
-type Props = {
+type PaymentMethodProps = {
   open: boolean
   setOpen: (open: boolean) => void
 }
@@ -70,19 +67,20 @@ const cardList: CardList[] = [
   }
 ]
 
-const PaymentMethod = ({ open, setOpen }: Props) => {
+const PaymentMethod = ({ open, setOpen }: PaymentMethodProps) => {
   // Hooks
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   return (
     <Dialog fullWidth open={open} onClose={() => setOpen(false)} maxWidth='sm' scroll='body'>
       <DialogTitle
+        variant='h5'
         className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
           [globalDialogStyles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Select Payment Methods
-        <Typography component='span' className='flex flex-col items-center'>
+        <Typography component='span' variant='body2' className='flex flex-col items-center'>
           Supported payment methods
         </Typography>
       </DialogTitle>
@@ -92,7 +90,7 @@ const PaymentMethod = ({ open, setOpen }: Props) => {
         })}
       >
         <IconButton onClick={() => setOpen(false)} className={styles.closeIcon}>
-          <Icon icon='mdi:close' />
+          <i className='ri-close-line' />
         </IconButton>
         <div>
           {cardList?.map((card, index) => (

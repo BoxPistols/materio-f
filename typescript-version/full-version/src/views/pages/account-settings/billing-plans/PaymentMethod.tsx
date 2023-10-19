@@ -1,3 +1,5 @@
+'use client'
+
 // React Imports
 import { useState } from 'react'
 
@@ -23,7 +25,7 @@ import classnames from 'classnames'
 // Type Imports
 import type { ThemeColor } from '@core/types'
 
-// Custom Imports
+// Component Imports
 import BillingCard from '@components/dialogs/billing-card'
 
 // Styles Imports

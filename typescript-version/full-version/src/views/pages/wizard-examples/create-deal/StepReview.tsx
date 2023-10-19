@@ -6,9 +6,6 @@ import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
 // Style Imports
 import styles from '@core/styles/libs/reactTables.module.css'
 
@@ -65,7 +62,7 @@ const StepReview = ({ activeStep, handleNext, handlePrev, steps }: Props) => {
             color='secondary'
             disabled={activeStep === 0}
             onClick={handlePrev}
-            startIcon={<Icon icon='mdi:arrow-left' />}
+            startIcon={<i className='ri-arrow-left-line' />}
           >
             Previous
           </Button>
@@ -73,7 +70,7 @@ const StepReview = ({ activeStep, handleNext, handlePrev, steps }: Props) => {
             variant='contained'
             color={activeStep === steps.length - 1 ? 'success' : 'primary'}
             onClick={handleNext}
-            endIcon={<Icon icon={activeStep === steps.length - 1 ? 'mdi:check' : 'mdi:arrow-right'} />}
+            endIcon={<i className={activeStep === steps.length - 1 ? 'ri-check-line' : 'ri-arrow-right-line'} />}
           >
             {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
           </Button>

@@ -1,3 +1,5 @@
+'use client'
+
 // Next Imports
 import Link from 'next/link'
 
@@ -17,9 +19,6 @@ import type { TeamsTabType } from '@/types/pages/profileTypes'
 
 // Component Imports
 import OptionMenu from '@core/components/option-menu'
-
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
 
 // Style Import
 import styles from './styles.module.css'
@@ -41,7 +40,7 @@ const Teams = ({ data }: { data?: TeamsTabType[] }) => {
                     </div>
                     <div className='flex items-center'>
                       <IconButton size='small'>
-                        <Icon icon='mdi:star-outline' />
+                        <i className='ri-star-line' />
                       </IconButton>
                       <OptionMenu
                         options={[

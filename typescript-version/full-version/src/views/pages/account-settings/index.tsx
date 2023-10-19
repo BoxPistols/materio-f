@@ -1,94 +1,35 @@
 'use client'
 
 // React Imports
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import type { SyntheticEvent, ReactElement } from 'react'
-
-// Next Imports
-import { useRouter } from 'next/navigation'
 
 // MUI Imports
 import Grid from '@mui/material/Grid'
 import Tab from '@mui/material/Tab'
 import TabContext from '@mui/lab/TabContext'
-import MuiTabList from '@mui/lab/TabList'
-import { styled } from '@mui/material/styles'
 import TabPanel from '@mui/lab/TabPanel'
-import Typography from '@mui/material/Typography'
-import CircularProgress from '@mui/material/CircularProgress'
-import type { TabListProps } from '@mui/lab/TabList'
-
-// Type Imports
-import type { PricingPlanType } from '@/types/pages/pricingTypes'
-
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
 
 // Component Imports
-import AccountTab from './account'
-import SecurityTab from './security'
-import BillingPlansTab from './billing-plans'
-import NotificationsTab from './notifications'
-import ConnectionsTab from './connections'
+import CustomTabList from '@core/components/mui/TabList'
 
-const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
-  '& .MuiTabs-indicator': {
-    display: 'none'
-  },
-  '& .Mui-selected': {
-    backgroundColor: theme.palette.primary.main,
-    color: `${theme.palette.common.white} !important`
-  },
-  '& .MuiTab-root': {
-    minHeight: 38,
-    minWidth: 130,
-    borderRadius: theme.shape.borderRadius
-  }
-}))
-
-const tabContentList = (data: PricingPlanType[]): { [key: string]: ReactElement } => ({
-  account: <AccountTab />,
-  security: <SecurityTab />,
-  'billing-plans': <BillingPlansTab data={data} />,
-  notifications: <NotificationsTab />,
-  connections: <ConnectionsTab />
-})
-
-const AccountSettings = ({ tab, data }: { tab: string; data: PricingPlanType[] }) => {
+const AccountSettings = ({ tabContentList }: { tabContentList: { [key: string]: ReactElement } }) => {
   // States
-  const [activeTab, setActiveTab] = useState(tab)
-
-  const [loading, setLoading] = useState<boolean>(true)
-
-  // Hooks
-  const router = useRouter()
+  const [activeTab, setActiveTab] = useState('account')
 
   const handleChange = (event: SyntheticEvent, value: string) => {
-    setLoading(true)
-    const pathname = `/pages/account-settings/${value.toLowerCase()}`
-
-    router.push(pathname)
+    setActiveTab(value)
   }
-
-  useEffect(() => {
-    if (data) {
-      setLoading(false)
-    }
-    if (tab && tab !== activeTab) {
-      setActiveTab(tab)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tab])
 
   return (
     <Grid container>
       <Grid item xs={12}>
         <TabContext value={activeTab}>
-          <TabList onChange={handleChange} variant='scrollable'>
+          <CustomTabList onChange={handleChange} variant='scrollable' pill='true'>
             <Tab
               label={
                 <div className='flex items-center'>
-                  <Icon icon='mdi:account-outline' />
+                  <i className='ri-user-3-line' />
                   Account
                 </div>
               }
@@ -97,7 +38,7 @@ const AccountSettings = ({ tab, data }: { tab: string; data: PricingPlanType[] }
             <Tab
               label={
                 <div className='flex items-center'>
-                  <Icon icon='mdi:lock-open-outline' />
+                  <i className='ri-lock-unlock-line' />
                   Security
                 </div>
               }
@@ -106,7 +47,7 @@ const AccountSettings = ({ tab, data }: { tab: string; data: PricingPlanType[] }
             <Tab
               label={
                 <div className='flex items-center'>
-                  <Icon icon='mdi:bookmark-outline' />
+                  <i className='ri-bookmark-line' />
                   Billing & Plans
                 </div>
               }
@@ -115,7 +56,7 @@ const AccountSettings = ({ tab, data }: { tab: string; data: PricingPlanType[] }
             <Tab
               label={
                 <div className='flex items-center'>
-                  <Icon icon='mdi:bell-outline' />
+                  <i className='ri-notification-3-line' />
                   Notifications
                 </div>
               }
@@ -124,24 +65,17 @@ const AccountSettings = ({ tab, data }: { tab: string; data: PricingPlanType[] }
             <Tab
               label={
                 <div className='flex items-center'>
-                  <Icon icon='mdi:link' />
+                  <i className='ri-link' />
                   Connections
                 </div>
               }
               value='connections'
             />
-          </TabList>
+          </CustomTabList>
           <Grid item xs={12}>
-            {loading ? (
-              <div className='d-flex align-items-center flex-column'>
-                <CircularProgress />
-                <Typography>Loading...</Typography>
-              </div>
-            ) : (
-              <TabPanel value={activeTab} className='p-0'>
-                {tabContentList(data)[activeTab]}
-              </TabPanel>
-            )}
+            <TabPanel value={activeTab} className='p-0'>
+              {tabContentList[activeTab]}
+            </TabPanel>
           </Grid>
         </TabContext>
       </Grid>

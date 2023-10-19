@@ -1,3 +1,5 @@
+'use client'
+
 // React Imports
 import { useState } from 'react'
 import type { ReactElement } from 'react'
@@ -9,9 +11,6 @@ import CardHeader from '@mui/material/CardHeader'
 // Third-party Imports
 import classnames from 'classnames'
 import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
-
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
 
 // Style Imports
 import styles from './styles.module.css'
@@ -59,42 +58,42 @@ const recentDeviceData: RecentDeviceDataType[] = [
     device: 'HP Spectre 360',
     date: '10, Sept 20:07',
     browserName: 'Chrome on Windows',
-    browserIcon: <Icon icon='mdi:microsoft-windows' />
+    browserIcon: <i className='ri-windows-fill' />
   },
   {
     location: 'Australia',
     device: 'iPhone 12x',
     date: '13, Sept 10:10',
     browserName: 'Chrome on iPhone',
-    browserIcon: <Icon icon='mdi:cellphone' />
+    browserIcon: <i className='ri-cellphone-fill' />
   },
   {
     location: 'Dubai',
     device: 'Oneplus 9 Pro',
     date: '14, Sept 15:15',
     browserName: 'Chrome on Android',
-    browserIcon: <Icon icon='mdi:android' />
+    browserIcon: <i className='ri-android-fill' />
   },
   {
     location: 'India',
     device: 'Apple iMac',
     date: '16, Sept 16:17',
     browserName: 'Chrome on MacOS',
-    browserIcon: <Icon icon='mdi:apple' />
+    browserIcon: <i className='ri-apple-fill' />
   },
   {
     location: 'Switzerland',
     device: 'HP Spectre 360',
     date: '20, Sept 21:01',
     browserName: 'Chrome on Windows',
-    browserIcon: <Icon icon='mdi:microsoft-windows' />
+    browserIcon: <i className='ri-windows-fill' />
   },
   {
     location: 'Dubai',
     device: 'Oneplus 9 Pro',
     date: '21, Sept 12:22',
     browserName: 'Chrome on Android',
-    browserIcon: <Icon icon='mdi:android' />
+    browserIcon: <i className='ri-android-fill' />
   }
 ]
 

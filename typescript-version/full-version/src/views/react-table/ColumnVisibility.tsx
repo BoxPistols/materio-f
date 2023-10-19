@@ -7,7 +7,6 @@ import { useState } from 'react'
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import Button from '@mui/material/Button'
-import CardContent from '@mui/material/CardContent'
 
 // Third-party Imports
 import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
@@ -16,8 +15,7 @@ import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '
 import type { DataType } from './data'
 
 // Style Imports
-import commonStyles from './styles.module.css'
-import styles from '@core/styles/libs/reactTables.module.css'
+import styles from '@core/styles/table.module.css'
 
 // Data Imports
 import defaultData from './data'
@@ -26,34 +24,36 @@ import defaultData from './data'
 const columnHelper = createColumnHelper<DataType>()
 
 const defaultColumns = [
-  columnHelper.accessor('full_name', {
+  columnHelper.accessor('fullName', {
     cell: info => info.getValue(),
-    header: () => <div className={commonStyles.nameColumn}>Name</div>
+    header: 'Name'
   }),
   columnHelper.accessor('email', {
     cell: info => info.getValue(),
-    header: () => <div className={commonStyles.emailColumn}>Email</div>
+    header: 'Email'
   }),
   columnHelper.accessor('start_date', {
     cell: info => info.getValue(),
-    header: () => <div className={commonStyles.dateColumn}>Date</div>
+    header: 'Date'
   }),
   columnHelper.accessor('experience', {
     cell: info => info.getValue(),
-    header: () => <div className={commonStyles.experienceColumn}>Experience</div>
+    header: 'Experience'
   }),
   columnHelper.accessor('age', {
     cell: info => info.getValue(),
-    header: () => <div className={commonStyles.ageColumn}>Age</div>
+    header: 'Age'
   })
 ]
 
 const ColumnVisibility = () => {
+  // States
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [data, setData] = useState(() => defaultData)
   const [columns] = useState<typeof defaultColumns>(() => [...defaultColumns])
   const [columnVisibility, setColumnVisibility] = useState({})
 
+  // Hooks
   const table = useReactTable({
     data,
     columns,
@@ -77,35 +77,33 @@ const ColumnVisibility = () => {
           </Button>
         }
       />
-      <CardContent>
-        <div className='overflow-x-auto'>
-          <table className={styles.table}>
-            <thead>
-              {table.getHeaderGroups().map(headerGroup => (
-                <tr key={headerGroup.id} className={styles.tr}>
-                  {headerGroup.headers.map(header => (
-                    <th key={header.id} className={styles.th}>
-                      {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
-                    </th>
+      <div className='overflow-x-auto'>
+        <table className={styles.table}>
+          <thead className={styles.thead}>
+            {table.getHeaderGroups().map(headerGroup => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map(header => (
+                  <th key={header.id}>
+                    {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody className={styles.tbody}>
+            {table
+              .getRowModel()
+              .rows.slice(0, 10)
+              .map(row => (
+                <tr key={row.id}>
+                  {row.getVisibleCells().map(cell => (
+                    <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
                   ))}
                 </tr>
               ))}
-            </thead>
-            <tbody>
-              {table
-                .getRowModel()
-                .rows.slice(0, 10)
-                .map(row => (
-                  <tr key={row.id} className={styles.tr}>
-                    {row.getVisibleCells().map(cell => (
-                      <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
-                    ))}
-                  </tr>
-                ))}
-            </tbody>
-          </table>
-        </div>
-      </CardContent>
+          </tbody>
+        </table>
+      </div>
     </Card>
   )
 }

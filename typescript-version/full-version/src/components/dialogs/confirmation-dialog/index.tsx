@@ -1,5 +1,7 @@
+'use client'
+
 // React Imports
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 
 // MUI Imports
 import Dialog from '@mui/material/Dialog'
@@ -7,20 +9,30 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import type { Theme } from '@mui/material'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
+// Third-party Imports
+import classnames from 'classnames'
 
-type Props = {
+// Style Imports
+import styles from '@components/dialogs/styles.module.css'
+
+type ConfirmationType = 'delete-account' | 'unsubscribe' | 'suspend-account'
+
+type ConfirmationDialogProps = {
   open: boolean
   setOpen: (open: boolean) => void
-  type: 'delete-account' | 'unsubscribe'
+  type: ConfirmationType
 }
 
-const ConfirmationDialog = ({ open, setOpen, type }: Props) => {
+const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) => {
   // States
   const [secondDialog, setSecondDialog] = useState(false)
   const [userInput, setUserInput] = useState(false)
+
+  // Hooks
+  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   const handleSecondDialogClose = () => {
     setSecondDialog(false)
@@ -33,20 +45,37 @@ const ConfirmationDialog = ({ open, setOpen, type }: Props) => {
     setOpen(false)
   }
 
+  const Wrapper = type === 'suspend-account' ? 'div' : Fragment
+
   return (
     <>
       <Dialog fullWidth maxWidth='xs' open={open} onClose={() => setOpen(false)}>
-        <DialogContent className='flex items-center flex-col text-center'>
-          <Icon icon='mdi:alert-circle-outline' fontSize='5.5rem' />
-          <Typography>
-            {type === 'delete-account'
-              ? 'Are you sure you want to deactivate your account?'
-              : 'Are you sure to cancel your subscription?'}
-          </Typography>
+        <DialogContent
+          className={classnames('flex items-center flex-col text-center', styles.dialogTitle, {
+            [styles.smDialogTitle]: isBelowSmScreen
+          })}
+        >
+          <i className='ri-error-warning-line text-[88px]' />
+          <Wrapper
+            {...(type === 'suspend-account' && {
+              className: 'flex flex-col items-center gap-5'
+            })}
+          >
+            <Typography>
+              {type === 'delete-account' && 'Are you sure you want to deactivate your account?'}
+              {type === 'unsubscribe' && 'Are you sure to cancel your subscription?'}
+              {type === 'suspend-account' && 'Are you sure?'}
+            </Typography>
+            {type === 'suspend-account' && <Typography>You won&#39;t be able to revert user!</Typography>}
+          </Wrapper>
         </DialogContent>
-        <DialogActions className='gap-2 justify-center'>
+        <DialogActions
+          className={classnames('gap-2 justify-center', styles.dialogActions, {
+            [styles.smDialogActions]: isBelowSmScreen
+          })}
+        >
           <Button variant='contained' onClick={() => handleConfirmation(true)}>
-            Yes
+            {type === 'suspend-account' ? 'Yes, Suspend User!' : 'Yes'}
           </Button>
           <Button
             variant='outlined'
@@ -62,22 +91,43 @@ const ConfirmationDialog = ({ open, setOpen, type }: Props) => {
 
       {/* Delete Account Dialog */}
       <Dialog open={secondDialog} onClose={handleSecondDialogClose}>
-        <DialogContent className='flex items-center flex-col text-center'>
-          <Icon icon={userInput ? 'mdi:check-circle-outline' : 'mdi:close-circle-outline'} fontSize='5.5rem' />
-          <Typography>
-            {userInput ? `${type === 'delete-account' ? 'Deactivated' : 'Unsubscribed'}` : 'Cancelled'}
-          </Typography>
+        <DialogContent
+          className={classnames('flex items-center flex-col text-center', styles.dialogTitle, {
+            [styles.smDialogTitle]: isBelowSmScreen
+          })}
+        >
+          <i
+            className={classnames('text-[88px]', {
+              'ri-checkbox-circle-line': userInput,
+              'ri-close-circle-line': !userInput
+            })}
+          />
           <Typography>
             {userInput
-              ? `${
-                  type === 'delete-account'
-                    ? 'Your account has been deactivated successfully.'
-                    : 'Your subscription cancelled successfully.'
-                }`
-              : `${type === 'delete-account' ? 'Account Deactivation Cancelled!' : 'Unsubscription Cancelled!!'}`}
+              ? `${type === 'delete-account' ? 'Deactivated' : type === 'unsubscribe' ? 'Unsubscribed' : 'Suspended!'}`
+              : 'Cancelled'}
+          </Typography>
+          <Typography>
+            {userInput ? (
+              <>
+                {type === 'delete-account' && 'Your account has been deactivated successfully.'}
+                {type === 'unsubscribe' && 'Your subscription cancelled successfully.'}
+                {type === 'suspend-account' && 'User has been suspended.'}
+              </>
+            ) : (
+              <>
+                {type === 'delete-account' && 'Account Deactivation Cancelled!'}
+                {type === 'unsubscribe' && 'Unsubscription Cancelled!!'}
+                {type === 'suspend-account' && 'Cancelled Suspension :)'}
+              </>
+            )}
           </Typography>
         </DialogContent>
-        <DialogActions className='justify-center'>
+        <DialogActions
+          className={classnames('justify-center', styles.dialogActions, {
+            [styles.smDialogActions]: isBelowSmScreen
+          })}
+        >
           <Button variant='contained' color='success' onClick={handleSecondDialogClose}>
             Ok
           </Button>

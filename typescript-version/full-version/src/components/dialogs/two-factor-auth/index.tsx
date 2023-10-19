@@ -1,9 +1,6 @@
 // React Imports
 import { useState } from 'react'
 
-// Next Imports
-import { usePathname } from 'next/navigation'
-
 // MUI Imports
 import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
@@ -23,32 +20,30 @@ import type { Theme } from '@mui/material/styles'
 // Third-party Imports
 import classnames from 'classnames'
 
-// Util Imports
-import { getLocale } from '@/utils/get-locale'
-import { getDirection } from '@/utils/get-direction'
-
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
+// Type Imports
+import type { Direction } from '@core/types'
 
 // Style Imports
 import styles from './styles.module.css'
 import globalDialogStyles from '@components/dialogs/styles.module.css'
 
-type Props = {
+type TwoFactorAuthProps = {
   open: boolean
   setOpen: (open: boolean) => void
+  direction: Direction
 }
 
 const SMSDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) => {
   return (
     <>
       <DialogTitle
+        variant='h5'
         className={classnames(globalDialogStyles.dialogTitle, {
           [globalDialogStyles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Verify Your Mobile Number for SMS
-        <Typography component='span' className='flex flex-col'>
+        <Typography component='span' variant='body2' className='flex flex-col'>
           Enter your mobile phone number with country code and we will send you a verification code.
         </Typography>
       </DialogTitle>
@@ -58,7 +53,7 @@ const SMSDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
         })}
       >
         <IconButton className={styles.closeIcon} onClick={handleAuthDialogClose}>
-          <Icon icon='mdi:close' />
+          <i className='ri-close-line' />
         </IconButton>
 
         <TextField
@@ -83,7 +78,7 @@ const SMSDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
           color='success'
           variant='contained'
           type='submit'
-          endIcon={<Icon icon='mdi:check' />}
+          endIcon={<i className='ri-check-line' />}
           onClick={handleAuthDialogClose}
         >
           Submit
@@ -109,11 +104,11 @@ const AppDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
         })}
       >
         <IconButton className={styles.closeIcon} onClick={handleAuthDialogClose}>
-          <Icon icon='mdi:close' />
+          <i className='ri-close-line' />
         </IconButton>
         <div className='flex flex-col gap-2'>
-          <Typography>Authenticator Apps</Typography>
-          <Typography>
+          <Typography variant='h6'>Authenticator Apps</Typography>
+          <Typography variant='body2'>
             Using an authenticator app like Google Authenticator, Microsoft Authenticator, Authy, or 1Password, scan the
             QR code. It will generate a 6 digit code for you to enter below.
           </Typography>
@@ -141,7 +136,7 @@ const AppDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
           color='success'
           variant='contained'
           type='submit'
-          endIcon={<Icon icon='mdi:check' />}
+          endIcon={<i className='ri-check-line' />}
           onClick={handleAuthDialogClose}
         >
           Submit
@@ -151,16 +146,13 @@ const AppDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
   )
 }
 
-const TwoFactorAuth = ({ open, setOpen }: Props) => {
+const TwoFactorAuth = ({ open, setOpen, direction }: TwoFactorAuthProps) => {
   // States
   const [authType, setAuthType] = useState<'app' | 'sms'>('app')
   const [showAuthDialog, setShowAuthDialog] = useState<boolean>(false)
 
   // Hooks
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-  const pathname = usePathname()
-  const locale = getLocale(pathname)
-  const direction = getDirection(locale)
 
   const handleClose = () => {
     setOpen(false)
@@ -179,18 +171,19 @@ const TwoFactorAuth = ({ open, setOpen }: Props) => {
     }
   }
 
-  const arrowIcon = direction === 'ltr' ? 'mdi:arrow-right' : 'mdi:arrow-left'
+  const arrowIcon = direction === 'ltr' ? 'ri-arrow-right-line' : 'ri-arrow-left-line'
 
   return (
     <>
       <Dialog fullWidth maxWidth='md' scroll='body' open={open} onClose={() => setOpen(false)}>
         <DialogTitle
+          variant='h5'
           className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
             [globalDialogStyles.smDialogTitle]: isBelowSmScreen
           })}
         >
-          Two Factor Authentication
-          <Typography component='span' className='flex flex-col text-center'>
+          Select Authentication Method
+          <Typography component='span' variant='body2' className='flex flex-col text-center'>
             You also need to select a method by which the proxy authenticates to the directory serve.
           </Typography>
         </DialogTitle>
@@ -200,7 +193,7 @@ const TwoFactorAuth = ({ open, setOpen }: Props) => {
           })}
         >
           <IconButton onClick={handleClose} className={styles.closeIcon}>
-            <Icon icon='mdi:close' />
+            <i className='ri-close-line' />
           </IconButton>
           <Grid container spacing={6}>
             <Grid item xs={12}>
@@ -219,10 +212,12 @@ const TwoFactorAuth = ({ open, setOpen }: Props) => {
                     'flex-col !text-center': isBelowSmScreen
                   })}
                 >
-                  <Icon icon='mdi:cog-outline' fontSize='2.375rem' />
+                  <i className='ri-settings-4-line text-[38px]' />
                   <div className='flex flex-col gap-2'>
-                    <Typography className={styles.text}>Authenticator Apps</Typography>
-                    <Typography className={styles.text}>
+                    <Typography variant='body1' className={styles.text}>
+                      Authenticator Apps
+                    </Typography>
+                    <Typography variant='body2' className={styles.text}>
                       Get code from an app like Google Authenticator or Microsoft Authenticator.
                     </Typography>
                   </div>
@@ -241,10 +236,12 @@ const TwoFactorAuth = ({ open, setOpen }: Props) => {
                     'flex-col !text-center': isBelowSmScreen
                   })}
                 >
-                  <Icon icon='mdi:message-outline' fontSize='2.375rem' />
+                  <i className='ri-message-2-line text-[38px]' />
                   <div className='flex flex-col gap-2'>
-                    <Typography className={styles.text}>SMS</Typography>
-                    <Typography className={styles.text}>
+                    <Typography variant='body1' className={styles.text}>
+                      SMS
+                    </Typography>
+                    <Typography variant='body2' className={styles.text}>
                       We will send a code via SMS if you need to use your backup login method.
                     </Typography>
                   </div>
@@ -260,7 +257,7 @@ const TwoFactorAuth = ({ open, setOpen }: Props) => {
         >
           <Button
             variant='contained'
-            endIcon={<Icon icon={arrowIcon} />}
+            endIcon={<i className={arrowIcon} />}
             onClick={() => {
               setOpen(false)
               setShowAuthDialog(true)

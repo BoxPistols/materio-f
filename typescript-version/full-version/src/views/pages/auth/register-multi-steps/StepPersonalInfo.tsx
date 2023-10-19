@@ -9,9 +9,6 @@ import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
 const StepPersonalInfo = ({ handleNext, handlePrev }: { handleNext: () => void; handlePrev: () => void }) => {
   return (
     <>
@@ -64,11 +61,11 @@ const StepPersonalInfo = ({ handleNext, handlePrev }: { handleNext: () => void; 
             variant='contained'
             color='secondary'
             onClick={handlePrev}
-            startIcon={<Icon icon='mdi:chevron-left' />}
+            startIcon={<i className='ri-arrow-left-s-line' />}
           >
             Previous
           </Button>
-          <Button variant='contained' onClick={handleNext} endIcon={<Icon icon='mdi:chevron-right' />}>
+          <Button variant='contained' onClick={handleNext} endIcon={<i className='ri-arrow-right-s-line' />}>
             Next
           </Button>
         </Grid>

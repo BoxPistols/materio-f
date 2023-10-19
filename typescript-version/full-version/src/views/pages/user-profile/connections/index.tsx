@@ -1,3 +1,5 @@
+'use client'
+
 // Next Imports
 import Link from 'next/link'
 
@@ -15,9 +17,6 @@ import type { ConnectionsTabType } from '@/types/pages/profileTypes'
 
 // Component Imports
 import OptionMenu from '@core/components/option-menu'
-
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
 
 // Style Imports
 import commonStyles from '@views/pages/user-profile/styles.module.css'
@@ -67,14 +66,12 @@ const Connections = ({ data }: { data?: ConnectionsTabType[] }) => {
                   <div className='flex items-center gap-4'>
                     <Button
                       variant={item.isConnected ? 'contained' : 'outlined'}
-                      startIcon={
-                        <Icon icon={item.isConnected ? 'mdi:account-check-outline' : 'mdi:account-plus-outline'} />
-                      }
+                      startIcon={<i className={item.isConnected ? 'ri-user-follow-line' : 'ri-user-add-line'} />}
                     >
                       {item.isConnected ? 'connected' : 'connect'}
                     </Button>
                     <Button variant='outlined' color='secondary'>
-                      <Icon icon='mdi:email-outline' />
+                      <i className='ri-mail-line' />
                     </Button>
                   </div>
                 </CardContent>

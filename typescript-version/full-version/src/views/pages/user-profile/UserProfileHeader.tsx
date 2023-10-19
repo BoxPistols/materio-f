@@ -15,9 +15,6 @@ import classnames from 'classnames'
 // Type Imports
 import type { ProfileHeaderType } from '@/types/pages/profileTypes'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
 // Style Imports
 import styles from './styles.module.css'
 
@@ -48,15 +45,15 @@ const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
               })}
             >
               <div className='flex items-center'>
-                {data?.designationIcon && <Icon icon={data?.designationIcon} />}
+                {data?.designationIcon && <i className={data?.designationIcon} />}
                 <Typography>{data?.designation}</Typography>
               </div>
               <div className='flex items-center'>
-                <Icon icon='mdi:map-marker-outline' />
+                <i className='ri-map-pin-2-line' />
                 <Typography>{data?.location}</Typography>
               </div>
               <div className='flex items-center'>
-                <Icon icon='mdi:calendar-blank-outline' />
+                <i className='ri-calendar-line' />
                 <Typography>{data?.joiningDate}</Typography>
               </div>
             </div>

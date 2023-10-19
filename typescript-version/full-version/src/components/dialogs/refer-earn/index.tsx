@@ -21,17 +21,14 @@ import type { Theme } from '@mui/material/styles'
 // Third-party Imports
 import classnames from 'classnames'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
 // Config Imports
-import themeConfig from '@/configs/themeConfig'
+import themeConfig from '@configs/themeConfig'
 
 // Style Imports
 import styles from './styles.module.css'
 import globalDialogStyles from '@components/dialogs/styles.module.css'
 
-type Props = {
+type ReferEarnProps = {
   open: boolean
   setOpen: (open: boolean) => void
 }
@@ -44,35 +41,36 @@ type Options = {
 
 const options: Options[] = [
   {
-    icon: 'mdi:send-variant-outline',
+    icon: 'ri-send-plane-2-line',
     title: 'Send Invitation 👍🏻',
     subtitle: 'Send your referral link to your friend'
   },
   {
-    icon: 'mdi:clipboard-text',
+    icon: 'ri-clipboard-line',
     title: 'Registration 😎',
     subtitle: 'Let them register to our services'
   },
   {
-    icon: 'mdi:gift-outline',
+    icon: 'ri-gift-line',
     title: 'Free Trial  🎉',
     subtitle: 'Your friend will get 30 days free trial'
   }
 ]
 
-const ReferEarn = ({ open, setOpen }: Props) => {
+const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
   // Hooks
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   return (
     <Dialog fullWidth open={open} onClose={() => setOpen(false)} maxWidth='md' scroll='body'>
       <DialogTitle
+        variant='h5'
         className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
           [globalDialogStyles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Refer & Earn
-        <Typography component='span' className='flex flex-col text-center'>
+        <Typography component='span' variant='body2' className='flex flex-col text-center'>
           Invite your friend to {themeConfig.templateName}, if they sign up, you and your friend will get 30 days free
           trial
         </Typography>
@@ -83,7 +81,7 @@ const ReferEarn = ({ open, setOpen }: Props) => {
         })}
       >
         <IconButton onClick={() => setOpen(false)} className={styles.closeIcon}>
-          <Icon icon='mdi:close' />
+          <i className='ri-close-line' />
         </IconButton>
         <Grid container spacing={6}>
           {options?.map((option, index) => (
@@ -91,14 +89,19 @@ const ReferEarn = ({ open, setOpen }: Props) => {
               <div className='flex items-center flex-col gap-4'>
                 <Avatar className={classnames(styles.avatarIcon, { [styles.smAvatarIcon]: isBelowSmScreen })}>
                   {typeof option.icon === 'string' ? (
-                    <Icon icon={option.icon} fontSize={isBelowSmScreen ? '2rem' : '2.5rem'} />
+                    <i
+                      className={classnames(option.icon, {
+                        'text-[32px]': isBelowSmScreen,
+                        'text-[40px]': !isBelowSmScreen
+                      })}
+                    />
                   ) : (
                     option.icon
                   )}
                 </Avatar>
                 <div className='flex flex-col gap-2 text-center'>
-                  <Typography>{option.title}</Typography>
-                  <Typography>{option.subtitle}</Typography>
+                  <Typography variant='body1'>{option.title}</Typography>
+                  <Typography variant='body2'>{option.subtitle}</Typography>
                 </div>
               </div>
             </Grid>
@@ -106,7 +109,7 @@ const ReferEarn = ({ open, setOpen }: Props) => {
         </Grid>
         <Divider className='mlb-6' />
         <div className='flex flex-col gap-5'>
-          <Typography>Invite your friends</Typography>
+          <Typography variant='h6'>Invite your friends</Typography>
           <div className='flex flex-col gap-2 flex-wrap'>
             <InputLabel htmlFor='refer-email' className='inline-flex whitespace-break-spaces'>
               Enter your friend&#39;s email address and invite them to join {themeConfig.templateName} 😍
@@ -120,7 +123,7 @@ const ReferEarn = ({ open, setOpen }: Props) => {
           </div>
         </div>
         <div className='flex flex-col gap-5'>
-          <Typography>Share the referral link</Typography>
+          <Typography variant='h6'>Share the referral link</Typography>
           <div className='flex flex-col gap-2'>
             <InputLabel htmlFor='refer-social' className='inline-flex whitespace-break-spaces'>
               You can also copy and send it or share it on your social media. 🚀
@@ -143,13 +146,13 @@ const ReferEarn = ({ open, setOpen }: Props) => {
               />
               <div className='flex items-center'>
                 <Button className={styles.facebookIcon}>
-                  <Icon icon='mdi:facebook' />
+                  <i className='ri-facebook-circle-fill' />
                 </Button>
                 <Button className={styles.twitterIcon}>
-                  <Icon icon='mdi:twitter' />
+                  <i className='ri-twitter-fill' />
                 </Button>
                 <Button className={styles.linkedinIcon}>
-                  <Icon icon='mdi:linkedin' />
+                  <i className='ri-linkedin-box-fill' />
                 </Button>
               </div>
             </div>

@@ -9,13 +9,13 @@ import CardContent from '@mui/material/CardContent'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
+// Type Imports
+import type { Direction } from '@core/types'
+
 // Component Imports
 import CreateApp from '@components/dialogs/create-app'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
-const DialogCreateApp = () => {
+const DialogCreateApp = ({ direction }: { direction: Direction }) => {
   // States
   const [open, setOpen] = useState(false)
 
@@ -23,7 +23,7 @@ const DialogCreateApp = () => {
     <>
       <Card>
         <CardContent className='flex flex-col items-center text-center gap-4'>
-          <Icon icon='mdi:cube-outline' fontSize='2rem' />
+          <i className='ri-box-3-line text-[32px]' />
           <Typography>Create App</Typography>
           <Typography>
             Provide application data with this form to create the app dialog popup example, easy to use in any page.
@@ -32,7 +32,7 @@ const DialogCreateApp = () => {
             Show
           </Button>
         </CardContent>
-        <CreateApp open={open} setOpen={setOpen} />
+        <CreateApp open={open} setOpen={setOpen} direction={direction} />
       </Card>
     </>
   )

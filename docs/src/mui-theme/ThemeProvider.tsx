@@ -9,11 +9,13 @@ import { useColorMode } from "@docusaurus/theme-common/internal"
 import {
   Experimental_CssVarsProvider as CssVarsProvider,
   experimental_extendTheme as extendTheme,
-  StyledEngineProvider
+  StyledEngineProvider,
+  responsiveFontSizes
 } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import type {} from '@mui/material/themeCssVarsAugmentation'
+import type {} from '@mui/lab/themeAugmentation';
 
 // Type Imports
 import { MainColor } from "@core/types";
@@ -43,7 +45,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   // Hooks
   const { colorMode } = useColorMode()
 
-  const theme = extendTheme({
+  let theme = extendTheme({
     components: overrides('default'),
     colorSchemes: colorSchemes(mainColors),
     ...spacing,
@@ -51,7 +53,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
       borderRadius: 6,
       customBorderRadius: {
         xs: 2,
-        sm: 5,
+        sm: 4,
         md: 6,
         lg: 8,
         xl: 10
@@ -61,6 +63,8 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     customShadows: customShadows(colorMode, mainColors),
     typography
   });
+
+  theme = responsiveFontSizes(theme)
 
   return (
     <StyledEngineProvider injectFirst>

@@ -7,6 +7,9 @@ import { usePathname } from 'next/navigation'
 // MUI Imports
 import { useTheme } from '@mui/material/styles'
 
+// Type Imports
+import type { Dictionary } from '@core/types'
+
 // Component Imports from @menu-package
 import HorizontalNav, { Menu, SubMenu, MenuItem } from '@menu-package/horizontal-menu'
 import VerticalNavContent from './VerticalNavContent'
@@ -19,7 +22,6 @@ import useSettings from '@core/hooks/useSettings'
 
 // Util Imports
 import { getLocale } from '@/utils/get-locale'
-import { getDictionary } from '@/utils/get-dictionary'
 
 // import { generateHorizontalMenu } from '@/utils/menuUtils'
 
@@ -30,7 +32,7 @@ import verticalNavigationCustomStyles from '@core/styles/vertical/navigationCust
 // Menu Data Imports
 // import menuData from '@/data/navigation/HorizontalMenuData'
 
-const HorizontalMenu = () => {
+const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
   // Hooks
   const theme = useTheme()
   const pathName = usePathname()
@@ -38,9 +40,6 @@ const HorizontalMenu = () => {
 
   // Get locale from pathname
   const locale = getLocale(pathName)
-
-  // Get dictionary based on locale
-  const dictionary = getDictionary(locale)
 
   return (
     <HorizontalNav
@@ -77,17 +76,7 @@ const HorizontalMenu = () => {
           </SubMenu>
           <SubMenu label={dictionary['navigation'].user}>
             <MenuItem href={`/${locale}/apps/user/list`}>{dictionary['navigation'].list}</MenuItem>
-            <SubMenu label={dictionary['navigation'].view}>
-              <MenuItem href={`/${locale}/apps/user/view/overview`}>{dictionary['navigation'].overview}</MenuItem>
-              <MenuItem href={`/${locale}/apps/user/view/security`}>{dictionary['navigation'].security}</MenuItem>
-              <MenuItem href={`/${locale}/apps/user/view/billing-plans`}>
-                {dictionary['navigation'].billingPlans}
-              </MenuItem>
-              <MenuItem href={`/${locale}/apps/user/view/notifications`}>
-                {dictionary['navigation'].notifications}
-              </MenuItem>
-              <MenuItem href={`/${locale}/apps/user/view/connections`}>{dictionary['navigation'].connections}</MenuItem>
-            </SubMenu>
+            <MenuItem href={`/${locale}/apps/user/view`}>{dictionary['navigation'].view}</MenuItem>
           </SubMenu>
           <SubMenu label={dictionary['navigation'].rolesPermissions}>
             <MenuItem href={`/${locale}/apps/roles`}>{dictionary['navigation'].roles}</MenuItem>
@@ -95,27 +84,8 @@ const HorizontalMenu = () => {
           </SubMenu>
         </SubMenu>
         <SubMenu label={dictionary['navigation'].pages}>
-          <SubMenu label={dictionary['navigation'].userProfile}>
-            <MenuItem href={`/${locale}/pages/user-profile/profile`}>{dictionary['navigation'].profile}</MenuItem>
-            <MenuItem href={`/${locale}/pages/user-profile/teams`}>{dictionary['navigation'].teams}</MenuItem>
-            <MenuItem href={`/${locale}/pages/user-profile/projects`}>{dictionary['navigation'].projects}</MenuItem>
-            <MenuItem href={`/${locale}/pages/user-profile/connections`}>
-              {dictionary['navigation'].connections}
-            </MenuItem>
-          </SubMenu>
-          <SubMenu label={dictionary['navigation'].accountSettings}>
-            <MenuItem href={`/${locale}/pages/account-settings/account`}>{dictionary['navigation'].account}</MenuItem>
-            <MenuItem href={`/${locale}/pages/account-settings/security`}>{dictionary['navigation'].security}</MenuItem>
-            <MenuItem href={`/${locale}/pages/account-settings/billing-plans`}>
-              {dictionary['navigation'].billingPlans}
-            </MenuItem>
-            <MenuItem href={`/${locale}/pages/account-settings/notifications`}>
-              {dictionary['navigation'].notifications}
-            </MenuItem>
-            <MenuItem href={`/${locale}/pages/account-settings/connections`}>
-              {dictionary['navigation'].connections}
-            </MenuItem>
-          </SubMenu>
+          <MenuItem href={`/${locale}/pages/user-profile`}>{dictionary['navigation'].userProfile}</MenuItem>
+          <MenuItem href={`/${locale}/pages/account-settings`}>{dictionary['navigation'].accountSettings}</MenuItem>
           <MenuItem href={`/${locale}/pages/faq`}>{dictionary['navigation'].faq}</MenuItem>
           <MenuItem href={`/${locale}/pages/pricing`}>{dictionary['navigation'].pricing}</MenuItem>
           <SubMenu label={dictionary['navigation'].miscellaneous}>

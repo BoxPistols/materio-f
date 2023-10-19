@@ -9,11 +9,8 @@ import CardContent from '@mui/material/CardContent'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
-// Custom Imports
-import AddNewAddress from '@components/dialogs/add-new-address'
-
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
+// Component Imports
+import AddNewAddress from '@components/dialogs/add-edit-address'
 
 const DialogAddNewAddress = () => {
   // States
@@ -22,7 +19,7 @@ const DialogAddNewAddress = () => {
   return (
     <Card>
       <CardContent className='flex flex-col items-center text-center gap-4'>
-        <Icon icon='mdi:home-outline' fontSize='2rem' />
+        <i className='ri-home-4-line text-[32px]' />
         <Typography>Add New Address</Typography>
         <Typography>
           Ready to use form to collect user address data with validation and custom input support.
