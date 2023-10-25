@@ -82,7 +82,26 @@ const chip: Theme['components'] = {
           }
         }
       }
-    ]
+    ],
+    styleOverrides: {
+      root: ({ ownerState }) => ({
+        '& .MuiChip-deleteIcon': {
+          ...(ownerState.size === 'small'
+            ? {
+                fontSize: '1rem'
+              }
+            : {
+                fontSize: '1.25rem'
+              })
+        }
+      }),
+      iconMedium: {
+        fontSize: '1.25rem'
+      },
+      iconSmall: {
+        fontSize: '1rem'
+      }
+    }
   }
 }
 

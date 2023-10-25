@@ -14,6 +14,10 @@ import Button from '@mui/material/Button'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import CardContent from '@mui/material/CardContent'
 import type { Theme } from '@mui/material/styles'
+import type { ButtonProps } from '@mui/material/Button'
+
+// Third-party Imports
+import classnames from 'classnames'
 
 // Type Imports
 import type { CustomInputHorizontalData, CustomInputVerticalData } from '@core/components/custom-inputs/types'
@@ -23,8 +27,9 @@ import CustomInputHorizontal from '@core/components/custom-inputs/Horizontal'
 import CustomInputVertical from '@core/components/custom-inputs/Vertical'
 
 // Style Imports
-import styles from './styles.module.css'
-import AddEditAddress from '@/components/dialogs/add-edit-address'
+import commonStyles from '@/styles/common.module.css'
+import AddEditAddress from '@components/dialogs/add-edit-address'
+import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
 
 const data: CustomInputHorizontalData[] = [
   {
@@ -41,10 +46,10 @@ const data: CustomInputHorizontalData[] = [
         </Typography>
         <Divider />
         <div className='flex items-center'>
-          <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={styles.primary}>
+          <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={commonStyles.primary}>
             Edit
           </Typography>
-          <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={styles.primary}>
+          <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={commonStyles.primary}>
             Remove
           </Typography>
         </div>
@@ -64,10 +69,10 @@ const data: CustomInputHorizontalData[] = [
         </Typography>
         <Divider />
         <div className='flex items-center'>
-          <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={styles.primary}>
+          <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={commonStyles.primary}>
             Edit
           </Typography>
-          <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={styles.primary}>
+          <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={commonStyles.primary}>
             Remove
           </Typography>
         </div>
@@ -127,10 +132,14 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
   // States
   const [selectedOption, setSelectedOption] = useState<string>(initialSelectedOption)
   const [selectedSpeed, setSelectedSpeed] = useState<string>('standard')
-  const [show, setShow] = useState<boolean>(false)
 
   // Hooks
   const isBetweenSmAndLg = useMediaQuery((theme: Theme) => theme.breakpoints.between('sm', 'lg'))
+
+  const buttonProps: ButtonProps = {
+    variant: 'outlined',
+    children: 'Add New Address'
+  }
 
   const handleOptionChange = (prop: string | ChangeEvent<HTMLInputElement>) => {
     if (typeof prop === 'string') {
@@ -166,10 +175,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
               />
             ))}
           </Grid>
-          <Button variant='outlined' onClick={() => setShow(true)}>
-            Add new address
-          </Button>
-          <AddEditAddress open={show} setOpen={setShow} />
+          <OpenDialogOnElementClick element={Button} elementProps={buttonProps} dialog={AddEditAddress} />
         </div>
         <div className='flex flex-col items-start gap-4'>
           <Typography>Choose Delivery Speed</Typography>
@@ -197,7 +203,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
         </div>
       </Grid>
       <Grid item xs={12} lg={4}>
-        <div className={styles.border}>
+        <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
           <CardContent>
             <Typography className='font-medium'>Estimated Delivery Date</Typography>
             <div className='flex gap-2'>

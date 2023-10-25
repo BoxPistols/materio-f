@@ -26,6 +26,7 @@ import classnames from 'classnames'
 
 // Style Imports
 import styles from './styles.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 const products = [
   {
@@ -96,7 +97,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
           </Fade>
         </Collapse>
         <Typography>My Shopping Bag (2 Items)</Typography>
-        <div className={styles.border}>
+        <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
           {products.map((product, index) => (
             <div
               key={index}
@@ -113,7 +114,12 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                   <Typography>{product.productName}</Typography>
                   <div className='flex items-center'>
                     <Typography>Sold By:</Typography>
-                    <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={styles.primary}>
+                    <Typography
+                      href='/'
+                      component={Link}
+                      onClick={e => e.preventDefault()}
+                      className={commonStyles.primary}
+                    >
                       {product.soldBy}
                     </Typography>
                     {product.inStock ? (
@@ -136,7 +142,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                   })}
                 >
                   <div className='flex'>
-                    <Typography className={styles.primary}>{`$${product.price}`}</Typography>
+                    <Typography className={commonStyles.primary}>{`$${product.price}`}</Typography>
                     <Typography className='line-through'>{`/$${product.originalPrice}`}</Typography>
                   </div>
                   <Button variant='outlined' size='small'>
@@ -151,14 +157,19 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
           href='/'
           component={Link}
           onClick={e => e.preventDefault()}
-          className={classnames('flex items-center justify-between gap-4', styles.border, styles.primary)}
+          className={classnames(
+            'flex items-center justify-between gap-4',
+            commonStyles.border,
+            commonStyles.borderRadius,
+            commonStyles.primary
+          )}
         >
           Add more products from wishlist
           <i className='ri-arrow-right-s-line' />
         </Typography>
       </Grid>
       <Grid item xs={12} lg={4}>
-        <div className={styles.border}>
+        <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
           <CardContent>
             <Typography className='font-medium'>Offer</Typography>
             <div className='flex gap-4'>
@@ -167,14 +178,14 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                 Apply
               </Button>
             </div>
-            <div className={styles.giftWrap}>
+            <div className={classnames(styles.giftWrap, commonStyles.borderRadius)}>
               <Typography className='font-medium'>Buying gift for a loved one?</Typography>
               <Typography>Gift wrap and personalized message on card, Only for $2.</Typography>
               <Typography
                 href='/'
                 component={Link}
                 onClick={e => e.preventDefault()}
-                className={classnames('font-medium', styles.primary)}
+                className={classnames('font-medium', commonStyles.primary)}
               >
                 Add a gift wrap
               </Typography>
@@ -194,7 +205,7 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                   href='/'
                   component={Link}
                   onClick={e => e.preventDefault()}
-                  className={classnames('font-medium', styles.primary)}
+                  className={classnames('font-medium', commonStyles.primary)}
                 >
                   Apply Coupon
                 </Typography>

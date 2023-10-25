@@ -1,3 +1,5 @@
+'use client'
+
 // React Imports
 import { useState } from 'react'
 
@@ -25,6 +27,7 @@ import type { Direction } from '@core/types'
 
 // Style Imports
 import styles from './styles.module.css'
+import commonStyles from '@/styles/common.module.css'
 import globalDialogStyles from '@components/dialogs/styles.module.css'
 
 type TwoFactorAuthProps = {
@@ -203,7 +206,7 @@ const TwoFactorAuth = ({ open, setOpen, direction }: TwoFactorAuthProps) => {
                     setAuthType('app')
                   }
                 }}
-                className={classnames('cursor-pointer', styles.border, {
+                className={classnames('cursor-pointer', commonStyles.border, commonStyles.borderRadius, {
                   [styles.active]: authType === 'app'
                 })}
               >
@@ -214,9 +217,7 @@ const TwoFactorAuth = ({ open, setOpen, direction }: TwoFactorAuthProps) => {
                 >
                   <i className='ri-settings-4-line text-[38px]' />
                   <div className='flex flex-col gap-2'>
-                    <Typography variant='body1' className={styles.text}>
-                      Authenticator Apps
-                    </Typography>
+                    <Typography className={styles.text}>Authenticator Apps</Typography>
                     <Typography variant='body2' className={styles.text}>
                       Get code from an app like Google Authenticator or Microsoft Authenticator.
                     </Typography>
@@ -227,7 +228,7 @@ const TwoFactorAuth = ({ open, setOpen, direction }: TwoFactorAuthProps) => {
             <Grid item xs={12}>
               <div
                 onClick={() => setAuthType('sms')}
-                className={classnames('cursor-pointer', styles.border, {
+                className={classnames('cursor-pointer', commonStyles.border, commonStyles.borderRadius, {
                   [styles.active]: authType === 'sms'
                 })}
               >
@@ -238,9 +239,7 @@ const TwoFactorAuth = ({ open, setOpen, direction }: TwoFactorAuthProps) => {
                 >
                   <i className='ri-message-2-line text-[38px]' />
                   <div className='flex flex-col gap-2'>
-                    <Typography variant='body1' className={styles.text}>
-                      SMS
-                    </Typography>
+                    <Typography className={styles.text}>SMS</Typography>
                     <Typography variant='body2' className={styles.text}>
                       We will send a code via SMS if you need to use your backup login method.
                     </Typography>

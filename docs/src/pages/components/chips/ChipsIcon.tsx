@@ -4,28 +4,25 @@ import React from 'react'
 // MUI Imports
 import Chip from '@mui/material/Chip'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
 const ChipsIcon = () => {
   return (
     <div className='flex gap-4'>
       <Chip
-        label='Previous'
+        label='Low Battery'
         color='primary'
-        icon={<Icon icon='mdi:arrow-left-thin-circle-outline' fontSize='1.25rem' />} 
+        icon={<i className='ri-battery-line' />} 
       />
       <Chip
-        label='Play/Pause'
+        label='Charging'
         color='primary'
         variant='outlined'
-        icon={<Icon icon='mdi:play-pause' fontSize='1.25rem' />}
+        icon={<i className='ri-battery-charge-line' />}
       />
       <Chip
-        label='Next'
+        label='Full Battery'
         color='primary'
         variant='tonal'
-        icon={<Icon icon='mdi:arrow-right-thin-circle-outline' fontSize='1.25rem' />}
+        icon={<i className='ri-battery-fill' />}
       />
     </div>
   )

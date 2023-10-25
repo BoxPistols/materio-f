@@ -1,3 +1,8 @@
+html, body {
+  height: auto !important;
+  min-height: 100dvh;
+}
+
 h1 {
   font-weight: 600;
 }
@@ -50,4 +55,8 @@ hr:not([class]) {
 }
 .markdown li > p:not([class]) {
   margin-bottom: var(--ifm-list-paragraph-margin)
+}
+
+:where([class^='ri-']) {
+  font-size: 1.5rem;
 }

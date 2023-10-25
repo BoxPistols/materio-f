@@ -4,9 +4,9 @@
 import classnames from 'classnames'
 
 // Component Imports
-import Translation from '@components/layout/shared/Translation'
 import NavToggle from '@components/layout/horizontal/NavToggle'
-import ModeSwitcher from '@layouts/components/ModeSwitcher'
+import LanguageDropdown from '@components/layout/shared/LanguageDropdown'
+import ModeDropdown from '@components/layout/shared/ModeDropdown'
 import VerticalNavContent from '@components/layout/horizontal/VerticalNavContent'
 import HorizontalNav, { Menu, MenuItem, SubMenu } from '@menu-package/horizontal-menu'
 
@@ -50,8 +50,8 @@ const HorizontalNavbar = () => {
         </HorizontalNav>
         <div className='flex gap-4 items-center'>
           <Search className='mis-0' />
-          <Translation />
-          <ModeSwitcher />
+          <LanguageDropdown />
+          <ModeDropdown />
         </div>
       </div>
     </div>
