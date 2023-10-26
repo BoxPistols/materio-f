@@ -6,7 +6,6 @@ import type { SyntheticEvent } from 'react'
 import Grid from '@mui/material/Grid'
 import Tab from '@mui/material/Tab'
 import TabPanel from '@mui/lab/TabPanel'
-import Avatar from '@mui/material/Avatar'
 import TabContext from '@mui/lab/TabContext'
 import Accordion from '@mui/material/Accordion'
 import Typography from '@mui/material/Typography'
@@ -22,7 +21,12 @@ import classnames from 'classnames'
 import type { FaqType } from '@/types/pages/faqTypes'
 
 // Component Imports
+import CustomAvatar from '@core/components/mui/Avatar'
 import CustomTabList from '@core/components/mui/TabList'
+
+// Style Imports
+import styles from './styles.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 type props = {
   faqData: FaqType[]
@@ -63,7 +67,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
 
   return filteredData.length > 0 ? (
     <TabContext value={activeTab}>
-      <Grid container>
+      <Grid container spacing={6}>
         <Grid item xs={12} md={4} xl={3} className='flex flex-col items-center'>
           <CustomTabList orientation='vertical' onChange={handleChange} className='w-full' pill='true'>
             {filteredData.map((faq, index) => (
@@ -71,23 +75,23 @@ const FAQ = ({ faqData, searchValue }: props) => {
                 key={index}
                 label={faq.title}
                 value={faq.id}
-                icon={<i className={classnames(faq.icon, '!mbe-0')} />}
+                icon={<i className={classnames(faq.icon, '!mbe-0 mie-1.5 text-lg')} />}
                 className='flex-row justify-start'
               />
             ))}
           </CustomTabList>
-          {isAboveMdScreen && <img src='/illustration-john.png' alt='john image' />}
+          {isAboveMdScreen && <img src='/images/pages/illustration-john.png' alt='john image' className='w-60' />}
         </Grid>
         <Grid item xs={12} md={8} xl={9}>
           {filteredData.map((faq, index) => (
             <TabPanel key={index} value={faq.id} className='p-0'>
-              <div className='flex items-center gap-4'>
-                <Avatar variant='rounded'>
-                  <i className={faq.icon} />
-                </Avatar>
+              <div className='flex items-center gap-4 mbe-4'>
+                <CustomAvatar skin='light' variant='rounded' className={styles.avatarSize}>
+                  <i className={classnames(faq.icon, 'text-3xl')} />
+                </CustomAvatar>
                 <div>
-                  <Typography>{faq.title}</Typography>
-                  <Typography>{faq.subtitle}</Typography>
+                  <Typography variant='h6'>{faq.title}</Typography>
+                  <Typography className={commonStyles.textSecondary}>{faq.subtitle}</Typography>
                 </div>
               </div>
               <div>
@@ -100,7 +104,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
                       <Typography>{items.question}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                      <Typography>{items.answer}</Typography>
+                      <Typography variant='body2'>{items.answer}</Typography>
                     </AccordionDetails>
                   </Accordion>
                 ))}

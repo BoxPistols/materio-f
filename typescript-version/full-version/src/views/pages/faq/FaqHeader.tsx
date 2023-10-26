@@ -1,11 +1,12 @@
 // MUI Imports
 import Card from '@mui/material/Card'
+import { styled } from '@mui/material/styles'
 
 // import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import InputAdornment from '@mui/material/InputAdornment'
-import TextField from '@mui/material/TextField'
+import MuiTextField from '@mui/material/TextField'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import type { Theme } from '@mui/material/styles'
 
@@ -14,6 +15,13 @@ import classnames from 'classnames'
 
 // Style Imports
 import styles from './styles.module.css'
+
+// Styled TextField component
+const TextField = styled(MuiTextField)(({ theme }) => ({
+  '& .MuiOutlinedInput-root': {
+    backgroundColor: theme.palette.background.paper
+  }
+}))
 
 type Props = {
   searchValue: string
@@ -26,10 +34,14 @@ const FaqHeader = ({ searchValue, setSearchValue }: Props) => {
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   return (
-    <Card className='bg-cover' elevation={0}>
-      <CardContent className='flex flex-col items-center w-full text-center'>
-        <Typography>Hello, how can we help?</Typography>
-        <Typography>or choose a category to quickly find the help you need</Typography>
+    <Card className={classnames(styles.headerImage, 'bg-transparent bg-cover')} elevation={0}>
+      <CardContent className={classnames(styles.headerPadding, 'flex flex-col items-center w-full text-center pli-5')}>
+        <Typography variant='h5' color='primary' className='mbe-2.5'>
+          Hello, how can we help?
+        </Typography>
+        <Typography variant='body2' className='mbe-8'>
+          or choose a category to quickly find the help you need
+        </Typography>
         <TextField
           fullWidth
           className={classnames(styles.searchBar, {
@@ -43,7 +55,7 @@ const FaqHeader = ({ searchValue, setSearchValue }: Props) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position='start'>
-                <i className='ri-search-line' />
+                <i className='ri-search-line text-lg' />
               </InputAdornment>
             )
           }}

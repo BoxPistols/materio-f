@@ -9,3 +9,17 @@
 .inputWidth {
   max-inline-size: 55%;
 }
+
+.headerImage {
+  box-shadow: none;
+  background-image: url('/images/pages/faq-header.png');
+}
+
+.headerPadding {
+  padding-block: 4.5625rem 5.9375rem !important;
+}
+
+.avatarSize {
+  inline-size: 50px;
+  block-size: 50px;
+}

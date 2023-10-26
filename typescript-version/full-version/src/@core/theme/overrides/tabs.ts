@@ -55,6 +55,7 @@ const tabs: Theme['components'] = {
         lineHeight: 1.429,
         padding: theme.spacing(2.25, 5.5),
         minBlockSize: 38,
+        color: 'var(--mui-palette-text-primary)',
         '& > .MuiTab-iconWrapper': {
           fontSize: '1.125rem',
           ...(ownerState.iconPosition === 'start' && {

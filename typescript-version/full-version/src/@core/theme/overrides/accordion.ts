@@ -21,6 +21,9 @@ const accordion = (skin: Skin): Theme['components'] => ({
           : {
               '&:not(.Mui-expanded) + &:not(.Mui-expanded)': {
                 borderBlockStart: 0
+              },
+              '&:not(.Mui-expanded):has(+ &:not(.Mui-expanded))': {
+                borderBlockEnd: 0
               }
             }),
         '&:not(.Mui-expanded):has(+ .Mui-expanded)': {
@@ -54,6 +57,9 @@ const accordion = (skin: Skin): Theme['components'] => ({
       }),
       content: {
         margin: '0 !important'
+      },
+      expandIconWrapper: {
+        color: 'var(--mui-palette-text-primary)'
       }
     }
   },

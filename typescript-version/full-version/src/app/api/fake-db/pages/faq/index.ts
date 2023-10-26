@@ -5,7 +5,7 @@ export const db: FaqType[] = [
   {
     id: 'payment',
     title: 'Payment',
-    icon: 'ri-bank-card-2-line',
+    icon: 'ri-bank-card-line',
     subtitle: 'Get help with payment',
     questionsAnswers: [
       {
@@ -45,7 +45,7 @@ export const db: FaqType[] = [
   {
     id: 'delivery',
     title: 'Delivery',
-    icon: 'ri-shopping-cart-2-line',
+    icon: 'ri-shopping-cart-line',
     subtitle: 'Get help with delivery',
     questionsAnswers: [
       {
@@ -100,7 +100,7 @@ export const db: FaqType[] = [
   {
     id: 'my-orders',
     title: 'My Orders',
-    icon: 'ri-archive-line',
+    icon: 'ri-inbox-archive-line',
     subtitle: 'Order details',
     questionsAnswers: [
       {
@@ -125,7 +125,7 @@ export const db: FaqType[] = [
 
   // product and services
   {
-    icon: 'ri-camera-3-line',
+    icon: 'ri-settings-4-line',
     id: 'product-services',
     title: 'Product & Services',
     subtitle: 'Get help with product & services',
