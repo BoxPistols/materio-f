@@ -24,6 +24,7 @@ import PlanDetails from './PlanDetails'
 
 // Style Imports
 import styles from './styles.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 const Pricing = ({ data }: { data: PricingPlanType[] }) => {
   // States
@@ -41,14 +42,16 @@ const Pricing = ({ data }: { data: PricingPlanType[] }) => {
   }
 
   return (
-    <>
-      <div className='flex flex-col justify-center items-center'>
-        <Typography>Pricing Plans</Typography>
-        <div className='flex items-center text-center flex-col'>
-          <Typography>All plans include 40+ advanced tools and features to boost your product.</Typography>
-          <Typography>Choose the best plan to fit your needs.</Typography>
+    <div className='flex flex-col gap-6'>
+      <div className='flex flex-col justify-center items-center gap-2'>
+        <Typography variant='h4'>Pricing Plans</Typography>
+        <div className={classnames('flex items-center text-center flex-col', styles.marginBottom)}>
+          <Typography variant='body2'>
+            All plans include 40+ advanced tools and features to boost your product.
+          </Typography>
+          <Typography variant='body2'>Choose the best plan to fit your needs.</Typography>
         </div>
-        <div className='flex justify-center items-center relative'>
+        <div className='flex justify-center items-center relative mbs-0.5'>
           <InputLabel htmlFor='pricing-switch' className='cursor-pointer'>
             Monthly
           </InputLabel>
@@ -57,21 +60,21 @@ const Pricing = ({ data }: { data: PricingPlanType[] }) => {
             Annually
           </InputLabel>
           {isAboveSmScreen && (
-            <div className={classnames('flex items-center absolute left-1/2', styles.popularPlan)}>
-              <i className='ri-corner-left-down-line mbs-2 mie-1' />
-              <Chip label='Save up to 10%' size='small' />
+            <div className={classnames('flex absolute left-1/2', styles.popularPlan)}>
+              <i className={classnames('ri-corner-left-down-line mbs-2 mie-1', commonStyles.textDisabled)} />
+              <Chip label='Save up to 10%' size='small' color='primary' variant='tonal' />
             </div>
           )}
         </div>
       </div>
-      <Grid container>
+      <Grid container spacing={6}>
         {data?.map((plan, index) => (
           <Grid item xs={12} md={4} key={index}>
             <PlanDetails data={plan} pricingPlan={pricingPlan} />
           </Grid>
         ))}
       </Grid>
-    </>
+    </div>
   )
 }
 

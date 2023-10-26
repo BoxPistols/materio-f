@@ -3,6 +3,18 @@
 }
 
 .popularPlan {
-  inset-block-start: -30px;
+  inset-block-start: -41px;
   transform: translateX(35%);
+}
+
+.marginBottom {
+  margin-block-end: 2.8rem;
+}
+
+.cardPadding {
+  padding-block-start: 3.75rem;
+}
+
+.transformation {
+  transform: translateX(50%);
 }

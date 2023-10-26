@@ -22,11 +22,25 @@ type Props = {
 const PlanDetails = ({ data, pricingPlan }: Props) => {
   return (
     <CardContent
-      className={classnames('relative', commonStyles.border, commonStyles.borderRadius, {
-        [styles.active]: data?.popularPlan
-      })}
+      className={classnames(
+        'relative pli-5 !pbe-5 flex flex-col gap-5',
+        styles.cardPadding,
+        commonStyles.border,
+        commonStyles.borderRadius,
+        {
+          [styles.active]: data?.popularPlan
+        }
+      )}
     >
-      {data?.popularPlan ? <Chip color='primary' label='Popular' size='small' className='absolute' /> : null}
+      {data?.popularPlan ? (
+        <Chip
+          color='primary'
+          label='Popular'
+          size='small'
+          className='absolute block-start-4 inline-end-5'
+          variant='tonal'
+        />
+      ) : null}
       <div className='flex justify-center'>
         <img
           src={data?.imgSrc}
@@ -35,33 +49,46 @@ const PlanDetails = ({ data, pricingPlan }: Props) => {
           alt={`${data?.title.toLowerCase().replace(' ', '-')}-img`}
         />
       </div>
-      <div className='text-center'>
-        <Typography>{data?.title}</Typography>
-        <Typography>{data?.subtitle}</Typography>
+      <div className='text-center flex flex-col gap-1'>
+        <Typography variant='h5'>{data?.title}</Typography>
+        <Typography variant='body2'>{data?.subtitle}</Typography>
       </div>
-      <div className='relative'>
+      <div className='relative mlb-3'>
         <div className='flex justify-center'>
-          <Typography component='sup' className='self-start'>
+          <Typography
+            variant='body2'
+            component='sup'
+            className={classnames(commonStyles.textSecondary, 'self-start font-medium')}
+          >
             $
           </Typography>
-          <Typography component='span' color='primary'>
+          <Typography variant='h3' component='span' color='primary'>
             {pricingPlan === 'monthly' ? data?.monthlyPrice : data?.yearlyPlan.monthly}
           </Typography>
-          <Typography component='sub' className='self-end'>
+          <Typography
+            variant='body2'
+            component='sub'
+            className={classnames(commonStyles.textSecondary, 'self-end font-medium')}
+          >
             /month
           </Typography>
         </div>
         {pricingPlan !== 'monthly' && data?.monthlyPrice !== 0 ? (
-          <Typography variant='caption' className='absolute'>{`USD ${data?.yearlyPlan.annually}/year`}</Typography>
+          <Typography
+            variant='caption'
+            className={classnames(commonStyles.textDisabled, styles.transformation, 'absolute inline-end-1/2 ')}
+          >{`USD ${data?.yearlyPlan.annually}/year`}</Typography>
         ) : null}
       </div>
-      <div>
+      <div className='flex flex-col gap-4'>
         {data?.planBenefits.map((item: string, index: number) => (
-          <div key={index} className='flex items-center'>
+          <div key={index} className='flex items-center gap-2'>
             <span className='inline-flex'>
-              <i className='ri-checkbox-blank-circle-line text-xs' />
+              <i className={classnames('ri-checkbox-blank-circle-line text-sm', commonStyles.textSecondary)} />
             </span>
-            <Typography>{item}</Typography>
+            <Typography variant='body2' className={commonStyles.textSecondary}>
+              {item}
+            </Typography>
           </div>
         ))}
       </div>
