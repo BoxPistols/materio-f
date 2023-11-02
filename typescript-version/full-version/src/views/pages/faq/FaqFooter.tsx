@@ -28,7 +28,7 @@ const FaqFooter = () => {
           <div
             className={classnames(
               'flex justify-center items-center flex-col gap-4 p-6',
-              styles.footerCard,
+              commonStyles.actionHoverBackground,
               commonStyles.borderRadius
             )}
           >
@@ -45,7 +45,7 @@ const FaqFooter = () => {
           <div
             className={classnames(
               'flex justify-center items-center flex-col gap-4 p-6',
-              styles.footerCard,
+              commonStyles.actionHoverBackground,
               commonStyles.borderRadius
             )}
           >
