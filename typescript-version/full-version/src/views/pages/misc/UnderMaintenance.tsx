@@ -16,9 +16,9 @@ import classnames from 'classnames'
 import Illustrations from '@components/Illustrations'
 
 // Style Imports
-import styles from './misc.module.css'
+import styles from '@views/misc.module.css'
 
-const NotAuthorized = () => {
+const UnderMaintenance = () => {
   // Hooks
   const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
   const isBelowLgScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
@@ -32,13 +32,14 @@ const NotAuthorized = () => {
     <div className='flex items-center justify-center min-bs-[100dvh] relative p-6 overflow-x-hidden'>
       <div className='flex items-center flex-col text-center gap-10'>
         <div className={classnames('flex flex-col gap-2', { [styles.viewPortWidth]: isBelowSmScreen })}>
-          <Typography variant='h1'>401</Typography>
-          <Typography variant='h5'>You are not authorized! 🔐</Typography>
-          <Typography variant='body2'>You don&#39;t have permission to access this page. Go Home!</Typography>
+          <Typography variant='h5'>Under Maintenance! 🚧</Typography>
+          <Typography variant='body2'>
+            Sorry for the inconvenience but we&#39;re performing some maintenance at the moment
+          </Typography>
         </div>
         <img
           alt='error-illustration'
-          src='/images/illustrations/characters/12.png'
+          src='/images/illustrations/characters/10.png'
           className={classnames('object-cover', styles.illustrationHeight, {
             [styles.illustrationHeightBelowLg]: isBelowLgScreen,
             [styles.illustrationHeightBelowMd]: isBelowMdScreen
@@ -53,4 +54,4 @@ const NotAuthorized = () => {
   )
 }
 
-export default NotAuthorized
+export default UnderMaintenance
