@@ -80,7 +80,9 @@ const FAQ = ({ faqData, searchValue }: props) => {
               />
             ))}
           </CustomTabList>
-          {isAboveMdScreen && <img src='/images/pages/illustration-john.png' alt='john image' className='w-60' />}
+          {isAboveMdScreen && (
+            <img src='/images/illustrations/characters-with-objects/7.png' alt='john image' className='w-60' />
+          )}
         </Grid>
         <Grid item xs={12} md={8} xl={9}>
           {filteredData.map((faq, index) => (
