@@ -18,8 +18,8 @@ export const db: DB = {
       ],
       contacts: [
         { property: 'Contact', value: '(123) 456-7890', icon: 'ri-phone-line' },
-        { property: 'Skype', value: 'john.doe', icon: 'ri-message-2-line' },
-        { property: 'Email', value: 'john.doe@example.com', icon: 'ri-mail-line' }
+        { property: 'Skype', value: 'john.doe', icon: 'ri-wechat-line' },
+        { property: 'Email', value: 'john.doe@example.com', icon: 'ri-mail-open-line' }
       ],
       teams: [
         { property: 'Backend Developer', value: '(126 Members)' },
@@ -28,7 +28,7 @@ export const db: DB = {
       overview: [
         { property: 'Task Compiled', value: '13.5k', icon: 'ri-check-line' },
         { property: 'Connections', value: '897', icon: 'ri-user-3-line' },
-        { property: 'Projects Compiled', value: '146', icon: 'ri-layout-grid-line' }
+        { property: 'Projects Compiled', value: '146', icon: 'ri-function-line' }
       ],
       connections: [
         {
@@ -231,14 +231,14 @@ export const db: DB = {
       {
         extraMembers: 9,
         title: 'React Developers',
-        avatar: '/images/icons/project-icons/react-label.png',
+        avatar: '/images/logos/react-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/1.png', name: 'Vinnie Mostowy' },
           { avatar: '/images/avatars/2.png', name: 'Allen Rieske' },
           { avatar: '/images/avatars/3.png', name: 'Julee Rossignol' }
         ],
         description:
-          'We don’t make assumptions about the rest of your technology stack, so you can develop new features in React.',
+          'We don’t make assumptions about the rest of your technology stack, so you can develop features in React.',
         chips: [
           {
             title: 'React',
@@ -253,14 +253,14 @@ export const db: DB = {
       {
         extraMembers: 4,
         title: 'Vue.js Dev Team',
-        avatar: '/images/icons/project-icons/vue-label.png',
+        avatar: '/images/logos/vue-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/5.png', name: "Kaith D'souza" },
           { avatar: '/images/avatars/6.png', name: 'John Doe' },
           { avatar: '/images/avatars/7.png', name: 'Alan Walker' }
         ],
         description:
-          'The development of Vue and its ecosystem is guided by an international team, some of whom have chosen.',
+          'The development of Vue and its ecosystem is guided by an international team, some of whom have chosen. ',
         chips: [
           {
             title: 'Vuejs',
@@ -274,7 +274,7 @@ export const db: DB = {
       },
       {
         title: 'Creative Designers',
-        avatar: '/images/icons/project-icons/xd-label.png',
+        avatar: '/images/logos/xd-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/1.png', name: 'Jimmy Ressula' },
           { avatar: '/images/avatars/2.png', name: 'Kristi Lawker' },
@@ -295,14 +295,14 @@ export const db: DB = {
       },
       {
         title: 'Support Team',
-        avatar: '/images/icons/project-icons/support-label.png',
+        avatar: '/images/logos/support-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/5.png', name: 'Andrew Tye' },
           { avatar: '/images/avatars/6.png', name: 'Rishi Swaat' },
           { avatar: '/images/avatars/7.png', name: 'Rossie Kim' }
         ],
         description:
-          'Support your team. Your customer support team is fielding the good, the bad, and the ugly day in and day out.',
+          'Support your team. Your customer support team is fielding the good, the bad, & the ugly day in & day out.',
         chips: [
           {
             title: 'Zendesk',
@@ -313,7 +313,7 @@ export const db: DB = {
       {
         extraMembers: 7,
         title: 'Digital Marketing',
-        avatar: '/images/icons/project-icons/social-label.png',
+        avatar: '/images/logos/marketing-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/1.png', name: 'Kim Merchent' },
           { avatar: '/images/avatars/2.png', name: "Sam D'souza" },
@@ -335,14 +335,14 @@ export const db: DB = {
       {
         extraMembers: 2,
         title: 'Event',
-        avatar: '/images/icons/project-icons/event-label.png',
+        avatar: '/images/logos/event-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/5.png', name: 'Vinnie Mostowy' },
           { avatar: '/images/avatars/6.png', name: 'Allen Rieske' },
           { avatar: '/images/avatars/7.png', name: 'Julee Rossignol' }
         ],
         description:
-          'Event is defined as a particular contest which is part of a program of contests. An example of an event is the long…',
+          'Event is defined as a particular contest which is part of a program of contests. An example of an event is the…',
         chips: [
           {
             title: 'Hubilo',
@@ -352,7 +352,7 @@ export const db: DB = {
       },
       {
         title: 'Figma Resources',
-        avatar: '/images/icons/project-icons/figma-label.png',
+        avatar: '/images/logos/figma-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/1.png', name: 'Andrew Mostowy' },
           { avatar: '/images/avatars/2.png', name: 'Micky Ressula' },
@@ -374,14 +374,14 @@ export const db: DB = {
       {
         extraMembers: 8,
         title: 'Only Beginners',
-        avatar: '/images/icons/project-icons/html-label.png',
+        avatar: '/images/logos/html-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/5.png', name: 'Kim Karlos' },
           { avatar: '/images/avatars/6.png', name: 'Katy Turner' },
           { avatar: '/images/avatars/7.png', name: 'Peter Adward' }
         ],
         description:
-          'Learn the basics of how websites work, front-end vs back-end, and using a code editor. Learn basic HTML, CSS, and…',
+          'Learn the basics of how websites work, front-end vs back-end, & using a code editor. Learn basics…',
         chips: [
           {
             title: 'CSS',
@@ -395,14 +395,14 @@ export const db: DB = {
       },
       {
         title: 'React Developers',
-        avatar: '/images/icons/project-icons/react.png',
+        avatar: '/images/logos/react-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/5.png', name: 'Kim Karlos' },
           { avatar: '/images/avatars/6.png', name: 'Katy Turner' },
           { avatar: '/images/avatars/7.png', name: 'Peter Adward' }
         ],
         description:
-          'We don’t make assumptions about the rest of your technology stack, so you can develop new features in React.',
+          'We don’t make assumptions about the rest of your technology stack, so you can develop features in React.',
         chips: [
           {
             title: 'React',
@@ -431,7 +431,7 @@ export const db: DB = {
         members: '280 members',
         title: 'Social Banners',
         client: 'Christian Jimenez',
-        avatar: '/images/icons/project-icons/social-label.png',
+        avatar: '/images/logos/social-bg.png',
         description: 'We are Consulting, Software Development and Web Development Services.',
         avatarGroup: [
           { avatar: '/images/avatars/1.png', name: 'Vinnie Mostowy' },
@@ -454,7 +454,7 @@ export const db: DB = {
         members: '1.1k members',
         title: 'Admin Template',
         client: 'Jeffrey Phillips',
-        avatar: '/images/icons/project-icons/react-label.png',
+        avatar: '/images/logos/react-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/4.png', name: "Kaith D'souza" },
           { avatar: '/images/avatars/5.png', name: 'John Doe' },
@@ -477,7 +477,7 @@ export const db: DB = {
         startDate: '24/7/21',
         members: '458 members',
         client: 'Ricky McDonald',
-        avatar: '/images/icons/project-icons/vue-label.png',
+        avatar: '/images/logos/vue-bg.png',
         description: 'Figma dashboard app design combines the user UI & UX.',
         avatarGroup: [
           { avatar: '/images/avatars/7.png', name: 'Jimmy Ressula' },
@@ -500,7 +500,7 @@ export const db: DB = {
         members: '137 members',
         client: 'Hulda Wright',
         title: 'Create Website',
-        avatar: '/images/icons/project-icons/html-label.png',
+        avatar: '/images/logos/html-bg.png',
         description: 'Your domain name should reflect your products or services so that your...',
         avatarGroup: [
           { avatar: '/images/avatars/2.png', name: 'Andrew Tye' },
@@ -523,7 +523,7 @@ export const db: DB = {
         budgetSpent: '$52.7k',
         client: 'Jerry Greene',
         title: 'Figma Dashboard',
-        avatar: '/images/icons/project-icons/figma-label.png',
+        avatar: '/images/logos/figma-bg.png',
         description: "Time is our most valuable asset, that's why we want to help you save it.",
         avatarGroup: [
           { avatar: '/images/avatars/5.png', name: 'Kim Merchent' },
@@ -546,7 +546,7 @@ export const db: DB = {
         title: 'Logo Design',
         members: '16 members',
         client: 'Olive Strickland',
-        avatar: '/images/icons/project-icons/xd-label.png',
+        avatar: '/images/logos/xd-bg.png',
         description: 'Premium logo designs created by top logo designers. Create the branding.',
         avatarGroup: [
           { avatar: '/images/avatars/8.png', name: 'Kim Karlos' },
@@ -686,7 +686,7 @@ export const db: DB = {
     joiningDate: 'April 2021',
     designation: 'UX Designer',
     profileImg: '/images/avatars/1.png',
-    designationIcon: 'ri-pen-nib-fill',
+    designationIcon: 'ri-palette-line',
     coverImg: '/images/pages/profile-banner.png'
   }
 }

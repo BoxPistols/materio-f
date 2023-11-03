@@ -129,18 +129,24 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
       columnHelper.accessor('title', {
         header: 'Name',
         cell: ({ row }) => (
-          <div className='flex items-center'>
+          <div className='flex items-center gap-3'>
             <Avatar src={row.original.avatar} />
             <div className='flex flex-col'>
-              <Typography>{row.original.title}</Typography>
-              <Typography>{row.original.subtitle}</Typography>
+              <Typography variant='subtitle2' className={commonStyles.textPrimary}>
+                {row.original.title}
+              </Typography>
+              <Typography variant='caption'>{row.original.subtitle}</Typography>
             </div>
           </div>
         )
       }),
       columnHelper.accessor('leader', {
         header: 'Leader',
-        cell: ({ row }) => <Typography>{row.original.leader}</Typography>
+        cell: ({ row }) => (
+          <Typography variant='body2' className={commonStyles.textPrimary}>
+            {row.original.leader}
+          </Typography>
+        )
       }),
       columnHelper.accessor('avatarGroup', {
         header: 'Team',

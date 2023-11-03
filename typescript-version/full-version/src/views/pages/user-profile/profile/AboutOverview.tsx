@@ -4,6 +4,12 @@ import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
+// Third-party Imports
+import classnames from 'classnames'
+
+// Style Imports
+import commonStyles from '@/styles/common.module.css'
+
 // Type Imports
 import type { ProfileTeamsType, ProfileCommonType, ProfileTabType } from '@/types/pages/profileTypes'
 
@@ -12,11 +18,15 @@ const renderList = (list: ProfileCommonType[]) => {
     list.length > 0 &&
     list.map((item, index) => {
       return (
-        <div key={index} className='flex items-center'>
-          <i className={item.icon} />
-          <div className='flex items-center flex-wrap'>
-            <Typography> {`${item.property.charAt(0).toUpperCase() + item.property.slice(1)}:`}</Typography>
-            <Typography> {item.value.charAt(0).toUpperCase() + item.value.slice(1)}</Typography>
+        <div key={index} className='flex items-center gap-2'>
+          <i className={classnames(item.icon, commonStyles.textSecondary)} />
+          <div className='flex items-center flex-wrap gap-2'>
+            <Typography className={classnames(commonStyles.textSecondary, 'font-medium')}>
+              {`${item.property.charAt(0).toUpperCase() + item.property.slice(1)}:`}
+            </Typography>
+            <Typography className={commonStyles.textSecondary}>
+              {item.value.charAt(0).toUpperCase() + item.value.slice(1)}
+            </Typography>
           </div>
         </div>
       )
@@ -29,9 +39,13 @@ const renderTeams = (teams: ProfileTeamsType[]) => {
     teams.length > 0 &&
     teams.map((item, index) => {
       return (
-        <div key={index} className='flex items-center flex-wrap'>
-          <Typography>{item.property.charAt(0).toUpperCase() + item.property.slice(1)}</Typography>
-          <Typography>{item.value.charAt(0).toUpperCase() + item.value.slice(1)}</Typography>
+        <div key={index} className='flex items-center flex-wrap gap-2'>
+          <Typography className={classnames(commonStyles.textSecondary, 'font-medium')}>
+            {item.property.charAt(0).toUpperCase() + item.property.slice(1)}
+          </Typography>
+          <Typography className={commonStyles.textSecondary}>
+            {item.value.charAt(0).toUpperCase() + item.value.slice(1)}
+          </Typography>
         </div>
       )
     })
@@ -40,20 +54,26 @@ const renderTeams = (teams: ProfileTeamsType[]) => {
 
 const AboutOverview = ({ data }: { data?: ProfileTabType }) => {
   return (
-    <Grid container>
+    <Grid container spacing={6}>
       <Grid item xs={12}>
         <Card>
-          <CardContent>
-            <div>
-              <Typography>About</Typography>
+          <CardContent className='flex flex-col gap-6'>
+            <div className='flex flex-col gap-4'>
+              <Typography variant='caption' className={commonStyles.textDisabled}>
+                About
+              </Typography>
               {data?.about && renderList(data?.about)}
             </div>
-            <div>
-              <Typography>Contacts</Typography>
+            <div className='flex flex-col gap-4'>
+              <Typography variant='caption' className={commonStyles.textDisabled}>
+                Contacts
+              </Typography>
               {data?.contacts && renderList(data?.contacts)}
             </div>
-            <div>
-              <Typography>Teams</Typography>
+            <div className='flex flex-col gap-4'>
+              <Typography variant='caption' className={commonStyles.textDisabled}>
+                Teams
+              </Typography>
               {data?.teams && renderTeams(data?.teams)}
             </div>
           </CardContent>
@@ -62,7 +82,7 @@ const AboutOverview = ({ data }: { data?: ProfileTabType }) => {
       <Grid item xs={12}>
         <Card>
           <CardContent>
-            <div>
+            <div className='flex flex-col gap-4'>
               <Typography>Overview</Typography>
               {data?.overview && renderList(data?.overview)}
             </div>

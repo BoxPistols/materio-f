@@ -16,6 +16,13 @@ import { styled } from '@mui/material/styles'
 import MuiTimeline from '@mui/lab/Timeline'
 import type { TimelineProps } from '@mui/lab/Timeline'
 
+// Third-Party Imports
+import classnames from 'classnames'
+
+// Style Imports
+import styles from '../styles.module.css'
+import commonStyles from '@/styles/common.module.css'
+
 const Timeline = styled(MuiTimeline)<TimelineProps>({
   '& .MuiTimelineItem-root': {
     '&:before': {
@@ -27,7 +34,10 @@ const Timeline = styled(MuiTimeline)<TimelineProps>({
 const ActivityTimeline = () => {
   return (
     <Card>
-      <CardHeader title='Activity Timeline' avatar={<i className='ri-bar-chart-2-line' />} />
+      <CardHeader
+        title='Activity Timeline'
+        avatar={<i className={classnames('ri-bar-chart-2-line', commonStyles.textSecondary)} />}
+      />
       <CardContent>
         <Timeline>
           <TimelineItem>
@@ -36,13 +46,27 @@ const ActivityTimeline = () => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <div className='flex items-center justify-between flex-wrap gap-x-4'>
-                <Typography>12 Invoices have been paid</Typography>
-                <Typography>12 min ago</Typography>
+              <div className='flex items-center justify-between flex-wrap gap-x-4 pbe-1.5'>
+                <Typography className='font-medium'>12 Invoices have been paid</Typography>
+                <Typography variant='caption' className={commonStyles.textDisabled}>
+                  12 min ago
+                </Typography>
               </div>
-              <Typography>Invoices have been paid to the company.</Typography>
-              <div>
-                <img alt='invoice.pdf' src='/images/pdf.png' />
+              <Typography className={classnames(commonStyles.textSecondary, 'mbe-2')}>
+                Invoices have been paid to the company.
+              </Typography>
+              <div className='flex'>
+                <div
+                  className={classnames(
+                    'flex gap-2.5 items-center pli-2.5',
+                    styles.pdfBackground,
+                    commonStyles.actionHoverColor,
+                    commonStyles.borderRadius
+                  )}
+                >
+                  <img alt='invoice.pdf' src='/images/pages/pdf.png' className='h-5' />
+                  <Typography className={classnames('font-medium', commonStyles.textSecondary)}>invoice.pdf</Typography>
+                </div>
               </div>
             </TimelineContent>
           </TimelineItem>
@@ -52,16 +76,22 @@ const ActivityTimeline = () => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <div className='flex items-center justify-between flex-wrap gap-x-4'>
-                <Typography>Client Meeting</Typography>
-                <Typography>45 min ago</Typography>
+              <div className='flex items-center justify-between flex-wrap gap-x-4 pbe-1.5'>
+                <Typography className='font-medium'>Client Meeting</Typography>
+                <Typography variant='caption' className={commonStyles.textDisabled}>
+                  45 min ago
+                </Typography>
               </div>
-              <Typography>Project meeting with john @10:15am</Typography>
-              <div className='flex items-center'>
-                <Avatar src='images/1.png' />
+              <Typography className={classnames(commonStyles.textSecondary, 'mbe-2')}>
+                Project meeting with john @10:15am
+              </Typography>
+              <div className='flex items-center gap-2.5'>
+                <Avatar src='/images/avatars/1.png' className='w-8 h-8' />
                 <div>
-                  <Typography>Lester McCarthy (Client)</Typography>
-                  <Typography>CEO of ThemeSelection</Typography>
+                  <Typography variant='body2' className='font-medium'>
+                    Lester McCarthy (Client)
+                  </Typography>
+                  <Typography variant='body2'>CEO of ThemeSelection</Typography>
                 </div>
               </div>
             </TimelineContent>
@@ -72,15 +102,19 @@ const ActivityTimeline = () => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
-              <div className='flex items-center justify-between flex-wrap gap-x-4'>
-                <Typography>Create a new project for client</Typography>
-                <Typography>2 Day Ago</Typography>
+              <div className='flex items-center justify-between flex-wrap gap-x-4 pbe-1.5'>
+                <Typography className='font-medium'>Create a new project for client</Typography>
+                <Typography variant='caption' className={commonStyles.textDisabled}>
+                  2 Day Ago
+                </Typography>
               </div>
-              <Typography>6 team members in a project</Typography>
+              <Typography className={classnames(commonStyles.textSecondary, 'mbe-2')}>
+                6 team members in a project
+              </Typography>
               <AvatarGroup total={6}>
-                <Avatar alt='Remy Sharp' src='/static/images/avatar/1.jpg' />
-                <Avatar alt='Travis Howard' src='/static/images/avatar/2.jpg' />
-                <Avatar alt='Cindy Baker' src='/static/images/avatar/3.jpg' />
+                <Avatar alt='Remy Sharp' src='/images/avatars/1.png' />
+                <Avatar alt='Travis Howard' src='/images/avatars/2.png' />
+                <Avatar alt='Cindy Baker' src='/images/avatars/3.png' />
               </AvatarGroup>
             </TimelineContent>
           </TimelineItem>

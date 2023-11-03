@@ -1,3 +1,21 @@
 .cardMedia {
   block-size: 250px;
 }
+
+.avatarSize {
+  inline-size: 38px;
+  block-size: 38px;
+}
+
+.profileImgMargin {
+  margin-block-start: -45px;
+}
+
+.profileImgBorder {
+  border: 5px solid var(--mui-palette-background-paper);
+  background-color: var(--mui-palette-background-paper);
+}
+
+.pdfBackground {
+  padding-block: 0.3125rem;
+}

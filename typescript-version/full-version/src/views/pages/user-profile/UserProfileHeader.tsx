@@ -17,6 +17,7 @@ import type { ProfileHeaderType } from '@/types/pages/profileTypes'
 
 // Style Imports
 import styles from './styles.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
   // Hooks
@@ -27,38 +28,57 @@ const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
     <Card>
       <CardMedia image={data?.coverImg} className={styles.cardMedia} />
       <CardContent
-        className={classnames('flex items-end pt-0 flex-wrap justify-start', { 'justify-center': isBelowMdScreen })}
+        className={classnames('flex gap-6 items-end pt-0 justify-start', {
+          'justify-center flex-col items-center': isBelowMdScreen
+        })}
       >
-        <div className='flex'>
-          <img height={120} width={120} src={data?.profileImg} alt='Profile Background' />
+        <div className={classnames('flex, rounded-bs-md', styles.profileImgMargin, styles.profileImgBorder)}>
+          <img
+            height={120}
+            width={120}
+            src={data?.profileImg}
+            className={commonStyles.borderRadius}
+            alt='Profile Background'
+          />
         </div>
         <div
-          className={classnames('flex w-full flex-wrap justify-between items-end', {
+          className={classnames('flex w-full flex-wrap justify-between items-end gap-5', {
             'justify-center flex-col items-center': isBelowSmScreen
           })}
         >
-          <div className={classnames('flex flex-col items-start', { 'items-center': isBelowSmScreen })}>
-            <Typography>{data?.fullName}</Typography>
+          <div className={classnames('flex flex-col items-start gap-2', { 'items-center': isBelowSmScreen })}>
+            <Typography variant='h5'>{data?.fullName}</Typography>
             <div
-              className={classnames('flex flex-wrap', {
+              className={classnames('flex flex-wrap gap-6', {
                 'justify-center': isBelowSmScreen
               })}
             >
-              <div className='flex items-center'>
-                {data?.designationIcon && <i className={data?.designationIcon} />}
-                <Typography>{data?.designation}</Typography>
+              <div className='flex items-center gap-2'>
+                {data?.designationIcon && (
+                  <i className={classnames(data?.designationIcon, commonStyles.textSecondary)} />
+                )}
+                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>
+                  {data?.designation}
+                </Typography>
               </div>
-              <div className='flex items-center'>
-                <i className='ri-map-pin-2-line' />
-                <Typography>{data?.location}</Typography>
+              <div className='flex items-center gap-2'>
+                <i className={classnames('ri-map-pin-2-line', commonStyles.textSecondary)} />
+                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>
+                  {data?.location}
+                </Typography>
               </div>
-              <div className='flex items-center'>
-                <i className='ri-calendar-line' />
-                <Typography>{data?.joiningDate}</Typography>
+              <div className='flex items-center gap-2'>
+                <i className={classnames('ri-calendar-line', commonStyles.textSecondary)} />
+                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>
+                  {data?.joiningDate}
+                </Typography>
               </div>
             </div>
           </div>
-          <Button variant='contained'>Connected</Button>
+          <Button variant='contained' className='flex gap-2'>
+            <i className='ri-user-follow-line text-base'></i>
+            <span>Connected</span>
+          </Button>
         </div>
       </CardContent>
     </Card>

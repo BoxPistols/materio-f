@@ -22,19 +22,19 @@ import commonStyles from '@/styles/common.module.css'
 
 const Teams = ({ data }: { data?: TeamsTabType[] }) => {
   return (
-    <Grid container>
+    <Grid container spacing={6}>
       {data &&
         data.map((item, index) => {
           return (
             <Grid item key={index} xs={12} md={6} lg={4}>
               <Card>
-                <CardContent>
+                <CardContent className='flex flex-col gap-4'>
                   <div className='flex items-center justify-between gap-2'>
-                    <div className='flex items-center'>
+                    <div className='flex items-center gap-2'>
                       <Avatar src={item.avatar} className={styles.avatarLogo} />
                       <Typography>{item.title}</Typography>
                     </div>
-                    <div className='flex items-center'>
+                    <div className='flex items-center gap-2'>
                       <IconButton size='small'>
                         <i className='ri-star-line' />
                       </IconButton>
@@ -49,7 +49,7 @@ const Teams = ({ data }: { data?: TeamsTabType[] }) => {
                       />
                     </div>
                   </div>
-                  <Typography>{item.description}</Typography>
+                  <Typography className={commonStyles.textSecondary}>{item.description}</Typography>
                   <div className='flex items-center justify-between flex-wrap'>
                     <AvatarGroup
                       total={item.extraMembers ? item.extraMembers + 3 : 3}
@@ -64,10 +64,10 @@ const Teams = ({ data }: { data?: TeamsTabType[] }) => {
                         )
                       })}
                     </AvatarGroup>
-                    <div className='flex items-center'>
+                    <div className='flex items-center gap-2'>
                       {item.chips.map((chip, index) => (
                         <Link key={index}>
-                          <Chip size='small' label={chip.title} color={chip.color} />
+                          <Chip variant='tonal' size='small' label={chip.title} color={chip.color} />
                         </Link>
                       ))}
                     </div>

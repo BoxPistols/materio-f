@@ -19,6 +19,10 @@ import type { ProfileTeamsTechType, ProfileConnectionsType } from '@/types/pages
 // Component Imports
 import OptionMenu from '@core/components/option-menu'
 
+// Style Imports
+import styles from '../styles.module.css'
+import commonStyles from '@/styles/common.module.css'
+
 type Props = {
   teamsTech?: ProfileTeamsTechType[]
   connections?: ProfileConnectionsType[]
@@ -36,18 +40,24 @@ const ConnectionsTeams = (props: Props) => {
             title='Connections'
             action={<OptionMenu options={['Share Connections', 'Suggest Edits', { divider: true }, 'Report Bug']} />}
           />
-          <CardContent>
+          <CardContent className='flex flex-col gap-4'>
             {connections &&
               connections.map((connection, index) => (
-                <div key={index} className='flex items-center'>
-                  <div className='flex items-center flex-grow'>
-                    <Avatar src={connection.avatar} />
-                    <div className='flex flex-grow flex-col'>
-                      <Typography>{connection.name}</Typography>
-                      <Typography>{connection.connections} Connections</Typography>
+                <div key={index} className='flex items-center gap-2'>
+                  <div className='flex items-center flex-grow gap-2'>
+                    <Avatar src={connection.avatar} className={styles.avatarSize} />
+                    <div className='flex flex-grow flex-col gap-1'>
+                      <Typography variant='body2' className={commonStyles.textPrimary}>
+                        {connection.name}
+                      </Typography>
+                      <Typography variant='caption'>{connection.connections} Connections</Typography>
                     </div>
                   </div>
-                  <Button variant={connection.isFriend ? 'contained' : 'outlined'}>
+                  <Button
+                    variant={connection.isFriend ? 'contained' : 'outlined'}
+                    size='small'
+                    className='w-9 h-9 min-w-0 p-1.5'
+                  >
                     <i className={connection.isFriend ? 'ri-user-3-line' : 'ri-user-add-line'} />
                   </Button>
                 </div>
@@ -66,18 +76,20 @@ const ConnectionsTeams = (props: Props) => {
             title='Teams'
             action={<OptionMenu options={['Share Teams', 'Suggest Edits', { divider: true }, 'Report Bug']} />}
           />
-          <CardContent>
+          <CardContent className='flex flex-col gap-4'>
             {teamsTech &&
               teamsTech.map((team: ProfileTeamsTechType, index) => (
-                <div key={index} className='flex'>
-                  <div className='flex flex-grow  items-center'>
+                <div key={index} className='flex items-center gap-2'>
+                  <div className='flex flex-grow items-center gap-2'>
                     <Avatar src={team.avatar} />
-                    <div className='flex flex-grow flex-col'>
-                      <Typography>{team.title}</Typography>
-                      <Typography>{team.members} Members</Typography>
+                    <div className='flex flex-grow flex-col gap-1'>
+                      <Typography variant='body2' className={commonStyles.textPrimary}>
+                        {team.title}
+                      </Typography>
+                      <Typography variant='caption'>{team.members} Members</Typography>
                     </div>
                   </div>
-                  <Chip color={team.ChipColor} label={team.chipText} size='small' />
+                  <Chip variant='tonal' color={team.ChipColor} label={team.chipText} size='small' />
                 </div>
               ))}
             <div>

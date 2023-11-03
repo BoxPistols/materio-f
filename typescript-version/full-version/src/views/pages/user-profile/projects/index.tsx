@@ -30,18 +30,19 @@ import commonStyles from '@/styles/common.module.css'
 
 const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
   return (
-    <Grid container>
+    <Grid container spacing={6}>
       {data &&
         data.map((item, index) => {
           return (
             <Grid item key={index} xs={12} md={6} lg={4}>
               <Card>
-                <CardContent>
-                  <div className='flex items-center justify-between'>
-                    <div className='flex items-center'>
+                <CardContent className='flex flex-col gap-4'>
+                  <div className='flex items-center justify-between gap-4'>
+                    <div className='flex items-center gap-4'>
                       <Avatar src={item.avatar} />
                       <div>
                         <Typography
+                          variant='h6'
                           href='/'
                           component={Link}
                           onClick={e => e.preventDefault()}
@@ -49,8 +50,8 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                         >
                           {item.title}
                         </Typography>
-                        <Typography>
-                          <span>Client:</span>
+                        <Typography className={commonStyles.textSecondary}>
+                          <span className='font-medium'>Client:</span>
                           {item.client}
                         </Typography>
                       </div>
@@ -66,60 +67,68 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                     />
                   </div>
                   <div className='flex items-center justify-between flex-wrap'>
-                    <div className={classnames(commonStyles.borderRadius, commonStyles.actionHoverColor)}>
+                    <div
+                      className={classnames('plb-2 pli-3', commonStyles.borderRadius, commonStyles.actionHoverColor)}
+                    >
                       <div className='flex'>
                         <Typography className='font-medium'>{item.budgetSpent}</Typography>
-                        <Typography>{`/${item.budget}`}</Typography>
+                        <Typography className={commonStyles.textSecondary}>{`/${item.budget}`}</Typography>
                       </div>
-                      <Typography>Total Budget</Typography>
+                      <Typography className={commonStyles.textSecondary}>Total Budget</Typography>
                     </div>
                     <div className='flex flex-col'>
                       <div className='flex'>
-                        <Typography>Start Date:</Typography>
-                        <Typography>{item.startDate}</Typography>
+                        <Typography className='font-medium'>Start Date:</Typography>
+                        <Typography className={commonStyles.textSecondary}>{item.startDate}</Typography>
                       </div>
                       <div className='flex'>
-                        <Typography>Deadline:</Typography>
-                        <Typography>{item.deadline}</Typography>
+                        <Typography className='font-medium'>Deadline:</Typography>
+                        <Typography className={commonStyles.textSecondary}>{item.deadline}</Typography>
                       </div>
                     </div>
                   </div>
-                  <Typography>{item.description}</Typography>
+                  <Typography className={commonStyles.textSecondary}>{item.description}</Typography>
                 </CardContent>
                 <Divider />
-                <CardContent>
+                <CardContent className='flex flex-col gap-4'>
                   <div className='flex items-center justify-between'>
                     <div className='flex'>
                       <Typography className='font-medium'>All Hours:</Typography>
-                      <Typography>{item.hours}</Typography>
+                      <Typography className={commonStyles.textSecondary}>{item.hours}</Typography>
                     </div>
-                    <Chip size='small' color={item.chipColor} label={`${item.daysLeft} days left`} />
+                    <Chip size='small' variant='tonal' color={item.chipColor} label={`${item.daysLeft} days left`} />
                   </div>
-                  <div className='flex items-center justify-between'>
-                    <Typography>{`Tasks: ${item.completedTask}/${item.totalTask}`}</Typography>
-                    <Typography>{`${Math.round((item.completedTask / item.totalTask) * 100)}% Completed`}</Typography>
+                  <div>
+                    <div className='flex items-center justify-between mbe-2'>
+                      <Typography variant='caption'>{`Tasks: ${item.completedTask}/${item.totalTask}`}</Typography>
+                      <Typography variant='caption'>{`${Math.round(
+                        (item.completedTask / item.totalTask) * 100
+                      )}% Completed`}</Typography>
+                    </div>
+                    <LinearProgress
+                      color='primary'
+                      variant='determinate'
+                      value={Math.round((item.completedTask / item.totalTask) * 100)}
+                    />
                   </div>
-                  <LinearProgress
-                    color='primary'
-                    variant='determinate'
-                    value={Math.round((item.completedTask / item.totalTask) * 100)}
-                  />
-                  <div className='flex items-center justify-between'>
-                    <div className='flex items-center flex-grow'>
+                  <div className='flex items-center justify-between gap-1'>
+                    <div className='flex items-center flex-grow gap-3'>
                       <AvatarGroup className='items-center pull-up'>
                         {item.avatarGroup.map((person, index) => {
                           return (
                             <Tooltip key={index} title={person.name}>
-                              <Avatar src={person.avatar} alt={person.name} />
+                              <Avatar src={person.avatar} alt={person.name} className='h-8 w-8' />
                             </Tooltip>
                           )
                         })}
                       </AvatarGroup>
-                      <Typography className='flex-grow'>{item.members}</Typography>
+                      <Typography variant='caption' className='flex-grow'>
+                        {item.members}
+                      </Typography>
                     </div>
-                    <div className='flex items-center'>
-                      <i className='ri-message-2-line' />
-                      <Typography>{item.comments}</Typography>
+                    <div className='flex items-center gap-1'>
+                      <i className={classnames('ri-wechat-line', commonStyles.textDisabled)} />
+                      <Typography variant='body2'>{item.comments}</Typography>
                     </div>
                   </div>
                 </CardContent>
