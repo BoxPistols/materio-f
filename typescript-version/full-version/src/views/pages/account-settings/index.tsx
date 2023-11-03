@@ -28,8 +28,8 @@ const AccountSettings = ({ tabContentList }: { tabContentList: { [key: string]: 
           <CustomTabList onChange={handleChange} variant='scrollable' pill='true'>
             <Tab
               label={
-                <div className='flex items-center'>
-                  <i className='ri-user-3-line' />
+                <div className='flex items-center gap-1.5'>
+                  <i className='ri-group-line text-lg' />
                   Account
                 </div>
               }
@@ -37,8 +37,8 @@ const AccountSettings = ({ tabContentList }: { tabContentList: { [key: string]: 
             />
             <Tab
               label={
-                <div className='flex items-center'>
-                  <i className='ri-lock-unlock-line' />
+                <div className='flex items-center gap-1.5'>
+                  <i className='ri-lock-unlock-line text-lg' />
                   Security
                 </div>
               }
@@ -46,8 +46,8 @@ const AccountSettings = ({ tabContentList }: { tabContentList: { [key: string]: 
             />
             <Tab
               label={
-                <div className='flex items-center'>
-                  <i className='ri-bookmark-line' />
+                <div className='flex items-center gap-1.5'>
+                  <i className='ri-bookmark-line text-lg' />
                   Billing & Plans
                 </div>
               }
@@ -55,8 +55,8 @@ const AccountSettings = ({ tabContentList }: { tabContentList: { [key: string]: 
             />
             <Tab
               label={
-                <div className='flex items-center'>
-                  <i className='ri-notification-3-line' />
+                <div className='flex items-center gap-1.5'>
+                  <i className='ri-notification-3-line text-lg' />
                   Notifications
                 </div>
               }
@@ -64,8 +64,8 @@ const AccountSettings = ({ tabContentList }: { tabContentList: { [key: string]: 
             />
             <Tab
               label={
-                <div className='flex items-center'>
-                  <i className='ri-link' />
+                <div className='flex items-center gap-1.5'>
+                  <i className='ri-link text-lg' />
                   Connections
                 </div>
               }

@@ -13,7 +13,7 @@ import type { Direction } from '@core/types'
 
 const Security = ({ direction }: { direction: Direction }) => {
   return (
-    <Grid container>
+    <Grid container spacing={6}>
       <Grid item xs={12}>
         <ChangePasswordCard />
       </Grid>

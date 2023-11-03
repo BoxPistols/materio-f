@@ -15,9 +15,9 @@ const CreateApiKey = () => {
     <Card>
       <CardHeader title='Create an API Key' />
       <CardContent className='!pb-0'>
-        <Grid container>
+        <Grid container spacing={6}>
           <Grid item xs={12} md={6}>
-            <form className='flex justify-end items-end h-full flex-col'>
+            <form className='flex justify-end items-end h-full flex-col gap-5 pbe-5'>
               <FormControl fullWidth>
                 <InputLabel>Choose the API key type you want to create</InputLabel>
                 <Select label='Choose the API key type you want to create' defaultValue=''>
@@ -36,7 +36,7 @@ const CreateApiKey = () => {
             </form>
           </Grid>
           <Grid item xs={12} md={6} className='flex items-end justify-center '>
-            <img src='' alt='api illustration' />
+            <img src='/images/illustrations/characters/7.png' alt='api illustration' className='bs-[216px]' />
           </Grid>
         </Grid>
       </CardContent>

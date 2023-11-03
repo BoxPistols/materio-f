@@ -96,16 +96,17 @@ const Connections = () => {
         <Grid item xs={12} md={6}>
           <CardHeader
             title='Connected Accounts'
+            titleTypographyProps={{ variant: 'h6' }}
             subheader='Display content from your connected accounts on your site'
           />
-          <CardContent>
+          <CardContent className='flex flex-col gap-4'>
             {connectedAccountsArr.map((item, index) => (
-              <div key={index} className='flex items-center justify-between'>
-                <div className='flex flex-grow items-center'>
+              <div key={index} className='flex items-center justify-between gap-4'>
+                <div className='flex flex-grow items-center gap-4'>
                   <img height={32} width={32} src={item.logo} alt={item.title} />
                   <div className='flex-grow'>
-                    <Typography>{item.title}</Typography>
-                    <Typography>{item.subtitle}</Typography>
+                    <Typography className='font-medium'>{item.title}</Typography>
+                    <Typography variant='body2'>{item.subtitle}</Typography>
                   </div>
                 </div>
                 <Switch defaultChecked={item.checked} />
@@ -114,24 +115,32 @@ const Connections = () => {
           </CardContent>
         </Grid>
         <Grid item xs={12} md={6}>
-          <CardHeader title='Social Accounts' subheader='Display content from social accounts on your site' />
-          <CardContent>
+          <CardHeader
+            title='Social Accounts'
+            titleTypographyProps={{ variant: 'h6' }}
+            subheader='Display content from social accounts on your site'
+          />
+          <CardContent className='flex flex-col gap-4'>
             {socialAccountsArr.map((item, index) => (
-              <div key={index} className='flex items-center justify-between'>
-                <div className='flex flex-grow items-center'>
+              <div key={index} className='flex items-center justify-between gap-4'>
+                <div className='flex flex-grow items-center gap-4'>
                   <img height={32} width={32} src={item.logo} alt={item.title} />
                   <div className='flex-grow'>
                     <Typography href='/' component={Link} onClick={e => e.preventDefault()}>
                       {item.title}
                     </Typography>
                     {item.isConnected ? (
-                      <Typography>{item.username}</Typography>
+                      <Typography variant='body2'>{item.username}</Typography>
                     ) : (
-                      <Typography>Not Connected</Typography>
+                      <Typography variant='body2'>Not Connected</Typography>
                     )}
                   </div>
                 </div>
-                <Button variant='outlined' color='secondary'>
+                <Button
+                  variant='outlined'
+                  color={item.isConnected ? 'error' : 'secondary'}
+                  className='h-10 w-10 min-w-0 p-2'
+                >
                   <i className={item.isConnected ? 'ri-delete-bin-7-line' : 'ri-links-line'} />
                 </Button>
               </div>

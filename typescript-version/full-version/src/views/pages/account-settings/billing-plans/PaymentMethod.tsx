@@ -91,6 +91,7 @@ const PaymentMethod = () => {
   const buttonProps = (index: number): ButtonProps => ({
     variant: 'outlined',
     children: 'Edit',
+    size: 'small',
     onClick: () => setCreditCard(index)
   })
 
@@ -98,9 +99,9 @@ const PaymentMethod = () => {
     <Card>
       <CardHeader title='Payment Method' />
       <CardContent>
-        <Grid container>
+        <Grid container spacing={6}>
           <Grid item xs={12} md={6}>
-            <Grid container>
+            <Grid container spacing={5}>
               <Grid item xs={12}>
                 <RadioGroup
                   row
@@ -176,8 +177,8 @@ const PaymentMethod = () => {
             </Grid>
           </Grid>
 
-          <Grid item xs={12} md={6}>
-            <Typography>My Cards</Typography>
+          <Grid item xs={12} md={6} className='flex flex-col gap-6'>
+            <Typography className='font-medium'>My Cards</Typography>
             {data.map((item: DataType, index: number) => (
               <div
                 key={index}
@@ -190,27 +191,31 @@ const PaymentMethod = () => {
                   }
                 )}
               >
-                <div className='flex flex-col items-start gap-2.5'>
-                  <img src={item.imgSrc} alt={item.imgAlt} />
-                  <div className='flex items-center'>
+                <div className='flex flex-col items-start gap-2 p-5'>
+                  <img src={item.imgSrc} alt={item.imgAlt} className='h-6' />
+                  <div className='flex items-center gap-4'>
                     <Typography>{item.name}</Typography>
-                    {item.cardStatus ? <Chip color={item.badgeColor} label={item.cardStatus} size='small' /> : null}
+                    {item.cardStatus ? (
+                      <Chip variant='tonal' color={item.badgeColor} label={item.cardStatus} size='small' />
+                    ) : null}
                   </div>
-                  <Typography>
+                  <Typography variant='body2'>
                     {item.cardNumber && item.cardNumber.slice(0, -4).replace(/[0-9]/g, '*') + item.cardNumber.slice(-4)}
                   </Typography>
                 </div>
-                <div>
-                  <OpenDialogOnElementClick
-                    element={Button}
-                    elementProps={buttonProps(index)}
-                    dialog={BillingCard}
-                    dialogProps={{ data: data[creditCard] }}
-                  />
-                  <Button variant='outlined' color='secondary'>
-                    Delete
-                  </Button>
-                  <Typography>Card expires at {item.expiryDate}</Typography>
+                <div className='flex flex-col gap-4 p-5'>
+                  <div className='flex gap-4'>
+                    <OpenDialogOnElementClick
+                      element={Button}
+                      elementProps={buttonProps(index)}
+                      dialog={BillingCard}
+                      dialogProps={{ data: data[creditCard] }}
+                    />
+                    <Button variant='outlined' color='secondary' size='small'>
+                      Delete
+                    </Button>
+                  </div>
+                  <Typography variant='body2'>Card expires at {item.expiryDate}</Typography>
                 </div>
               </div>
             ))}

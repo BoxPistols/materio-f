@@ -88,8 +88,8 @@ const AccountDetails = () => {
 
   return (
     <Card>
-      <CardContent>
-        <div className='flex items-center'>
+      <CardContent className='mbe-1'>
+        <div className='flex items-center gap-6'>
           <img height={120} width={120} className={commonStyles.borderRadius} src={imgSrc} alt='Profile' />
           <div className='flex flex-grow flex-col gap-4'>
             <div className={classnames('flex gap-4', { 'flex-col': isBelowSmScreen })}>
@@ -118,13 +118,13 @@ const AccountDetails = () => {
                 Reset
               </Button>
             </div>
-            <Typography>Allowed JPG, GIF or PNG. Max size of 800K</Typography>
+            <Typography variant='caption'>Allowed JPG, GIF or PNG. Max size of 800K</Typography>
           </div>
         </div>
       </CardContent>
       <CardContent>
         <form onSubmit={e => e.preventDefault()}>
-          <Grid container>
+          <Grid container spacing={5}>
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth

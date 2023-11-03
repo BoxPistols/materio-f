@@ -14,6 +14,12 @@ import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
+// Third-party Imports
+import classnames from 'classnames'
+
+// Styles Imports
+import commonStyles from '@/styles/common.module.css'
+
 const ChangePasswordCard = () => {
   // States
   const [isCurrentPasswordShown, setIsCurrentPasswordShown] = useState(false)
@@ -29,7 +35,7 @@ const ChangePasswordCard = () => {
       <CardHeader title='Change Password' />
       <CardContent>
         <form>
-          <Grid container>
+          <Grid container spacing={6}>
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
@@ -51,7 +57,7 @@ const ChangePasswordCard = () => {
               />
             </Grid>
           </Grid>
-          <Grid container className='mbs-0'>
+          <Grid container className='mbs-0' spacing={5}>
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
@@ -92,18 +98,18 @@ const ChangePasswordCard = () => {
                 }}
               />
             </Grid>
-            <Grid item xs={12}>
-              <Typography>Password Requirements:</Typography>
-              <div>
-                <div className='flex items-center'>
+            <Grid item xs={12} className='flex flex-col gap-4'>
+              <Typography className={commonStyles.textSecondary}>Password Requirements:</Typography>
+              <div className='flex flex-col gap-4'>
+                <div className={classnames('flex items-center gap-2.5', commonStyles.textSecondary)}>
                   <i className='ri-checkbox-blank-circle-fill text-[8px]' />
                   Minimum 8 characters long - the more, the better
                 </div>
-                <div className='flex items-center'>
+                <div className={classnames('flex items-center gap-2.5', commonStyles.textSecondary)}>
                   <i className='ri-checkbox-blank-circle-fill text-[8px]' />
                   At least one lowercase & one uppercase character
                 </div>
-                <div className='flex items-center'>
+                <div className={classnames('flex items-center gap-2.5', commonStyles.textSecondary)}>
                   <i className='ri-checkbox-blank-circle-fill text-[8px]' />
                   At least one number, symbol, or whitespace character
                 </div>

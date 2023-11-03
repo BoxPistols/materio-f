@@ -43,25 +43,28 @@ const ApiKeyList = () => {
   return (
     <Card>
       <CardHeader title='API Key List & Access' />
-      <CardContent>
-        <Typography>
+      <CardContent className='flex flex-col gap-6'>
+        <Typography className={commonStyles.textSecondary}>
           An API key is a simple encrypted string that identifies an application without any principal. They are useful
           for accessing public data anonymously, and are used to associate API requests with your project for quota and
           billing.
         </Typography>
         {apiKeyList.map((item, index) => (
-          <div key={index} className={classnames(commonStyles.borderRadius, commonStyles.actionHoverColor)}>
-            <div className='flex items-center'>
-              <Typography>{item.title}</Typography>
-              <Chip color='primary' label={item.access} size='small' />
+          <div
+            key={index}
+            className={classnames('flex flex-col gap-2 p-4', commonStyles.borderRadius, commonStyles.actionHoverColor)}
+          >
+            <div className='flex items-center gap-3'>
+              <Typography variant='h6'>{item.title}</Typography>
+              <Chip variant='tonal' color='primary' label={item.access} size='small' />
             </div>
-            <div className='flex items-center'>
-              <Typography>{item.key}</Typography>
+            <div className='flex items-center gap-3'>
+              <Typography className={classnames('font-medium', commonStyles.textSecondary)}>{item.key}</Typography>
               <div className='flex'>
-                <i className='ri-file-copy-line' />
+                <i className={classnames('ri-file-copy-line text-xl', commonStyles.textSecondary)} />
               </div>
             </div>
-            <Typography>{`Created on ${item.date}`}</Typography>
+            <Typography variant='body2' className={commonStyles.textDisabled}>{`Created on ${item.date}`}</Typography>
           </div>
         ))}
       </CardContent>

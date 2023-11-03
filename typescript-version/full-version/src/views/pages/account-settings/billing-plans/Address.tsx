@@ -25,7 +25,7 @@ const Address = () => {
       <CardHeader title='Billing Address' />
       <CardContent>
         <form>
-          <Grid container>
+          <Grid container spacing={5}>
             <Grid item xs={12} sm={6}>
               <TextField fullWidth label='Company Name' variant='outlined' placeholder='ThemeSelection' />
             </Grid>

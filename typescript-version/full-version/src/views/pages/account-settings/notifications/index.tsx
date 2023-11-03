@@ -95,8 +95,8 @@ const Notifications = () => {
           </table>
         </div>
         <CardContent>
-          <Typography>When should we send you notifications?</Typography>
-          <Grid container>
+          <Typography className='mbe-6 font-medium'>When should we send you notifications?</Typography>
+          <Grid container spacing={6}>
             <Grid item xs={12} sm={6} md={4}>
               <Select fullWidth defaultValue='online'>
                 <MenuItem value='online'>Only when I&#39;m online</MenuItem>
