@@ -14,9 +14,20 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Button from '@mui/material/Button'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import type { Theme } from '@mui/material/styles'
+import { useColorScheme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
+
+// Config Imports
+import themeConfig from '@configs/themeConfig'
+
+// Hook Imports
+import useSettings from '@core/hooks/useSettings'
+
+// Component Imports
+import Logo from '@core/svg/Logo'
+import Illustrations from '@components/Illustrations'
 
 // Style Imports
 import styles from './v2.module.css'
@@ -29,20 +40,61 @@ const ResetPasswordV2 = () => {
 
   // Hooks
   const isAboveMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
+  const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
+  const { settings } = useSettings()
+  const { mode, systemMode } = useColorScheme()
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   const handleClickShowConfirmPassword = () => setIsConfirmPasswordShown(show => !show)
 
+  const authBackground =
+    mode === 'dark' || systemMode === 'dark'
+      ? '/images/pages/auth-v2-mask-dark.png'
+      : '/images/pages/auth-v2-mask-light.png'
+
+  const characterIllustration =
+    settings.skin === 'bordered'
+      ? mode === 'dark' || systemMode === 'dark'
+        ? '/images/illustrations/auth/v2-reset-password-dark-border.png'
+        : '/images/illustrations/auth/v2-reset-password-light-border.png'
+      : mode === 'dark' || systemMode === 'dark'
+      ? '/images/illustrations/auth/v2-reset-password-dark.png'
+      : '/images/illustrations/auth/v2-reset-password-light.png'
+
   return (
     <div className='flex h-full justify-center'>
-      {isAboveMdScreen && <div className='flex h-full items-center justify-center flex-1'>image</div>}
-      <div className={classnames('flex justify-center items-center h-full', styles.rightWrapper)}>
-        <div>
-          <div className={classnames('absolute', styles.templateName)}>Logo</div>
-          <Typography>Reset Password 🔒</Typography>
-          <Typography>Your new password must be different from previously used passwords</Typography>
-          <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()}>
+      {isAboveMdScreen && (
+        <div className={'flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6'}>
+          <div className='plb-12 pis-12'>
+            <img src={characterIllustration} alt='' className={styles.illustrationSize} />
+          </div>
+          <Illustrations image2={null} maskImg={{ src: authBackground }} />
+        </div>
+      )}
+      <div
+        className={classnames('flex justify-center items-center h-full', commonStyles.paperColor, {
+          '!min-is-full p-6': isBelowMdScreen,
+          [styles.rightWrapper]: isAboveMdScreen,
+          'p-12': isAboveMdScreen
+        })}
+      >
+        <div className={classnames('absolute', styles.templateName)}>
+          <div className='flex justify-center items-center gap-3 mbe-6'>
+            <Logo className={commonStyles.primaryColor} height={28} width={35} />
+            <Typography variant='h5' className='font-semibold'>
+              {themeConfig.templateName}
+            </Typography>
+          </div>
+        </div>
+        <div className={classnames('flex flex-col gap-5', { [styles.rightWrapperBelowMd]: isBelowMdScreen })}>
+          <div>
+            <Typography variant='h5' className='font-semibold mbe-1'>
+              Reset Password 🔒
+            </Typography>
+            <Typography variant='body2'>Your new password must be different from previously used passwords</Typography>
+          </div>
+          <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
             <TextField
               autoFocus
               fullWidth

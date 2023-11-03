@@ -10,8 +10,18 @@ import Typography from '@mui/material/Typography'
 import type { TypographyProps } from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
+// Third-party Imports
+import classnames from 'classnames'
+
+// Type Imports
+import type { Direction } from '@core/types'
+
+// Component Imports
 import CustomInputVertical from '@core/components/custom-inputs/Vertical'
 import type { CustomInputVerticalData } from '@core/components/custom-inputs/types'
+
+// Style Imports
+import commonStyles from '@/styles/common.module.css'
 
 const Content = styled(Typography, {
   name: 'MuiCustomInputVertical',
@@ -26,14 +36,18 @@ const customInputData: CustomInputVerticalData[] = [
     title: 'Basic',
     value: 'basic',
     content: (
-      <Content component='div' className='flex justify-center items-center flex-col h-full'>
-        <Typography className='mlb-auto'>A simple start for start ups & Students</Typography>
+      <Content component='div' className='flex justify-center items-center flex-col h-full gap-2'>
+        <Typography variant='body2' className='mlb-auto'>
+          A simple start for start ups & Students
+        </Typography>
         <div>
-          <Typography component='sup' className='self-start'>
+          <Typography variant='body2' component='sup' className={classnames('self-start', commonStyles.primaryColor)}>
             $
           </Typography>
-          <Typography component='span'>0</Typography>
-          <Typography component='sub' className='self-end'>
+          <Typography variant='h4' component='span' className={commonStyles.primaryColor}>
+            0
+          </Typography>
+          <Typography variant='body2' component='sub' className={classnames('self-end', commonStyles.textDisabled)}>
             /month
           </Typography>
         </div>
@@ -46,13 +60,17 @@ const customInputData: CustomInputVerticalData[] = [
     value: 'standard',
     content: (
       <Content component='div' className='flex justify-center items-center flex-col h-full'>
-        <Typography className='mlb-auto'>For small to medium businesses</Typography>
+        <Typography variant='body2' className='mlb-auto'>
+          For small to medium businesses
+        </Typography>
         <div>
-          <Typography component='sup' className='self-start'>
+          <Typography variant='body2' component='sup' className={classnames('self-start', commonStyles.primaryColor)}>
             $
           </Typography>
-          <Typography component='span'>99</Typography>
-          <Typography component='sub' className='self-end'>
+          <Typography variant='h4' component='span' className={commonStyles.primaryColor}>
+            99
+          </Typography>
+          <Typography variant='body2' component='sub' className={classnames('self-end', commonStyles.textDisabled)}>
             /month
           </Typography>
         </div>
@@ -64,13 +82,17 @@ const customInputData: CustomInputVerticalData[] = [
     value: 'enterprise',
     content: (
       <Content component='div' className='flex justify-center items-center flex-col h-full'>
-        <Typography className='mlb-auto'>Solution for enterprise & organizations</Typography>
+        <Typography variant='body2' className='mlb-auto'>
+          Solution for enterprise & organizations
+        </Typography>
         <div>
-          <Typography component='sup' className='self-start'>
+          <Typography variant='body2' component='sup' className={classnames('self-start', commonStyles.primaryColor)}>
             $
           </Typography>
-          <Typography component='span'>499</Typography>
-          <Typography component='sub' className='self-end'>
+          <Typography variant='h4' component='span' className={commonStyles.primaryColor}>
+            499
+          </Typography>
+          <Typography variant='body2' component='sub' className={classnames('self-end', commonStyles.textDisabled)}>
             /month
           </Typography>
         </div>
@@ -79,7 +101,7 @@ const customInputData: CustomInputVerticalData[] = [
   }
 ]
 
-const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
+const StepBillingDetails = ({ handlePrev, direction }: { handlePrev: () => void; direction: Direction }) => {
   const initialSelectedOption: string = customInputData.filter(item => item.isSelected)[
     customInputData.filter(item => item.isSelected).length - 1
   ].value
@@ -97,9 +119,13 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
 
   return (
     <>
-      <Typography>Select Plan</Typography>
-      <Typography>Select plan as per your requirement</Typography>
-      <Grid container>
+      <div className='mbe-5'>
+        <Typography variant='h5' className='font-semibold'>
+          Select Plan
+        </Typography>
+        <Typography variant='body2'>Select plan as per your requirement</Typography>
+      </div>
+      <Grid container spacing={5}>
         {customInputData.map((item, index) => (
           <CustomInputVertical
             type='radio'
@@ -112,9 +138,13 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
           />
         ))}
       </Grid>
-      <Typography>Payment Information</Typography>
-      <Typography>Enter your card information</Typography>
-      <Grid container>
+      <div className='mbs-12 mbe-5'>
+        <Typography variant='h5' className='font-semibold'>
+          Payment Information
+        </Typography>
+        <Typography variant='body2'>Enter your card information</Typography>
+      </div>
+      <Grid container spacing={5}>
         <Grid item xs={12}>
           <TextField fullWidth label='Card Number' placeholder='1234 1234 1234 1234' />
         </Grid>
@@ -129,14 +159,19 @@ const StepBillingDetails = ({ handlePrev }: { handlePrev: () => void }) => {
         </Grid>
         <Grid item xs={12} className='flex justify-between'>
           <Button
-            variant='contained'
+            variant='outlined'
             color='secondary'
             onClick={handlePrev}
-            startIcon={<i className='ri-arrow-left-s-line' />}
+            startIcon={<i className={direction === 'rtl' ? 'ri-arrow-right-line' : 'ri-arrow-left-line'} />}
           >
             Previous
           </Button>
-          <Button variant='contained' onClick={() => alert('Submitted..!!')}>
+          <Button
+            variant='contained'
+            color='success'
+            onClick={() => alert('Submitted..!!')}
+            endIcon={<i className='ri-check-line' />}
+          >
             Submit
           </Button>
         </Grid>

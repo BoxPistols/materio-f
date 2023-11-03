@@ -9,12 +9,27 @@ import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import InputAdornment from '@mui/material/InputAdornment'
 
-const StepPersonalInfo = ({ handleNext, handlePrev }: { handleNext: () => void; handlePrev: () => void }) => {
+// Type Imports
+import type { Direction } from '@core/types'
+
+const StepPersonalInfo = ({
+  handleNext,
+  handlePrev,
+  direction
+}: {
+  handleNext: () => void
+  handlePrev: () => void
+  direction: Direction
+}) => {
   return (
     <>
-      <Typography>Personal Information</Typography>
-      <Typography>Enter Your Personal Information</Typography>
-      <Grid container>
+      <div className='mbe-5'>
+        <Typography variant='h5' className='font-semibold'>
+          Personal Information
+        </Typography>
+        <Typography variant='body2'>Enter Your Personal Information</Typography>
+      </div>
+      <Grid container spacing={5}>
         <Grid item xs={12} sm={6}>
           <TextField fullWidth label='First Name' placeholder='John' />
         </Grid>
@@ -58,14 +73,18 @@ const StepPersonalInfo = ({ handleNext, handlePrev }: { handleNext: () => void; 
         </Grid>
         <Grid item xs={12} className='flex justify-between'>
           <Button
-            variant='contained'
+            variant='outlined'
             color='secondary'
             onClick={handlePrev}
-            startIcon={<i className='ri-arrow-left-s-line' />}
+            startIcon={<i className={direction === 'rtl' ? 'ri-arrow-right-line' : 'ri-arrow-left-line'} />}
           >
             Previous
           </Button>
-          <Button variant='contained' onClick={handleNext} endIcon={<i className='ri-arrow-right-s-line' />}>
+          <Button
+            variant='contained'
+            onClick={handleNext}
+            endIcon={<i className={direction === 'rtl' ? 'ri-arrow-left-line' : 'ri-arrow-right-line'} />}
+          >
             Next
           </Button>
         </Grid>

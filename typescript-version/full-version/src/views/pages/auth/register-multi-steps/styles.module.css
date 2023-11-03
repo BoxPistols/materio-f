@@ -3,5 +3,15 @@
 }
 
 .imgWidth {
-  max-inline-size: 480px;
+  inline-size: 594px;
+}
+
+.characterHeight {
+  block-size: auto;
+  max-block-size: 628px;
+  max-inline-size: 100%;
+}
+
+.characterRtl {
+  transform: scaleX(-1);
 }

@@ -8,35 +8,75 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import { useColorScheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import type { Theme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
+
+// Component Imports
+import Illustrations from '@components/Illustrations'
+
+// Config Imports
+import themeConfig from '@configs/themeConfig'
+
+// Component Imports
+import Logo from '@core/svg/Logo'
 
 // Style Imports
 import styles from './v1.module.css'
 import commonStyles from '@/styles/common.module.css'
 
 const VerifyEmailV1 = () => {
+  const { mode, systemMode } = useColorScheme()
+
+  const authBackground =
+    mode === 'dark' || systemMode === 'dark'
+      ? '/images/pages/auth-v1-mask-dark.png'
+      : '/images/pages/auth-v1-mask-light.png'
+
+  // Hooks
+  const isAboveSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('sm'))
+
   return (
-    <Card className={classnames('flex flex-col', styles.card)}>
-      <CardContent>
-        <div className='flex justify-center items-start'>Logo</div>
-        <Typography>Verify your email ✉️</Typography>
-        <Typography>
-          Account activation link sent to your email address: john.doe@email.com Please follow the link inside to
-          continue.
-        </Typography>
-        <Button fullWidth variant='contained' type='submit'>
-          Skip For Now
-        </Button>
-        <div className='flex justify-center items-center flex-wrap gap-2'>
-          <Typography>Didn&#39;t get the mail?</Typography>
-          <Typography className={commonStyles.primaryColor} component={Link} href='/' onClick={e => e.preventDefault()}>
-            Resend
+    <div className='flex flex-col justify-center items-center min-bs-[100dvh] relative p-6'>
+      <Card className={classnames('flex flex-col', { [styles.card]: isAboveSmScreen })}>
+        <CardContent className='!p-12'>
+          <div className='flex justify-center items-center gap-3 mbe-6'>
+            <Logo className={commonStyles.primaryColor} height={28} width={35} />
+            <Typography variant='h5' className='font-semibold'>
+              {themeConfig.templateName}
+            </Typography>
+          </div>
+          <Typography variant='h5' className='font-semibold mbe-1'>
+            Verify your email ✉️
           </Typography>
-        </div>
-      </CardContent>
-    </Card>
+          <div className='flex flex-col gap-5'>
+            <Typography className={commonStyles.textSecondary}>
+              Account activation link sent to your email address:{' '}
+              <span className={classnames('font-medium', commonStyles.textPrimary)}>john.doe@email.com</span> Please
+              follow the link inside to continue.
+            </Typography>
+            <Button fullWidth variant='contained' type='submit'>
+              Skip For Now
+            </Button>
+            <div className='flex justify-center items-center flex-wrap gap-2'>
+              <Typography className={commonStyles.textSecondary}>Didn&#39;t get the mail?</Typography>
+              <Typography
+                className={commonStyles.primaryColor}
+                component={Link}
+                href='/'
+                onClick={e => e.preventDefault()}
+              >
+                Resend
+              </Typography>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+      <Illustrations maskImg={{ src: authBackground }} />
+    </div>
   )
 }
 

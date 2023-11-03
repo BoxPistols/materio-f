@@ -37,3 +37,18 @@
 .actionHoverColor {
   background-color: var(--mui-palette-action-hover);
 }
+.paperColor {
+  background-color: var(--mui-palette-background-paper);
+}
+.facebookColor {
+  color: #497ce2;
+}
+.twitterColor {
+  color: #1da1f2;
+}
+.githubColor {
+  color: #272727;
+}
+.googleColor {
+  color: #db4437;
+}
