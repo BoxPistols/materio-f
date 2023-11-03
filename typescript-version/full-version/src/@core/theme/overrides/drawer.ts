@@ -2,7 +2,7 @@
 import type { Theme } from '@mui/material'
 
 // Type Imports
-import type { Skin } from '@/@core/types'
+import type { Skin } from '@core/types'
 
 const drawer = (skin: Skin): Theme['components'] => ({
   MuiDrawer: {

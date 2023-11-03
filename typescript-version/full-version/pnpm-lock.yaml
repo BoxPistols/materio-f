@@ -51,7 +51,7 @@ dependencies:
     specifier: ^3.1.1
     version: 3.1.1
   '@iconify/json':
-    specifier: ^2.2.136
+    specifier: ^2.2.137
     version: 2.2.137
   '@iconify/react':
     specifier: ^4.1.1
@@ -1470,8 +1470,8 @@ packages:
       '@types/node': 20.8.10
     dev: false
 
-  /@types/d3-array@3.0.9:
-    resolution: {integrity: sha512-mZowFN3p64ajCJJ4riVYlOjNlBJv3hctgAY01pjw3qTnJePD8s9DZmYDzhHKvzfCYvdjwylkU38+Vdt7Cu2FDA==}
+  /@types/d3-array@3.2.0:
+    resolution: {integrity: sha512-tjU8juPSfhMnu6mJZPOCVVGba4rZoE0tjHDPb81PYwA8CzbaFscGjgkUM7juUJu6iWA1cCVWNEVwxZ5HN9Jj8Q==}
     dev: false
 
   /@types/d3-color@3.1.2:
@@ -6069,7 +6069,7 @@ packages:
   /victory-vendor@36.6.12:
     resolution: {integrity: sha512-pJrTkNHln+D83vDCCSUf0ZfxBvIaVrFHmrBOsnnLAbdqfudRACAj51He2zU94/IWq9464oTADcPVkmWAfNMwgA==}
     dependencies:
-      '@types/d3-array': 3.0.9
+      '@types/d3-array': 3.2.0
       '@types/d3-ease': 3.0.1
       '@types/d3-interpolate': 3.0.3
       '@types/d3-scale': 4.0.6
