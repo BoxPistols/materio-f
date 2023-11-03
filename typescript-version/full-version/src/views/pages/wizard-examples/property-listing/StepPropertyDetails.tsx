@@ -59,7 +59,7 @@ const data: CustomInputVerticalData[] = [
         Unlimited free listing.
       </Content>
     ),
-    asset: 'ri-home-5-line'
+    asset: 'ri-home-6-line'
   }
 ]
 
@@ -80,7 +80,7 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps }: Prop
   }
 
   return (
-    <Grid container>
+    <Grid container spacing={5}>
       {data.map((item, index) => {
         let asset
 

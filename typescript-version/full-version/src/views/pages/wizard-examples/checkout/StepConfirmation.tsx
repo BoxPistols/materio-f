@@ -44,21 +44,27 @@ const StepConfirmation = () => {
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   return (
-    <Grid container>
+    <Grid container spacing={6}>
       <Grid item xs={12}>
         <div className='flex items-center flex-col text-center gap-4'>
-          <Typography>Thank You! 😇</Typography>
-          <Typography>Your order #1536548131 has been placed!</Typography>
+          <Typography variant='h5'>Thank You! 😇</Typography>
+          <Typography className={commonStyles.textSecondary}>
+            Your order <span className={classnames(commonStyles.textPrimary, 'font-medium')}>#1536548131</span> has been
+            placed!
+          </Typography>
           <div>
-            <Typography>We sent an email to john.doe@example.com with your order confirmation and receipt.</Typography>
-            <Typography>
+            <Typography className={commonStyles.textSecondary}>
+              We sent an email to <span className={commonStyles.textPrimary}>john.doe@example.com</span> with your order
+              confirmation and receipt.
+            </Typography>
+            <Typography className={commonStyles.textSecondary}>
               If the email hasn&#39;t arrived within two minutes, please check your spam folder to see if the email was
               routed there.
             </Typography>
           </div>
-          <div className='flex items-center'>
+          <div className='flex items-center gap-2'>
             <i className='ri-time-line text-xl' />
-            <Typography>Time placed: 25/05/2020 13:35pm</Typography>
+            <Typography className={commonStyles.textSecondary}>Time placed: 25/05/2020 13:35pm</Typography>
           </div>
         </div>
       </Grid>
@@ -69,52 +75,58 @@ const StepConfirmation = () => {
           })}
         >
           <div
-            className={classnames('flex flex-col w-full', {
+            className={classnames('flex flex-col w-full p-5 gap-4', {
               [styles.borderBottom]: isBelowMdScreen,
               [styles.borderRight]: !isBelowMdScreen,
               'items-center': isBelowSmScreen
             })}
           >
-            <div className='flex items-center'>
-              <i className='ri-map-pin-2-line' />
+            <div className='flex items-center gap-2'>
+              <i className='ri-map-pin-line text-2xl' />
               <Typography className='font-medium'>Shipping</Typography>
             </div>
-            <Typography>John Doe</Typography>
-            <Typography>4135 Parkway Street,</Typography>
-            <Typography>Los Angeles, CA 90017,</Typography>
-            <Typography>USA</Typography>
-            <Typography>+123456789</Typography>
+            <div>
+              <Typography className={commonStyles.textSecondary}>John Doe</Typography>
+              <Typography className={commonStyles.textSecondary}>4135 Parkway Street,</Typography>
+              <Typography className={commonStyles.textSecondary}>Los Angeles, CA 90017,</Typography>
+              <Typography className={commonStyles.textSecondary}>USA</Typography>
+            </div>
+            <Typography className={classnames('font-medium', commonStyles.textSecondary)}>+123456789</Typography>
           </div>
           <div
-            className={classnames('flex flex-col w-full', {
+            className={classnames('flex flex-col w-full p-5 gap-4', {
               [styles.borderBottom]: isBelowMdScreen,
               [styles.borderRight]: !isBelowMdScreen,
               'items-center': isBelowSmScreen
             })}
           >
-            <div className='flex items-center'>
-              <i className='ri-bank-card-2-line' />
+            <div className='flex items-center gap-2'>
+              <i className='ri-bank-card-line text-2xl' />
               <Typography className='font-medium'>Billing Address</Typography>
             </div>
-            <Typography>John Doe</Typography>
-            <Typography>4135 Parkway Street,</Typography>
-            <Typography>Los Angeles, CA 90017,</Typography>
-            <Typography>USA</Typography>
-            <Typography>+123456789</Typography>
+            <div>
+              <Typography className={commonStyles.textSecondary}>John Doe</Typography>
+              <Typography className={commonStyles.textSecondary}>4135 Parkway Street,</Typography>
+              <Typography className={commonStyles.textSecondary}>Los Angeles, CA 90017,</Typography>
+              <Typography className={commonStyles.textSecondary}>USA</Typography>
+            </div>
+            <Typography className={classnames('font-medium', commonStyles.textSecondary)}>+123456789</Typography>
           </div>
           <div
-            className={classnames('flex flex-col w-full', {
+            className={classnames('flex flex-col w-full p-5 gap-4', {
               [styles.borderBottom]: isBelowMdScreen,
               'items-center': isBelowSmScreen
             })}
           >
-            <div className='flex items-center'>
-              <i className='ri-archive-line' />
+            <div className='flex items-center gap-2'>
+              <i className='ri-ship-2-line text-2xl' />
               <Typography className='font-medium'>Shipping Method</Typography>
             </div>
-            <Typography>Preferred Method:</Typography>
-            <Typography>Standard Delivery</Typography>
-            <Typography>(Normally 3-4 business days)</Typography>
+            <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Preferred Method:</Typography>
+            <div>
+              <Typography className={commonStyles.textSecondary}>Standard Delivery</Typography>
+              <Typography className={commonStyles.textSecondary}>(Normally 3-4 business days)</Typography>
+            </div>
           </div>
         </div>
       </Grid>
@@ -126,9 +138,11 @@ const StepConfirmation = () => {
               className={classnames('flex items-center', styles.borderBottom, { 'flex-col': isBelowSmScreen })}
             >
               <img height={80} width={80} src={product.imgSrc} alt={product.imgAlt} />
-              <div className={classnames('flex justify-between w-full', { 'flex-col items-center': isBelowSmScreen })}>
-                <div className={classnames('flex flex-col', { 'items-center': isBelowSmScreen })}>
-                  <Typography>{product.productName}</Typography>
+              <div
+                className={classnames('flex justify-between w-full p-5', { 'flex-col items-center': isBelowSmScreen })}
+              >
+                <div className={classnames('flex flex-col gap-2 items-start', { 'items-center': isBelowSmScreen })}>
+                  <Typography className='font-medium'>{product.productName}</Typography>
                   <div className='flex items-center'>
                     <Typography>Sold By:</Typography>
                     <Typography
@@ -139,12 +153,15 @@ const StepConfirmation = () => {
                     >
                       {product.soldBy}
                     </Typography>
-                    {product.inStock && <Chip size='small' color='success' label='In Stock' />}
                   </div>
+                  {product.inStock && <Chip variant='tonal' size='small' color='success' label='In Stock' />}
                 </div>
                 <div className='flex items-center'>
                   <Typography className={commonStyles.primary}>{`$${product.price}`}</Typography>
-                  <Typography className='line-through'>{`/$${product.originalPrice}`}</Typography>
+                  <Typography
+                    variant='body1'
+                    className={classnames(commonStyles.textDisabled, 'line-through')}
+                  >{`/$${product.originalPrice}`}</Typography>
                 </div>
               </div>
             </div>
@@ -157,14 +174,14 @@ const StepConfirmation = () => {
             <Typography className='font-medium'>Price Details</Typography>
             <div className='flex flex-col gap-4'>
               <div className='flex items-center justify-between gap-2'>
-                <Typography>Order Total</Typography>
-                <Typography>$1198.00</Typography>
+                <Typography className={commonStyles.textSecondary}>Order Total</Typography>
+                <Typography className={commonStyles.textSecondary}>$1198.00</Typography>
               </div>
               <div className='flex items-center justify-between gap-2'>
-                <Typography>Delivery Charges</Typography>
+                <Typography className={commonStyles.textSecondary}>Delivery Charges</Typography>
                 <div className='flex'>
-                  <Typography className='line-through'>$5.00</Typography>
-                  <Chip size='small' color='success' label='Free' />
+                  <Typography className={classnames(commonStyles.textDisabled, 'line-through')}>$5.00</Typography>
+                  <Chip variant='tonal' size='small' color='success' label='Free' />
                 </div>
               </div>
             </div>

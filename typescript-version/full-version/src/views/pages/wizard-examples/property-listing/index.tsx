@@ -118,7 +118,7 @@ const PropertyListingWizard = () => {
         </StepperWrapper>
       </CardContent>
 
-      <CardContent className='flex-1'>
+      <CardContent className='flex-1 !pbs-5'>
         <DatePickerWrapper>{getStepContent(activeStep, handleNext, handlePrev)}</DatePickerWrapper>
       </CardContent>
     </Card>

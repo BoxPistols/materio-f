@@ -16,6 +16,12 @@ import Autocomplete from '@mui/material/Autocomplete'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Chip from '@mui/material/Chip'
 
+// Third-party Imports
+import classnames from 'classnames'
+
+// Style Imports
+import commonStyles from '@/styles/common.module.css'
+
 type Props = {
   activeStep: number
   handleNext: () => void
@@ -42,7 +48,7 @@ const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps }: Pro
   const [furnishingDetails, setFurnishingDetails] = useState<string[]>(['Fridge', 'AC', 'TV'])
 
   return (
-    <Grid container>
+    <Grid container spacing={5}>
       <Grid item xs={12} md={6}>
         <TextField fullWidth label='Bedrooms' placeholder='3' />
       </Grid>
@@ -81,8 +87,10 @@ const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps }: Pro
         />
       </Grid>
       <Grid item xs={12} md={6}>
-        <FormControl>
-          <FormLabel>Is There Any Common Area</FormLabel>
+        <FormControl className='gap-2'>
+          <FormLabel className={classnames(commonStyles.textPrimary, 'text-sm font-medium')}>
+            Is There Any Common Area
+          </FormLabel>
           <RadioGroup defaultValue='yes'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />
@@ -90,8 +98,10 @@ const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps }: Pro
         </FormControl>
       </Grid>
       <Grid item xs={12} md={6}>
-        <FormControl>
-          <FormLabel>Is There Any Attached Balcony</FormLabel>
+        <FormControl className='gap-2'>
+          <FormLabel className={classnames(commonStyles.textPrimary, 'text-sm font-medium')}>
+            Is There Any Attached Balcony
+          </FormLabel>
           <RadioGroup defaultValue='yes'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />

@@ -14,6 +14,10 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 
 // Third-party Imports
 import DatePicker from 'react-datepicker'
+import classnames from 'classnames'
+
+// Style Imports
+import commonStyles from '@/styles/common.module.css'
 
 type Props = {
   activeStep: number
@@ -27,7 +31,7 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps }: Prop
   const [date, setDate] = useState<Date | null | undefined>(null)
 
   return (
-    <Grid container>
+    <Grid container spacing={5}>
       <Grid item xs={12} md={6}>
         <TextField
           fullWidth
@@ -71,8 +75,13 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps }: Prop
         />
       </Grid>
       <Grid item xs={12} md={6}>
-        <FormControl>
-          <FormLabel id='possession-status-radio'>Possession Status</FormLabel>
+        <FormControl className='gap-2'>
+          <FormLabel
+            className={classnames(commonStyles.textPrimary, 'text-sm font-medium')}
+            id='possession-status-radio'
+          >
+            Possession Status
+          </FormLabel>
           <RadioGroup name='possession-status-group' defaultValue='under-construction'>
             <FormControlLabel value='under-construction' control={<Radio />} label='Under Construction' />
             <FormControlLabel value='ready-to-move' control={<Radio />} label='Ready to Move' />
@@ -80,8 +89,10 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps }: Prop
         </FormControl>
       </Grid>
       <Grid item xs={12} md={6}>
-        <FormControl>
-          <FormLabel id='transaction-radio'>Transaction Type</FormLabel>
+        <FormControl className='gap-2'>
+          <FormLabel className={classnames(commonStyles.textPrimary, 'text-sm font-medium')} id='transaction-radio'>
+            Transaction Type
+          </FormLabel>
           <RadioGroup defaultValue='new-property' name='transaction-group' aria-labelledby='transaction-radio'>
             <FormControlLabel value='new-property' control={<Radio />} label='New property' />
             <FormControlLabel value='resale' control={<Radio />} label='Resale' />
@@ -89,8 +100,10 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps }: Prop
         </FormControl>
       </Grid>
       <Grid item xs={12} md={6}>
-        <FormControl>
-          <FormLabel id='main-road-radio'>Is Property Facing Main Road</FormLabel>
+        <FormControl className='gap-2'>
+          <FormLabel className={classnames(commonStyles.textPrimary, 'text-sm font-medium')} id='main-road-radio'>
+            Is Property Facing Main Road
+          </FormLabel>
           <RadioGroup defaultValue='yes' name='main-road-group' aria-labelledby='main-road-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />
@@ -98,8 +111,10 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps }: Prop
         </FormControl>
       </Grid>
       <Grid item xs={12} md={6}>
-        <FormControl>
-          <FormLabel id='gated-colony-radio'>Gated Colony</FormLabel>
+        <FormControl className='gap-2'>
+          <FormLabel className={classnames(commonStyles.textPrimary, 'text-sm font-medium')} id='gated-colony-radio'>
+            Gated Colony
+          </FormLabel>
           <RadioGroup defaultValue='yes' name='gated-colony-group' aria-labelledby='gated-colony-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />

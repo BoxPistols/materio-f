@@ -27,7 +27,7 @@ const data: CustomInputVerticalData[] = [
     title: 'I am the Builder',
     value: 'builder',
     content: 'List property as Builder, list your project and get highest reach.',
-    asset: 'ri-home-5-line',
+    asset: 'ri-home-6-line',
     isSelected: true
   },
   {
@@ -64,7 +64,7 @@ const StepPersonalDetails = ({ activeStep, handleNext, handlePrev, steps }: Prop
   }
 
   return (
-    <Grid container>
+    <Grid container spacing={5}>
       {data.map((item, index) => {
         let asset
 

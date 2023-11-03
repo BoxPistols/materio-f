@@ -21,6 +21,10 @@ import type { SelectChangeEvent } from '@mui/material/Select'
 // Third-party Imports
 import format from 'date-fns/format'
 import DatePicker from 'react-datepicker'
+import classnames from 'classnames'
+
+// Style Imports
+import commonStyles from '@/styles/common.module.css'
 
 type CustomInputProps = TextFieldProps & {
   label?: string
@@ -71,7 +75,7 @@ const StepDealDetails = ({ activeStep, handleNext, handlePrev, steps }: Props) =
   }
 
   return (
-    <Grid container>
+    <Grid container spacing={5} className='pbs-5'>
       <Grid item xs={12} sm={6}>
         <TextField fullWidth label='Deal Title' placeholder='Black Friday sale, 25% off' />
       </Grid>
@@ -88,7 +92,7 @@ const StepDealDetails = ({ activeStep, handleNext, handlePrev, steps }: Props) =
         />
       </Grid>
       <Grid item xs={12} sm={6}>
-        <Grid container>
+        <Grid container spacing={5}>
           <Grid item xs={12}>
             <FormControl fullWidth>
               <InputLabel id='select-offered-items'>Offered Items</InputLabel>
@@ -141,7 +145,7 @@ const StepDealDetails = ({ activeStep, handleNext, handlePrev, steps }: Props) =
       </Grid>
       <Grid item xs={12} sm={6}>
         <FormControl>
-          <FormLabel>Notify Users</FormLabel>
+          <FormLabel className={classnames(commonStyles.textPrimary, 'text-sm font-medium')}>Notify Users</FormLabel>
           <FormGroup aria-label='position' row>
             <FormControlLabel value='email' label='Email' control={<Checkbox />} />
             <FormControlLabel value='sms' label='SMS' control={<Checkbox />} />

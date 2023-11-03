@@ -18,7 +18,7 @@ type Props = {
 
 const StepDealUsage = ({ activeStep, handleNext, handlePrev, steps }: Props) => {
   return (
-    <Grid container>
+    <Grid container spacing={5} className='pbs-5'>
       <Grid item xs={12} sm={6}>
         <FormControl fullWidth>
           <InputLabel id='select-user-type'>User Type</InputLabel>

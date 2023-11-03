@@ -39,7 +39,7 @@ const data: CustomInputVerticalData[] = [
     title: 'Percentage',
     value: 'percentage',
     content: 'Create a deal which offer uses some % off (i.e 5% OFF) on total.',
-    asset: 'ri-price-tag-3-line',
+    asset: 'ri-percent-line',
     isSelected: true
   },
   {
@@ -80,10 +80,14 @@ const StepDealType = ({ activeStep, handleNext, handlePrev, steps }: Props) => {
   }
 
   return (
-    <Grid container>
+    <Grid container spacing={5}>
       <Grid item xs={12}>
-        <div className={classnames('flex', commonStyles.border, commonStyles.borderRadius)}>
-          <img alt='illustration' src='/images/pages/shopping-girl.png' />
+        <div className={classnames('flex mbs-5', commonStyles.border, commonStyles.borderRadius)}>
+          <img
+            alt='illustration'
+            src='/images/illustrations/characters-with-objects/6.png'
+            className='w-full max-w-full h-auto'
+          />
         </div>
       </Grid>
       {data.map((item, index) => {

@@ -71,8 +71,8 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
   }, [openFade])
 
   return (
-    <Grid container>
-      <Grid item xs={12} lg={8}>
+    <Grid container spacing={6}>
+      <Grid item xs={12} lg={8} className='flex flex-col gap-4'>
         <Collapse in={openCollapse}>
           <Fade in={openFade} timeout={{ exit: 300 }}>
             <Alert
@@ -91,41 +91,53 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
               }
             >
               <AlertTitle>Available Offers</AlertTitle>
-              <Typography>- 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards</Typography>
-              <Typography>- 25% Cashback Voucher of up to $60 on first ever PayPal transaction. TCA</Typography>
+              <Typography variant='body2'>
+                - 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards
+              </Typography>
+              <Typography variant='body2'>
+                - 25% Cashback Voucher of up to $60 on first ever PayPal transaction. TCA
+              </Typography>
             </Alert>
           </Fade>
         </Collapse>
-        <Typography>My Shopping Bag (2 Items)</Typography>
-        <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
+        <Typography className={classnames(commonStyles.border, commonStyles.borderRadius)} variant='h6'>
+          My Shopping BaTypography)
+        </Typography>
+        <div className={styles.border}>
           {products.map((product, index) => (
             <div
               key={index}
-              className={classnames('flex items-center relative', styles.borderBottom, {
+              className={classnames('flex items-center relative p-5 gap-4', styles.borderBottom, {
                 'flex-col': isBelowSmScreen
               })}
             >
               <img height={140} width={140} src={product.imgSrc} alt={product.imgAlt} />
               <IconButton size='small' className={styles.closeIcon}>
-                <i className='ri-close-line text-xl' />
+                <i className='ri-close-line text-lg' />
               </IconButton>
-              <div className={classnames('flex justify-between w-full', { 'flex-col items-center': isBelowSmScreen })}>
-                <div className={classnames('flex flex-col', { 'items-center': isBelowSmScreen })}>
+              <div
+                className={classnames('flex justify-between w-full', {
+                  'flex-col items-center': isBelowSmScreen
+                })}
+              >
+                <div className={classnames('flex flex-col gap-2', { 'items-center': isBelowSmScreen })}>
                   <Typography>{product.productName}</Typography>
-                  <div className='flex items-center'>
-                    <Typography>Sold By:</Typography>
-                    <Typography
-                      href='/'
-                      component={Link}
-                      onClick={e => e.preventDefault()}
-                      className={commonStyles.primary}
-                    >
-                      {product.soldBy}
-                    </Typography>
+                  <div className='flex items-center gap-4'>
+                    <div className='flex items-center'>
+                      <Typography className={commonStyles.textDisabled}>Sold By:</Typography>
+                      <Typography
+                        href='/'
+                        component={Link}
+                        onClick={e => e.preventDefault()}
+                        className={commonStyles.primary}
+                      >
+                        {product.soldBy}
+                      </Typography>
+                    </div>
                     {product.inStock ? (
-                      <Chip size='small' color='success' label='In Stock' />
+                      <Chip size='small' variant='tonal' color='success' label='In Stock' />
                     ) : (
-                      <Chip size='small' color='error' label='Out of Stock' />
+                      <Chip size='small' variant='tonal' color='error' label='Out of Stock' />
                     )}
                   </div>
                   <Rating name='google-nest-rating' value={product.rating} readOnly />
@@ -137,13 +149,15 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                   />
                 </div>
                 <div
-                  className={classnames('flex flex-col justify-between items-end', {
+                  className={classnames('flex flex-col justify-between items-end mt-4 gap-1', {
                     'items-center': isBelowSmScreen
                   })}
                 >
                   <div className='flex'>
                     <Typography className={commonStyles.primary}>{`$${product.price}`}</Typography>
-                    <Typography className='line-through'>{`/$${product.originalPrice}`}</Typography>
+                    <Typography
+                      className={classnames(commonStyles.textSecondary, 'line-through')}
+                    >{`/$${product.originalPrice}`}</Typography>
                   </div>
                   <Button variant='outlined' size='small'>
                     Move to wishlist
@@ -158,19 +172,19 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
           component={Link}
           onClick={e => e.preventDefault()}
           className={classnames(
-            'flex items-center justify-between gap-4',
+            'flex items-center justify-between gap-4 plb-2 pli-5',
             commonStyles.border,
             commonStyles.borderRadius,
             commonStyles.primary
           )}
         >
           Add more products from wishlist
-          <i className='ri-arrow-right-s-line' />
+          <i className='ri-arrow-right-line' />
         </Typography>
       </Grid>
-      <Grid item xs={12} lg={4}>
+      <Grid item xs={12} lg={4} className='flex flex-col gap-2'>
         <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
-          <CardContent>
+          <CardContent className='flex flex-col gap-4'>
             <Typography className='font-medium'>Offer</Typography>
             <div className='flex gap-4'>
               <TextField fullWidth size='small' placeholder='Enter Promo Code' />
@@ -178,10 +192,17 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                 Apply
               </Button>
             </div>
-            <div className={classnames(commonStyles.actionHoverColor, commonStyles.borderRadius)}>
+            <div
+              className={classnames(
+                commonStyles.actionHoverColor,
+                commonStyles.borderRadius,
+                'flex flex-col gap-2 p-5'
+              )}
+            >
               <Typography className='font-medium'>Buying gift for a loved one?</Typography>
-              <Typography>Gift wrap and personalized message on card, Only for $2.</Typography>
+              <Typography variant='body2'>Gift wrap and personalized message on card, Only for $2.</Typography>
               <Typography
+                variant='body2'
                 href='/'
                 component={Link}
                 onClick={e => e.preventDefault()}
@@ -196,12 +217,17 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
             <Typography className='font-medium'>Price Details</Typography>
             <div className='flex flex-col gap-2'>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography>Bag Total</Typography>
-                <Typography>$1198.00</Typography>
+                <Typography variant='body2' className={commonStyles.textPrimary}>
+                  Bag Total
+                </Typography>
+                <Typography variant='body2'>$1198.00</Typography>
               </div>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography>Coup Discount</Typography>
+                <Typography variant='body2' className={commonStyles.textPrimary}>
+                  Coup Discount
+                </Typography>
                 <Typography
+                  variant='body2'
                   href='/'
                   component={Link}
                   onClick={e => e.preventDefault()}
@@ -211,14 +237,20 @@ const StepCart = ({ handleNext }: { handleNext: () => void }) => {
                 </Typography>
               </div>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography>Order Total</Typography>
-                <Typography>$1198.00</Typography>
+                <Typography variant='body2' className={commonStyles.textPrimary}>
+                  Order Total
+                </Typography>
+                <Typography variant='body2'>$1198.00</Typography>
               </div>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography>Delivery Charges</Typography>
-                <div className='flex items-center'>
-                  <Typography className='line-through'>$5.00</Typography>
-                  <Chip size='small' color='success' label='Free' />
+                <Typography variant='body2' className={commonStyles.textPrimary}>
+                  Delivery Charges
+                </Typography>
+                <div className='flex items-center gap-2'>
+                  <Typography variant='body2' className={classnames(commonStyles.textDisabled, 'line-through')}>
+                    $5.00
+                  </Typography>
+                  <Chip variant='tonal' size='small' color='success' label='Free' />
                 </div>
               </div>
             </div>

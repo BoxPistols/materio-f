@@ -6,8 +6,12 @@ import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
+// Third-party Imports
+import classnames from 'classnames'
+
 // Style Imports
-import styles from '@core/styles/table.module.css'
+import tableStyles from '@core/styles/table.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 type Props = {
   activeStep: number
@@ -18,41 +22,67 @@ type Props = {
 
 const StepReview = ({ activeStep, handleNext, handlePrev, steps }: Props) => {
   return (
-    <Grid container>
-      <Grid item xs={12} lg={6}>
-        <Typography className='mb-4'>Almost done! 🚀</Typography>
-        <Typography className='mb-4'>Confirm your deal details information and submit to create it.</Typography>
-        <table className={styles.table}>
-          <tbody className={styles.tbody}>
+    <Grid container spacing={6} className='pbs-5'>
+      <Grid item xs={12} lg={6} className='flex flex-col gap-4'>
+        <Typography variant='h5'>Almost done! 🚀</Typography>
+        <Typography className={commonStyles.textSecondary}>
+          Confirm your deal details information and submit to create it.
+        </Typography>
+        <table className={tableStyles.table}>
+          <tbody>
             <tr>
-              <td>Deal Type</td>
-              <td>Percentage</td>
-            </tr>
-            <tr>
-              <td>Amount</td>
-              <td>25%</td>
-            </tr>
-            <tr>
-              <td>Deal Code</td>
-              <td>
-                <Chip label='25PEROFF' color='warning' />
+              <td className='plb-1'>
+                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Deal Type</Typography>
+              </td>
+              <td className='plb-1'>
+                <Typography className={commonStyles.textSecondary}>Percentage</Typography>
               </td>
             </tr>
             <tr>
-              <td>Deal Title</td>
-              <td>Black friday sale, 25% OFF</td>
+              <td className='font-medium plb-1'>
+                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Amount</Typography>
+              </td>
+              <td className='plb-1'>
+                <Typography className={commonStyles.textSecondary}>25% </Typography>
+              </td>
             </tr>
             <tr>
-              <td>Deal Duration</td>
-              <td>2021-07-14 to 2021-07-30</td>
+              <td className='font-medium plb-1'>
+                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Deal Code</Typography>
+              </td>
+              <td className='plb-1'>
+                <Chip variant='tonal' label='25PEROFF' color='warning' />
+              </td>
+            </tr>
+            <tr>
+              <td className='font-medium plb-1'>
+                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Deal Title</Typography>
+              </td>
+              <td className='plb-1'>
+                <Typography className={commonStyles.textSecondary}>Black friday sale, 25% OFF </Typography>
+              </td>
+            </tr>
+            <tr>
+              <td className='font-medium plb-1'>
+                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Deal Duration</Typography>
+              </td>
+              <td className='plb-1'>
+                <Typography className={commonStyles.textSecondary}>2021-07-14 to 2021-07-30 </Typography>
+              </td>
             </tr>
           </tbody>
         </table>
         <FormControlLabel control={<Switch />} label='I have confirmed the deal details.' />
       </Grid>
       <Grid item lg={6} xl={5} xs={12}>
-        <div className='flex justify-center items-end w-full h-full'>
-          <img alt='review-illustration' src='' />
+        <div
+          className={classnames(
+            commonStyles.border,
+            commonStyles.borderRadius,
+            'flex justify-center items-end w-full h-full'
+          )}
+        >
+          <img alt='review-illustration' src='/images/illustrations/characters/6.png' height={305} />
         </div>
       </Grid>
       <Grid item xs={12}>

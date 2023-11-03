@@ -52,8 +52,8 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
   }, [openFade])
 
   return (
-    <Grid container>
-      <Grid item xs={12} lg={8}>
+    <Grid container spacing={6}>
+      <Grid item xs={12} lg={8} className='flex flex-col gap-5'>
         <Collapse in={openCollapse}>
           <Fade in={openFade} timeout={{ exit: 300 }}>
             <Alert
@@ -93,7 +93,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
             <Grid item md={8} xs={12}>
               <TabPanel value='credit-card'>
                 <form>
-                  <Grid container>
+                  <Grid container spacing={5}>
                     <Grid item xs={12}>
                       <TextField fullWidth type='number' label='Card Number' placeholder='0000 0000 0000 0000' />
                     </Grid>
@@ -121,7 +121,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                 </form>
               </TabPanel>
               <TabPanel value='cash-on-delivery'>
-                <Typography>
+                <Typography className='mbe-4'>
                   Cash on Delivery is a type of payment method where the recipient make payment for the order at the
                   time of delivery rather than in advance.
                 </Typography>
@@ -130,8 +130,8 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                 </Button>
               </TabPanel>
               <TabPanel value='gift-card'>
-                <Typography>Enter Gift Card Details</Typography>
-                <Grid container>
+                <Typography className='mbe-4'>Enter Gift Card Details</Typography>
+                <Grid container spacing={5}>
                   <Grid item xs={12}>
                     <TextField fullWidth type='number' label='Gift Card Number' placeholder='Gift Card Number' />
                   </Grid>
@@ -152,36 +152,44 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
       <Grid item xs={12} lg={4}>
         <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
           <CardContent>
-            <Typography className='font-medium'>Price Details</Typography>
-            <div className='flex flex-col'>
+            <Typography className='font-medium mbe-4'>Price Details</Typography>
+            <div className='flex flex-col gap-2'>
               <div className='flex items-center justify-between gap-2'>
                 <Typography>Order Total</Typography>
-                <Typography>$1198.00</Typography>
+                <Typography className={commonStyles.textSecondary}>$1198.00</Typography>
               </div>
               <div className='flex items-center justify-between gap-2'>
                 <Typography>Delivery Charges</Typography>
-                <div className='flex'>
-                  <Typography className='line-through'>$5.00</Typography>
-                  <Chip size='small' color='success' label='Free' />
+                <div className='flex gap-2'>
+                  <Typography className={classnames(commonStyles.textDisabled, 'line-through')}>$5.00</Typography>
+                  <Chip variant='tonal' size='small' color='success' label='Free' />
                 </div>
               </div>
             </div>
           </CardContent>
           <Divider />
-          <CardContent>
-            <div className='flex items-center justify-between gap-2'>
-              <Typography className='font-medium'>Total</Typography>
-              <Typography>$1198.00</Typography>
-            </div>
-            <div className='flex items-center justify-between gap-2'>
-              <Typography className='font-medium'>Deliver to:</Typography>
-              <Chip size='small' color='primary' label='Home' />
+          <CardContent className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-2'>
+              <div className='flex items-center justify-between gap-2'>
+                <Typography className='font-medium'>Total</Typography>
+                <Typography className={commonStyles.textSecondary}>$1198.00</Typography>
+              </div>
+              <div className='flex items-center justify-between gap-2'>
+                <Typography className='font-medium'>Deliver to:</Typography>
+                <Chip variant='tonal' size='small' color='primary' label='Home' />
+              </div>
             </div>
             <div>
               <Typography className='font-medium'>John Doe (Default),</Typography>
-              <Typography>4135 Parkway Street,</Typography>
-              <Typography>Los Angeles, CA, 90017.</Typography>
-              <Typography>Mobile : +1 906 568 2332</Typography>
+              <Typography variant='body2' className={commonStyles.textSecondary}>
+                4135 Parkway Street,
+              </Typography>
+              <Typography variant='body2' className={commonStyles.textSecondary}>
+                Los Angeles, CA, 90017.
+              </Typography>
+              <Typography variant='body2' className={commonStyles.textSecondary}>
+                Mobile : +1 906 568 2332
+              </Typography>
             </div>
             <Typography
               href='/'

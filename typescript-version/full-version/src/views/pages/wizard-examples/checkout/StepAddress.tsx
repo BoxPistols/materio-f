@@ -28,24 +28,24 @@ import CustomInputVertical from '@core/components/custom-inputs/Vertical'
 
 // Style Imports
 import commonStyles from '@/styles/common.module.css'
-import AddEditAddress from '@components/dialogs/add-edit-address'
+import AddEditAddress from '@/components/dialogs/add-edit-address'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
 
 const data: CustomInputHorizontalData[] = [
   {
     title: 'John Doe (Default)',
-    meta: <Chip size='small' label='Home' color='primary' />,
+    meta: <Chip size='small' variant='tonal' label='Home' color='primary' />,
     value: 'home',
     isSelected: true,
     content: (
-      <div className='flex flex-col h-full'>
-        <Typography>
+      <div className='flex flex-col h-full gap-3'>
+        <Typography variant='body2' className={commonStyles.textSecondary}>
           4135 Parkway Street, Los Angeles, CA, 90017.
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
         </Typography>
         <Divider />
-        <div className='flex items-center'>
+        <div className='flex items-center gap-4 mbs-0.5'>
           <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={commonStyles.primary}>
             Edit
           </Typography>
@@ -58,17 +58,17 @@ const data: CustomInputHorizontalData[] = [
   },
   {
     title: 'ACME Inc.',
-    meta: <Chip size='small' label='Office' color='success' />,
+    meta: <Chip size='small' variant='tonal' label='Office' color='success' />,
     value: 'office',
     content: (
-      <div className='flex flex-col h-full'>
-        <Typography>
+      <div className='flex flex-col h-full gap-3'>
+        <Typography variant='body2' className={commonStyles.textSecondary}>
           87 Hoffman Avenue, New York, NY, 10016.
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
         </Typography>
         <Divider />
-        <div className='flex items-center'>
+        <div className='flex items-center gap-4 mbs-0.5'>
           <Typography href='/' component={Link} onClick={e => e.preventDefault()} className={commonStyles.primary}>
             Edit
           </Typography>
@@ -89,7 +89,7 @@ const dataIcons: CustomInputVerticalData[] = [
     asset: 'ri-user-3-line',
     content: (
       <>
-        <Chip size='small' label='Free' color='success' className='absolute inline-end-0' />
+        <Chip size='small' variant='tonal' label='Free' color='success' className='absolute inline-end-5' />
         <Typography variant='body2' className='text-center my-auto'>
           Get your product in 1 Week.
         </Typography>
@@ -99,10 +99,10 @@ const dataIcons: CustomInputVerticalData[] = [
   {
     value: 'express',
     title: 'Express',
-    asset: 'ri-vip-crown-line',
+    asset: 'ri-star-smile-line',
     content: (
       <>
-        <Chip label='$10' size='small' color='secondary' className='absolute inline-end-0' />
+        <Chip label='$10' variant='tonal' size='small' color='secondary' className='absolute inline-end-5' />
         <Typography variant='body2' className='text-center my-auto'>
           Get your product in 3-4 days.
         </Typography>
@@ -112,10 +112,10 @@ const dataIcons: CustomInputVerticalData[] = [
   {
     value: 'overnight',
     title: 'Overnight',
-    asset: 'ri-rocket-2-line',
+    asset: 'ri-vip-crown-line',
     content: (
       <>
-        <Chip label='$15' size='small' color='secondary' className='absolute inline-end-0' />
+        <Chip label='$15' variant='tonal' size='small' color='secondary' className='absolute inline-end-5' />
         <Typography variant='body2' className='text-center my-auto'>
           Get your product in 1 day.
         </Typography>
@@ -158,11 +158,11 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
   }
 
   return (
-    <Grid container>
-      <Grid item xs={12} lg={8}>
+    <Grid container spacing={6}>
+      <Grid item xs={12} lg={8} className='flex flex-col gap-6'>
         <div className='flex flex-col items-start gap-4'>
           <Typography>Select your preferable address</Typography>
-          <Grid container>
+          <Grid container spacing={6}>
             {data.map((item, index) => (
               <CustomInputHorizontal
                 type='radio'
@@ -179,7 +179,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
         </div>
         <div className='flex flex-col items-start gap-4'>
           <Typography>Choose Delivery Speed</Typography>
-          <Grid container>
+          <Grid container spacing={6}>
             {dataIcons.map((item, index) => {
               let asset
 
@@ -202,40 +202,50 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
           </Grid>
         </div>
       </Grid>
-      <Grid item xs={12} lg={4}>
+      <Grid item xs={12} lg={4} className='flex flex-col gap-4'>
         <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
-          <CardContent>
+          <CardContent className='flex flex-col gap-4'>
             <Typography className='font-medium'>Estimated Delivery Date</Typography>
-            <div className='flex gap-2'>
+            <div className='flex gap-4 items-center'>
               <img width={60} height={60} src='/images/pages/google-home.png' alt='Google Home' />
               <div>
-                <Typography>Google - Google Home - White</Typography>
-                <Typography>18th Nov 2021</Typography>
+                <Typography variant='body2'>Google - Google Home - White</Typography>
+                <Typography variant='body2' className='font-medium'>
+                  18th Nov 2021
+                </Typography>
               </div>
             </div>
-            <div className='flex gap-2'>
+            <div className='flex gap-4 items-center'>
               <img width={60} height={60} src='/images/pages/iPhone-11.png' alt='iphone 11' />
               <div>
-                <Typography>Apple iPhone 11 (64GB, Black)</Typography>
-                <Typography>20th Nov 2021</Typography>
+                <Typography variant='body2'>Apple iPhone 11 (64GB, Black)</Typography>
+                <Typography variant='body2' className='font-medium'>
+                  20th Nov 2021
+                </Typography>
               </div>
             </div>
           </CardContent>
           <Divider />
-          <CardContent>
+          <CardContent className='flex flex-col gap-4'>
             <Typography className='font-medium'>Price Details</Typography>
             <div className='flex flex-col gap-2'>
-              <div className='flex gap-2 items-center flex-wrap'>
-                <Typography>Order Total</Typography>
-                <Typography>$1198.00</Typography>
+              <div className='flex gap-2 justify-between flex-wrap'>
+                <Typography variant='body2' className={commonStyles.textPrimary}>
+                  Order Total
+                </Typography>
+                <Typography variant='body2' className={commonStyles.textSecondary}>
+                  $1198.00
+                </Typography>
               </div>
               <div className='flex justify-between flex-wrap'>
-                <Typography>Delivery Charges</Typography>
+                <Typography variant='body2' className={commonStyles.textPrimary}>
+                  Delivery Charges
+                </Typography>
                 <div className='flex gap-2'>
-                  <Typography variant='body2' className='line-through'>
+                  <Typography variant='body2' className={classnames(commonStyles.textDisabled, 'line-through')}>
                     $5.00
                   </Typography>
-                  <Chip size='small' color='success' label='Free' />
+                  <Chip size='small' variant='tonal' color='success' label='Free' />
                 </div>
               </div>
             </div>
