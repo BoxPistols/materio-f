@@ -21,6 +21,9 @@ import type { Theme } from '@mui/material/styles'
 // Third-party Imports
 import classnames from 'classnames'
 
+// Type Imports
+import type { Direction } from '@core/types'
+
 // Component Imports
 import Illustrations from '@components/Illustrations'
 
@@ -34,7 +37,7 @@ import Logo from '@core/svg/Logo'
 import styles from './v1.module.css'
 import commonStyles from '@/styles/common.module.css'
 
-const ResetPasswordV1 = () => {
+const ResetPasswordV1 = ({ direction }: { direction: Direction }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState(false)
@@ -109,7 +112,7 @@ const ResetPasswordV1 = () => {
               </Button>
               <Typography className={classnames('flex justify-center items-center', commonStyles.primaryColor)}>
                 <Link href='/pages/auth/login-v1' onClick={e => e.preventDefault()} className='flex items-center'>
-                  <i className='ri-arrow-left-s-line' />
+                  <i className={direction === 'rtl' ? 'ri-arrow-right-s-line' : 'ri-arrow-left-s-line'} />
                   <span>Back to Login</span>
                 </Link>
               </Typography>

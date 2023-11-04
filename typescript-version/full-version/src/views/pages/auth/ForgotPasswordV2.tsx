@@ -14,6 +14,9 @@ import { useColorScheme } from '@mui/material/styles'
 // Third-party Imports
 import classnames from 'classnames'
 
+// Type Imports
+import type { Direction } from '@core/types'
+
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
@@ -28,7 +31,7 @@ import Illustrations from '@components/Illustrations'
 import styles from './v2.module.css'
 import commonStyles from '@/styles/common.module.css'
 
-const ForgotPasswordV2 = () => {
+const ForgotPasswordV2 = ({ direction }: { direction: Direction }) => {
   // Hooks
   const isAboveMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
   const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
@@ -94,7 +97,7 @@ const ForgotPasswordV2 = () => {
             </Button>
             <Typography className={classnames('flex justify-center items-center', commonStyles.primaryColor)}>
               <Link href='/pages/auth/login-v2' className='flex items-center'>
-                <i className='ri-arrow-left-s-line' />
+                <i className={direction === 'rtl' ? 'ri-arrow-right-s-line' : 'ri-arrow-left-s-line'} />
                 <span>Back to Login</span>
               </Link>
             </Typography>

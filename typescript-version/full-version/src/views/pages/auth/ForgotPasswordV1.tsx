@@ -16,6 +16,9 @@ import type { Theme } from '@mui/material/styles'
 // Third-party Imports
 import classnames from 'classnames'
 
+// Type Imports
+import type { Direction } from '@core/types'
+
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
@@ -30,7 +33,7 @@ import Logo from '@core/svg/Logo'
 import styles from './v1.module.css'
 import commonStyles from '@/styles/common.module.css'
 
-const ForgotPasswordV1 = () => {
+const ForgotPasswordV1 = ({ direction }: { direction: Direction }) => {
   const { mode, systemMode } = useColorScheme()
 
   const authBackground =
@@ -65,7 +68,7 @@ const ForgotPasswordV1 = () => {
               </Button>
               <Typography className={classnames('flex justify-center items-center', commonStyles.primaryColor)}>
                 <Link href='/pages/auth/login-v1' className='flex items-center'>
-                  <i className='ri-arrow-left-s-line' />
+                  <i className={direction === 'rtl' ? 'ri-arrow-right-s-line' : 'ri-arrow-left-s-line'} />
                   <span>Back to Login</span>
                 </Link>
               </Typography>

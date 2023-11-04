@@ -19,6 +19,9 @@ import Chip from '@mui/material/Chip'
 // Third-party Imports
 import classnames from 'classnames'
 
+// Type Imports
+import type { Direction } from '@core/types'
+
 // Style Imports
 import commonStyles from '@/styles/common.module.css'
 
@@ -27,6 +30,7 @@ type Props = {
   handleNext: () => void
   handlePrev: () => void
   steps: { title: string; subtitle: string }[]
+  direction: Direction
 }
 
 const furnishingArray: string[] = [
@@ -43,7 +47,7 @@ const furnishingArray: string[] = [
   'Washing Machine'
 ]
 
-const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps }: Props) => {
+const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps, direction }: Props) => {
   // States
   const [furnishingDetails, setFurnishingDetails] = useState<string[]>(['Fridge', 'AC', 'TV'])
 
@@ -115,7 +119,7 @@ const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps }: Pro
             color='secondary'
             disabled={activeStep === 0}
             onClick={handlePrev}
-            startIcon={<i className='ri-arrow-left-line' />}
+            startIcon={<i className={direction === 'rtl' ? 'ri-arrow-right-line' : 'ri-arrow-left-line'} />}
           >
             Previous
           </Button>
@@ -123,7 +127,17 @@ const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps }: Pro
             variant='contained'
             color={activeStep === steps.length - 1 ? 'success' : 'primary'}
             onClick={handleNext}
-            endIcon={<i className={activeStep === steps.length - 1 ? 'ri-check-line' : 'ri-arrow-right-line'} />}
+            endIcon={
+              <i
+                className={
+                  activeStep === steps.length - 1
+                    ? 'ri-check-line'
+                    : direction === 'rtl'
+                    ? 'ri-arrow-left-line'
+                    : 'ri-arrow-right-line'
+                }
+              />
+            }
           >
             {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
           </Button>
