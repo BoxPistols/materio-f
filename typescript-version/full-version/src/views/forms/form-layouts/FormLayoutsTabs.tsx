@@ -117,7 +117,7 @@ const FormLayoutsWithTabs = () => {
         <form onSubmit={e => e.preventDefault()}>
           <CardContent>
             <TabPanel value='personal_info'>
-              <Grid container>
+              <Grid container spacing={5}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     fullWidth
@@ -193,7 +193,7 @@ const FormLayoutsWithTabs = () => {
               </Grid>
             </TabPanel>
             <TabPanel value='account_details'>
-              <Grid container>
+              <Grid container spacing={5}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     fullWidth
@@ -266,7 +266,7 @@ const FormLayoutsWithTabs = () => {
               </Grid>
             </TabPanel>
             <TabPanel value='social_links'>
-              <Grid container>
+              <Grid container spacing={5}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     fullWidth

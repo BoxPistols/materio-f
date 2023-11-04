@@ -83,7 +83,7 @@ const FormLayoutsSeparator = () => {
       <Divider />
       <form onSubmit={e => e.preventDefault()}>
         <CardContent>
-          <Grid container>
+          <Grid container spacing={5}>
             <Grid item xs={12}>
               <Typography variant='body2' className='font-medium'>
                 1. Account Details

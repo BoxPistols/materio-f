@@ -14,7 +14,7 @@ import DatePickerWrapper from '@core/styles/libs/react-datepicker'
 const FormLayouts = () => {
   return (
     <DatePickerWrapper>
-      <Grid container>
+      <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <FormLayoutsBasic />
         </Grid>

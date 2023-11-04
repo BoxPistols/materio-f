@@ -331,7 +331,7 @@ const StepperAlternativeLabel = () => {
           ) : (
             <>
               <form onSubmit={e => e.preventDefault()}>
-                <Grid container>
+                <Grid container spacing={5}>
                   <Grid item xs={12}>
                     <Typography className='font-medium'>{steps[activeStep].title}</Typography>
                     <Typography variant='body2'>{steps[activeStep].subtitle}</Typography>

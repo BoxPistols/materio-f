@@ -34,7 +34,7 @@ const FormLayoutsBasic = () => {
       <CardHeader title='Basic' />
       <CardContent>
         <form onSubmit={e => e.preventDefault()}>
-          <Grid container>
+          <Grid container spacing={5}>
             <Grid item xs={12}>
               <TextField fullWidth label='Name' placeholder='John Doe' />
             </Grid>

@@ -52,6 +52,9 @@ const card = (skin: Skin): Theme['components'] => {
           },
           '& + .MuiCardHeader-root, & + .MuiCardContent-root, & + .MuiCardActions-root': {
             paddingBlockStart: 0
+          },
+          '& > .MuiTabPanel-root': {
+            padding: 0
           }
         })
       }

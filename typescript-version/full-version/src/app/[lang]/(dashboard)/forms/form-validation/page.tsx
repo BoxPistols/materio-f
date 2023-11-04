@@ -17,7 +17,7 @@ import styles from '@/styles/link.module.css'
 const FormValidation = () => {
   return (
     <DatePickerWrapper>
-      <Grid container>
+      <Grid container spacing={6}>
         <Grid item xs={12}>
           <Typography variant='h5'>React Hook Form</Typography>
           <Typography variant='body2'>

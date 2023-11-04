@@ -37,7 +37,7 @@ const FormLayoutsAlignment = () => {
           onSubmit={e => e.preventDefault()}
           className={classnames('p-12', styles.formWrapper, commonStyles.border, commonStyles.borderRadius)}
         >
-          <Grid container>
+          <Grid container spacing={5}>
             <Grid item xs={12}>
               <Typography variant='h5'>Sign In</Typography>
             </Grid>

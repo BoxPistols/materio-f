@@ -60,7 +60,7 @@ const FormValidationAsyncSubmit = () => {
       <CardHeader title='Async Submit' />
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Grid container>
+          <Grid container spacing={5}>
             <Grid item xs={12}>
               <Controller
                 name='firstName'

@@ -16,7 +16,7 @@ import styles from '@/styles/link.module.css'
 
 const FormWizard = () => {
   return (
-    <Grid container>
+    <Grid container spacing={6}>
       <Grid item xs={12}>
         <Typography variant='h5'>Stepper</Typography>
         <Typography variant='body2'>

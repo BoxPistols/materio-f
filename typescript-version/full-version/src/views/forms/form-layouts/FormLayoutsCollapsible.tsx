@@ -124,12 +124,12 @@ const FormLayoutsCollapsible = () => {
   return (
     <form onSubmit={e => e.preventDefault()}>
       <Accordion expanded={expanded === 'panel1'} onChange={handleExpandChange('panel1')}>
-        <AccordionSummary expandIcon={<i className='ri-arrow-down-s-line' />}>
+        <AccordionSummary expandIcon={<i className='ri-arrow-down-s-line' />} className='plb-0'>
           <Typography>Delivery Address</Typography>
         </AccordionSummary>
         <Divider />
-        <AccordionDetails>
-          <Grid container>
+        <AccordionDetails className='!pbs-5'>
+          <Grid container spacing={5}>
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
@@ -223,7 +223,7 @@ const FormLayoutsCollapsible = () => {
           <Typography>Delivery Options</Typography>
         </AccordionSummary>
         <Divider />
-        <AccordionDetails>
+        <AccordionDetails className='!pbs-5'>
           <Grid container>
             {data.map((item, index) => (
               <CustomInputHorizontal
@@ -245,10 +245,10 @@ const FormLayoutsCollapsible = () => {
           <Typography>Payment Method</Typography>
         </AccordionSummary>
         <Divider />
-        <AccordionDetails>
+        <AccordionDetails className='!pbs-5'>
           <Grid container>
             <Grid item xs={12} md={6}>
-              <Grid container>
+              <Grid container spacing={5}>
                 <Grid item xs={12}>
                   <RadioGroup
                     row
@@ -262,7 +262,7 @@ const FormLayoutsCollapsible = () => {
                 </Grid>
                 {paymentMethod === 'credit' ? (
                   <Grid item xs={12}>
-                    <Grid container>
+                    <Grid container spacing={5}>
                       <Grid item xs={12}>
                         <TextField
                           fullWidth
