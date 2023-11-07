@@ -143,16 +143,29 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
         header: 'Assigned To',
         cell: ({ row }) =>
           typeof row.original.assignedTo === 'string' ? (
-            <Chip label={row.original.assignedTo} color={colors[row.original.assignedTo]} size='small' />
+            <Chip
+              variant='tonal'
+              label={row.original.assignedTo}
+              color={colors[row.original.assignedTo]}
+              size='small'
+              className='capitalize'
+            />
           ) : (
             row.original.assignedTo.map((item, index) => (
-              <Chip key={index} label={item} color={colors[item]} size='small' />
+              <Chip
+                key={index}
+                variant='tonal'
+                label={item}
+                color={colors[item]}
+                size='small'
+                className='capitalize mie-4'
+              />
             ))
           )
       }),
       columnHelper.accessor('createdDate', {
         header: 'Created Date',
-        cell: ({ row }) => <Typography>{row.original.createdDate}</Typography>
+        cell: ({ row }) => <Typography variant='body2'>{row.original.createdDate}</Typography>
       }),
       columnHelper.accessor('action', {
         header: 'Actions',

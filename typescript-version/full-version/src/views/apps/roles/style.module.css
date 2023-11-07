@@ -5,3 +5,7 @@
 .minWidth150 {
   min-inline-size: 150px;
 }
+
+.title:hover {
+  color: var(--mui-palette-primary-main);
+}

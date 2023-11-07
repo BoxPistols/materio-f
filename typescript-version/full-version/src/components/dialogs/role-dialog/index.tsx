@@ -22,7 +22,8 @@ import type { Theme } from '@mui/material'
 import classnames from 'classnames'
 
 // Style Imports
-import styles from '@components/dialogs/styles.module.css'
+import styles from './styles.module.css'
+import globalStyles from '@components/dialogs/styles.module.css'
 
 type RoleDialogProps = {
   open: boolean
@@ -100,8 +101,8 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
     <Dialog fullWidth maxWidth='md' scroll='body' open={open} onClose={handleClose}>
       <DialogTitle
         variant='h5'
-        className={classnames('flex flex-col gap-2 text-center', styles.dialogTitle, {
-          [styles.smDialogTitle]: isBelowSmScreen
+        className={classnames('flex flex-col gap-2 text-center', globalStyles.dialogTitle, {
+          [globalStyles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Upgrade Plan
@@ -111,19 +112,27 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
       </DialogTitle>
       <form onSubmit={e => e.preventDefault()}>
         <DialogContent
-          className={classnames('overflow-visible', styles.dialogContent, {
-            [styles.smDialogContent]: isBelowSmScreen
+          className={classnames('overflow-visible flex flex-col gap-6', globalStyles.dialogContent, {
+            [globalStyles.smDialogContent]: isBelowSmScreen
           })}
         >
-          <IconButton onClick={handleClose} className={styles.closeIcon}>
+          <IconButton onClick={handleClose} className={globalStyles.closeIcon}>
             <i className='ri-close-line' />
           </IconButton>
           <TextField label='Role Name' variant='outlined' fullWidth placeholder='Enter Role Name' />
-          <Typography>Role Permissions</Typography>
-          <div className='flex flex-col'>
-            <div className='flex items-center justify-between'>
-              <Typography>Administrator Access</Typography>
+          <Typography variant='h5'>Role Permissions</Typography>
+          <div className='flex flex-col overflow-x-auto'>
+            <div
+              className={classnames(
+                'flex items-center justify-between plb-2.5 gap-6 whitespace-nowrap',
+                styles.borderBottom
+              )}
+            >
+              <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]'>
+                Administrator Access
+              </Typography>
               <FormControlLabel
+                className='mie-0'
                 control={
                   <Checkbox
                     onChange={handleSelectAllCheckbox}
@@ -138,17 +147,26 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
               const id = (typeof item === 'string' ? item : item.title).toLowerCase().split(' ').join('-')
 
               return (
-                <div className='flex items-center justify-between' key={index}>
-                  <Typography>{typeof item === 'object' ? item.title : item}</Typography>
+                <div
+                  className={classnames(
+                    'flex items-center justify-between plb-2.5 gap-6 whitespace-nowrap',
+                    styles.borderBottom
+                  )}
+                  key={index}
+                >
+                  <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]'>
+                    {typeof item === 'object' ? item.title : item}
+                  </Typography>
                   {typeof item === 'object' ? (
-                    <FormGroup className='flex-row'>
-                      <FormControlLabel control={<Checkbox checked={item.read} />} label='Read' />
-                      <FormControlLabel control={<Checkbox checked={item.write} />} label='Write' />
-                      <FormControlLabel control={<Checkbox checked={item.select} />} label='Select' />
+                    <FormGroup className='flex-row gap-6 flex-nowrap'>
+                      <FormControlLabel className='mie-0' control={<Checkbox checked={item.read} />} label='Read' />
+                      <FormControlLabel className='mie-0' control={<Checkbox checked={item.write} />} label='Write' />
+                      <FormControlLabel className='mie-0' control={<Checkbox checked={item.select} />} label='Select' />
                     </FormGroup>
                   ) : (
-                    <FormGroup className='flex-row'>
+                    <FormGroup className='flex-row gap-6 flex-nowrap'>
                       <FormControlLabel
+                        className='mie-0'
                         control={
                           <Checkbox
                             id={`${id}-read`}
@@ -159,6 +177,7 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
                         label='Read'
                       />
                       <FormControlLabel
+                        className='mie-0'
                         control={
                           <Checkbox
                             id={`${id}-write`}
@@ -169,6 +188,7 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
                         label='Write'
                       />
                       <FormControlLabel
+                        className='mie-0'
                         control={
                           <Checkbox
                             id={`${id}-create`}
@@ -186,8 +206,8 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
           </div>
         </DialogContent>
         <DialogActions
-          className={classnames('gap-2 justify-center', styles.dialogActions, {
-            [styles.smDialogAction]: isBelowSmScreen
+          className={classnames('gap-2 justify-center', globalStyles.dialogActions, {
+            [globalStyles.smDialogAction]: isBelowSmScreen
           })}
         >
           <Button variant='contained' type='submit' onClick={handleClose}>

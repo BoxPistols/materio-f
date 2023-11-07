@@ -49,14 +49,17 @@ const RoleCards = () => {
       <Grid container className='h-full'>
         <Grid item xs={5}>
           <div className='flex items-end justify-center h-full'>
-            <img alt='add-role' src='/images/cards/pose_m1.png' />
+            <img alt='add-role' src='/images/illustrations/characters/1.png' height={130} />
           </div>
         </Grid>
         <Grid item xs={7}>
           <CardContent>
-            <div className='text-right'>
+            <div className='flex flex-col items-end gap-4 text-right'>
               <Button variant='contained'>Add Role</Button>
-              <Typography>Add role, if it doesn&#39;t exist.</Typography>
+              <Typography>
+                Add new role, <br />
+                if it doesn&#39;t exist.
+              </Typography>
             </div>
           </CardContent>
         </Grid>
@@ -66,13 +69,13 @@ const RoleCards = () => {
 
   return (
     <>
-      <Grid container>
+      <Grid container spacing={6}>
         {cardData.map((item, index) => (
           <Grid item xs={12} sm={6} lg={4} key={index}>
             <Card>
-              <CardContent>
+              <CardContent className='flex flex-col gap-4'>
                 <div className='flex items-center justify-between'>
-                  <Typography>{`Total ${item.totalUsers} users`}</Typography>
+                  <Typography variant='body2'>{`Total ${item.totalUsers} users`}</Typography>
                   <AvatarGroup total={item.totalUsers}>
                     {item.avatars.map((img, index: number) => (
                       <Avatar key={index} alt={item.title} src={`/images/avatars/${img}`} />
@@ -80,11 +83,11 @@ const RoleCards = () => {
                   </AvatarGroup>
                 </div>
                 <div className='flex justify-between items-center'>
-                  <div className='flex flex-col items-start'>
+                  <div className='flex flex-col items-start gap-1'>
                     <Typography variant='h6'>{item.title}</Typography>
                     <OpenDialogOnElementClick element={Typography} elementProps={typographyProps} dialog={RoleDialog} />
                   </div>
-                  <IconButton>
+                  <IconButton className='p-1.5'>
                     <i className='ri-file-copy-line' />
                   </IconButton>
                 </div>
