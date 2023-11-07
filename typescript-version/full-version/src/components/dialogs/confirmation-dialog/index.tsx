@@ -17,6 +17,7 @@ import classnames from 'classnames'
 
 // Style Imports
 import styles from '@components/dialogs/styles.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 type ConfirmationType = 'delete-account' | 'unsubscribe' | 'suspend-account'
 
@@ -55,7 +56,7 @@ const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) =>
             [styles.smDialogTitle]: isBelowSmScreen
           })}
         >
-          <i className='ri-error-warning-line text-[88px]' />
+          <i className={classnames('ri-error-warning-line text-[88px] mbe-6', commonStyles.warningColor)} />
           <Wrapper
             {...(type === 'suspend-account' && {
               className: 'flex flex-col items-center gap-5'
@@ -97,12 +98,14 @@ const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) =>
           })}
         >
           <i
-            className={classnames('text-[88px]', {
+            className={classnames('text-[88px] mbe-8', {
               'ri-checkbox-circle-line': userInput,
-              'ri-close-circle-line': !userInput
+              [commonStyles.successColor]: userInput,
+              'ri-close-circle-line': !userInput,
+              [commonStyles.errorColor]: !userInput
             })}
           />
-          <Typography>
+          <Typography variant='h4' className='mbe-5'>
             {userInput
               ? `${type === 'delete-account' ? 'Deactivated' : type === 'unsubscribe' ? 'Unsubscribed' : 'Suspended!'}`
               : 'Cancelled'}

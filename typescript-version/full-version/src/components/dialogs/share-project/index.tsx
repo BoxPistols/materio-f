@@ -162,13 +162,13 @@ const ShareProject = ({ open, setOpen }: ShareProjectProps) => {
         <IconButton onClick={() => setOpen(false)} className={styles.closeIcon}>
           <i className='ri-close-line' />
         </IconButton>
-        <div className='flex flex-col gap-2'>
-          <InputLabel htmlFor='add-member' className='inline-flex'>
+        <div className='flex flex-col gap-2 items-start'>
+          <Typography component={InputLabel} variant='h6' htmlFor='add-member' className='inline-flex'>
             Add Members
-          </InputLabel>
+          </Typography>
           <Autocomplete
-            autoHighlight
             id='add-member'
+            fullWidth
             options={autocompleteOptions || []}
             ListboxComponent={List}
             getOptionLabel={option => option.name}
@@ -245,7 +245,7 @@ const ShareProject = ({ open, setOpen }: ShareProjectProps) => {
               className={commonStyles.textPrimary}
             >{`Public to ${themeConfig.templateName} - ThemeSelection`}</Typography>
           </div>
-          <Button variant='outlined' className='flex' size='small'>
+          <Button variant='outlined' className='flex gap-1.5' size='small'>
             <i className='ri-link text-xl' />
             Copy Project Link
           </Button>

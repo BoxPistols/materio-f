@@ -132,6 +132,7 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
           bg: '#1A0E33'
         },
         customColors: {
+          bodyBg: '#F4F5FA',
           chatBg: '#F7F6FA',
           greyLightBg: '#FAFAFA',
           inputBorder: `rgb(${mainLightColor} / 0.28)`,
@@ -264,6 +265,7 @@ const colorSchemes = (mainColors: MainColor): Theme['colorSchemes'] => {
           bg: '#F7F4FF'
         },
         customColors: {
+          bodyBg: '#28243D',
           chatBg: '#373452',
           greyLightBg: '#373350',
           inputBorder: `rgb(${mainDarkColor} / 0.28)`,

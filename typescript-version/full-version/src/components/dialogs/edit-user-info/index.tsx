@@ -181,7 +181,7 @@ const EditUserInfo = ({ open, setOpen, data }: EditUserInfoProps) => {
                   value={userData?.language}
                   onChange={e => setUserData({ ...userData, language: e.target.value as string[] })}
                   renderValue={selected => (
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 flex-wrap'>
                       {(selected as string[]).map(value => (
                         <Chip key={value} label={value} className='capitalize' size='small' />
                       ))}

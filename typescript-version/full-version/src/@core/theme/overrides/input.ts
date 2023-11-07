@@ -54,7 +54,9 @@ const input: Theme['components'] = {
       },
       input: ({ theme, ownerState }) => ({
         ...(ownerState?.size === 'medium' && {
-          padding: theme.spacing(4),
+          '&:not(.MuiInputBase-inputMultiline, .MuiInputBase-inputAdornedStart)': {
+            padding: theme.spacing(4)
+          },
           height: '1.5em'
         }),
         '& ~ .MuiOutlinedInput-notchedOutline': {

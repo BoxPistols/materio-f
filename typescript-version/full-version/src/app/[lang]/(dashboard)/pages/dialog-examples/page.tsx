@@ -35,7 +35,7 @@ const DialogExamples = async ({ params }: { params: { lang: Locale } }) => {
   const direction = getDirection(params.lang)
 
   return (
-    <Grid container>
+    <Grid container spacing={6}>
       <Grid item xs={12} sm={6} md={4}>
         <DialogAddCard />
       </Grid>

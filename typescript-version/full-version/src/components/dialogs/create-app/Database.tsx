@@ -4,13 +4,15 @@ import type { ChangeEvent } from 'react'
 
 // MUI Imports
 import Typography from '@mui/material/Typography'
-import Avatar from '@mui/material/Avatar'
 import Radio from '@mui/material/Radio'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 
 // Type Imports
 import type { Direction } from '@core/types'
+
+// Component Imports
+import CustomAvatar from '@core/components/mui/Avatar'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -42,9 +44,9 @@ const DataBase = ({ activeStep, isLastStep, handleNext, handlePrev, direction }:
         <Typography variant='h6'>Select Database Engine</Typography>
         <div onClick={() => setValue('firebase')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar variant='rounded'>
+            <CustomAvatar variant='rounded' skin='light' color='warning'>
               <img src='/images/logos/firebase.png' alt='firebase' height={30} width={30} />
-            </Avatar>
+            </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography>Firebase</Typography>
               <Typography variant='caption'>Cloud Firestore</Typography>
@@ -54,9 +56,9 @@ const DataBase = ({ activeStep, isLastStep, handleNext, handlePrev, direction }:
         </div>
         <div onClick={() => setValue('aws')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar variant='rounded'>
+            <CustomAvatar variant='rounded' skin='light' color='secondary'>
               <img src='/images/logos/aws.png' alt='aws' height={30} width={30} />
-            </Avatar>
+            </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography>AWS</Typography>
               <Typography variant='caption'>Amazon Fast NoSQL Database</Typography>
@@ -66,9 +68,9 @@ const DataBase = ({ activeStep, isLastStep, handleNext, handlePrev, direction }:
         </div>
         <div onClick={() => setValue('sql')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar variant='rounded'>
+            <CustomAvatar variant='rounded' skin='light' color='info'>
               <i className='ri-database-2-line text-3xl' />
-            </Avatar>
+            </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography>MySQL</Typography>
               <Typography variant='caption'>Basic MySQL database</Typography>

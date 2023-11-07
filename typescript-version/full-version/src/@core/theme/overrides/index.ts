@@ -23,6 +23,8 @@ import list from './list'
 import menu from './menu'
 import pagination from './pagination'
 import paper from './paper'
+import popover from './popover'
+import progress from './progress'
 import Radio from './radio'
 import Select from './select'
 import slider from './slider'
@@ -59,6 +61,8 @@ const overrides = (skin: Skin) => {
     menu(skin),
     pagination,
     paper,
+    popover(skin),
+    progress,
     Radio,
     Select,
     slider,

@@ -6,11 +6,13 @@ import type { ChangeEvent } from 'react'
 import Radio from '@mui/material/Radio'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
-import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 
 // Type Imports
 import type { Direction } from '@core/types'
+
+// Component Imports
+import CustomAvatar from '@core/components/mui/Avatar'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -38,9 +40,9 @@ const Details = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: 
         <Typography variant='h6'>Category</Typography>
         <div onClick={() => setValue('crm')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar variant='rounded'>
-              <i className='ri-bar-chart-box-line' />
-            </Avatar>
+            <CustomAvatar variant='rounded' skin='light' color='info'>
+              <i className='ri-briefcase-line' />
+            </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography>CRM Application</Typography>
               <Typography variant='caption'>Scales with any business</Typography>
@@ -50,9 +52,9 @@ const Details = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: 
         </div>
         <div onClick={() => setValue('eCommerce')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar variant='rounded'>
-              <i className='ri-shopping-cart-line' />
-            </Avatar>
+            <CustomAvatar variant='rounded' skin='light' color='success'>
+              <i className='ri-shopping-cart-2-line' />
+            </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography>eCommerce Platforms</Typography>
               <Typography variant='caption'>Grow Your Business With App</Typography>
@@ -62,9 +64,9 @@ const Details = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: 
         </div>
         <div onClick={() => setValue('learning')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar variant='rounded'>
+            <CustomAvatar variant='rounded' skin='light' color='error'>
               <i className='ri-video-upload-line' />
-            </Avatar>
+            </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography>Online Learning platform</Typography>
               <Typography variant='caption'>Start learning today</Typography>

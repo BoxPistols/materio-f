@@ -60,6 +60,7 @@ declare module '@mui/material/styles' {
   // Palette
   interface Palette {
     customColors: {
+      bodyBg: string
       chatBg: string
       greyLightBg: string
       inputBorder: string
@@ -70,6 +71,7 @@ declare module '@mui/material/styles' {
   }
   interface PaletteOptions {
     customColors?: {
+      bodyBg?: string
       chatBg?: string
       greyLightBg?: string
       inputBorder?: string

@@ -27,7 +27,7 @@ const Root = styled('div', {
   alignItems: 'center',
   flexDirection: 'column',
   justifyContent: 'center',
-  border: '1px solid var(--mui-palette-divider)',
+  border: '1px solid var(--mui-palette-customColors-inputBorder)',
 
   '&:hover': {
     borderColor: 'var(--mui-palette-action-active)'

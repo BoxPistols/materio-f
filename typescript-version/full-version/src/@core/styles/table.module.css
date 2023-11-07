@@ -20,6 +20,7 @@
     font-weight: 500;
     text-align: start;
     block-size: 56px;
+    background-color: var(--mui-palette-customColors-tableHeaderBg);
     &:not(:first-of-type):not(:last-of-type) {
       padding-block: 0.5rem;
       padding-inline: 1rem;
@@ -30,7 +31,7 @@
         padding-inline: 1.25rem 1rem;
       }
       &:has(input[type='checkbox']) {
-        padding-inline-start: 0.75rem;
+        padding-inline-start: 0.5rem;
       }
     }
     &:last-of-type {
@@ -57,7 +58,7 @@
         padding-inline: 1.25rem 1rem;
       }
       &:has(input[type='checkbox']) {
-        padding-inline-start: 0.75rem;
+        padding-inline-start: 0.5rem;
       }
     }
     &:last-of-type {

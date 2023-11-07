@@ -211,8 +211,8 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
                         <Avatar variant='rounded' className={classnames({ [styles.activeStep]: activeStep === index })}>
                           <i className={label.icon as string} />
                         </Avatar>
-                        <div className='flex flex-col'>
-                          <Typography variant='body2' className={commonStyles.textPrimary}>
+                        <div className='flex flex-col gap-1'>
+                          <Typography variant='body2' className={classnames('uppercase', commonStyles.textPrimary)}>
                             {label.title}
                           </Typography>
                           <Typography variant='caption'>{label.subtitle}</Typography>

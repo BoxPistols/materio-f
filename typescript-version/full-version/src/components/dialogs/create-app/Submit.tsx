@@ -18,8 +18,8 @@ const Submit = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: P
     <div className='flex flex-col gap-6'>
       <div className='flex flex-col items-center gap-4'>
         <div className='flex flex-col items-center gap-1'>
-          <Typography>Submit 🥳</Typography>
-          <Typography>Submit to kickstart your project.</Typography>
+          <Typography variant='h6'>Submit 🥳</Typography>
+          <Typography variant='body2'>Submit to kickstart your project.</Typography>
         </div>
         <img alt='submit-img' src='/images/cards/illustration-john.png' />
       </div>

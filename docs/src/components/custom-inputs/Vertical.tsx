@@ -29,7 +29,7 @@ const Root = styled('div', {
   flexDirection: 'column',
   padding: theme.spacing(4),
   borderRadius: 'var(--mui-shape-borderRadius)',
-  border: '1px solid var(--mui-palette-divider)',
+  border: '1px solid var(--mui-palette-customColors-inputBorder)',
   transition: theme.transitions.create(['border-color'], { duration: theme.transitions.duration.shorter }),
 
   '&:hover': {

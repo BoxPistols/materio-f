@@ -4,12 +4,14 @@ import type { ChangeEvent } from 'react'
 
 // MUI Imports
 import Typography from '@mui/material/Typography'
-import Avatar from '@mui/material/Avatar'
 import Radio from '@mui/material/Radio'
 import Button from '@mui/material/Button'
 
 // Type Imports
 import type { Direction } from '@core/types'
+
+// Component Imports
+import CustomAvatar from '@core/components/mui/Avatar'
 
 type Props = {
   activeStep: number
@@ -33,9 +35,9 @@ const FrameWork = ({ activeStep, isLastStep, handleNext, handlePrev, direction }
         <Typography variant='h6'>Select Framework</Typography>
         <div onClick={() => setValue('react')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar variant='rounded'>
+            <CustomAvatar variant='rounded' skin='light' color='info'>
               <img src='/images/logos/react.png' alt='react' height={30} width={30} />
-            </Avatar>
+            </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography>React Native</Typography>
               <Typography variant='caption'>Create truly native apps</Typography>
@@ -46,9 +48,9 @@ const FrameWork = ({ activeStep, isLastStep, handleNext, handlePrev, direction }
 
         <div onClick={() => setValue('angular')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar variant='rounded'>
+            <CustomAvatar variant='rounded' skin='light' color='error'>
               <img src='/images/logos/angular.png' alt='angular' height={30} width={30} />
-            </Avatar>
+            </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography>Angular</Typography>
               <Typography variant='caption'>Most suited for your application</Typography>
@@ -58,9 +60,9 @@ const FrameWork = ({ activeStep, isLastStep, handleNext, handlePrev, direction }
         </div>
         <div onClick={() => setValue('vuejs')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar variant='rounded'>
+            <CustomAvatar variant='rounded' skin='light' color='success'>
               <img src='/images/logos/vue.png' alt='vue' height={30} width={30} />
-            </Avatar>
+            </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography>Vue</Typography>
               <Typography variant='caption'>Progressive Framework</Typography>
@@ -70,9 +72,9 @@ const FrameWork = ({ activeStep, isLastStep, handleNext, handlePrev, direction }
         </div>
         <div onClick={() => setValue('laravel')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <Avatar variant='rounded'>
+            <CustomAvatar variant='rounded' skin='light' color='warning'>
               <img src='/images/logos/laravel.png' alt='laravel' height={30} width={30} />
-            </Avatar>
+            </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography>Laravel</Typography>
               <Typography variant='caption'>PHP web frameworks</Typography>

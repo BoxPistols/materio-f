@@ -41,7 +41,7 @@ const OutsidePopover = () => {
           horizontal: 'center'
         }}
       >
-        <Typography className='p-4'>The content of the Popover.</Typography>
+        <Typography>The content of the Popover.</Typography>
       </Popover>
     </>
   )

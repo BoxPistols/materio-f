@@ -135,7 +135,7 @@ const AppDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
           </Typography>
         </div>
         <div className='flex justify-center'>
-          <img alt='qr-code' src='/images/pages/themeselection-qr.png' />
+          <img alt='qr-code' src='/images/misc/barcode.png' width={150} />
         </div>
         <div className='flex flex-col gap-4'>
           <Alert severity='warning' icon={false}>

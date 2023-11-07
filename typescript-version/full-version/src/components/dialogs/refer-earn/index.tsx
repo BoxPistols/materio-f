@@ -10,7 +10,6 @@ import DialogContent from '@mui/material/DialogContent'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
-import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
 import InputLabel from '@mui/material/InputLabel'
 import TextField from '@mui/material/TextField'
@@ -22,6 +21,9 @@ import type { Theme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
+
+// Component Imports
+import CustomAvatar from '@core/components/mui/Avatar'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -86,11 +88,14 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
         <IconButton onClick={() => setOpen(false)} className={styles.closeIcon}>
           <i className='ri-close-line' />
         </IconButton>
-        <Grid container spacing={6}>
+        <Grid container spacing={6} className='pbs-6'>
           {options?.map((option, index) => (
             <Grid item xs={12} md={4} key={index}>
               <div className='flex items-center flex-col gap-4'>
-                <Avatar className={classnames(styles.avatarIcon, { [styles.smAvatarIcon]: isBelowSmScreen })}>
+                <CustomAvatar
+                  className={classnames(styles.avatarIcon, { [styles.smAvatarIcon]: isBelowSmScreen })}
+                  skin='light'
+                >
                   {typeof option.icon === 'string' ? (
                     <i
                       className={classnames(option.icon, {
@@ -101,9 +106,9 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
                   ) : (
                     option.icon
                   )}
-                </Avatar>
+                </CustomAvatar>
                 <div className='flex flex-col gap-2 text-center'>
-                  <Typography>{option.title}</Typography>
+                  <Typography className='font-medium'>{option.title}</Typography>
                   <Typography variant='body2'>{option.subtitle}</Typography>
                 </div>
               </div>
@@ -113,11 +118,16 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
         <Divider className='mlb-6' />
         <div className='flex flex-col gap-5'>
           <Typography variant='h6'>Invite your friends</Typography>
-          <div className='flex flex-col gap-2 flex-wrap'>
-            <InputLabel htmlFor='refer-email' className='inline-flex whitespace-break-spaces'>
+          <div className='inline-flex flex-col gap-2 flex-wrap items-start'>
+            <Typography
+              component={InputLabel}
+              variant='body2'
+              htmlFor='refer-email'
+              className='inline-flex whitespace-break-spaces'
+            >
               Enter your friend&#39;s email address and invite them to join {themeConfig.templateName} 😍
-            </InputLabel>
-            <div className={classnames('flex items-center w-full', { 'flex-wrap': isBelowSmScreen })}>
+            </Typography>
+            <div className={classnames('flex items-center w-full gap-4', { 'flex-wrap': isBelowSmScreen })}>
               <TextField fullWidth size='small' id='refer-email' placeholder='johnDoe@email.com' />
               <Button variant='contained' className={classnames({ 'w-full': isBelowSmScreen })}>
                 Send
@@ -127,12 +137,17 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
         </div>
         <div className='flex flex-col gap-5'>
           <Typography variant='h6'>Share the referral link</Typography>
-          <div className='flex flex-col gap-2'>
-            <InputLabel htmlFor='refer-social' className='inline-flex whitespace-break-spaces'>
+          <div className='inline-flex flex-col gap-2 items-start'>
+            <Typography
+              component={InputLabel}
+              variant='body2'
+              htmlFor='refer-social'
+              className='inline-flex whitespace-break-spaces'
+            >
               You can also copy and send it or share it on your social media. 🚀
-            </InputLabel>
+            </Typography>
             <div
-              className={classnames('flex items-center justify-initial', {
+              className={classnames('flex items-center justify-initial w-full gap-4', {
                 'flex-wrap justify-end': isBelowSmScreen
               })}
             >
@@ -140,6 +155,7 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
                 fullWidth
                 size='small'
                 id='refer-social'
+                className='pie-1'
                 placeholder='http://referral.link'
                 endAdornment={
                   <InputAdornment position='end'>
@@ -149,14 +165,14 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
                   </InputAdornment>
                 }
               />
-              <div className='flex items-center'>
-                <Button className={classnames(styles.facebookIcon, commonStyles.borderRadius)}>
+              <div className='flex items-center gap-1'>
+                <Button className={classnames('p-2 min-w-0', styles.facebookIcon, commonStyles.borderRadius)}>
                   <i className='ri-facebook-circle-fill' />
                 </Button>
-                <Button className={classnames(styles.twitterIcon, commonStyles.borderRadius)}>
+                <Button className={classnames('p-2 min-w-0', styles.twitterIcon, commonStyles.borderRadius)}>
                   <i className='ri-twitter-fill' />
                 </Button>
-                <Button className={classnames(styles.linkedinIcon, commonStyles.borderRadius)}>
+                <Button className={classnames('p-2 min-w-0', styles.linkedinIcon, commonStyles.borderRadius)}>
                   <i className='ri-linkedin-box-fill' />
                 </Button>
               </div>

@@ -27,7 +27,7 @@ const Root = styled('div', {
   cursor: 'pointer',
   position: 'relative',
   alignItems: 'flex-start',
-  border: '1px solid var(--mui-palette-divider)',
+  border: '1px solid var(--mui-palette-customColors-inputBorder)',
   padding: theme.spacing(4),
   transition: theme.transitions.create(['border-color'], {
     duration: theme.transitions.duration.shorter
