@@ -43,7 +43,7 @@ const recentDeviceData: DataType[] = [
 const RecentDevice = () => {
   return (
     <Card>
-      <CardHeader title='Recent Devices' />
+      <CardHeader title='Recent Devices' titleTypographyProps={{ variant: 'h6' }} />
       <table className={tableStyles.table}>
         <thead className={tableStyles.thead}>
           <tr>
@@ -57,19 +57,19 @@ const RecentDevice = () => {
           {recentDeviceData.map((device, index) => (
             <tr key={index}>
               <td>
-                <div className='flex items-center'>
+                <div className='flex items-center gap-4'>
                   <img alt='Chrome' width='22px' src='/images/logos/chrome.png' />
                   <Typography>{device.browser}</Typography>
                 </div>
               </td>
               <td>
-                <Typography>{device.device}</Typography>
+                <Typography variant='body2'>{device.device}</Typography>
               </td>
               <td>
-                <Typography>{device.location}</Typography>
+                <Typography variant='body2'>{device.location}</Typography>
               </td>
               <td>
-                <Typography>{device.recentActivity}</Typography>
+                <Typography variant='body2'>{device.recentActivity}</Typography>
               </td>
             </tr>
           ))}

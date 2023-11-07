@@ -13,7 +13,6 @@ import Divider from '@mui/material/Divider'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
-import Avatar from '@mui/material/Avatar'
 import Chip from '@mui/material/Chip'
 import Checkbox from '@mui/material/Checkbox'
 import IconButton from '@mui/material/IconButton'
@@ -48,12 +47,14 @@ import type { UsersType } from '@/types/apps/userTypes'
 // Component Imports
 import TableFilters from './TableFilters'
 import AddUserDrawer from './AddUserDrawer'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 // Util Imports
 import { getInitials } from '@/utils/get-initials'
 
 // Styles Imports
 import styles from './styles.module.css'
+import commonStyles from '@/styles/common.module.css'
 import tableStyles from '@core/styles/table.module.css'
 
 declare module '@tanstack/table-core' {
@@ -149,9 +150,9 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
     const { avatar, fullName } = params
 
     if (avatar) {
-      return <Avatar src={avatar} />
+      return <CustomAvatar src={avatar} skin='light' />
     } else {
-      return <Avatar>{getInitials(fullName as string)}</Avatar>
+      return <CustomAvatar skin='light'>{getInitials(fullName as string)}</CustomAvatar>
     }
   }
 
@@ -184,42 +185,54 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
       columnHelper.accessor('fullName', {
         header: 'User',
         cell: ({ row }) => (
-          <div className='flex items-center'>
+          <div className='flex items-center gap-4'>
             {getAvatar({ avatar: row.original.avatar, fullName: row.original.fullName })}
             <div className='flex flex-col'>
-              <Typography component={Link} href='/apps/user/view' className={styles.title}>
+              <Typography
+                component={Link}
+                href='/apps/user/view'
+                variant='body2'
+                className={classnames('font-medium', styles.title, commonStyles.textPrimary)}
+              >
                 {row.original.fullName}
               </Typography>
-              <Typography>{row.original.username}</Typography>
+              <Typography variant='caption'>{row.original.username}</Typography>
             </div>
           </div>
         )
       }),
       columnHelper.accessor('email', {
         header: 'Email',
-        cell: ({ row }) => <Typography>{row.original.email}</Typography>
+        cell: ({ row }) => <Typography variant='body2'>{row.original.email}</Typography>
       }),
       columnHelper.accessor('role', {
         header: 'Role',
         cell: ({ row }) => (
-          <div className='flex items-center'>
+          <div className='flex items-center gap-2'>
             <Icon
               className={userRoleObj[row.original.role].icon}
-              sx={{ color: `var(--mui-palette-${userRoleObj[row.original.role].color}-main)` }}
+              sx={{ color: `var(--mui-palette-${userRoleObj[row.original.role].color}-main)`, fontSize: '1.375rem' }}
             />
-            <Typography className='capitalize'>{row.original.role}</Typography>
+            <Typography variant='body2' className={classnames('capitalize', commonStyles.textPrimary)}>
+              {row.original.role}
+            </Typography>
           </div>
         )
       }),
       columnHelper.accessor('currentPlan', {
         header: 'Plan',
-        cell: ({ row }) => <Typography className='capitalize'>{row.original.currentPlan}</Typography>
+        cell: ({ row }) => (
+          <Typography variant='body2' className={classnames('capitalize', commonStyles.textPrimary)}>
+            {row.original.currentPlan}
+          </Typography>
+        )
       }),
       columnHelper.accessor('status', {
         header: 'Status',
         cell: ({ row }) => (
           <div className='flex items-center gap-3'>
             <Chip
+              variant='tonal'
               className='capitalize'
               label={row.original.status}
               color={userStatusObj[row.original.status]}
@@ -239,7 +252,7 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
               <i className='ri-edit-box-line text-[22px]' />
             </IconButton>
             <IconButton>
-              <Link href='/apps/user/view/overview/' className='flex'>
+              <Link href='/apps/user/view' className='flex'>
                 <i className='ri-eye-line text-[22px]' />
               </Link>
             </IconButton>
@@ -288,7 +301,7 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
         <TableFilters setData={setData} tableData={tableData} />
         <Divider />
         <div
-          className={classnames('flex justify-between', {
+          className={classnames('flex justify-between p-5', {
             'flex-col items-start': isBelowSmScreen,
             'items-center': !isBelowSmScreen
           })}

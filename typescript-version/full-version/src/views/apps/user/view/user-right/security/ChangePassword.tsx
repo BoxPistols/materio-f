@@ -22,14 +22,14 @@ const ChangePassword = () => {
 
   return (
     <Card>
-      <CardHeader title='Change Password' />
-      <CardContent>
+      <CardHeader title='Change Password' titleTypographyProps={{ variant: 'h6' }} />
+      <CardContent className='flex flex-col gap-4'>
         <Alert icon={false} severity='warning' onClose={() => {}}>
           <AlertTitle>Ensure that these requirements are met</AlertTitle>
           Minimum 8 characters long, uppercase & symbol
         </Alert>
         <form>
-          <Grid container>
+          <Grid container spacing={4}>
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
@@ -43,7 +43,7 @@ const ChangePassword = () => {
                         onClick={() => setIsPasswordShown(!isPasswordShown)}
                         onMouseDown={e => e.preventDefault()}
                       >
-                        <i className={isPasswordShown ? 'ri-eye-off-line' : 'ri-eye-line'} />
+                        <i className={isPasswordShown ? 'ri-eye-off-line text-xl' : 'ri-eye-line text-xl'} />
                       </IconButton>
                     </InputAdornment>
                   )
@@ -63,7 +63,7 @@ const ChangePassword = () => {
                         onClick={() => setIsConfirmPasswordShown(!isConfirmPasswordShown)}
                         onMouseDown={e => e.preventDefault()}
                       >
-                        <i className={isConfirmPasswordShown ? 'ri-eye-off-line' : 'ri-eye-line'} />
+                        <i className={isConfirmPasswordShown ? 'ri-eye-off-line text-xl' : 'ri-eye-line text-xl'} />
                       </IconButton>
                     </InputAdornment>
                   )

@@ -12,6 +12,9 @@ import Typography from '@mui/material/Typography'
 import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
 
+// Style Imports
+import commonStyles from '@/styles/common.module.css'
+
 type ConnectedAccountsType = {
   title: string
   logo: string
@@ -91,21 +94,21 @@ const socialAccountsArr: SocialAccountsType[] = [
 
 const ConnectionsTab = () => {
   return (
-    <Grid container>
+    <Grid container spacing={6}>
       <Grid item xs={12}>
         <Card>
           <CardHeader
             title='Connected Accounts'
             subheader='Display content from your connected accounts on your site'
           />
-          <CardContent>
+          <CardContent className='flex flex-col gap-4'>
             {connectedAccountsArr.map((item, index) => (
               <div key={index} className='flex items-center justify-between'>
-                <div className='flex flex-grow items-center'>
-                  <img height={32} width={32} src={item.logo} alt={item.title} />
+                <div className='flex flex-grow items-center gap-4'>
+                  <img height={36} width={36} src={item.logo} alt={item.title} />
                   <div className='flex-grow'>
-                    <Typography>{item.title}</Typography>
-                    <Typography>{item.subtitle}</Typography>
+                    <Typography className='font-medium'>{item.title}</Typography>
+                    <Typography variant='body2'>{item.subtitle}</Typography>
                   </div>
                 </div>
                 <Switch defaultChecked={item.checked} />
@@ -116,20 +119,26 @@ const ConnectionsTab = () => {
       </Grid>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Social Accounts' subheader='Display content from social accounts on your site' />
-          <CardContent>
+          <CardHeader
+            title='Social Accounts'
+            titleTypographyProps={{ variant: 'h6' }}
+            subheader='Display content from social accounts on your site'
+          />
+          <CardContent className='flex flex-col gap-4'>
             {socialAccountsArr.map((item, index) => (
               <div key={index} className='flex items-center justify-between'>
-                <div className='flex flex-grow items-center'>
-                  <img height={32} width={32} src={item.logo} alt={item.title} />
+                <div className='flex flex-grow items-center gap-4'>
+                  <img height={36} width={36} src={item.logo} alt={item.title} />
                   <div className='flex-grow'>
-                    <Typography href='/' component={Link} onClick={e => e.preventDefault()}>
+                    <Typography href='/' component={Link} onClick={e => e.preventDefault()} className='font-medium'>
                       {item.title}
                     </Typography>
                     {item.isConnected ? (
-                      <Typography>{item.username}</Typography>
+                      <Typography variant='body2' className={commonStyles.primaryColor}>
+                        {item.username}
+                      </Typography>
                     ) : (
-                      <Typography>Not Connected</Typography>
+                      <Typography variant='body2'>Not Connected</Typography>
                     )}
                   </div>
                 </div>

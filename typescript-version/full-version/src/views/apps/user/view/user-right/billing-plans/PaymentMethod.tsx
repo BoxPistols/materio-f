@@ -104,14 +104,15 @@ const PaymentMethod = () => {
       <Card>
         <CardHeader
           title='Payment Methods'
+          titleTypographyProps={{ variant: 'h6' }}
           action={<OpenDialogOnElementClick element={Button} elementProps={addButtonProps} dialog={BillingCard} />}
         />
-        <CardContent className='flex flex-col'>
+        <CardContent className='flex flex-col gap-4'>
           {data.map((item, index) => (
             <div
               key={index}
               className={classnames(
-                'flex justify-between items-center',
+                'flex justify-between items-center p-5',
                 commonStyles.border,
                 commonStyles.borderRadius,
                 {
@@ -119,18 +120,20 @@ const PaymentMethod = () => {
                 }
               )}
             >
-              <div className='flex flex-col items-start'>
-                <img src={item.imgSrc} alt={item.imgAlt} />
-                <div className='flex items-center'>
+              <div className='flex flex-col items-start gap-2'>
+                <img src={item.imgSrc} alt={item.imgAlt} height={25} />
+                <div className='flex items-center gap-2'>
                   <Typography>{item.name}</Typography>
-                  {item.cardStatus ? <Chip color={item.badgeColor} label={item.cardStatus} size='small' /> : null}
+                  {item.cardStatus ? (
+                    <Chip color={item.badgeColor} label={item.cardStatus} size='small' variant='tonal' />
+                  ) : null}
                 </div>
-                <Typography>
+                <Typography variant='body2'>
                   {item.cardNumber && item.cardNumber.slice(0, -4).replace(/[0-9]/g, '*') + item.cardNumber.slice(-4)}
                 </Typography>
               </div>
-              <div className='flex flex-col'>
-                <div className='flex'>
+              <div className='flex flex-col gap-4'>
+                <div className='flex items-center justify-end gap-4'>
                   <OpenDialogOnElementClick
                     element={Button}
                     elementProps={editButtonProps(index)}
@@ -141,7 +144,7 @@ const PaymentMethod = () => {
                     Delete
                   </Button>
                 </div>
-                <Typography>Card expires at {item.expiryDate}</Typography>
+                <Typography variant='body2'>Card expires at {item.expiryDate}</Typography>
               </div>
             </div>
           ))}

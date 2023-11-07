@@ -13,6 +13,9 @@ import AlertTitle from '@mui/material/AlertTitle'
 import LinearProgress from '@mui/material/LinearProgress'
 import type { ButtonProps } from '@mui/material/Button'
 
+// Third-party Imports
+import classnames from 'classnames'
+
 // Type Imports
 import type { ThemeColor } from '@core/types'
 import type { PricingPlanType } from '@/types/pages/pricingTypes'
@@ -21,6 +24,9 @@ import type { PricingPlanType } from '@/types/pages/pricingTypes'
 import ConfirmationDialog from '@components/dialogs/confirmation-dialog'
 import UpgradePlan from '@components/dialogs/upgrade-plan'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
+
+// Style Imports
+import commonStyles from '@/styles/common.module.css'
 
 const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
   const buttonProps = (children: string, variant: ButtonProps['variant'], color: ThemeColor): ButtonProps => ({
@@ -31,39 +37,47 @@ const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
 
   return (
     <Card>
-      <CardHeader title='Current Plan' />
+      <CardHeader title='Current Plan' titleTypographyProps={{ variant: 'h6' }} />
       <CardContent>
-        <Grid container>
-          <Grid item xs={12} md={6}>
+        <Grid container spacing={6}>
+          <Grid item xs={12} md={6} className='flex flex-col gap-4'>
             <div>
-              <Typography>Your Current Plan is Basic</Typography>
-              <Typography>A simple start for everyone</Typography>
+              <Typography variant='body2'>
+                Your Current Plan is <span className={classnames('font-medium', commonStyles.textPrimary)}>Basic</span>
+              </Typography>
+              <Typography variant='body2'>A simple start for everyone</Typography>
             </div>
             <div>
-              <Typography>Active until Dec 09, 2021</Typography>
-              <Typography>We will send you a notification upon Subscription expiration</Typography>
+              <Typography className='font-medium'>Active until Dec 09, 2021</Typography>
+              <Typography variant='body2'>We will send you a notification upon Subscription expiration</Typography>
             </div>
-            <div>
-              <div className='flex items-center'>
-                <Typography>$99 Per Month</Typography>
-                <Chip color='primary' label='Popular' size='small' />
+            <div className='flex flex-col gap-1'>
+              <div className='flex items-center gap-2'>
+                <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
+                  $99 Per Month
+                </Typography>
+                <Chip color='primary' label='Popular' size='small' variant='tonal' />
               </div>
-              <Typography>Standard plan for small to medium businesses</Typography>
+              <Typography variant='body2'>Standard plan for small to medium businesses</Typography>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Alert severity='warning' onClose={() => {}}>
+            <Alert severity='warning' onClose={() => {}} className='mbe-4'>
               <AlertTitle>We need your attention!</AlertTitle>
               Your plan requires update
             </Alert>
             <div className='flex items-center justify-between'>
-              <Typography>Days</Typography>
-              <Typography>26 of 30 Days</Typography>
+              <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
+                Days
+              </Typography>
+              <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
+                26 of 30 Days
+              </Typography>
             </div>
             <LinearProgress variant='determinate' value={80} />
-            <Typography>Your plan requires update</Typography>
+            <Typography variant='caption'>Your plan requires update</Typography>
           </Grid>
-          <div className='flex gap-4 flex-wrap'>
+          <Grid item xs={12} className='flex gap-4 flex-wrap'>
             <OpenDialogOnElementClick
               element={Button}
               elementProps={buttonProps('Upgrade plan', 'contained', 'primary')}
@@ -76,7 +90,7 @@ const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
               dialog={ConfirmationDialog}
               dialogProps={{ type: 'unsubscribe' }}
             />
-          </div>
+          </Grid>
         </Grid>
       </CardContent>
     </Card>

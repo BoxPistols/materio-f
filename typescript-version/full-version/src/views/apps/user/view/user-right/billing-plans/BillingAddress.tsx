@@ -44,6 +44,7 @@ const BillingAddress = () => {
       <Card>
         <CardHeader
           title='Billing Address'
+          titleTypographyProps={{ variant: 'h6' }}
           action={
             <OpenDialogOnElementClick
               element={Button}

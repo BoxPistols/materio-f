@@ -7,22 +7,36 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
+// Third-party Imports
+import classnames from 'classnames'
+
 // Style Imports
 import commonStyles from '@/styles/common.module.css'
 
 const TwoStepVerification = () => {
   return (
     <Card>
-      <CardHeader title='Two-step verification' subheader='Keep your account secure with authentication step.' />
+      <CardHeader
+        title='Two-step verification'
+        titleTypographyProps={{ variant: 'h6' }}
+        subheader='Keep your account secure with authentication step.'
+      />
       <CardContent>
-        <InputLabel htmlFor='sms'>SMS</InputLabel>
-        <div className='flex items-center'>
+        <Typography
+          component={InputLabel}
+          variant='body2'
+          htmlFor='sms'
+          className={classnames('inline-flex font-medium mbe-1', commonStyles.textPrimary)}
+        >
+          SMS
+        </Typography>
+        <div className='flex items-center mbe-4 gap-5'>
           <TextField id='sms' placeholder='+1(968) 819-2547' fullWidth size='small' />
-          <div className='flex'>
-            <Button variant='outlined' color='secondary'>
+          <div className='flex items-center gap-2'>
+            <Button variant='outlined' color='secondary' className='p-1.5'>
               <i className='ri-edit-box-line text-2xl' />
             </Button>
-            <Button variant='outlined' color='secondary'>
+            <Button variant='outlined' color='secondary' className='p-1.5'>
               <i className='ri-user-add-line text-2xl' />
             </Button>
           </div>

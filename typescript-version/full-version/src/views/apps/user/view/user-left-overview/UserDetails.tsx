@@ -18,6 +18,7 @@ import type { ThemeColor } from '@core/types'
 import EditUserInfo from '@components/dialogs/edit-user-info'
 import ConfirmationDialog from '@components/dialogs/confirmation-dialog'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 // Style Imports
 import styles from './styles.module.css'
@@ -46,69 +47,74 @@ const UserDetails = () => {
   return (
     <>
       <Card>
-        <CardContent className='flex flex-col'>
-          <div className='flex flex-col'>
-            <div className='flex items-center justify-center flex-col'>
+        <CardContent className='flex flex-col pbs-12 gap-6'>
+          <div className='flex flex-col gap-6'>
+            <div className='flex items-center justify-center flex-col gap-4'>
               <div className='flex flex-col items-center gap-4'>
-                <Avatar alt='user-profile' src='' variant='rounded' />
-                <Typography>{`${userData.firstName} ${userData.lastName}`}</Typography>
+                <Avatar
+                  alt='user-profile'
+                  src='/images/avatars/1.png'
+                  variant='rounded'
+                  className={styles.avatarImage}
+                />
+                <Typography variant='h6'>{`${userData.firstName} ${userData.lastName}`}</Typography>
               </div>
-              <Chip label='Subscriber' color='error' size='small' />
+              <Chip label='Subscriber' color='error' size='small' variant='tonal' />
             </div>
-            <div className='flex'>
-              <div className='flex items-center'>
-                <Avatar variant='rounded'>
+            <div className='flex items-center justify-around'>
+              <div className='flex items-center gap-4'>
+                <CustomAvatar variant='rounded' skin='light'>
                   <i className={classnames('ri-check-line', styles.iconSize)} />
-                </Avatar>
+                </CustomAvatar>
                 <div>
-                  <Typography>1.23k</Typography>
-                  <Typography>Task Done</Typography>
+                  <Typography variant='h6'>1.23k</Typography>
+                  <Typography variant='body2'>Task Done</Typography>
                 </div>
               </div>
-              <div className='flex items-center'>
-                <Avatar variant='rounded'>
+              <div className='flex items-center gap-4'>
+                <CustomAvatar variant='rounded' skin='light'>
                   <i className={classnames('ri-star-line', styles.iconSize)} />
-                </Avatar>
+                </CustomAvatar>
                 <div>
-                  <Typography>568</Typography>
-                  <Typography>Project Done</Typography>
+                  <Typography variant='h6'>568</Typography>
+                  <Typography variant='body2'>Project Done</Typography>
                 </div>
               </div>
             </div>
           </div>
           <div>
-            <Typography>Details</Typography>
-            <Divider />
-            <div className='flex flex-col'>
-              <div className='flex items-center flex-wrap'>
+            <Typography variant='h6'>Details</Typography>
+            <Divider className='mlb-4' />
+            <div className='flex flex-col gap-2'>
+              <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography>Username:</Typography>
                 <Typography>{userData.userName}</Typography>
               </div>
-              <div className='flex items-center flex-wrap'>
+              <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography>Billing Email:</Typography>
                 <Typography>{userData.billingEmail}</Typography>
               </div>
-              <div className='flex items-center flex-wrap'>
+              <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography>Status</Typography>
                 <Typography>{userData.status}</Typography>
               </div>
-              <div className='flex items-center flex-wrap'>
+              <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography>Role:</Typography>
                 <Typography>{userData.role}</Typography>
               </div>
-              <div className='flex items-center flex-wrap'>
+              <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography>Tax ID:</Typography>
                 <Typography>{userData.taxId}</Typography>
               </div>
-              <div className='flex items-center flex-wrap'>
+              <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography>Contact:</Typography>
                 <Typography>{userData.contact}</Typography>
               </div>
-              <div className='flex items-center flex-wrap'>
+              <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography>Language:</Typography>
                 <Typography>{userData.language}</Typography>
               </div>
-              <div className='flex items-center flex-wrap'>
+              <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography>Country:</Typography>
                 <Typography>{userData.country}</Typography>
               </div>

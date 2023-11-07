@@ -24,13 +24,13 @@ const UserRight = ({ tabContentList }: { tabContentList: { [key: string]: ReactE
   return (
     <>
       <TabContext value={activeTab}>
-        <Grid container>
+        <Grid container spacing={6}>
           <Grid item xs={12}>
             <CustomTabList onChange={handleChange} variant='scrollable' pill='true'>
               <Tab
                 label={
-                  <div className='flex items-center'>
-                    <i className='ri-user-3-line' />
+                  <div className='flex items-center gap-1.5'>
+                    <i className='ri-user-3-line text-lg' />
                     Overview
                   </div>
                 }
@@ -38,8 +38,8 @@ const UserRight = ({ tabContentList }: { tabContentList: { [key: string]: ReactE
               />
               <Tab
                 label={
-                  <div className='flex items-center'>
-                    <i className='ri-lock-line' />
+                  <div className='flex items-center gap-1.5'>
+                    <i className='ri-lock-line text-lg' />
                     Security
                   </div>
                 }
@@ -47,8 +47,8 @@ const UserRight = ({ tabContentList }: { tabContentList: { [key: string]: ReactE
               />
               <Tab
                 label={
-                  <div className='flex items-center'>
-                    <i className='ri-bookmark-line' />
+                  <div className='flex items-center gap-1.5'>
+                    <i className='ri-bookmark-line text-lg' />
                     Billing & Plans
                   </div>
                 }
@@ -56,8 +56,8 @@ const UserRight = ({ tabContentList }: { tabContentList: { [key: string]: ReactE
               />
               <Tab
                 label={
-                  <div className='flex items-center'>
-                    <i className='ri-notification-2-line' />
+                  <div className='flex items-center gap-1.5'>
+                    <i className='ri-notification-2-line text-lg' />
                     Notifications
                   </div>
                 }
@@ -65,8 +65,8 @@ const UserRight = ({ tabContentList }: { tabContentList: { [key: string]: ReactE
               />
               <Tab
                 label={
-                  <div className='flex items-center'>
-                    <i className='ri-link-m' />
+                  <div className='flex items-center gap-1.5'>
+                    <i className='ri-link-m text-lg' />
                     Connections
                   </div>
                 }

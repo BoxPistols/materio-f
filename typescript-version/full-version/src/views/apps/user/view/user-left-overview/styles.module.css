@@ -5,3 +5,8 @@
 .iconSize {
   font-size: 24px;
 }
+
+.avatarImage {
+  block-size: 120px;
+  inline-size: 120px;
+}

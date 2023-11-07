@@ -76,15 +76,15 @@ const AddUserDrawer = ({ open, handleClose }: Props) => {
       ModalProps={{ keepMounted: true }}
       sx={{ '& .MuiDrawer-paper': { width: { xs: 300, sm: 400 } } }}
     >
-      <div className='flex items-center justify-between'>
+      <div className='flex items-center justify-between p-5'>
         <Typography variant='h6'>Add New User</Typography>
         <IconButton onClick={handleReset}>
           <i className='ri-close-line' />
         </IconButton>
       </div>
       <Divider />
-      <div>
-        <form onSubmit={handleSubmit} className='flex flex-col'>
+      <div className='p-5'>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
           <TextField
             label='Full Name'
             fullWidth
