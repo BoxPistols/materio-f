@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
 import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
+import Divider from '@mui/material/Divider'
 
 type Props = {
   open: boolean
@@ -65,14 +66,15 @@ const AddCustomerDrawer = ({ open, setOpen, onFormSubmit }: Props) => {
       ModalProps={{ keepMounted: true }}
       sx={{ '& .MuiDrawer-paper': { width: { xs: 300, sm: 400 } } }}
     >
-      <div className='flex items-center justify-between'>
-        <Typography variant='h6'>Add New User</Typography>
+      <div className='flex items-center justify-between p-5'>
+        <Typography variant='h6'>Add New Customer</Typography>
         <IconButton onClick={handleReset}>
           <i className='ri-close-line' />
         </IconButton>
       </div>
-      <div>
-        <form onSubmit={e => handleSubmit(e)} className='flex flex-col'>
+      <Divider />
+      <div className='p-5'>
+        <form onSubmit={e => handleSubmit(e)} className='flex flex-col gap-5'>
           <TextField
             fullWidth
             id='name'
@@ -128,7 +130,7 @@ const AddCustomerDrawer = ({ open, setOpen, onFormSubmit }: Props) => {
             value={data.contactNumber}
             onChange={e => setData({ ...data, contactNumber: e.target.value })}
           />
-          <div className='flex items-center'>
+          <div className='flex items-center gap-4'>
             <Button variant='contained' type='submit'>
               Add
             </Button>

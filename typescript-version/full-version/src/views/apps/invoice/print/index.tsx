@@ -16,6 +16,9 @@ import classnames from 'classnames'
 // Type Imports
 import type { InvoiceType } from '@/types/apps/invoiceTypes'
 
+// Component Imports
+import Logo from '@core/svg/Logo'
+
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
@@ -71,71 +74,100 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
   }, [])
 
   return (
-    <Grid container>
+    <Grid container spacing={6}>
       <Grid item xs={12}>
-        <div className={classnames(commonStyles.actionHoverColor, commonStyles.borderRadius)}>
+        <div className={classnames('p-6', commonStyles.actionHoverColor, commonStyles.borderRadius)}>
           <div
-            className={classnames('flex justify-between', {
+            className={classnames('flex justify-between gap-y-4', {
               'flex-col': isBelowSmScreen
             })}
           >
-            <div className='flex flex-col'>
-              <div className='flex items-center'>
-                <Typography>{themeConfig.templateName}</Typography>
+            <div className='flex flex-col gap-6'>
+              <div className='flex items-center gap-2.5'>
+                <Logo className={commonStyles.primaryColor} height={25} width={30} />
+                <Typography className='uppercase font-semibold text-xl leading-tight'>
+                  {themeConfig.templateName}
+                </Typography>
               </div>
               <div>
-                <Typography>Office 149, 450 South Brand Brooklyn</Typography>
-                <Typography>San Diego County, CA 91905, USA</Typography>
-                <Typography>+1 (123) 456 7891, +44 (876) 543 2198</Typography>
+                <Typography variant='body2' className={commonStyles.textPrimary}>
+                  Office 149, 450 South Brand Brooklyn
+                </Typography>
+                <Typography variant='body2' className={commonStyles.textPrimary}>
+                  San Diego County, CA 91905, USA
+                </Typography>
+                <Typography variant='body2' className={commonStyles.textPrimary}>
+                  +1 (123) 456 7891, +44 (876) 543 2198
+                </Typography>
               </div>
             </div>
-            <div className='flex flex-col'>
-              <Typography>{`Invoice #${id}`}</Typography>
-              <div>
-                <Typography>{`Date Issued: ${invoiceData.issuedDate}`}</Typography>
-                <Typography>{`Date Due: ${invoiceData.dueDate}`}</Typography>
+            <div className='flex flex-col gap-6'>
+              <Typography variant='h6'>{`Invoice #${id}`}</Typography>
+              <div className='flex flex-col gap-1'>
+                <Typography
+                  variant='body2'
+                  className={commonStyles.textPrimary}
+                >{`Date Issued: ${invoiceData.issuedDate}`}</Typography>
+                <Typography
+                  variant='body2'
+                  className={commonStyles.textPrimary}
+                >{`Date Due: ${invoiceData.dueDate}`}</Typography>
               </div>
             </div>
           </div>
         </div>
       </Grid>
       <Grid item xs={12}>
-        <Grid container>
+        <Grid container spacing={6}>
           <Grid item xs={12} sm={6}>
-            <div className='flex flex-col'>
-              <Typography>Invoice To:</Typography>
+            <div className='flex flex-col gap-4'>
+              <Typography variant='subtitle2' className={commonStyles.textPrimary}>
+                Invoice To:
+              </Typography>
               <div>
-                <Typography>{invoiceData.name}</Typography>
-                <Typography>{invoiceData.company}</Typography>
-                <Typography>{invoiceData.address}</Typography>
-                <Typography>{invoiceData.contact}</Typography>
-                <Typography>{invoiceData.companyEmail}</Typography>
+                <Typography variant='body2'>{invoiceData.name}</Typography>
+                <Typography variant='body2'>{invoiceData.company}</Typography>
+                <Typography variant='body2'>{invoiceData.address}</Typography>
+                <Typography variant='body2'>{invoiceData.contact}</Typography>
+                <Typography variant='body2'>{invoiceData.companyEmail}</Typography>
               </div>
             </div>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <div className='flex flex-col'>
-              <Typography>Bill To:</Typography>
+            <div className='flex flex-col gap-4'>
+              <Typography variant='subtitle2' className={commonStyles.textPrimary}>
+                Bill To:
+              </Typography>
               <div>
-                <div className='flex items-center'>
-                  <Typography className={styles.minWidth100}>Total Due:</Typography>
-                  <Typography>$12,110.55</Typography>
+                <div className='flex items-center gap-4'>
+                  <Typography variant='body2' className={styles.minWidth100}>
+                    Total Due:
+                  </Typography>
+                  <Typography variant='body2'>$12,110.55</Typography>
                 </div>
-                <div className='flex items-center'>
-                  <Typography className={styles.minWidth100}>Bank name:</Typography>
-                  <Typography>American Bank</Typography>
+                <div className='flex items-center gap-4'>
+                  <Typography variant='body2' className={styles.minWidth100}>
+                    Bank name:
+                  </Typography>
+                  <Typography variant='body2'>American Bank</Typography>
                 </div>
-                <div className='flex items-center'>
-                  <Typography className={styles.minWidth100}>Country:</Typography>
-                  <Typography>United States</Typography>
+                <div className='flex items-center gap-4'>
+                  <Typography variant='body2' className={styles.minWidth100}>
+                    Country:
+                  </Typography>
+                  <Typography variant='body2'>United States</Typography>
                 </div>
-                <div className='flex items-center'>
-                  <Typography className={styles.minWidth100}>IBAN:</Typography>
-                  <Typography>ETD95476213874685</Typography>
+                <div className='flex items-center gap-4'>
+                  <Typography variant='body2' className={styles.minWidth100}>
+                    IBAN:
+                  </Typography>
+                  <Typography variant='body2'>ETD95476213874685</Typography>
                 </div>
-                <div className='flex items-center'>
-                  <Typography className={styles.minWidth100}>SWIFT code:</Typography>
-                  <Typography>BR91905</Typography>
+                <div className='flex items-center gap-4'>
+                  <Typography variant='body2' className={styles.minWidth100}>
+                    SWIFT code:
+                  </Typography>
+                  <Typography variant='body2'>BR91905</Typography>
                 </div>
               </div>
             </div>
@@ -157,11 +189,31 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
             <tbody className={tableStyles.tbody}>
               {data.map((item, index) => (
                 <tr key={index}>
-                  <td>{item.Item}</td>
-                  <td>{item.Description}</td>
-                  <td>{item.Hours}</td>
-                  <td>{item.Qty}</td>
-                  <td>{item.Total}</td>
+                  <td>
+                    <Typography variant='body2' className={commonStyles.textPrimary}>
+                      {item.Item}
+                    </Typography>
+                  </td>
+                  <td>
+                    <Typography variant='body2' className={commonStyles.textPrimary}>
+                      {item.Description}
+                    </Typography>
+                  </td>
+                  <td>
+                    <Typography variant='body2' className={commonStyles.textPrimary}>
+                      {item.Hours}
+                    </Typography>
+                  </td>
+                  <td>
+                    <Typography variant='body2' className={commonStyles.textPrimary}>
+                      {item.Qty}
+                    </Typography>
+                  </td>
+                  <td>
+                    <Typography variant='body2' className={commonStyles.textPrimary}>
+                      {item.Total}
+                    </Typography>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -170,30 +222,30 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
       </Grid>
       <Grid item xs={12}>
         <div className={classnames('flex justify-between', { 'flex-col': isBelowSmScreen })}>
-          <div className={classnames('flex flex-col', { 'order-2': isBelowSmScreen })}>
-            <div className='flex items-center'>
-              <Typography>Salesperson:</Typography>
-              <Typography>Tommy Shelby</Typography>
+          <div className={classnames('flex flex-col gap-1', { 'order-2': isBelowSmScreen })}>
+            <div className='flex items-center gap-2'>
+              <Typography className='text-sm leading-normal font-semibold'>Salesperson:</Typography>
+              <Typography variant='body2'>Tommy Shelby</Typography>
             </div>
-            <Typography>Thanks for your business</Typography>
+            <Typography variant='body2'>Thanks for your business</Typography>
           </div>
           <div className='min-is-[200px]'>
             <div className='flex items-center justify-between'>
-              <Typography>Subtotal:</Typography>
-              <Typography>$1800</Typography>
+              <Typography variant='body2'>Subtotal:</Typography>
+              <Typography className='text-sm leading-normal font-semibold'>$1800</Typography>
             </div>
             <div className='flex items-center justify-between'>
-              <Typography>Discount:</Typography>
-              <Typography>$28</Typography>
+              <Typography variant='body2'>Discount:</Typography>
+              <Typography className='text-sm leading-normal font-semibold'>$28</Typography>
             </div>
             <div className='flex items-center justify-between'>
-              <Typography>Tax:</Typography>
-              <Typography>21%</Typography>
+              <Typography variant='body2'>Tax:</Typography>
+              <Typography className='text-sm leading-normal font-semibold'>21%</Typography>
             </div>
-            <Divider />
+            <Divider className='mlb-2' />
             <div className='flex items-center justify-between'>
-              <Typography>Total:</Typography>
-              <Typography>$1690</Typography>
+              <Typography variant='body2'>Total:</Typography>
+              <Typography className='text-sm leading-normal font-semibold'>$1690</Typography>
             </div>
           </div>
         </div>
@@ -202,8 +254,11 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
         <Divider className='border-dashed' />
       </Grid>
       <Grid item xs={12}>
-        <Typography>
-          Note: It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance
+        <Typography variant='body2'>
+          <Typography component='span' variant='subtitle2' className={commonStyles.textPrimary}>
+            Note:
+          </Typography>{' '}
+          It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance
           projects. Thank You!
         </Typography>
       </Grid>

@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import Chip from '@mui/material/Chip'
+import Divider from '@mui/material/Divider'
 
 type Props = {
   open: boolean
@@ -61,14 +62,15 @@ const SendInvoiceDrawer = ({ open, handleClose }: Props) => {
       ModalProps={{ keepMounted: true }}
       sx={{ '& .MuiDrawer-paper': { width: { xs: 300, sm: 400 } } }}
     >
-      <div className='flex items-center justify-between'>
+      <div className='flex items-center justify-between p-5'>
         <Typography variant='h6'>Send Invoice</Typography>
         <IconButton onClick={handleReset}>
           <i className='ri-close-line' />
         </IconButton>
       </div>
-      <div>
-        <form onSubmit={handleSubmit}>
+      <Divider />
+      <div className='p-5'>
+        <form onSubmit={handleSubmit} className='flex flex-col items-start gap-5'>
           <TextField
             fullWidth
             label='From'
@@ -99,8 +101,15 @@ const SendInvoiceDrawer = ({ open, handleClose }: Props) => {
             value={formData.message}
             onChange={e => setFormData({ ...formData, message: e.target.value })}
           />
-          <Chip icon={<i className='ri-attachment-line' />} label='Invoice Attached' />
-          <div className='flex items-center'>
+          <Chip
+            size='small'
+            color='primary'
+            variant='tonal'
+            className='rounded'
+            label='Invoice Attached'
+            icon={<i className='ri-attachment-line' />}
+          />
+          <div className='flex items-center gap-4'>
             <Button variant='contained' color='primary' type='submit'>
               Send
             </Button>

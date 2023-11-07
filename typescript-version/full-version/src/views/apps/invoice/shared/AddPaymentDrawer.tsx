@@ -15,6 +15,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
+import Divider from '@mui/material/Divider'
 
 // Third-party Imports
 import DatePicker from 'react-datepicker'
@@ -65,14 +66,15 @@ const AddPaymentDrawer = ({ open, handleClose }: Props) => {
       ModalProps={{ keepMounted: true }}
       sx={{ '& .MuiDrawer-paper': { width: { xs: 300, sm: 400 } } }}
     >
-      <div className='flex items-center justify-between'>
+      <div className='flex items-center justify-between p-5'>
         <Typography variant='h6'>Add New User</Typography>
         <IconButton onClick={handleReset}>
           <i className='ri-close-line' />
         </IconButton>
       </div>
-      <div>
-        <form onSubmit={handleSubmit} className='flex flex-col'>
+      <Divider />
+      <div className='p-5'>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
           <TextField
             fullWidth
             id='invoice-balance'
@@ -127,7 +129,7 @@ const AddPaymentDrawer = ({ open, handleClose }: Props) => {
             value={formData.paymentNote}
             onChange={e => setFormData({ ...formData, paymentNote: e.target.value })}
           />
-          <div className='flex items-center'>
+          <div className='flex items-center gap-4'>
             <Button size='large' variant='contained' type='submit'>
               Send
             </Button>

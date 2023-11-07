@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent'
 import Grid from '@mui/material/Grid'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
+import Divider from '@mui/material/Divider'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import type { Theme } from '@mui/material/styles'
 
@@ -13,9 +14,8 @@ import type { Theme } from '@mui/material/styles'
 import classnames from 'classnames'
 
 // Style Imports
-import { Divider } from '@mui/material'
-
 import styles from './styles.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 const data = [
   {
@@ -61,10 +61,10 @@ const InvoiceCard = () => {
                 [styles.gridItemAboveMd]: !isBelowMdScreen
               })}
             >
-              <div className='flex justify-between items-center'>
-                <div className='flex flex-col'>
-                  <Typography>{item.title}</Typography>
-                  <Typography>{item.subtitle}</Typography>
+              <div className='flex justify-between'>
+                <div className='flex flex-col gap-1'>
+                  <Typography variant='h5'>{item.title}</Typography>
+                  <Typography className={commonStyles.textSecondary}>{item.subtitle}</Typography>
                 </div>
                 <Avatar variant='rounded'>
                   <i className={item.icon}></i>

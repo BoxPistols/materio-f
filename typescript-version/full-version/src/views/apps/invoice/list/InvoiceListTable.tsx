@@ -16,7 +16,6 @@ import Checkbox from '@mui/material/Checkbox'
 import Chip from '@mui/material/Chip'
 import IconButton from '@mui/material/IconButton'
 import TextField from '@mui/material/TextField'
-import Avatar from '@mui/material/Avatar'
 import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
 import Select from '@mui/material/Select'
@@ -49,11 +48,13 @@ import type { InvoiceType } from '@/types/apps/invoiceTypes'
 
 // Component Imports
 import OptionMenu from '@core/components/option-menu'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 // Util Imports
 import { getInitials } from '@/utils/get-initials'
 
 // Style Imports
+import styles from './styles.module.css'
 import tableStyles from '@core/styles/table.module.css'
 import commonStyles from '@/styles/common.module.css'
 
@@ -152,9 +153,13 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
     const { avatar, name } = params
 
     if (avatar) {
-      return <Avatar src={avatar} />
+      return <CustomAvatar src={avatar} skin='light' className={styles.clientAvatar} />
     } else {
-      return <Avatar>{getInitials(name as string)}</Avatar>
+      return (
+        <CustomAvatar skin='light' className={styles.clientAvatar}>
+          {getInitials(name as string)}
+        </CustomAvatar>
+      )
     }
   }
 
@@ -188,6 +193,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
         header: '#',
         cell: ({ row }) => (
           <Typography
+            variant='body2'
             component={Link}
             href={`/apps/invoice/preview/${row.original.id}`}
             className={commonStyles.primaryColor}
@@ -197,38 +203,46 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
       columnHelper.accessor('invoiceStatus', {
         header: 'Status',
         cell: ({ row }) => (
-          <Avatar>
-            <i className={invoiceStatusObj[row.original.invoiceStatus].icon} />
-          </Avatar>
+          <CustomAvatar
+            skin='light'
+            color={invoiceStatusObj[row.original.invoiceStatus].color}
+            className={styles.avatarSize}
+          >
+            <i className={classnames(styles.iconSize, invoiceStatusObj[row.original.invoiceStatus].icon)} />
+          </CustomAvatar>
         )
       }),
       columnHelper.accessor('name', {
         header: 'Client',
         cell: ({ row }) => (
-          <div className='flex items-center'>
+          <div className='flex items-center gap-3'>
             {getAvatar({ avatar: row.original.avatar, name: row.original.name })}
-            <div className='flex flex-col'>
-              <Typography>{row.original.name}</Typography>
-              <Typography>{row.original.companyEmail}</Typography>
+            <div className='flex flex-col gap-2'>
+              <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
+                {row.original.name}
+              </Typography>
+              <Typography variant='caption'>{row.original.companyEmail}</Typography>
             </div>
           </div>
         )
       }),
       columnHelper.accessor('total', {
         header: 'Total',
-        cell: ({ row }) => <Typography>{`$${row.original.total}`}</Typography>
+        cell: ({ row }) => <Typography variant='body2'>{`$${row.original.total}`}</Typography>
       }),
       columnHelper.accessor('issuedDate', {
         header: 'Issued Date',
-        cell: ({ row }) => <Typography>{row.original.issuedDate}</Typography>
+        cell: ({ row }) => <Typography variant='body2'>{row.original.issuedDate}</Typography>
       }),
       columnHelper.accessor('balance', {
         header: 'Balance',
         cell: ({ row }) => {
           return row.original.balance === 0 ? (
-            <Chip label='Paid' color='success' size='small' />
+            <Chip label='Paid' color='success' size='small' variant='tonal' />
           ) : (
-            <Typography>{row.original.balance}</Typography>
+            <Typography variant='body2' className={commonStyles.textPrimary}>
+              {row.original.balance}
+            </Typography>
           )
         }
       }),
@@ -246,14 +260,18 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
             </IconButton>
             <OptionMenu
               options={[
-                { text: 'Download', icon: 'ri-download-fill', menuItemProps: { className: 'flex items-center' } },
+                { text: 'Download', icon: 'ri-download-fill', menuItemProps: { className: 'flex items-center gap-2' } },
                 {
                   text: 'Edit',
                   icon: 'ri-pencil-line',
                   href: `/apps/invoice/edit/${row.original.id}`,
-                  linkProps: { className: 'flex items-center' }
+                  linkProps: { className: 'flex items-center w-full plb-2 pli-4 gap-2' }
                 },
-                { text: 'Duplicate', icon: 'ri-file-copy-line', menuItemProps: { className: 'flex items-center' } }
+                {
+                  text: 'Duplicate',
+                  icon: 'ri-file-copy-line',
+                  menuItemProps: { className: 'flex items-center gap-2' }
+                }
               ]}
             />
           </div>
@@ -297,7 +315,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   return (
     <Card>
       <CardContent
-        className={classnames('flex justify-between', {
+        className={classnames('flex justify-between gap-4 flex-wrap', {
           'flex-col items-start': isBelowSmScreen,
           'items-center': !isBelowSmScreen
         })}
@@ -312,7 +330,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
           Create Invoice
         </Button>
         <div
-          className={classnames('flex items-center gap-x-4', {
+          className={classnames('flex items-center gap-4', {
             'is-full flex-col': isBelowSmScreen
           })}
         >
@@ -320,9 +338,10 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
             value={globalFilter ?? ''}
             onChange={value => setGlobalFilter(String(value))}
             placeholder='Search Invoice'
+            className={styles.searchInvoice}
             {...(isBelowSmScreen && { fullWidth: true })}
           />
-          <FormControl fullWidth size='small'>
+          <FormControl fullWidth size='small' className={styles.invoiceStatus}>
             <InputLabel id='status-select'>Invoice Status</InputLabel>
             <Select
               fullWidth

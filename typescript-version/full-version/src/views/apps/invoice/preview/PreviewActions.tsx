@@ -23,7 +23,7 @@ const PreviewActions = ({ id }: { id: string }) => {
   return (
     <>
       <Card>
-        <CardContent>
+        <CardContent className='flex flex-col gap-4'>
           <Button
             fullWidth
             variant='contained'
@@ -36,7 +36,7 @@ const PreviewActions = ({ id }: { id: string }) => {
           <Button fullWidth color='secondary' variant='outlined' className='capitalize'>
             Download
           </Button>
-          <div className='flex items-center'>
+          <div className='flex items-center gap-4'>
             <Button
               fullWidth
               target='_blank'

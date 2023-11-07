@@ -1,6 +1,3 @@
-// MUI Imports
-import Grid from '@mui/material/Grid'
-
 // Component Imports
 import InvoiceList from '@views/apps/invoice/list'
 
@@ -17,13 +14,7 @@ const getData = async () => {
 const InvoiceApp = async () => {
   const data = await getData()
 
-  return (
-    <Grid container>
-      <Grid item xs={12}>
-        <InvoiceList invoiceData={data} />
-      </Grid>
-    </Grid>
-  )
+  return <InvoiceList invoiceData={data} />
 }
 
 export default InvoiceApp

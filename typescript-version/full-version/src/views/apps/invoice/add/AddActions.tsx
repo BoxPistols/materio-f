@@ -10,7 +10,7 @@ const AddActions = () => {
   return (
     <>
       <Card>
-        <CardContent>
+        <CardContent className='flex flex-col gap-4'>
           <Button fullWidth variant='contained' className='capitalize' startIcon={<i className='ri-send-plane-line' />}>
             Send Invoice
           </Button>

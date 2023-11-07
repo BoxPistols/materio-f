@@ -16,13 +16,14 @@ import AddPaymentDrawer from '@views/apps/invoice/shared/AddPaymentDrawer'
 import SendInvoiceDrawer from '@views/apps/invoice/shared/SendInvoiceDrawer'
 
 const EditActions = ({ id }: { id: string }) => {
+  // States
   const [paymentDrawerOpen, setPaymentDrawerOpen] = useState(false)
   const [sendDrawerOpen, setSendDrawerOpen] = useState(false)
 
   return (
     <>
       <Card>
-        <CardContent>
+        <CardContent className='flex flex-col gap-4'>
           <Button
             fullWidth
             variant='contained'
@@ -32,7 +33,7 @@ const EditActions = ({ id }: { id: string }) => {
           >
             Send Invoice
           </Button>
-          <div className='flex items-center'>
+          <div className='flex items-center gap-4'>
             <Button
               fullWidth
               component={Link}
