@@ -40,6 +40,7 @@ const SidebarLeft = (props: SidebarLeftProps) => {
     ? colorsArr.map(([key, value]: string[]) => {
         return (
           <FormControlLabel
+            className='mbe-1'
             key={key}
             label={key}
             control={
@@ -110,6 +111,7 @@ const SidebarLeft = (props: SidebarLeftProps) => {
             Event Filters
           </Typography>
           <FormControlLabel
+            className='mbe-1'
             label='View All'
             control={
               <Checkbox
