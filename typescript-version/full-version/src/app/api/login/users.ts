@@ -16,14 +16,7 @@ export const users: UserTable[] = [
     id: 1,
     name: 'John Doe',
     password: 'admin',
-    email: 'admin@admin.com',
+    email: 'admin@materio.com',
     image: '/images/avatars/1.png'
-  },
-  {
-    id: 2,
-    name: 'Jane Doe',
-    password: 'client',
-    email: 'client@client.com',
-    image: '/images/avatars/2.png'
   }
 ]

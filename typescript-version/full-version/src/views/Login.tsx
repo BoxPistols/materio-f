@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 // Next Imports
 import Link from 'next/link'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 // MUI Imports
 import Typography from '@mui/material/Typography'
@@ -16,11 +17,18 @@ import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Divider from '@mui/material/Divider'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import Alert from '@mui/material/Alert'
 import { useColorScheme } from '@mui/material/styles'
 import type { Theme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
+import { signIn } from 'next-auth/react'
+import { Controller, useForm } from 'react-hook-form'
+import { valibotResolver } from '@hookform/resolvers/valibot'
+import { object, minLength, string, email } from 'valibot'
+import type { SubmitHandler } from 'react-hook-form'
+import type { Input } from 'valibot'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -33,12 +41,27 @@ import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
 // Style Imports
-import styles from './v2.module.css'
+import styles from '@views/pages/auth/v2.module.css'
 import commonStyles from '@/styles/common.module.css'
+
+type ErrorType = {
+  message: string[]
+}
+
+const schema = object({
+  email: string([minLength(1, 'This field is required'), email('Email is invalid')]),
+  password: string([
+    minLength(1, 'This field is required'),
+    minLength(5, 'Password must be at least 5 characters long')
+  ])
+})
+
+type FormData = Input<typeof schema>
 
 const LoginV2 = () => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
+  const [errorState, setErrorState] = useState<ErrorType | null>(null)
 
   // Hooks
   const isAboveMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
@@ -46,8 +69,42 @@ const LoginV2 = () => {
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
   const { settings } = useSettings()
   const { mode, systemMode } = useColorScheme()
+  const router = useRouter()
+  const searchParams = useSearchParams()
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
+
+  const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
+    const res = await signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      redirect: false
+    })
+
+    if (res && res.ok && res.error === null) {
+      const redirectURL = searchParams.get('redirectTo') ?? '/'
+
+      router.push(redirectURL)
+    } else {
+      if (res?.error) {
+        const error = JSON.parse(res.error)
+
+        setErrorState(error)
+      }
+    }
+  }
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<FormData>({
+    resolver: valibotResolver(schema),
+    defaultValues: {
+      email: 'admin@materio.com',
+      password: 'admin'
+    }
+  })
 
   const authBackground =
     mode === 'dark' || systemMode === 'dark'
@@ -104,29 +161,76 @@ const LoginV2 = () => {
             </Typography>
             <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
           </div>
-          <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
-            <TextField autoFocus fullWidth label='Email' />
-            <TextField
-              fullWidth
-              label='Password'
-              type={isPasswordShown ? 'text' : 'password'}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position='end'>
-                    <IconButton edge='end' onClick={handleClickShowPassword} onMouseDown={e => e.preventDefault()}>
-                      <i className={isPasswordShown ? 'ri-eye-off-line' : 'ri-eye-line'} />
-                    </IconButton>
-                  </InputAdornment>
-                )
-              }}
+          <Alert icon={false} className={commonStyles.primaryLightColor}>
+            <Typography variant='body2' className={commonStyles.primaryColor}>
+              Email: <span className='font-medium'>admin@materio.com</span> / Pass:{' '}
+              <span className='font-medium'>admin</span>
+            </Typography>
+          </Alert>
+
+          <form noValidate autoComplete='off' onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-5'>
+            <Controller
+              name='email'
+              control={control}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  fullWidth
+                  autoFocus
+                  type='email'
+                  label='Email'
+                  onChange={e => {
+                    field.onChange(e.target.value)
+                    errorState !== null && setErrorState(null)
+                  }}
+                  {...((errors.email || errorState !== null) && {
+                    error: true,
+                    helperText: errors?.email?.message || errorState?.message[0]
+                  })}
+                />
+              )}
+            />
+            <Controller
+              name='password'
+              control={control}
+              rules={{ required: true }}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  fullWidth
+                  label='Password'
+                  id='login-password'
+                  type={isPasswordShown ? 'text' : 'password'}
+                  onChange={e => {
+                    field.onChange(e.target.value)
+                    errorState !== null && setErrorState(null)
+                  }}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position='end'>
+                        <IconButton
+                          edge='end'
+                          onClick={handleClickShowPassword}
+                          onMouseDown={e => e.preventDefault()}
+                          aria-label='toggle password visibility'
+                        >
+                          <i className={isPasswordShown ? 'ri-eye-off-line' : 'ri-eye-line'} />
+                        </IconButton>
+                      </InputAdornment>
+                    )
+                  }}
+                  {...(errors.password && { error: true, helperText: errors.password.message })}
+                />
+              )}
             />
             <div className='flex justify-between items-center flex-wrap gap-x-3 gap-y-1'>
-              <FormControlLabel control={<Checkbox />} label='Remember me' />
+              <FormControlLabel control={<Checkbox defaultChecked />} label='Remember me' />
               <Typography
                 variant='body2'
                 className={classnames('text-end', commonStyles.primaryColor)}
                 component={Link}
-                href='/pages/auth/forgot-password-v2'
+                href='/forgot-password'
               >
                 Forgot password?
               </Typography>
@@ -136,7 +240,7 @@ const LoginV2 = () => {
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
               <Typography className={commonStyles.textSecondary}>New on our platform?</Typography>
-              <Typography component={Link} href='/pages/auth/register-v2' className={commonStyles.primaryColor}>
+              <Typography component={Link} href='/register' className={commonStyles.primaryColor}>
                 Create an account
               </Typography>
             </div>

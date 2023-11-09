@@ -35,6 +35,7 @@ const ForgotPasswordV2 = ({ direction }: { direction: Direction }) => {
   // Hooks
   const isAboveMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
   const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
+  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
   const { settings } = useSettings()
   const { mode, systemMode } = useColorScheme()
 
@@ -73,7 +74,7 @@ const ForgotPasswordV2 = ({ direction }: { direction: Direction }) => {
           'p-12': isAboveMdScreen
         })}
       >
-        <div className={classnames('absolute', styles.templateName)}>
+        <div className={classnames('absolute', styles.templateName, { '!inline-start-6': isBelowSmScreen })}>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className={commonStyles.primaryColor} height={28} width={35} />
             <Typography variant='h5' className='font-semibold'>
@@ -81,7 +82,12 @@ const ForgotPasswordV2 = ({ direction }: { direction: Direction }) => {
             </Typography>
           </div>
         </div>
-        <div className={classnames('flex flex-col gap-5', { [styles.rightWrapperBelowMd]: isBelowMdScreen })}>
+        <div
+          className={classnames('flex flex-col gap-5', {
+            [styles.rightWrapperBelowMd]: isBelowMdScreen && !isBelowSmScreen,
+            'is-[100%]': isAboveMdScreen || isBelowSmScreen
+          })}
+        >
           <div>
             <Typography variant='h5' className='font-semibold mbe-1'>
               Forgot Password 🔒

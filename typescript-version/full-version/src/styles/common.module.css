@@ -34,6 +34,9 @@
 .boxShadowNone {
   box-shadow: none;
 }
+.primaryLightColor {
+  background-color: var(--mui-palette-primary-lightOpacity);
+}
 .actionHoverColor {
   background-color: var(--mui-palette-action-hover);
 }

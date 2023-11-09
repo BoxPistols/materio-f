@@ -16,8 +16,8 @@ import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Divider from '@mui/material/Divider'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { useColorScheme } from '@mui/material/styles'
 import type { Theme } from '@mui/material/styles'
+import { useColorScheme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -33,10 +33,10 @@ import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
 // Style Imports
-import styles from './v2.module.css'
+import styles from '@views/pages/auth/v2.module.css'
 import commonStyles from '@/styles/common.module.css'
 
-const LoginV2 = () => {
+const RegisterV2 = () => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
 
@@ -57,11 +57,11 @@ const LoginV2 = () => {
   const characterIllustration =
     settings.skin === 'bordered'
       ? mode === 'dark' || systemMode === 'dark'
-        ? '/images/illustrations/auth/v2-login-dark-border.png'
-        : '/images/illustrations/auth/v2-login-light-border.png'
+        ? '/images/illustrations/auth/v2-register-dark-border.png'
+        : '/images/illustrations/auth/v2-register-light-border.png'
       : mode === 'dark' || systemMode === 'dark'
-      ? '/images/illustrations/auth/v2-login-dark.png'
-      : '/images/illustrations/auth/v2-login-light.png'
+      ? '/images/illustrations/auth/v2-register-dark.png'
+      : '/images/illustrations/auth/v2-register-light.png'
 
   return (
     <div className='flex h-full justify-center'>
@@ -71,7 +71,7 @@ const LoginV2 = () => {
             <img src={characterIllustration} alt='' className={styles.illustrationSize} />
           </div>
           <Illustrations
-            image1={{ src: '/images/illustrations/objects/tree-2.png' }}
+            image1={{ src: '/images/illustrations/objects/tree-3.png' }}
             image2={null}
             maskImg={{ src: authBackground }}
           />
@@ -92,6 +92,7 @@ const LoginV2 = () => {
             </Typography>
           </div>
         </div>
+
         <div
           className={classnames('flex flex-col gap-5', {
             [styles.rightWrapperBelowMd]: isBelowMdScreen && !isBelowSmScreen,
@@ -100,12 +101,13 @@ const LoginV2 = () => {
         >
           <div>
             <Typography variant='h5' className='font-semibold mbe-1'>
-              Welcome to Master! 👋🏻
+              Adventure starts here 🚀
             </Typography>
-            <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
+            <Typography variant='body2'>Make your app management easy and fun!</Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
-            <TextField autoFocus fullWidth label='Email' />
+            <TextField autoFocus fullWidth label='Username' />
+            <TextField fullWidth label='Email' />
             <TextField
               fullWidth
               label='Password'
@@ -120,24 +122,26 @@ const LoginV2 = () => {
                 )
               }}
             />
-            <div className='flex justify-between items-center flex-wrap gap-x-3 gap-y-1'>
-              <FormControlLabel control={<Checkbox />} label='Remember me' />
-              <Typography
-                variant='body2'
-                className={classnames('text-end', commonStyles.primaryColor)}
-                component={Link}
-                href='/pages/auth/forgot-password-v2'
-              >
-                Forgot password?
-              </Typography>
+            <div className='flex justify-between items-center gap-3'>
+              <FormControlLabel
+                control={<Checkbox />}
+                label={
+                  <>
+                    <span>I agree to </span>
+                    <Link className={commonStyles.primaryColor} href='/' onClick={e => e.preventDefault()}>
+                      privacy policy & terms
+                    </Link>
+                  </>
+                }
+              />
             </div>
             <Button fullWidth variant='contained' type='submit'>
-              Log In
+              Sign Up
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
-              <Typography className={commonStyles.textSecondary}>New on our platform?</Typography>
-              <Typography component={Link} href='/pages/auth/register-v2' className={commonStyles.primaryColor}>
-                Create an account
+              <Typography className={commonStyles.textSecondary}>Already have an account?</Typography>
+              <Typography component={Link} href='/login' className={commonStyles.primaryColor}>
+                Sign in instead
               </Typography>
             </div>
             <Divider className='gap-3'>or</Divider>
@@ -162,4 +166,4 @@ const LoginV2 = () => {
   )
 }
 
-export default LoginV2
+export default RegisterV2

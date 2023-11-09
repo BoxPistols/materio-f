@@ -1,23 +1,15 @@
 'use client'
 
-// React Imports
-import { useState } from 'react'
-
 // Next Imports
 import Link from 'next/link'
 
 // MUI Imports
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
-import IconButton from '@mui/material/IconButton'
-import InputAdornment from '@mui/material/InputAdornment'
-import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Divider from '@mui/material/Divider'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { useColorScheme } from '@mui/material/styles'
 import type { Theme } from '@mui/material/styles'
+import { useColorScheme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -33,21 +25,16 @@ import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
 // Style Imports
-import styles from './v2.module.css'
+import styles from '@views/pages/auth/v2.module.css'
 import commonStyles from '@/styles/common.module.css'
 
-const LoginV2 = () => {
-  // States
-  const [isPasswordShown, setIsPasswordShown] = useState(false)
-
+const ForgotPasswordV2 = () => {
   // Hooks
   const isAboveMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
   const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
   const { settings } = useSettings()
   const { mode, systemMode } = useColorScheme()
-
-  const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   const authBackground =
     mode === 'dark' || systemMode === 'dark'
@@ -57,11 +44,11 @@ const LoginV2 = () => {
   const characterIllustration =
     settings.skin === 'bordered'
       ? mode === 'dark' || systemMode === 'dark'
-        ? '/images/illustrations/auth/v2-login-dark-border.png'
-        : '/images/illustrations/auth/v2-login-light-border.png'
+        ? '/images/illustrations/auth/v2-forgot-password-dark-border.png'
+        : '/images/illustrations/auth/v2-forgot-password-light-border.png'
       : mode === 'dark' || systemMode === 'dark'
-      ? '/images/illustrations/auth/v2-login-dark.png'
-      : '/images/illustrations/auth/v2-login-light.png'
+      ? '/images/illustrations/auth/v2-forgot-password-dark.png'
+      : '/images/illustrations/auth/v2-forgot-password-light.png'
 
   return (
     <div className='flex h-full justify-center'>
@@ -100,61 +87,23 @@ const LoginV2 = () => {
         >
           <div>
             <Typography variant='h5' className='font-semibold mbe-1'>
-              Welcome to Master! 👋🏻
+              Forgot Password 🔒
             </Typography>
-            <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
+            <Typography variant='body2'>
+              Enter your email and we&#39;ll send you instructions to reset your password
+            </Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
             <TextField autoFocus fullWidth label='Email' />
-            <TextField
-              fullWidth
-              label='Password'
-              type={isPasswordShown ? 'text' : 'password'}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position='end'>
-                    <IconButton edge='end' onClick={handleClickShowPassword} onMouseDown={e => e.preventDefault()}>
-                      <i className={isPasswordShown ? 'ri-eye-off-line' : 'ri-eye-line'} />
-                    </IconButton>
-                  </InputAdornment>
-                )
-              }}
-            />
-            <div className='flex justify-between items-center flex-wrap gap-x-3 gap-y-1'>
-              <FormControlLabel control={<Checkbox />} label='Remember me' />
-              <Typography
-                variant='body2'
-                className={classnames('text-end', commonStyles.primaryColor)}
-                component={Link}
-                href='/pages/auth/forgot-password-v2'
-              >
-                Forgot password?
-              </Typography>
-            </div>
             <Button fullWidth variant='contained' type='submit'>
-              Log In
+              Send reset link
             </Button>
-            <div className='flex justify-center items-center flex-wrap gap-2'>
-              <Typography className={commonStyles.textSecondary}>New on our platform?</Typography>
-              <Typography component={Link} href='/pages/auth/register-v2' className={commonStyles.primaryColor}>
-                Create an account
-              </Typography>
-            </div>
-            <Divider className='gap-3'>or</Divider>
-            <div className='flex justify-center items-center gap-2'>
-              <IconButton>
-                <i className={classnames('ri-facebook-fill', commonStyles.facebookColor)} />
-              </IconButton>
-              <IconButton>
-                <i className={classnames('ri-twitter-fill', commonStyles.twitterColor)} />
-              </IconButton>
-              <IconButton>
-                <i className={classnames('ri-github-fill', commonStyles.githubColor)} />
-              </IconButton>
-              <IconButton>
-                <i className={classnames('ri-google-line', commonStyles.googleColor)} />
-              </IconButton>
-            </div>
+            <Typography className={classnames('flex justify-center items-center', commonStyles.primaryColor)}>
+              <Link href='/login' className='flex items-center'>
+                <i className='ri-arrow-left-s-line' />
+                <span>Back to Login</span>
+              </Link>
+            </Typography>
           </form>
         </div>
       </div>
@@ -162,4 +111,4 @@ const LoginV2 = () => {
   )
 }
 
-export default LoginV2
+export default ForgotPasswordV2
