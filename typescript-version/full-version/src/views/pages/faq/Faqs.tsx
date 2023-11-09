@@ -25,7 +25,6 @@ import CustomAvatar from '@core/components/mui/Avatar'
 import CustomTabList from '@core/components/mui/TabList'
 
 // Style Imports
-import styles from './styles.module.css'
 import commonStyles from '@/styles/common.module.css'
 
 type props = {
@@ -88,7 +87,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
           {filteredData.map((faq, index) => (
             <TabPanel key={index} value={faq.id} className='p-0'>
               <div className='flex items-center gap-4 mbe-4'>
-                <CustomAvatar skin='light' variant='rounded' className={styles.avatarSize}>
+                <CustomAvatar skin='light' variant='rounded' size={50}>
                   <i className={classnames(faq.icon, 'text-3xl')} />
                 </CustomAvatar>
                 <div>

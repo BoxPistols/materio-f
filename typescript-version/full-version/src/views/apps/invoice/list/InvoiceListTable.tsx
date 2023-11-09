@@ -153,10 +153,10 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
     const { avatar, name } = params
 
     if (avatar) {
-      return <CustomAvatar src={avatar} skin='light' className={styles.clientAvatar} />
+      return <CustomAvatar src={avatar} skin='light' size={34} />
     } else {
       return (
-        <CustomAvatar skin='light' className={styles.clientAvatar}>
+        <CustomAvatar skin='light' size={34}>
           {getInitials(name as string)}
         </CustomAvatar>
       )
@@ -203,11 +203,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
       columnHelper.accessor('invoiceStatus', {
         header: 'Status',
         cell: ({ row }) => (
-          <CustomAvatar
-            skin='light'
-            color={invoiceStatusObj[row.original.invoiceStatus].color}
-            className={styles.avatarSize}
-          >
+          <CustomAvatar skin='light' color={invoiceStatusObj[row.original.invoiceStatus].color} size={28}>
             <i className={classnames(styles.iconSize, invoiceStatusObj[row.original.invoiceStatus].icon)} />
           </CustomAvatar>
         )

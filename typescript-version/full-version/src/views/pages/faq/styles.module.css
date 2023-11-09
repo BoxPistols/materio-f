@@ -14,8 +14,3 @@
 .headerPadding {
   padding-block: 4.5625rem 5.9375rem !important;
 }
-
-.avatarSize {
-  inline-size: 50px;
-  block-size: 50px;
-}

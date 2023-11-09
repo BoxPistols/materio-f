@@ -219,7 +219,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
   return (
     <Card>
       <CardHeader
-        title='Projects'
+        title='Project List'
         action={
           <DebouncedInput
             value={globalFilter ?? ''}

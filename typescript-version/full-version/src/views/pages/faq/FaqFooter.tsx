@@ -10,7 +10,6 @@ import classnames from 'classnames'
 import CustomAvatar from '@core/components/mui/Avatar'
 
 // Style Imports
-import styles from './styles.module.css'
 import commonStyles from '@/styles/common.module.css'
 
 const FaqFooter = () => {
@@ -32,7 +31,7 @@ const FaqFooter = () => {
               commonStyles.borderRadius
             )}
           >
-            <CustomAvatar variant='rounded' skin='light' className={styles.avatarSize}>
+            <CustomAvatar variant='rounded' skin='light' size={50}>
               <i className='ri-phone-line text-3xl' />
             </CustomAvatar>
             <div className='flex items-center flex-col gap-1'>
@@ -49,7 +48,7 @@ const FaqFooter = () => {
               commonStyles.borderRadius
             )}
           >
-            <CustomAvatar variant='rounded' skin='light' className={classnames(styles.avatarSize)}>
+            <CustomAvatar variant='rounded' skin='light' size={50}>
               <i className='ri-mail-line text-3xl' />
             </CustomAvatar>
             <div className='flex items-center flex-col gap-1'>

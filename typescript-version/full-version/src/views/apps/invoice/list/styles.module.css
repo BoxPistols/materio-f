@@ -8,11 +8,6 @@
   border-inline-end: 1px solid var(--mui-palette-divider);
 }
 
-.avatarSize {
-  inline-size: 1.75rem;
-  block-size: 1.75rem;
-}
-
 .searchInvoice {
   min-inline-size: 200px;
 }
@@ -24,9 +19,4 @@
 .iconSize {
   inline-size: 1rem;
   block-size: 1rem;
-}
-
-.clientAvatar {
-  inline-size: 2.125rem;
-  block-size: 2.125rem;
 }
