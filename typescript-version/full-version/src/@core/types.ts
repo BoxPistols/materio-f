@@ -28,5 +28,3 @@ export type ChildrenType = {
 }
 
 export type ThemeColor = 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success'
-
-export type MainColor = { [key in 'light' | 'dark' | 'lightShadow' | 'darkShadow']?: string }

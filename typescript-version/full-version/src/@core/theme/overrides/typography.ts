@@ -55,11 +55,11 @@ const typography: Theme['components'] = {
       },
       {
         props: { variant: 'caption' },
-        style: { color: 'var(--mui-palette-text-secondary)' }
+        style: { color: 'var(--mui-palette-text-secondary)', display: 'inline-block' }
       },
       {
         props: { variant: 'overline' },
-        style: { color: 'var(--mui-palette-text-secondary)' }
+        style: { color: 'var(--mui-palette-text-secondary)', display: 'inline-block' }
       }
     ]
   }

@@ -103,6 +103,13 @@ const timeline: Theme['components'] = {
         }
       }
     ]
+  },
+  MuiTimelineConnector: {
+    styleOverrides: {
+      root: {
+        width: 1
+      }
+    }
   }
 }
 

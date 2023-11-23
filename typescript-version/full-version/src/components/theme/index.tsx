@@ -20,7 +20,7 @@ import type { PaletteMode } from '@mui/material'
 import { useMedia } from 'react-use'
 
 // Type Imports
-import type { Direction, MainColor } from '@core/types'
+import type { Direction } from '@core/types'
 
 // Component Imports
 import EmotionCacheProvider from './EmotionCache'
@@ -34,14 +34,6 @@ import useSettings from '@core/hooks/useSettings'
 
 // Core Theme Imports
 import defaultCoreTheme from '@core/theme'
-
-//! Do not remove this variable otherwise you will get an error from the `@core` folder
-const mainColors: MainColor = {
-  // light: '58 53 65',
-  // dark: '231 227 252',
-  // lightShadow: '58 53 65',
-  // darkShadow: '19 17 32'
-}
 
 const ThemeProvider = ({ children, direction }: { children: ReactNode; direction: Direction }) => {
   // Hooks
@@ -64,7 +56,7 @@ const ThemeProvider = ({ children, direction }: { children: ReactNode; direction
   }
 
   // Merge the primary color scheme override with the core theme
-  const coreTheme = deepmerge(defaultCoreTheme(settings, mode, direction, mainColors), getPrimaryColorScheme(settings))
+  const coreTheme = deepmerge(defaultCoreTheme(settings, mode, direction), getPrimaryColorScheme(settings))
   let theme = extendTheme(coreTheme)
 
   if (themeConfig.responsiveFontSizes) {

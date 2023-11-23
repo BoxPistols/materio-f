@@ -21,6 +21,11 @@ const card = (skin: Skin): Theme['components'] => {
       }
     },
     MuiCardHeader: {
+      defaultProps: {
+        subheaderTypographyProps: {
+          variant: 'subtitle1'
+        }
+      },
       styleOverrides: {
         root: ({ theme }) => ({
           padding: theme.spacing(5),
@@ -28,12 +33,8 @@ const card = (skin: Skin): Theme['components'] => {
             paddingBlockStart: 0
           }
         }),
-        title: ({ theme }) => ({
-          ...theme.typography.h6,
-          color: 'var(--mui-palette-text-primary)'
-        }),
         subheader: ({ theme }) => ({
-          ...theme.typography.body2
+          marginBlockStart: theme.spacing(0.5)
         }),
         action: ({ theme }) => ({
           ...theme.typography.body1,
@@ -55,7 +56,8 @@ const card = (skin: Skin): Theme['components'] => {
           },
           '& > .MuiTabPanel-root': {
             padding: 0
-          }
+          },
+          color: 'var(--mui-palette-text-secondary)'
         })
       }
     },
@@ -64,11 +66,15 @@ const card = (skin: Skin): Theme['components'] => {
         root: ({ theme }) => ({
           padding: theme.spacing(5),
           '&:where(.card-actions-dense)': {
-            padding: theme.spacing(2.5)
+            padding: theme.spacing(2.5),
+            '& .MuiButton-text': {
+              paddingInline: theme.spacing(2.5)
+            }
           },
           '& + .MuiCardHeader-root, & + .MuiCardContent-root, & + .MuiCardActions-root': {
             paddingBlockStart: 0
-          }
+          },
+          color: 'var(--mui-palette-text-disabled)'
         })
       }
     }

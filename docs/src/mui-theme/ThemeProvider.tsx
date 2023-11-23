@@ -17,9 +17,6 @@ import GlobalStyles from "@mui/material/GlobalStyles";
 import type {} from '@mui/material/themeCssVarsAugmentation'
 import type {} from '@mui/lab/themeAugmentation';
 
-// Type Imports
-import { MainColor } from "@core/types";
-
 // Component Imports
 import ChangeMuiMode from "./ChangeMuiMode";
 
@@ -34,20 +31,13 @@ import shadows from "@core/theme/shadows";
 import customShadows from "@core/theme/customShadows";
 import typography from "@core/theme/typography";
 
-const mainColors: MainColor = {
-  light: '58 53 65',
-  dark: '231 227 252',
-  lightShadow: '58 53 65',
-  darkShadow: '19 17 32'
-}
-
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
   // Hooks
   const { colorMode } = useColorMode()
 
   let theme = extendTheme({
     components: overrides('default'),
-    colorSchemes: colorSchemes(mainColors),
+    colorSchemes: colorSchemes('default'),
     ...spacing,
     shape: {
       borderRadius: 6,
@@ -59,9 +49,15 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
         xl: 10
       }
     },
-    shadows: shadows(colorMode, mainColors),
-    customShadows: customShadows(colorMode, mainColors),
-    typography
+    shadows: shadows(colorMode),
+    customShadows: customShadows(colorMode),
+    typography,
+    mainColorChannels: {
+      light: '46 38 61',
+      dark: '231 227 252',
+      lightShadow: '46 38 61',
+      darkShadow: '19 17 32'
+    }
   });
 
   theme = responsiveFontSizes(theme)

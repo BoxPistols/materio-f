@@ -17,40 +17,66 @@ const typography: Theme['typography'] = {
     '"Segoe UI Symbol"'
   ].join(','),
   h1: {
-    fontWeight: 500
+    fontSize: '2.875rem',
+    fontWeight: 500,
+    lineHeight: 1.4783
   },
   h2: {
-    fontWeight: 500
+    fontSize: '2.375rem',
+    fontWeight: 500,
+    lineHeight: 1.4737
   },
   h3: {
-    fontWeight: 500
+    fontSize: '1.75rem',
+    fontWeight: 500,
+    lineHeight: 1.5
   },
   h4: {
-    fontWeight: 500
+    fontSize: '1.5rem',
+    fontWeight: 500,
+    lineHeight: 1.5834
   },
   h5: {
-    fontWeight: 500
+    fontSize: '1.125rem',
+    fontWeight: 500,
+    lineHeight: 1.556
   },
   h6: {
+    fontSize: '0.9375rem',
     fontWeight: 500,
-    lineHeight: 1.4
+    lineHeight: 1.6
+  },
+  subtitle1: {
+    fontSize: '0.9375rem',
+    fontWeight: 500,
+    lineHeight: 1.6
   },
   subtitle2: {
-    lineHeight: 1.43
+    fontSize: '0.8125rem',
+    fontWeight: 500,
+    lineHeight: 1.5385
+  },
+  body1: {
+    fontSize: '0.9375rem',
+    lineHeight: 1.4667
   },
   body2: {
-    lineHeight: 1.572
+    fontSize: '0.8125rem',
+    lineHeight: 1.5385
   },
   button: {
-    lineHeight: 1.429,
+    fontSize: '0.9375rem',
+    lineHeight: 1.4667,
     textTransform: 'none'
   },
   caption: {
-    lineHeight: 1.167
+    fontSize: '0.8125rem',
+    lineHeight: 1.3847,
+    letterSpacing: '0.025rem'
   },
   overline: {
     lineHeight: 1.167,
-    letterSpacing: '1px'
+    letterSpacing: '0.05rem'
   }
 } as Theme['typography']
 

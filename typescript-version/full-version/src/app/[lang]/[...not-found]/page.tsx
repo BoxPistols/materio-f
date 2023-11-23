@@ -2,7 +2,6 @@
 import { cookies } from 'next/headers'
 
 // Type Imports
-import type { ChildrenType } from '@core/types'
 import type { Locale } from '@configs/i18n'
 
 // Component Imports
@@ -12,7 +11,7 @@ import NotFound from '@views/NotFound'
 // Util Imports
 import { getDirection } from '@/utils/get-direction'
 
-export default async function Page({ params }: ChildrenType & { params: { lang: Locale } }) {
+const Page = ({ params }: { params: { lang: Locale } }) => {
   const direction = getDirection(params.lang)
   const cookieStore = cookies()
 
@@ -24,3 +23,5 @@ export default async function Page({ params }: ChildrenType & { params: { lang: 
     </Providers>
   )
 }
+
+export default Page

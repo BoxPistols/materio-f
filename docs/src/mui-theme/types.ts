@@ -5,15 +5,13 @@ import type { Theme, ComponentsOverrides } from '@mui/material/styles'
 import type { CustomInputHorizontalProps, CustomInputVerticalProps, CustomInputImgProps } from '@docComponents/custom-inputs/types'
 
 declare module '@mui/material/styles' {
+  interface PalettePaperChannel {
+    paperChannel: string
+  }
+  interface TypeBackground extends PalettePaperChannel {}
+  // eslint-disable-next-line lines-around-comment
   // Theme
   interface Theme {
-    customShadows: {
-      xs: string
-      sm: string
-      md: string
-      lg: string
-      xl: string
-    }
     shape: {
       borderRadius: number
       customBorderRadius: {
@@ -24,15 +22,21 @@ declare module '@mui/material/styles' {
         xl: number
       }
     }
+    customShadows: {
+      xs: string
+      sm: string
+      md: string
+      lg: string
+      xl: string
+    }
+    mainColorChannels: {
+      light: string
+      dark: string
+      lightShadow: string
+      darkShadow: string
+    }
   }
   interface ThemeOptions {
-    customShadows?: {
-      xs?: string
-      sm?: string
-      md?: string
-      lg?: string
-      xl?: string
-    }
     shape?: {
       borderRadius?: number
       customBorderRadius?: {
@@ -43,22 +47,45 @@ declare module '@mui/material/styles' {
         xl?: number
       }
     }
+    customShadows?: {
+      xs?: string
+      sm?: string
+      md?: string
+      lg?: string
+      xl?: string
+    }
+    mainColorChannels?: {
+      light?: string
+      dark?: string
+      lightShadow?: string
+      darkShadow?: string
+    }
   }
 
   // Palette Color
   interface PaletteColor {
-    mainOpacity?: string
+    lighterOpacity?: string
     lightOpacity?: string
+    mainOpacity?: string
     darkOpacity?: string
+    darkerOpacity?: string
   }
   interface SimplePaletteColorOptions {
-    mainOpacity?: string
+    lighterOpacity?: string
     lightOpacity?: string
+    mainOpacity?: string
     darkOpacity?: string
+    darkerOpacity?: string
   }
 
   // Palette
   interface Palette {
+    background: {
+      default: string
+      paper: string
+      defaultChannel: string
+      paperChannel: string
+    }
     customColors: {
       bodyBg: string
       chatBg: string
@@ -70,6 +97,12 @@ declare module '@mui/material/styles' {
     }
   }
   interface PaletteOptions {
+    background?: {
+      default?: string
+      paper?: string
+      defaultChannel?: string
+      paperChannel?: string
+    }
     customColors?: {
       bodyBg?: string
       chatBg?: string

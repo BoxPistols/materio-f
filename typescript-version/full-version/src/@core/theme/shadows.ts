@@ -2,11 +2,8 @@
 import type { Theme } from '@mui/material/styles'
 import type { PaletteMode } from '@mui/material'
 
-// Type Imports
-import type { MainColor } from '@core/types'
-
-const shadows = (mode: PaletteMode, mainColors: MainColor): Theme['shadows'] => {
-  const color = mode === 'light' ? mainColors.lightShadow : mainColors.darkShadow
+const shadows = (mode: PaletteMode): Theme['shadows'] => {
+  const color = `var(--mui-mainColorChannels-${mode}Shadow)`
 
   return [
     'none',
