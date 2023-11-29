@@ -57,7 +57,7 @@ const BillingAddress = () => {
         <CardContent>
           <Grid container>
             <Grid item xs={12} md={6}>
-              <table className={styles.addressTable1}>
+              <table className={styles.addressTable}>
                 <tbody className='align-top'>
                   <tr>
                     <td className='p-1 pis-0'>
@@ -113,7 +113,7 @@ const BillingAddress = () => {
               </table>
             </Grid>
             <Grid item xs={12} md={6}>
-              <table className={styles.addressTable1}>
+              <table className={styles.addressTable}>
                 <tbody className='align-top'>
                   <tr>
                     <td className='p-1 pis-0'>

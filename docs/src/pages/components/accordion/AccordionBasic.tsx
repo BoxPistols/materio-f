@@ -1,6 +1,3 @@
-// React Imports
-import React from 'react'
-
 // MUI Imports
 import Accordion from '@mui/material/Accordion'
 import Typography from '@mui/material/Typography'
@@ -11,11 +8,7 @@ const AccordionBasic = () => {
   return (
     <>
       <Accordion>
-        <AccordionSummary
-          id='panel-header-1'
-          aria-controls='panel-content-1'
-          expandIcon={<i className='ri-arrow-down-s-line' />}
-        >
+        <AccordionSummary id='panel-header-1' aria-controls='panel-content-1'>
           <Typography>Accordion 1</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -27,11 +20,7 @@ const AccordionBasic = () => {
       </Accordion>
 
       <Accordion>
-        <AccordionSummary
-          id='panel-header-2'
-          aria-controls='panel-content-2'
-          expandIcon={<i className='ri-arrow-down-s-line' />}
-        >
+        <AccordionSummary id='panel-header-2' aria-controls='panel-content-2'>
           <Typography>Accordion 2</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -43,11 +32,7 @@ const AccordionBasic = () => {
       </Accordion>
 
       <Accordion>
-        <AccordionSummary
-          id='panel-header-3'
-          aria-controls='panel-content-3'
-          expandIcon={<i className='ri-arrow-down-s-line' />}
-        >
+        <AccordionSummary id='panel-header-3' aria-controls='panel-content-3'>
           <Typography>Accordion 3</Typography>
         </AccordionSummary>
         <AccordionDetails>

@@ -1,5 +1,5 @@
 // React Imports
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 // MUI Imports
 import Card from '@mui/material/Card'
@@ -28,11 +28,9 @@ const CardActionCollapsible = () => {
       />
       <Collapse in={!collapse}>
         <CardContent>
-          <Typography variant='body2'>
+          <Typography>
             Click on{' '}
-            <span className='align-top'>
-              <i className='ri-arrow-up-s-line text-xl' />
-            </span>{' '}
+            <i className='ri-arrow-up-s-line text-xl align-sub' />{' '}
             icon to see it in action
           </Typography>
         </CardContent>

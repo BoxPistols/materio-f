@@ -28,9 +28,9 @@ a:hover {
 p {
   margin: 0;
 }
-p:not([class]) {
-  margin-bottom: var(--ifm-paragraph-margin-bottom);
-}
+// p:not([class]) {
+//   margin-bottom: var(--ifm-paragraph-margin-bottom);
+// }
 
 hr {
   background-color: transparent;
@@ -41,6 +41,15 @@ hr:not([class]) {
   background-color: var(--mui-palette-divider);
   height: var(--ifm-hr-height);
   margin: var(--ifm-hr-margin-vertical) 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding-left: 0;
+}
+ul:not([class]), ol:not([class]) {
+  margin: 0 0 var(--ifm-list-margin);
+  padding-left: var(--ifm-list-left-padding);
 }
 
 .markdown li + li {

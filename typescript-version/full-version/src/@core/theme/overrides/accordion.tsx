@@ -48,6 +48,9 @@ const accordion = (skin: Skin): Theme['components'] => ({
     }
   },
   MuiAccordionSummary: {
+    defaultProps: {
+      expandIcon: <i className='ri-arrow-down-s-line' />
+    },
     styleOverrides: {
       root: ({ theme }) => ({
         padding: theme.spacing(3, 5),

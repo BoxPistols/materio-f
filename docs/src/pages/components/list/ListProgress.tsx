@@ -1,6 +1,3 @@
-// React Imports
-import React from 'react'
-
 // MUI Imports
 import ListItem from '@mui/material/ListItem'
 import { styled } from '@mui/material/styles'

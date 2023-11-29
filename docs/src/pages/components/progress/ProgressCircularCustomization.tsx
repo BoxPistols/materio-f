@@ -1,13 +1,10 @@
-// React Imports
-import React from 'react'
-
 // MUI Imports
 import { styled } from '@mui/material/styles'
 import CircularProgress from '@mui/material/CircularProgress'
 import type { CircularProgressProps } from '@mui/material/CircularProgress'
 
 const CircularProgressDeterminate = styled(CircularProgress)<CircularProgressProps>(({ theme }) => ({
-  color: theme.palette.customColors.trackBg
+  color: 'var(--mui-palette-customColors-trackBg)'
 }))
 
 const CircularProgressIndeterminate = styled(CircularProgress)<CircularProgressProps>(({ theme }) => ({

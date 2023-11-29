@@ -1,6 +1,3 @@
-// React Imports
-import React from 'react'
-
 // MUI Imports
 import Zoom from '@mui/material/Zoom'
 import Button from '@mui/material/Button'
@@ -12,7 +9,7 @@ const LightTooltip = styled((props: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: props.className }} className='mie-4' />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    boxShadow: theme.customShadows.sm,
+    boxShadow: 'var(--mui-customShadows-sm)',
     color: theme.palette.common.black,
     backgroundColor: theme.palette.common.white
   }

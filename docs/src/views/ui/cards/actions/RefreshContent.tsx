@@ -1,5 +1,5 @@
 // React Imports
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 // MUI Imports
 import Card from '@mui/material/Card'
@@ -42,13 +42,11 @@ const CardActionRefreshContent = () => {
         }
       />
       <CardContent>
-        <Typography variant='body2'>
-          Click on{' '}
-          <span className='align-top'>
-            <i className='ri-refresh-line text-xl' />
-          </span>{' '}
-          icon to see it in action
-        </Typography>
+        <Typography>
+            Click on{' '}
+            <i className='ri-refresh-line text-xl align-sub' />{' '}
+            icon to see it in action
+          </Typography>
       </CardContent>
 
       <Backdrop open={reload} className={classnames('absolute text-white', styles.backdropZIndex)}>

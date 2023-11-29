@@ -1,5 +1,5 @@
 // React Imports
-import React, { useState } from "react"
+import { useState } from "react"
 import type { ReactNode } from "react"
 
 // MUI Imports
@@ -44,7 +44,7 @@ const CardSnippet = (props: CardSnippetProps) => {
           ? {}
           : {
               action: (
-                <IconButton onClick={() => setShowCode(!showCode)}>
+                <IconButton size='small' onClick={() => setShowCode(!showCode)}>
                   <i className="ri-code-line text-xl" />
                 </IconButton>
               ),

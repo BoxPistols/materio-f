@@ -2,7 +2,7 @@
 import type { Skin } from '@core/types'
 
 // Override Imports
-import accordion from './accordion'
+import Accordion from './accordion'
 import Alerts from './alerts'
 import Autocomplete from './autocomplete'
 import avatar from './avatar'
@@ -40,7 +40,7 @@ import typography from './typography'
 const overrides = (skin: Skin) => {
   return Object.assign(
     {},
-    accordion(skin),
+    Accordion(skin),
     Alerts,
     Autocomplete(skin),
     avatar,
