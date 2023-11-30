@@ -6,6 +6,9 @@ const timeline: Theme['components'] = {
     styleOverrides: {
       root: {
         boxShadow: 'none',
+        '&:has(> i), &:has(> svg)': {
+          padding: 6
+        },
         '& > svg': {
           fontSize: '1.25rem'
         },
@@ -19,39 +22,51 @@ const timeline: Theme['components'] = {
     },
     variants: [
       {
+        props: { variant: 'outlined' },
+        style: {
+          padding: 5
+        }
+      },
+      {
+        props: { variant: 'filled', color: 'grey' },
+        style: {
+          boxShadow: '0 0 0 3px rgb(var(--mui-mainColorChannels-light) / 0.04)'
+        }
+      },
+      {
         props: { variant: 'filled', color: 'primary' },
         style: {
-          boxShadow: '0 0 0 3px var(--mui-palette-primary-mainOpacity)'
+          boxShadow: '0 0 0 3px var(--mui-palette-primary-lightOpacity)'
         }
       },
       {
         props: { variant: 'filled', color: 'secondary' },
         style: {
-          boxShadow: '0 0 0 3px var(--mui-palette-secondary-mainOpacity)'
+          boxShadow: '0 0 0 3px var(--mui-palette-secondary-lightOpacity)'
         }
       },
       {
         props: { variant: 'filled', color: 'error' },
         style: {
-          boxShadow: '0 0 0 3px var(--mui-palette-error-mainOpacity)'
+          boxShadow: '0 0 0 3px var(--mui-palette-error-lightOpacity)'
         }
       },
       {
         props: { variant: 'filled', color: 'warning' },
         style: {
-          boxShadow: '0 0 0 3px var(--mui-palette-warning-mainOpacity)'
+          boxShadow: '0 0 0 3px var(--mui-palette-warning-lightOpacity)'
         }
       },
       {
         props: { variant: 'filled', color: 'info' },
         style: {
-          boxShadow: '0 0 0 3px var(--mui-palette-info-mainOpacity)'
+          boxShadow: '0 0 0 3px var(--mui-palette-info-lightOpacity)'
         }
       },
       {
         props: { variant: 'filled', color: 'success' },
         style: {
-          boxShadow: '0 0 0 3px var(--mui-palette-success-mainOpacity)'
+          boxShadow: '0 0 0 3px var(--mui-palette-success-lightOpacity)'
         }
       },
       {
@@ -107,7 +122,8 @@ const timeline: Theme['components'] = {
   MuiTimelineConnector: {
     styleOverrides: {
       root: {
-        width: 1
+        width: 1,
+        backgroundColor: 'var(--mui-palette-divider)'
       }
     }
   }

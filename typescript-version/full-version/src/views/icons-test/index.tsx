@@ -78,7 +78,7 @@ const IconsTest = ({ data }: { data: string[] }) => {
       </Typography>
       <Typography>
         Remix Icon with color using CSS modules
-        <i className={classnames(styles.iconColor, 'ri-bike-line')} />
+        <i className={classnames('ri-bike-line', styles.iconColor)} />
       </Typography>
       <Typography>
         Remix Icon with style
@@ -132,7 +132,7 @@ const IconsTest = ({ data }: { data: string[] }) => {
       </Typography>
       <Typography>
         Remix Icon with transform scale
-        <i className={classnames(styles.iconScale, 'ri-bike-line')} />
+        <i className={classnames('ri-bike-line', styles.iconScale)} />
       </Typography>
       <Typography>
         Remix Icon with visibility hidden

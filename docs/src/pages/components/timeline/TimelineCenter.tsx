@@ -98,7 +98,7 @@ const TimelineCenter = () => {
         </Typography> */}
         {!isBelowMdScreen && (
           <TimelineOppositeContent color='text.disabled'>
-            <Typography variant='caption' component='div' className='mbs-3'>
+            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
               2 months ago
             </Typography>
           </TimelineOppositeContent>
@@ -111,23 +111,39 @@ const TimelineCenter = () => {
         </TimelineSeparator>
         <TimelineContent>
           {isBelowMdScreen && (
-            <Typography variant='caption' component='div' className='mbs-3'>
+            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
               2 months ago
             </Typography>
           )}
           <Card>
             <CardContent>
-              <Typography variant='body1' className='font-medium mbe-4'>
+              <Typography variant='h5' className='mbe-4'>
                 You've uploaded doc pdf to the Themeselection project
               </Typography>
-              <Typography variant='body1' className={classnames('mbe-3', styles.textSecondary)}>
-                he process of recording the key project details and producing the documents that are required to
-                implement it successfully. Simply put, it's an umbrella term which includes all the documents created
-                over the course of the project.
+              <Typography
+                variant='body1'
+                className={classnames('mbe-3', styles.textSecondary)}
+              >
+                he process of recording the key project details and producing
+                the documents that are required to implement it successfully.
+                Simply put, it's an umbrella term which includes all the
+                documents created over the course of the project.
               </Typography>
-              <div className={classnames('flex items-center gap-2.5 w-fit', styles.imageWrapper, styles.borderRadius)}>
-                <img height={20} alt='documentation.pdf' src='/images/icons/pdf-document.png' />
-                <Typography className='font-medium'>documentation.pdf</Typography>
+              <div
+                className={classnames(
+                  'flex items-center gap-2.5 w-fit',
+                  styles.imageWrapper,
+                  styles.borderRadius
+                )}
+              >
+                <img
+                  height={20}
+                  alt='documentation.pdf'
+                  src='/images/icons/pdf-document.png'
+                />
+                <Typography className='font-medium'>
+                  documentation.pdf
+                </Typography>
               </div>
             </CardContent>
           </Card>
@@ -137,35 +153,44 @@ const TimelineCenter = () => {
       <TimelineItem>
         {!isBelowMdScreen && (
           <TimelineOppositeContent color='text.disabled'>
-            <Typography variant='caption' component='div' className='mbs-3'>
+            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
               24 days ago
             </Typography>
           </TimelineOppositeContent>
         )}
         <TimelineSeparator>
           <TimelineDot color='success' variant='tonal'>
-            <i className='ri-image-line' />
+            <i className='ri-image-line text-xl' />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
           {isBelowMdScreen && (
-            <Typography variant='caption' component='div' className='mbs-3'>
+            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
               24 days ago
             </Typography>
           )}
           <Card>
             <CardContent>
-              <Typography variant='body1' className='font-medium mbe-4'>
+              <Typography variant='h5' className='font-medium mbe-4'>
                 Heather added 4 images to the Team album
               </Typography>
-              <Typography variant='body1' className={classnames('mbe-3', styles.textSecondary)}>
-                In the Select Image for Project dialog box, choose one of the following: Under the Upload New Image
-                section
+              <Typography
+                variant='body1'
+                className={classnames('mbe-3', styles.textSecondary)}
+              >
+                In the Select Image for Project dialog box, choose one of the
+                following: Under the Upload New Image section
               </Typography>
-              <div className='flex gap-4'>
+              <div className='flex gap-4 flex-wrap'>
                 {ImageList.map((image, index) => (
-                  <img key={index} className={styles.borderRadius} height={114} alt='documentation.pdf' src={image} />
+                  <img
+                    key={index}
+                    className={styles.borderRadius}
+                    height={114}
+                    alt='documentation.pdf'
+                    src={image}
+                  />
                 ))}
               </div>
             </CardContent>
@@ -176,30 +201,35 @@ const TimelineCenter = () => {
       <TimelineItem>
         {!isBelowMdScreen && (
           <TimelineOppositeContent color='text.disabled'>
-            <Typography variant='caption' component='div' className='mbs-3'>
+            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
               6 days ago
             </Typography>
           </TimelineOppositeContent>
         )}
         <TimelineSeparator>
           <TimelineDot color='warning' variant='tonal'>
-            <i className='ri-star-line' />
+            <i className='ri-star-line text-xl' />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
-          <Typography variant='caption' component='div' className='mbs-3'>
-            6 days ago
-          </Typography>
+          {isBelowMdScreen && (
+            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+              6 days ago
+            </Typography>
+          )}
           <Card>
             <CardContent>
-              <Typography variant='body1' className='font-medium mbe-4'>
+              <Typography variant='h5' className='font-medium mbe-4'>
                 Loretta write a review on Themeselection
               </Typography>
               <div className='flex items-center gap-4 mbe-3'>
-                <Avatar src='/assets/avatars/2.png' className={styles.avatarSize} />
+                <Avatar
+                  src='/images/avatars/8.png'
+                  className={styles.avatarSize}
+                />
                 <div className='flex flex-col flex-wrap'>
-                  <Typography variant='body2' className='font-medium'>
+                  <Typography className='font-medium'>
                     Loretta Moore
                   </Typography>
                   <Typography variant='body2'>CTO of Airbnb</Typography>
@@ -209,16 +239,20 @@ const TimelineCenter = () => {
                 <Rating name='read-only' value={5} readOnly />
                 <Chip
                   size='small'
+                  variant='tonal'
+                  className='uppercase'
                   color='success'
                   label='Verified Buyer'
-                  avatar={<Avatar alt='user' src='/images/avatars/1.jpg' />}
+                  avatar={<Avatar alt='user' src='/images/avatars/8.png' />}
                 />
               </div>
-              <Typography variant='body2'>
-                I wish I could select more than one main reason for rating this. I love how they constantly work on to
-                make the template better. I am so thankful for this. Also, in the past, they had responded well to my
-                tickets. Thank you for this great theme, for such an amazing support, for the better updates. I wish I
-                could rate this for so many times. I highly recommend this template!
+              <Typography color='text.secondary'>
+                I wish I could select more than one main reason for rating this.
+                I love how they constantly work on to make the template better.
+                I am so thankful for this. Also, in the past, they had responded
+                well to my tickets. Thank you for this great theme, for such an
+                amazing support, for the better updates. I wish I could rate
+                this for so many times. I highly recommend this template!
               </Typography>
             </CardContent>
           </Card>
@@ -228,54 +262,72 @@ const TimelineCenter = () => {
       <TimelineItem>
         {!isBelowMdScreen && (
           <TimelineOppositeContent color='text.disabled'>
-            <Typography variant='caption' component='div' className='mbs-3'>
+            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
               2 days ago
             </Typography>
           </TimelineOppositeContent>
         )}
         <TimelineSeparator>
           <TimelineDot color='info' variant='tonal'>
-            <i className='ri-pie-chart-line' />
+            <i className='ri-pie-chart-line text-xl' />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
           {isBelowMdScreen && (
-            <Typography variant='caption' component='div' className='mbs-3'>
+            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
               2 days ago
             </Typography>
           )}
           <Card>
             <CardContent>
-              <Typography variant='body1' className='font-medium mbe-4'>
+              <Typography variant='h5' className='font-medium mbe-4'>
                 Julia stiles shared an earnings report
               </Typography>
               <div className='flex items-center gap-1'>
                 <Typography variant='h4'>$24,895</Typography>
-                <i className={classnames('ri-arrow-down-s-fill text-3xl', styles.textSuccess)} />
-                <Typography variant='body2' className={classnames('font-medium', styles.textSuccess)}>
+                <i
+                  className={classnames(
+                    'ri-arrow-down-s-fill text-3xl',
+                    styles.textSuccess
+                  )}
+                />
+                <Typography
+                  variant='body2'
+                  className={classnames('font-medium', styles.textSuccess)}
+                >
                   10%
                 </Typography>
               </div>
-              <Typography variant='caption' className='mbe-2'>
+              <Typography variant='body2' className='mbe-2'>
                 Compared to $84,325 last year
               </Typography>
               {Data.map((item, index) => (
-                <div key={index} className='flex justify-between items-center gap-2'>
+                <div
+                  key={index}
+                  className='flex justify-between items-center gap-2'
+                >
                   <div className='flex items-center gap-3'>
                     <img src={item.image} width={40} height={40} />
                     <div className='flex flex-col flex-wrap gap-0.5'>
-                      <Typography variant='body2' className='font-medium'>
+                      <Typography className='font-medium'>
                         {item.title}
                       </Typography>
                       <Typography variant='body2'>{item.subtitle}</Typography>
                     </div>
                   </div>
                   <div className='flex flex-col items-center gap-2'>
-                    <Typography variant='body2' className={classnames('font-medium', styles.textPrimary)}>
+                    <Typography
+                      className={classnames('font-medium', styles.textPrimary)}
+                    >
                       ${item.progress}
                     </Typography>
-                    <LinearProgress variant='determinate' value={75} color={item.progressColor} className='w-full' />
+                    <LinearProgress
+                      variant='determinate'
+                      value={75}
+                      color={item.progressColor}
+                      className='w-full'
+                    />
                   </div>
                 </div>
               ))}
@@ -287,40 +339,59 @@ const TimelineCenter = () => {
       <TimelineItem>
         {!isBelowMdScreen && (
           <TimelineOppositeContent color='text.disabled'>
-            <Typography variant='caption' component='div' className='mbs-3'>
+            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
               2 days ago
             </Typography>
           </TimelineOppositeContent>
         )}
         <TimelineSeparator>
           <TimelineDot color='primary' variant='tonal'>
-            <i className='ri-folder-line' />
+            <i className='ri-folder-line text-xl' />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
           {isBelowMdScreen && (
-            <Typography variant='caption' component='div' className='mbs-3'>
+            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
               2 days ago
             </Typography>
           )}
           <Card>
             <CardContent>
-              <Typography variant='body1' className='font-medium mbe-4'>
+              <Typography variant='h5' className='font-medium mbe-4'>
                 josh johnson shared Next js project progress report
               </Typography>
-              <Typography variant='body1' className={classnames('mbe-3', styles.textSecondary)}>
-                The structure and process are defined in the project organization considering the attainment of the
-                corporate objectives and therefore also project objectives. The components of the project process are
+              <Typography
+                variant='body1'
+                className={classnames('mbe-3', styles.textSecondary)}
+              >
+                The structure and process are defined in the project
+                organization considering the attainment of the corporate
+                objectives and therefore also project objectives. The components
+                of the project process are
               </Typography>
               <div
-                className={classnames('mbe-3 flex items-center gap-2 w-fit', styles.imageWrapper, styles.borderRadius)}
+                className={classnames(
+                  'mbe-3 flex items-center gap-2 w-fit',
+                  styles.imageWrapper,
+                  styles.borderRadius
+                )}
               >
-                <img height={20} alt='progress-report.xls.pdf' src='/images/icons/xls-document.png' />
-                <Typography className='font-medium'>xls-document.pdf</Typography>
+                <img
+                  height={20}
+                  alt='progress-report.xls.pdf'
+                  src='/images/icons/xls-document.png'
+                />
+                <Typography className='font-medium'>
+                  xls-document.pdf
+                </Typography>
               </div>
               <div className='flex items-center gap-2'>
-                <LinearProgress variant='determinate' value={34} className='w-full' />
+                <LinearProgress
+                  variant='determinate'
+                  value={34}
+                  className='w-full'
+                />
                 <Typography>34%</Typography>
               </div>
             </CardContent>

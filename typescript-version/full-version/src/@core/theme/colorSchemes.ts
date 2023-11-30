@@ -4,7 +4,6 @@ import type { Theme } from '@mui/material/styles'
 // Type Imports
 import type { Skin } from '@core/types'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const colorSchemes = (skin: Skin): Theme['colorSchemes'] => {
   return {
     light: {
@@ -141,6 +140,9 @@ const colorSchemes = (skin: Skin): Theme['colorSchemes'] => {
         },
         Tooltip: {
           bg: '#1A0E33'
+        },
+        TableCell: {
+          border: 'var(--mui-palette-divider)'
         },
         customColors: {
           bodyBg: '#F4F5FA',
@@ -287,6 +289,9 @@ const colorSchemes = (skin: Skin): Theme['colorSchemes'] => {
         },
         Tooltip: {
           bg: '#F7F4FF'
+        },
+        TableCell: {
+          border: 'var(--mui-palette-divider)'
         },
         customColors: {
           bodyBg: '#28243D',

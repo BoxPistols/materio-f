@@ -90,7 +90,7 @@ const TimelineFilled = () => {
             Project meeting with john @10:15am
           </Typography>
           <div className='flex items-center mbe-2.5 gap-2.5'>
-            <Avatar src='/assets/avatars/2.png' className='w-8 h-8' />
+            <Avatar src='/images/avatars/1.png' className='w-8 h-8' />
             <div className='flex flex-col flex-wrap'>
               <Typography variant='body2' className='font-medium'>
                 Lester McCarthy (Client)
@@ -119,9 +119,9 @@ const TimelineFilled = () => {
             6 team members in a project
           </Typography>
           <AvatarGroup total={6} className='pull-up'>
-            <Avatar alt='Travis Howard' src='/images/avatars/2.jpg' />
-            <Avatar alt='Agnes Walker' src='/images/avatars/4.jpg' />
-            <Avatar alt='John Doe' src='/images/avatars/5.jpg' />
+            <Avatar alt='Travis Howard' src='/images/avatars/1.png' />
+            <Avatar alt='Agnes Walker' src='/images/avatars/8.png' />
+            <Avatar alt='John Doe' src='/images/avatars/6.png' />
           </AvatarGroup>
         </TimelineContent>
       </TimelineItem>

@@ -22,7 +22,6 @@ const StepperWrapper = styled(Box)<BoxProps>(({ theme }) => {
       },
       '& .step-number': {
         ...theme.typography.h4,
-        fontWeight: 600,
         marginRight: theme.spacing(2)
       },
       '& .step-title': {
@@ -56,7 +55,7 @@ const StepperWrapper = styled(Box)<BoxProps>(({ theme }) => {
         }
       },
       '&.Mui-disabled .MuiStepConnector-line': {
-        borderColor: 'var(--mui-palette-primary-mainOpacity)'
+        borderColor: 'var(--mui-palette-primary-lightOpacity)'
       }
     },
     '& .MuiStepper-alternativeLabel': {

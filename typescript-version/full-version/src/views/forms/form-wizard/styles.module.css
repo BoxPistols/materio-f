@@ -4,7 +4,7 @@
   border-width: 3px;
   border-radius: 50%;
   border-style: solid;
-  border-color: var(--mui-palette-primary-mainOpacity);
+  border-color: var(--mui-palette-primary-lightOpacity);
 
   &.activeStepperCustomDot {
     border-width: 5px;

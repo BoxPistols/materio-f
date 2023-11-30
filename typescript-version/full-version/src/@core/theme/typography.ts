@@ -76,11 +76,11 @@ const typography = (fontFamily: string): Theme['typography'] =>
     caption: {
       fontSize: '0.8125rem',
       lineHeight: 1.3847,
-      letterSpacing: '0.025rem'
+      letterSpacing: '0.4px'
     },
     overline: {
       lineHeight: 1.167,
-      letterSpacing: '0.05rem'
+      letterSpacing: '0.8px'
     }
   }) as Theme['typography']
 
