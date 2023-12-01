@@ -1,3 +1,6 @@
+// MUI Imports
+import type { PaletteMode } from '@mui/material'
+
 // Type Imports
 import type { Skin } from '@core/types'
 
@@ -37,7 +40,7 @@ import toggleButton from './toggle-button'
 import tooltip from './tooltip'
 import typography from './typography'
 
-const overrides = (skin: Skin) => {
+const overrides = (skin: Skin, mode: PaletteMode) => {
   return Object.assign(
     {},
     Accordion(skin),
@@ -51,7 +54,7 @@ const overrides = (skin: Skin) => {
     buttonGroup,
     card(skin),
     Checkbox,
-    chip,
+    chip(mode),
     dialog(skin),
     drawer(skin),
     formControl,

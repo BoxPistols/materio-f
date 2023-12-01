@@ -7,9 +7,6 @@ const progress: Theme['components'] = {
       root: {
         height: 6,
         borderRadius: 6
-      },
-      bar: {
-        borderRadius: 6
       }
     }
   }

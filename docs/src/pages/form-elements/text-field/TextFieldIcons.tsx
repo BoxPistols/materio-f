@@ -11,6 +11,7 @@ import classnames from 'classnames'
 
 // Styles Imports
 import styles from './styles.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 const TextFieldIcons = () => {
   return (
@@ -46,7 +47,7 @@ const TextFieldIcons = () => {
       <Grid item xs={12}>
         <Grid container spacing={2} className='items-end'>
           <Grid item xs={1} className='flex justify-center'>
-            <i className={classnames('ri-account-circle-line', styles.textFiledIconColor)} />
+            <i className={classnames('ri-account-circle-line', commonStyles.textPrimary)} />
           </Grid>
           <Grid item xs={11}>
             <TextField fullWidth variant='standard' id='input-with-icon-grid' label='With a grid' />

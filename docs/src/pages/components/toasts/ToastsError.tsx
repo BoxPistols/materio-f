@@ -13,7 +13,8 @@ const ToastError = () => {
       <i className='ri-close-line mbe-2 text-[32px]' />
       <Typography className='mbe-4 font-medium'>Error</Typography>
       <Typography className='mbe-3'>Indicate that an error occurred.</Typography>
-      <Button className='mbe-8'color='error' variant='contained' onClick={() => toast.error("This didn't work.")}>
+      <Button className='mbe-8'color='error' variant='contained' onClick={() => toast.error("This didn't work.", {
+        autoClose: false,})}>
         Error
       </Button>
     </div>

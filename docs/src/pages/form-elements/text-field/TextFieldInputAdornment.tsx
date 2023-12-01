@@ -75,7 +75,7 @@ const TextFieldInputAdornment = () => {
                 onMouseDown={e => e.preventDefault()}
                 aria-label='toggle password visibility'
               >
-                <i className={classnames(values.showPassword ? 'ri-eye-line' : 'ri-eye-off-line', 'text-xl')} />
+                <i className={values.showPassword ? 'ri-eye-line' : 'ri-eye-off-line'} />
               </IconButton>
             </InputAdornment>
           }

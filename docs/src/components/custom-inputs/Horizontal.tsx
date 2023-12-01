@@ -84,7 +84,7 @@ const CustomInputHorizontal = (props: CustomInputHorizontalProps) => {
     if (meta && title && content) {
       return (
         <div className='flex flex-col h-full w-full gap-1.5'>
-          <div className='flex items-start justify-between w-full mbs-1.5'>
+          <div className='flex items-start justify-between w-full mbs-1.5 gap-1.5'>
             {typeof title === 'string' ? <Title variant='body1'>{title}</Title> : title}
             {typeof meta === 'string' ? <Meta variant='body2'>{meta}</Meta> : meta}
           </div>
@@ -93,7 +93,7 @@ const CustomInputHorizontal = (props: CustomInputHorizontalProps) => {
       )
     } else if (meta && title && !content) {
       return (
-        <div className='flex items-start justify-between w-full mbs-1.5'>
+        <div className='flex items-start justify-between w-full mbs-1.5 gap-1.5'>
           {typeof title === 'string' ? <Title variant='body1'>{title}</Title> : title}
           {typeof meta === 'string' ? <Meta variant='body2'>{meta}</Meta> : meta}
         </div>

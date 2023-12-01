@@ -60,7 +60,7 @@ const checkbox: Theme['components'] = {
               }
             }),
         '&.Mui-checked:not(.Mui-disabled) svg': {
-          filter: 'drop-shadow(0px 2px 4px rgb(58 53 65 / 0.14))'
+          filter: 'drop-shadow(var(--mui-customShadows-xs))'
         },
         '&.Mui-disabled': {
           '&:not(.Mui-checked)': {

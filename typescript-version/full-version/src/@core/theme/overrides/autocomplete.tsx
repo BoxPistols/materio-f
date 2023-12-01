@@ -7,15 +7,6 @@ import type { Theme } from '@mui/material/styles'
 // Type Imports
 import type { Skin } from '@core/types'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
-const iconStyles = {
-  color: 'var(--mui-palette-text-primary)',
-  width: '1.25rem',
-  height: '1.25rem'
-}
-
 const autocomplete = (skin: Skin): Theme['components'] => ({
   MuiAutocomplete: {
     defaultProps: {
@@ -29,15 +20,12 @@ const autocomplete = (skin: Skin): Theme['components'] => ({
       ChipProps: {
         size: 'small'
       },
-      popupIcon: <Icon icon='mdi:chevron-down' />
+      popupIcon: <i className='ri-arrow-down-s-line' />
     },
     styleOverrides: {
       root: {
-        '& .MuiButtonBase-root.Mui-disabled svg': {
+        '& .MuiButtonBase-root.Mui-disabled i, & .MuiButtonBase-root.Mui-disabled svg': {
           color: 'var(--mui-palette-action-disabled)'
-        },
-        '& .MuiChip-root svg': {
-          color: 'var(--mui-palette-action-active)'
         },
         '& .MuiOutlinedInput-input': {
           height: '1.4375em'
@@ -46,8 +34,17 @@ const autocomplete = (skin: Skin): Theme['components'] => ({
       input: {
         '& + .MuiAutocomplete-endAdornment': {
           right: '1rem',
-          '& svg': {
-            ...iconStyles
+          '& i, & svg': {
+            fontSize: '1.5rem',
+            color: 'var(--mui-palette-text-primary)'
+          },
+          '& .MuiAutocomplete-clearIndicator': {
+            padding: 2
+          }
+        },
+        '&.MuiInputBase-inputSizeSmall + .MuiAutocomplete-endAdornment': {
+          '& i, & svg': {
+            fontSize: '1.375rem'
           }
         }
       },
@@ -62,9 +59,8 @@ const autocomplete = (skin: Skin): Theme['components'] => ({
           '&[aria-selected="true"]': {
             backgroundColor: 'var(--mui-palette-primary-lightOpacity)',
             color: 'var(--mui-palette-primary-main)',
-            '&.Mui-focusVisible': {
-              backgroundColor:
-                'rgb(var(--mui-palette-primary-mainChannel) / calc(var(--mui-palette-action-selectedOpacity) + var(--mui-palette-action-hoverOpacity)))'
+            '&.Mui-focused, &.Mui-focusVisible': {
+              backgroundColor: 'var(--mui-palette-primary-mainOpacity)'
             }
           }
         },

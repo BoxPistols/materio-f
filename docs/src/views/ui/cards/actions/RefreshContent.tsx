@@ -13,9 +13,6 @@ import CircularProgress from '@mui/material/CircularProgress'
 // Third-party Imports
 import classnames from 'classnames'
 
-// Component Imports
-import Icon from '@core/components/IconifyIcon'
-
 // Style Imports
 import styles from './styles.module.css'
 

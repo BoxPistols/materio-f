@@ -5,6 +5,7 @@ const input: Theme['components'] = {
   MuiInputBase: {
     styleOverrides: {
       root: {
+        lineHeight: 1.6,
         '&.MuiInput-underline': {
           '&:before': {
             borderColor: 'var(--mui-palette-customColors-inputBorder)'
@@ -19,8 +20,6 @@ const input: Theme['components'] = {
   MuiFilledInput: {
     styleOverrides: {
       root: ({ theme }) => ({
-        borderTopLeftRadius: 4,
-        borderTopRightRadius: 4,
         '& .MuiFilledInput-input': {
           paddingInline: theme.spacing(4)
         },
@@ -38,8 +37,13 @@ const input: Theme['components'] = {
       shrink: ({ ownerState }) => ({
         ...(ownerState.variant === 'outlined' && {
           color: 'var(--mui-palette-text-secondary)',
-          insetBlockStart: 1,
-          insetInlineStart: 1
+          transform: 'translate(14px, -8px) scale(0.867)'
+        }),
+        ...(ownerState.variant === 'filled' && {
+          transform: 'translate(12px, 7px) scale(0.867)'
+        }),
+        ...(ownerState.variant === 'standard' && {
+          transform: 'translate(0, -1.5px) scale(0.867)'
         })
       })
     }
@@ -47,9 +51,11 @@ const input: Theme['components'] = {
   MuiOutlinedInput: {
     styleOverrides: {
       root: {
-        borderRadius: 4,
         '&:not(.Mui-focused):not(.Mui-error):not(.Mui-disabled):hover .MuiOutlinedInput-notchedOutline': {
           borderColor: 'var(--mui-palette-action-active)'
+        },
+        '&.Mui-disabled .MuiOutlinedInput-notchedOutline': {
+          borderColor: 'var(--mui-palette-action-disabledBackground)'
         }
       },
       input: ({ theme, ownerState }) => ({
@@ -62,19 +68,31 @@ const input: Theme['components'] = {
         '& ~ .MuiOutlinedInput-notchedOutline': {
           borderColor: 'var(--mui-palette-customColors-inputBorder)'
         }
-      })
+      }),
+      notchedOutline: {
+        '& legend': {
+          fontSize: '0.867em'
+        }
+      }
     }
   },
   MuiInputAdornment: {
     styleOverrides: {
       root: {
         color: 'var(--mui-palette-text-primary)',
-        '& svg': {
+        '& i, & svg': {
           fontSize: '1.25rem'
         },
-        '& .MuiIconButton-edgeEnd': {
-          color: 'var(--mui-palette-text-primary)'
+        '& *': {
+          color: 'inherit !important'
         }
+      }
+    }
+  },
+  MuiFormHelperText: {
+    styleOverrides: {
+      root: {
+        lineHeight: 1
       }
     }
   }

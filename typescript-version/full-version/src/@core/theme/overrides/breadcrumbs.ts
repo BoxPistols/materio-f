@@ -5,7 +5,7 @@ const breadcrumbs: Theme['components'] = {
   MuiBreadcrumbs: {
     styleOverrides: {
       root: {
-        '& svg': {
+        '& svg, & i': {
           fontSize: '1.25rem'
         },
         '& a': {
@@ -16,10 +16,10 @@ const breadcrumbs: Theme['components'] = {
           }
         }
       },
-      li: {
-        lineHeight: 1.5,
+      li: ({ theme }) => ({
+        lineHeight: theme.typography.body1.lineHeight,
         color: 'var(--mui-palette-text-primary)'
-      }
+      })
     }
   }
 }

@@ -89,7 +89,7 @@ const colorSchemes = (skin: Skin): Theme['colorSchemes'] => {
         },
         action: {
           active: `rgb(var(--mui-mainColorChannels-light) / 0.6)`,
-          hover: `rgb(var(--mui-mainColorChannels-light) / 0.04)`,
+          hover: `rgb(var(--mui-mainColorChannels-light) / 0.06)`,
           selected: `rgb(var(--mui-mainColorChannels-light) / 0.08)`,
           disabled: `rgb(var(--mui-mainColorChannels-light) / 0.3)`,
           disabledBackground: `rgb(var(--mui-mainColorChannels-light) / 0.12)`,
@@ -119,14 +119,25 @@ const colorSchemes = (skin: Skin): Theme['colorSchemes'] => {
         Avatar: {
           defaultBg: '#F0EFF0'
         },
+        Chip: {
+          defaultBorder: 'var(--mui-palette-divider)'
+        },
         FilledInput: {
-          bg: `rgb(var(--mui-mainColorChannels-light) / 0.04)`,
+          bg: `rgb(var(--mui-mainColorChannels-light) / 0.06)`,
           hoverBg: `rgb(var(--mui-mainColorChannels-light) / 0.08)`,
-          disabledBg: `rgb(var(--mui-mainColorChannels-light) / 0.12)`
+          disabledBg: `rgb(var(--mui-mainColorChannels-light) / 0.06)`
+        },
+        LinearProgress: {
+          primaryBg: 'var(--mui-palette-primary-mainOpacity)',
+          secondaryBg: 'var(--mui-palette-secondary-mainOpacity)',
+          errorBg: 'var(--mui-palette-error-mainOpacity)',
+          warningBg: 'var(--mui-palette-warning-mainOpacity)',
+          infoBg: 'var(--mui-palette-info-mainOpacity)',
+          successBg: 'var(--mui-palette-success-mainOpacity)'
         },
         SnackbarContent: {
           bg: '#1A0E33',
-          color: '#FFFFFF'
+          color: 'var(--mui-palette-background-paper)'
         },
         Switch: {
           defaultColor: 'var(--mui-palette-common-white)',
@@ -238,7 +249,7 @@ const colorSchemes = (skin: Skin): Theme['colorSchemes'] => {
         },
         action: {
           active: `rgb(var(--mui-mainColorChannels-dark) / 0.6)`,
-          hover: `rgb(var(--mui-mainColorChannels-dark) / 0.04)`,
+          hover: `rgb(var(--mui-mainColorChannels-dark) / 0.06)`,
           selected: `rgb(var(--mui-mainColorChannels-dark) / 0.08)`,
           disabled: `rgb(var(--mui-mainColorChannels-dark) / 0.3)`,
           disabledBackground: `rgb(var(--mui-mainColorChannels-dark) / 0.12)`,
@@ -268,14 +279,25 @@ const colorSchemes = (skin: Skin): Theme['colorSchemes'] => {
         Avatar: {
           defaultBg: '#3F3B59'
         },
+        Chip: {
+          defaultBorder: 'var(--mui-palette-divider)'
+        },
         FilledInput: {
-          bg: `rgb(var(--mui-mainColorChannels-dark) / 0.04)`,
+          bg: `rgb(var(--mui-mainColorChannels-dark) / 0.06)`,
           hoverBg: `rgb(var(--mui-mainColorChannels-dark) / 0.08)`,
-          disabledBg: `rgb(var(--mui-mainColorChannels-dark) / 0.12)`
+          disabledBg: `rgb(var(--mui-mainColorChannels-dark) / 0.06)`
+        },
+        LinearProgress: {
+          primaryBg: 'var(--mui-palette-primary-mainOpacity)',
+          secondaryBg: 'var(--mui-palette-secondary-mainOpacity)',
+          errorBg: 'var(--mui-palette-error-mainOpacity)',
+          warningBg: 'var(--mui-palette-warning-mainOpacity)',
+          infoBg: 'var(--mui-palette-info-mainOpacity)',
+          successBg: 'var(--mui-palette-success-mainOpacity)'
         },
         SnackbarContent: {
           bg: '#F7F4FF',
-          color: '#312D4B'
+          color: 'var(--mui-palette-background-paper)'
         },
         Switch: {
           defaultColor: 'var(--mui-palette-common-white)',

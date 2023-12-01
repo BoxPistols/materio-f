@@ -16,11 +16,11 @@ const menu = (skin: Skin): Theme['components'] => ({
       })
     },
     styleOverrides: {
-      paper: () => ({
+      paper: {
         ...(skin !== 'bordered' && {
           boxShadow: 'var(--mui-customShadows-lg)'
         })
-      })
+      }
     }
   },
   MuiMenuItem: {
@@ -33,6 +33,9 @@ const menu = (skin: Skin): Theme['components'] => ({
           color: 'var(--mui-palette-primary-main)',
           '& .MuiListItemIcon-root': {
             color: 'var(--mui-palette-primary-main)'
+          },
+          '&:hover': {
+            backgroundColor: 'var(--mui-palette-primary-lightOpacity)'
           }
         },
         '&.Mui-disabled': {

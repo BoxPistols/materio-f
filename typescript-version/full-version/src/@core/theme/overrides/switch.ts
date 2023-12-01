@@ -39,7 +39,7 @@ const switchOverrides: Theme['components'] = {
           }
         },
         '&.Mui-disabled + .MuiSwitch-track': {
-          opacity: 0.45
+          opacity: 1
         }
       },
       thumb: {
@@ -47,12 +47,14 @@ const switchOverrides: Theme['components'] = {
         height: 14,
         boxShadow: 'var(--mui-customShadows-xs)'
       },
-      track: {
+      track: ({ theme }) => ({
         opacity: 1,
         borderRadius: 10,
         backgroundColor: 'var(--mui-palette-action-focus)',
-        boxShadow: '0 0 4px rgb(var(--mui-palette-common-onBackgroundChannel) / 0.16) inset'
-      }
+        boxShadow: `0 0 4px rgb(var(--mui-palette-common-${
+          theme.palette.mode === 'light' ? 'onBackgroundChannel' : 'backgroundChannel'
+        }) / 0.16) inset`
+      })
     }
   }
 }

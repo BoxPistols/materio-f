@@ -7,14 +7,13 @@ import type { Skin } from '@core/types'
 const popover = (skin: Skin): Theme['components'] => ({
   MuiPopover: {
     styleOverrides: {
-      paper: ({ theme }) => ({
-        padding: theme.spacing(2.5),
+      paper: {
         ...(skin === 'bordered'
           ? { boxShadow: 'none', border: '1px solid var(--mui-palette-divider)' }
           : {
               boxShadow: 'var(--mui-customShadows-sm)'
             })
-      })
+      }
     }
   }
 })

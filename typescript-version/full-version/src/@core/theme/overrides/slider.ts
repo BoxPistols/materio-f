@@ -156,8 +156,8 @@ const slider: Theme['components'] = {
             ? { height: 6 }
             : { height: 4 }
           : ownerState.size !== 'small'
-          ? { width: 6 }
-          : { width: 4 })
+            ? { width: 6 }
+            : { width: 4 })
       }),
       thumb: ({ ownerState }) => ({
         ...(ownerState.size === 'small'
@@ -195,13 +195,18 @@ const slider: Theme['components'] = {
       },
       valueLabel: ({ theme }) => ({
         padding: theme.spacing(1, 2.5),
-        color: 'var(--mui-palette-background-paper)',
+        color: 'var(--mui-palette-customColors-tooltipText)',
         borderRadius: 'var(--mui-shape-borderRadius)',
-        backgroundColor: 'var(--mui-palette-SnackbarContent-bg)',
+        backgroundColor: 'var(--mui-palette-Tooltip-bg)',
         '&:before': {
           display: 'none'
         }
-      })
+      }),
+      trackInverted: {
+        '& .MuiSlider-rail': {
+          backgroundColor: 'var(--mui-palette-primary-main)'
+        }
+      }
     }
   }
 }

@@ -17,14 +17,14 @@ export type CustomAvatarProps = AvatarProps & {
   size?: number
 }
 
-const Avatar = styled(MuiAvatar)<CustomAvatarProps>(({ skin, color, size }) => {
+const Avatar = styled(MuiAvatar)<CustomAvatarProps>(({ skin, color, size, theme }) => {
   return {
     ...(skin === 'light' && {
       backgroundColor: `var(--mui-palette-${color}-lightOpacity)`,
       color: `var(--mui-palette-${color}-main)`
     }),
     ...(skin === 'light-static' && {
-      backgroundColor: lighten(`var(--mui-palette-${color}-main)`, 0.9),
+      backgroundColor: lighten(theme.palette[color as ThemeColor].main, 0.84),
       color: `var(--mui-palette-${color}-main)`
     }),
     ...(skin === 'filled' && {

@@ -23,11 +23,6 @@ const Badge = styled(MuiBadge)<CustomBadgeProps>(({ tonal, color }) => {
   }
 })
 
-const CustomBadge = (props: CustomBadgeProps) => {
-  // Props
-  const { ...rest } = props
-
-  return <Badge {...rest} />
-}
+const CustomBadge = (props: CustomBadgeProps) => <Badge {...props} />
 
 export default CustomBadge

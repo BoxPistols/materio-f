@@ -55,7 +55,7 @@ const pagination: Theme['components'] = {
         props: { variant: 'tonal' },
         style: {
           '& .MuiPaginationItem-root:not(.MuiPaginationItem-ellipsis)': {
-            backgroundColor: 'var(--mui-palette-action-hover)'
+            backgroundColor: 'var(--mui-palette-action-selected)'
           }
         }
       },
@@ -63,14 +63,17 @@ const pagination: Theme['components'] = {
         props: { variant: 'tonal', color: 'standard' },
         style: {
           '& .MuiPaginationItem-root.Mui-selected': {
-            backgroundColor: 'var(--mui-palette-primary-mainOpacity)',
-            color: 'var(--mui-palette-primary-main)'
+            backgroundColor: 'var(--mui-palette-primary-lightOpacity)',
+            color: 'var(--mui-palette-primary-main)',
+            '&:hover': {
+              backgroundColor: 'var(--mui-palette-primary-mainOpacity)'
+            }
           },
           '& .MuiPaginationItem-root:hover:not(.Mui-selected):not(.MuiPaginationItem-ellipsis)': {
             backgroundColor: 'var(--mui-palette-action-focus)'
           },
           '& .MuiPaginationItem-root.Mui-selected.Mui-disabled': {
-            backgroundColor: 'var(--mui-palette-primary-mainOpacity)',
+            backgroundColor: 'var(--mui-palette-primary-lightOpacity)',
             color: 'var(--mui-palette-primary-main)'
           }
         }
@@ -128,8 +131,7 @@ const pagination: Theme['components'] = {
       root: ({ ownerState }) => ({
         ...(ownerState.size === 'medium' && {
           height: '2.375rem',
-          minWidth: '2.375rem',
-          lineHeight: 1.57
+          minWidth: '2.375rem'
         }),
         ...(ownerState.shape !== 'rounded' && {
           borderRadius: '50px'
@@ -140,20 +142,23 @@ const pagination: Theme['components'] = {
         },
         '&.Mui-disabled': {
           opacity: 0.45
-        }
+        },
+        ...(ownerState.shape === 'rounded' &&
+          ownerState.size === 'small' && {
+            borderRadius: 'var(--mui-shape-customBorderRadius-sm)'
+          }),
+        ...(ownerState.shape === 'rounded' &&
+          ownerState.size === 'large' && {
+            borderRadius: 'var(--mui-shape-customBorderRadius-lg)'
+          })
       }),
       sizeSmall: {
-        height: '2rem',
-        minWidth: '2rem',
-        lineHeight: 1.16
+        height: '2.125rem',
+        minWidth: '2.125rem'
       },
       sizeLarge: {
-        height: '2.75rem',
-        minWidth: '2.75rem',
-        lineHeight: 1.5
-      },
-      rounded: {
-        borderRadius: 'var(--mui-shape-customBorderRadius-lg)'
+        height: '2.625rem',
+        minWidth: '2.625rem'
       }
     }
   }

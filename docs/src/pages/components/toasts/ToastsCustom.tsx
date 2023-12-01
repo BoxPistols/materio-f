@@ -6,6 +6,10 @@ import Typography from '@mui/material/Typography'
 
 // Third-party Imports
 import { toast } from 'react-toastify'
+import classnames from 'classnames'
+
+// Styles Imports
+import commonStyles from '@/styles/common.module.css'
 
 const ToastsCustom = () => {
   const handleClick = () => {
@@ -13,14 +17,14 @@ const ToastsCustom = () => {
       t => (
         <div className='w-full flex items-center justify-between'>
           <div className='flex items-center'>
-            <Avatar alt='Victor Anderson' src='/assets/avatars/3.png' className='mie-3 w-10 h-10'/>
+            <Avatar alt='Victor Anderson' src='/images/avatars/3.png' className='mie-3'/>
             <div>
-              <Typography>John Doe</Typography>
+              <Typography variant='h6'>John Doe</Typography>
               <Typography variant='caption'>Sure! 8:30pm works great!</Typography>
             </div>
           </div>
           <IconButton onClick={() => toast.dismiss(t.toastProps.toastId)} size='small'>
-            <i className='ri-close-line text-xl' />
+            <i className={classnames('ri-close-line text-xl', commonStyles.textPrimary)} />
           </IconButton>
         </div>
       ),

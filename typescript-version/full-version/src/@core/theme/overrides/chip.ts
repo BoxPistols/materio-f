@@ -1,9 +1,22 @@
 // MUI Imports
 import type { Theme } from '@mui/material/styles'
+import type { PaletteMode } from '@mui/material'
 
-const chip: Theme['components'] = {
+const chip = (mode: PaletteMode): Theme['components'] => ({
   MuiChip: {
     variants: [
+      {
+        props: { variant: 'filled', color: 'default' },
+        style: {
+          backgroundColor: `rgb(var(--mui-mainColorChannels-${mode}) / 0.16)`
+        }
+      },
+      {
+        props: { variant: 'tonal', color: 'default' },
+        style: {
+          backgroundColor: `rgb(var(--mui-mainColorChannels-${mode}) / 0.16)`
+        }
+      },
       {
         props: { variant: 'tonal', color: 'primary' },
         style: {
@@ -84,16 +97,54 @@ const chip: Theme['components'] = {
       }
     ],
     styleOverrides: {
-      root: ({ ownerState }) => ({
+      root: ({ ownerState, theme }) => ({
+        fontSize: theme.typography.body2.fontSize,
+        lineHeight: theme.typography.subtitle2.lineHeight,
+
         '& .MuiChip-deleteIcon': {
           ...(ownerState.size === 'small'
             ? {
-                fontSize: '1rem'
+                fontSize: '1rem',
+                marginInlineEnd: theme.spacing(1),
+                marginInlineStart: theme.spacing(-2)
               }
             : {
-                fontSize: '1.25rem'
+                fontSize: '1.25rem',
+                marginInlineEnd: theme.spacing(2),
+                marginInlineStart: theme.spacing(-3)
+              })
+        },
+        '& .MuiChip-avatar, & .MuiChip-icon': {
+          height: 20,
+          width: 20,
+          '& i, & svg': {
+            ...(ownerState.size === 'small'
+              ? {
+                  fontSize: 13
+                }
+              : {
+                  fontSize: 15
+                })
+          },
+          ...(ownerState.size === 'small'
+            ? {
+                marginInlineStart: theme.spacing(1),
+                marginInlineEnd: theme.spacing(-2)
+              }
+            : {
+                marginInlineStart: theme.spacing(2),
+                marginInlineEnd: theme.spacing(-3)
               })
         }
+      }),
+      label: ({ ownerState, theme }) => ({
+        ...(ownerState.size === 'small'
+          ? {
+              paddingInline: theme.spacing(3)
+            }
+          : {
+              paddingInline: theme.spacing(4)
+            })
       }),
       iconMedium: {
         fontSize: '1.25rem'
@@ -103,6 +154,6 @@ const chip: Theme['components'] = {
       }
     }
   }
-}
+})
 
 export default chip

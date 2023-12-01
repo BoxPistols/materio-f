@@ -14,7 +14,7 @@ const ToastifyWrapper = styled('div')(({ theme }) => {
 
   return {
     '& .Toastify__toast': {
-      minBlockSize: 44,
+      minBlockSize: 46,
       borderRadius: 'var(--mui-shape-borderRadius)',
       padding: theme.spacing(1.5, 2.5),
       backgroundColor: 'var(--mui-palette-background-paper)',
@@ -48,11 +48,17 @@ const ToastifyWrapper = styled('div')(({ theme }) => {
     },
     '& .Toastify__toast-body': {
       margin: 0,
-      lineHeight: 1.25,
+      lineHeight: 1.467,
       fontSize: theme.typography.body1.fontSize
     },
     '& .Toastify__toast-icon': {
-      marginRight: theme.spacing(3)
+      marginRight: theme.spacing(3),
+      height: 14,
+      width: 14,
+      '& .Toastify__spinner': {
+        height: 14,
+        width: 14
+      }
     },
     '& .Toastify__close-button': {
       color: 'var(--mui-palette-text-primary)'

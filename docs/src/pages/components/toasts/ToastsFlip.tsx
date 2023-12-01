@@ -10,7 +10,7 @@ const ToastsFlip = () => {
     <div
      className='flex text-center flex-col items-center'
     >
-      <i className='restart-line mbe-2 text-[32px]' />
+      <i className='ri-restart-line mbe-2 text-[32px]' />
       <Typography className='mbe-4 font-medium'>Flip</Typography>
       <Typography className='mbe-3'>Change the default transition as per your needs</Typography>
       <Button className='mbe-8'variant='contained' onClick={() => toast('Blank Toast', {

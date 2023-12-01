@@ -22,7 +22,7 @@ const BadgesVisibility = () => {
     <>
       <div className='flex mbe-4 gap-6 items-center'>
         <Badge badgeContent={count} color='primary'>
-          <Avatar src='/assets/avatars/1.png' alt='User Avatar' />
+          <Avatar src='/images/avatars/1.png' alt='User Avatar' />
         </Badge>
         <ButtonGroup size='small'>
           <Button aria-label='reduce' onClick={() => setCount(Math.max(count - 1, 0))}>
@@ -36,7 +36,7 @@ const BadgesVisibility = () => {
 
       <div className='flex gap-6'>
         <Badge variant='dot' color='primary' invisible={invisible}>
-          <Avatar src='/assets/avatars/1.png' alt='User Avatar' />
+          <Avatar src='/images/avatars/1.png' alt='User Avatar' />
         </Badge>
         <FormControlLabel
           label='Show Badge'

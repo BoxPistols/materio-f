@@ -4,23 +4,20 @@ import React from 'react'
 // Component Imports
 import CustomAvatar from '@docComponents/mui/Avatar'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
 const AvatarsVariants = () => {
   return (
     <div className='flex gap-4'>
       <CustomAvatar variant='square'>
-        <Icon icon='mdi:bell-outline' />
+        <i className='ri-notification-4-line' />
       </CustomAvatar>
       <CustomAvatar color='success' variant='rounded'>
-        <Icon icon='mdi:content-save-outline' />
+        <i className='ri-save-2-line' />
       </CustomAvatar>
       <CustomAvatar skin='light' variant='square'>
-        <Icon icon='mdi:bell-outline' />
+        <i className='ri-notification-4-line' />
       </CustomAvatar>
       <CustomAvatar skin='light' color='success' variant='rounded'>
-        <Icon icon='mdi:content-save-outline' />
+        <i className='ri-save-2-line' />
       </CustomAvatar>
     </div>
   )

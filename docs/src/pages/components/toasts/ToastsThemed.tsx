@@ -16,7 +16,7 @@ const ToastsThemed = () => {
         padding: '16px',
         color: theme.palette.primary.main,
         border: `1px solid ${theme.palette.primary.main}`,
-        backgroundColor: theme.palette.primary.contrastText
+        backgroundColor: theme.palette.background.paper
       },
       className: 'custom-toast',
       theme: 'colored',

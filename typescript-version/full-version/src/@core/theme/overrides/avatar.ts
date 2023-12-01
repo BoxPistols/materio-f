@@ -26,11 +26,11 @@ const avatar: Theme['components'] = {
   },
   MuiAvatar: {
     styleOverrides: {
-      colorDefault: {
+      root: ({ theme }) => ({
         color: 'var(--mui-palette-text-primary)',
-        fontSize: '1.125rem',
-        lineHeight: 1.12
-      }
+        fontSize: theme.typography.body1.fontSize,
+        lineHeight: 1.2
+      })
     }
   }
 }

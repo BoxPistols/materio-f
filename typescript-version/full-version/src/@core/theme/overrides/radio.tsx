@@ -20,12 +20,7 @@ const IconChecked = () => {
 const UncheckedIcon = () => {
   return (
     <svg width='1em' height='1em' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-      <path
-        d='M12 20a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z'
-        stroke='var(--mui-palette-text-secondary)'
-        strokeOpacity='0.6'
-        strokeWidth='2'
-      />
+      <path d='M12 20a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z' stroke='var(--mui-palette-text-secondary)' strokeWidth='2' />
     </svg>
   )
 }
@@ -52,7 +47,7 @@ const radio: Theme['components'] = {
               }
             }),
         '&.Mui-checked:not(.Mui-disabled) svg': {
-          filter: 'drop-shadow(0px 2px 4px rgb(58 53 65 / 0.14))'
+          filter: 'drop-shadow(var(--mui-customShadows-xs))'
         },
         '&.Mui-disabled': {
           '&:not(.Mui-checked)': {

@@ -48,16 +48,16 @@ const CardBreadcrumb = () => {
         </Breadcrumbs>
 
         <Breadcrumbs aria-label='breadcrumb' className='mbs-2'>
-          <a href='/' onClick={handleClick} className='flex items-center'>
-            <i className='ri-home-8-line text-xl' />
+          <a href='/' onClick={handleClick} className='flex items-center gap-0.5'>
+            <i className='ri-home-8-line' />
             MUI
           </a>
-          <a href='/' onClick={handleClick} className='flex items-center'>
-            <i className='ri-bookmark-line text-xl' />
+          <a href='/' onClick={handleClick} className='flex items-center gap-0.5'>
+            <i className='ri-bookmark-line' />
             Core
           </a>
-          <Typography className='flex items-center'>
-            <i className='ri-file-3-line text-xl' />
+          <Typography className='flex items-center gap-0.5'>
+            <i className='ri-file-3-line' />
             Breadcrumb
           </Typography>
         </Breadcrumbs>
