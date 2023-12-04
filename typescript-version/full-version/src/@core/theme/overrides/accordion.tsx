@@ -56,13 +56,20 @@ const accordion = (skin: Skin): Theme['components'] => ({
         padding: theme.spacing(3, 5),
         '&.Mui-expanded': {
           minHeight: 48
+        },
+        '& .MuiTypography-root': {
+          fontWeight: theme.typography.fontWeightMedium
         }
       }),
       content: {
         margin: '0 !important'
       },
       expandIconWrapper: {
-        color: 'var(--mui-palette-text-primary)'
+        color: 'var(--mui-palette-text-primary)',
+        fontSize: '1.25rem',
+        '& i, & svg': {
+          fontSize: 'inherit'
+        }
       }
     }
   },
@@ -72,6 +79,9 @@ const accordion = (skin: Skin): Theme['components'] => ({
         padding: theme.spacing(5),
         '&:first-of-type': {
           paddingTop: theme.spacing(0)
+        },
+        '& .MuiTypography-root': {
+          color: 'var(--mui-palette-text-secondary)'
         }
       })
     }

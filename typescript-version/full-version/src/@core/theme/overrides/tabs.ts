@@ -16,7 +16,7 @@ const tabs: Theme['components'] = {
         '& .MuiTab-root:hover': {
           ...(ownerState.orientation === 'horizontal'
             ? {
-                paddingBlockEnd: theme.spacing(1.75),
+                paddingBlockEnd: theme.spacing(1.5),
                 ...(ownerState.textColor === 'secondary'
                   ? {
                       color: 'var(--mui-palette-secondary-main)',
@@ -52,8 +52,8 @@ const tabs: Theme['components'] = {
   MuiTab: {
     styleOverrides: {
       root: ({ theme, ownerState }) => ({
-        lineHeight: 1.429,
-        padding: theme.spacing(2.25, 5.5),
+        lineHeight: 1.4667,
+        padding: theme.spacing(2, 5.5),
         minBlockSize: 38,
         color: 'var(--mui-palette-text-primary)',
         '& > .MuiTab-iconWrapper': {
@@ -65,6 +65,13 @@ const tabs: Theme['components'] = {
             marginInlineStart: theme.spacing(1.5)
           })
         }
+      })
+    }
+  },
+  MuiTabPanel: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        padding: theme.spacing(5)
       })
     }
   }

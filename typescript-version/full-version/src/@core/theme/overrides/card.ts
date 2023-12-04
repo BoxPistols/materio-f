@@ -31,16 +31,23 @@ const card = (skin: Skin): Theme['components'] => {
           padding: theme.spacing(5),
           '& + .MuiCardContent-root, & + .MuiCardActions-root': {
             paddingBlockStart: 0
-          }
+          },
+          '& + .MuiCollapse-root .MuiCardContent-root:first-child, & + .MuiCollapse-root .MuiCardActions-root:first-child':
+            {
+              paddingBlockStart: 0
+            }
         }),
         subheader: ({ theme }) => ({
           marginBlockStart: theme.spacing(0.5)
         }),
         action: ({ theme }) => ({
           ...theme.typography.body1,
-          color: 'var(--mui-palette-text-secondary)',
+          color: 'var(--mui-palette-text-disabled)',
           marginBlock: 0,
-          marginInlineEnd: 0
+          marginInlineEnd: 0,
+          '& .MuiIconButton-root': {
+            color: 'inherit'
+          }
         })
       }
     },
@@ -48,16 +55,27 @@ const card = (skin: Skin): Theme['components'] => {
       styleOverrides: {
         root: ({ theme }) => ({
           padding: theme.spacing(5),
+          color: 'var(--mui-palette-text-secondary)',
           '&:last-child': {
             paddingBlockEnd: theme.spacing(5)
           },
           '& + .MuiCardHeader-root, & + .MuiCardContent-root, & + .MuiCardActions-root': {
             paddingBlockStart: 0
           },
+          '& + .MuiCollapse-root .MuiCardHeader-root:first-child, & + .MuiCollapse-root .MuiCardContent-root:first-child, & + .MuiCollapse-root .MuiCardActions-root:first-child':
+            {
+              paddingBlockStart: 0
+            },
           '& > .MuiTabPanel-root': {
-            padding: 0
-          },
-          color: 'var(--mui-palette-text-secondary)'
+            paddingInline: 0,
+            paddingBlockEnd: 0,
+            '&:first-of-type': {
+              paddingBlockStart: 0,
+              '& + .MuiTabPanel-root': {
+                paddingBlockStart: 0
+              }
+            }
+          }
         })
       }
     },
@@ -74,7 +92,10 @@ const card = (skin: Skin): Theme['components'] => {
           '& + .MuiCardHeader-root, & + .MuiCardContent-root, & + .MuiCardActions-root': {
             paddingBlockStart: 0
           },
-          color: 'var(--mui-palette-text-disabled)'
+          '& + .MuiCollapse-root .MuiCardHeader-root:first-child, & + .MuiCollapse-root .MuiCardContent-root:first-child, & + .MuiCollapse-root .MuiCardActions-root:first-child':
+            {
+              paddingBlockStart: 0
+            }
         })
       }
     }

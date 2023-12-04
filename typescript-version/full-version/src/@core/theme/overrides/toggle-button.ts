@@ -16,6 +16,11 @@ const toggleButton: Theme['components'] = {
   },
   MuiToggleButton: {
     styleOverrides: {
+      root: {
+        '&:not(.Mui-selected):not(.Mui-disabled)': {
+          color: 'var(--mui-palette-text-secondary)'
+        }
+      },
       sizeSmall: {
         borderRadius: 'var(--mui-shape-customBorderRadius-sm)'
       },

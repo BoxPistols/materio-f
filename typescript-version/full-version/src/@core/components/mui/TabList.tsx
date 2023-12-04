@@ -37,7 +37,7 @@ const TabList = styled(MuiTabList)<CustomTabListProps>(({ theme, pill, orientati
     },
     '& .MuiTab-root': {
       minHeight: 38,
-      padding: theme.spacing(2.25, 5.5),
+      padding: theme.spacing(2, 5.5),
       borderRadius: 'var(--mui-shape-borderRadius)',
       '&:hover': {
         border: 0,
@@ -47,18 +47,13 @@ const TabList = styled(MuiTabList)<CustomTabListProps>(({ theme, pill, orientati
               paddingInlineEnd: theme.spacing(5.5)
             }
           : {
-              paddingBlockEnd: theme.spacing(2.25)
+              paddingBlockEnd: theme.spacing(2)
             })
       }
     }
   })
 }))
 
-const CustomTabList = (props: CustomTabListProps) => {
-  // Props
-  const { ...rest } = props
-
-  return <TabList {...rest} />
-}
+const CustomTabList = (props: CustomTabListProps) => <TabList {...props} />
 
 export default CustomTabList

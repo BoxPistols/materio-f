@@ -19,6 +19,7 @@ import Checkbox from './checkbox'
 import chip from './chip'
 import dialog from './dialog'
 import drawer from './drawer'
+import fab from './fab'
 import formControl from './form-control'
 import iconButton from './icon-button'
 import input from './input'
@@ -57,6 +58,7 @@ const overrides = (skin: Skin, mode: PaletteMode) => {
     chip(mode),
     dialog(skin),
     drawer(skin),
+    fab,
     formControl,
     iconButton,
     input,

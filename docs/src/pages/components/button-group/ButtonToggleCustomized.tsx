@@ -19,7 +19,7 @@ const ToggleButtonGroup = styled(MuiToggleButtonGroup)<ToggleButtonGroupProps>((
 const ToggleButton = styled(MuiToggleButton)<ToggleButtonProps>(({ theme }) => ({
   margin: '0 !important',
   border: 'none !important',
-  padding: theme.spacing(2),
+  padding: theme.spacing(2.5),
   '&:not(:first-of-type)': {
     borderRadius: `${theme.shape.borderRadius}px !important`
   },

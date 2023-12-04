@@ -10,7 +10,7 @@ const dialog = (skin: Skin): Theme['components'] => ({
       paper: {
         ...(skin !== 'bordered'
           ? {
-              boxShadow: 'var(--mui-customShadows-lg)'
+              boxShadow: 'var(--mui-customShadows-xl)'
             }
           : {
               boxShadow: 'none'
@@ -19,6 +19,9 @@ const dialog = (skin: Skin): Theme['components'] => ({
     }
   },
   MuiDialogTitle: {
+    defaultProps: {
+      variant: 'h5'
+    },
     styleOverrides: {
       root: ({ theme }) => ({
         padding: theme.spacing(5),

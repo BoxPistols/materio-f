@@ -4,17 +4,14 @@ import React from 'react'
 // MUI Imports
 import type { Theme } from '@mui/material/styles'
 
-// Icon Imports
-import Icon from '@core/components/IconifyIcon'
-
 const alerts: Theme['components'] = {
   MuiAlert: {
     defaultProps: {
       iconMapping: {
-        error: <Icon icon='mdi:alert-circle-outline' />,
-        warning: <Icon icon='mdi:alert-outline' />,
-        info: <Icon icon='mdi:information-outline' />,
-        success: <Icon icon='mdi:check-circle-outline' />
+        error: <i className='ri-error-warning-line' />,
+        warning: <i className='ri-alert-line' />,
+        info: <i className='ri-information-line' />,
+        success: <i className='ri-checkbox-circle-line' />
       }
     },
     styleOverrides: {
@@ -22,26 +19,24 @@ const alerts: Theme['components'] = {
         padding: theme.spacing(4),
         gap: theme.spacing(4),
         '&:not(:has(.MuiAlertTitle-root))': {
-          fontSize: theme.typography.body1.fontSize,
-          fontWeight: 500,
-          lineHeight: 1.375,
+          ...theme.typography.h6,
           '& .MuiAlert-icon + .MuiAlert-message': {
             alignSelf: 'center'
           }
         },
         '&:has(.MuiAlertTitle-root)': {
-          fontWeight: 400
+          ...theme.typography.body1
         }
       }),
       icon: {
         padding: 0,
         margin: 0,
-        width: 30,
+        minWidth: 30,
         height: 30,
         borderRadius: 'var(--mui-shape-borderRadius)',
         alignItems: 'center',
         justifyContent: 'center',
-        '& svg': {
+        '& i, & svg': {
           fontSize: 'inherit'
         }
       },
@@ -93,6 +88,7 @@ const alerts: Theme['components'] = {
       {
         props: { variant: 'outlined', severity: 'error' },
         style: {
+          borderColor: 'var(--mui-palette-error-main)',
           '& .MuiAlert-icon': {
             backgroundColor: 'var(--mui-palette-error-mainOpacity)',
             color: 'var(--mui-palette-error-main)'
@@ -102,6 +98,7 @@ const alerts: Theme['components'] = {
       {
         props: { variant: 'outlined', severity: 'warning' },
         style: {
+          borderColor: 'var(--mui-palette-warning-main)',
           '& .MuiAlert-icon': {
             backgroundColor: 'var(--mui-palette-warning-mainOpacity)',
             color: 'var(--mui-palette-warning-main)'
@@ -111,6 +108,7 @@ const alerts: Theme['components'] = {
       {
         props: { variant: 'outlined', severity: 'info' },
         style: {
+          borderColor: 'var(--mui-palette-info-main)',
           '& .MuiAlert-icon': {
             backgroundColor: 'var(--mui-palette-info-mainOpacity)',
             color: 'var(--mui-palette-info-main)'
@@ -120,6 +118,7 @@ const alerts: Theme['components'] = {
       {
         props: { variant: 'outlined', severity: 'success' },
         style: {
+          borderColor: 'var(--mui-palette-success-main)',
           '& .MuiAlert-icon': {
             backgroundColor: 'var(--mui-palette-success-mainOpacity)',
             color: 'var(--mui-palette-success-main)'
@@ -171,11 +170,10 @@ const alerts: Theme['components'] = {
   MuiAlertTitle: {
     styleOverrides: {
       root: ({ theme }) => ({
-        fontSize: theme.typography.body1.fontSize,
-        fontWeight: 500,
-        lineHeight: 1.375,
+        ...theme.typography.h5,
         marginTop: 0,
-        marginBottom: theme.spacing(1)
+        marginBottom: theme.spacing(1),
+        color: 'inherit'
       })
     }
   }

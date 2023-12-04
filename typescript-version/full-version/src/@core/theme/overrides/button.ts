@@ -37,10 +37,10 @@ const button: Theme['components'] = {
                 padding: theme.spacing(2, 2.5)
               }),
               ...(ownerState.size === 'medium' && {
-                padding: theme.spacing(2.25, 3.5)
+                padding: theme.spacing(2, 3.5)
               }),
               ...(ownerState.size === 'large' && {
-                padding: theme.spacing(2.5, 4.5)
+                padding: theme.spacing(2, 4.5)
               })
             }
           : {
@@ -50,10 +50,10 @@ const button: Theme['components'] = {
                       padding: theme.spacing(1.75, 3.25)
                     }),
                     ...(ownerState.size === 'medium' && {
-                      padding: theme.spacing(2, 4.25)
+                      padding: theme.spacing(1.75, 4.25)
                     }),
                     ...(ownerState.size === 'large' && {
-                      padding: theme.spacing(2.25, 5.25)
+                      padding: theme.spacing(1.75, 5.25)
                     })
                   }
                 : {
@@ -61,10 +61,10 @@ const button: Theme['components'] = {
                       padding: theme.spacing(2, 3.5)
                     }),
                     ...(ownerState.size === 'medium' && {
-                      padding: theme.spacing(2.25, 4.5)
+                      padding: theme.spacing(2, 4.5)
                     }),
                     ...(ownerState.size === 'large' && {
-                      padding: theme.spacing(2.5, 5.5)
+                      padding: theme.spacing(2, 5.5)
                     })
                   })
             })
@@ -81,11 +81,12 @@ const button: Theme['components'] = {
         })
       }),
       sizeSmall: {
-        lineHeight: 1.23077,
+        lineHeight: 1.38462,
         borderRadius: 'var(--mui-shape-customBorderRadius-sm)'
       },
       sizeLarge: {
-        lineHeight: 1.6,
+        fontSize: '1.0625rem',
+        lineHeight: 1.529412,
         borderRadius: 'var(--mui-shape-customBorderRadius-lg)'
       },
       startIcon: ({ theme, ownerState }) => ({
@@ -125,12 +126,10 @@ const button: Theme['components'] = {
       {
         props: { variant: 'text', color: 'primary' },
         style: {
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-primary-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-primary-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-primary-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-primary-main)'
@@ -140,12 +139,10 @@ const button: Theme['components'] = {
       {
         props: { variant: 'text', color: 'secondary' },
         style: {
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-secondary-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-secondary-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-secondary-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-secondary-main)'
@@ -155,12 +152,10 @@ const button: Theme['components'] = {
       {
         props: { variant: 'text', color: 'error' },
         style: {
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-error-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-error-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-error-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-error-main)'
@@ -170,12 +165,10 @@ const button: Theme['components'] = {
       {
         props: { variant: 'text', color: 'warning' },
         style: {
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-warning-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-warning-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-warning-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-warning-main)'
@@ -185,12 +178,10 @@ const button: Theme['components'] = {
       {
         props: { variant: 'text', color: 'info' },
         style: {
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-info-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-info-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-info-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-info-main)'
@@ -200,12 +191,10 @@ const button: Theme['components'] = {
       {
         props: { variant: 'text', color: 'success' },
         style: {
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-success-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-success-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-success-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-success-main)'
@@ -216,12 +205,10 @@ const button: Theme['components'] = {
         props: { variant: 'outlined', color: 'primary' },
         style: {
           borderColor: 'var(--mui-palette-primary-main)',
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-primary-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-primary-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-primary-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-primary-main)',
@@ -233,12 +220,10 @@ const button: Theme['components'] = {
         props: { variant: 'outlined', color: 'secondary' },
         style: {
           borderColor: 'var(--mui-palette-secondary-main)',
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-secondary-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-secondary-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-secondary-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-secondary-main)',
@@ -250,12 +235,10 @@ const button: Theme['components'] = {
         props: { variant: 'outlined', color: 'error' },
         style: {
           borderColor: 'var(--mui-palette-error-main)',
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-error-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-error-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-error-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-error-main)',
@@ -267,12 +250,10 @@ const button: Theme['components'] = {
         props: { variant: 'outlined', color: 'warning' },
         style: {
           borderColor: 'var(--mui-palette-warning-main)',
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-warning-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-warning-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-warning-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-warning-main)',
@@ -284,12 +265,10 @@ const button: Theme['components'] = {
         props: { variant: 'outlined', color: 'info' },
         style: {
           borderColor: 'var(--mui-palette-info-main)',
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-info-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-info-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-info-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-info-main)',
@@ -301,12 +280,10 @@ const button: Theme['components'] = {
         props: { variant: 'outlined', color: 'success' },
         style: {
           borderColor: 'var(--mui-palette-success-main)',
-          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-success-lightOpacity)'
-          },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-success-lightOpacity)' }
-          }),
+          '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))':
+            {
+              backgroundColor: 'var(--mui-palette-success-lighterOpacity)'
+            },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-success-main)',
@@ -317,10 +294,9 @@ const button: Theme['components'] = {
       {
         props: { variant: 'contained', color: 'primary' },
         style: {
-          '&:active': { backgroundColor: 'var(--mui-palette-primary-dark)' },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-primary-dark)' }
-          }),
+          '&:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))': {
+            backgroundColor: 'var(--mui-palette-primary-dark)'
+          },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-primary-contrastText)',
@@ -331,10 +307,9 @@ const button: Theme['components'] = {
       {
         props: { variant: 'contained', color: 'secondary' },
         style: {
-          '&:active': { backgroundColor: 'var(--mui-palette-secondary-dark)' },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-secondary-dark)' }
-          }),
+          '&:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))': {
+            backgroundColor: 'var(--mui-palette-secondary-dark)'
+          },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-secondary-contrastText)',
@@ -345,10 +320,9 @@ const button: Theme['components'] = {
       {
         props: { variant: 'contained', color: 'error' },
         style: {
-          '&:active': { backgroundColor: 'var(--mui-palette-error-dark)' },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-error-dark)' }
-          }),
+          '&:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))': {
+            backgroundColor: 'var(--mui-palette-error-dark)'
+          },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-error-contrastText)',
@@ -359,10 +333,9 @@ const button: Theme['components'] = {
       {
         props: { variant: 'contained', color: 'warning' },
         style: {
-          '&:active': { backgroundColor: 'var(--mui-palette-warning-dark)' },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-warning-dark)' }
-          }),
+          '&:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))': {
+            backgroundColor: 'var(--mui-palette-warning-dark)'
+          },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-warning-contrastText)',
@@ -373,10 +346,9 @@ const button: Theme['components'] = {
       {
         props: { variant: 'contained', color: 'info' },
         style: {
-          '&:active': { backgroundColor: 'var(--mui-palette-info-dark)' },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-info-dark)' }
-          }),
+          '&:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))': {
+            backgroundColor: 'var(--mui-palette-info-dark)'
+          },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-info-contrastText)',
@@ -387,10 +359,9 @@ const button: Theme['components'] = {
       {
         props: { variant: 'contained', color: 'success' },
         style: {
-          '&:active': { backgroundColor: 'var(--mui-palette-success-dark)' },
-          ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible': { backgroundColor: 'var(--mui-palette-success-dark)' }
-          }),
+          '&:not(.Mui-disabled):active, &.Mui-focusVisible:not(:has(span.MuiTouchRipple-root))': {
+            backgroundColor: 'var(--mui-palette-success-dark)'
+          },
           '&.Mui-disabled': {
             opacity: 0.45,
             color: 'var(--mui-palette-success-contrastText)',
