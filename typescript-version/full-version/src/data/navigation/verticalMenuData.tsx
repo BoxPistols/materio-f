@@ -329,20 +329,12 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
         label: dictionary['navigation'].charts,
         children: [
           {
-            label: dictionary['navigation'].echarts,
-            href: '/charts/echarts'
-          },
-          {
             label: dictionary['navigation'].recharts,
             href: '/charts/recharts'
           },
           {
             label: dictionary['navigation'].apex,
             href: '/charts/apex-charts'
-          },
-          {
-            label: 'Echarts Advance',
-            href: '/charts/echarts-advance'
           }
         ]
       },

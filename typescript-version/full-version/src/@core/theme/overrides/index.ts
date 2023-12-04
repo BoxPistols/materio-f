@@ -30,6 +30,7 @@ import paper from './paper'
 import popover from './popover'
 import progress from './progress'
 import Radio from './radio'
+import rating from './rating'
 import Select from './select'
 import slider from './slider'
 import snackbar from './snackbar'
@@ -69,6 +70,7 @@ const overrides = (skin: Skin, mode: PaletteMode) => {
     popover(skin),
     progress,
     Radio,
+    rating,
     Select,
     slider,
     snackbar(skin),

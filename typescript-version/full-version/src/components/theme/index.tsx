@@ -1,7 +1,7 @@
 'use client'
 
 // React Imports
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import type { ReactNode } from 'react'
 
 // MUI Imports
@@ -24,14 +24,15 @@ import type { Direction } from '@core/types'
 // Component Imports
 import EmotionCacheProvider from './EmotionCache'
 
-// Config Imports
-import { getPrimaryColorScheme } from '@configs/primaryColorConfig'
-
 // Hook Imports
-import useSettings from '@core/hooks/useSettings'
+import { useSettings } from '@core/hooks/useSettings'
+
+// Util Imports
+import hexToUniqueString from '@/utils/get-hexToString'
 
 // Core Theme Imports
 import defaultCoreTheme from '@core/theme'
+import { primaryColorConfig } from '@core/components/customizer'
 
 const ThemeProvider = ({ children, direction }: { children: ReactNode; direction: Direction }) => {
   // Hooks
@@ -49,16 +50,42 @@ const ThemeProvider = ({ children, direction }: { children: ReactNode; direction
     }
   }, [isPreferredDark, settings.mode])
 
-  if (Object.keys(settings).length === 0) {
-    return
-  }
-
   // Merge the primary color scheme override with the core theme
-  const coreTheme = deepmerge(defaultCoreTheme(settings, mode, direction), getPrimaryColorScheme(settings))
-  const theme = extendTheme(coreTheme)
+  const theme = useMemo(() => {
+    const newColorScheme = {
+      colorSchemes: {
+        light: {
+          palette: {
+            primary: {
+              main: settings.primaryColor
+            }
+          }
+        },
+        dark: {
+          palette: {
+            primary: {
+              main: settings.primaryColor
+            }
+          }
+        }
+      }
+    }
+
+    const coreTheme = deepmerge(defaultCoreTheme(settings, mode, direction), newColorScheme)
+
+    return extendTheme(coreTheme)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [settings.primaryColor])
+
+  const cacheKey = useMemo(() => {
+    const generateColorFrom = settings.primaryColor ? settings.primaryColor : primaryColorConfig[0].main
+
+    // Create string that persists between hydration and SSR but changes when the primary color changes
+    return hexToUniqueString(generateColorFrom.replace('#', ''))
+  }, [settings.primaryColor])
 
   return (
-    <EmotionCacheProvider options={{ key: 'mui' }} direction={theme.direction}>
+    <EmotionCacheProvider options={{ key: cacheKey }}>
       <CssVarsProvider theme={theme} defaultMode={settings.mode}>
         <CssBaseline />
         {children}

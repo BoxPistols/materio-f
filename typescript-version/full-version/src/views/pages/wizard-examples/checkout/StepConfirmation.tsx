@@ -145,22 +145,18 @@ const StepConfirmation = () => {
                   <Typography className='font-medium'>{product.productName}</Typography>
                   <div className='flex items-center'>
                     <Typography>Sold By:</Typography>
-                    <Typography
-                      href='/'
-                      component={Link}
-                      onClick={e => e.preventDefault()}
-                      className={commonStyles.primary}
-                    >
+                    <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='text.primary'>
                       {product.soldBy}
                     </Typography>
                   </div>
                   {product.inStock && <Chip variant='tonal' size='small' color='success' label='In Stock' />}
                 </div>
                 <div className='flex items-center'>
-                  <Typography className={commonStyles.primary}>{`$${product.price}`}</Typography>
+                  <Typography color='text.primary'>{`$${product.price}`}</Typography>
                   <Typography
                     variant='body1'
-                    className={classnames(commonStyles.textDisabled, 'line-through')}
+                    color='text.disabled'
+                    className='line-through'
                   >{`/$${product.originalPrice}`}</Typography>
                 </div>
               </div>

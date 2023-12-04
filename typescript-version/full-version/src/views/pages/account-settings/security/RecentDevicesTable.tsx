@@ -10,8 +10,8 @@ import Typography from '@mui/material/Typography'
 import classnames from 'classnames'
 
 // Style Imports
-import commonStyles from '@/styles/common.module.css'
 import tableStyles from '@core/styles/table.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 type RecentDeviceDataType = {
   browserIcon: ReactElement
@@ -91,17 +91,17 @@ const RecentDevicesTable = () => {
                   </div>
                 </td>
                 <td>
-                  <Typography variant='body2' className={commonStyles.textSecondary}>
+                  <Typography variant='body2' color='text.secondary'>
                     {device.device}
                   </Typography>
                 </td>
                 <td>
-                  <Typography variant='body2' className={commonStyles.textSecondary}>
+                  <Typography variant='body2' color='text.secondary'>
                     {device.location}
                   </Typography>
                 </td>
                 <td>
-                  <Typography variant='body2' className={commonStyles.textSecondary}>
+                  <Typography variant='body2' color='text.secondary'>
                     {device.date}
                   </Typography>
                 </td>

@@ -54,7 +54,7 @@ const TwoStepsV1 = () => {
               <Typography variant='h5' className='font-semibold'>
                 Two Step Verification 💬
               </Typography>
-              <Typography className={classnames('mbs-1', commonStyles.textSecondary)}>
+              <Typography className='mbs-1' color='text.secondary'>
                 We sent a verification code to your mobile. Enter the code from the mobile in the field below.
               </Typography>
               <Typography className='font-medium'>******1234</Typography>
@@ -72,8 +72,8 @@ const TwoStepsV1 = () => {
                 <TextField />
               </div>
               <div className='flex justify-center items-center flex-wrap gap-2'>
-                <Typography className={commonStyles.textSecondary}>Didn&#39;t get the code?</Typography>
-                <Typography className={commonStyles.primaryColor} component={Link}>
+                <Typography color='text.secondary'>Didn&#39;t get the code?</Typography>
+                <Typography color='primary' component={Link}>
                   Resend
                 </Typography>
               </div>

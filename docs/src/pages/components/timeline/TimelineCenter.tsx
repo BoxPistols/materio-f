@@ -25,6 +25,7 @@ import type { ThemeColor } from '@core/types'
 
 // Styles Imports
 import styles from './styles.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 type DataProps = {
   image: string
@@ -120,14 +121,10 @@ const TimelineCenter = () => {
               <Typography variant='h5' className='mbe-4'>
                 You've uploaded doc pdf to the Themeselection project
               </Typography>
-              <Typography
-                variant='body1'
-                className={classnames('mbe-3', styles.textSecondary)}
-              >
-                he process of recording the key project details and producing
-                the documents that are required to implement it successfully.
-                Simply put, it's an umbrella term which includes all the
-                documents created over the course of the project.
+              <Typography variant='body1' className='mbe-3' color='text.secondary'>
+                The process of recording the key project details and producing the documents that are required to
+                implement it successfully. Simply put, it's an umbrella term which includes all the documents created
+                over the course of the project.
               </Typography>
               <div
                 className={classnames(
@@ -175,12 +172,9 @@ const TimelineCenter = () => {
               <Typography variant='h5' className='font-medium mbe-4'>
                 Heather added 4 images to the Team album
               </Typography>
-              <Typography
-                variant='body1'
-                className={classnames('mbe-3', styles.textSecondary)}
-              >
-                In the Select Image for Project dialog box, choose one of the
-                following: Under the Upload New Image section
+              <Typography variant='body1' className='mbe-3' color='text.secondary'>
+                In the Select Image for Project dialog box, choose one of the following: Under the Upload New Image
+                section
               </Typography>
               <div className='flex gap-4 flex-wrap'>
                 {ImageList.map((image, index) => (
@@ -288,13 +282,13 @@ const TimelineCenter = () => {
                 <Typography variant='h4'>$24,895</Typography>
                 <i
                   className={classnames(
-                    'ri-arrow-down-s-fill text-3xl',
-                    styles.textSuccess
+                    'ri-arrow-up-s-fill text-3xl',
+                    commonStyles.successColor
                   )}
                 />
                 <Typography
                   variant='body2'
-                  className={classnames('font-medium', styles.textSuccess)}
+                  className='font-medium' color='success'
                 >
                   10%
                 </Typography>
@@ -317,9 +311,7 @@ const TimelineCenter = () => {
                     </div>
                   </div>
                   <div className='flex flex-col items-center gap-2'>
-                    <Typography
-                      className={classnames('font-medium', styles.textPrimary)}
-                    >
+                    <Typography variant='body2' className='font-medium' color='text.primary'>
                       ${item.progress}
                     </Typography>
                     <LinearProgress
@@ -359,16 +351,11 @@ const TimelineCenter = () => {
           <Card>
             <CardContent>
               <Typography variant='h5' className='font-medium mbe-4'>
-                josh johnson shared Next js project progress report
+                Josh Johnson shared Next js project progress report
               </Typography>
-              <Typography
-                variant='body1'
-                className={classnames('mbe-3', styles.textSecondary)}
-              >
-                The structure and process are defined in the project
-                organization considering the attainment of the corporate
-                objectives and therefore also project objectives. The components
-                of the project process are
+              <Typography variant='body1' className='mbe-3' color='text.secondary'>
+                The structure and process are defined in the project organization considering the attainment of the
+                corporate objectives and therefore also project objectives. The components of the project process are
               </Typography>
               <div
                 className={classnames(
@@ -377,14 +364,8 @@ const TimelineCenter = () => {
                   styles.borderRadius
                 )}
               >
-                <img
-                  height={20}
-                  alt='progress-report.xls.pdf'
-                  src='/images/icons/xls-document.png'
-                />
-                <Typography className='font-medium'>
-                  xls-document.pdf
-                </Typography>
+                <img height={20} alt='progress-report.xls.pdf' src='/images/icons/xls-document.png' />
+                <Typography className='font-medium'>progress-report.xls</Typography>
               </div>
               <div className='flex items-center gap-2'>
                 <LinearProgress

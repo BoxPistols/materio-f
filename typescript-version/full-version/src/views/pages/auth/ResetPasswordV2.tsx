@@ -26,7 +26,7 @@ import type { Direction } from '@core/types'
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
-import useSettings from '@core/hooks/useSettings'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
@@ -63,8 +63,8 @@ const ResetPasswordV2 = ({ direction }: { direction: Direction }) => {
         ? '/images/illustrations/auth/v2-reset-password-dark-border.png'
         : '/images/illustrations/auth/v2-reset-password-light-border.png'
       : mode === 'dark' || systemMode === 'dark'
-      ? '/images/illustrations/auth/v2-reset-password-dark.png'
-      : '/images/illustrations/auth/v2-reset-password-light.png'
+        ? '/images/illustrations/auth/v2-reset-password-dark.png'
+        : '/images/illustrations/auth/v2-reset-password-light.png'
 
   return (
     <div className='flex h-full justify-center'>
@@ -140,7 +140,7 @@ const ResetPasswordV2 = ({ direction }: { direction: Direction }) => {
             <Button fullWidth variant='contained' type='submit'>
               Set New Password
             </Button>
-            <Typography className={classnames('flex justify-center items-center', commonStyles.primaryColor)}>
+            <Typography className='flex justify-center items-center' color='primary'>
               <Link href='/pages/auth/login-v2' onClick={e => e.preventDefault()} className='flex items-center'>
                 <i className={direction === 'rtl' ? 'ri-arrow-right-s-line' : 'ri-arrow-left-s-line'} />
                 <span>Back to Login</span>

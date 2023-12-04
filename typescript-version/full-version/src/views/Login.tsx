@@ -34,7 +34,7 @@ import type { Input } from 'valibot'
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
-import useSettings from '@core/hooks/useSettings'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
@@ -117,8 +117,8 @@ const LoginV2 = () => {
         ? '/images/illustrations/auth/v2-login-dark-border.png'
         : '/images/illustrations/auth/v2-login-light-border.png'
       : mode === 'dark' || systemMode === 'dark'
-      ? '/images/illustrations/auth/v2-login-dark.png'
-      : '/images/illustrations/auth/v2-login-light.png'
+        ? '/images/illustrations/auth/v2-login-dark.png'
+        : '/images/illustrations/auth/v2-login-light.png'
 
   return (
     <div className='flex h-full justify-center'>

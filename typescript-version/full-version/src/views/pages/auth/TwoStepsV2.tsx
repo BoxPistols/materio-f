@@ -18,7 +18,7 @@ import classnames from 'classnames'
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
-import useSettings from '@core/hooks/useSettings'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
@@ -47,8 +47,8 @@ const TwoStepsV2 = () => {
         ? '/images/illustrations/auth/v2-two-steps-dark-border.png'
         : '/images/illustrations/auth/v2-two-steps-light-border.png'
       : mode === 'dark' || systemMode === 'dark'
-      ? '/images/illustrations/auth/v2-two-steps-dark.png'
-      : '/images/illustrations/auth/v2-two-steps-light.png'
+        ? '/images/illustrations/auth/v2-two-steps-dark.png'
+        : '/images/illustrations/auth/v2-two-steps-light.png'
 
   return (
     <div className='flex h-full justify-center'>
@@ -89,7 +89,7 @@ const TwoStepsV2 = () => {
             <Typography variant='h5' className='font-semibold'>
               Two Step Verification 💬
             </Typography>
-            <Typography className={commonStyles.textSecondary}>
+            <Typography color='text.secondary'>
               We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </Typography>
             <Typography className='font-medium'>******1234</Typography>
@@ -107,13 +107,8 @@ const TwoStepsV2 = () => {
               <TextField />
             </div>
             <div className='flex justify-center items-center flex-wrap gap-2'>
-              <Typography className={commonStyles.textSecondary}>Didn&#39;t get the code?</Typography>
-              <Typography
-                className={commonStyles.primaryColor}
-                component={Link}
-                href='/'
-                onClick={e => e.preventDefault()}
-              >
+              <Typography color='text.secondary'>Didn&#39;t get the code?</Typography>
+              <Typography color='primary' component={Link} href='/' onClick={e => e.preventDefault()}>
                 Resend
               </Typography>
             </div>

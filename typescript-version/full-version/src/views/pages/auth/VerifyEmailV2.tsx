@@ -17,7 +17,7 @@ import classnames from 'classnames'
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
-import useSettings from '@core/hooks/useSettings'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
@@ -46,8 +46,8 @@ const VerifyEmailV2 = () => {
         ? '/images/illustrations/auth/v2-verify-email-dark-border.png'
         : '/images/illustrations/auth/v2-verify-email-light-border.png'
       : mode === 'dark' || systemMode === 'dark'
-      ? '/images/illustrations/auth/v2-verify-email-dark.png'
-      : '/images/illustrations/auth/v2-verify-email-light.png'
+        ? '/images/illustrations/auth/v2-verify-email-dark.png'
+        : '/images/illustrations/auth/v2-verify-email-light.png'
 
   return (
     <div className='flex h-full justify-center'>
@@ -99,13 +99,8 @@ const VerifyEmailV2 = () => {
             Skip For Now
           </Button>
           <div className='flex justify-center items-center flex-wrap gap-2'>
-            <Typography className={commonStyles.textSecondary}>Didn&#39;t get the mail?</Typography>
-            <Typography
-              className={commonStyles.primaryColor}
-              component={Link}
-              href='/'
-              onClick={e => e.preventDefault()}
-            >
+            <Typography color='text.secondary'>Didn&#39;t get the mail?</Typography>
+            <Typography color='primary' component={Link} href='/' onClick={e => e.preventDefault()}>
               Resend
             </Typography>
           </div>

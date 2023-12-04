@@ -26,7 +26,7 @@ import classnames from 'classnames'
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
-import useSettings from '@core/hooks/useSettings'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
@@ -60,8 +60,8 @@ const RegisterV2 = () => {
         ? '/images/illustrations/auth/v2-register-dark-border.png'
         : '/images/illustrations/auth/v2-register-light-border.png'
       : mode === 'dark' || systemMode === 'dark'
-      ? '/images/illustrations/auth/v2-register-dark.png'
-      : '/images/illustrations/auth/v2-register-light.png'
+        ? '/images/illustrations/auth/v2-register-dark.png'
+        : '/images/illustrations/auth/v2-register-light.png'
 
   return (
     <div className='flex h-full justify-center'>

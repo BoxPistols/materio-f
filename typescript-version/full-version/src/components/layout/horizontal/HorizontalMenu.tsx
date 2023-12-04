@@ -18,7 +18,7 @@ import VerticalNavContent from './VerticalNavContent'
 import LinkExternalIcon from '@layouts/svg/LinkExternal'
 
 // Hook Imports
-import useSettings from '@core/hooks/useSettings'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Util Imports
 import { getLocale } from '@/utils/get-locale'
@@ -200,10 +200,8 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
           </MenuItem>
         </SubMenu>
         <SubMenu label={dictionary['navigation'].charts}>
-          <MenuItem href={`/${locale}/charts/echarts`}>{dictionary['navigation'].echarts}</MenuItem>
           <MenuItem href={`/${locale}/charts/recharts`}>{dictionary['navigation'].recharts}</MenuItem>
           <MenuItem href={`/${locale}/charts/apex-charts`}>{dictionary['navigation'].apex}</MenuItem>
-          <MenuItem href={`/${locale}/charts/echarts-advance`}>Echarts Advance</MenuItem>
         </SubMenu>
         <SubMenu label={dictionary['navigation'].others}>
           <MenuItem

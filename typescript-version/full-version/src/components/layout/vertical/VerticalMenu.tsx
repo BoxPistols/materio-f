@@ -19,7 +19,7 @@ import { Menu, SubMenu, MenuItem, MenuSection } from '@menu-package/vertical-men
 import LinkExternalIcon from '@layouts/svg/LinkExternal'
 
 // Hook Imports
-import useSettings from '@core/hooks/useSettings'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Util Imports
 import { getLocale } from '@/utils/get-locale'
@@ -192,10 +192,8 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
         </MenuSection>
         <MenuSection label={dictionary['navigation'].chartsMisc}>
           <SubMenu label={dictionary['navigation'].charts}>
-            <MenuItem href={`/${locale}/charts/echarts`}>{dictionary['navigation'].echarts}</MenuItem>
             <MenuItem href={`/${locale}/charts/recharts`}>{dictionary['navigation'].recharts}</MenuItem>
             <MenuItem href={`/${locale}/charts/apex-charts`}>{dictionary['navigation'].apex}</MenuItem>
-            <MenuItem href={`/${locale}/charts/echarts-advance`}>Echarts Advance</MenuItem>
           </SubMenu>
           <MenuItem
             href='http://localhost:3001/docs/user-interface/intro'

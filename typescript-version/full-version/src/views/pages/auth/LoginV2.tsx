@@ -26,7 +26,7 @@ import classnames from 'classnames'
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
-import useSettings from '@core/hooks/useSettings'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
@@ -60,8 +60,8 @@ const LoginV2 = () => {
         ? '/images/illustrations/auth/v2-login-dark-border.png'
         : '/images/illustrations/auth/v2-login-light-border.png'
       : mode === 'dark' || systemMode === 'dark'
-      ? '/images/illustrations/auth/v2-login-dark.png'
-      : '/images/illustrations/auth/v2-login-light.png'
+        ? '/images/illustrations/auth/v2-login-dark.png'
+        : '/images/illustrations/auth/v2-login-light.png'
 
   return (
     <div className='flex h-full justify-center'>
@@ -124,7 +124,8 @@ const LoginV2 = () => {
               <FormControlLabel control={<Checkbox />} label='Remember me' />
               <Typography
                 variant='body2'
-                className={classnames('text-end', commonStyles.primaryColor)}
+                className='text-end'
+                color='primary'
                 component={Link}
                 href='/pages/auth/forgot-password-v2'
               >
@@ -135,8 +136,8 @@ const LoginV2 = () => {
               Log In
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
-              <Typography className={commonStyles.textSecondary}>New on our platform?</Typography>
-              <Typography component={Link} href='/pages/auth/register-v2' className={commonStyles.primaryColor}>
+              <Typography color='text.secondary'>New on our platform?</Typography>
+              <Typography component={Link} href='/pages/auth/register-v2' color='primary'>
                 Create an account
               </Typography>
             </div>

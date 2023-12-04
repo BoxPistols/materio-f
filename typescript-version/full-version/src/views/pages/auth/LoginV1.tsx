@@ -91,7 +91,8 @@ const LoginV1 = () => {
                 <FormControlLabel control={<Checkbox />} label='Remember me' />
                 <Typography
                   variant='body2'
-                  className={classnames('text-end', commonStyles.primaryColor)}
+                  className='text-end'
+                  color='primary'
                   component={Link}
                   href='/pages/auth/forgot-password-v1'
                 >
@@ -102,8 +103,8 @@ const LoginV1 = () => {
                 Log In
               </Button>
               <div className='flex justify-center items-center flex-wrap gap-2'>
-                <Typography className={commonStyles.textSecondary}>New on our platform?</Typography>
-                <Typography component={Link} href='/pages/auth/register-v1' className={commonStyles.primaryColor}>
+                <Typography color='text.secondary'>New on our platform?</Typography>
+                <Typography component={Link} href='/pages/auth/register-v1' color='primary'>
                   Create an account
                 </Typography>
               </div>

@@ -56,7 +56,6 @@ import { getInitials } from '@/utils/get-initials'
 // Style Imports
 import styles from './styles.module.css'
 import tableStyles from '@core/styles/table.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 declare module '@tanstack/table-core' {
   interface FilterFns {
@@ -196,7 +195,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
             variant='body2'
             component={Link}
             href={`/apps/invoice/preview/${row.original.id}`}
-            className={commonStyles.primaryColor}
+            color='primary'
           >{`#${row.original.id}`}</Typography>
         )
       }),
@@ -214,7 +213,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
           <div className='flex items-center gap-3'>
             {getAvatar({ avatar: row.original.avatar, name: row.original.name })}
             <div className='flex flex-col gap-2'>
-              <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
+              <Typography variant='body2' className='font-medium' color='text.primary'>
                 {row.original.name}
               </Typography>
               <Typography variant='caption'>{row.original.companyEmail}</Typography>
@@ -236,7 +235,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
           return row.original.balance === 0 ? (
             <Chip label='Paid' color='success' size='small' variant='tonal' />
           ) : (
-            <Typography variant='body2' className={commonStyles.textPrimary}>
+            <Typography variant='body2' color='text.primary'>
               {row.original.balance}
             </Typography>
           )
