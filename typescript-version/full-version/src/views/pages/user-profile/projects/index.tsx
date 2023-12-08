@@ -42,7 +42,7 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                       <Avatar src={item.avatar} />
                       <div>
                         <Typography
-                          variant='h6'
+                          variant='h5'
                           href='/'
                           component={Link}
                           onClick={e => e.preventDefault()}
@@ -50,13 +50,17 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                         >
                           {item.title}
                         </Typography>
-                        <Typography className={commonStyles.textSecondary}>
-                          <span className='font-medium'>Client:</span>
+                        <Typography color='text.secondary'>
+                          <span className='font-medium'>Client: </span>
                           {item.client}
                         </Typography>
                       </div>
                     </div>
                     <OptionMenu
+                      iconButtonProps={{
+                        size: 'small',
+                        className: commonStyles.textDisabled
+                      }}
                       options={[
                         'Rename Project',
                         'View Details',
@@ -72,29 +76,29 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                     >
                       <div className='flex'>
                         <Typography className='font-medium'>{item.budgetSpent}</Typography>
-                        <Typography className={commonStyles.textSecondary}>{`/${item.budget}`}</Typography>
+                        <Typography color='text.secondary'>{`/${item.budget}`}</Typography>
                       </div>
-                      <Typography className={commonStyles.textSecondary}>Total Budget</Typography>
+                      <Typography color='text.secondary'>Total Budget</Typography>
                     </div>
                     <div className='flex flex-col'>
-                      <div className='flex'>
+                      <div className='flex gap-1'>
                         <Typography className='font-medium'>Start Date:</Typography>
-                        <Typography className={commonStyles.textSecondary}>{item.startDate}</Typography>
+                        <Typography color='text.secondary'>{item.startDate}</Typography>
                       </div>
-                      <div className='flex'>
+                      <div className='flex gap-1'>
                         <Typography className='font-medium'>Deadline:</Typography>
-                        <Typography className={commonStyles.textSecondary}>{item.deadline}</Typography>
+                        <Typography color='text.secondary'>{item.deadline}</Typography>
                       </div>
                     </div>
                   </div>
-                  <Typography className={commonStyles.textSecondary}>{item.description}</Typography>
+                  <Typography color='text.secondary'>{item.description}</Typography>
                 </CardContent>
                 <Divider />
                 <CardContent className='flex flex-col gap-4'>
                   <div className='flex items-center justify-between'>
-                    <div className='flex'>
+                    <div className='flex gap-1'>
                       <Typography className='font-medium'>All Hours:</Typography>
-                      <Typography className={commonStyles.textSecondary}>{item.hours}</Typography>
+                      <Typography color='text.secondary'>{item.hours}</Typography>
                     </div>
                     <Chip size='small' variant='tonal' color={item.chipColor} label={`${item.daysLeft} days left`} />
                   </div>
@@ -122,13 +126,13 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                           )
                         })}
                       </AvatarGroup>
-                      <Typography variant='caption' className='flex-grow'>
+                      <Typography variant='body2' color='text.disabled' className='flex-grow'>
                         {item.members}
                       </Typography>
                     </div>
                     <div className='flex items-center gap-1'>
                       <i className={classnames('ri-wechat-line', commonStyles.textDisabled)} />
-                      <Typography variant='body2'>{item.comments}</Typography>
+                      <Typography color='text.disabled'>{item.comments}</Typography>
                     </div>
                   </div>
                 </CardContent>

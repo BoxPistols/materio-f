@@ -26,6 +26,7 @@ import Logo from '@core/svg/Logo'
 
 // Style Imports
 import styles from './v1.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 const VerifyEmailV1 = () => {
   const { mode, systemMode } = useColorScheme()
@@ -43,28 +44,26 @@ const VerifyEmailV1 = () => {
       <Card className={classnames('flex flex-col', { [styles.card]: isAboveSmScreen })}>
         <CardContent className='!p-12'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
-            <Logo color='text.primary' height={28} width={35} />
-            <Typography variant='h5' className='font-semibold'>
+            <Logo className={commonStyles.primaryColor} height={28} width={35} />
+            <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>
           </div>
-          <Typography variant='h5' className='font-semibold mbe-1'>
+          <Typography variant='h4' className='mbe-1'>
             Verify your email ✉️
           </Typography>
           <div className='flex flex-col gap-5'>
             <Typography color='text.secondary'>
               Account activation link sent to your email address:{' '}
-              <span className='font-medium' color='text.primary'>
-                john.doe@email.com
-              </span>{' '}
-              Please follow the link inside to continue.
+              <span className={classnames('font-medium', commonStyles.textPrimary)}>john.doe@email.com</span> Please
+              follow the link inside to continue.
             </Typography>
             <Button fullWidth variant='contained' type='submit'>
               Skip For Now
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
               <Typography color='text.secondary'>Didn&#39;t get the mail?</Typography>
-              <Typography color='text.primary' component={Link} href='/' onClick={e => e.preventDefault()}>
+              <Typography color='primary' component={Link} href='/' onClick={e => e.preventDefault()}>
                 Resend
               </Typography>
             </div>

@@ -14,6 +14,9 @@ import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
 import type { TypographyProps } from '@mui/material/Typography'
 
+// Third-party Imports
+import classnames from 'classnames'
+
 // Type Imports
 import type { Direction } from '@core/types'
 import type { CustomInputVerticalData } from '@core/components/custom-inputs/types'
@@ -87,7 +90,7 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps, direct
         let asset
 
         if (item.asset && typeof item.asset === 'string') {
-          asset = <i className={item.asset} />
+          asset = <i className={classnames(item.asset, 'text-[28px]')} />
         }
 
         return (
@@ -159,8 +162,8 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps, direct
                   activeStep === steps.length - 1
                     ? 'ri-check-line'
                     : direction === 'rtl'
-                    ? 'ri-arrow-left-line'
-                    : 'ri-arrow-right-line'
+                      ? 'ri-arrow-left-line'
+                      : 'ri-arrow-right-line'
                 }
               />
             }

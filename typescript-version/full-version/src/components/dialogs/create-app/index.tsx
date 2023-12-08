@@ -175,13 +175,13 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
   return (
     <Dialog fullWidth maxWidth='md' open={open} onClose={handleClose}>
       <DialogTitle
-        variant='h5'
+        variant='h4'
         className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
           [globalDialogStyles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Create App
-        <Typography component='span' variant='body2' className='flex flex-col text-center'>
+        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
           Provide data with this form to create your app.
         </Typography>
       </DialogTitle>
@@ -211,10 +211,10 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
                           <i className={label.icon as string} />
                         </Avatar>
                         <div className='flex flex-col gap-1'>
-                          <Typography variant='body2' className='uppercase' color='text.primary'>
-                            {label.title}
+                          <Typography className='uppercase'>{label.title}</Typography>
+                          <Typography variant='body2' color='text.disabled'>
+                            {label.subtitle}
                           </Typography>
-                          <Typography variant='caption'>{label.subtitle}</Typography>
                         </div>
                       </div>
                     </StepLabel>

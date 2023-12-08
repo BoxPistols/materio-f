@@ -49,7 +49,7 @@ const typography = (fontFamily: string): Theme['typography'] =>
     h6: {
       fontSize: '0.9375rem',
       fontWeight: 500,
-      lineHeight: 1.6
+      lineHeight: 1.4667
     },
     subtitle1: {
       fontSize: '0.9375rem',

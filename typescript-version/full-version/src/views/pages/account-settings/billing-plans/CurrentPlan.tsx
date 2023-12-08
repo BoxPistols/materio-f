@@ -11,9 +11,6 @@ import AlertTitle from '@mui/material/AlertTitle'
 import LinearProgress from '@mui/material/LinearProgress'
 import type { ButtonProps } from '@mui/material/Button'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { PricingPlanType } from '@/types/pages/pricingTypes'
 import type { ThemeColor } from '@core/types'
@@ -22,9 +19,6 @@ import type { ThemeColor } from '@core/types'
 import ConfirmationDialog from '@components/dialogs/confirmation-dialog'
 import UpgradePlan from '@components/dialogs/upgrade-plan'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
-
-// Styles Imports
-import commonStyles from '@/styles/common.module.css'
 
 const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
   const buttonProps = (children: string, color: ThemeColor, variant: ButtonProps['variant']): ButtonProps => ({
@@ -40,23 +34,21 @@ const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
         <Grid container spacing={6}>
           <Grid item xs={12} md={6} className='flex flex-col gap-6'>
             <div>
-              <Typography>Your Current Plan is Basic</Typography>
-              <Typography className={commonStyles.textSecondary}>A simple start for everyone</Typography>
+              <Typography className='font-medium'>Your Current Plan is Basic</Typography>
+              <Typography color='text.secondary'>A simple start for everyone</Typography>
             </div>
             <div>
-              <Typography>Active until Dec 09, 2021</Typography>
-              <Typography className={commonStyles.textSecondary}>
+              <Typography className='font-medium'>Active until Dec 09, 2021</Typography>
+              <Typography color='text.secondary'>
                 We will send you a notification upon Subscription expiration
               </Typography>
             </div>
             <div>
               <div className='flex items-center gap-1.5'>
-                <Typography>$199 Per Month</Typography>
+                <Typography className='font-medium'>$199 Per Month</Typography>
                 <Chip variant='tonal' color='primary' label='Popular' size='small' />
               </div>
-              <Typography className={commonStyles.textSecondary}>
-                Standard plan for small to medium businesses
-              </Typography>
+              <Typography color='text.secondary'>Standard plan for small to medium businesses</Typography>
             </div>
           </Grid>
           <Grid item xs={12} md={6} className='flex flex-col gap-6'>
@@ -66,15 +58,11 @@ const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
             </Alert>
             <div className='flex flex-col gap-1'>
               <div className='flex items-center justify-between'>
-                <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
-                  Days
-                </Typography>
-                <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
-                  12 of 30 Days
-                </Typography>
+                <Typography className='font-medium'>Days</Typography>
+                <Typography className='font-medium'>12 of 30 Days</Typography>
               </div>
               <LinearProgress variant='determinate' value={40} />
-              <Typography variant='caption'>18 days remaining until your plan requires update</Typography>
+              <Typography variant='body2'>18 days remaining until your plan requires update</Typography>
             </div>
           </Grid>
           <Grid item xs={12} className='flex gap-4 flex-wrap'>

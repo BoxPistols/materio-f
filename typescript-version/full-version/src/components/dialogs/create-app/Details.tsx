@@ -37,39 +37,39 @@ const Details = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: 
     <div className='flex flex-col gap-6'>
       <TextField fullWidth label='Application Name' placeholder={`${themeConfig.templateName}`} />
       <div className='flex flex-col gap-4'>
-        <Typography variant='h6'>Category</Typography>
+        <Typography variant='h5'>Category</Typography>
         <div onClick={() => setValue('crm')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <CustomAvatar variant='rounded' skin='light' color='info'>
-              <i className='ri-briefcase-line' />
+            <CustomAvatar variant='rounded' skin='light' color='info' size={46}>
+              <i className='ri-bar-chart-box-line text-[28px]' />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography>CRM Application</Typography>
-              <Typography variant='caption'>Scales with any business</Typography>
+              <Typography className='font-medium'>CRM Application</Typography>
+              <Typography variant='body2'>Scales with any business</Typography>
             </div>
           </div>
           <Radio value='crm' onChange={handleChange} checked={value === 'crm'} />
         </div>
         <div onClick={() => setValue('eCommerce')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <CustomAvatar variant='rounded' skin='light' color='success'>
-              <i className='ri-shopping-cart-2-line' />
+            <CustomAvatar variant='rounded' skin='light' color='success' size={46}>
+              <i className='ri-shopping-cart-2-line text-[28px]' />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography>eCommerce Platforms</Typography>
-              <Typography variant='caption'>Grow Your Business With App</Typography>
+              <Typography className='font-medium'>eCommerce Platforms</Typography>
+              <Typography variant='body2'>Grow Your Business With App</Typography>
             </div>
           </div>
           <Radio value='eCommerce' onChange={handleChange} checked={value === 'eCommerce'} />
         </div>
         <div onClick={() => setValue('learning')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
-            <CustomAvatar variant='rounded' skin='light' color='error'>
-              <i className='ri-video-upload-line' />
+            <CustomAvatar variant='rounded' skin='light' color='error' size={46}>
+              <i className='ri-video-upload-line text-[28px]' />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography>Online Learning platform</Typography>
-              <Typography variant='caption'>Start learning today</Typography>
+              <Typography className='font-medium'>Online Learning platform</Typography>
+              <Typography variant='body2'>Start learning today</Typography>
             </div>
           </div>
           <Radio value='learning' onChange={handleChange} checked={value === 'learning'} />

@@ -36,12 +36,10 @@ const FaqHeader = ({ searchValue, setSearchValue }: Props) => {
   return (
     <Card className={classnames(styles.headerImage, 'bg-transparent bg-cover')} elevation={0}>
       <CardContent className={classnames(styles.headerPadding, 'flex flex-col items-center w-full text-center pli-5')}>
-        <Typography variant='h5' color='primary' className='mbe-2.5'>
+        <Typography variant='h4' color='primary' className='mbe-2.5'>
           Hello, how can we help?
         </Typography>
-        <Typography variant='body2' className='mbe-8'>
-          or choose a category to quickly find the help you need
-        </Typography>
+        <Typography className='mbe-6'>or choose a category to quickly find the help you need</Typography>
         <TextField
           fullWidth
           className={classnames(styles.searchBar, {
@@ -55,7 +53,7 @@ const FaqHeader = ({ searchValue, setSearchValue }: Props) => {
           InputProps={{
             startAdornment: (
               <InputAdornment position='start'>
-                <i className='ri-search-line text-lg' />
+                <i className='ri-search-line' />
               </InputAdornment>
             )
           }}

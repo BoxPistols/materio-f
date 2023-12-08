@@ -41,7 +41,7 @@ const data: CustomInputHorizontalData[] = [
   {
     title: (
       <div className='flex items-center gap-1'>
-        <i className='ri-settings-3-line' />
+        <i className='ri-settings-3-line text-xl' />
         <Typography className='font-medium'>Authenticator Apps</Typography>
       </div>
     ),
@@ -52,7 +52,7 @@ const data: CustomInputHorizontalData[] = [
   {
     title: (
       <div className='flex items-center gap-1'>
-        <i className='ri-wechat-line' />
+        <i className='ri-wechat-line text-xl' />
         <Typography className='font-medium'>SMS</Typography>
       </div>
     ),
@@ -71,7 +71,7 @@ const SMSDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
         })}
       >
         Verify Your Mobile Number for SMS
-        <Typography component='span' variant='body2' className='flex flex-col'>
+        <Typography component='span' color='text.secondary' className='flex flex-col'>
           Enter your mobile phone number with country code and we will send you a verification code.
         </Typography>
       </DialogTitle>
@@ -112,7 +112,7 @@ const AppDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
   return (
     <>
       <DialogTitle
-        variant='h5'
+        variant='h4'
         className={classnames('text-center', globalDialogStyles.dialogTitle, {
           [globalDialogStyles.smDialogTitle]: isBelowSmScreen
         })}
@@ -128,8 +128,8 @@ const AppDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
           <i className='ri-close-line' />
         </IconButton>
         <div className='flex flex-col gap-2'>
-          <Typography variant='h6'>Authenticator Apps</Typography>
-          <Typography variant='body2'>
+          <Typography variant='h5'>Authenticator Apps</Typography>
+          <Typography color='text.secondary'>
             Using an authenticator app like Google Authenticator, Microsoft Authenticator, Authy, or 1Password, scan the
             QR code. It will generate a 6 digit code for you to enter below.
           </Typography>
@@ -210,13 +210,13 @@ const TwoFactorAuth = ({ open, setOpen, direction }: TwoFactorAuthProps) => {
     <>
       <Dialog fullWidth maxWidth='md' scroll='body' open={open} onClose={() => setOpen(false)}>
         <DialogTitle
-          variant='h5'
+          variant='h4'
           className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
             [globalDialogStyles.smDialogTitle]: isBelowSmScreen
           })}
         >
           Select Authentication Method
-          <Typography component='span' variant='body2' className='flex flex-col text-center'>
+          <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
             You also need to select a method by which the proxy authenticates to the directory serve.
           </Typography>
         </DialogTitle>

@@ -32,13 +32,13 @@ const Connections = ({ data }: { data?: ConnectionsTabType[] }) => {
                     { divider: true },
                     { text: 'Delete', menuItemProps: { className: commonStyles.errorColor } }
                   ]}
-                  iconButtonProps={{ className: 'absolute top-5 right-5' }}
+                  iconButtonProps={{ size: 'small', className: `absolute top-5 right-5 ${commonStyles.textDisabled}` }}
                 />
                 <CardContent className='flex items-center flex-col gap-6'>
                   <Avatar src={item.avatar} className='mbs-2 bs-[100px] is-[100px]' />
                   <div className='flex flex-col items-center'>
-                    <Typography variant='h6'>{item.name}</Typography>
-                    <Typography className={commonStyles.textSecondary}>{item.designation}</Typography>
+                    <Typography variant='h5'>{item.name}</Typography>
+                    <Typography color='text.secondary'>{item.designation}</Typography>
                   </div>
                   <div className='flex items-center gap-4'>
                     {item.chips.map((chip, index) => (
@@ -49,16 +49,16 @@ const Connections = ({ data }: { data?: ConnectionsTabType[] }) => {
                   </div>
                   <div className='flex w-full items-center justify-around flex-wrap'>
                     <div className='flex items-center flex-col'>
-                      <Typography variant='h6'>{item.projects}</Typography>
-                      <Typography className={commonStyles.textSecondary}>Projects</Typography>
+                      <Typography variant='h5'>{item.projects}</Typography>
+                      <Typography color='text.secondary'>Projects</Typography>
                     </div>
                     <div className='flex items-center flex-col'>
-                      <Typography variant='h6'>{item.tasks}</Typography>
-                      <Typography className={commonStyles.textSecondary}>Tasks</Typography>
+                      <Typography variant='h5'>{item.tasks}</Typography>
+                      <Typography color='text.secondary'>Tasks</Typography>
                     </div>
                     <div className='flex items-center flex-col'>
-                      <Typography variant='h6'>{item.connections}</Typography>
-                      <Typography className={commonStyles.textSecondary}>Connections</Typography>
+                      <Typography variant='h5'>{item.connections}</Typography>
+                      <Typography color='text.secondary'>Connections</Typography>
                     </div>
                   </div>
                   <div className='flex items-center gap-4'>
@@ -66,9 +66,9 @@ const Connections = ({ data }: { data?: ConnectionsTabType[] }) => {
                       variant={item.isConnected ? 'contained' : 'outlined'}
                       startIcon={<i className={item.isConnected ? 'ri-user-follow-line' : 'ri-user-add-line'} />}
                     >
-                      {item.isConnected ? 'connected' : 'connect'}
+                      {item.isConnected ? 'Connected' : 'Connect'}
                     </Button>
-                    <Button variant='outlined' color='secondary' className='h-10 w-10 min-w-0 p-2'>
+                    <Button variant='outlined' color='secondary' className='bs-[38px] is-[38px] min-w-0 p-1.5'>
                       <i className='ri-mail-open-line' />
                     </Button>
                   </div>

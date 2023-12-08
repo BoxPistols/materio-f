@@ -94,9 +94,8 @@ const AccountDetails = () => {
           <div className='flex flex-grow flex-col gap-4'>
             <div className={classnames('flex gap-4', { 'flex-col': isBelowSmScreen })}>
               <Button
-                component='label'
+                size='small'
                 variant='contained'
-                htmlFor='account-settings-upload-image'
                 className={classnames({ 'w-full text-center': isBelowSmScreen })}
               >
                 Upload New Photo
@@ -110,15 +109,16 @@ const AccountDetails = () => {
                 />
               </Button>
               <Button
+                size='small'
                 variant='outlined'
-                color='secondary'
+                color='error'
                 onClick={handleFileInputReset}
                 className={classnames({ 'w-full text-center': isBelowSmScreen })}
               >
                 Reset
               </Button>
             </div>
-            <Typography variant='caption'>Allowed JPG, GIF or PNG. Max size of 800K</Typography>
+            <Typography color='text.secondary'>Allowed JPG, GIF or PNG. Max size of 800K</Typography>
           </div>
         </div>
       </CardContent>

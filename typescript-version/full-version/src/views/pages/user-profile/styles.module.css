@@ -2,11 +2,6 @@
   block-size: 250px;
 }
 
-.avatarSize {
-  inline-size: 38px;
-  block-size: 38px;
-}
-
 .profileImgMargin {
   margin-block-start: -45px;
 }

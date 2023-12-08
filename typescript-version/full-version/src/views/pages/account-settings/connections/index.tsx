@@ -96,8 +96,9 @@ const Connections = () => {
         <Grid item xs={12} md={6}>
           <CardHeader
             title='Connected Accounts'
-            titleTypographyProps={{ variant: 'h6' }}
+            titleTypographyProps={{ variant: 'h5' }}
             subheader='Display content from your connected accounts on your site'
+            subheaderTypographyProps={{ variant: 'body1' }}
           />
           <CardContent className='flex flex-col gap-4'>
             {connectedAccountsArr.map((item, index) => (
@@ -117,7 +118,8 @@ const Connections = () => {
         <Grid item xs={12} md={6}>
           <CardHeader
             title='Social Accounts'
-            titleTypographyProps={{ variant: 'h6' }}
+            titleTypographyProps={{ variant: 'h5' }}
+            subheaderTypographyProps={{ variant: 'body1' }}
             subheader='Display content from social accounts on your site'
           />
           <CardContent className='flex flex-col gap-4'>
@@ -126,7 +128,7 @@ const Connections = () => {
                 <div className='flex flex-grow items-center gap-4'>
                   <img height={32} width={32} src={item.logo} alt={item.title} />
                   <div className='flex-grow'>
-                    <Typography href='/' component={Link} onClick={e => e.preventDefault()}>
+                    <Typography href='/' component={Link} className='font-medium' onClick={e => e.preventDefault()}>
                       {item.title}
                     </Typography>
                     {item.isConnected ? (
@@ -139,7 +141,7 @@ const Connections = () => {
                 <Button
                   variant='outlined'
                   color={item.isConnected ? 'error' : 'secondary'}
-                  className='h-10 w-10 min-w-0 p-2'
+                  className='bs-[38px] is-[38px] min-w-0 p-1.5'
                 >
                   <i className={item.isConnected ? 'ri-delete-bin-7-line' : 'ri-links-line'} />
                 </Button>

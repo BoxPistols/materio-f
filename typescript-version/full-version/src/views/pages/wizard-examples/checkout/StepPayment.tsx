@@ -72,8 +72,12 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
               }
             >
               <AlertTitle>Available Offers</AlertTitle>
-              <Typography>- 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards</Typography>
-              <Typography>- 25% Cashback Voucher of up to $60 on first ever PayPal transaction. TCA</Typography>
+              <Typography color='success.main'>
+                - 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards
+              </Typography>
+              <Typography color='success.main'>
+                - 25% Cashback Voucher of up to $60 on first ever PayPal transaction. TCA
+              </Typography>
             </Alert>
           </Fade>
         </Collapse>
@@ -161,7 +165,9 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
               <div className='flex items-center justify-between gap-2'>
                 <Typography>Delivery Charges</Typography>
                 <div className='flex gap-2'>
-                  <Typography className={classnames(commonStyles.textDisabled, 'line-through')}>$5.00</Typography>
+                  <Typography color='text.disabled' className='line-through'>
+                    $5.00
+                  </Typography>
                   <Chip variant='tonal' size='small' color='success' label='Free' />
                 </div>
               </div>
@@ -172,7 +178,9 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
             <div className='flex flex-col gap-2'>
               <div className='flex items-center justify-between gap-2'>
                 <Typography className='font-medium'>Total</Typography>
-                <Typography className={commonStyles.textSecondary}>$1198.00</Typography>
+                <Typography color='text.secondary' className='font-medium'>
+                  $1198.00
+                </Typography>
               </div>
               <div className='flex items-center justify-between gap-2'>
                 <Typography className='font-medium'>Deliver to:</Typography>
@@ -181,22 +189,16 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
             </div>
             <div>
               <Typography className='font-medium'>John Doe (Default),</Typography>
-              <Typography variant='body2' className={commonStyles.textSecondary}>
-                4135 Parkway Street,
-              </Typography>
-              <Typography variant='body2' className={commonStyles.textSecondary}>
-                Los Angeles, CA, 90017.
-              </Typography>
-              <Typography variant='body2' className={commonStyles.textSecondary}>
-                Mobile : +1 906 568 2332
-              </Typography>
+              <Typography color='text.secondary'>4135 Parkway Street,</Typography>
+              <Typography color='text.secondary'>Los Angeles, CA, 90017.</Typography>
+              <Typography color='text.secondary'>Mobile : +1 906 568 2332</Typography>
             </div>
             <Typography
               href='/'
               component={Link}
               onClick={e => e.preventDefault()}
               className='font-medium'
-              color='text.primary'
+              color='primary'
             >
               Change address
             </Typography>

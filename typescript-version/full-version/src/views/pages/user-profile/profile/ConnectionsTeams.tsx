@@ -9,7 +9,6 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-import Avatar from '@mui/material/Avatar'
 import Grid from '@mui/material/Grid'
 import Chip from '@mui/material/Chip'
 
@@ -17,10 +16,10 @@ import Chip from '@mui/material/Chip'
 import type { ProfileTeamsTechType, ProfileConnectionsType } from '@/types/pages/profileTypes'
 
 // Component Imports
+import CustomAvatar from '@core/components/mui/Avatar'
 import OptionMenu from '@core/components/option-menu'
 
 // Style Imports
-import styles from '../styles.module.css'
 import commonStyles from '@/styles/common.module.css'
 
 type Props = {
@@ -38,25 +37,28 @@ const ConnectionsTeams = (props: Props) => {
         <Card>
           <CardHeader
             title='Connections'
-            action={<OptionMenu options={['Share Connections', 'Suggest Edits', { divider: true }, 'Report Bug']} />}
+            action={
+              <OptionMenu
+                iconButtonProps={{ size: 'small', className: commonStyles.textDisabled }}
+                options={['Share Connections', 'Suggest Edits', { divider: true }, 'Report Bug']}
+              />
+            }
           />
           <CardContent className='flex flex-col gap-4'>
             {connections &&
               connections.map((connection, index) => (
                 <div key={index} className='flex items-center gap-2'>
                   <div className='flex items-center flex-grow gap-2'>
-                    <Avatar src={connection.avatar} className={styles.avatarSize} />
+                    <CustomAvatar size={38} src={connection.avatar} />
                     <div className='flex flex-grow flex-col gap-1'>
-                      <Typography variant='body2' className={commonStyles.textPrimary}>
-                        {connection.name}
-                      </Typography>
-                      <Typography variant='caption'>{connection.connections} Connections</Typography>
+                      <Typography className='font-medium'>{connection.name}</Typography>
+                      <Typography variant='body2'>{connection.connections} Connections</Typography>
                     </div>
                   </div>
                   <Button
                     variant={connection.isFriend ? 'contained' : 'outlined'}
                     size='small'
-                    className='w-9 h-9 min-w-0 p-1.5'
+                    className='is-[38px] bs-[38px] min-w-0 p-1.5'
                   >
                     <i className={connection.isFriend ? 'ri-user-3-line' : 'ri-user-add-line'} />
                   </Button>
@@ -74,19 +76,22 @@ const ConnectionsTeams = (props: Props) => {
         <Card>
           <CardHeader
             title='Teams'
-            action={<OptionMenu options={['Share Teams', 'Suggest Edits', { divider: true }, 'Report Bug']} />}
+            action={
+              <OptionMenu
+                iconButtonProps={{ size: 'small' }}
+                options={['Share Teams', 'Suggest Edits', { divider: true }, 'Report Bug']}
+              />
+            }
           />
           <CardContent className='flex flex-col gap-4'>
             {teamsTech &&
               teamsTech.map((team: ProfileTeamsTechType, index) => (
                 <div key={index} className='flex items-center gap-2'>
                   <div className='flex flex-grow items-center gap-2'>
-                    <Avatar src={team.avatar} />
+                    <CustomAvatar size={38} src={team.avatar} />
                     <div className='flex flex-grow flex-col gap-1'>
-                      <Typography variant='body2' className={commonStyles.textPrimary}>
-                        {team.title}
-                      </Typography>
-                      <Typography variant='caption'>{team.members} Members</Typography>
+                      <Typography className='font-medium'>{team.title}</Typography>
+                      <Typography variant='body2'>{team.members} Members</Typography>
                     </div>
                   </div>
                   <Chip variant='tonal' color={team.ChipColor} label={team.chipText} size='small' />

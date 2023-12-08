@@ -2,6 +2,13 @@
 import type { Theme } from '@mui/material/styles'
 
 const timeline: Theme['components'] = {
+  MuiTimeline: {
+    styleOverrides: {
+      root: {
+        padding: 0
+      }
+    }
+  },
   MuiTimelineDot: {
     styleOverrides: {
       root: {
@@ -124,6 +131,13 @@ const timeline: Theme['components'] = {
       root: {
         width: 1,
         backgroundColor: 'var(--mui-palette-divider)'
+      }
+    }
+  },
+  MuiTimelineContent: {
+    styleOverrides: {
+      root: {
+        paddingBottom: '1rem'
       }
     }
   }

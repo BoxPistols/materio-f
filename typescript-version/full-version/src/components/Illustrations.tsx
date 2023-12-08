@@ -1,9 +1,11 @@
+'use client'
+
 // React Imports
 import type { ReactNode } from 'react'
 
 // MUI Components
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { styled, useTheme } from '@mui/material/styles'
+import { styled, useTheme, useColorScheme } from '@mui/material/styles'
 
 type ImageObj = {
   src: string
@@ -33,6 +35,7 @@ const Illustrations = (props: IllustrationsProp) => {
 
   // Hook
   const theme = useTheme()
+  const { mode, systemMode } = useColorScheme()
 
   // Vars
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
@@ -58,7 +61,12 @@ const Illustrations = (props: IllustrationsProp) => {
         {typeof maskImg === 'undefined' || isImageObj(maskImg) ? (
           <MaskImg
             alt={maskImg?.alt || 'mask'}
-            src={maskImg?.src || '/images/pages/misc-mask-light.png'}
+            src={
+              maskImg?.src ||
+              (mode === 'dark' || systemMode === 'dark'
+                ? '/images/pages/misc-mask-dark.png'
+                : '/images/pages/misc-mask-light.png')
+            }
             className={maskImg?.className}
             width={maskImg?.width}
             height={maskImg?.height}

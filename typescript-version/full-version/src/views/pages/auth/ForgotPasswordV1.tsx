@@ -49,16 +49,14 @@ const ForgotPasswordV1 = ({ direction }: { direction: Direction }) => {
       <Card className={classnames('flex flex-col', { [styles.card]: isAboveSmScreen })}>
         <CardContent className='!p-12'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
-            <Logo className={classnames('h-8', commonStyles.primaryColor)} height={28} width={35} />
-            <Typography variant='h5' className='font-semibold'>
+            <Logo className={classnames('h-8 tracking-[0.15px]', commonStyles.primaryColor)} height={28} width={35} />
+            <Typography variant='h4' className='font-semibold'>
               {themeConfig.templateName}
             </Typography>
           </div>
-          <Typography variant='h5' className='font-semibold'>
-            Forgot Password 🔒
-          </Typography>
+          <Typography variant='h4'>Forgot Password 🔒</Typography>
           <div className='flex flex-col gap-5'>
-            <Typography variant='body2' className='mbs-1'>
+            <Typography color='text.secondary' className='mbs-1'>
               Enter your email and we&#39;ll send you instructions to reset your password
             </Typography>
             <Form noValidate autoComplete='off' className='flex flex-col gap-5'>

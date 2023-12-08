@@ -57,16 +57,14 @@ const LoginV1 = () => {
         <CardContent className='!p-12'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className={commonStyles.primaryColor} height={28} width={35} />
-            <Typography variant='h5' className='font-semibold'>
+            <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>
           </div>
           <div className='flex flex-col gap-5'>
             <div>
-              <Typography variant='h5' className='font-semibold'>
-                {`Welcome to ${themeConfig.templateName}!👋🏻`}
-              </Typography>
-              <Typography variant='body2' className='mbs-1'>
+              <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}!👋🏻`}</Typography>
+              <Typography color='text.secondary' className='mbs-1'>
                 Please sign-in to your account and start the adventure
               </Typography>
             </div>
@@ -89,13 +87,7 @@ const LoginV1 = () => {
               />
               <div className='flex justify-between items-center gap-x-3 gap-y-1 flex-wrap'>
                 <FormControlLabel control={<Checkbox />} label='Remember me' />
-                <Typography
-                  variant='body2'
-                  className='text-end'
-                  color='primary'
-                  component={Link}
-                  href='/pages/auth/forgot-password-v1'
-                >
+                <Typography className='text-end' color='primary' component={Link} href='/pages/auth/forgot-password-v1'>
                   Forgot password?
                 </Typography>
               </div>

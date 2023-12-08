@@ -58,13 +58,11 @@ const RegisterV1 = () => {
         <CardContent className='!p-12'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className={commonStyles.primaryColor} height={28} width={35} />
-            <Typography variant='h5' className='font-semibold'>
+            <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>
           </div>
-          <Typography variant='h5' className='font-semibold mbe-1'>
-            Adventure starts here 🚀
-          </Typography>
+          <Typography variant='h4'>Adventure starts here 🚀</Typography>
           <div className='flex flex-col gap-5'>
             <Typography variant='body2' className='mbs-1'>
               Make your app management easy and fun!

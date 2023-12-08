@@ -28,31 +28,35 @@ const StepReview = ({ activeStep, handleNext, handlePrev, steps, direction }: Pr
   return (
     <Grid container spacing={6} className='pbs-5'>
       <Grid item xs={12} lg={6} className='flex flex-col gap-4'>
-        <Typography variant='h5'>Almost done! 🚀</Typography>
-        <Typography className={commonStyles.textSecondary}>
-          Confirm your deal details information and submit to create it.
-        </Typography>
+        <Typography variant='h4'>Almost done! 🚀</Typography>
+        <Typography color='text.secondary'>Confirm your deal details information and submit to create it.</Typography>
         <table className={tableStyles.table}>
           <tbody>
             <tr>
               <td className='plb-1'>
-                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Deal Type</Typography>
+                <Typography className='font-medium' color='text.secondary'>
+                  Deal Type
+                </Typography>
               </td>
               <td className='plb-1'>
-                <Typography className={commonStyles.textSecondary}>Percentage</Typography>
+                <Typography color='text.secondary'>Percentage</Typography>
               </td>
             </tr>
             <tr>
               <td className='font-medium plb-1'>
-                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Amount</Typography>
+                <Typography className='font-medium' color='text.secondary'>
+                  Amount
+                </Typography>
               </td>
               <td className='plb-1'>
-                <Typography className={commonStyles.textSecondary}>25% </Typography>
+                <Typography color='text.secondary'>25% </Typography>
               </td>
             </tr>
             <tr>
               <td className='font-medium plb-1'>
-                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Deal Code</Typography>
+                <Typography className='font-medium' color='text.secondary'>
+                  Deal Code
+                </Typography>
               </td>
               <td className='plb-1'>
                 <Chip variant='tonal' label='25PEROFF' color='warning' />
@@ -60,18 +64,22 @@ const StepReview = ({ activeStep, handleNext, handlePrev, steps, direction }: Pr
             </tr>
             <tr>
               <td className='font-medium plb-1'>
-                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Deal Title</Typography>
+                <Typography className='font-medium' color='text.secondary'>
+                  Deal Title
+                </Typography>
               </td>
               <td className='plb-1'>
-                <Typography className={commonStyles.textSecondary}>Black friday sale, 25% OFF </Typography>
+                <Typography color='text.secondary'>Black friday sale, 25% OFF </Typography>
               </td>
             </tr>
             <tr>
               <td className='font-medium plb-1'>
-                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>Deal Duration</Typography>
+                <Typography className='font-medium' color='text.secondary'>
+                  Deal Duration
+                </Typography>
               </td>
               <td className='plb-1'>
-                <Typography className={commonStyles.textSecondary}>2021-07-14 to 2021-07-30 </Typography>
+                <Typography color='text.secondary'>2021-07-14 to 2021-07-30 </Typography>
               </td>
             </tr>
           </tbody>
@@ -110,8 +118,8 @@ const StepReview = ({ activeStep, handleNext, handlePrev, steps, direction }: Pr
                   activeStep === steps.length - 1
                     ? 'ri-check-line'
                     : direction === 'rtl'
-                    ? 'ri-arrow-left-line'
-                    : 'ri-arrow-right-line'
+                      ? 'ri-arrow-left-line'
+                      : 'ri-arrow-right-line'
                 }
               />
             }

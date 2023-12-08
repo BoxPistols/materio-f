@@ -194,7 +194,7 @@ const PaymentMethod = () => {
                 <div className='flex flex-col items-start gap-2 p-5'>
                   <img src={item.imgSrc} alt={item.imgAlt} className='h-6' />
                   <div className='flex items-center gap-4'>
-                    <Typography>{item.name}</Typography>
+                    <Typography className='font-medium'>{item.name}</Typography>
                     {item.cardStatus ? (
                       <Chip variant='tonal' color={item.badgeColor} label={item.cardStatus} size='small' />
                     ) : null}

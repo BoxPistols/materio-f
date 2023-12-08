@@ -120,10 +120,8 @@ const StepBillingDetails = ({ handlePrev, direction }: { handlePrev: () => void;
   return (
     <>
       <div className='mbe-5'>
-        <Typography variant='h5' className='font-semibold'>
-          Select Plan
-        </Typography>
-        <Typography variant='body2'>Select plan as per your requirement</Typography>
+        <Typography variant='h4'>Select Plan</Typography>
+        <Typography color='text.secondary'>Select plan as per your requirement</Typography>
       </div>
       <Grid container spacing={5}>
         {customInputData.map((item, index) => (
@@ -139,10 +137,8 @@ const StepBillingDetails = ({ handlePrev, direction }: { handlePrev: () => void;
         ))}
       </Grid>
       <div className='mbs-12 mbe-5'>
-        <Typography variant='h5' className='font-semibold'>
-          Payment Information
-        </Typography>
-        <Typography variant='body2'>Enter your card information</Typography>
+        <Typography variant='h4'>Payment Information</Typography>
+        <Typography color='text.secondary'>Enter your card information</Typography>
       </div>
       <Grid container spacing={5}>
         <Grid item xs={12}>

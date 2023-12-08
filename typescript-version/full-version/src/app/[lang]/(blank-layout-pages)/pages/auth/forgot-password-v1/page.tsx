@@ -10,11 +10,7 @@ import { getDirection } from '@/utils/get-direction'
 const ForgotPasswordV1Page = ({ params }: { params: { lang: Locale } }) => {
   const direction = getDirection(params.lang)
 
-  return (
-    <div className='flex h-full justify-center items-center'>
-      <ForgotPasswordV1 direction={direction} />
-    </div>
-  )
+  return <ForgotPasswordV1 direction={direction} />
 }
 
 export default ForgotPasswordV1Page

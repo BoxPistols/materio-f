@@ -44,13 +44,13 @@ const UpgradePlan = ({ open, setOpen }: UpgradePlanProps) => {
     <>
       <Dialog fullWidth open={open} onClose={handleClose}>
         <DialogTitle
-          variant='h5'
+          variant='h4'
           className={classnames('flex flex-col gap-2 text-center', styles.dialogTitle, {
             [styles.smDialogTitle]: isBelowSmScreen
           })}
         >
           Upgrade Plan
-          <Typography component='span' variant='body2' className='flex flex-col text-center'>
+          <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
             Choose the best plan for user
           </Typography>
         </DialogTitle>
@@ -80,13 +80,13 @@ const UpgradePlan = ({ open, setOpen }: UpgradePlanProps) => {
           </div>
           <Divider className='mlb-6' />
           <div className='flex flex-col gap-1'>
-            <Typography variant='body2'>User current plan is standard plan</Typography>
+            <Typography color='text.secondary'>User current plan is standard plan</Typography>
             <div className='flex items-center justify-between'>
               <div className='flex justify-center gap-1'>
-                <Typography component='sup' className='self-start' color='primary' variant='body2'>
+                <Typography component='sup' className='self-start' color='primary'>
                   $
                 </Typography>
-                <Typography component='span' color='primary' variant='h3'>
+                <Typography component='span' color='primary' variant='h1'>
                   99
                 </Typography>
                 <Typography component='sub' className='self-end' variant='body2'>

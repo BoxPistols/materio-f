@@ -54,7 +54,7 @@ const TimelineFilled = () => {
           </Typography>
           <div
             className={classnames(
-              'flex items-center gap-2.5 mbe-2.5 w-fit',
+              'flex items-center gap-2.5 w-fit',
               styles.imageWrapper,
               styles.borderRadius
             )}
@@ -89,7 +89,7 @@ const TimelineFilled = () => {
           >
             Project meeting with john @10:15am
           </Typography>
-          <div className='flex items-center mbe-2.5 gap-2.5'>
+          <div className='flex items-center gap-2.5'>
             <Avatar src='/images/avatars/1.png' className='w-8 h-8' />
             <div className='flex flex-col flex-wrap'>
               <Typography variant='body2' className='font-medium'>

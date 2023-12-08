@@ -9,7 +9,9 @@ import CardContent from '@mui/material/CardContent'
 import Stepper from '@mui/material/Stepper'
 import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
+import StepConnector from '@mui/material/StepConnector'
 import Typography from '@mui/material/Typography'
+import styled from '@mui/material/styles/styled'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import type { Theme } from '@mui/material/styles'
 
@@ -114,6 +116,12 @@ const getStepContent = (step: number, handleNext: () => void, handlePrev: () => 
   }
 }
 
+const ConnectorHeight = styled(StepConnector)(() => ({
+  '& .MuiStepConnector-line': {
+    minHeight: 20
+  }
+}))
+
 const PropertyListingWizard = ({ direction }: { direction: Direction }) => {
   // States
   const [activeStep, setActiveStep] = useState<number>(0)
@@ -141,11 +149,11 @@ const PropertyListingWizard = ({ direction }: { direction: Direction }) => {
         className={classnames({ [styles.topCardContent]: isBelowLgScreen, [styles.leftCardContent]: !isBelowLgScreen })}
       >
         <StepperWrapper className='h-full'>
-          <Stepper activeStep={activeStep} connector={<></>} orientation='vertical'>
+          <Stepper activeStep={activeStep} orientation='vertical' connector={<ConnectorHeight />}>
             {steps.map((step, index) => {
               return (
                 <Step key={index} onClick={() => setActiveStep(index)}>
-                  <StepLabel StepIconComponent={StepperCustomDot}>
+                  <StepLabel className='p-0' StepIconComponent={StepperCustomDot}>
                     <div className='step-label cursor-pointer'>
                       <Typography className='step-number'>{`0${index + 1}`}</Typography>
                       <div>

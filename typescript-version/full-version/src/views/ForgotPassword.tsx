@@ -74,7 +74,7 @@ const ForgotPasswordV2 = () => {
         <div className={classnames('absolute', styles.templateName, { '!inline-start-6': isBelowSmScreen })}>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className={commonStyles.primaryColor} height={28} width={35} />
-            <Typography variant='h5' className='font-semibold'>
+            <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>
           </div>
@@ -86,10 +86,10 @@ const ForgotPasswordV2 = () => {
           })}
         >
           <div>
-            <Typography variant='h5' className='font-semibold mbe-1'>
+            <Typography variant='h4' className='mbe-1'>
               Forgot Password 🔒
             </Typography>
-            <Typography variant='body2'>
+            <Typography color='text.secondary'>
               Enter your email and we&#39;ll send you instructions to reset your password
             </Typography>
           </div>
@@ -98,7 +98,7 @@ const ForgotPasswordV2 = () => {
             <Button fullWidth variant='contained' type='submit'>
               Send reset link
             </Button>
-            <Typography className={classnames('flex justify-center items-center', commonStyles.primaryColor)}>
+            <Typography className='flex justify-center items-center' color='primary'>
               <Link href='/login' className='flex items-center'>
                 <i className='ri-arrow-left-s-line' />
                 <span>Back to Login</span>

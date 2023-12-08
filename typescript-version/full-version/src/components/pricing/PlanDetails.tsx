@@ -50,26 +50,18 @@ const PlanDetails = ({ data, pricingPlan }: Props) => {
         />
       </div>
       <div className='text-center flex flex-col gap-1'>
-        <Typography variant='h5'>{data?.title}</Typography>
-        <Typography variant='body2'>{data?.subtitle}</Typography>
+        <Typography variant='h4'>{data?.title}</Typography>
+        <Typography color='text.secondary'>{data?.subtitle}</Typography>
       </div>
       <div className='relative mlb-3'>
         <div className='flex justify-center'>
-          <Typography
-            variant='body2'
-            component='sup'
-            className={classnames(commonStyles.textSecondary, 'self-start font-medium')}
-          >
+          <Typography color='text.secondary' component='sup' className='self-start font-medium'>
             $
           </Typography>
-          <Typography variant='h3' component='span' color='primary'>
+          <Typography variant='h1' component='span' color='primary'>
             {pricingPlan === 'monthly' ? data?.monthlyPrice : data?.yearlyPlan.monthly}
           </Typography>
-          <Typography
-            variant='body2'
-            component='sub'
-            className={classnames(commonStyles.textSecondary, 'self-end font-medium')}
-          >
+          <Typography color='text.secondary' component='sub' className='self-end font-medium'>
             /month
           </Typography>
         </div>
@@ -86,9 +78,7 @@ const PlanDetails = ({ data, pricingPlan }: Props) => {
             <span className='inline-flex'>
               <i className={classnames('ri-checkbox-blank-circle-line text-sm', commonStyles.textSecondary)} />
             </span>
-            <Typography variant='body2' className={commonStyles.textSecondary}>
-              {item}
-            </Typography>
+            <Typography color='text.secondary'>{item}</Typography>
           </div>
         ))}
       </div>

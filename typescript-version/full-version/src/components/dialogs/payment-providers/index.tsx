@@ -205,13 +205,13 @@ const PaymentProviders = ({ open, setOpen }: PaymentProvidersProps) => {
   return (
     <Dialog fullWidth open={open} onClose={() => setOpen(false)} maxWidth='md' scroll='body'>
       <DialogTitle
-        variant='h5'
+        variant='h4'
         className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
           [globalDialogStyles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Select Payment Providers
-        <Typography component='span' variant='body2' className='flex flex-col text-center'>
+        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
           Third-party payment providers
         </Typography>
       </DialogTitle>

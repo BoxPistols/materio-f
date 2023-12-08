@@ -44,19 +44,19 @@ const Pricing = ({ data }: { data: PricingPlanType[] }) => {
   return (
     <div className='flex flex-col gap-6'>
       <div className='flex flex-col justify-center items-center gap-2'>
-        <Typography variant='h4'>Pricing Plans</Typography>
+        <Typography variant='h3'>Pricing Plans</Typography>
         <div className={classnames('flex items-center text-center flex-col', styles.marginBottom)}>
-          <Typography variant='body2'>
+          <Typography color='text.secondary'>
             All plans include 40+ advanced tools and features to boost your product.
           </Typography>
-          <Typography variant='body2'>Choose the best plan to fit your needs.</Typography>
+          <Typography color='text.secondary'>Choose the best plan to fit your needs.</Typography>
         </div>
         <div className='flex justify-center items-center relative mbs-0.5'>
-          <InputLabel htmlFor='pricing-switch' className='cursor-pointer'>
+          <InputLabel htmlFor='pricing-switch' className='cursor-pointer font-medium'>
             Monthly
           </InputLabel>
           <Switch id='pricing-switch' onChange={handleChange} checked={pricingPlan === 'annually'} />
-          <InputLabel htmlFor='pricing-switch' className='cursor-pointer'>
+          <InputLabel htmlFor='pricing-switch' className='cursor-pointer font-medium'>
             Annually
           </InputLabel>
           {isAboveSmScreen && (

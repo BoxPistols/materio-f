@@ -33,9 +33,9 @@ const NotFound = () => {
     <div className='flex items-center justify-center min-bs-[100dvh] relative p-6 overflow-x-hidden'>
       <div className='flex items-center flex-col text-center gap-10'>
         <div className={classnames('flex flex-col gap-2', { [styles.viewPortWidth]: isBelowSmScreen })}>
-          <Typography variant='h1'>404</Typography>
-          <Typography variant='h5'>Page Not Found ⚠️</Typography>
-          <Typography variant='body2'>We couldn&#39;t find the page you are looking for.</Typography>
+          <Typography className='font-medium text-8xl'>404</Typography>
+          <Typography variant='h4'>Page Not Found ⚠️</Typography>
+          <Typography color='text.secondary'>We couldn&#39;t find the page you are looking for.</Typography>
         </div>
         <img
           alt='error-illustration'

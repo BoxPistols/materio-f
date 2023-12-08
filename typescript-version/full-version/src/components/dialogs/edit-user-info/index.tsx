@@ -82,13 +82,13 @@ const EditUserInfo = ({ open, setOpen, data }: EditUserInfoProps) => {
   return (
     <Dialog fullWidth open={open} onClose={handleClose} maxWidth='md' scroll='body'>
       <DialogTitle
-        variant='h5'
+        variant='h4'
         className={classnames('flex gap-2 flex-col text-center', styles.dialogTitle, {
           [styles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Edit User Information
-        <Typography component='span' variant='body2' className='flex flex-col text-center'>
+        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
           Updating user details will receive a privacy audit.
         </Typography>
       </DialogTitle>

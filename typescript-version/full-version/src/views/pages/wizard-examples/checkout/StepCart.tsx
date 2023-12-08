@@ -94,17 +94,17 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
               }
             >
               <AlertTitle>Available Offers</AlertTitle>
-              <Typography variant='body2'>
+              <Typography color='success.main'>
                 - 10% Instant Discount on Bank of America Corp Bank Debit and Credit cards
               </Typography>
-              <Typography variant='body2'>
+              <Typography color='success.main'>
                 - 25% Cashback Voucher of up to $60 on first ever PayPal transaction. TCA
               </Typography>
             </Alert>
           </Fade>
         </Collapse>
-        <Typography className={classnames(commonStyles.border, commonStyles.borderRadius)} variant='h6'>
-          My Shopping BaTypography)
+        <Typography className={commonStyles.borderRadius} variant='h5'>
+          My Shopping Bag (2 Items)
         </Typography>
         <div className={styles.border}>
           {products.map((product, index) => (
@@ -124,11 +124,11 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
                 })}
               >
                 <div className={classnames('flex flex-col gap-2', { 'items-center': isBelowSmScreen })}>
-                  <Typography>{product.productName}</Typography>
+                  <Typography className='font-medium'>{product.productName}</Typography>
                   <div className='flex items-center gap-4'>
-                    <div className='flex items-center'>
+                    <div className='flex items-center gap-1'>
                       <Typography color='text.disabled'>Sold By:</Typography>
-                      <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='text.primary'>
+                      <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='primary'>
                         {product.soldBy}
                       </Typography>
                     </div>
@@ -152,7 +152,7 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
                   })}
                 >
                   <div className='flex'>
-                    <Typography color='text.primary'>{`$${product.price}`}</Typography>
+                    <Typography color='primary'>{`$${product.price}`}</Typography>
                     <Typography
                       className='line-through'
                       color='text.secondary'
@@ -175,7 +175,7 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
             commonStyles.border,
             commonStyles.borderRadius
           )}
-          color='text.primary'
+          color='primary'
         >
           Add more products from wishlist
           <i className={direction === 'rtl' ? 'ri-arrow-left-line' : 'ri-arrow-right-line'} />
@@ -199,13 +199,12 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
               )}
             >
               <Typography className='font-medium'>Buying gift for a loved one?</Typography>
-              <Typography variant='body2'>Gift wrap and personalized message on card, Only for $2.</Typography>
+              <Typography color='text.secondary'>Gift wrap and personalized message on card, Only for $2.</Typography>
               <Typography
-                variant='body2'
                 href='/'
                 component={Link}
                 onClick={e => e.preventDefault()}
-                color='text.primary'
+                color='primary'
                 className='font-medium'
               >
                 Add a gift wrap
@@ -217,38 +216,28 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
             <Typography className='font-medium'>Price Details</Typography>
             <div className='flex flex-col gap-2'>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography variant='body2' className={commonStyles.textPrimary}>
-                  Bag Total
-                </Typography>
-                <Typography variant='body2'>$1198.00</Typography>
+                <Typography>Bag Total</Typography>
+                <Typography color='text.secondary'>$1198.00</Typography>
               </div>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography variant='body2' className={commonStyles.textPrimary}>
-                  Coup Discount
-                </Typography>
+                <Typography>Coup Discount</Typography>
                 <Typography
-                  variant='body2'
                   href='/'
                   component={Link}
                   onClick={e => e.preventDefault()}
-                  className='font-medium'
-                  color='text.primary'
+                  color='primary'
                 >
                   Apply Coupon
                 </Typography>
               </div>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography variant='body2' className={commonStyles.textPrimary}>
-                  Order Total
-                </Typography>
-                <Typography variant='body2'>$1198.00</Typography>
+                <Typography>Order Total</Typography>
+                <Typography color='text.secondary'>$1198.00</Typography>
               </div>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography variant='body2' className={commonStyles.textPrimary}>
-                  Delivery Charges
-                </Typography>
+                <Typography>Delivery Charges</Typography>
                 <div className='flex items-center gap-2'>
-                  <Typography variant='body2' className={classnames(commonStyles.textDisabled, 'line-through')}>
+                  <Typography color='text.disabled' className='line-through'>
                     $5.00
                   </Typography>
                   <Chip variant='tonal' size='small' color='success' label='Free' />

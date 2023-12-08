@@ -49,12 +49,14 @@ import type { InvoiceType } from '@/types/apps/invoiceTypes'
 
 // Component Imports
 import OptionMenu from '@core/components/option-menu'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 // Util Imports
 import { getInitials } from '@/utils/get-initials'
 
 // Style Imports
 import tableStyles from '@core/styles/table.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 declare module '@tanstack/table-core' {
   interface FilterFns {
@@ -196,36 +198,36 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
       columnHelper.accessor('invoiceStatus', {
         header: 'Status',
         cell: ({ row }) => (
-          <Avatar>
-            <i className={invoiceStatusObj[row.original.invoiceStatus].icon} />
-          </Avatar>
+          <CustomAvatar skin='light' color={invoiceStatusObj[row.original.invoiceStatus].color} size={28}>
+            <i className={classnames(invoiceStatusObj[row.original.invoiceStatus].icon, 'text-base')} />
+          </CustomAvatar>
         )
       }),
       columnHelper.accessor('name', {
         header: 'Client',
         cell: ({ row }) => (
-          <div className='flex items-center'>
+          <div className='flex items-center gap-3'>
             {getAvatar({ avatar: row.original.avatar, name: row.original.name })}
-            <div className='flex flex-col'>
-              <Typography>{row.original.name}</Typography>
-              <Typography>{row.original.companyEmail}</Typography>
+            <div className='flex flex-col gap-0.5'>
+              <Typography className='font-medium'>{row.original.name}</Typography>
+              <Typography variant='body2'>{row.original.companyEmail}</Typography>
             </div>
           </div>
         )
       }),
       columnHelper.accessor('total', {
         header: 'Total',
-        cell: ({ row }) => <Typography>{`$${row.original.total}`}</Typography>
+        cell: ({ row }) => <Typography color='text.secondary'>{`$${row.original.total}`}</Typography>
       }),
       columnHelper.accessor('issuedDate', {
         header: 'Issued Date',
-        cell: ({ row }) => <Typography>{row.original.issuedDate}</Typography>
+        cell: ({ row }) => <Typography color='text.secondary'>{row.original.issuedDate}</Typography>
       }),
       columnHelper.accessor('balance', {
         header: 'Balance',
         cell: ({ row }) => {
           return row.original.balance === 0 ? (
-            <Chip label='Paid' color='success' size='small' />
+            <Chip variant='tonal' label='Paid' color='success' size='small' />
           ) : (
             <Typography>{row.original.balance}</Typography>
           )
@@ -236,7 +238,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
         cell: ({ row }) => (
           <div className='flex items-center'>
             <IconButton>
-              <i className='ri-delete-bin-7-line text-[22px]' />
+              <i className={'ri-delete-bin-7-line text-[22px]'} />
             </IconButton>
             <IconButton>
               <Link href={`/apps/invoice/preview/${row.original.id}`} className='flex'>
@@ -245,14 +247,22 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
             </IconButton>
             <OptionMenu
               options={[
-                { text: 'Download', icon: 'ri-download-fill', menuItemProps: { className: 'flex items-center' } },
+                {
+                  text: 'Download',
+                  icon: 'ri-download-fill text-[22px]',
+                  menuItemProps: { className: `flex items-center gap-2 ${commonStyles.textSecondary}` }
+                },
                 {
                   text: 'Edit',
-                  icon: 'ri-pencil-line',
+                  icon: 'ri-pencil-line text-[22px]',
                   href: `/apps/invoice/edit/${row.original.id}`,
-                  linkProps: { className: 'flex items-center' }
+                  linkProps: { className: `flex items-center w-full plb-2 pli-4 gap-2 ${commonStyles.textSecondary}` }
                 },
-                { text: 'Duplicate', icon: 'ri-file-copy-line', menuItemProps: { className: 'flex items-center' } }
+                {
+                  text: 'Duplicate',
+                  icon: 'ri-file-copy-line text-[22px]',
+                  menuItemProps: { className: `flex items-center gap-2 ${commonStyles.textSecondary}` }
+                }
               ]}
             />
           </div>

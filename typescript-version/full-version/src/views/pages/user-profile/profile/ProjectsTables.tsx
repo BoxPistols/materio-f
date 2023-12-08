@@ -4,7 +4,6 @@
 import { useEffect, useMemo, useState } from 'react'
 
 // MUI Imports
-import Avatar from '@mui/material/Avatar'
 import AvatarGroup from '@mui/material/AvatarGroup'
 import Typography from '@mui/material/Typography'
 import LinearProgress from '@mui/material/LinearProgress'
@@ -38,6 +37,7 @@ import type { ProjectTableRowType } from '@/types/pages/profileTypes'
 
 // Component Imports
 import OptionMenu from '@core/components/option-menu'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 // Style Imports
 import tableStyles from '@core/styles/table.module.css'
@@ -127,33 +127,27 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
         )
       },
       columnHelper.accessor('title', {
-        header: 'Name',
+        header: 'Project',
         cell: ({ row }) => (
           <div className='flex items-center gap-3'>
-            <Avatar src={row.original.avatar} />
+            <CustomAvatar src={row.original.avatar} size={34} />
             <div className='flex flex-col'>
-              <Typography variant='subtitle2' className={commonStyles.textPrimary}>
-                {row.original.title}
-              </Typography>
-              <Typography variant='caption'>{row.original.subtitle}</Typography>
+              <Typography className='font-medium'>{row.original.title}</Typography>
+              <Typography variant='body2'>{row.original.subtitle}</Typography>
             </div>
           </div>
         )
       }),
       columnHelper.accessor('leader', {
         header: 'Leader',
-        cell: ({ row }) => (
-          <Typography variant='body2' className={commonStyles.textPrimary}>
-            {row.original.leader}
-          </Typography>
-        )
+        cell: ({ row }) => <Typography>{row.original.leader}</Typography>
       }),
       columnHelper.accessor('avatarGroup', {
         header: 'Team',
         cell: ({ row }) => (
           <AvatarGroup max={4} className='flex items-center'>
             {row.original.avatarGroup.map((avatar, index) => (
-              <Avatar key={index} src={avatar} />
+              <CustomAvatar key={index} src={avatar} size={26} />
             ))}
           </AvatarGroup>
         ),

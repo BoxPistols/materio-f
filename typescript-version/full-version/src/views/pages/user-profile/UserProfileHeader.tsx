@@ -47,7 +47,7 @@ const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
           })}
         >
           <div className={classnames('flex flex-col items-start gap-2', { 'items-center': isBelowSmScreen })}>
-            <Typography variant='h5'>{data?.fullName}</Typography>
+            <Typography variant='h4'>{data?.fullName}</Typography>
             <div
               className={classnames('flex flex-wrap gap-6', {
                 'justify-center': isBelowSmScreen

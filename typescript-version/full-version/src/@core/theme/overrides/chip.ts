@@ -8,13 +8,13 @@ const chip = (mode: PaletteMode): Theme['components'] => ({
       {
         props: { variant: 'filled', color: 'default' },
         style: {
-          backgroundColor: `rgb(var(--mui-mainColorChannels-${mode}) / 0.16)`
+          backgroundColor: `rgb(var(--mui-mainColorChannels-${mode}) / 0.08)`
         }
       },
       {
         props: { variant: 'tonal', color: 'default' },
         style: {
-          backgroundColor: `rgb(var(--mui-mainColorChannels-${mode}) / 0.16)`
+          backgroundColor: `rgb(var(--mui-mainColorChannels-${mode}) / 0.08)`
         }
       },
       {
@@ -99,6 +99,7 @@ const chip = (mode: PaletteMode): Theme['components'] => ({
     styleOverrides: {
       root: ({ ownerState, theme }) => ({
         fontSize: theme.typography.body2.fontSize,
+        fontWeight: theme.typography.subtitle1.fontWeight,
         lineHeight: theme.typography.subtitle2.lineHeight,
 
         '& .MuiChip-deleteIcon': {

@@ -9,15 +9,18 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import Tooltip from '@mui/material/Tooltip'
 import Chip from '@mui/material/Chip'
 
+// Third-party Imports
+import classnames from 'classnames'
+
 // Type Imports
 import type { TeamsTabType } from '@/types/pages/profileTypes'
 
 // Component Imports
+import CustomAvatar from '@core/components/mui/Avatar'
 import OptionMenu from '@core/components/option-menu'
 import Link from '@components/Link'
 
 // Style Import
-import styles from './styles.module.css'
 import commonStyles from '@/styles/common.module.css'
 
 const Teams = ({ data }: { data?: TeamsTabType[] }) => {
@@ -31,14 +34,18 @@ const Teams = ({ data }: { data?: TeamsTabType[] }) => {
                 <CardContent className='flex flex-col gap-4'>
                   <div className='flex items-center justify-between gap-2'>
                     <div className='flex items-center gap-2'>
-                      <Avatar src={item.avatar} className={styles.avatarLogo} />
-                      <Typography>{item.title}</Typography>
+                      <CustomAvatar size={38} src={item.avatar} />
+                      <Typography variant='h5'>{item.title}</Typography>
                     </div>
                     <div className='flex items-center gap-2'>
                       <IconButton size='small'>
-                        <i className='ri-star-line' />
+                        <i className={classnames('ri-star-line', commonStyles.textDisabled)} />
                       </IconButton>
                       <OptionMenu
+                        iconButtonProps={{
+                          size: 'small',
+                          className: commonStyles.textDisabled
+                        }}
                         options={[
                           'Rename Team',
                           'View Details',
@@ -49,7 +56,7 @@ const Teams = ({ data }: { data?: TeamsTabType[] }) => {
                       />
                     </div>
                   </div>
-                  <Typography className={commonStyles.textSecondary}>{item.description}</Typography>
+                  <Typography color='text.secondary'>{item.description}</Typography>
                   <div className='flex items-center justify-between flex-wrap'>
                     <AvatarGroup
                       total={item.extraMembers ? item.extraMembers + 3 : 3}

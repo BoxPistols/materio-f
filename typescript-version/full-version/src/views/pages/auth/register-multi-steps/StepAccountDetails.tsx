@@ -27,10 +27,8 @@ const StepAccountDetails = ({ handleNext, direction }: { handleNext: () => void;
   return (
     <>
       <div className='mbe-5'>
-        <Typography variant='h5' className='font-semibold'>
-          Account Information
-        </Typography>
-        <Typography variant='body2'>Enter Your Account Details</Typography>
+        <Typography variant='h4'>Account Information</Typography>
+        <Typography color='text.secondary'>Enter Your Account Details</Typography>
       </div>
       <Grid container spacing={5}>
         <Grid item xs={12} sm={6}>

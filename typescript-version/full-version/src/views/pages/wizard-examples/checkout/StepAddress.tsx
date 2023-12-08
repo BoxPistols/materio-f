@@ -39,17 +39,17 @@ const data: CustomInputHorizontalData[] = [
     isSelected: true,
     content: (
       <div className='flex flex-col h-full gap-3'>
-        <Typography variant='body2' className={commonStyles.textSecondary}>
+        <Typography variant='body2'>
           4135 Parkway Street, Los Angeles, CA, 90017.
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
         </Typography>
         <Divider />
         <div className='flex items-center gap-4 mbs-0.5'>
-          <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='text.primary'>
+          <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='primary'>
             Edit
           </Typography>
-          <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='text.primary'>
+          <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='primary'>
             Remove
           </Typography>
         </div>
@@ -62,17 +62,17 @@ const data: CustomInputHorizontalData[] = [
     value: 'office',
     content: (
       <div className='flex flex-col h-full gap-3'>
-        <Typography variant='body2' className={commonStyles.textSecondary}>
+        <Typography variant='body2'>
           87 Hoffman Avenue, New York, NY, 10016.
           <br />
           Mobile : 1234567890 Cash / Card on delivery available
         </Typography>
         <Divider />
         <div className='flex items-center gap-4 mbs-0.5'>
-          <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='text.primary'>
+          <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='primary'>
             Edit
           </Typography>
-          <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='text.primary'>
+          <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='primary'>
             Remove
           </Typography>
         </div>
@@ -184,7 +184,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
               let asset
 
               if (item.asset && typeof item.asset === 'string') {
-                asset = <i className={item.asset} />
+                asset = <i className={classnames(item.asset, 'text-[28px]')} />
               }
 
               return (
@@ -209,8 +209,8 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
             <div className='flex gap-4 items-center'>
               <img width={60} height={60} src='/images/pages/google-home.png' alt='Google Home' />
               <div>
-                <Typography variant='body2'>Google - Google Home - White</Typography>
-                <Typography variant='body2' className='font-medium'>
+                <Typography color='text.secondary'>Google - Google Home - White</Typography>
+                <Typography color='text.secondary' className='font-medium'>
                   18th Nov 2021
                 </Typography>
               </div>
@@ -218,8 +218,8 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
             <div className='flex gap-4 items-center'>
               <img width={60} height={60} src='/images/pages/iPhone-11.png' alt='iphone 11' />
               <div>
-                <Typography variant='body2'>Apple iPhone 11 (64GB, Black)</Typography>
-                <Typography variant='body2' className='font-medium'>
+                <Typography color='text.secondary'>Apple iPhone 11 (64GB, Black)</Typography>
+                <Typography color='text.secondary' className='font-medium'>
                   20th Nov 2021
                 </Typography>
               </div>
@@ -230,19 +230,13 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
             <Typography className='font-medium'>Price Details</Typography>
             <div className='flex flex-col gap-2'>
               <div className='flex gap-2 justify-between flex-wrap'>
-                <Typography variant='body2' className={commonStyles.textPrimary}>
-                  Order Total
-                </Typography>
-                <Typography variant='body2' className={commonStyles.textSecondary}>
-                  $1198.00
-                </Typography>
+                <Typography>Order Total</Typography>
+                <Typography color='text.secondary'>$1198.00</Typography>
               </div>
               <div className='flex justify-between flex-wrap'>
-                <Typography variant='body2' className={commonStyles.textPrimary}>
-                  Delivery Charges
-                </Typography>
+                <Typography>Delivery Charges</Typography>
                 <div className='flex gap-2'>
-                  <Typography variant='body2' className={classnames(commonStyles.textDisabled, 'line-through')}>
+                  <Typography color='text.disabled' className='line-through'>
                     $5.00
                   </Typography>
                   <Chip size='small' variant='tonal' color='success' label='Free' />

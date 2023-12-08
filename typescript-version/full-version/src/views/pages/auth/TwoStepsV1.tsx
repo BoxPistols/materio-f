@@ -45,15 +45,13 @@ const TwoStepsV1 = () => {
         <CardContent className='!p-12'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className={commonStyles.primaryColor} height={28} width={35} />
-            <Typography variant='h5' className='font-semibold'>
+            <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>
           </div>
           <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-1'>
-              <Typography variant='h5' className='font-semibold'>
-                Two Step Verification 💬
-              </Typography>
+              <Typography variant='h4'>Two Step Verification 💬</Typography>
               <Typography className='mbs-1' color='text.secondary'>
                 We sent a verification code to your mobile. Enter the code from the mobile in the field below.
               </Typography>

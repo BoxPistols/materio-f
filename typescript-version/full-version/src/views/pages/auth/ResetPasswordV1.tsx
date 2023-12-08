@@ -62,15 +62,13 @@ const ResetPasswordV1 = ({ direction }: { direction: Direction }) => {
         <CardContent className='!p-12'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className={classnames('h-8', commonStyles.primaryColor)} height={28} width={35} />
-            <Typography variant='h5' className='font-semibold'>
+            <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>
           </div>
-          <Typography variant='h5' className='font-semibold'>
-            Reset Password 🔒
-          </Typography>
+          <Typography variant='h4'>Reset Password 🔒</Typography>
           <div className='flex flex-col gap-5'>
-            <Typography variant='body2' className='mbs-1'>
+            <Typography color='text.secondary' className='mbs-1'>
               Your new password must be different from previously used passwords
             </Typography>
             <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>

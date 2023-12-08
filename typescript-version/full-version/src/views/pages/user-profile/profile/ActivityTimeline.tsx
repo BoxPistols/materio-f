@@ -37,6 +37,7 @@ const ActivityTimeline = () => {
       <CardHeader
         title='Activity Timeline'
         avatar={<i className={classnames('ri-bar-chart-2-line', commonStyles.textSecondary)} />}
+        titleTypographyProps={{ variant: 'h5' }}
       />
       <CardContent>
         <Timeline>
@@ -48,11 +49,11 @@ const ActivityTimeline = () => {
             <TimelineContent>
               <div className='flex items-center justify-between flex-wrap gap-x-4 pbe-1.5'>
                 <Typography className='font-medium'>12 Invoices have been paid</Typography>
-                <Typography variant='caption' className={commonStyles.textDisabled}>
+                <Typography variant='caption' color='text.disabled'>
                   12 min ago
                 </Typography>
               </div>
-              <Typography className={classnames(commonStyles.textSecondary, 'mbe-2')}>
+              <Typography className='mbe-2' color='text.secondary'>
                 Invoices have been paid to the company.
               </Typography>
               <div className='flex'>
@@ -64,8 +65,10 @@ const ActivityTimeline = () => {
                     commonStyles.borderRadius
                   )}
                 >
-                  <img alt='invoice.pdf' src='/images/pages/pdf.png' className='h-5' />
-                  <Typography className={classnames('font-medium', commonStyles.textSecondary)}>invoice.pdf</Typography>
+                  <img alt='invoice.pdf' src='/images/icons/pdf-document.png' className='h-5' />
+                  <Typography className='font-medium' color='text.secondary'>
+                    invoice.pdf
+                  </Typography>
                 </div>
               </div>
             </TimelineContent>
@@ -78,11 +81,11 @@ const ActivityTimeline = () => {
             <TimelineContent>
               <div className='flex items-center justify-between flex-wrap gap-x-4 pbe-1.5'>
                 <Typography className='font-medium'>Client Meeting</Typography>
-                <Typography variant='caption' className={commonStyles.textDisabled}>
+                <Typography variant='caption' color='text.disabled'>
                   45 min ago
                 </Typography>
               </div>
-              <Typography className={classnames(commonStyles.textSecondary, 'mbe-2')}>
+              <Typography color='text.secondary' className='mbe-2'>
                 Project meeting with john @10:15am
               </Typography>
               <div className='flex items-center gap-2.5'>
@@ -104,17 +107,17 @@ const ActivityTimeline = () => {
             <TimelineContent>
               <div className='flex items-center justify-between flex-wrap gap-x-4 pbe-1.5'>
                 <Typography className='font-medium'>Create a new project for client</Typography>
-                <Typography variant='caption' className={commonStyles.textDisabled}>
+                <Typography variant='caption' color='text.disabled'>
                   2 Day Ago
                 </Typography>
               </div>
-              <Typography className={classnames(commonStyles.textSecondary, 'mbe-2')}>
+              <Typography color='text.secondary' className='mbe-2'>
                 6 team members in a project
               </Typography>
               <AvatarGroup total={6}>
                 <Avatar alt='Remy Sharp' src='/images/avatars/1.png' />
-                <Avatar alt='Travis Howard' src='/images/avatars/2.png' />
-                <Avatar alt='Cindy Baker' src='/images/avatars/3.png' />
+                <Avatar alt='Travis Howard' src='/images/avatars/8.png' />
+                <Avatar alt='Cindy Baker' src='/images/avatars/6.png' />
               </AvatarGroup>
             </TimelineContent>
           </TimelineItem>

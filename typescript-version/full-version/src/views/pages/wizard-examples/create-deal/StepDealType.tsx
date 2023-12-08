@@ -96,7 +96,7 @@ const StepDealType = ({ activeStep, handleNext, handlePrev, steps, direction }: 
         let asset
 
         if (item.asset && typeof item.asset === 'string') {
-          asset = <i className={item.asset} />
+          asset = <i className={classnames(item.asset, 'text-[28px]')} />
         }
 
         return (
@@ -167,8 +167,8 @@ const StepDealType = ({ activeStep, handleNext, handlePrev, steps, direction }: 
                   activeStep === steps.length - 1
                     ? 'ri-check-line'
                     : direction === 'rtl'
-                    ? 'ri-arrow-left-line'
-                    : 'ri-arrow-right-line'
+                      ? 'ri-arrow-left-line'
+                      : 'ri-arrow-right-line'
                 }
               />
             }

@@ -69,13 +69,13 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
   return (
     <Dialog fullWidth open={open} onClose={() => setOpen(false)} maxWidth='md' scroll='body'>
       <DialogTitle
-        variant='h5'
+        variant='h4'
         className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
           [globalDialogStyles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Refer & Earn
-        <Typography component='span' variant='body2' className='flex flex-col text-center'>
+        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
           Invite your friend to {themeConfig.templateName}, if they sign up, you and your friend will get 30 days free
           trial
         </Typography>
@@ -106,19 +106,19 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
                 </CustomAvatar>
                 <div className='flex flex-col gap-2 text-center'>
                   <Typography className='font-medium'>{option.title}</Typography>
-                  <Typography variant='body2'>{option.subtitle}</Typography>
+                  <Typography color='text.secondary'>{option.subtitle}</Typography>
                 </div>
               </div>
             </Grid>
           ))}
         </Grid>
-        <Divider className='mlb-6' />
+        <Divider className='mbs-6' />
         <div className='flex flex-col gap-5'>
-          <Typography variant='h6'>Invite your friends</Typography>
+          <Typography variant='h5'>Invite your friends</Typography>
           <div className='inline-flex flex-col gap-2 flex-wrap items-start'>
             <Typography
               component={InputLabel}
-              variant='body2'
+              color='text.secondary'
               htmlFor='refer-email'
               className='inline-flex whitespace-break-spaces'
             >
@@ -133,11 +133,11 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
           </div>
         </div>
         <div className='flex flex-col gap-5'>
-          <Typography variant='h6'>Share the referral link</Typography>
+          <Typography variant='h5'>Share the referral link</Typography>
           <div className='inline-flex flex-col gap-2 items-start'>
             <Typography
               component={InputLabel}
-              variant='body2'
+              color='text.secondary'
               htmlFor='refer-social'
               className='inline-flex whitespace-break-spaces'
             >
@@ -155,7 +155,7 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
                 className='pie-1'
                 placeholder='http://referral.link'
                 endAdornment={
-                  <InputAdornment position='end'>
+                  <InputAdornment position='end' className={commonStyles.primaryColor}>
                     <Button size='small' className='uppercase'>
                       Copy Link
                     </Button>
@@ -164,13 +164,13 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
               />
               <div className='flex items-center gap-1'>
                 <Button className={classnames('p-2 min-w-0', styles.facebookIcon, commonStyles.borderRadius)}>
-                  <i className='ri-facebook-circle-fill' />
+                  <i className='ri-facebook-circle-line' />
                 </Button>
                 <Button className={classnames('p-2 min-w-0', styles.twitterIcon, commonStyles.borderRadius)}>
-                  <i className='ri-twitter-fill' />
+                  <i className='ri-twitter-line' />
                 </Button>
                 <Button className={classnames('p-2 min-w-0', styles.linkedinIcon, commonStyles.borderRadius)}>
-                  <i className='ri-linkedin-box-fill' />
+                  <i className='ri-linkedin-line' />
                 </Button>
               </div>
             </div>

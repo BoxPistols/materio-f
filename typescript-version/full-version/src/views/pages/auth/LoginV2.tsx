@@ -87,7 +87,7 @@ const LoginV2 = () => {
         <div className={classnames('absolute', styles.templateName, { '!inline-start-6': isBelowSmScreen })}>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className={commonStyles.primaryColor} height={28} width={35} />
-            <Typography variant='h5' className='font-semibold'>
+            <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>
           </div>
@@ -99,10 +99,8 @@ const LoginV2 = () => {
           })}
         >
           <div>
-            <Typography variant='h5' className='font-semibold mbe-1'>
-              Welcome to Master! 👋🏻
-            </Typography>
-            <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
+            <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}!👋🏻`}</Typography>
+            <Typography color='text.secondary'>Please sign-in to your account and start the adventure</Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
             <TextField autoFocus fullWidth label='Email' />
@@ -122,13 +120,7 @@ const LoginV2 = () => {
             />
             <div className='flex justify-between items-center flex-wrap gap-x-3 gap-y-1'>
               <FormControlLabel control={<Checkbox />} label='Remember me' />
-              <Typography
-                variant='body2'
-                className='text-end'
-                color='primary'
-                component={Link}
-                href='/pages/auth/forgot-password-v2'
-              >
+              <Typography className='text-end' color='primary' component={Link} href='/pages/auth/forgot-password-v2'>
                 Forgot password?
               </Typography>
             </div>

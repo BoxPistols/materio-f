@@ -100,14 +100,14 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
   return (
     <Dialog fullWidth maxWidth='md' scroll='body' open={open} onClose={handleClose}>
       <DialogTitle
-        variant='h5'
+        variant='h4'
         className={classnames('flex flex-col gap-2 text-center', globalStyles.dialogTitle, {
           [globalStyles.smDialogTitle]: isBelowSmScreen
         })}
       >
-        Upgrade Plan
-        <Typography component='span' variant='body2' className='flex flex-col text-center'>
-          Choose the best plan for user
+        Edit Role
+        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+          Set Role Permissions
         </Typography>
       </DialogTitle>
       <form onSubmit={e => e.preventDefault()}>

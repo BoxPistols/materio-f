@@ -24,9 +24,6 @@ import type { FaqType } from '@/types/pages/faqTypes'
 import CustomAvatar from '@core/components/mui/Avatar'
 import CustomTabList from '@core/components/mui/TabList'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 type props = {
   faqData: FaqType[]
   searchValue: string
@@ -74,7 +71,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
                 key={index}
                 label={faq.title}
                 value={faq.id}
-                icon={<i className={classnames(faq.icon, '!mbe-0 mie-1.5 text-lg')} />}
+                icon={<i className={classnames(faq.icon, '!mbe-0 mie-1.5')} />}
                 className='flex-row justify-start'
               />
             ))}
@@ -91,8 +88,8 @@ const FAQ = ({ faqData, searchValue }: props) => {
                   <i className={classnames(faq.icon, 'text-3xl')} />
                 </CustomAvatar>
                 <div>
-                  <Typography variant='h6'>{faq.title}</Typography>
-                  <Typography className={commonStyles.textSecondary}>{faq.subtitle}</Typography>
+                  <Typography variant='h5'>{faq.title}</Typography>
+                  <Typography color='text.secondary'>{faq.subtitle}</Typography>
                 </div>
               </div>
               <div>
@@ -105,7 +102,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
                       <Typography>{items.question}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                      <Typography variant='body2'>{items.answer}</Typography>
+                      <Typography>{items.answer}</Typography>
                     </AccordionDetails>
                   </Accordion>
                 ))}

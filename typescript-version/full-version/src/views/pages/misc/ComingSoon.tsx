@@ -34,8 +34,8 @@ const ComingSoon = () => {
         <div className='flex items-center flex-col text-center gap-10'>
           <div className={classnames({ [styles.viewPortWidth]: isBelowSmScreen })}>
             <div className='flex flex-col gap-2'>
-              <Typography variant='h5'>We are launching soon 🚀</Typography>
-              <Typography variant='body2' className='mbe-10'>
+              <Typography variant='h4'>We are launching soon 🚀</Typography>
+              <Typography className='mbe-10' color='text.secondary'>
                 Our website is opening soon. Please register to get notified when it&#39;s ready!
               </Typography>
             </div>

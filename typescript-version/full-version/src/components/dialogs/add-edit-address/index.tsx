@@ -100,13 +100,13 @@ const AddEditAddress = ({ open, setOpen, data }: AddEditAddressProps) => {
       }}
     >
       <DialogTitle
-        variant='h5'
+        variant='h4'
         className={classnames('flex gap-2 flex-col text-center', styles.dialogTitle, {
           [styles.smDialogTitle]: isBelowSmScreen
         })}
       >
         {data ? 'Edit Address' : 'Add New Address'}
-        <Typography component='span' variant='body2' className='flex flex-col text-center'>
+        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
           {data ? 'Edit Address for future billing' : 'Add address for billing address'}
         </Typography>
       </DialogTitle>
@@ -124,7 +124,7 @@ const AddEditAddress = ({ open, setOpen, data }: AddEditAddressProps) => {
               let asset
 
               if (item.asset && typeof item.asset === 'string') {
-                asset = <i className={item.asset} />
+                asset = <i className={classnames(item.asset, 'text-[28px]')} />
               }
 
               return (

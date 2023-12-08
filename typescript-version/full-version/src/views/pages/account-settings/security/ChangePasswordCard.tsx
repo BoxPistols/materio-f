@@ -99,7 +99,9 @@ const ChangePasswordCard = () => {
               />
             </Grid>
             <Grid item xs={12} className='flex flex-col gap-4'>
-              <Typography className={commonStyles.textSecondary}>Password Requirements:</Typography>
+              <Typography variant='h6' color='text.secondary'>
+                Password Requirements:
+              </Typography>
               <div className='flex flex-col gap-4'>
                 <div className={classnames('flex items-center gap-2.5', commonStyles.textSecondary)}>
                   <i className='ri-checkbox-blank-circle-fill text-[8px]' />

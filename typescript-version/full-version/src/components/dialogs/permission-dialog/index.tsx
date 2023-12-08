@@ -106,12 +106,13 @@ const PermissionDialog = ({ open, setOpen, data }: PermissionDialogProps) => {
   return (
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle
+        variant='h4'
         className={classnames('flex flex-col gap-2 text-center', styles.dialogTitle, {
           [styles.smDialogTitle]: isBelowSmScreen
         })}
       >
         {data ? 'Edit Permission' : 'Add New Permission'}
-        <Typography component='span' className='flex flex-col text-center'>
+        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
           {data ? 'Edit permission as per your requirements.' : 'Permissions you may use and assign to your users.'}
         </Typography>
       </DialogTitle>

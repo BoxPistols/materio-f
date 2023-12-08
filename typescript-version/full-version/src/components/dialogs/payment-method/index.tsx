@@ -77,13 +77,13 @@ const PaymentMethod = ({ open, setOpen }: PaymentMethodProps) => {
   return (
     <Dialog fullWidth open={open} onClose={() => setOpen(false)} maxWidth='sm' scroll='body'>
       <DialogTitle
-        variant='h5'
+        variant='h4'
         className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
           [globalDialogStyles.smDialogTitle]: isBelowSmScreen
         })}
       >
         Select Payment Methods
-        <Typography component='span' variant='body2' className='flex flex-col items-center'>
+        <Typography component='span' color='text.secondary' className='flex flex-col items-center'>
           Supported payment methods
         </Typography>
       </DialogTitle>
@@ -114,7 +114,7 @@ const PaymentMethod = ({ open, setOpen }: PaymentMethodProps) => {
                 </Avatar>
                 <Typography className='font-medium'>{card.cardName}</Typography>
               </div>
-              <Typography>{card.cardType}</Typography>
+              <Typography color='text.secondary'>{card.cardType}</Typography>
             </div>
           ))}
         </div>

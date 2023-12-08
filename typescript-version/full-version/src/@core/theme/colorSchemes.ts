@@ -89,7 +89,7 @@ const colorSchemes = (skin: Skin): Theme['colorSchemes'] => {
         },
         action: {
           active: `rgb(var(--mui-mainColorChannels-light) / 0.6)`,
-          hover: `rgb(var(--mui-mainColorChannels-light) / 0.06)`,
+          hover: `rgb(var(--mui-mainColorChannels-light) / 0.04)`,
           selected: `rgb(var(--mui-mainColorChannels-light) / 0.08)`,
           disabled: `rgb(var(--mui-mainColorChannels-light) / 0.3)`,
           disabledBackground: `rgb(var(--mui-mainColorChannels-light) / 0.12)`,
@@ -249,7 +249,7 @@ const colorSchemes = (skin: Skin): Theme['colorSchemes'] => {
         },
         action: {
           active: `rgb(var(--mui-mainColorChannels-dark) / 0.6)`,
-          hover: `rgb(var(--mui-mainColorChannels-dark) / 0.06)`,
+          hover: `rgb(var(--mui-mainColorChannels-dark) / 0.04)`,
           selected: `rgb(var(--mui-mainColorChannels-dark) / 0.08)`,
           disabled: `rgb(var(--mui-mainColorChannels-dark) / 0.3)`,
           disabledBackground: `rgb(var(--mui-mainColorChannels-dark) / 0.12)`,

@@ -313,7 +313,7 @@ export const db: DB = {
       {
         extraMembers: 7,
         title: 'Digital Marketing',
-        avatar: '/images/logos/marketing-bg.png',
+        avatar: '/images/icons/social-bg.png',
         avatarGroup: [
           { avatar: '/images/avatars/1.png', name: 'Kim Merchent' },
           { avatar: '/images/avatars/2.png', name: "Sam D'souza" },
@@ -431,7 +431,7 @@ export const db: DB = {
         members: '280 members',
         title: 'Social Banners',
         client: 'Christian Jimenez',
-        avatar: '/images/logos/social-bg.png',
+        avatar: '/images/icons/social-bg.png',
         description: 'We are Consulting, Software Development and Web Development Services.',
         avatarGroup: [
           { avatar: '/images/avatars/1.png', name: 'Vinnie Mostowy' },
