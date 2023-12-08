@@ -80,10 +80,11 @@ const button: Theme['components'] = {
           }
         })
       }),
-      sizeSmall: {
+      sizeSmall: ({ theme }) => ({
         lineHeight: 1.38462,
+        fontSize: theme.typography.body2.fontSize,
         borderRadius: 'var(--mui-shape-customBorderRadius-sm)'
-      },
+      }),
       sizeLarge: {
         fontSize: '1.0625rem',
         lineHeight: 1.529412,

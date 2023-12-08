@@ -56,6 +56,7 @@ import { getInitials } from '@/utils/get-initials'
 // Style Imports
 import styles from './styles.module.css'
 import tableStyles from '@core/styles/table.module.css'
+import commonStyles from '@/styles/common.module.css'
 
 declare module '@tanstack/table-core' {
   interface FilterFns {
@@ -192,7 +193,6 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
         header: '#',
         cell: ({ row }) => (
           <Typography
-            variant='body2'
             component={Link}
             href={`/apps/invoice/preview/${row.original.id}`}
             color='primary'
@@ -212,22 +212,22 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
         cell: ({ row }) => (
           <div className='flex items-center gap-3'>
             {getAvatar({ avatar: row.original.avatar, name: row.original.name })}
-            <div className='flex flex-col gap-2'>
-              <Typography variant='body2' className='font-medium' color='text.primary'>
+            <div className='flex flex-col'>
+              <Typography className='font-medium' color='text.primary'>
                 {row.original.name}
               </Typography>
-              <Typography variant='caption'>{row.original.companyEmail}</Typography>
+              <Typography variant='body2'>{row.original.companyEmail}</Typography>
             </div>
           </div>
         )
       }),
       columnHelper.accessor('total', {
         header: 'Total',
-        cell: ({ row }) => <Typography variant='body2'>{`$${row.original.total}`}</Typography>
+        cell: ({ row }) => <Typography color='text.secondary'>{`$${row.original.total}`}</Typography>
       }),
       columnHelper.accessor('issuedDate', {
         header: 'Issued Date',
-        cell: ({ row }) => <Typography variant='body2'>{row.original.issuedDate}</Typography>
+        cell: ({ row }) => <Typography color='text.secondary'>{row.original.issuedDate}</Typography>
       }),
       columnHelper.accessor('balance', {
         header: 'Balance',
@@ -235,9 +235,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
           return row.original.balance === 0 ? (
             <Chip label='Paid' color='success' size='small' variant='tonal' />
           ) : (
-            <Typography variant='body2' color='text.primary'>
-              {row.original.balance}
-            </Typography>
+            <Typography>{row.original.balance}</Typography>
           )
         }
       }),
@@ -254,18 +252,23 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
               </Link>
             </IconButton>
             <OptionMenu
+              icon='ri-more-2-line text-[22px]'
               options={[
-                { text: 'Download', icon: 'ri-download-fill', menuItemProps: { className: 'flex items-center gap-2' } },
+                {
+                  text: 'Download',
+                  icon: 'ri-download-fill text-[22px]',
+                  menuItemProps: { className: `flex items-center gap-2 ${commonStyles.textSecondary}` }
+                },
                 {
                   text: 'Edit',
-                  icon: 'ri-pencil-line',
+                  icon: 'ri-pencil-line text-[22px]',
                   href: `/apps/invoice/edit/${row.original.id}`,
-                  linkProps: { className: 'flex items-center w-full plb-2 pli-4 gap-2' }
+                  linkProps: { className: `flex items-center w-full plb-2 pli-4 gap-2 ${commonStyles.textSecondary}` }
                 },
                 {
                   text: 'Duplicate',
-                  icon: 'ri-file-copy-line',
-                  menuItemProps: { className: 'flex items-center gap-2' }
+                  icon: 'ri-file-copy-line text-[22px]',
+                  menuItemProps: { className: `flex items-center gap-2 ${commonStyles.textSecondary}` }
                 }
               ]}
             />

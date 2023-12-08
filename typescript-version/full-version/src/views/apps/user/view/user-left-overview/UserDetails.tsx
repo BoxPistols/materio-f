@@ -57,7 +57,7 @@ const UserDetails = () => {
                   variant='rounded'
                   className={styles.avatarImage}
                 />
-                <Typography variant='h6'>{`${userData.firstName} ${userData.lastName}`}</Typography>
+                <Typography variant='h5'>{`${userData.firstName} ${userData.lastName}`}</Typography>
               </div>
               <Chip label='Subscriber' color='error' size='small' variant='tonal' />
             </div>
@@ -67,8 +67,8 @@ const UserDetails = () => {
                   <i className={classnames('ri-check-line', styles.iconSize)} />
                 </CustomAvatar>
                 <div>
-                  <Typography variant='h6'>1.23k</Typography>
-                  <Typography variant='body2'>Task Done</Typography>
+                  <Typography variant='h5'>1.23k</Typography>
+                  <Typography>Task Done</Typography>
                 </div>
               </div>
               <div className='flex items-center gap-4'>
@@ -76,46 +76,46 @@ const UserDetails = () => {
                   <i className={classnames('ri-star-line', styles.iconSize)} />
                 </CustomAvatar>
                 <div>
-                  <Typography variant='h6'>568</Typography>
-                  <Typography variant='body2'>Project Done</Typography>
+                  <Typography variant='h5'>568</Typography>
+                  <Typography>Project Done</Typography>
                 </div>
               </div>
             </div>
           </div>
           <div>
-            <Typography variant='h6'>Details</Typography>
+            <Typography variant='h5'>Details</Typography>
             <Divider className='mlb-4' />
             <div className='flex flex-col gap-2'>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography>Username:</Typography>
+                <Typography className='font-medium'>Username:</Typography>
                 <Typography>{userData.userName}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography>Billing Email:</Typography>
+                <Typography className='font-medium'>Billing Email:</Typography>
                 <Typography>{userData.billingEmail}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography>Status</Typography>
+                <Typography className='font-medium'>Status</Typography>
                 <Typography>{userData.status}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography>Role:</Typography>
+                <Typography className='font-medium'>Role:</Typography>
                 <Typography>{userData.role}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography>Tax ID:</Typography>
+                <Typography className='font-medium'>Tax ID:</Typography>
                 <Typography>{userData.taxId}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography>Contact:</Typography>
+                <Typography className='font-medium'>Contact:</Typography>
                 <Typography>{userData.contact}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography>Language:</Typography>
+                <Typography className='font-medium'>Language:</Typography>
                 <Typography>{userData.language}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography>Country:</Typography>
+                <Typography className='font-medium'>Country:</Typography>
                 <Typography>{userData.country}</Typography>
               </div>
             </div>

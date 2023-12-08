@@ -12,9 +12,6 @@ import Typography from '@mui/material/Typography'
 import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 type ConnectedAccountsType = {
   title: string
   logo: string
@@ -100,15 +97,16 @@ const ConnectionsTab = () => {
           <CardHeader
             title='Connected Accounts'
             subheader='Display content from your connected accounts on your site'
+            subheaderTypographyProps={{ className: 'm-0' }}
           />
           <CardContent className='flex flex-col gap-4'>
             {connectedAccountsArr.map((item, index) => (
-              <div key={index} className='flex items-center justify-between'>
+              <div key={index} className='flex items-center justify-between gap-4'>
                 <div className='flex flex-grow items-center gap-4'>
                   <img height={36} width={36} src={item.logo} alt={item.title} />
-                  <div className='flex-grow'>
+                  <div className='flex flex-col flex-grow gap-0.5'>
                     <Typography className='font-medium'>{item.title}</Typography>
-                    <Typography variant='body2'>{item.subtitle}</Typography>
+                    <Typography color='text.secondary'>{item.subtitle}</Typography>
                   </div>
                 </div>
                 <Switch defaultChecked={item.checked} />
@@ -121,28 +119,26 @@ const ConnectionsTab = () => {
         <Card>
           <CardHeader
             title='Social Accounts'
-            titleTypographyProps={{ variant: 'h6' }}
             subheader='Display content from social accounts on your site'
+            subheaderTypographyProps={{ className: 'm-0' }}
           />
           <CardContent className='flex flex-col gap-4'>
             {socialAccountsArr.map((item, index) => (
-              <div key={index} className='flex items-center justify-between'>
+              <div key={index} className='flex items-center justify-between gap-4'>
                 <div className='flex flex-grow items-center gap-4'>
                   <img height={36} width={36} src={item.logo} alt={item.title} />
-                  <div className='flex-grow'>
+                  <div className='flex flex-col flex-grow gap-0.5'>
                     <Typography href='/' component={Link} onClick={e => e.preventDefault()} className='font-medium'>
                       {item.title}
                     </Typography>
                     {item.isConnected ? (
-                      <Typography variant='body2' className={commonStyles.primaryColor}>
-                        {item.username}
-                      </Typography>
+                      <Typography color='text.secondary'>{item.username}</Typography>
                     ) : (
-                      <Typography variant='body2'>Not Connected</Typography>
+                      <Typography color='text.secondary'>Not Connected</Typography>
                     )}
                   </div>
                 </div>
-                <Button variant='outlined' color='secondary'>
+                <Button variant='outlined' color='secondary' className='p-1.5 is-[38px] bs-[38px] min-w-0'>
                   <i className={item.isConnected ? 'ri-delete-bin-7-line' : 'ri-link-m'} />
                 </Button>
               </div>

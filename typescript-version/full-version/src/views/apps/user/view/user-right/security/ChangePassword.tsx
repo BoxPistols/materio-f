@@ -22,7 +22,7 @@ const ChangePassword = () => {
 
   return (
     <Card>
-      <CardHeader title='Change Password' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Change Password' />
       <CardContent className='flex flex-col gap-4'>
         <Alert icon={false} severity='warning' onClose={() => {}}>
           <AlertTitle>Ensure that these requirements are met</AlertTitle>

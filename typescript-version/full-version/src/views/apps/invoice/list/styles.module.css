@@ -20,3 +20,8 @@
   inline-size: 1rem;
   block-size: 1rem;
 }
+
+.avatarSize {
+  inline-size: 42px;
+  block-size: 42px;
+}

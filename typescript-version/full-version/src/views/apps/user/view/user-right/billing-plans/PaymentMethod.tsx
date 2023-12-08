@@ -104,7 +104,6 @@ const PaymentMethod = () => {
       <Card>
         <CardHeader
           title='Payment Methods'
-          titleTypographyProps={{ variant: 'h6' }}
           action={<OpenDialogOnElementClick element={Button} elementProps={addButtonProps} dialog={BillingCard} />}
         />
         <CardContent className='flex flex-col gap-4'>
@@ -123,12 +122,12 @@ const PaymentMethod = () => {
               <div className='flex flex-col items-start gap-2'>
                 <img src={item.imgSrc} alt={item.imgAlt} height={25} />
                 <div className='flex items-center gap-2'>
-                  <Typography>{item.name}</Typography>
+                  <Typography className='font-medium'>{item.name}</Typography>
                   {item.cardStatus ? (
                     <Chip color={item.badgeColor} label={item.cardStatus} size='small' variant='tonal' />
                   ) : null}
                 </div>
-                <Typography variant='body2'>
+                <Typography>
                   {item.cardNumber && item.cardNumber.slice(0, -4).replace(/[0-9]/g, '*') + item.cardNumber.slice(-4)}
                 </Typography>
               </div>

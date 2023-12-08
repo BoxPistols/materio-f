@@ -18,6 +18,9 @@
 
   th {
     font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: 0.2px;
+    line-height: 1.8462;
     text-align: start;
     block-size: 56px;
     background-color: var(--mui-palette-customColors-tableHeaderBg);
@@ -46,7 +49,8 @@
 
   th,
   td {
-    line-height: 1.428;
+    font-size: 0.9375rem;
+    line-height: 1.4667;
     block-size: 50px;
     &:not(:first-of-type):not(:last-of-type) {
       padding-block: 0.5rem;

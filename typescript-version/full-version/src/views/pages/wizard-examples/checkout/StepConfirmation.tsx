@@ -161,7 +161,6 @@ const StepConfirmation = () => {
                 <div className='flex items-center'>
                   <Typography color='primary'>{`$${product.price}`}</Typography>
                   <Typography
-                    variant='body1'
                     color='text.disabled'
                     className='line-through'
                   >{`/$${product.originalPrice}`}</Typography>

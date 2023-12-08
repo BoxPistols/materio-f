@@ -207,7 +207,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
       sx={{ '& .MuiDrawer-paper': { width: ['100%', 400] } }}
     >
       <Box className={classnames('flex justify-between sidebar-header', styles.addEventSidebar)}>
-        <Typography variant='h6'>
+        <Typography variant='h5'>
           {calendars.selectedEvent && calendars.selectedEvent.title.length ? 'Update Event' : 'Add Event'}
         </Typography>
         {calendars.selectedEvent && calendars.selectedEvent.title.length ? (

@@ -10,12 +10,8 @@ import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Styles Imports
 import tableStyles from '@core/styles/table.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 type TableDataType = {
   type: string
@@ -54,12 +50,10 @@ const tableData: TableDataType[] = [
 const NotificationsTab = () => {
   return (
     <Card>
-      <CardHeader title='Notifications' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Notifications' />
       <Divider />
       <CardContent>
-        <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
-          You will receive notification for the below selected items.
-        </Typography>
+        <Typography className='font-medium'>You will receive notification for the below selected items.</Typography>
       </CardContent>
       <Divider />
       <div className='overflow-x-auto'>
@@ -76,9 +70,7 @@ const NotificationsTab = () => {
             {tableData.map((data, index) => (
               <tr key={index}>
                 <td>
-                  <Typography variant='body2' className={commonStyles.textPrimary}>
-                    {data.type}
-                  </Typography>
+                  <Typography>{data.type}</Typography>
                 </td>
                 <td>
                   <Checkbox defaultChecked={data.app} />

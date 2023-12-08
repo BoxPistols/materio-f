@@ -31,48 +31,38 @@ const UserPlan = () => {
           <div className='flex justify-between'>
             <Chip label='standard' size='small' color='primary' variant='tonal' />
             <div className='flex justify-center'>
-              <Typography component='sup' className={classnames('self-end', commonStyles.primaryColor)} variant='h6'>
+              <Typography variant='h5' component='sup' className='self-start' color='primary'>
                 $
               </Typography>
-              <Typography component='span' variant='h3' className={commonStyles.primaryColor}>
+              <Typography component='span' variant='h1' color='primary'>
                 99
               </Typography>
-              <Typography component='sub' className={classnames('self-end', commonStyles.textPrimary)} variant='body2'>
+              <Typography component='sub' className='self-end' color='text.primaryColor'>
                 /month
               </Typography>
             </div>
           </div>
-          <div>
+          <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-2'>
               <i className={classnames('ri-circle-fill text-[10px]', commonStyles.textSecondary)} />
-              <Typography component='span' variant='body2'>
-                10 Users
-              </Typography>
+              <Typography component='span'>10 Users</Typography>
             </div>
             <div className='flex items-center gap-2'>
               <i className={classnames('ri-circle-fill text-[10px]', commonStyles.textSecondary)} />
-              <Typography component='span' variant='body2'>
-                Up to 10 GB storage
-              </Typography>
+              <Typography component='span'>Up to 10 GB storage</Typography>
             </div>
             <div className='flex items-center gap-2'>
               <i className={classnames('ri-circle-fill text-[10px]', commonStyles.textSecondary)} />
-              <Typography component='span' variant='body2'>
-                Basic Support
-              </Typography>
+              <Typography component='span'>Basic Support</Typography>
             </div>
           </div>
           <div className='flex flex-col gap-1'>
             <div className='flex items-center justify-between'>
-              <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
-                Days
-              </Typography>
-              <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
-                65%
-              </Typography>
+              <Typography className='font-medium'>Days</Typography>
+              <Typography className='font-medium'>65%</Typography>
             </div>
             <LinearProgress variant='determinate' value={65} />
-            <Typography variant='caption'>4 days remaining</Typography>
+            <Typography variant='body2'>4 days remaining</Typography>
           </div>
           <OpenDialogOnElementClick element={Button} elementProps={buttonProps} dialog={UpgradePlan} />
         </CardContent>

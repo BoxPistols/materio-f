@@ -36,7 +36,6 @@ import type { ThemeColor } from '@core/types'
 
 // Style Imports
 import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 import tableStyles from '@core/styles/table.module.css'
 
 type ProjectListDataType = {
@@ -190,30 +189,23 @@ const ProjectListTable = () => {
           <div className='flex items-center gap-4'>
             <Avatar src={row.original.img} className={styles.avatarSize} />
             <div className='flex flex-col'>
-              <Typography variant='body2' className={classnames('font-medium', commonStyles.textPrimary)}>
+              <Typography className='font-medium' color='text.primary'>
                 {row.original.projectTitle}
               </Typography>
-              <Typography variant='caption'>{row.original.projectType}</Typography>
+              <Typography variant='body2'>{row.original.projectType}</Typography>
             </div>
           </div>
         )
       }),
       columnHelper.accessor('totalTask', {
         header: 'Total Task',
-        cell: ({ row }) => (
-          <Typography variant='body2' className={commonStyles.textPrimary}>
-            {row.original.totalTask}
-          </Typography>
-        )
+        cell: ({ row }) => <Typography>{row.original.totalTask}</Typography>
       }),
       columnHelper.accessor('progressValue', {
         header: 'Progress',
         cell: ({ row }) => (
           <>
-            <Typography
-              variant='subtitle2'
-              className={commonStyles.textPrimary}
-            >{`${row.original.progressValue}%`}</Typography>
+            <Typography>{`${row.original.progressValue}%`}</Typography>
             <LinearProgress
               color={row.original.progressColor}
               value={row.original.progressValue}
@@ -225,7 +217,7 @@ const ProjectListTable = () => {
       }),
       columnHelper.accessor('hours', {
         header: 'Hours',
-        cell: ({ row }) => <Typography variant='body2'>{row.original.hours}</Typography>
+        cell: ({ row }) => <Typography color='text.secondary'>{row.original.hours}</Typography>
       })
     ],
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -265,7 +257,6 @@ const ProjectListTable = () => {
     <Card>
       <CardHeader
         title='Project List'
-        titleTypographyProps={{ variant: 'h6' }}
         action={
           <DebouncedInput
             value={globalFilter ?? ''}

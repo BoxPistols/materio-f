@@ -16,7 +16,7 @@ const Roles = ({ userData }: { userData?: UsersType[] }) => {
         <Typography variant='h5' className='mbe-1'>
           Roles List
         </Typography>
-        <Typography variant='body2'>
+        <Typography color='text.secondary'>
           A role provided access to predefined menus and features so that depending on assigned role an administrator
           can have access to what he need
         </Typography>
@@ -28,7 +28,7 @@ const Roles = ({ userData }: { userData?: UsersType[] }) => {
         <Typography variant='h5' className='mbe-1'>
           Total users with their roles
         </Typography>
-        <Typography variant='body2'>
+        <Typography color='text.secondary'>
           Find all of your company&#39;s administrator accounts and their associate roles.
         </Typography>
       </Grid>

@@ -77,7 +77,7 @@ const AddUserDrawer = ({ open, handleClose }: Props) => {
       sx={{ '& .MuiDrawer-paper': { width: { xs: 300, sm: 400 } } }}
     >
       <div className='flex items-center justify-between p-5'>
-        <Typography variant='h6'>Add New User</Typography>
+        <Typography variant='h5'>Add New User</Typography>
         <IconButton onClick={handleReset}>
           <i className='ri-close-line' />
         </IconButton>

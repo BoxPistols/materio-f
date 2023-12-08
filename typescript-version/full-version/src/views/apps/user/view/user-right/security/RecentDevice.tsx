@@ -43,7 +43,7 @@ const recentDeviceData: DataType[] = [
 const RecentDevice = () => {
   return (
     <Card>
-      <CardHeader title='Recent Devices' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='Recent Devices' />
       <table className={tableStyles.table}>
         <thead className={tableStyles.thead}>
           <tr>
@@ -63,13 +63,13 @@ const RecentDevice = () => {
                 </div>
               </td>
               <td>
-                <Typography variant='body2'>{device.device}</Typography>
+                <Typography color='text.secondary'>{device.device}</Typography>
               </td>
               <td>
-                <Typography variant='body2'>{device.location}</Typography>
+                <Typography color='text.secondary'>{device.location}</Typography>
               </td>
               <td>
-                <Typography variant='body2'>{device.recentActivity}</Typography>
+                <Typography color='text.secondary'>{device.recentActivity}</Typography>
               </td>
             </tr>
           ))}

@@ -88,6 +88,11 @@ const StepperWrapper = styled(Box)<BoxProps>(({ theme }) => {
       '& .MuiStepConnector-root': {
         marginLeft: theme.spacing(2.25),
         '& .MuiStepConnector-line': {
+          ...(theme.direction === 'rtl' && {
+            borderRightStyle: 'solid',
+            borderLeftStyle: 'none',
+            marginRight: theme.spacing(4)
+          }),
           borderRadius: 0
         }
       }

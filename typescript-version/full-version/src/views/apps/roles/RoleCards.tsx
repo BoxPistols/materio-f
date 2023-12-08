@@ -17,9 +17,6 @@ import RoleDialog from '@components/dialogs/role-dialog'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
 import Link from '@components/Link'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 type CardDataType = {
   title: string
   avatars: string[]
@@ -37,9 +34,8 @@ const cardData: CardDataType[] = [
 const RoleCards = () => {
   const typographyProps: TypographyProps = {
     children: 'Edit Role',
-    variant: 'body2',
     component: Link,
-    className: commonStyles.primaryColor,
+    color: 'primary',
     onClick: e => e.preventDefault()
   }
 
@@ -55,8 +51,10 @@ const RoleCards = () => {
         <Grid item xs={7}>
           <CardContent>
             <div className='flex flex-col items-end gap-4 text-right'>
-              <Button variant='contained'>Add Role</Button>
-              <Typography>
+              <Button variant='contained' size='small'>
+                Add Role
+              </Button>
+              <Typography color='text.secondary'>
                 Add new role, <br />
                 if it doesn&#39;t exist.
               </Typography>
@@ -75,7 +73,10 @@ const RoleCards = () => {
             <Card>
               <CardContent className='flex flex-col gap-4'>
                 <div className='flex items-center justify-between'>
-                  <Typography variant='body2'>{`Total ${item.totalUsers} users`}</Typography>
+                  <Typography
+                    className='flex-grow'
+                    color='text.secondary'
+                  >{`Total ${item.totalUsers} users`}</Typography>
                   <AvatarGroup total={item.totalUsers}>
                     {item.avatars.map((img, index: number) => (
                       <Avatar key={index} alt={item.title} src={`/images/avatars/${img}`} />
@@ -84,10 +85,10 @@ const RoleCards = () => {
                 </div>
                 <div className='flex justify-between items-center'>
                   <div className='flex flex-col items-start gap-1'>
-                    <Typography variant='h6'>{item.title}</Typography>
+                    <Typography variant='h5'>{item.title}</Typography>
                     <OpenDialogOnElementClick element={Typography} elementProps={typographyProps} dialog={RoleDialog} />
                   </div>
-                  <IconButton className='p-1.5'>
+                  <IconButton className='p-[7px]'>
                     <i className='ri-file-copy-line' />
                   </IconButton>
                 </div>

@@ -15,7 +15,6 @@ import classnames from 'classnames'
 
 // Style Imports
 import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 const data = [
   {
@@ -62,12 +61,12 @@ const InvoiceCard = () => {
               })}
             >
               <div className='flex justify-between'>
-                <div className='flex flex-col gap-1'>
-                  <Typography variant='h5'>{item.title}</Typography>
-                  <Typography className={commonStyles.textSecondary}>{item.subtitle}</Typography>
+                <div className='flex flex-col'>
+                  <Typography variant='h4'>{item.title}</Typography>
+                  <Typography color='text.secondary'>{item.subtitle}</Typography>
                 </div>
-                <Avatar variant='rounded'>
-                  <i className={item.icon}></i>
+                <Avatar variant='rounded' className={styles.avatarSize}>
+                  <i className={classnames('text-[26px]', item.icon)}></i>
                 </Avatar>
               </div>
               {isBelowMdScreen && !isBelowSmScreen && index < data.length - 2 && (

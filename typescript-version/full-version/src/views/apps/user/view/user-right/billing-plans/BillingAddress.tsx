@@ -43,7 +43,6 @@ const BillingAddress = () => {
       <Card>
         <CardHeader
           title='Billing Address'
-          titleTypographyProps={{ variant: 'h6' }}
           action={
             <OpenDialogOnElementClick
               element={Button}
@@ -60,52 +59,42 @@ const BillingAddress = () => {
                 <tbody className='align-top'>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        Name:
-                      </Typography>
+                      <Typography className='font-medium'>Name:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{`${data.firstName} ${data.lastName}`}</Typography>
+                      <Typography color='text.secondary'>{`${data.firstName} ${data.lastName}`}</Typography>
                     </td>
                   </tr>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        Billing Email:
-                      </Typography>
+                      <Typography className='font-medium'>Billing Email:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{data.email}</Typography>
+                      <Typography color='text.secondary'>{data.email}</Typography>
                     </td>
                   </tr>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        Tax ID:
-                      </Typography>
+                      <Typography className='font-medium'>Tax ID:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{data.taxId}</Typography>
+                      <Typography color='text.secondary'>{data.taxId}</Typography>
                     </td>
                   </tr>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        VAT Number:
-                      </Typography>
+                      <Typography className='font-medium'>VAT Number:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{data.vatNumber}</Typography>
+                      <Typography color='text.secondary'>{data.vatNumber}</Typography>
                     </td>
                   </tr>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        Billing Address:
-                      </Typography>
+                      <Typography className='font-medium'>Billing Address:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{`${data.address1} ${data.address2}`}</Typography>
+                      <Typography color='text.secondary'>{`${data.address1} ${data.address2}`}</Typography>
                     </td>
                   </tr>
                 </tbody>
@@ -116,62 +105,50 @@ const BillingAddress = () => {
                 <tbody className='align-top'>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        Contact:
-                      </Typography>
+                      <Typography className='font-medium'>Contact:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{data.contact}</Typography>
+                      <Typography color='text.secondary'>{data.contact}</Typography>
                     </td>
                   </tr>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        Landmark:
-                      </Typography>
+                      <Typography className='font-medium'>Landmark:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{data.landmark}</Typography>
+                      <Typography color='text.secondary'>{data.landmark}</Typography>
                     </td>
                   </tr>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        Landmark:
-                      </Typography>
+                      <Typography className='font-medium'>Landmark:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{data.city}</Typography>
+                      <Typography color='text.secondary'>{data.city}</Typography>
                     </td>
                   </tr>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        Country:
-                      </Typography>
+                      <Typography className='font-medium'>Country:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{data.country}</Typography>
+                      <Typography color='text.secondary'>{data.country}</Typography>
                     </td>
                   </tr>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        State:
-                      </Typography>
+                      <Typography className='font-medium'>State:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{data.state}</Typography>
+                      <Typography color='text.secondary'>{data.state}</Typography>
                     </td>
                   </tr>
                   <tr>
                     <td className='p-1 pis-0'>
-                      <Typography variant='subtitle2' color='text.primary'>
-                        Zip Code:
-                      </Typography>
+                      <Typography className='font-medium'>Zip Code:</Typography>
                     </td>
                     <td className='p-1'>
-                      <Typography variant='body2'>{data.zipCode}</Typography>
+                      <Typography color='text.secondary'>{data.zipCode}</Typography>
                     </td>
                   </tr>
                 </tbody>

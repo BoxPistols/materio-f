@@ -55,7 +55,6 @@ import { getInitials } from '@/utils/get-initials'
 
 // Style Imports
 import styles from './style.module.css'
-import commonStyles from '@/styles/common.module.css'
 import tableStyles from '@core/styles/table.module.css'
 
 declare module '@tanstack/table-core' {
@@ -161,9 +160,13 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
     const { avatar, fullName } = params
 
     if (avatar) {
-      return <CustomAvatar src={avatar} skin='light' />
+      return <CustomAvatar src={avatar} skin='light' size={34} />
     } else {
-      return <CustomAvatar skin='light'>{getInitials(fullName as string)}</CustomAvatar>
+      return (
+        <CustomAvatar skin='light' size={34}>
+          {getInitials(fullName as string)}
+        </CustomAvatar>
+      )
     }
   }
 
@@ -199,22 +202,17 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
           <div className='flex items-center gap-4'>
             {getAvatar({ avatar: row.original.avatar, fullName: row.original.fullName })}
             <div className='flex flex-col'>
-              <Typography
-                component={Link}
-                href='/apps/user/view'
-                variant='body2'
-                className={classnames('font-medium', styles.title, commonStyles.textPrimary)}
-              >
+              <Typography component={Link} href='/apps/user/view' className={classnames('font-medium', styles.title)}>
                 {row.original.fullName}
               </Typography>
-              <Typography variant='caption'>{row.original.username}</Typography>
+              <Typography variant='body2'>{row.original.username}</Typography>
             </div>
           </div>
         )
       }),
       columnHelper.accessor('email', {
         header: 'Email',
-        cell: ({ row }) => <Typography variant='body2'>{row.original.email}</Typography>
+        cell: ({ row }) => <Typography color='text.secondary'>{row.original.email}</Typography>
       }),
       columnHelper.accessor('role', {
         header: 'Role',
@@ -224,19 +222,13 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
               className={userRoleObj[row.original.role].icon}
               sx={{ color: `var(--mui-palette-${userRoleObj[row.original.role].color}-main)`, fontSize: '1.375rem' }}
             />
-            <Typography className={classnames('capitalize', commonStyles.textPrimary)} variant='body2'>
-              {row.original.role}
-            </Typography>
+            <Typography className='capitalize'>{row.original.role}</Typography>
           </div>
         )
       }),
       columnHelper.accessor('currentPlan', {
         header: 'Plan',
-        cell: ({ row }) => (
-          <Typography className={classnames('capitalize', commonStyles.textPrimary)} variant='body2'>
-            {row.original.currentPlan}
-          </Typography>
-        )
+        cell: ({ row }) => <Typography className='capitalize'>{row.original.currentPlan}</Typography>
       }),
       columnHelper.accessor('status', {
         header: 'Status',

@@ -107,7 +107,7 @@ const SidebarLeft = (props: SidebarLeftProps) => {
         <Divider className='w-full' />
 
         <div className='flex flex-col p-5 w-full'>
-          <Typography variant='caption' className='uppercase mbe-4'>
+          <Typography variant='h5' className='mbe-4'>
             Event Filters
           </Typography>
           <FormControlLabel

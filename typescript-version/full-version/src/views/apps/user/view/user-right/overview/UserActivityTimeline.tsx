@@ -38,7 +38,7 @@ const Timeline = styled(MuiTimeline)<TimelineProps>({
 const UserActivityTimeLine = () => {
   return (
     <Card>
-      <CardHeader title='User Activity Timeline' titleTypographyProps={{ variant: 'h6' }} />
+      <CardHeader title='User Activity Timeline' />
       <CardContent>
         <Timeline>
           <TimelineItem>
@@ -58,7 +58,7 @@ const UserActivityTimeLine = () => {
               </Typography>
               <div
                 className={classnames(
-                  'flex items-center gap-2.5 w-fit',
+                  'flex items-center gap-2.5 w-fit mbe-2.5',
                   styles.imageWrapper,
                   commonStyles.borderRadius,
                   commonStyles.actionHoverColor
@@ -84,7 +84,7 @@ const UserActivityTimeLine = () => {
               <Typography className='mbe-2' color='text.secondary'>
                 Project meeting with john @10:15am
               </Typography>
-              <div className='flex items-center gap-2.5'>
+              <div className='flex items-center gap-2.5 mbe-2.5'>
                 <Avatar src='/images/avatars/1.png' className='w-8 h-8' />
                 <div className='flex flex-col flex-wrap'>
                   <Typography variant='body2' className='font-medium'>

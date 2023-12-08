@@ -31,11 +31,11 @@ const initialData: FormDataType = {
   subject: 'Invoice of purchased Admin Templates',
   message: `Dear Queen Consolidated,
 
-  Thank you for your business, always a pleasure to work with you!
+Thank you for your business, always a pleasure to work with you!
 
-  We have generated a new invoice in the amount of $95.59
+We have generated a new invoice in the amount of $95.59
 
-  We would appreciate payment of this invoice by 05/11/2019`
+We would appreciate payment of this invoice by 05/11/2019`
 }
 
 const SendInvoiceDrawer = ({ open, handleClose }: Props) => {
@@ -63,7 +63,7 @@ const SendInvoiceDrawer = ({ open, handleClose }: Props) => {
       sx={{ '& .MuiDrawer-paper': { width: { xs: 300, sm: 400 } } }}
     >
       <div className='flex items-center justify-between p-5'>
-        <Typography variant='h6'>Send Invoice</Typography>
+        <Typography variant='h5'>Send Invoice</Typography>
         <IconButton onClick={handleReset}>
           <i className='ri-close-line' />
         </IconButton>

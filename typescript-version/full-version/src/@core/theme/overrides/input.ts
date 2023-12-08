@@ -13,6 +13,9 @@ const input: Theme['components'] = {
           '&:not(.Mui-disabled, .Mui-error):hover:before': {
             borderColor: 'var(--mui-palette-action-active)'
           }
+        },
+        '&.Mui-disabled .MuiInputAdornment-root, &.Mui-disabled .MuiInputAdornment-root > *': {
+          color: 'var(--mui-palette-action-disabled)'
         }
       }
     }
