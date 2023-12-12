@@ -1,0 +1,31 @@
+.upgradePlan {
+  background-color: var(--mui-palette-primary-lightOpacity);
+}
+.briefcase {
+  border: 1px solid var(--mui-palette-primary-main);
+}
+.avatarIcon {
+  inline-size: 42px;
+  block-size: 30px;
+}
+.borderAboveMd {
+  border-inline-end: 1px solid var(--mui-palette-divider);
+}
+.borderBelowMd {
+  border-block-end: 1px solid var(--mui-palette-divider);
+}
+.pdfBackground {
+  padding-block: 0.3125rem;
+}
+.tableBorder:not(:last-child) {
+  border-block-end: 1px solid var(--mui-palette-divider);
+}
+.tableBorderBottom {
+  border-block-end: 1px solid var(--mui-palette-divider);
+}
+.tablePadding:first-child td {
+  padding-block-start: 1.25rem !important;
+}
+.tablePadding:last-child td {
+  padding-block-end: 1.25rem !important;
+}
