@@ -48,11 +48,7 @@ const renderCustomizedLabel = (props: LabelProp) => {
 const RechartsPieChart = () => {
   return (
     <Card>
-      <CardHeader
-        title='Expense Ratio'
-        subheader='Spending on various categories'
-        subheaderTypographyProps={{ sx: { color: theme => `${theme.palette.text.disabled} !important` } }}
-      />
+      <CardHeader title='Expense Ratio' subheader='Spending on various categories' />
       <CardContent>
         <div className={styles.chartHeight}>
           <ResponsiveContainer>
@@ -67,15 +63,15 @@ const RechartsPieChart = () => {
           </ResponsiveContainer>
         </div>
         <div className='flex justify-center flex-wrap mbe-4'>
-          <Box className='flex items-center mie-6 gap-1.5' sx={{ '& i': { color: '#00d4bd' } }}>
+          <Box className='flex items-center mie-5 gap-1.5' sx={{ '& i': { color: '#00d4bd' } }}>
             <i className='ri-circle-fill text-xs' />
             <Typography variant='body2'>R&D</Typography>
           </Box>
-          <Box className='flex items-center mie-6 gap-1.5' sx={{ '& i': { color: '#ffe700' } }}>
+          <Box className='flex items-center mie-5 gap-1.5' sx={{ '& i': { color: '#ffe700' } }}>
             <i className='ri-circle-fill text-xs' />
             <Typography variant='body2'>Operational</Typography>
           </Box>
-          <Box className='flex items-center mie-6 gap-1.5' sx={{ '& i': { color: '#FFA1A1' } }}>
+          <Box className='flex items-center mie-5 gap-1.5' sx={{ '& i': { color: '#FFA1A1' } }}>
             <i className='ri-circle-fill text-xs' />
             <Typography variant='body2'>Networking</Typography>
           </Box>

@@ -2,7 +2,7 @@
 
 // MUI Imports
 import Card from '@mui/material/Card'
-import { useTheme } from '@mui/material/styles'
+import { useColorScheme, useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
@@ -12,26 +12,38 @@ import type { ApexOptions } from 'apexcharts'
 // Component Imports
 import ReactApexcharts from '@components/charts/apexchart'
 
+// Util Imports
+import { rgbaToHex } from '@/utils/rgbaToHex'
+
 const ApexBarChart = () => {
   // Hooks
   const theme = useTheme()
+  const { mode, systemMode } = useColorScheme()
+
+  const _mode = (mode === 'system' ? systemMode : mode) || 'light'
+
+  const divider = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.12)`)
+  const disabledText = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`)
 
   const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
+      offsetX: theme.direction === 'rtl' ? 10 : -10
     },
     colors: ['#00cfe8'],
     dataLabels: { enabled: false },
     plotOptions: {
       bar: {
         borderRadius: 8,
+        borderRadiusApplication: 'end',
+        borderRadiusWhenStacked: 'all',
         barHeight: '30%',
         horizontal: true
       }
     },
     grid: {
-      borderColor: theme.palette.divider,
+      borderColor: divider,
       xaxis: {
         lines: { show: false }
       },
@@ -41,15 +53,14 @@ const ApexBarChart = () => {
     },
     yaxis: {
       labels: {
-        style: { colors: theme.palette.text.disabled }
+        style: { colors: disabledText, fontSize: '13px' }
       }
     },
     xaxis: {
-      axisBorder: { show: false },
-      axisTicks: { color: theme.palette.divider },
-      categories: ['MON, 11', 'THU, 14', 'FRI, 15', 'MON, 18', 'WED, 20', 'FRI, 21', 'MON, 23'],
+      axisTicks: { show: false },
+      categories: ['Mon, 11', 'Thu, 14', 'Fri, 15', 'Mon, 18', 'Wed, 20', 'Fri, 21', 'Mon, 23'],
       labels: {
-        style: { colors: theme.palette.text.disabled }
+        style: { colors: disabledText, fontSize: '13px' }
       }
     }
   }

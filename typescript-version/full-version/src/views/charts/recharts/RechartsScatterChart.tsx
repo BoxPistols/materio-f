@@ -83,7 +83,7 @@ const RechartsScatterChart = ({ direction }: { direction: Direction }) => {
         }}
       />
       <CardContent>
-        <div className='flex mbe-4 gap-6'>
+        <div className='flex mbe-4 gap-5'>
           <div className='flex items-center'>
             <i className={classnames('ri-circle-fill text-xs mie-1.5', styles.reactIcon)} />
             <Typography variant='body2'>React</Typography>

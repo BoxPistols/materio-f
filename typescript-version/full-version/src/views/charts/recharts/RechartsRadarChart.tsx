@@ -109,7 +109,7 @@ const RechartsRadarChart = () => {
           </ResponsiveContainer>
         </div>
         <div className='flex justify-center mbe-4'>
-          <Box className='flex items-center mie-6 gap-1.5' sx={{ '& i': { color: '#fde802' } }}>
+          <Box className='flex items-center mie-5 gap-1.5' sx={{ '& i': { color: '#fde802' } }}>
             <i className='ri-circle-fill text-xs' />
             <Typography variant='body2'>iPhone 11</Typography>
           </Box>

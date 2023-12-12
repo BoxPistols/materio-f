@@ -130,15 +130,15 @@ const RechartsBarChart = ({ direction }: { direction: Direction }) => {
       />
       <CardContent>
         <div className='flex flex-wrap mbe-4'>
-          <Box className='flex items-center mie-6 gap-1.5' sx={{ '& i': { color: '#826af9' } }}>
+          <Box className='flex items-center mie-3 gap-1.5' sx={{ '& i': { color: '#826af9' } }}>
             <i className='ri-circle-fill text-xs' />
             <Typography variant='body2'>Apple</Typography>
           </Box>
-          <Box className='flex items-center mie-6 gap-1.5' sx={{ '& i': { color: '#9f87ff' } }}>
+          <Box className='flex items-center mie-3 gap-1.5' sx={{ '& i': { color: '#9f87ff' } }}>
             <i className='ri-circle-fill text-xs' />
             <Typography variant='body2'>Samsung</Typography>
           </Box>
-          <Box className='flex items-center mie-6 gap-1.5' sx={{ '& i': { color: '#d2b0ff' } }}>
+          <Box className='flex items-center mie-3 gap-1.5' sx={{ '& i': { color: '#d2b0ff' } }}>
             <i className='ri-circle-fill text-xs' />
             <Typography variant='body2'>Oneplus</Typography>
           </Box>

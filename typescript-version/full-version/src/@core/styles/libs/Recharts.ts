@@ -43,7 +43,7 @@ const RechartsWrapper = styled('div')(({ theme }) => ({
     color: `${theme.palette.text.primary} !important`
   },
   '& .recharts-text': {
-    fontSize: '0.875rem',
+    fontSize: '0.8125rem',
     fill: theme.palette.text.disabled
   }
 }))

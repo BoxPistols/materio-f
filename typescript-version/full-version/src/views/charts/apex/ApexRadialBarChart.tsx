@@ -2,7 +2,7 @@
 
 // MUI Imports
 import Card from '@mui/material/Card'
-import { useTheme } from '@mui/material/styles'
+import { useColorScheme, useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
@@ -11,6 +11,9 @@ import type { ApexOptions } from 'apexcharts'
 
 // Component Imports
 import ReactApexcharts from '@components/charts/apexchart'
+
+// Util Imports
+import { rgbaToHex } from '@/utils/rgbaToHex'
 
 const radialBarColors = {
   series1: '#fdd835',
@@ -23,18 +26,26 @@ const radialBarColors = {
 const ApexRadialBarChart = () => {
   // Hooks
   const theme = useTheme()
+  const { mode, systemMode } = useColorScheme()
+
+  const _mode = (mode === 'system' ? systemMode : mode) || 'light'
+
+  const textSecondary = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.7)`)
 
   const options: ApexOptions = {
     stroke: { lineCap: 'round' },
     labels: ['Comments', 'Replies', 'Shares'],
     legend: {
       show: true,
+      fontSize: '13px',
       position: 'bottom',
       labels: {
-        colors: theme.palette.text.secondary
+        colors: textSecondary
       },
       markers: {
-        offsetX: -3
+        height: 10,
+        width: 10,
+        offsetX: theme.direction === 'rtl' ? 7 : -4
       },
       itemMargin: {
         vertical: 3,
@@ -46,24 +57,24 @@ const ApexRadialBarChart = () => {
       radialBar: {
         hollow: { size: '30%' },
         track: {
-          margin: 15
-
-          // background: hexToRGBA(theme.palette.customColors.trackBg, 1)
+          margin: 15,
+          background: theme.palette.customColors.trackBg
         },
         dataLabels: {
           name: {
             fontSize: '2rem'
           },
           value: {
-            fontSize: '1rem',
-            color: theme.palette.text.secondary
+            fontSize: '15px',
+            fontWeight: 500,
+            color: textSecondary
           },
           total: {
             show: true,
-            fontWeight: 400,
+            fontWeight: 500,
             label: 'Comments',
             fontSize: '1.125rem',
-            color: theme.palette.text.primary,
+            color: rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.9)`),
             formatter: function (w) {
               const totalValue =
                 w.globals.seriesTotals.reduce((a: any, b: any) => {

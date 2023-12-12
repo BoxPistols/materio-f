@@ -2,7 +2,7 @@
 
 // MUI Imports
 import Card from '@mui/material/Card'
-import { useTheme } from '@mui/material/styles'
+import { useColorScheme, useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
@@ -11,6 +11,9 @@ import type { ApexOptions } from 'apexcharts'
 
 // Component Imports
 import ReactApexcharts from '@components/charts/apexchart'
+
+// Util Imports
+import { rgbaToHex } from '@/utils/rgbaToHex'
 
 const series = [
   {
@@ -21,12 +24,19 @@ const series = [
 const ApexLineChart = () => {
   // Hooks
   const theme = useTheme()
+  const { mode, systemMode } = useColorScheme()
+
+  const _mode = (mode === 'system' ? systemMode : mode) || 'light'
+
+  const divider = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.12)`)
+  const disabledText = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`)
 
   const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
       zoom: { enabled: false },
-      toolbar: { show: false }
+      toolbar: { show: false },
+      offsetX: theme.direction === 'rtl' ? 10 : -10
     },
     colors: ['#ff9f43'],
     stroke: { curve: 'straight' },
@@ -39,7 +49,7 @@ const ApexLineChart = () => {
     },
     grid: {
       padding: { top: -10 },
-      borderColor: theme.palette.divider,
+      borderColor: divider,
       xaxis: {
         lines: { show: true }
       }
@@ -53,17 +63,17 @@ const ApexLineChart = () => {
     },
     yaxis: {
       labels: {
-        style: { colors: theme.palette.text.disabled }
+        style: { colors: disabledText, fontSize: '13px' }
       }
     },
     xaxis: {
       axisBorder: { show: false },
-      axisTicks: { color: theme.palette.divider },
+      axisTicks: { color: divider },
       crosshairs: {
-        stroke: { color: theme.palette.divider }
+        stroke: { color: divider }
       },
       labels: {
-        style: { colors: theme.palette.text.disabled }
+        style: { colors: disabledText, fontSize: '13px' }
       },
       categories: [
         '7/12',

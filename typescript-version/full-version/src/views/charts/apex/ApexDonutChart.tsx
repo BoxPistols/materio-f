@@ -2,7 +2,7 @@
 
 // MUI Imports
 import Card from '@mui/material/Card'
-import { useTheme } from '@mui/material/styles'
+import { useColorScheme, useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
@@ -11,6 +11,9 @@ import type { ApexOptions } from 'apexcharts'
 
 // Component Imports
 import ReactApexcharts from '@components/charts/apexchart'
+
+// Util Imports
+import { rgbaToHex } from '@/utils/rgbaToHex'
 
 const donutColors = {
   series1: '#fdd835',
@@ -23,6 +26,11 @@ const donutColors = {
 const ApexDonutChart = () => {
   // Hooks
   const theme = useTheme()
+  const { mode, systemMode } = useColorScheme()
+
+  const _mode = (mode === 'system' ? systemMode : mode) || 'light'
+
+  const textSecondary = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.7)`)
 
   const options: ApexOptions = {
     stroke: { width: 0 },
@@ -33,9 +41,10 @@ const ApexDonutChart = () => {
       formatter: (val: string) => `${parseInt(val, 10)}%`
     },
     legend: {
+      fontSize: '13px',
       position: 'bottom',
-      markers: { offsetX: -3 },
-      labels: { colors: theme.palette.text.secondary },
+      markers: { height: 10, width: 10, offsetX: theme.direction === 'rtl' ? 7 : -4 },
+      labels: { colors: textSecondary },
       itemMargin: {
         vertical: 3,
         horizontal: 10
@@ -51,7 +60,7 @@ const ApexDonutChart = () => {
             },
             value: {
               fontSize: '1.2rem',
-              color: theme.palette.text.secondary,
+              color: textSecondary,
               formatter: (val: string) => `${parseInt(val, 10)}`
             },
             total: {
@@ -59,7 +68,7 @@ const ApexDonutChart = () => {
               fontSize: '1.2rem',
               label: 'Operational',
               formatter: () => '31%',
-              color: theme.palette.text.primary
+              color: rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.9)`)
             }
           }
         }
@@ -108,11 +117,7 @@ const ApexDonutChart = () => {
 
   return (
     <Card>
-      <CardHeader
-        title='Expense Ratio'
-        subheader='Spending on various categories'
-        subheaderTypographyProps={{ sx: { color: theme => `${theme.palette.text.disabled} !important` } }}
-      />
+      <CardHeader title='Expense Ratio' subheader='Spending on various categories' />
       <CardContent>
         <ReactApexcharts type='donut' height={400} options={options} series={[85, 16, 50, 50]} />
       </CardContent>

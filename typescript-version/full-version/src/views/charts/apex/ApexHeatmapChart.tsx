@@ -2,7 +2,7 @@
 
 // MUI Imports
 import Card from '@mui/material/Card'
-import { useTheme } from '@mui/material/styles'
+import { useColorScheme, useTheme } from '@mui/material/styles'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
@@ -11,6 +11,9 @@ import type { ApexOptions } from 'apexcharts'
 
 // Component Imports
 import ReactApexcharts from '@components/charts/apexchart'
+
+// Util Imports
+import { rgbaToHex } from '@/utils/rgbaToHex'
 
 type YRange = {
   min: number
@@ -37,31 +40,31 @@ const generateDataHeat = (count: number, yrange: YRange) => {
 
 const series = [
   {
-    name: 'SUN',
+    name: 'Sun',
     data: generateDataHeat(24, { min: 0, max: 60 })
   },
   {
-    name: 'MON',
+    name: 'Mon',
     data: generateDataHeat(24, { min: 0, max: 60 })
   },
   {
-    name: 'TUE',
+    name: 'Tue',
     data: generateDataHeat(24, { min: 0, max: 60 })
   },
   {
-    name: 'WED',
+    name: 'Wed',
     data: generateDataHeat(24, { min: 0, max: 60 })
   },
   {
-    name: 'THU',
+    name: 'Thu',
     data: generateDataHeat(24, { min: 0, max: 60 })
   },
   {
-    name: 'FRI',
+    name: 'Fri',
     data: generateDataHeat(24, { min: 0, max: 60 })
   },
   {
-    name: 'SAT',
+    name: 'Sat',
     data: generateDataHeat(24, { min: 0, max: 60 })
   }
 ]
@@ -69,29 +72,30 @@ const series = [
 const ApexHeatmapChart = () => {
   // Hooks
   const theme = useTheme()
+  const { mode, systemMode } = useColorScheme()
+
+  const _mode = (mode === 'system' ? systemMode : mode) || 'light'
 
   const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,
-      toolbar: { show: false }
+      toolbar: { show: false },
+      offsetX: theme.direction === 'rtl' ? 10 : -10
     },
     dataLabels: { enabled: false },
-
-    // stroke: {
-    //   colors: [theme.palette.mode === 'light' ? theme.palette.background.paper : theme.palette.customColors.bodyBg]
-    // },
     legend: {
       position: 'bottom',
       labels: {
-        colors: theme.palette.text.secondary
+        colors: rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.7)`)
       },
       markers: {
+        height: 10,
+        width: 10,
         offsetY: 0,
-        offsetX: -3
+        offsetX: theme.direction === 'rtl' ? 7 : -4
       },
       itemMargin: {
-        vertical: 3,
-        horizontal: 10
+        horizontal: 9
       }
     },
     plotOptions: {
@@ -114,9 +118,7 @@ const ApexHeatmapChart = () => {
     },
     yaxis: {
       labels: {
-        style: {
-          colors: theme.palette.text.disabled
-        }
+        style: { colors: rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`), fontSize: '13px' }
       }
     },
     xaxis: {
