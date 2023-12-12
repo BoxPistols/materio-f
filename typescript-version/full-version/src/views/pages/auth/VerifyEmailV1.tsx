@@ -53,7 +53,7 @@ const VerifyEmailV1 = () => {
             Verify your email ✉️
           </Typography>
           <div className='flex flex-col gap-5'>
-            <Typography color='text.secondary'>
+            <Typography>
               Account activation link sent to your email address:{' '}
               <span className={classnames('font-medium', commonStyles.textPrimary)}>john.doe@email.com</span> Please
               follow the link inside to continue.
@@ -62,7 +62,7 @@ const VerifyEmailV1 = () => {
               Skip For Now
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
-              <Typography color='text.secondary'>Didn&#39;t get the mail?</Typography>
+              <Typography>Didn&#39;t get the mail?</Typography>
               <Typography color='primary' component={Link} href='/' onClick={e => e.preventDefault()}>
                 Resend
               </Typography>

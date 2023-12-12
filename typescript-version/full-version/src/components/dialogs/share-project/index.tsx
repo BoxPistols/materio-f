@@ -149,7 +149,7 @@ const ShareProject = ({ open, setOpen }: ShareProjectProps) => {
         })}
       >
         Share Project
-        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+        <Typography component='span' className='flex flex-col text-center'>
           Share project with the team members
         </Typography>
       </DialogTitle>
@@ -196,7 +196,9 @@ const ShareProject = ({ open, setOpen }: ShareProjectProps) => {
                 <Avatar src={`/images/avatars/${member.avatar}`} alt={member.name} />
                 <div className='flex justify-between items-center w-full overflow-hidden'>
                   <div className='flex flex-col items-start overflow-hidden'>
-                    <Typography className='truncate w-full'>{member.name}</Typography>
+                    <Typography className='truncate w-full' color='text.primary'>
+                      {member.name}
+                    </Typography>
                     <Typography variant='body2' className='truncate w-full'>
                       {member.email}
                     </Typography>
@@ -243,7 +245,9 @@ const ShareProject = ({ open, setOpen }: ShareProjectProps) => {
         <div className='flex items-center justify-between flex-wrap'>
           <div className='flex items-center flex-grow gap-2'>
             <i className='ri-group-line text-xl' />
-            <Typography className='font-medium'>{`Public to ${themeConfig.templateName} - ThemeSelection`}</Typography>
+            <Typography className='font-medium' color='text.primary'>
+              {`Public to ${themeConfig.templateName} - ThemeSelection`}
+            </Typography>
           </div>
           <Button variant='outlined' className='flex gap-1.5' size='small'>
             <i className='ri-link text-xl' />

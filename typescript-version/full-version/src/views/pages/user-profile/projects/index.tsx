@@ -50,7 +50,7 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                         >
                           {item.title}
                         </Typography>
-                        <Typography color='text.secondary'>
+                        <Typography>
                           <span className='font-medium'>Client: </span>
                           {item.client}
                         </Typography>
@@ -75,39 +75,47 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                       className={classnames('plb-2 pli-3', commonStyles.borderRadius, commonStyles.actionHoverColor)}
                     >
                       <div className='flex'>
-                        <Typography className='font-medium'>{item.budgetSpent}</Typography>
-                        <Typography color='text.secondary'>{`/${item.budget}`}</Typography>
+                        <Typography className='font-medium' color='text.primary'>
+                          {item.budgetSpent}
+                        </Typography>
+                        <Typography>{`/${item.budget}`}</Typography>
                       </div>
-                      <Typography color='text.secondary'>Total Budget</Typography>
+                      <Typography>Total Budget</Typography>
                     </div>
                     <div className='flex flex-col'>
                       <div className='flex gap-1'>
-                        <Typography className='font-medium'>Start Date:</Typography>
-                        <Typography color='text.secondary'>{item.startDate}</Typography>
+                        <Typography className='font-medium' color='text.primary'>
+                          Start Date:
+                        </Typography>
+                        <Typography>{item.startDate}</Typography>
                       </div>
                       <div className='flex gap-1'>
-                        <Typography className='font-medium'>Deadline:</Typography>
-                        <Typography color='text.secondary'>{item.deadline}</Typography>
+                        <Typography className='font-medium' color='text.primary'>
+                          Deadline:
+                        </Typography>
+                        <Typography>{item.deadline}</Typography>
                       </div>
                     </div>
                   </div>
-                  <Typography color='text.secondary'>{item.description}</Typography>
+                  <Typography>{item.description}</Typography>
                 </CardContent>
                 <Divider />
                 <CardContent className='flex flex-col gap-4'>
                   <div className='flex items-center justify-between'>
                     <div className='flex gap-1'>
-                      <Typography className='font-medium'>All Hours:</Typography>
-                      <Typography color='text.secondary'>{item.hours}</Typography>
+                      <Typography className='font-medium' color='text.primary'>
+                        All Hours:
+                      </Typography>
+                      <Typography>{item.hours}</Typography>
                     </div>
                     <Chip size='small' variant='tonal' color={item.chipColor} label={`${item.daysLeft} days left`} />
                   </div>
                   <div>
                     <div className='flex items-center justify-between mbe-2'>
                       <Typography variant='caption'>{`Tasks: ${item.completedTask}/${item.totalTask}`}</Typography>
-                      <Typography variant='caption'>{`${Math.round(
-                        (item.completedTask / item.totalTask) * 100
-                      )}% Completed`}</Typography>
+                      <Typography variant='caption'>
+                        {`${Math.round((item.completedTask / item.totalTask) * 100)}% Completed`}
+                      </Typography>
                     </div>
                     <LinearProgress
                       color='primary'

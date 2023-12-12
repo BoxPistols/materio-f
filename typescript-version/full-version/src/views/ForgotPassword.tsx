@@ -89,9 +89,7 @@ const ForgotPasswordV2 = () => {
             <Typography variant='h4' className='mbe-1'>
               Forgot Password 🔒
             </Typography>
-            <Typography color='text.secondary'>
-              Enter your email and we&#39;ll send you instructions to reset your password
-            </Typography>
+            <Typography>Enter your email and we&#39;ll send you instructions to reset your password</Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
             <TextField autoFocus fullWidth label='Email' />

@@ -48,14 +48,12 @@ const ActivityTimeline = () => {
             </TimelineSeparator>
             <TimelineContent>
               <div className='flex items-center justify-between flex-wrap gap-x-4 pbe-1.5'>
-                <Typography className='font-medium'>12 Invoices have been paid</Typography>
-                <Typography variant='caption' color='text.disabled'>
-                  12 min ago
+                <Typography className='font-medium' color='text.primary'>
+                  12 Invoices have been paid
                 </Typography>
+                <Typography variant='caption'>12 min ago</Typography>
               </div>
-              <Typography className='mbe-2' color='text.secondary'>
-                Invoices have been paid to the company.
-              </Typography>
+              <Typography className='mbe-2'>Invoices have been paid to the company.</Typography>
               <div className='flex'>
                 <div
                   className={classnames(
@@ -66,9 +64,7 @@ const ActivityTimeline = () => {
                   )}
                 >
                   <img alt='invoice.pdf' src='/images/icons/pdf-document.png' className='h-5' />
-                  <Typography className='font-medium' color='text.secondary'>
-                    invoice.pdf
-                  </Typography>
+                  <Typography className='font-medium'>invoice.pdf</Typography>
                 </div>
               </div>
             </TimelineContent>
@@ -80,14 +76,12 @@ const ActivityTimeline = () => {
             </TimelineSeparator>
             <TimelineContent>
               <div className='flex items-center justify-between flex-wrap gap-x-4 pbe-1.5'>
-                <Typography className='font-medium'>Client Meeting</Typography>
-                <Typography variant='caption' color='text.disabled'>
-                  45 min ago
+                <Typography className='font-medium' color='text.primary'>
+                  Client Meeting
                 </Typography>
+                <Typography variant='caption'>45 min ago</Typography>
               </div>
-              <Typography color='text.secondary' className='mbe-2'>
-                Project meeting with john @10:15am
-              </Typography>
+              <Typography className='mbe-2'>Project meeting with john @10:15am</Typography>
               <div className='flex items-center gap-2.5'>
                 <Avatar src='/images/avatars/1.png' className='w-8 h-8' />
                 <div>
@@ -106,14 +100,12 @@ const ActivityTimeline = () => {
             </TimelineSeparator>
             <TimelineContent>
               <div className='flex items-center justify-between flex-wrap gap-x-4 pbe-1.5'>
-                <Typography className='font-medium'>Create a new project for client</Typography>
-                <Typography variant='caption' color='text.disabled'>
-                  2 Day Ago
+                <Typography className='font-medium' color='text.primary'>
+                  Create a new project for client
                 </Typography>
+                <Typography variant='caption'>2 Day Ago</Typography>
               </div>
-              <Typography color='text.secondary' className='mbe-2'>
-                6 team members in a project
-              </Typography>
+              <Typography className='mbe-2'>6 team members in a project</Typography>
               <AvatarGroup total={6}>
                 <Avatar alt='Remy Sharp' src='/images/avatars/1.png' />
                 <Avatar alt='Travis Howard' src='/images/avatars/8.png' />

@@ -230,9 +230,7 @@ const NotificationDropdown = ({ notifications }: { notifications: NotificationsT
                             <Typography variant='caption' className='mbe-1'>
                               {subtitle}
                             </Typography>
-                            <Typography variant='caption' color='text.disabled'>
-                              {time}
-                            </Typography>
+                            <Typography variant='caption'>{time}</Typography>
                           </div>
                           <div className='flex flex-col items-end gap-2'>
                             <Badge

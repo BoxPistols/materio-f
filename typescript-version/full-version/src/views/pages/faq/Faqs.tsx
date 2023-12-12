@@ -89,7 +89,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
                 </CustomAvatar>
                 <div>
                   <Typography variant='h5'>{faq.title}</Typography>
-                  <Typography color='text.secondary'>{faq.subtitle}</Typography>
+                  <Typography>{faq.subtitle}</Typography>
                 </div>
               </div>
               <div>
@@ -99,10 +99,10 @@ const FAQ = ({ faqData, searchValue }: props) => {
                       expandIcon={<i className='ri-arrow-down-s-line' />}
                       aria-controls='panel1a-content'
                     >
-                      <Typography>{items.question}</Typography>
+                      <Typography color='text.primary'>{items.question}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                      <Typography>{items.answer}</Typography>
+                      <Typography color='text.primary'>{items.answer}</Typography>
                     </AccordionDetails>
                   </Accordion>
                 ))}
@@ -115,7 +115,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
   ) : (
     <div className='flex justify-center items-center'>
       <i className='ri-error-warning-line' />
-      <Typography>No results found</Typography>
+      <Typography color='text.primary'>No results found</Typography>
     </div>
   )
 }

@@ -58,7 +58,7 @@ const DialogsCustomized = () => {
           </Typography>
         </DialogContent>
         <DialogActions className='p-4 !pt-4'>
-          <Button size='small' onClick={handleClose}>Save changes</Button>
+          <Button onClick={handleClose}>Save changes</Button>
         </DialogActions>
       </Dialog>
     </>

@@ -87,17 +87,19 @@ const RecentDevicesTable = () => {
                 <td>
                   <div className='flex items-center gap-2.5'>
                     {device.browserIcon}
-                    <Typography className='font-medium'>{device.browserName}</Typography>
+                    <Typography className='font-medium' color='text.primary'>
+                      {device.browserName}
+                    </Typography>
                   </div>
                 </td>
                 <td>
-                  <Typography color='text.secondary'>{device.device}</Typography>
+                  <Typography>{device.device}</Typography>
                 </td>
                 <td>
-                  <Typography color='text.secondary'>{device.location}</Typography>
+                  <Typography>{device.location}</Typography>
                 </td>
                 <td>
-                  <Typography color='text.secondary'>{device.date}</Typography>
+                  <Typography>{device.date}</Typography>
                 </td>
               </tr>
             ))}

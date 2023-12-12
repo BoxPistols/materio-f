@@ -54,7 +54,7 @@ const RoleCards = () => {
               <Button variant='contained' size='small'>
                 Add Role
               </Button>
-              <Typography color='text.secondary'>
+              <Typography>
                 Add new role, <br />
                 if it doesn&#39;t exist.
               </Typography>
@@ -73,10 +73,7 @@ const RoleCards = () => {
             <Card>
               <CardContent className='flex flex-col gap-4'>
                 <div className='flex items-center justify-between'>
-                  <Typography
-                    className='flex-grow'
-                    color='text.secondary'
-                  >{`Total ${item.totalUsers} users`}</Typography>
+                  <Typography className='flex-grow'>{`Total ${item.totalUsers} users`}</Typography>
                   <AvatarGroup total={item.totalUsers}>
                     {item.avatars.map((img, index: number) => (
                       <Avatar key={index} alt={item.title} src={`/images/avatars/${img}`} />

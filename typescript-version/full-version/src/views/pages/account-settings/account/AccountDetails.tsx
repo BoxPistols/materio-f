@@ -118,7 +118,7 @@ const AccountDetails = () => {
                 Reset
               </Button>
             </div>
-            <Typography color='text.secondary'>Allowed JPG, GIF or PNG. Max size of 800K</Typography>
+            <Typography>Allowed JPG, GIF or PNG. Max size of 800K</Typography>
           </div>
         </div>
       </CardContent>

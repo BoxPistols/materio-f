@@ -99,7 +99,7 @@ const TimelineCenter = () => {
         </Typography> */}
         {!isBelowMdScreen && (
           <TimelineOppositeContent color='text.disabled'>
-            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+            <Typography variant='caption' component='div' className='mbs-3'>
               2 months ago
             </Typography>
           </TimelineOppositeContent>
@@ -112,7 +112,7 @@ const TimelineCenter = () => {
         </TimelineSeparator>
         <TimelineContent>
           {isBelowMdScreen && (
-            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+            <Typography variant='caption' component='div' className='mbs-3'>
               2 months ago
             </Typography>
           )}
@@ -121,7 +121,7 @@ const TimelineCenter = () => {
               <Typography variant='h5' className='mbe-4'>
                 You've uploaded doc pdf to the Themeselection project
               </Typography>
-              <Typography variant='body1' className='mbe-3' color='text.secondary'>
+              <Typography variant='body1' className='mbe-3'>
                 The process of recording the key project details and producing the documents that are required to
                 implement it successfully. Simply put, it's an umbrella term which includes all the documents created
                 over the course of the project.
@@ -150,7 +150,7 @@ const TimelineCenter = () => {
       <TimelineItem>
         {!isBelowMdScreen && (
           <TimelineOppositeContent color='text.disabled'>
-            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+            <Typography variant='caption' component='div' className='mbs-3'>
               24 days ago
             </Typography>
           </TimelineOppositeContent>
@@ -163,7 +163,7 @@ const TimelineCenter = () => {
         </TimelineSeparator>
         <TimelineContent>
           {isBelowMdScreen && (
-            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+            <Typography variant='caption' component='div' className='mbs-3'>
               24 days ago
             </Typography>
           )}
@@ -172,7 +172,7 @@ const TimelineCenter = () => {
               <Typography variant='h5' className='font-medium mbe-4'>
                 Heather added 4 images to the Team album
               </Typography>
-              <Typography variant='body1' className='mbe-3' color='text.secondary'>
+              <Typography variant='body1' className='mbe-3'>
                 In the Select Image for Project dialog box, choose one of the following: Under the Upload New Image
                 section
               </Typography>
@@ -195,7 +195,7 @@ const TimelineCenter = () => {
       <TimelineItem>
         {!isBelowMdScreen && (
           <TimelineOppositeContent color='text.disabled'>
-            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+            <Typography variant='caption' component='div' className='mbs-3'>
               6 days ago
             </Typography>
           </TimelineOppositeContent>
@@ -208,7 +208,7 @@ const TimelineCenter = () => {
         </TimelineSeparator>
         <TimelineContent>
           {isBelowMdScreen && (
-            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+            <Typography variant='caption' component='div' className='mbs-3'>
               6 days ago
             </Typography>
           )}
@@ -240,7 +240,7 @@ const TimelineCenter = () => {
                   avatar={<Avatar alt='user' src='/images/avatars/8.png' />}
                 />
               </div>
-              <Typography color='text.secondary'>
+              <Typography>
                 I wish I could select more than one main reason for rating this.
                 I love how they constantly work on to make the template better.
                 I am so thankful for this. Also, in the past, they had responded
@@ -256,7 +256,7 @@ const TimelineCenter = () => {
       <TimelineItem>
         {!isBelowMdScreen && (
           <TimelineOppositeContent color='text.disabled'>
-            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+            <Typography variant='caption' component='div' className='mbs-3'>
               2 days ago
             </Typography>
           </TimelineOppositeContent>
@@ -269,7 +269,7 @@ const TimelineCenter = () => {
         </TimelineSeparator>
         <TimelineContent>
           {isBelowMdScreen && (
-            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+            <Typography variant='caption' component='div' className='mbs-3'>
               2 days ago
             </Typography>
           )}
@@ -331,7 +331,7 @@ const TimelineCenter = () => {
       <TimelineItem>
         {!isBelowMdScreen && (
           <TimelineOppositeContent color='text.disabled'>
-            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+            <Typography variant='caption' component='div' className='mbs-3'>
               2 days ago
             </Typography>
           </TimelineOppositeContent>
@@ -344,7 +344,7 @@ const TimelineCenter = () => {
         </TimelineSeparator>
         <TimelineContent>
           {isBelowMdScreen && (
-            <Typography variant='caption' component='div' className='mbs-3' color='text.disabled'>
+            <Typography variant='caption' component='div' className='mbs-3'>
               2 days ago
             </Typography>
           )}
@@ -353,7 +353,7 @@ const TimelineCenter = () => {
               <Typography variant='h5' className='font-medium mbe-4'>
                 Josh Johnson shared Next js project progress report
               </Typography>
-              <Typography variant='body1' className='mbe-3' color='text.secondary'>
+              <Typography variant='body1' className='mbe-3'>
                 The structure and process are defined in the project organization considering the attainment of the
                 corporate objectives and therefore also project objectives. The components of the project process are
               </Typography>

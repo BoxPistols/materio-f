@@ -157,7 +157,7 @@ const LoginV2 = () => {
         >
           <div>
             <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}!👋🏻`}</Typography>
-            <Typography color='text.secondary'>Please sign-in to your account and start the adventure</Typography>
+            <Typography>Please sign-in to your account and start the adventure</Typography>
           </div>
           <Alert icon={false} className={commonStyles.primaryLightColor}>
             <Typography variant='body2' color='primary'>
@@ -232,7 +232,7 @@ const LoginV2 = () => {
               Log In
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
-              <Typography color='text.secondary'>New on our platform?</Typography>
+              <Typography>New on our platform?</Typography>
               <Typography component={Link} href='/register' color='primary'>
                 Create an account
               </Typography>

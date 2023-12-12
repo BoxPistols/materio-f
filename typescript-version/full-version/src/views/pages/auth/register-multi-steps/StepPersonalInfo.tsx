@@ -25,7 +25,7 @@ const StepPersonalInfo = ({
     <>
       <div className='mbe-5'>
         <Typography variant='h4'>Personal Information</Typography>
-        <Typography color='text.secondary'>Enter Your Personal Information</Typography>
+        <Typography>Enter Your Personal Information</Typography>
       </div>
       <Grid container spacing={5}>
         <Grid item xs={12} sm={6}>

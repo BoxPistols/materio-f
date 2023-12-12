@@ -116,33 +116,33 @@ const UserDropdown = () => {
                   <div className='flex items-center plb-1.5 pli-4 gap-2.5' tabIndex={-1}>
                     <Avatar alt={session?.user?.name || ''} src={session?.user?.image || ''} />
                     <div className='flex items-start flex-col'>
-                      <Typography>{session?.user?.name || ''}</Typography>
-                      <Typography>{session?.user?.email || ''}</Typography>
+                      <Typography color='text.primary'>{session?.user?.name || ''}</Typography>
+                      <Typography color='text.primary'>{session?.user?.email || ''}</Typography>
                     </div>
                   </div>
                   <Divider className='mlb-1' />
                   <MenuItem onClick={e => handleDropdownClose(e, '/pages/user-profile/profile')}>
                     <div className='flex items-center gap-2'>
                       <i className='ri-user-3-line' />
-                      <Typography>My Profile</Typography>
+                      <Typography color='text.primary'>My Profile</Typography>
                     </div>
                   </MenuItem>
                   <MenuItem onClick={e => handleDropdownClose(e, '/pages/account-settings/account')}>
                     <div className='flex items-center gap-2'>
                       <i className='ri-settings-4-line' />
-                      <Typography>Settings</Typography>
+                      <Typography color='text.primary'>Settings</Typography>
                     </div>
                   </MenuItem>
                   <MenuItem onClick={e => handleDropdownClose(e, '/pages/pricing')}>
                     <div className='flex items-center gap-2'>
                       <i className='ri-money-dollar-circle-line' />
-                      <Typography>Pricing</Typography>
+                      <Typography color='text.primary'>Pricing</Typography>
                     </div>
                   </MenuItem>
                   <MenuItem onClick={e => handleDropdownClose(e, '/pages/faq')}>
                     <div className='flex items-center gap-2'>
                       <i className='ri-question-line' />
-                      <Typography>FAQ</Typography>
+                      <Typography color='text.primary'>FAQ</Typography>
                     </div>
                   </MenuItem>
                   <div className='flex items-center plb-1.5 pli-4 gap-2.5'>

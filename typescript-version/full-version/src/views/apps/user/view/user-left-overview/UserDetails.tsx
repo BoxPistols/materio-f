@@ -68,7 +68,7 @@ const UserDetails = () => {
                 </CustomAvatar>
                 <div>
                   <Typography variant='h5'>1.23k</Typography>
-                  <Typography>Task Done</Typography>
+                  <Typography color='text.primary'>Task Done</Typography>
                 </div>
               </div>
               <div className='flex items-center gap-4'>
@@ -77,7 +77,7 @@ const UserDetails = () => {
                 </CustomAvatar>
                 <div>
                   <Typography variant='h5'>568</Typography>
-                  <Typography>Project Done</Typography>
+                  <Typography color='text.primary'>Project Done</Typography>
                 </div>
               </div>
             </div>
@@ -87,36 +87,52 @@ const UserDetails = () => {
             <Divider className='mlb-4' />
             <div className='flex flex-col gap-2'>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography className='font-medium'>Username:</Typography>
-                <Typography>{userData.userName}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  Username:
+                </Typography>
+                <Typography color='text.primary'>{userData.userName}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography className='font-medium'>Billing Email:</Typography>
-                <Typography>{userData.billingEmail}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  Billing Email:
+                </Typography>
+                <Typography color='text.primary'>{userData.billingEmail}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography className='font-medium'>Status</Typography>
-                <Typography>{userData.status}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  Status
+                </Typography>
+                <Typography color='text.primary'>{userData.status}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography className='font-medium'>Role:</Typography>
-                <Typography>{userData.role}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  Role:
+                </Typography>
+                <Typography color='text.primary'>{userData.role}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography className='font-medium'>Tax ID:</Typography>
-                <Typography>{userData.taxId}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  Tax ID:
+                </Typography>
+                <Typography color='text.primary'>{userData.taxId}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography className='font-medium'>Contact:</Typography>
-                <Typography>{userData.contact}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  Contact:
+                </Typography>
+                <Typography color='text.primary'>{userData.contact}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography className='font-medium'>Language:</Typography>
-                <Typography>{userData.language}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  Language:
+                </Typography>
+                <Typography color='text.primary'>{userData.language}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
-                <Typography className='font-medium'>Country:</Typography>
-                <Typography>{userData.country}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  Country:
+                </Typography>
+                <Typography color='text.primary'>{userData.country}</Typography>
               </div>
             </div>
           </div>

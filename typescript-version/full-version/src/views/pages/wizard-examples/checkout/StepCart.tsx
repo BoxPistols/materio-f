@@ -124,7 +124,9 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
                 })}
               >
                 <div className={classnames('flex flex-col gap-2', { 'items-center': isBelowSmScreen })}>
-                  <Typography className='font-medium'>{product.productName}</Typography>
+                  <Typography className='font-medium' color='text.primary'>
+                    {product.productName}
+                  </Typography>
                   <div className='flex items-center gap-4'>
                     <div className='flex items-center gap-1'>
                       <Typography color='text.disabled'>Sold By:</Typography>
@@ -153,10 +155,7 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
                 >
                   <div className='flex'>
                     <Typography color='primary'>{`$${product.price}`}</Typography>
-                    <Typography
-                      className='line-through'
-                      color='text.secondary'
-                    >{`/$${product.originalPrice}`}</Typography>
+                    <Typography className='line-through'>{`/$${product.originalPrice}`}</Typography>
                   </div>
                   <Button variant='outlined' size='small'>
                     Move to wishlist
@@ -184,7 +183,9 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
       <Grid item xs={12} lg={4} className='flex flex-col gap-2'>
         <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
           <CardContent className='flex flex-col gap-4'>
-            <Typography className='font-medium'>Offer</Typography>
+            <Typography className='font-medium' color='text.primary'>
+              Offer
+            </Typography>
             <div className='flex gap-4'>
               <TextField fullWidth size='small' placeholder='Enter Promo Code' />
               <Button variant='outlined' className='normal-case'>
@@ -198,8 +199,10 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
                 'flex flex-col gap-2 p-5'
               )}
             >
-              <Typography className='font-medium'>Buying gift for a loved one?</Typography>
-              <Typography color='text.secondary'>Gift wrap and personalized message on card, Only for $2.</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Buying gift for a loved one?
+              </Typography>
+              <Typography>Gift wrap and personalized message on card, Only for $2.</Typography>
               <Typography
                 href='/'
                 component={Link}
@@ -213,29 +216,26 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
           </CardContent>
           <Divider />
           <CardContent className='flex gap-4 flex-col'>
-            <Typography className='font-medium'>Price Details</Typography>
+            <Typography className='font-medium' color='text.primary'>
+              Price Details
+            </Typography>
             <div className='flex flex-col gap-2'>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography>Bag Total</Typography>
-                <Typography color='text.secondary'>$1198.00</Typography>
+                <Typography color='text.primary'>Bag Total</Typography>
+                <Typography>$1198.00</Typography>
               </div>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography>Coup Discount</Typography>
-                <Typography
-                  href='/'
-                  component={Link}
-                  onClick={e => e.preventDefault()}
-                  color='primary'
-                >
+                <Typography color='text.primary'>Coup Discount</Typography>
+                <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='primary'>
                   Apply Coupon
                 </Typography>
               </div>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography>Order Total</Typography>
-                <Typography color='text.secondary'>$1198.00</Typography>
+                <Typography color='text.primary'>Order Total</Typography>
+                <Typography>$1198.00</Typography>
               </div>
               <div className='flex items-center flex-wrap justify-between'>
-                <Typography>Delivery Charges</Typography>
+                <Typography color='text.primary'>Delivery Charges</Typography>
                 <div className='flex items-center gap-2'>
                   <Typography color='text.disabled' className='line-through'>
                     $5.00
@@ -248,8 +248,12 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
           <Divider />
           <CardContent>
             <div className='flex items-center flex-wrap justify-between'>
-              <Typography className='font-medium'>Total</Typography>
-              <Typography className='font-medium'>$1198.00</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Total
+              </Typography>
+              <Typography className='font-medium' color='text.primary'>
+                $1198.00
+              </Typography>
             </div>
           </CardContent>
         </div>

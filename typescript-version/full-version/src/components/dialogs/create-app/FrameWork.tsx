@@ -39,7 +39,9 @@ const FrameWork = ({ activeStep, isLastStep, handleNext, handlePrev, direction }
               <img src='/images/logos/react.png' alt='react' height={30} width={30} />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography className='font-medium'>React Native</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                React Native
+              </Typography>
               <Typography variant='body2'>Create truly native apps</Typography>
             </div>
           </div>
@@ -52,7 +54,9 @@ const FrameWork = ({ activeStep, isLastStep, handleNext, handlePrev, direction }
               <img src='/images/logos/angular.png' alt='angular' height={30} width={30} />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography className='font-medium'>Angular</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Angular
+              </Typography>
               <Typography variant='body2'>Most suited for your application</Typography>
             </div>
           </div>
@@ -64,7 +68,9 @@ const FrameWork = ({ activeStep, isLastStep, handleNext, handlePrev, direction }
               <img src='/images/logos/vue.png' alt='vue' height={30} width={30} />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography className='font-medium'>Vue</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Vue
+              </Typography>
               <Typography variant='body2'>Progressive Framework</Typography>
             </div>
           </div>
@@ -76,7 +82,9 @@ const FrameWork = ({ activeStep, isLastStep, handleNext, handlePrev, direction }
               <img src='/images/logos/laravel.png' alt='laravel' height={30} width={30} />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography className='font-medium'>Laravel</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Laravel
+              </Typography>
               <Typography variant='body2'>PHP web frameworks</Typography>
             </div>
           </div>

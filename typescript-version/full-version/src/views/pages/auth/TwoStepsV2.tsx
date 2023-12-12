@@ -87,10 +87,12 @@ const TwoStepsV2 = () => {
         >
           <div className='flex flex-col gap-1'>
             <Typography variant='h4'>Two Step Verification 💬</Typography>
-            <Typography color='text.secondary'>
+            <Typography>
               We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </Typography>
-            <Typography className='font-medium'>******1234</Typography>
+            <Typography className='font-medium' color='text.primary'>
+              ******1234
+            </Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
             <Button fullWidth variant='contained' type='submit'>
@@ -105,7 +107,7 @@ const TwoStepsV2 = () => {
               <TextField />
             </div>
             <div className='flex justify-center items-center flex-wrap gap-2'>
-              <Typography color='text.secondary'>Didn&#39;t get the code?</Typography>
+              <Typography>Didn&#39;t get the code?</Typography>
               <Typography color='primary' component={Link} href='/' onClick={e => e.preventDefault()}>
                 Resend
               </Typography>

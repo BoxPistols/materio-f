@@ -75,7 +75,7 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
         })}
       >
         Refer & Earn
-        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+        <Typography component='span' className='flex flex-col text-center'>
           Invite your friend to {themeConfig.templateName}, if they sign up, you and your friend will get 30 days free
           trial
         </Typography>
@@ -105,8 +105,10 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
                   )}
                 </CustomAvatar>
                 <div className='flex flex-col gap-2 text-center'>
-                  <Typography className='font-medium'>{option.title}</Typography>
-                  <Typography color='text.secondary'>{option.subtitle}</Typography>
+                  <Typography className='font-medium' color='text.primary'>
+                    {option.title}
+                  </Typography>
+                  <Typography>{option.subtitle}</Typography>
                 </div>
               </div>
             </Grid>
@@ -116,12 +118,7 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
         <div className='flex flex-col gap-5'>
           <Typography variant='h5'>Invite your friends</Typography>
           <div className='inline-flex flex-col gap-2 flex-wrap items-start'>
-            <Typography
-              component={InputLabel}
-              color='text.secondary'
-              htmlFor='refer-email'
-              className='inline-flex whitespace-break-spaces'
-            >
+            <Typography component={InputLabel} htmlFor='refer-email' className='inline-flex whitespace-break-spaces'>
               Enter your friend&#39;s email address and invite them to join {themeConfig.templateName} 😍
             </Typography>
             <div className={classnames('flex items-center w-full gap-4', { 'flex-wrap': isBelowSmScreen })}>
@@ -135,12 +132,7 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
         <div className='flex flex-col gap-5'>
           <Typography variant='h5'>Share the referral link</Typography>
           <div className='inline-flex flex-col gap-2 items-start'>
-            <Typography
-              component={InputLabel}
-              color='text.secondary'
-              htmlFor='refer-social'
-              className='inline-flex whitespace-break-spaces'
-            >
+            <Typography component={InputLabel} htmlFor='refer-social' className='inline-flex whitespace-break-spaces'>
               You can also copy and send it or share it on your social media. 🚀
             </Typography>
             <div

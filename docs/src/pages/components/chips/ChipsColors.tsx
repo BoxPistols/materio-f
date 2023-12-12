@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 const ChipsColors = () => {
   return (
     <div className='flex gap-4 flex-col'>
-      <Typography className='font-medium'>Filled Chips</Typography>
+      <Typography className='font-medium' color='text.primary'>Filled Chips</Typography>
       <div className='flex gap-4 flex-wrap'>
         <Chip label='Primary' color='primary' />
         <Chip label='Secondary' color='secondary' />
@@ -14,7 +14,7 @@ const ChipsColors = () => {
         <Chip label='Warning' color='warning' />
         <Chip label='Info' color='info' />
       </div>
-      <Typography className='font-medium'>Outlined Chips</Typography>
+      <Typography className='font-medium' color='text.primary'>Outlined Chips</Typography>
       <div className='flex gap-4 flex-wrap'>
         <Chip label='Primary' color='primary' variant='outlined' />
         <Chip label='Secondary' color='secondary' variant='outlined' />
@@ -23,7 +23,7 @@ const ChipsColors = () => {
         <Chip label='Warning' color='warning' variant='outlined' />
         <Chip label='Info' color='info' variant='outlined' />
       </div>
-      <Typography className='font-medium'>Tonal Chips</Typography>
+      <Typography className='font-medium' color='text.primary'>Tonal Chips</Typography>
       <div className='flex gap-4 flex-wrap'>
         <Chip label='Primary' color='primary' variant='tonal' />
         <Chip label='Secondary' color='secondary' variant='tonal' />

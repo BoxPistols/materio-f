@@ -42,23 +42,25 @@ const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
         <Grid container spacing={6}>
           <Grid item xs={12} md={6} className='flex flex-col gap-4'>
             <div>
-              <Typography color='text.secondary'>
+              <Typography>
                 Your Current Plan is <span className={classnames('font-medium', commonStyles.textPrimary)}>Basic</span>
               </Typography>
-              <Typography color='text.secondary'>A simple start for everyone</Typography>
+              <Typography>A simple start for everyone</Typography>
             </div>
             <div>
-              <Typography className='font-medium'>Active until Dec 09, 2021</Typography>
-              <Typography color='text.secondary'>
-                We will send you a notification upon Subscription expiration
+              <Typography className='font-medium' color='text.primary'>
+                Active until Dec 09, 2021
               </Typography>
+              <Typography>We will send you a notification upon Subscription expiration</Typography>
             </div>
             <div className='flex flex-col gap-1'>
               <div className='flex items-center gap-2'>
-                <Typography className='font-medium'>$99 Per Month</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  $99 Per Month
+                </Typography>
                 <Chip color='primary' label='Popular' size='small' variant='tonal' />
               </div>
-              <Typography color='text.secondary'>Standard plan for small to medium businesses</Typography>
+              <Typography>Standard plan for small to medium businesses</Typography>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -67,8 +69,12 @@ const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
               Your plan requires update
             </Alert>
             <div className='flex items-center justify-between'>
-              <Typography className='font-medium'>Days</Typography>
-              <Typography className='font-medium'>26 of 30 Days</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Days
+              </Typography>
+              <Typography className='font-medium' color='text.primary'>
+                26 of 30 Days
+              </Typography>
             </div>
             <LinearProgress variant='determinate' value={80} className='mlb-1' />
             <Typography variant='body2'>Your plan requires update</Typography>

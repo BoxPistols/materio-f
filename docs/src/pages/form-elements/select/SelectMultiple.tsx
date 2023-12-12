@@ -62,7 +62,7 @@ const SelectMultiple = () => {
   return (
     <div className='flex gap-4 flex-col'>
       <div>
-        <Typography className='mbe-2 font-medium'>Default</Typography>
+        <Typography className='mbe-2 font-medium' color='text.primary'>Default</Typography>
         <FormControl fullWidth>
           <InputLabel id='demo-multiple-name-label'>Name</InputLabel>
           <Select
@@ -83,7 +83,7 @@ const SelectMultiple = () => {
         </FormControl>
       </div>
       <div>
-        <Typography className='mbe-2 font-medium'>Checkmarks</Typography>
+        <Typography className='mbe-2 font-medium' color='text.primary'>Checkmarks</Typography>
         <FormControl fullWidth>
           <InputLabel id='demo-multiple-checkbox-label'>Tag</InputLabel>
           <Select
@@ -106,7 +106,7 @@ const SelectMultiple = () => {
         </FormControl>
       </div>
       <div>
-        <Typography className='mbe-2 font-medium'>Chip</Typography>
+        <Typography className='mbe-2 font-medium' color='text.primary'>Chip</Typography>
         <FormControl fullWidth>
           <InputLabel id='demo-multiple-chip-label'>Chip</InputLabel>
           <Select
@@ -134,7 +134,7 @@ const SelectMultiple = () => {
         </FormControl>
       </div>
       <div>
-        <Typography className='mbe-2 font-medium'>Placeholder</Typography>
+        <Typography className='mbe-2 font-medium' color='text.primary'>Placeholder</Typography>
         <FormControl fullWidth>
           <Select
             multiple
@@ -163,7 +163,7 @@ const SelectMultiple = () => {
         </FormControl>
       </div>
       <div>
-        <Typography className='mbe-2 font-medium'>Native</Typography>
+        <Typography className='mbe-2 font-medium' color='text.primary'>Native</Typography>
         <FormControl fullWidth>
           <InputLabel shrink htmlFor='select-multiple-native'>
             Native

@@ -69,6 +69,9 @@ const list: Theme['components'] = {
     styleOverrides: {
       root: {
         margin: 0
+      },
+      primary: {
+        color: 'var(--mui-palette-text-primary)'
       }
     }
   },

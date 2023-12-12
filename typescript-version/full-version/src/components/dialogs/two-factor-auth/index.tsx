@@ -42,7 +42,9 @@ const data: CustomInputHorizontalData[] = [
     title: (
       <div className='flex items-center gap-1'>
         <i className='ri-settings-3-line text-xl' />
-        <Typography className='font-medium'>Authenticator Apps</Typography>
+        <Typography className='font-medium' color='text.primary'>
+          Authenticator Apps
+        </Typography>
       </div>
     ),
     value: 'app',
@@ -53,7 +55,9 @@ const data: CustomInputHorizontalData[] = [
     title: (
       <div className='flex items-center gap-1'>
         <i className='ri-wechat-line text-xl' />
-        <Typography className='font-medium'>SMS</Typography>
+        <Typography className='font-medium' color='text.primary'>
+          SMS
+        </Typography>
       </div>
     ),
     value: 'sms',
@@ -71,7 +75,7 @@ const SMSDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
         })}
       >
         Verify Your Mobile Number for SMS
-        <Typography component='span' color='text.secondary' className='flex flex-col'>
+        <Typography component='span' className='flex flex-col'>
           Enter your mobile phone number with country code and we will send you a verification code.
         </Typography>
       </DialogTitle>
@@ -129,7 +133,7 @@ const AppDialog = (handleAuthDialogClose: () => void, isBelowSmScreen: boolean) 
         </IconButton>
         <div className='flex flex-col gap-2'>
           <Typography variant='h5'>Authenticator Apps</Typography>
-          <Typography color='text.secondary'>
+          <Typography>
             Using an authenticator app like Google Authenticator, Microsoft Authenticator, Authy, or 1Password, scan the
             QR code. It will generate a 6 digit code for you to enter below.
           </Typography>
@@ -216,7 +220,7 @@ const TwoFactorAuth = ({ open, setOpen, direction }: TwoFactorAuthProps) => {
           })}
         >
           Select Authentication Method
-          <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+          <Typography component='span' className='flex flex-col text-center'>
             You also need to select a method by which the proxy authenticates to the directory serve.
           </Typography>
         </DialogTitle>

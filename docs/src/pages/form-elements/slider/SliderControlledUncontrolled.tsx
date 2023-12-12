@@ -11,13 +11,13 @@ const SliderControlledUncontrolled = () => {
 
   return (
     <div>
-      <Typography className='font-medium'>Controlled Slider</Typography>
+      <Typography className='font-medium' color='text.primary'>Controlled Slider</Typography>
       <Slider
         value={value}
         aria-labelledby='controlled-slider'
         onChange={(event, newValue: number | number[]) => setValue(newValue as number)}
       />
-      <Typography className='font-medium'>Uncontrolled Slider</Typography>
+      <Typography className='font-medium' color='text.primary'>Uncontrolled Slider</Typography>
       <Slider defaultValue={30} aria-labelledby='uncontrolled-slider' />
     </div>
   )

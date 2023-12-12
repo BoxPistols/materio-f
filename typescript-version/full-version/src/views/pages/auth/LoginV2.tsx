@@ -100,7 +100,7 @@ const LoginV2 = () => {
         >
           <div>
             <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}!👋🏻`}</Typography>
-            <Typography color='text.secondary'>Please sign-in to your account and start the adventure</Typography>
+            <Typography className='mbs-1'>Please sign-in to your account and start the adventure</Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
             <TextField autoFocus fullWidth label='Email' />
@@ -128,7 +128,7 @@ const LoginV2 = () => {
               Log In
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
-              <Typography color='text.secondary'>New on our platform?</Typography>
+              <Typography>New on our platform?</Typography>
               <Typography component={Link} href='/pages/auth/register-v2' color='primary'>
                 Create an account
               </Typography>

@@ -51,25 +51,24 @@ const PlanDetails = ({ data, pricingPlan }: Props) => {
       </div>
       <div className='text-center flex flex-col gap-1'>
         <Typography variant='h4'>{data?.title}</Typography>
-        <Typography color='text.secondary'>{data?.subtitle}</Typography>
+        <Typography>{data?.subtitle}</Typography>
       </div>
       <div className='relative mlb-3'>
         <div className='flex justify-center'>
-          <Typography color='text.secondary' component='sup' className='self-start font-medium'>
+          <Typography component='sup' className='self-start font-medium'>
             $
           </Typography>
           <Typography variant='h1' component='span' color='primary'>
             {pricingPlan === 'monthly' ? data?.monthlyPrice : data?.yearlyPlan.monthly}
           </Typography>
-          <Typography color='text.secondary' component='sub' className='self-end font-medium'>
+          <Typography component='sub' className='self-end font-medium'>
             /month
           </Typography>
         </div>
         {pricingPlan !== 'monthly' && data?.monthlyPrice !== 0 ? (
-          <Typography
-            variant='caption'
-            className={classnames(commonStyles.textDisabled, styles.transformation, 'absolute inline-end-1/2 ')}
-          >{`USD ${data?.yearlyPlan.annually}/year`}</Typography>
+          <Typography variant='caption' className={classnames(styles.transformation, 'absolute inline-end-1/2 ')}>
+            {`USD ${data?.yearlyPlan.annually}/year`}
+          </Typography>
         ) : null}
       </div>
       <div className='flex flex-col gap-4'>
@@ -78,7 +77,7 @@ const PlanDetails = ({ data, pricingPlan }: Props) => {
             <span className='inline-flex'>
               <i className={classnames('ri-checkbox-blank-circle-line text-sm', commonStyles.textSecondary)} />
             </span>
-            <Typography color='text.secondary'>{item}</Typography>
+            <Typography>{item}</Typography>
           </div>
         ))}
       </div>

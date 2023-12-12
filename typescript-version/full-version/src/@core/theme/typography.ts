@@ -24,12 +24,12 @@ const typography = (fontFamily: string): Theme['typography'] =>
     h1: {
       fontSize: '2.875rem',
       fontWeight: 500,
-      lineHeight: 1.4783
+      lineHeight: 1.478261
     },
     h2: {
       fontSize: '2.375rem',
       fontWeight: 500,
-      lineHeight: 1.4737
+      lineHeight: 1.47368421
     },
     h3: {
       fontSize: '1.75rem',
@@ -39,48 +39,48 @@ const typography = (fontFamily: string): Theme['typography'] =>
     h4: {
       fontSize: '1.5rem',
       fontWeight: 500,
-      lineHeight: 1.5834
+      lineHeight: 1.58334
     },
     h5: {
       fontSize: '1.125rem',
       fontWeight: 500,
-      lineHeight: 1.556
+      lineHeight: 1.5556
     },
     h6: {
       fontSize: '0.9375rem',
       fontWeight: 500,
-      lineHeight: 1.4667
+      lineHeight: 1.46667
     },
     subtitle1: {
       fontSize: '0.9375rem',
-      fontWeight: 500,
-      lineHeight: 1.6
+      lineHeight: 1.46667
     },
     subtitle2: {
       fontSize: '0.8125rem',
-      fontWeight: 500,
-      lineHeight: 1.5385
+      fontWeight: 400,
+      lineHeight: 1.53846154
     },
     body1: {
       fontSize: '0.9375rem',
-      lineHeight: 1.4667
+      lineHeight: 1.46667
     },
     body2: {
       fontSize: '0.8125rem',
-      lineHeight: 1.5385
+      lineHeight: 1.53846154
     },
     button: {
       fontSize: '0.9375rem',
-      lineHeight: 1.4667,
+      lineHeight: 1.46667,
       textTransform: 'none'
     },
     caption: {
       fontSize: '0.8125rem',
-      lineHeight: 1.3847,
+      lineHeight: 1.3846154,
       letterSpacing: '0.4px'
     },
     overline: {
-      lineHeight: 1.167,
+      fontSize: '0.75rem',
+      lineHeight: 1.16667,
       letterSpacing: '0.8px'
     }
   }) as Theme['typography']

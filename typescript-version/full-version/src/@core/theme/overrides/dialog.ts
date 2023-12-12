@@ -46,7 +46,10 @@ const dialog = (skin: Skin): Theme['components'] => ({
       root: ({ theme }) => ({
         padding: theme.spacing(5),
         '&:where(.dialog-actions-dense)': {
-          padding: theme.spacing(2.5)
+          padding: theme.spacing(2.5),
+          '& .MuiButton-text': {
+            paddingInline: theme.spacing(2.5)
+          }
         }
       })
     }

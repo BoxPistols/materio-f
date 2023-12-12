@@ -140,10 +140,14 @@ const CreateDeal = ({ direction }: { direction: Direction }) => {
                 <Step key={index} onClick={() => setActiveStep(index)}>
                   <StepLabel StepIconComponent={StepperCustomDot} className='p-0'>
                     <div className='step-label cursor-pointer'>
-                      <Typography className='step-number'>{`0${index + 1}`}</Typography>
+                      <Typography className='step-number' color='text.primary'>{`0${index + 1}`}</Typography>
                       <div>
-                        <Typography className='step-title'>{step.title}</Typography>
-                        <Typography className='step-subtitle'>{step.subtitle}</Typography>
+                        <Typography className='step-title' color='text.primary'>
+                          {step.title}
+                        </Typography>
+                        <Typography className='step-subtitle' color='text.primary'>
+                          {step.subtitle}
+                        </Typography>
                       </div>
                     </div>
                   </StepLabel>

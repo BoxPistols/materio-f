@@ -12,7 +12,7 @@ const LinearProgressWithLabel = (props: LinearProgressProps & { value: number })
       <div className='w-full'>
         <LinearProgress variant='determinate' {...props} />
       </div>
-      <Typography variant='body2' color='text.secondary'>{`${Math.round(props.value)}%`}</Typography>
+      <Typography variant='body2'>{`${Math.round(props.value)}%`}</Typography>
     </div>
   )
 }

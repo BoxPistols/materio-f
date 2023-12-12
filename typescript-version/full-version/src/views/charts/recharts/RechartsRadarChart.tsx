@@ -72,7 +72,7 @@ const CustomTooltip = (data: TooltipProps<any, any>) => {
   if (active && payload) {
     return (
       <div className='recharts-custom-tooltip'>
-        <Typography>{data.label}</Typography>
+        <Typography color='text.primary'>{data.label}</Typography>
         <Divider />
         {data &&
           data.payload &&

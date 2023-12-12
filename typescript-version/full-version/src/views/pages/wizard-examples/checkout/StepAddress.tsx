@@ -161,7 +161,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8} className='flex flex-col gap-6'>
         <div className='flex flex-col items-start gap-4'>
-          <Typography>Select your preferable address</Typography>
+          <Typography color='text.primary'>Select your preferable address</Typography>
           <Grid container spacing={6}>
             {data.map((item, index) => (
               <CustomInputHorizontal
@@ -178,7 +178,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
           <OpenDialogOnElementClick element={Button} elementProps={buttonProps} dialog={AddEditAddress} />
         </div>
         <div className='flex flex-col items-start gap-4'>
-          <Typography>Choose Delivery Speed</Typography>
+          <Typography color='text.primary'>Choose Delivery Speed</Typography>
           <Grid container spacing={6}>
             {dataIcons.map((item, index) => {
               let asset
@@ -205,36 +205,36 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
       <Grid item xs={12} lg={4} className='flex flex-col gap-4'>
         <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
           <CardContent className='flex flex-col gap-4'>
-            <Typography className='font-medium'>Estimated Delivery Date</Typography>
+            <Typography className='font-medium' color='text.primary'>
+              Estimated Delivery Date
+            </Typography>
             <div className='flex gap-4 items-center'>
               <img width={60} height={60} src='/images/pages/google-home.png' alt='Google Home' />
               <div>
-                <Typography color='text.secondary'>Google - Google Home - White</Typography>
-                <Typography color='text.secondary' className='font-medium'>
-                  18th Nov 2021
-                </Typography>
+                <Typography>Google - Google Home - White</Typography>
+                <Typography className='font-medium'>18th Nov 2021</Typography>
               </div>
             </div>
             <div className='flex gap-4 items-center'>
               <img width={60} height={60} src='/images/pages/iPhone-11.png' alt='iphone 11' />
               <div>
-                <Typography color='text.secondary'>Apple iPhone 11 (64GB, Black)</Typography>
-                <Typography color='text.secondary' className='font-medium'>
-                  20th Nov 2021
-                </Typography>
+                <Typography>Apple iPhone 11 (64GB, Black)</Typography>
+                <Typography className='font-medium'>20th Nov 2021</Typography>
               </div>
             </div>
           </CardContent>
           <Divider />
           <CardContent className='flex flex-col gap-4'>
-            <Typography className='font-medium'>Price Details</Typography>
+            <Typography className='font-medium' color='text.primary'>
+              Price Details
+            </Typography>
             <div className='flex flex-col gap-2'>
               <div className='flex gap-2 justify-between flex-wrap'>
-                <Typography>Order Total</Typography>
-                <Typography color='text.secondary'>$1198.00</Typography>
+                <Typography color='text.primary'>Order Total</Typography>
+                <Typography>$1198.00</Typography>
               </div>
               <div className='flex justify-between flex-wrap'>
-                <Typography>Delivery Charges</Typography>
+                <Typography color='text.primary'>Delivery Charges</Typography>
                 <div className='flex gap-2'>
                   <Typography color='text.disabled' className='line-through'>
                     $5.00
@@ -246,8 +246,12 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
           </CardContent>
           <Divider />
           <CardContent className='flex items-center justify-between flex-wrap'>
-            <Typography className='font-medium'>Total</Typography>
-            <Typography className='font-medium'>$1198.00</Typography>
+            <Typography className='font-medium' color='text.primary'>
+              Total
+            </Typography>
+            <Typography className='font-medium' color='text.primary'>
+              $1198.00
+            </Typography>
           </CardContent>
         </div>
         <div className='flex justify-end'>

@@ -32,7 +32,7 @@ const DialogsBasic = () => {
 
   return (
     <div>
-      <Typography variant='subtitle1' className='mbe-2'>
+      <Typography variant='subtitle1' className='mbe-2' color='text.primary'>
         Selected: {selectedValue}
       </Typography>
       <Button variant='outlined' onClick={handleClickOpen}>

@@ -165,11 +165,11 @@ const PaymentMethod = () => {
                 </>
               ) : (
                 <Grid item xs={12}>
-                  <Typography>
+                  <Typography color='text.primary'>
                     Cash on delivery is a mode of payment where you make the payment after the goods/services are
                     received.
                   </Typography>
-                  <Typography>
+                  <Typography color='text.primary'>
                     You can pay cash or make the payment via debit/credit card directly to the delivery person.
                   </Typography>
                 </Grid>
@@ -178,7 +178,9 @@ const PaymentMethod = () => {
           </Grid>
 
           <Grid item xs={12} md={6} className='flex flex-col gap-6'>
-            <Typography className='font-medium'>My Cards</Typography>
+            <Typography className='font-medium' color='text.primary'>
+              My Cards
+            </Typography>
             {data.map((item: DataType, index: number) => (
               <div
                 key={index}
@@ -194,7 +196,9 @@ const PaymentMethod = () => {
                 <div className='flex flex-col items-start gap-2 p-5'>
                   <img src={item.imgSrc} alt={item.imgAlt} className='h-6' />
                   <div className='flex items-center gap-4'>
-                    <Typography className='font-medium'>{item.name}</Typography>
+                    <Typography className='font-medium' color='text.primary'>
+                      {item.name}
+                    </Typography>
                     {item.cardStatus ? (
                       <Chip variant='tonal' color={item.badgeColor} label={item.cardStatus} size='small' />
                     ) : null}

@@ -106,7 +106,7 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
         })}
       >
         Edit Role
-        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+        <Typography component='span' className='flex flex-col text-center'>
           Set Role Permissions
         </Typography>
       </DialogTitle>
@@ -128,7 +128,7 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
                 styles.borderBottom
               )}
             >
-              <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]'>
+              <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]' color='text.primary'>
                 Administrator Access
               </Typography>
               <FormControlLabel
@@ -154,7 +154,7 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
                   )}
                   key={index}
                 >
-                  <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]'>
+                  <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]' color='text.primary'>
                     {typeof item === 'object' ? item.title : item}
                   </Typography>
                   {typeof item === 'object' ? (

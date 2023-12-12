@@ -202,7 +202,12 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
           <div className='flex items-center gap-4'>
             {getAvatar({ avatar: row.original.avatar, fullName: row.original.fullName })}
             <div className='flex flex-col'>
-              <Typography component={Link} href='/apps/user/view' className={classnames('font-medium', styles.title)}>
+              <Typography
+                component={Link}
+                href='/apps/user/view'
+                className={classnames('font-medium', styles.title)}
+                color='text.primary'
+              >
                 {row.original.fullName}
               </Typography>
               <Typography variant='body2'>{row.original.username}</Typography>
@@ -212,7 +217,7 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
       }),
       columnHelper.accessor('email', {
         header: 'Email',
-        cell: ({ row }) => <Typography color='text.secondary'>{row.original.email}</Typography>
+        cell: ({ row }) => <Typography>{row.original.email}</Typography>
       }),
       columnHelper.accessor('role', {
         header: 'Role',
@@ -222,13 +227,19 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
               className={userRoleObj[row.original.role].icon}
               sx={{ color: `var(--mui-palette-${userRoleObj[row.original.role].color}-main)`, fontSize: '1.375rem' }}
             />
-            <Typography className='capitalize'>{row.original.role}</Typography>
+            <Typography className='capitalize' color='text.primary'>
+              {row.original.role}
+            </Typography>
           </div>
         )
       }),
       columnHelper.accessor('currentPlan', {
         header: 'Plan',
-        cell: ({ row }) => <Typography className='capitalize'>{row.original.currentPlan}</Typography>
+        cell: ({ row }) => (
+          <Typography className='capitalize' color='text.primary'>
+            {row.original.currentPlan}
+          </Typography>
+        )
       }),
       columnHelper.accessor('status', {
         header: 'Status',

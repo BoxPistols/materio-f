@@ -1,8 +1,5 @@
 'use client'
 
-// Next Imports
-import Link from 'next/link'
-
 // MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -98,7 +95,6 @@ const Connections = () => {
             title='Connected Accounts'
             titleTypographyProps={{ variant: 'h5' }}
             subheader='Display content from your connected accounts on your site'
-            subheaderTypographyProps={{ variant: 'body1' }}
           />
           <CardContent className='flex flex-col gap-4'>
             {connectedAccountsArr.map((item, index) => (
@@ -106,7 +102,9 @@ const Connections = () => {
                 <div className='flex flex-grow items-center gap-4'>
                   <img height={32} width={32} src={item.logo} alt={item.title} />
                   <div className='flex-grow'>
-                    <Typography className='font-medium'>{item.title}</Typography>
+                    <Typography className='font-medium' color='text.primary'>
+                      {item.title}
+                    </Typography>
                     <Typography variant='body2'>{item.subtitle}</Typography>
                   </div>
                 </div>
@@ -119,7 +117,6 @@ const Connections = () => {
           <CardHeader
             title='Social Accounts'
             titleTypographyProps={{ variant: 'h5' }}
-            subheaderTypographyProps={{ variant: 'body1' }}
             subheader='Display content from social accounts on your site'
           />
           <CardContent className='flex flex-col gap-4'>
@@ -128,7 +125,7 @@ const Connections = () => {
                 <div className='flex flex-grow items-center gap-4'>
                   <img height={32} width={32} src={item.logo} alt={item.title} />
                   <div className='flex-grow'>
-                    <Typography href='/' component={Link} className='font-medium' onClick={e => e.preventDefault()}>
+                    <Typography className='font-medium' color='text.primary'>
                       {item.title}
                     </Typography>
                     {item.isConnected ? (

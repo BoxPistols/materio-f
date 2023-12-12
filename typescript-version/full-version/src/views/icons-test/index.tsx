@@ -20,7 +20,7 @@ const IconsTest = ({ data }: { data: string[] }) => {
       <Typography variant='h5' className='mbe-4'>
         Online Icons
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         BoxIcons coming from Iconify&#39;s API
         <i className='bx-x' />
       </Typography>
@@ -28,7 +28,7 @@ const IconsTest = ({ data }: { data: string[] }) => {
       <Typography variant='h5' className='mlb-4'>
         FakeDB Remix icons but offline
       </Typography>
-      <Typography className='mbe-4'>
+      <Typography className='mbe-4' color='text.primary'>
         Remix icons coming from our API (Next.js API) and SVGs are from the Iconify Bundle
       </Typography>
       {data.map((icon: string, index: number) => (
@@ -38,103 +38,107 @@ const IconsTest = ({ data }: { data: string[] }) => {
       <Typography variant='h4' className='mbs-8 mbe-4'>
         Offline Icons
       </Typography>
-      <Typography className='mbe-4'>
+      <Typography className='mbe-4' color='text.primary'>
         Iconify icons come with the following props as well: <code>id</code>, <code>key</code>, <code>name</code>,{' '}
         <code>ref</code>, <code>role</code>, <code>strokeLinecap</code>.
       </Typography>
 
-      <Typography className='mbe-4'>
+      <Typography className='mbe-4' color='text.primary'>
         Our logo wrapped with <code>Box</code> component
         <Box component='span' className={classnames(styles.primaryMain, 'mis-5 inline-flex')}>
           <i className='custom-logo' />
         </Box>
       </Typography>
 
-      <Typography className='font-medium'>Material Line Icons with height</Typography>
+      <Typography className='font-medium' color='text.primary'>
+        Material Line Icons with height
+      </Typography>
       <i className='line-md-home-twotone-alt text-4xl' />
       <i className='line-md-github text-4xl' />
       <i className='line-md-document-list text-4xl' />
       <i className='line-md-document-code text-4xl' />
       <i className='line-md-image-twotone text-4xl' />
 
-      <Typography className='mbs-4 font-medium'>Remix Icons</Typography>
-      <Typography>
+      <Typography className='mbs-4 font-medium' color='text.primary'>
+        Remix Icons
+      </Typography>
+      <Typography color='text.primary'>
         Simple Remix Icon
         <i className='ri-bike-line' />
       </Typography>
-      <Typography className='flex items-center'>
+      <Typography className='flex items-center' color='text.primary'>
         Remix Icon wrapped with <code>Box</code> component
         <Box component='span' className={classnames(styles.successMain, 'mis-5 inline-flex')}>
           <i className='ri-bike-line' />
         </Box>
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with font-size
         <i className='ri-bike-line text-5xl' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with color and passed color-name
         <i className='ri-bike-line text-red-500' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with color using CSS modules
         <i className={classnames('ri-bike-line', styles.iconColor)} />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with style
         <i className='ri-bike-line' style={{ color: '#00f' }} />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with horizontal flip
         <i className='ri-bike-line -scale-x-100 scale-y-100' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with vertical flip
         <i className='ri-bike-line scale-x-100 -scale-y-100' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with vertical & horizontal flips
         <i className='ri-bike-line -scale-x-100 -scale-y-100' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with rotate 90 degree
         <i className='ri-bike-line rotate-90' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with rotate 270 degree
         <i className='ri-bike-line -rotate-90' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with width
         <i className='ri-bike-line w-24' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with height
         <i className='ri-bike-line h-20' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with cursor pointer
         <i className='ri-bike-line cursor-pointer' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with display flex
         <i className='ri-bike-line flex' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with onClick. It has all props for <code>on</code>
         <i className='ri-bike-line' onClick={() => alert('Clicked on the icon')} />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with opacity using string
         <i className='ri-bike-line opacity-60' />
         Remix Icon with opacity using number
         <i className='ri-bike-line opacity-30' />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with transform scale
         <i className={classnames('ri-bike-line', styles.iconScale)} />
       </Typography>
-      <Typography>
+      <Typography color='text.primary'>
         Remix Icon with visibility hidden
         <i className='ri-bike-line invisible' />
       </Typography>

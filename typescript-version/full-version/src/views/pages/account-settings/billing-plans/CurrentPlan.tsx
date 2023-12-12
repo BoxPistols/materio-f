@@ -34,21 +34,25 @@ const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
         <Grid container spacing={6}>
           <Grid item xs={12} md={6} className='flex flex-col gap-6'>
             <div>
-              <Typography className='font-medium'>Your Current Plan is Basic</Typography>
-              <Typography color='text.secondary'>A simple start for everyone</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Your Current Plan is Basic
+              </Typography>
+              <Typography>A simple start for everyone</Typography>
             </div>
             <div>
-              <Typography className='font-medium'>Active until Dec 09, 2021</Typography>
-              <Typography color='text.secondary'>
-                We will send you a notification upon Subscription expiration
+              <Typography className='font-medium' color='text.primary'>
+                Active until Dec 09, 2021
               </Typography>
+              <Typography>We will send you a notification upon Subscription expiration</Typography>
             </div>
             <div>
               <div className='flex items-center gap-1.5'>
-                <Typography className='font-medium'>$199 Per Month</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  $199 Per Month
+                </Typography>
                 <Chip variant='tonal' color='primary' label='Popular' size='small' />
               </div>
-              <Typography color='text.secondary'>Standard plan for small to medium businesses</Typography>
+              <Typography>Standard plan for small to medium businesses</Typography>
             </div>
           </Grid>
           <Grid item xs={12} md={6} className='flex flex-col gap-6'>
@@ -58,8 +62,12 @@ const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
             </Alert>
             <div className='flex flex-col gap-1'>
               <div className='flex items-center justify-between'>
-                <Typography className='font-medium'>Days</Typography>
-                <Typography className='font-medium'>12 of 30 Days</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  Days
+                </Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  12 of 30 Days
+                </Typography>
               </div>
               <LinearProgress variant='determinate' value={40} />
               <Typography variant='body2'>18 days remaining until your plan requires update</Typography>

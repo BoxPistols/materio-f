@@ -39,7 +39,9 @@ const FaqHeader = ({ searchValue, setSearchValue }: Props) => {
         <Typography variant='h4' color='primary' className='mbe-2.5'>
           Hello, how can we help?
         </Typography>
-        <Typography className='mbe-6'>or choose a category to quickly find the help you need</Typography>
+        <Typography className='mbe-6' color='text.primary'>
+          or choose a category to quickly find the help you need
+        </Typography>
         <TextField
           fullWidth
           className={classnames(styles.searchBar, {

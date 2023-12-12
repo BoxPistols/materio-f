@@ -112,7 +112,7 @@ const PermissionDialog = ({ open, setOpen, data }: PermissionDialogProps) => {
         })}
       >
         {data ? 'Edit Permission' : 'Add New Permission'}
-        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+        <Typography component='span' className='flex flex-col text-center'>
           {data ? 'Edit permission as per your requirements.' : 'Permissions you may use and assign to your users.'}
         </Typography>
       </DialogTitle>

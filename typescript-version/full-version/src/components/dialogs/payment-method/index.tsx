@@ -83,7 +83,7 @@ const PaymentMethod = ({ open, setOpen }: PaymentMethodProps) => {
         })}
       >
         Select Payment Methods
-        <Typography component='span' color='text.secondary' className='flex flex-col items-center'>
+        <Typography component='span' className='flex flex-col items-center'>
           Supported payment methods
         </Typography>
       </DialogTitle>
@@ -112,9 +112,11 @@ const PaymentMethod = ({ open, setOpen }: PaymentMethodProps) => {
                 <Avatar variant='rounded' className={classnames(styles.avatarIcon, commonStyles.actionHoverColor)}>
                   <img src={card.image} alt={card.alt} height={card.imgHeight} width={card.imgWidth} />
                 </Avatar>
-                <Typography className='font-medium'>{card.cardName}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  {card.cardName}
+                </Typography>
               </div>
-              <Typography color='text.secondary'>{card.cardType}</Typography>
+              <Typography>{card.cardType}</Typography>
             </div>
           ))}
         </div>

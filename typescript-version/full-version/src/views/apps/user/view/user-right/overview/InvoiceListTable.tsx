@@ -130,11 +130,11 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
       }),
       columnHelper.accessor('total', {
         header: 'Total',
-        cell: ({ row }) => <Typography color='text.secondary'>{`$${row.original.total}`}</Typography>
+        cell: ({ row }) => <Typography>{`$${row.original.total}`}</Typography>
       }),
       columnHelper.accessor('issuedDate', {
         header: 'Issued Date',
-        cell: ({ row }) => <Typography color='text.secondary'>{row.original.issuedDate}</Typography>
+        cell: ({ row }) => <Typography>{row.original.issuedDate}</Typography>
       }),
       columnHelper.accessor('action', {
         header: 'Action',
@@ -154,20 +154,23 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                 {
                   text: 'Download',
                   icon: 'ri-download-fill text-[22px]',
-                  menuItemProps: { className: `flex items-center gap-2 ${commonStyles.textSecondary}` }
+                  menuItemProps: { className: classnames('flex items-center gap-2', commonStyles.textSecondary) }
                 },
                 {
                   text: 'Edit',
                   icon: 'ri-pencil-line text-[22px]',
                   href: `/apps/invoice/edit/${row.original.id}`,
                   linkProps: {
-                    className: `flex items-center h-[40px] plb-2 pli-4 w-full gap-2 ${commonStyles.textSecondary}`
+                    className: classnames(
+                      'flex items-center h-[40px] plb-2 pli-4 w-full gap-2',
+                      commonStyles.textSecondary
+                    )
                   }
                 },
                 {
                   text: 'Duplicate',
                   icon: 'ri-file-copy-line text-[22px]',
-                  menuItemProps: { className: `flex items-center gap-2 ${commonStyles.textSecondary}` }
+                  menuItemProps: { className: classnames('flex items-center gap-2', commonStyles.textSecondary) }
                 }
               ]}
             />

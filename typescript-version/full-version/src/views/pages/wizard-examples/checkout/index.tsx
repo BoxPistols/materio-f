@@ -197,9 +197,7 @@ const CheckoutWizard = ({ direction }: { direction: Direction }) => {
                 <Step key={index} onClick={() => setActiveStep(index)}>
                   <StepLabel icon={<></>} className='text-center'>
                     {step.icon}
-                    <Typography className='step-title' color='text.secondary'>
-                      {step.title}
-                    </Typography>
+                    <Typography className='step-title'>{step.title}</Typography>
                   </StepLabel>
                 </Step>
               )

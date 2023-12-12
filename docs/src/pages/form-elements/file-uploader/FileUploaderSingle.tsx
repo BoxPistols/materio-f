@@ -80,7 +80,7 @@ const FileUploaderSingle = () => {
           })}
           >
             <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
-            <Typography color='text.secondary'>
+            <Typography>
               Drop files here or click{' '}
               <a href='/' onClick={e => e.preventDefault()} className={styles.dropZone}>
                 browse

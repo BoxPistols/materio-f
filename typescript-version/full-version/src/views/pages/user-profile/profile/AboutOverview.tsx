@@ -21,12 +21,10 @@ const renderList = (list: ProfileCommonType[]) => {
         <div key={index} className='flex items-center gap-2'>
           <i className={classnames(item.icon, commonStyles.textSecondary)} />
           <div className='flex items-center flex-wrap gap-2'>
-            <Typography className='font-medium' color='text.secondary'>
+            <Typography className='font-medium'>
               {`${item.property.charAt(0).toUpperCase() + item.property.slice(1)}:`}
             </Typography>
-            <Typography className={commonStyles.textSecondary}>
-              {item.value.charAt(0).toUpperCase() + item.value.slice(1)}
-            </Typography>
+            <Typography>{item.value.charAt(0).toUpperCase() + item.value.slice(1)}</Typography>
           </div>
         </div>
       )
@@ -40,12 +38,10 @@ const renderTeams = (teams: ProfileTeamsType[]) => {
     teams.map((item, index) => {
       return (
         <div key={index} className='flex items-center flex-wrap gap-2'>
-          <Typography className='font-medium' color='text.secondary'>
+          <Typography className='font-medium'>
             {item.property.charAt(0).toUpperCase() + item.property.slice(1)}
           </Typography>
-          <Typography className={commonStyles.textSecondary}>
-            {item.value.charAt(0).toUpperCase() + item.value.slice(1)}
-          </Typography>
+          <Typography>{item.value.charAt(0).toUpperCase() + item.value.slice(1)}</Typography>
         </div>
       )
     })
@@ -59,19 +55,19 @@ const AboutOverview = ({ data }: { data?: ProfileTabType }) => {
         <Card>
           <CardContent className='flex flex-col gap-6'>
             <div className='flex flex-col gap-4'>
-              <Typography variant='caption' color='text.disabled' className='uppercase'>
+              <Typography variant='caption' className='uppercase'>
                 About
               </Typography>
               {data?.about && renderList(data?.about)}
             </div>
             <div className='flex flex-col gap-4'>
-              <Typography variant='caption' color='text.disabled' className='uppercase'>
+              <Typography variant='caption' className='uppercase'>
                 Contacts
               </Typography>
               {data?.contacts && renderList(data?.contacts)}
             </div>
             <div className='flex flex-col gap-4'>
-              <Typography variant='caption' color='text.disabled' className='uppercase'>
+              <Typography variant='caption' className='uppercase'>
                 Teams
               </Typography>
               {data?.teams && renderTeams(data?.teams)}
@@ -83,7 +79,7 @@ const AboutOverview = ({ data }: { data?: ProfileTabType }) => {
         <Card>
           <CardContent>
             <div className='flex flex-col gap-4'>
-              <Typography variant='caption' color='text.disabled' className='uppercase'>
+              <Typography variant='caption' className='uppercase'>
                 Overview
               </Typography>
               {data?.overview && renderList(data?.overview)}

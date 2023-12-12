@@ -50,7 +50,7 @@ const UpgradePlan = ({ open, setOpen }: UpgradePlanProps) => {
           })}
         >
           Upgrade Plan
-          <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+          <Typography component='span' className='flex flex-col text-center'>
             Choose the best plan for user
           </Typography>
         </DialogTitle>
@@ -80,7 +80,7 @@ const UpgradePlan = ({ open, setOpen }: UpgradePlanProps) => {
           </div>
           <Divider className='mlb-6' />
           <div className='flex flex-col gap-1'>
-            <Typography color='text.secondary'>User current plan is standard plan</Typography>
+            <Typography>User current plan is standard plan</Typography>
             <div className='flex items-center justify-between'>
               <div className='flex justify-center gap-1'>
                 <Typography component='sup' className='self-start' color='primary'>

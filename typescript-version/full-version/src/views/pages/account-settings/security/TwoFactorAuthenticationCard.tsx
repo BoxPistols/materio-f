@@ -29,10 +29,8 @@ const TwoFactorAuthenticationCard = ({ direction }: { direction: Direction }) =>
         <CardHeader title='Two-steps verification' />
         <CardContent className='flex flex-col items-start gap-6'>
           <div className='flex flex-col gap-4'>
-            <Typography className={commonStyles.textSecondary}>
-              Two factor authentication is not enabled yet.
-            </Typography>
-            <Typography className={commonStyles.textSecondary}>
+            <Typography>Two factor authentication is not enabled yet.</Typography>
+            <Typography>
               Two-factor authentication adds an additional layer of security to your account by requiring more than just
               a password to log in.
               <Link className={commonStyles.primaryColor}>Learn more.</Link>

@@ -29,11 +29,11 @@ const ProgressLinearControlledUncontrolled = () => {
   return (
     <>
       <div className='mbe-4'>
-        <Typography className='font-medium mbe-1.5'>Uncontrolled Progress</Typography>
+        <Typography className='font-medium mbe-1.5' color='text.primary'>Uncontrolled Progress</Typography>
         <LinearProgress variant='determinate' value={40} />
       </div>
       <>
-        <Typography className='font-medium mbe-1.5'>Controlled Progress</Typography>
+        <Typography className='font-medium mbe-1.5' color='text.primary'>Controlled Progress</Typography>
         <LinearProgress variant='determinate' value={progress} />
       </>
     </>

@@ -137,7 +137,7 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
     () => [
       columnHelper.accessor('name', {
         header: 'Name',
-        cell: ({ row }) => <Typography>{row.original.name}</Typography>
+        cell: ({ row }) => <Typography color='text.primary'>{row.original.name}</Typography>
       }),
       columnHelper.accessor('assignedTo', {
         header: 'Assigned To',
@@ -165,7 +165,7 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
       }),
       columnHelper.accessor('createdDate', {
         header: 'Created Date',
-        cell: ({ row }) => <Typography color='text.secondary'>{row.original.createdDate}</Typography>
+        cell: ({ row }) => <Typography>{row.original.createdDate}</Typography>
       }),
       columnHelper.accessor('action', {
         header: 'Actions',

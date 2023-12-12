@@ -68,7 +68,7 @@ const ResetPasswordV1 = ({ direction }: { direction: Direction }) => {
           </div>
           <Typography variant='h4'>Reset Password 🔒</Typography>
           <div className='flex flex-col gap-5'>
-            <Typography color='text.secondary' className='mbs-1'>
+            <Typography className='mbs-1'>
               Your new password must be different from previously used passwords
             </Typography>
             <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>

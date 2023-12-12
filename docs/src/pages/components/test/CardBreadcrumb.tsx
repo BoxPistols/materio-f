@@ -24,7 +24,7 @@ const CardBreadcrumb = () => {
           <a href='/' onClick={handleClick}>
             Core
           </a>
-          <Typography>Breadcrumb</Typography>
+          <Typography color='text.primary'>Breadcrumb</Typography>
         </Breadcrumbs>
 
         <Breadcrumbs separator='-' aria-label='breadcrumb'>
@@ -34,7 +34,7 @@ const CardBreadcrumb = () => {
           <a href='/' onClick={handleClick}>
             Core
           </a>
-          <Typography>Breadcrumb</Typography>
+          <Typography color='text.primary'>Breadcrumb</Typography>
         </Breadcrumbs>
 
         <Breadcrumbs aria-label='breadcrumb' separator={<i className='ri-arrow-right-s-line text-xl' />}>
@@ -44,7 +44,7 @@ const CardBreadcrumb = () => {
           <a href='/' onClick={handleClick}>
             Core
           </a>
-          <Typography>Breadcrumb</Typography>
+          <Typography color='text.primary'>Breadcrumb</Typography>
         </Breadcrumbs>
 
         <Breadcrumbs aria-label='breadcrumb' className='mbs-2'>
@@ -56,7 +56,7 @@ const CardBreadcrumb = () => {
             <i className='ri-bookmark-line' />
             Core
           </a>
-          <Typography className='flex items-center gap-0.5'>
+          <Typography className='flex items-center gap-0.5' color='text.primary'>
             <i className='ri-file-3-line' />
             Breadcrumb
           </Typography>

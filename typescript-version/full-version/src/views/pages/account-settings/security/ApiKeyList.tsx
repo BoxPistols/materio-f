@@ -44,7 +44,7 @@ const ApiKeyList = () => {
     <Card>
       <CardHeader title='API Key List & Access' className='pbe-4' />
       <CardContent className='flex flex-col gap-6'>
-        <Typography color='text.secondary'>
+        <Typography>
           An API key is a simple encrypted string that identifies an application without any principal. They are useful
           for accessing public data anonymously, and are used to associate API requests with your project for quota and
           billing.
@@ -59,9 +59,7 @@ const ApiKeyList = () => {
               <Chip variant='tonal' color='primary' label={item.access} size='small' />
             </div>
             <div className='flex items-center gap-3'>
-              <Typography className='font-medium' color='text.secondary'>
-                {item.key}
-              </Typography>
+              <Typography className='font-medium'>{item.key}</Typography>
               <div className='flex'>
                 <i className={classnames('ri-file-copy-line text-xl', commonStyles.textSecondary)} />
               </div>

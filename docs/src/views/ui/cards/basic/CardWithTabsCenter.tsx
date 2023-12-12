@@ -31,7 +31,7 @@ const CardWithTabsCenter = () => {
           <Typography variant='h5' className='mbe-2'>
             Header One
           </Typography>
-          <Typography color='text.secondary' className='mbe-6'>
+          <Typography className='mbe-6'>
             Pudding tiramisu caramels. Gingerbread gummies danish chocolate bar toffee marzipan. Wafer wafer cake powder
             danish oat cake.
           </Typography>
@@ -41,7 +41,7 @@ const CardWithTabsCenter = () => {
           <Typography variant='h5' className='mbe-2'>
             Header Two
           </Typography>
-          <Typography color='text.secondary' className='mbe-6'>
+          <Typography className='mbe-6'>
             Dragée chupa chups soufflé cheesecake jelly tootsie roll cupcake marzipan. Carrot cake sweet roll gummi
             bears caramels jelly beans.
           </Typography>
@@ -51,7 +51,7 @@ const CardWithTabsCenter = () => {
           <Typography variant='h5' className='mbe-2'>
             Header Three
           </Typography>
-          <Typography color='text.secondary' className='mbe-6'>
+          <Typography className='mbe-6'>
             Icing cake macaroon macaroon jelly chocolate bar. Chupa chups dessert dessert soufflé chocolate bar jujubes
             gummi bears lollipop.
           </Typography>

@@ -46,11 +46,11 @@ const RatingsCustomized = () => {
   return (
     <>
       <div className='mbe-3'>
-        <Typography className='font-medium'>Custom empty icon</Typography>
+        <Typography className='font-medium' color='text.primary'>Custom empty icon</Typography>
         <Rating name='customized-empty' defaultValue={2} precision={0.5} emptyIcon={<i className='ri-star-fill' />} />
       </div>
       <div className='mbe-3'>
-        <Typography className='font-medium'>Custom icon and color</Typography>
+        <Typography className='font-medium' color='text.primary'>Custom icon and color</Typography>
         <Rating
           precision={0.5}
           defaultValue={3}
@@ -60,11 +60,11 @@ const RatingsCustomized = () => {
         />
       </div>
       <div className='mbe-3'>
-        <Typography className='font-medium'>10 stars</Typography>
+        <Typography className='font-medium' color='text.primary'>10 stars</Typography>
         <Rating name='customized-10' defaultValue={7} max={10} />
       </div>
       <>
-        <Typography className='font-medium'>Custom icon set</Typography>
+        <Typography className='font-medium' color='text.primary'>Custom icon set</Typography>
         <Rating name='customized-icons' defaultValue={2} max={4} IconContainerComponent={IconContainer} />
       </>
     </>

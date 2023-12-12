@@ -125,7 +125,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                 </form>
               </TabPanel>
               <TabPanel value='cash-on-delivery'>
-                <Typography className='mbe-4'>
+                <Typography className='mbe-4' color='text.primary'>
                   Cash on Delivery is a type of payment method where the recipient make payment for the order at the
                   time of delivery rather than in advance.
                 </Typography>
@@ -134,7 +134,9 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
                 </Button>
               </TabPanel>
               <TabPanel value='gift-card'>
-                <Typography className='mbe-4'>Enter Gift Card Details</Typography>
+                <Typography className='mbe-4' color='text.primary'>
+                  Enter Gift Card Details
+                </Typography>
                 <Grid container spacing={5}>
                   <Grid item xs={12}>
                     <TextField fullWidth type='number' label='Gift Card Number' placeholder='Gift Card Number' />
@@ -156,14 +158,16 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
       <Grid item xs={12} lg={4}>
         <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
           <CardContent>
-            <Typography className='font-medium mbe-4'>Price Details</Typography>
+            <Typography className='font-medium mbe-4' color='text.primary'>
+              Price Details
+            </Typography>
             <div className='flex flex-col gap-2'>
               <div className='flex items-center justify-between gap-2'>
-                <Typography>Order Total</Typography>
-                <Typography className={commonStyles.textSecondary}>$1198.00</Typography>
+                <Typography color='text.primary'>Order Total</Typography>
+                <Typography>$1198.00</Typography>
               </div>
               <div className='flex items-center justify-between gap-2'>
-                <Typography>Delivery Charges</Typography>
+                <Typography color='text.primary'>Delivery Charges</Typography>
                 <div className='flex gap-2'>
                   <Typography color='text.disabled' className='line-through'>
                     $5.00
@@ -177,21 +181,25 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
           <CardContent className='flex flex-col gap-4'>
             <div className='flex flex-col gap-2'>
               <div className='flex items-center justify-between gap-2'>
-                <Typography className='font-medium'>Total</Typography>
-                <Typography color='text.secondary' className='font-medium'>
-                  $1198.00
+                <Typography className='font-medium' color='text.primary'>
+                  Total
                 </Typography>
+                <Typography className='font-medium'>$1198.00</Typography>
               </div>
               <div className='flex items-center justify-between gap-2'>
-                <Typography className='font-medium'>Deliver to:</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  Deliver to:
+                </Typography>
                 <Chip variant='tonal' size='small' color='primary' label='Home' />
               </div>
             </div>
             <div>
-              <Typography className='font-medium'>John Doe (Default),</Typography>
-              <Typography color='text.secondary'>4135 Parkway Street,</Typography>
-              <Typography color='text.secondary'>Los Angeles, CA, 90017.</Typography>
-              <Typography color='text.secondary'>Mobile : +1 906 568 2332</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                John Doe (Default),
+              </Typography>
+              <Typography>4135 Parkway Street,</Typography>
+              <Typography>Los Angeles, CA, 90017.</Typography>
+              <Typography>Mobile : +1 906 568 2332</Typography>
             </div>
             <Typography
               href='/'

@@ -15,14 +15,14 @@ const TypographyTexts = () => {
           </Grid>
           <Grid item xs={12} sm={10}>
             <Typography variant='subtitle1'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
-            <Typography variant='body2'>font-size: 16px / line-height: 24px / font-weight: 500</Typography>
+            <Typography variant='body2'>font-size: 15px / line-height: 22px / font-weight: 400</Typography>
           </Grid>
           <Grid item xs={12} sm={2}>
             <Typography>subtitle2</Typography>
           </Grid>
           <Grid item xs={12} sm={10}>
             <Typography variant='subtitle2'>Cupcake ipsum dolor sit amet chocolate bar pastry sesame snaps.</Typography>
-            <Typography variant='body2'>font-size: 13px / line-height: 20px / font-weight: 500</Typography>
+            <Typography variant='body2'>font-size: 13px / line-height: 20px / font-weight: 400</Typography>
           </Grid>
           <Grid item xs={12} sm={2}>
             <Typography>body1</Typography>

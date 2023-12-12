@@ -96,10 +96,14 @@ const RegisterMultiSteps = ({ direction }: { direction: Direction }) => {
                 <Step key={index}>
                   <StepLabel StepIconComponent={StepperCustomDot}>
                     <div className='step-label'>
-                      <Typography className='step-number'>{`0${index + 1}`}</Typography>
+                      <Typography className='step-number' color='text.primary'>{`0${index + 1}`}</Typography>
                       <div>
-                        <Typography className='step-title'>{step.title}</Typography>
-                        <Typography className='step-subtitle'>{step.subtitle}</Typography>
+                        <Typography className='step-title' color='text.primary'>
+                          {step.title}
+                        </Typography>
+                        <Typography className='step-subtitle' color='text.primary'>
+                          {step.subtitle}
+                        </Typography>
                       </div>
                     </div>
                   </StepLabel>

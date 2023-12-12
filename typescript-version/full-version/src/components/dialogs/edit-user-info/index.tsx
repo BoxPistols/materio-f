@@ -88,7 +88,7 @@ const EditUserInfo = ({ open, setOpen, data }: EditUserInfoProps) => {
         })}
       >
         Edit User Information
-        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+        <Typography component='span' className='flex flex-col text-center'>
           Updating user details will receive a privacy audit.
         </Typography>
       </DialogTitle>

@@ -34,16 +34,16 @@ const CardHorizontalRatings = () => {
             </Typography>
             <div className='flex flex-wrap gap-x-2 gap-y-1 mbe-2'>
               <Rating name='read-only' value={4} readOnly />
-              <Typography>4 Star | 98 reviews</Typography>
+              <Typography color='text.primary'>4 Star | 98 reviews</Typography>
             </div>
-            <Typography color='text.secondary'>
+            <Typography>
               Before there was a United States of America, there were coffee houses, because how are you supposed to
               build.
             </Typography>
           </CardContent>
           <CardActions className='card-actions-dense'>
-            <Button size='small'>Location</Button>
-            <Button size='small'>Reviews</Button>
+            <Button>Location</Button>
+            <Button>Reviews</Button>
           </CardActions>
         </Grid>
         <Grid

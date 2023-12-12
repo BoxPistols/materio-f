@@ -132,7 +132,9 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
           <div className='flex items-center gap-3'>
             <CustomAvatar src={row.original.avatar} size={34} />
             <div className='flex flex-col'>
-              <Typography className='font-medium'>{row.original.title}</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                {row.original.title}
+              </Typography>
               <Typography variant='body2'>{row.original.subtitle}</Typography>
             </div>
           </div>
@@ -140,7 +142,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
       }),
       columnHelper.accessor('leader', {
         header: 'Leader',
-        cell: ({ row }) => <Typography>{row.original.leader}</Typography>
+        cell: ({ row }) => <Typography color='text.primary'>{row.original.leader}</Typography>
       }),
       columnHelper.accessor('avatarGroup', {
         header: 'Team',
@@ -158,7 +160,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
         cell: ({ row }) => (
           <div className='flex items-center gap-3'>
             <LinearProgress color='primary' value={row.original.status} variant='determinate' className='w-20' />
-            <Typography>{`${row.original.status}%`}</Typography>
+            <Typography color='text.primary'>{`${row.original.status}%`}</Typography>
           </div>
         )
       }),

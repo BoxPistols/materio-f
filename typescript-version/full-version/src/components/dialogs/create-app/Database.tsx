@@ -48,7 +48,9 @@ const DataBase = ({ activeStep, isLastStep, handleNext, handlePrev, direction }:
               <img src='/images/logos/firebase.png' alt='firebase' height={30} width={30} />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography className='font-medium'>Firebase</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Firebase
+              </Typography>
               <Typography variant='body2'>Cloud Firestore</Typography>
             </div>
           </div>
@@ -60,7 +62,9 @@ const DataBase = ({ activeStep, isLastStep, handleNext, handlePrev, direction }:
               <img src='/images/logos/aws.png' alt='aws' height={30} width={30} />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography className='font-medium'>AWS</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                AWS
+              </Typography>
               <Typography variant='body2'>Amazon Fast NoSQL Database</Typography>
             </div>
           </div>
@@ -72,7 +76,9 @@ const DataBase = ({ activeStep, isLastStep, handleNext, handlePrev, direction }:
               <i className='ri-database-2-line text-3xl' />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography className='font-medium'>MySQL</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                MySQL
+              </Typography>
               <Typography variant='body2'>Basic MySQL database</Typography>
             </div>
           </div>

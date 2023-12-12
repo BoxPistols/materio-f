@@ -12,7 +12,7 @@ const Progress = (props: CircularProgressProps) => {
       <CircularProgress variant='determinate' {...props} size={50} />
       <div className='flex absolute top-0 left-0 right-0 bottom-0 items-center justify-center'
       >
-        <Typography variant='caption' component='div' color='text.secondary'>
+        <Typography variant='caption' component='div' color='text.primary'>
           {`${Math.round(props.value as number)}%`}
         </Typography>
       </div>

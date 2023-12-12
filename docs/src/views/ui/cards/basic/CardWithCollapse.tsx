@@ -25,20 +25,20 @@ const CardWithCollapse = () => {
         <Typography variant='h5' className='mbe-3'>
           Popular Uses Of The Internet
         </Typography>
-        <Typography color='text.secondary'>
+        <Typography>
           Although cards can support multiple actions, UI controls, and an overflow menu.
         </Typography>
       </CardContent>
       <CardActions className='justify-between card-actions-dense'>
-        <Button size='small' onClick={() => setExpanded(!expanded)}>Details</Button>
-        <IconButton size='small' onClick={() => setExpanded(!expanded)}>
-          <i className={expanded ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'} />
+        <Button onClick={() => setExpanded(!expanded)}>Details</Button>
+        <IconButton onClick={() => setExpanded(!expanded)}>
+          <i className={expanded ? 'ri-arrow-up-s-line text-xl' : 'ri-arrow-down-s-line text-xl'} />
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout={300}>
         <Divider />
         <CardContent>
-          <Typography color='text.secondary'>
+          <Typography>
             I&#39;m a thing. But, like most politicians, he promised more than he could deliver. You won&#39;t have time
             for sleeping, soldier, not with all the bed making you&#39;ll be doing. Then we&#39;ll go with that data
             file! Hey, you add a one and two zeros to that or we walk! You&#39;re going to do his laundry? I&#39;ve got

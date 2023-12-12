@@ -46,10 +46,7 @@ const TimelineOutlined = () => {
               12 min ago
             </Typography>
           </div>
-          <Typography
-            variant='body1'
-            className='mbe-2' color='text.secondary'
-          >
+          <Typography className='mbe-2'>
             Invoices have been paid to the company
           </Typography>
           <div
@@ -83,10 +80,7 @@ const TimelineOutlined = () => {
               45 min ago
             </Typography>
           </div>
-          <Typography
-            variant='body1'
-            className='mbe-2' color='text.secondary'
-          >
+          <Typography className='mbe-2'>
             Project meeting with john @10:15am
           </Typography>
           <div className='flex items-center gap-2.5'>
@@ -115,7 +109,7 @@ const TimelineOutlined = () => {
               2 Day Ago
             </Typography>
           </div>
-          <Typography variant='body1' className='mbe-2' color='text.secondary'>
+          <Typography variant='body1' className='mbe-2'>
             6 team members in a project
           </Typography>
           <AvatarGroup total={6} className='pull-up'>

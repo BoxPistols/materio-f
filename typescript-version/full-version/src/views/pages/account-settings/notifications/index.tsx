@@ -56,7 +56,6 @@ const Notifications = () => {
     <Card>
       <CardHeader
         title='Recent Devices'
-        subheaderTypographyProps={{ variant: 'body1' }}
         subheader={
           <>
             We need permission from your browser to show notifications.
@@ -79,7 +78,7 @@ const Notifications = () => {
               {tableData.map((data, index) => (
                 <tr key={index}>
                   <td>
-                    <Typography>{data.type}</Typography>
+                    <Typography color='text.primary'>{data.type}</Typography>
                   </td>
                   <td>
                     <Checkbox defaultChecked={data.email} />
@@ -96,9 +95,7 @@ const Notifications = () => {
           </table>
         </div>
         <CardContent>
-          <Typography className='mbe-6 font-medium' color='text.secondary'>
-            When should we send you notifications?
-          </Typography>
+          <Typography className='mbe-6 font-medium'>When should we send you notifications?</Typography>
           <Grid container spacing={6}>
             <Grid item xs={12} sm={6} md={4}>
               <Select fullWidth defaultValue='online'>

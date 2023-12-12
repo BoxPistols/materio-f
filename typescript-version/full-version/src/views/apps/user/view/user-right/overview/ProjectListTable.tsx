@@ -199,13 +199,13 @@ const ProjectListTable = () => {
       }),
       columnHelper.accessor('totalTask', {
         header: 'Total Task',
-        cell: ({ row }) => <Typography>{row.original.totalTask}</Typography>
+        cell: ({ row }) => <Typography color='text.primary'>{row.original.totalTask}</Typography>
       }),
       columnHelper.accessor('progressValue', {
         header: 'Progress',
         cell: ({ row }) => (
           <>
-            <Typography>{`${row.original.progressValue}%`}</Typography>
+            <Typography color='text.primary'>{`${row.original.progressValue}%`}</Typography>
             <LinearProgress
               color={row.original.progressColor}
               value={row.original.progressValue}
@@ -217,7 +217,7 @@ const ProjectListTable = () => {
       }),
       columnHelper.accessor('hours', {
         header: 'Hours',
-        cell: ({ row }) => <Typography color='text.secondary'>{row.original.hours}</Typography>
+        cell: ({ row }) => <Typography>{row.original.hours}</Typography>
       })
     ],
     // eslint-disable-next-line react-hooks/exhaustive-deps

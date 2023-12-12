@@ -53,7 +53,9 @@ const NotificationsTab = () => {
       <CardHeader title='Notifications' />
       <Divider />
       <CardContent>
-        <Typography className='font-medium'>You will receive notification for the below selected items.</Typography>
+        <Typography className='font-medium' color='text.primary'>
+          You will receive notification for the below selected items.
+        </Typography>
       </CardContent>
       <Divider />
       <div className='overflow-x-auto'>
@@ -70,7 +72,7 @@ const NotificationsTab = () => {
             {tableData.map((data, index) => (
               <tr key={index}>
                 <td>
-                  <Typography>{data.type}</Typography>
+                  <Typography color='text.primary'>{data.type}</Typography>
                 </td>
                 <td>
                   <Checkbox defaultChecked={data.app} />

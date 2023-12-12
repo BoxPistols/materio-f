@@ -51,7 +51,9 @@ const ConnectionsTeams = (props: Props) => {
                   <div className='flex items-center flex-grow gap-2'>
                     <CustomAvatar size={38} src={connection.avatar} />
                     <div className='flex flex-grow flex-col gap-1'>
-                      <Typography className='font-medium'>{connection.name}</Typography>
+                      <Typography className='font-medium' color='text.primary'>
+                        {connection.name}
+                      </Typography>
                       <Typography variant='body2'>{connection.connections} Connections</Typography>
                     </div>
                   </div>
@@ -90,7 +92,9 @@ const ConnectionsTeams = (props: Props) => {
                   <div className='flex flex-grow items-center gap-2'>
                     <CustomAvatar size={38} src={team.avatar} />
                     <div className='flex flex-grow flex-col gap-1'>
-                      <Typography className='font-medium'>{team.title}</Typography>
+                      <Typography className='font-medium' color='text.primary'>
+                        {team.title}
+                      </Typography>
                       <Typography variant='body2'>{team.members} Members</Typography>
                     </div>
                   </div>

@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 const ButtonsFab = () => {
   return (
     <div className='flex gap-4 flex-col'>
-      <Typography className='font-medium'>Circular Variant</Typography>
+      <Typography className='font-medium' color='text.primary'>Circular Variant</Typography>
       <div className='flex gap-4 mbe-6'>
         <Fab aria-label='edit'>
           <i className='ri-pencil-line' />
@@ -32,7 +32,7 @@ const ButtonsFab = () => {
           <i className='ri-pencil-line' />
         </Fab>
       </div>
-      <Typography className='font-medium'>Extended Variant</Typography>
+      <Typography className='font-medium' color='text.primary'>Extended Variant</Typography>
       <div className='flex gap-4'>
         <Fab variant='extended'>
           <i className='ri-add-line mie-1'/>

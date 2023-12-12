@@ -101,7 +101,7 @@ const FormLayoutsBasic = () => {
                   Get Started!
                 </Button>
                 <div className='flex items-center justify-center gap-2'>
-                  <Typography>Already have an account?</Typography>
+                  <Typography color='text.primary'>Already have an account?</Typography>
                   <Link href='/' onClick={e => e.preventDefault()} className={commonStyles.primaryColor}>
                     Log In
                   </Link>

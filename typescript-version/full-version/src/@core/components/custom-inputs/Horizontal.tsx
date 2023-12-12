@@ -114,13 +114,7 @@ const CustomInputHorizontal = (props: CustomInputHorizontalProps) => {
         content
       )
     } else if (!meta && title && !content) {
-      return typeof title === 'string' ? (
-        <Title className='mbs-1.5'>
-          {title}
-        </Title>
-      ) : (
-        title
-      )
+      return typeof title === 'string' ? <Title className='mbs-1.5'>{title}</Title> : title
     } else {
       return null
     }

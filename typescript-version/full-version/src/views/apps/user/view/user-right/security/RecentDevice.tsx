@@ -59,17 +59,17 @@ const RecentDevice = () => {
               <td>
                 <div className='flex items-center gap-4'>
                   <img alt='Chrome' width='22px' src='/images/logos/chrome.png' />
-                  <Typography>{device.browser}</Typography>
+                  <Typography color='text.primary'>{device.browser}</Typography>
                 </div>
               </td>
               <td>
-                <Typography color='text.secondary'>{device.device}</Typography>
+                <Typography>{device.device}</Typography>
               </td>
               <td>
-                <Typography color='text.secondary'>{device.location}</Typography>
+                <Typography>{device.location}</Typography>
               </td>
               <td>
-                <Typography color='text.secondary'>{device.recentActivity}</Typography>
+                <Typography>{device.recentActivity}</Typography>
               </td>
             </tr>
           ))}

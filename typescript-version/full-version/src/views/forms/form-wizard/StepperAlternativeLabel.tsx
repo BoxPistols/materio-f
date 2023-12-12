@@ -307,8 +307,12 @@ const StepperAlternativeLabel = () => {
                 <StepLabel StepIconComponent={StepperCustomDot}>
                   <div className='step-label'>
                     <div>
-                      <Typography className='step-title'>{label.title}</Typography>
-                      <Typography className='step-subtitle'>{label.subtitle}</Typography>
+                      <Typography className='step-title' color='text.primary'>
+                        {label.title}
+                      </Typography>
+                      <Typography className='step-subtitle' color='text.primary'>
+                        {label.subtitle}
+                      </Typography>
                     </div>
                   </div>
                 </StepLabel>
@@ -321,7 +325,9 @@ const StepperAlternativeLabel = () => {
         <CardContent>
           {activeStep === steps.length ? (
             <>
-              <Typography className={styles.completedText}>All steps are completed!</Typography>
+              <Typography className={styles.completedText} color='text.primary'>
+                All steps are completed!
+              </Typography>
               <div className='flex justify-end mt-4'>
                 <Button variant='contained' onClick={handleReset}>
                   Reset
@@ -333,7 +339,9 @@ const StepperAlternativeLabel = () => {
               <form onSubmit={e => e.preventDefault()}>
                 <Grid container spacing={5}>
                   <Grid item xs={12}>
-                    <Typography className='font-medium'>{steps[activeStep].title}</Typography>
+                    <Typography className='font-medium' color='text.primary'>
+                      {steps[activeStep].title}
+                    </Typography>
                     <Typography variant='body2'>{steps[activeStep].subtitle}</Typography>
                   </Grid>
                   {renderStepContent(activeStep)}

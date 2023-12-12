@@ -54,10 +54,12 @@ const accordion = (skin: Skin): Theme['components'] => ({
     styleOverrides: {
       root: ({ theme }) => ({
         padding: theme.spacing(3, 5),
+        color: 'var(--mui-palette-text-primary)',
         '&.Mui-expanded': {
           minHeight: 48
         },
         '& .MuiTypography-root': {
+          color: 'inherit',
           fontWeight: theme.typography.fontWeightMedium
         }
       }),

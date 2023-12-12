@@ -211,7 +211,7 @@ const PaymentProviders = ({ open, setOpen }: PaymentProvidersProps) => {
         })}
       >
         Select Payment Providers
-        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+        <Typography component='span' className='flex flex-col text-center'>
           Third-party payment providers
         </Typography>
       </DialogTitle>
@@ -234,7 +234,9 @@ const PaymentProviders = ({ open, setOpen }: PaymentProvidersProps) => {
                 { 'flex-col !items-start': isBelowSmScreen }
               )}
             >
-              <Typography className='font-medium'>{card.providerName}</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                {card.providerName}
+              </Typography>
               <div className='flex gap-x-4 gap-y-2 flex-wrap'>
                 {card.images.map((image, index) => (
                   <Avatar

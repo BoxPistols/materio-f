@@ -45,21 +45,31 @@ const UserPlan = () => {
           <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-2'>
               <i className={classnames('ri-circle-fill text-[10px]', commonStyles.textSecondary)} />
-              <Typography component='span'>10 Users</Typography>
+              <Typography component='span' color='text.primary'>
+                10 Users
+              </Typography>
             </div>
             <div className='flex items-center gap-2'>
               <i className={classnames('ri-circle-fill text-[10px]', commonStyles.textSecondary)} />
-              <Typography component='span'>Up to 10 GB storage</Typography>
+              <Typography component='span' color='text.primary'>
+                Up to 10 GB storage
+              </Typography>
             </div>
             <div className='flex items-center gap-2'>
               <i className={classnames('ri-circle-fill text-[10px]', commonStyles.textSecondary)} />
-              <Typography component='span'>Basic Support</Typography>
+              <Typography component='span' color='text.primary'>
+                Basic Support
+              </Typography>
             </div>
           </div>
           <div className='flex flex-col gap-1'>
             <div className='flex items-center justify-between'>
-              <Typography className='font-medium'>Days</Typography>
-              <Typography className='font-medium'>65%</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Days
+              </Typography>
+              <Typography className='font-medium' color='text.primary'>
+                65%
+              </Typography>
             </div>
             <LinearProgress variant='determinate' value={65} />
             <Typography variant='body2'>4 days remaining</Typography>

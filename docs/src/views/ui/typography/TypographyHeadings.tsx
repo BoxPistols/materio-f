@@ -51,7 +51,7 @@ const TypographyHeadings = () => {
           </Grid>
           <Grid item xs={12} sm={10}>
             <Typography variant='h6'>Heading 6</Typography>
-            <Typography variant='body2'>font-size: 15px / line-height: 24px / font-weight: 500</Typography>
+            <Typography variant='body2'>font-size: 15px / line-height: 22px / font-weight: 500</Typography>
           </Grid>
         </Grid>
       </CardContent>

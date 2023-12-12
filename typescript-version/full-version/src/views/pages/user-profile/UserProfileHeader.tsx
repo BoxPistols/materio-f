@@ -57,21 +57,15 @@ const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
                 {data?.designationIcon && (
                   <i className={classnames(data?.designationIcon, commonStyles.textSecondary)} />
                 )}
-                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>
-                  {data?.designation}
-                </Typography>
+                <Typography className='font-medium'>{data?.designation}</Typography>
               </div>
               <div className='flex items-center gap-2'>
                 <i className={classnames('ri-map-pin-2-line', commonStyles.textSecondary)} />
-                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>
-                  {data?.location}
-                </Typography>
+                <Typography className='font-medium'>{data?.location}</Typography>
               </div>
               <div className='flex items-center gap-2'>
                 <i className={classnames('ri-calendar-line', commonStyles.textSecondary)} />
-                <Typography className={classnames('font-medium', commonStyles.textSecondary)}>
-                  {data?.joiningDate}
-                </Typography>
+                <Typography className='font-medium'>{data?.joiningDate}</Typography>
               </div>
             </div>
           </div>

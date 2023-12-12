@@ -95,7 +95,7 @@ const DialogsSizes = () => {
           </Form>
         </DialogContent>
         <DialogActions className='dialog-actions-dense'>
-          <Button size='small' onClick={handleClose}>Close</Button>
+          <Button onClick={handleClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </>

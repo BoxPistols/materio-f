@@ -65,8 +65,8 @@ const DialogsScroll = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions className={classnames('dialog-actions-dense', { '!pt-2.5': scroll === 'paper' })}>
-          <Button size='small' onClick={handleClose}>Cancel</Button>
-          <Button size='small' onClick={handleClose}>Subscribe</Button>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Subscribe</Button>
         </DialogActions>
       </Dialog>
     </div>

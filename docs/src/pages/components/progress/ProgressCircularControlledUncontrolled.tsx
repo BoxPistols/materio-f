@@ -23,7 +23,7 @@ const ProgressCircularControlledUncontrolled = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} md={6}>
-        <Typography className='font-medium mbe-4'>Uncontrolled Progress</Typography>
+        <Typography className='font-medium mbe-4' color='text.primary'>Uncontrolled Progress</Typography>
         <div className='flex gap-4'>
           <CircularProgress variant='determinate' value={25} />
           <CircularProgress variant='determinate' value={50} />
@@ -32,7 +32,7 @@ const ProgressCircularControlledUncontrolled = () => {
         </div>
       </Grid>
       <Grid item xs={12} md={6}>
-        <Typography className='font-medium mbe-4'>Controlled Progress</Typography>
+        <Typography className='font-medium mbe-4' color='text.primary'>Controlled Progress</Typography>
         <CircularProgress variant='determinate' value={progress} />
       </Grid>
     </Grid>

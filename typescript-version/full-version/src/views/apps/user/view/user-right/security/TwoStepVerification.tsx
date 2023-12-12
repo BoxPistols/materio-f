@@ -13,17 +13,9 @@ import commonStyles from '@/styles/common.module.css'
 const TwoStepVerification = () => {
   return (
     <Card>
-      <CardHeader
-        title='Two-step verification'
-        subheader='Keep your account secure with authentication step.'
-        subheaderTypographyProps={{
-          variant: 'body1',
-          className: 'm-0',
-          color: 'textSecondary'
-        }}
-      />
+      <CardHeader title='Two-step verification' subheader='Keep your account secure with authentication step.' />
       <CardContent>
-        <Typography htmlFor='sms' component={InputLabel} className='inline-flex font-medium mbe-1'>
+        <Typography htmlFor='sms' component={InputLabel} className='inline-flex font-medium mbe-1' color='text.primary'>
           SMS
         </Typography>
         <div className='flex items-center mbe-4 gap-5'>

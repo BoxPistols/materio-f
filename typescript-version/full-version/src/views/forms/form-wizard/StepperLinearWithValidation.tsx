@@ -164,7 +164,9 @@ const StepperLinearWithValidation = () => {
           <form onSubmit={handleAccountSubmit(onSubmit)}>
             <Grid container spacing={5}>
               <Grid item xs={12}>
-                <Typography className='font-medium'>{steps[0].title}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  {steps[0].title}
+                </Typography>
                 <Typography variant='body2'>{steps[0].subtitle}</Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -283,7 +285,9 @@ const StepperLinearWithValidation = () => {
           <form onSubmit={handlePersonalSubmit(onSubmit)}>
             <Grid container spacing={5}>
               <Grid item xs={12}>
-                <Typography className='font-medium'>{steps[1].title}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  {steps[1].title}
+                </Typography>
                 <Typography variant='body2'>{steps[1].subtitle}</Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -385,7 +389,9 @@ const StepperLinearWithValidation = () => {
           <form onSubmit={handleSocialSubmit(onSubmit)}>
             <Grid container spacing={5}>
               <Grid item xs={12}>
-                <Typography className='font-medium'>{steps[2].title}</Typography>
+                <Typography className='font-medium' color='text.primary'>
+                  {steps[2].title}
+                </Typography>
                 <Typography variant='body2'>{steps[2].subtitle}</Typography>
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -466,7 +472,7 @@ const StepperLinearWithValidation = () => {
           </form>
         )
       default:
-        return <Typography>Unknown stepIndex</Typography>
+        return <Typography color='text.primary'>Unknown stepIndex</Typography>
     }
   }
 
@@ -512,10 +518,14 @@ const StepperLinearWithValidation = () => {
                 <Step key={index}>
                   <StepLabel {...labelProps} StepIconComponent={StepperCustomDot}>
                     <div className='step-label'>
-                      <Typography className='step-number'>{`0${index + 1}`}</Typography>
+                      <Typography className='step-number' color='text.primary'>{`0${index + 1}`}</Typography>
                       <div>
-                        <Typography className='step-title'>{label.title}</Typography>
-                        <Typography className='step-subtitle'>{label.subtitle}</Typography>
+                        <Typography className='step-title' color='text.primary'>
+                          {label.title}
+                        </Typography>
+                        <Typography className='step-subtitle' color='text.primary'>
+                          {label.subtitle}
+                        </Typography>
                       </div>
                     </div>
                   </StepLabel>
@@ -529,7 +539,9 @@ const StepperLinearWithValidation = () => {
       <CardContent>
         {activeStep === steps.length ? (
           <>
-            <Typography className={styles.completedText}>All steps are completed!</Typography>
+            <Typography className={styles.completedText} color='text.primary'>
+              All steps are completed!
+            </Typography>
             <div className='flex justify-end mt-4'>
               <Button variant='contained' onClick={handleReset}>
                 Reset

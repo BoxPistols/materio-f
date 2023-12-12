@@ -71,15 +71,19 @@ const StepperVerticalWithNumbers = () => {
               <Step key={index} className={classNames({ active: activeStep === index })}>
                 <StepLabel StepIconComponent={StepperCustomDot}>
                   <div className='step-label'>
-                    <Typography className='step-number'>{`0${index + 1}`}</Typography>
+                    <Typography className='step-number' color='text.primary'>{`0${index + 1}`}</Typography>
                     <div>
-                      <Typography className='step-title'>{step.title}</Typography>
-                      <Typography className='step-subtitle'>{step.subtitle}</Typography>
+                      <Typography className='step-title' color='text.primary'>
+                        {step.title}
+                      </Typography>
+                      <Typography className='step-subtitle' color='text.primary'>
+                        {step.subtitle}
+                      </Typography>
                     </div>
                   </div>
                 </StepLabel>
                 <StepContent>
-                  <Typography>{step.description}</Typography>
+                  <Typography color='text.primary'>{step.description}</Typography>
                   <div className='flex gap-4 mt-4'>
                     <Button variant='contained' onClick={handleNext} size='small'>
                       {index === steps.length - 1 ? 'Finish' : 'Next'}
@@ -101,7 +105,7 @@ const StepperVerticalWithNumbers = () => {
         </StepperWrapper>
         {activeStep === steps.length && (
           <div className='mt-2'>
-            <Typography>All steps are completed!</Typography>
+            <Typography color='text.primary'>All steps are completed!</Typography>
             <Button variant='contained' onClick={handleReset} size='small' className='mt-2'>
               Reset
             </Button>

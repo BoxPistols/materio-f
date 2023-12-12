@@ -106,7 +106,7 @@ const AddEditAddress = ({ open, setOpen, data }: AddEditAddressProps) => {
         })}
       >
         {data ? 'Edit Address' : 'Add New Address'}
-        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+        <Typography component='span' className='flex flex-col text-center'>
           {data ? 'Edit Address for future billing' : 'Add address for billing address'}
         </Typography>
       </DialogTitle>

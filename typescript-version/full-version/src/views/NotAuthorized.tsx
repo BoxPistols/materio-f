@@ -32,9 +32,11 @@ const NotAuthorized = () => {
     <div className='flex items-center justify-center min-bs-[100dvh] relative p-6 overflow-x-hidden'>
       <div className='flex items-center flex-col text-center gap-10'>
         <div className={classnames('flex flex-col gap-2', { [styles.viewPortWidth]: isBelowSmScreen })}>
-          <Typography className='text-8xl font-medium'>401</Typography>
+          <Typography className='text-8xl font-medium' color='text.primary'>
+            401
+          </Typography>
           <Typography variant='h4'>You are not authorized! 🔐</Typography>
-          <Typography color='text.secondary'>You don&#39;t have permission to access this page. Go Home!</Typography>
+          <Typography>You don&#39;t have permission to access this page. Go Home!</Typography>
         </div>
         <img
           alt='error-illustration'

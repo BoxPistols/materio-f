@@ -28,7 +28,7 @@ const ButtonToggleEnforceValue = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} sm={6}>
-        <Typography className='font-medium mbe-2'>Exclusive Selection</Typography>
+        <Typography className='font-medium mbe-2' color='text.primary'>Exclusive Selection</Typography>
         <ToggleButtonGroup exclusive value={alignment} onChange={handleAlignment} aria-label='text alignment'>
           <ToggleButton value='left' aria-label='left aligned'>
             <i className='ri-align-left' />
@@ -45,7 +45,7 @@ const ButtonToggleEnforceValue = () => {
         </ToggleButtonGroup>
       </Grid>
       <Grid item xs={12} sm={6}>
-        <Typography className='font-medium mbe-2'>Multiple Selection</Typography>
+        <Typography className='font-medium mbe-2' color='text.primary'>Multiple Selection</Typography>
         <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label='device'>
           <ToggleButton value='laptop' aria-label='laptop'>
             <i className='ri-macbook-line' />

@@ -56,7 +56,7 @@ const Teams = ({ data }: { data?: TeamsTabType[] }) => {
                       />
                     </div>
                   </div>
-                  <Typography color='text.secondary'>{item.description}</Typography>
+                  <Typography>{item.description}</Typography>
                   <div className='flex items-center justify-between flex-wrap'>
                     <AvatarGroup
                       total={item.extraMembers ? item.extraMembers + 3 : 3}

@@ -103,7 +103,7 @@ const RegisterV2 = () => {
             <Typography variant='h4' className='mbe-1'>
               Adventure starts here 🚀
             </Typography>
-            <Typography color='text.secondary'>Make your app management easy and fun!</Typography>
+            <Typography>Make your app management easy and fun!</Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
             <TextField autoFocus fullWidth label='Username' />
@@ -139,7 +139,7 @@ const RegisterV2 = () => {
               Sign Up
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
-              <Typography color='text.secondary'>Already have an account?</Typography>
+              <Typography>Already have an account?</Typography>
               <Typography component={Link} href='/login' color='primary'>
                 Sign in instead
               </Typography>

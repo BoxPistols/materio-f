@@ -32,7 +32,7 @@ const CardUser = () => {
           <Button variant='contained'>Send Request</Button>
         </div>
         <div className='flex justify-between items-center flex-wrap gap-x-4 gap-y-2'>
-          <Typography variant='subtitle2' color='text.disabled'>18 mutual friends</Typography>
+          <Typography variant='subtitle2'>18 mutual friends</Typography>
           <AvatarGroup max={4}>
             <Avatar src='/images/avatars/1.png' />
             <Avatar src='/images/avatars/5.png' />

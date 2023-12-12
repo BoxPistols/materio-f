@@ -81,7 +81,7 @@ const BillingCard = ({ open, setOpen, data }: BillingCardProps) => {
         })}
       >
         {data ? 'Edit Card' : 'Add New Card'}
-        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+        <Typography component='span' className='flex flex-col text-center'>
           {data ? 'Edit your saved card details' : 'Add card for future billing'}
         </Typography>
       </DialogTitle>

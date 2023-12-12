@@ -181,7 +181,7 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
         })}
       >
         Create App
-        <Typography component='span' color='text.secondary' className='flex flex-col text-center'>
+        <Typography component='span' className='flex flex-col text-center'>
           Provide data with this form to create your app.
         </Typography>
       </DialogTitle>
@@ -211,7 +211,9 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
                           <i className={label.icon as string} />
                         </Avatar>
                         <div className='flex flex-col gap-1'>
-                          <Typography className='uppercase'>{label.title}</Typography>
+                          <Typography className='uppercase' color='text.primary'>
+                            {label.title}
+                          </Typography>
                           <Typography variant='body2' color='text.disabled'>
                             {label.subtitle}
                           </Typography>

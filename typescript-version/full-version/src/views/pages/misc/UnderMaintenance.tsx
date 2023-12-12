@@ -33,9 +33,7 @@ const UnderMaintenance = () => {
       <div className='flex items-center flex-col text-center gap-10'>
         <div className={classnames('flex flex-col gap-2', { [styles.viewPortWidth]: isBelowSmScreen })}>
           <Typography variant='h4'>Under Maintenance! 🚧</Typography>
-          <Typography color='text.secondary'>
-            Sorry for the inconvenience but we&#39;re performing some maintenance at the moment
-          </Typography>
+          <Typography>Sorry for the inconvenience but we&#39;re performing some maintenance at the moment</Typography>
         </div>
         <img
           alt='error-illustration'

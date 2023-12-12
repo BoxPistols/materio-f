@@ -47,7 +47,7 @@ const customInputData: CustomInputVerticalData[] = [
           <Typography variant='h4' component='span' className={commonStyles.primaryColor}>
             0
           </Typography>
-          <Typography variant='body2' component='sub' className={classnames('self-end', commonStyles.textDisabled)}>
+          <Typography variant='body2' component='sub' className='self-end' color='text.disabled'>
             /month
           </Typography>
         </div>
@@ -70,7 +70,7 @@ const customInputData: CustomInputVerticalData[] = [
           <Typography variant='h4' component='span' className={commonStyles.primaryColor}>
             99
           </Typography>
-          <Typography variant='body2' component='sub' className={classnames('self-end', commonStyles.textDisabled)}>
+          <Typography variant='body2' component='sub' className='self-end' color='text.disabled'>
             /month
           </Typography>
         </div>
@@ -92,7 +92,7 @@ const customInputData: CustomInputVerticalData[] = [
           <Typography variant='h4' component='span' className={commonStyles.primaryColor}>
             499
           </Typography>
-          <Typography variant='body2' component='sub' className={classnames('self-end', commonStyles.textDisabled)}>
+          <Typography variant='body2' component='sub' className='self-end' color='text.disabled'>
             /month
           </Typography>
         </div>
@@ -121,7 +121,7 @@ const StepBillingDetails = ({ handlePrev, direction }: { handlePrev: () => void;
     <>
       <div className='mbe-5'>
         <Typography variant='h4'>Select Plan</Typography>
-        <Typography color='text.secondary'>Select plan as per your requirement</Typography>
+        <Typography>Select plan as per your requirement</Typography>
       </div>
       <Grid container spacing={5}>
         {customInputData.map((item, index) => (
@@ -138,7 +138,7 @@ const StepBillingDetails = ({ handlePrev, direction }: { handlePrev: () => void;
       </Grid>
       <div className='mbs-12 mbe-5'>
         <Typography variant='h4'>Payment Information</Typography>
-        <Typography color='text.secondary'>Enter your card information</Typography>
+        <Typography>Enter your card information</Typography>
       </div>
       <Grid container spacing={5}>
         <Grid item xs={12}>

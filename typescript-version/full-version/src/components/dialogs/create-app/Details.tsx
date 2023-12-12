@@ -44,7 +44,9 @@ const Details = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: 
               <i className='ri-bar-chart-box-line text-[28px]' />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography className='font-medium'>CRM Application</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                CRM Application
+              </Typography>
               <Typography variant='body2'>Scales with any business</Typography>
             </div>
           </div>
@@ -56,7 +58,9 @@ const Details = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: 
               <i className='ri-shopping-cart-2-line text-[28px]' />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography className='font-medium'>eCommerce Platforms</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                eCommerce Platforms
+              </Typography>
               <Typography variant='body2'>Grow Your Business With App</Typography>
             </div>
           </div>
@@ -68,7 +72,9 @@ const Details = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: 
               <i className='ri-video-upload-line text-[28px]' />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
-              <Typography className='font-medium'>Online Learning platform</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Online Learning platform
+              </Typography>
               <Typography variant='body2'>Start learning today</Typography>
             </div>
           </div>

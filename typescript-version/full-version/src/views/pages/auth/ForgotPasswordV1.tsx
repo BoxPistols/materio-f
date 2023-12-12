@@ -56,7 +56,7 @@ const ForgotPasswordV1 = ({ direction }: { direction: Direction }) => {
           </div>
           <Typography variant='h4'>Forgot Password 🔒</Typography>
           <div className='flex flex-col gap-5'>
-            <Typography color='text.secondary' className='mbs-1'>
+            <Typography className='mbs-1'>
               Enter your email and we&#39;ll send you instructions to reset your password
             </Typography>
             <Form noValidate autoComplete='off' className='flex flex-col gap-5'>

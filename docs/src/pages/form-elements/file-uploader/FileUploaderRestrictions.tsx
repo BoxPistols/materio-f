@@ -122,8 +122,8 @@ const FileUploaderRestrictions = () => {
             [styles.dropZoneTextAlign]: isAboveMdScreen
           })}>
             <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
-            <Typography color='text.secondary'>Allowed *.jpeg, *.jpg, *.png, *.gif</Typography>
-            <Typography color='text.secondary'>Max 2 files and max size of 2 MB</Typography>
+            <Typography>Allowed *.jpeg, *.jpg, *.png, *.gif</Typography>
+            <Typography>Max 2 files and max size of 2 MB</Typography>
           </div>
         </div>
       </div>

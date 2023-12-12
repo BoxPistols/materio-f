@@ -21,7 +21,9 @@ const DialogEditUserInfo = () => {
         <CardContent className='flex flex-col items-center text-center gap-4'>
           <i className='ri-user-3-line text-[28px]' />
           <Typography variant='h5'>Edit User Info</Typography>
-          <Typography>Use this modal to modify the existing user&#39;s current information.</Typography>
+          <Typography color='text.primary'>
+            Use this modal to modify the existing user&#39;s current information.
+          </Typography>
           <OpenDialogOnElementClick element={Button} elementProps={buttonProps} dialog={EditUserInfo} />
         </CardContent>
       </Card>

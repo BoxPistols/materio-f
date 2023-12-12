@@ -99,7 +99,7 @@ const chip = (mode: PaletteMode): Theme['components'] => ({
     styleOverrides: {
       root: ({ ownerState, theme }) => ({
         fontSize: theme.typography.body2.fontSize,
-        fontWeight: theme.typography.subtitle1.fontWeight,
+        fontWeight: theme.typography.fontWeightMedium,
         lineHeight: theme.typography.subtitle2.lineHeight,
 
         '& .MuiChip-deleteIcon': {

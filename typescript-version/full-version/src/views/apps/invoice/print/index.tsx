@@ -81,21 +81,21 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
             <div className='flex flex-col gap-6'>
               <div className='flex items-center gap-2.5'>
                 <Logo className={commonStyles.primaryColor} height={25} width={30} />
-                <Typography className='uppercase font-semibold text-xl leading-tight'>
+                <Typography className='uppercase font-semibold text-xl leading-tight' color='text.primary'>
                   {themeConfig.templateName}
                 </Typography>
               </div>
               <div>
-                <Typography>Office 149, 450 South Brand Brooklyn</Typography>
-                <Typography>San Diego County, CA 91905, USA</Typography>
-                <Typography>+1 (123) 456 7891, +44 (876) 543 2198</Typography>
+                <Typography color='text.primary'>Office 149, 450 South Brand Brooklyn</Typography>
+                <Typography color='text.primary'>San Diego County, CA 91905, USA</Typography>
+                <Typography color='text.primary'>+1 (123) 456 7891, +44 (876) 543 2198</Typography>
               </div>
             </div>
             <div className='flex flex-col gap-6'>
               <Typography variant='h5'>{`Invoice #${id}`}</Typography>
               <div className='flex flex-col gap-1'>
-                <Typography>{`Date Issued: ${invoiceData.issuedDate}`}</Typography>
-                <Typography>{`Date Due: ${invoiceData.dueDate}`}</Typography>
+                <Typography color='text.primary'>{`Date Issued: ${invoiceData.issuedDate}`}</Typography>
+                <Typography color='text.primary'>{`Date Due: ${invoiceData.dueDate}`}</Typography>
               </div>
             </div>
           </div>
@@ -105,49 +105,43 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
         <Grid container spacing={6}>
           <Grid item xs={12} sm={6}>
             <div className='flex flex-col gap-4'>
-              <Typography className='font-medium'>Invoice To:</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Invoice To:
+              </Typography>
               <div>
-                <Typography color='text.secondary'>{invoiceData.name}</Typography>
-                <Typography color='text.secondary'>{invoiceData.company}</Typography>
-                <Typography color='text.secondary'>{invoiceData.address}</Typography>
-                <Typography color='text.secondary'>{invoiceData.contact}</Typography>
-                <Typography color='text.secondary'>{invoiceData.companyEmail}</Typography>
+                <Typography>{invoiceData.name}</Typography>
+                <Typography>{invoiceData.company}</Typography>
+                <Typography>{invoiceData.address}</Typography>
+                <Typography>{invoiceData.contact}</Typography>
+                <Typography>{invoiceData.companyEmail}</Typography>
               </div>
             </div>
           </Grid>
           <Grid item xs={12} sm={6}>
             <div className='flex flex-col gap-4'>
-              <Typography className='font-medium'>Bill To:</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Bill To:
+              </Typography>
               <div>
                 <div className='flex items-center gap-4'>
-                  <Typography color='text.secondary' className={styles.minWidth100}>
-                    Total Due:
-                  </Typography>
-                  <Typography color='text.secondary'>$12,110.55</Typography>
+                  <Typography className={styles.minWidth100}>Total Due:</Typography>
+                  <Typography>$12,110.55</Typography>
                 </div>
                 <div className='flex items-center gap-4'>
-                  <Typography color='text.secondary' className={styles.minWidth100}>
-                    Bank name:
-                  </Typography>
-                  <Typography color='text.secondary'>American Bank</Typography>
+                  <Typography className={styles.minWidth100}>Bank name:</Typography>
+                  <Typography>American Bank</Typography>
                 </div>
                 <div className='flex items-center gap-4'>
-                  <Typography color='text.secondary' className={styles.minWidth100}>
-                    Country:
-                  </Typography>
-                  <Typography color='text.secondary'>United States</Typography>
+                  <Typography className={styles.minWidth100}>Country:</Typography>
+                  <Typography>United States</Typography>
                 </div>
                 <div className='flex items-center gap-4'>
-                  <Typography color='text.secondary' className={styles.minWidth100}>
-                    IBAN:
-                  </Typography>
-                  <Typography color='text.secondary'>ETD95476213874685</Typography>
+                  <Typography className={styles.minWidth100}>IBAN:</Typography>
+                  <Typography>ETD95476213874685</Typography>
                 </div>
                 <div className='flex items-center gap-4'>
-                  <Typography color='text.secondary' className={styles.minWidth100}>
-                    SWIFT code:
-                  </Typography>
-                  <Typography color='text.secondary'>BR91905</Typography>
+                  <Typography className={styles.minWidth100}>SWIFT code:</Typography>
+                  <Typography>BR91905</Typography>
                 </div>
               </div>
             </div>
@@ -170,19 +164,19 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
               {data.map((item, index) => (
                 <tr key={index}>
                   <td>
-                    <Typography>{item.Item}</Typography>
+                    <Typography color='text.primary'>{item.Item}</Typography>
                   </td>
                   <td>
-                    <Typography>{item.Description}</Typography>
+                    <Typography color='text.primary'>{item.Description}</Typography>
                   </td>
                   <td>
-                    <Typography>{item.Hours}</Typography>
+                    <Typography color='text.primary'>{item.Hours}</Typography>
                   </td>
                   <td>
-                    <Typography>{item.Qty}</Typography>
+                    <Typography color='text.primary'>{item.Qty}</Typography>
                   </td>
                   <td>
-                    <Typography>{item.Total}</Typography>
+                    <Typography color='text.primary'>{item.Total}</Typography>
                   </td>
                 </tr>
               ))}
@@ -194,28 +188,38 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
         <div className={classnames('flex justify-between', { 'flex-col': isBelowSmScreen })}>
           <div className={classnames('flex flex-col gap-1', { 'order-2': isBelowSmScreen })}>
             <div className='flex items-center gap-2'>
-              <Typography className='font-medium'>Salesperson:</Typography>
-              <Typography color='text.secondary'>Tommy Shelby</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Salesperson:
+              </Typography>
+              <Typography>Tommy Shelby</Typography>
             </div>
-            <Typography color='text.secondary'>Thanks for your business</Typography>
+            <Typography>Thanks for your business</Typography>
           </div>
           <div className='min-is-[200px]'>
             <div className='flex items-center justify-between'>
-              <Typography color='text.secondary'>Subtotal:</Typography>
-              <Typography className='font-medium'>$1800</Typography>
+              <Typography>Subtotal:</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                $1800
+              </Typography>
             </div>
             <div className='flex items-center justify-between'>
-              <Typography color='text.secondary'>Discount:</Typography>
-              <Typography className='font-medium'>$28</Typography>
+              <Typography>Discount:</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                $28
+              </Typography>
             </div>
             <div className='flex items-center justify-between'>
-              <Typography color='text.secondary'>Tax:</Typography>
-              <Typography className='font-medium'>21%</Typography>
+              <Typography>Tax:</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                21%
+              </Typography>
             </div>
             <Divider className='mlb-2' />
             <div className='flex items-center justify-between'>
-              <Typography color='text.secondary'>Total:</Typography>
-              <Typography className='font-medium'>$1690</Typography>
+              <Typography>Total:</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                $1690
+              </Typography>
             </div>
           </div>
         </div>
@@ -224,8 +228,8 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
         <Divider className='border-dashed' />
       </Grid>
       <Grid item xs={12}>
-        <Typography color='text.secondary'>
-          <Typography component='span' className='font-medium'>
+        <Typography>
+          <Typography component='span' className='font-medium' color='text.primary'>
             Note:
           </Typography>{' '}
           It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance

@@ -89,10 +89,8 @@ const ForgotPasswordV2 = ({ direction }: { direction: Direction }) => {
           })}
         >
           <div>
-            <Typography variant='h4' className='mbe-1'>
-              Forgot Password 🔒
-            </Typography>
-            <Typography color='text.secondary'>
+            <Typography variant='h4'>Forgot Password 🔒</Typography>
+            <Typography className='mbs-1'>
               Enter your email and we&#39;ll send you instructions to reset your password
             </Typography>
           </div>

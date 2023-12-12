@@ -21,11 +21,6 @@ const card = (skin: Skin): Theme['components'] => {
       }
     },
     MuiCardHeader: {
-      defaultProps: {
-        subheaderTypographyProps: {
-          variant: 'subtitle1'
-        }
-      },
       styleOverrides: {
         root: ({ theme }) => ({
           padding: theme.spacing(5),
@@ -38,7 +33,8 @@ const card = (skin: Skin): Theme['components'] => {
             }
         }),
         subheader: ({ theme }) => ({
-          marginBlockStart: theme.spacing(0.5)
+          ...theme.typography.subtitle1,
+          color: 'rgb(var(--mui-palette-text-primaryChannel) / 0.55)'
         }),
         action: ({ theme }) => ({
           ...theme.typography.body1,

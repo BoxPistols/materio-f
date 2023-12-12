@@ -76,14 +76,14 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                   <div className='flex flex-col gap-6'>
                     <div className='flex items-center gap-2.5'>
                       <Logo className={commonStyles.primaryColor} height={25} width={30} />
-                      <Typography className='uppercase font-semibold text-xl leading-tight'>
+                      <Typography className='uppercase font-semibold text-xl leading-tight' color='text.primary'>
                         {themeConfig.templateName}
                       </Typography>
                     </div>
                     <div>
-                      <Typography>Office 149, 450 South Brand Brooklyn</Typography>
-                      <Typography>San Diego County, CA 91905, USA</Typography>
-                      <Typography>+1 (123) 456 7891, +44 (876) 543 2198</Typography>
+                      <Typography color='text.primary'>Office 149, 450 South Brand Brooklyn</Typography>
+                      <Typography color='text.primary'>San Diego County, CA 91905, USA</Typography>
+                      <Typography color='text.primary'>+1 (123) 456 7891, +44 (876) 543 2198</Typography>
                     </div>
                   </div>
                   <div className='flex flex-col gap-2'>
@@ -102,7 +102,9 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                       />
                     </div>
                     <div className='flex items-center'>
-                      <Typography className='min-is-[100px] mie-4'>Date Issued:</Typography>
+                      <Typography className='min-is-[100px] mie-4' color='text.primary'>
+                        Date Issued:
+                      </Typography>
                       <DatePicker
                         selected={issuedDate}
                         placeholderText='YYYY-MM-DD'
@@ -112,7 +114,9 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                       />
                     </div>
                     <div className='flex items-center'>
-                      <Typography className='min-is-[100px] mie-4'>Date Due:</Typography>
+                      <Typography className='min-is-[100px] mie-4' color='text.primary'>
+                        Date Due:
+                      </Typography>
                       <DatePicker
                         selected={dueDate}
                         placeholderText='YYYY-MM-DD'
@@ -129,7 +133,9 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
             <Grid item xs={12}>
               <div className={classnames('flex justify-between', { 'flex-col': isBelowSmScreen })}>
                 <div className='flex flex-col gap-4'>
-                  <Typography className='font-medium'>Invoice To:</Typography>
+                  <Typography className='font-medium' color='text.primary'>
+                    Invoice To:
+                  </Typography>
                   <Select
                     className={classnames('min-is-[200px]', { 'w-1/2': isBelowSmScreen })}
                     size='small'
@@ -158,54 +164,46 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                   </Select>
                   {selectData?.id ? (
                     <div>
-                      <Typography color='text.secondary'>{selectData?.name}</Typography>
-                      <Typography color='text.secondary'>{selectData?.company}</Typography>
-                      <Typography color='text.secondary'>{selectData?.address}</Typography>
-                      <Typography color='text.secondary'>{selectData?.contact}</Typography>
-                      <Typography color='text.secondary'>{selectData?.companyEmail}</Typography>
+                      <Typography>{selectData?.name}</Typography>
+                      <Typography>{selectData?.company}</Typography>
+                      <Typography>{selectData?.address}</Typography>
+                      <Typography>{selectData?.contact}</Typography>
+                      <Typography>{selectData?.companyEmail}</Typography>
                     </div>
                   ) : (
                     <div>
-                      <Typography color='text.secondary'>{formData?.name}</Typography>
-                      <Typography color='text.secondary'>{formData?.company}</Typography>
-                      <Typography color='text.secondary'>{formData?.address}</Typography>
-                      <Typography color='text.secondary'>{formData?.contactNumber}</Typography>
-                      <Typography color='text.secondary'>{formData?.email}</Typography>
+                      <Typography>{formData?.name}</Typography>
+                      <Typography>{formData?.company}</Typography>
+                      <Typography>{formData?.address}</Typography>
+                      <Typography>{formData?.contactNumber}</Typography>
+                      <Typography>{formData?.email}</Typography>
                     </div>
                   )}
                 </div>
                 <div className='flex flex-col gap-4'>
-                  <Typography className='font-medium'>Bill To:</Typography>
+                  <Typography className='font-medium' color='text.primary'>
+                    Bill To:
+                  </Typography>
                   <div>
                     <div className='flex items-center gap-4'>
-                      <Typography color='text.secondary' className='min-is-[100px]'>
-                        Total Due:
-                      </Typography>
-                      <Typography color='text.secondary'>$12,110.55</Typography>
+                      <Typography className='min-is-[100px]'>Total Due:</Typography>
+                      <Typography>$12,110.55</Typography>
                     </div>
                     <div className='flex items-center gap-4'>
-                      <Typography color='text.secondary' className='min-is-[100px]'>
-                        Bank name:
-                      </Typography>
-                      <Typography color='text.secondary'>American Bank</Typography>
+                      <Typography className='min-is-[100px]'>Bank name:</Typography>
+                      <Typography>American Bank</Typography>
                     </div>
                     <div className='flex items-center gap-4'>
-                      <Typography color='text.secondary' className='min-is-[100px]'>
-                        Country:
-                      </Typography>
-                      <Typography color='text.secondary'>United States</Typography>
+                      <Typography className='min-is-[100px]'>Country:</Typography>
+                      <Typography>United States</Typography>
                     </div>
                     <div className='flex items-center gap-4'>
-                      <Typography color='text.secondary' className='min-is-[100px]'>
-                        IBAN:
-                      </Typography>
-                      <Typography color='text.secondary'>ETD95476213874685</Typography>
+                      <Typography className='min-is-[100px]'>IBAN:</Typography>
+                      <Typography>ETD95476213874685</Typography>
                     </div>
                     <div className='flex items-center gap-4'>
-                      <Typography color='text.secondary' className='min-is-[100px]'>
-                        SWIFT code:
-                      </Typography>
-                      <Typography color='text.secondary'>BR91905</Typography>
+                      <Typography className='min-is-[100px]'>SWIFT code:</Typography>
+                      <Typography>BR91905</Typography>
                     </div>
                   </div>
                 </div>
@@ -237,6 +235,7 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                           static: isBelowSmScreen,
                           'absolute -top-8': !isBelowMdScreen
                         })}
+                        color='text.primary'
                       >
                         Item
                       </Typography>
@@ -254,6 +253,7 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                           static: isBelowSmScreen,
                           'absolute -top-8': !isBelowMdScreen
                         })}
+                        color='text.primary'
                       >
                         Cost
                       </Typography>
@@ -267,12 +267,21 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                         InputProps={{ inputProps: { min: 0 } }}
                       />
                       <div>
-                        <Typography component='span'>Discount:</Typography> <Typography component='span'>0%</Typography>
+                        <Typography component='span' color='text.primary'>
+                          Discount:
+                        </Typography>
+                        <Typography component='span' color='text.primary'>
+                          0%
+                        </Typography>
                         <Tooltip title='Tax 1' placement='top'>
-                          <Typography component='span'>0%</Typography>
+                          <Typography component='span' color='text.primary'>
+                            0%
+                          </Typography>
                         </Tooltip>
                         <Tooltip title='Tax 2' placement='top'>
-                          <Typography component='span'>0%</Typography>
+                          <Typography component='span' color='text.primary'>
+                            0%
+                          </Typography>
                         </Tooltip>
                       </div>
                     </Grid>
@@ -282,6 +291,7 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                           static: isBelowSmScreen,
                           'absolute -top-8': !isBelowMdScreen
                         })}
+                        color='text.primary'
                       >
                         Hours
                       </Typography>
@@ -300,10 +310,11 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                           static: isBelowSmScreen,
                           'absolute -top-8': !isBelowMdScreen
                         })}
+                        color='text.primary'
                       >
                         Price
                       </Typography>
-                      <Typography>$24.00</Typography>
+                      <Typography color='text.primary'>$24.00</Typography>
                     </Grid>
                   </Grid>
                   <div className={classnames('flex flex-col justify-start', styles.borderLeft)}>
@@ -331,28 +342,38 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
               <div className={classnames('flex justify-between', { 'flex-col': isBelowSmScreen })}>
                 <div className={classnames('flex flex-col gap-4', { 'order-2': isBelowSmScreen })}>
                   <div className='flex items-center gap-2'>
-                    <Typography className='font-medium'>Salesperson:</Typography>
+                    <Typography className='font-medium' color='text.primary'>
+                      Salesperson:
+                    </Typography>
                     <TextField size='small' defaultValue='Tommy Shelby' />
                   </div>
                   <TextField size='small' placeholder='Thanks for your business' />
                 </div>
                 <div className='min-is-[200px]'>
                   <div className='flex items-center justify-between'>
-                    <Typography color='text.secondary'>Subtotal:</Typography>
-                    <Typography className='font-medium'>$1800</Typography>
+                    <Typography>Subtotal:</Typography>
+                    <Typography className='font-medium' color='text.primary'>
+                      $1800
+                    </Typography>
                   </div>
                   <div className='flex items-center justify-between'>
-                    <Typography color='text.secondary'>Discount:</Typography>
-                    <Typography className='font-medium'>$28</Typography>
+                    <Typography>Discount:</Typography>
+                    <Typography className='font-medium' color='text.primary'>
+                      $28
+                    </Typography>
                   </div>
                   <div className='flex items-center justify-between'>
-                    <Typography color='text.secondary'>Tax:</Typography>
-                    <Typography className='font-medium'>21%</Typography>
+                    <Typography>Tax:</Typography>
+                    <Typography className='font-medium' color='text.primary'>
+                      21%
+                    </Typography>
                   </div>
                   <Divider className='mlb-2' />
                   <div className='flex items-center justify-between'>
-                    <Typography color='text.secondary'>Total:</Typography>
-                    <Typography className='font-medium'>$1690</Typography>
+                    <Typography>Total:</Typography>
+                    <Typography className='font-medium' color='text.primary'>
+                      $1690
+                    </Typography>
                   </div>
                 </div>
               </div>

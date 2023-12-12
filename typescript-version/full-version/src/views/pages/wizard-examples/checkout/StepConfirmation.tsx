@@ -48,24 +48,24 @@ const StepConfirmation = () => {
       <Grid item xs={12}>
         <div className='flex items-center flex-col text-center gap-4'>
           <Typography variant='h4'>Thank You! 😇</Typography>
-          <Typography color='text.secondary'>
+          <Typography>
             Your order <span className={classnames(commonStyles.textPrimary, 'font-medium')}>#1536548131</span> has been
             placed!
           </Typography>
           <div>
-            <Typography color='text.secondary'>
+            <Typography>
               We sent an email to{' '}
               <span className={classnames('font-medium', commonStyles.textPrimary)}>john.doe@example.com</span> with
               your order confirmation and receipt.
             </Typography>
-            <Typography color='text.secondary'>
+            <Typography>
               If the email hasn&#39;t arrived within two minutes, please check your spam folder to see if the email was
               routed there.
             </Typography>
           </div>
           <div className='flex items-center gap-2'>
             <i className='ri-time-line text-xl' />
-            <Typography color='text.secondary'>Time placed: 25/05/2020 13:35pm</Typography>
+            <Typography>Time placed: 25/05/2020 13:35pm</Typography>
           </div>
         </div>
       </Grid>
@@ -84,17 +84,17 @@ const StepConfirmation = () => {
           >
             <div className='flex items-center gap-2'>
               <i className='ri-map-pin-line text-2xl' />
-              <Typography className='font-medium'>Shipping</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Shipping
+              </Typography>
             </div>
             <div>
-              <Typography color='text.secondary'>John Doe</Typography>
-              <Typography color='text.secondary'>4135 Parkway Street,</Typography>
-              <Typography color='text.secondary'>Los Angeles, CA 90017,</Typography>
-              <Typography color='text.secondary'>USA</Typography>
+              <Typography>John Doe</Typography>
+              <Typography>4135 Parkway Street,</Typography>
+              <Typography>Los Angeles, CA 90017,</Typography>
+              <Typography>USA</Typography>
             </div>
-            <Typography color='text.secondary' className='font-medium'>
-              +123456789
-            </Typography>
+            <Typography className='font-medium'>+123456789</Typography>
           </div>
           <div
             className={classnames('flex flex-col w-full p-5 gap-4', {
@@ -105,17 +105,17 @@ const StepConfirmation = () => {
           >
             <div className='flex items-center gap-2'>
               <i className='ri-bank-card-line text-2xl' />
-              <Typography className='font-medium'>Billing Address</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Billing Address
+              </Typography>
             </div>
             <div>
-              <Typography color='text.secondary'>John Doe</Typography>
-              <Typography color='text.secondary'>4135 Parkway Street,</Typography>
-              <Typography color='text.secondary'>Los Angeles, CA 90017,</Typography>
-              <Typography color='text.secondary'>USA</Typography>
+              <Typography>John Doe</Typography>
+              <Typography>4135 Parkway Street,</Typography>
+              <Typography>Los Angeles, CA 90017,</Typography>
+              <Typography>USA</Typography>
             </div>
-            <Typography color='text.secondary' className='font-medium'>
-              +123456789
-            </Typography>
+            <Typography className='font-medium'>+123456789</Typography>
           </div>
           <div
             className={classnames('flex flex-col w-full p-5 gap-4', {
@@ -125,14 +125,14 @@ const StepConfirmation = () => {
           >
             <div className='flex items-center gap-2'>
               <i className='ri-ship-2-line text-2xl' />
-              <Typography className='font-medium'>Shipping Method</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Shipping Method
+              </Typography>
             </div>
-            <Typography color='text.secondary' className='font-medium'>
-              Preferred Method:
-            </Typography>
+            <Typography className='font-medium'>Preferred Method:</Typography>
             <div>
-              <Typography color='text.secondary'>Standard Delivery</Typography>
-              <Typography color='text.secondary'>(Normally 3-4 business days)</Typography>
+              <Typography>Standard Delivery</Typography>
+              <Typography>(Normally 3-4 business days)</Typography>
             </div>
           </div>
         </div>
@@ -149,9 +149,11 @@ const StepConfirmation = () => {
                 className={classnames('flex justify-between w-full p-5', { 'flex-col items-center': isBelowSmScreen })}
               >
                 <div className={classnames('flex flex-col gap-2 items-start', { 'items-center': isBelowSmScreen })}>
-                  <Typography className='font-medium'>{product.productName}</Typography>
+                  <Typography className='font-medium' color='text.primary'>
+                    {product.productName}
+                  </Typography>
                   <div className='flex items-center gap-1'>
-                    <Typography color='text.secondary'>Sold By:</Typography>
+                    <Typography>Sold By:</Typography>
                     <Typography href='/' component={Link} onClick={e => e.preventDefault()} color='primary'>
                       {product.soldBy}
                     </Typography>
@@ -160,10 +162,7 @@ const StepConfirmation = () => {
                 </div>
                 <div className='flex items-center'>
                   <Typography color='primary'>{`$${product.price}`}</Typography>
-                  <Typography
-                    color='text.disabled'
-                    className='line-through'
-                  >{`/$${product.originalPrice}`}</Typography>
+                  <Typography color='text.disabled' className='line-through'>{`/$${product.originalPrice}`}</Typography>
                 </div>
               </div>
             </div>
@@ -173,14 +172,16 @@ const StepConfirmation = () => {
       <Grid item xs={12} md={4} xl={3}>
         <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
           <CardContent className='flex gap-4 flex-col'>
-            <Typography className='font-medium'>Price Details</Typography>
+            <Typography className='font-medium' color='text.primary'>
+              Price Details
+            </Typography>
             <div className='flex flex-col gap-4'>
               <div className='flex items-center justify-between gap-2'>
-                <Typography>Order Total</Typography>
-                <Typography color='text.secondary'>$1198.00</Typography>
+                <Typography color='text.primary'>Order Total</Typography>
+                <Typography>$1198.00</Typography>
               </div>
               <div className='flex items-center justify-between gap-2'>
-                <Typography>Delivery Charges</Typography>
+                <Typography color='text.primary'>Delivery Charges</Typography>
                 <div className='flex gap-2'>
                   <Typography className='line-through' color='text.disabled'>
                     $5.00
@@ -193,8 +194,12 @@ const StepConfirmation = () => {
           <Divider />
           <CardContent>
             <div className='flex items-center justify-between gap-2'>
-              <Typography className='font-medium'>Total</Typography>
-              <Typography className='font-medium'>$1198.00</Typography>
+              <Typography className='font-medium' color='text.primary'>
+                Total
+              </Typography>
+              <Typography className='font-medium' color='text.primary'>
+                $1198.00
+              </Typography>
             </div>
           </CardContent>
         </div>

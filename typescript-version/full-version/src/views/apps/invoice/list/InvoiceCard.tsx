@@ -63,7 +63,7 @@ const InvoiceCard = () => {
               <div className='flex justify-between'>
                 <div className='flex flex-col'>
                   <Typography variant='h4'>{item.title}</Typography>
-                  <Typography color='text.secondary'>{item.subtitle}</Typography>
+                  <Typography>{item.subtitle}</Typography>
                 </div>
                 <Avatar variant='rounded' className={styles.avatarSize}>
                   <i className={classnames('text-[26px]', item.icon)}></i>
