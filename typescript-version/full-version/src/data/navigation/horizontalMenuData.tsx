@@ -274,6 +274,10 @@ const horizontalMenuData = (dictionary: Dictionary, params: Params): HorizontalM
           {
             label: dictionary['navigation'].charts,
             href: '/pages/widget-examples/charts'
+          },
+          {
+            label: dictionary['navigation'].gamification,
+            href: '/pages/widget-examples/gamification'
           }
         ]
       },

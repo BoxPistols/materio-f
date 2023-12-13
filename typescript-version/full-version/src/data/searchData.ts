@@ -302,62 +302,69 @@ const data: SearchData[] = [
   },
   {
     id: '43',
+    name: 'Widget - Gamification',
+    url: '/pages/widget-examples/gamification',
+    icon: 'Icon',
+    section: 'Pages'
+  },
+  {
+    id: '44',
     name: 'Icons Test',
     url: '/icons-test',
     icon: 'Icon',
     section: 'Pages'
   },
   {
-    id: '44',
+    id: '45',
     name: 'Form Layouts',
     url: '/forms/form-layouts',
     icon: 'Icon',
     section: 'Forms & Tables'
   },
   {
-    id: '45',
+    id: '46',
     name: 'Form Validation',
     url: '/forms/form-validation',
     icon: 'Icon',
     section: 'Forms & Tables'
   },
   {
-    id: '46',
+    id: '47',
     name: 'Form Wizard',
     url: '/forms/form-wizard',
     icon: 'Icon',
     section: 'Forms & Tables'
   },
   {
-    id: '47',
+    id: '48',
     name: 'React Table',
     url: '/react-table',
     icon: 'Icon',
     section: 'Forms & Tables'
   },
   {
-    id: '48',
+    id: '49',
     name: 'Recharts',
     url: '/charts/recharts',
     icon: 'Icon',
     section: 'Charts'
   },
   {
-    id: '49',
+    id: '50',
     name: 'Apex Charts',
     url: '/charts/apex-charts',
     icon: 'Icon',
     section: 'Charts'
   },
   {
-    id: '50',
+    id: '51',
     name: 'Raise Support',
     url: '/support',
     icon: 'Icon',
     section: 'Others'
   },
   {
-    id: '51',
+    id: '52',
     name: 'Documentation',
     url: '/docs',
     icon: 'Icon',

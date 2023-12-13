@@ -167,6 +167,9 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
               {dictionary['navigation'].statistics}
             </MenuItem>
             <MenuItem href={`/${locale}/pages/widget-examples/charts`}>{dictionary['navigation'].charts}</MenuItem>
+            <MenuItem href={`/${locale}/pages/widget-examples/gamification`}>
+              {dictionary['navigation'].gamification}
+            </MenuItem>
           </SubMenu>
           <MenuItem href={`/${locale}/icons-test`}>Icons Test</MenuItem>
         </MenuSection>
