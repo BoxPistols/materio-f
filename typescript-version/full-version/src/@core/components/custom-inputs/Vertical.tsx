@@ -93,7 +93,7 @@ const CustomInputVertical = (props: CustomInputVerticalProps) => {
           })}
         >
           {asset || null}
-          {title ? typeof title === 'string' ? <Title>{title}</Title> : title : null}
+          {title ? typeof title === 'string' ? <Title color='text.primary'>{title}</Title> : title : null}
           {content ? typeof content === 'string' ? <Content variant='body2'>{content}</Content> : content : null}
           {type === 'radio' ? (
             <RadioInput name={name} color={color} value={value} onChange={handleChange} checked={selected === value} />

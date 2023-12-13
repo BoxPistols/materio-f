@@ -1,6 +1,7 @@
 // MUI Imports
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
+import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
 import Avatar from '@mui/material/Avatar'
 import Rating from '@mui/material/Rating'
@@ -230,7 +231,7 @@ const TimelineCenter = () => {
                 </div>
               </div>
               <div className='flex justify-between items-center mbe-3 flex-wrap'>
-                <Rating name='read-only' value={5} readOnly />
+                <Rating name='read-only' value={5} size='large' readOnly />
                 <Chip
                   size='small'
                   variant='tonal'
@@ -274,28 +275,28 @@ const TimelineCenter = () => {
             </Typography>
           )}
           <Card>
-            <CardContent>
-              <Typography variant='h5' className='font-medium mbe-4'>
-                Julia stiles shared an earnings report
-              </Typography>
-              <div className='flex items-center gap-1'>
-                <Typography variant='h4'>$24,895</Typography>
-                <i
-                  className={classnames(
-                    'ri-arrow-up-s-fill text-3xl',
-                    commonStyles.successColor
-                  )}
-                />
-                <Typography
-                  variant='body2'
-                  className='font-medium' color='success'
-                >
-                  10%
+            <CardHeader title='Julia stiles shared an earnings report'></CardHeader>
+            <CardContent className='flex flex-col gap-3'>
+              <div>
+                <div className='flex items-center gap-1'>
+                  <Typography variant='h4'>$24,895</Typography>
+                  <i
+                    className={classnames(
+                      'ri-arrow-up-s-fill text-3xl',
+                      commonStyles.successColor
+                    )}
+                  />
+                  <Typography
+                    variant='body2'
+                    className='font-medium' color='success.main'
+                  >
+                    10%
+                  </Typography>
+                </div>
+                <Typography variant='body2'>
+                  Compared to $84,325 last year
                 </Typography>
               </div>
-              <Typography variant='body2' className='mbe-2'>
-                Compared to $84,325 last year
-              </Typography>
               {Data.map((item, index) => (
                 <div
                   key={index}
@@ -311,14 +312,14 @@ const TimelineCenter = () => {
                     </div>
                   </div>
                   <div className='flex flex-col items-center gap-2'>
-                    <Typography variant='body2' className='font-medium' color='text.primary'>
+                    <Typography className='font-medium' color='text.primary'>
                       ${item.progress}
                     </Typography>
                     <LinearProgress
                       variant='determinate'
                       value={75}
                       color={item.progressColor}
-                      className='w-full'
+                      className='is-20 bs-1'
                     />
                   </div>
                 </div>

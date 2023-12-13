@@ -20,11 +20,11 @@ const tabs: Theme['components'] = {
                 ...(ownerState.textColor === 'secondary'
                   ? {
                       color: 'var(--mui-palette-secondary-main)',
-                      borderBlockEnd: '2px solid var(--mui-palette-secondary-mainOpacity)'
+                      borderBlockEnd: '2px solid var(--mui-palette-secondary-lightOpacity)'
                     }
                   : {
                       color: 'var(--mui-palette-primary-main)',
-                      borderBlockEnd: '2px solid var(--mui-palette-primary-mainOpacity)'
+                      borderBlockEnd: '2px solid var(--mui-palette-primary-lightOpacity)'
                     })
               }
             : {

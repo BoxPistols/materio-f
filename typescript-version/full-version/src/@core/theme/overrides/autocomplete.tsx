@@ -50,7 +50,8 @@ const autocomplete = (skin: Skin): Theme['components'] => ({
       },
       paper: {
         ...(skin !== 'bordered' && {
-          boxShadow: 'var(--mui-customShadows-lg)'
+          boxShadow: 'var(--mui-customShadows-lg)',
+          marginBlockStart: '0.125rem'
         })
       },
       listbox: ({ theme }) => ({

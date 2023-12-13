@@ -3,6 +3,9 @@ import type { Theme } from '@mui/material/styles'
 
 const switchOverrides: Theme['components'] = {
   MuiSwitch: {
+    defaultProps: {
+      disableRipple: true
+    },
     styleOverrides: {
       root: ({ theme, ownerState }) => ({
         ...(ownerState.size !== 'small'
@@ -40,6 +43,9 @@ const switchOverrides: Theme['components'] = {
         },
         '&.Mui-disabled + .MuiSwitch-track': {
           opacity: 1
+        },
+        '&:hover:not(:has(span.MuiTouchRipple-root))': {
+          backgroundColor: 'transparent'
         }
       },
       thumb: {

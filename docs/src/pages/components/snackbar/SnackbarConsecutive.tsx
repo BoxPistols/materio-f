@@ -62,7 +62,7 @@ const SnackbarConsecutive = () => {
         message={messageInfo ? messageInfo.message : undefined}
       >
         <Alert
-          elevation={3}
+          sx={{ boxShadow: theme => theme.customShadows.xs }}
           variant='filled'
           onClose={handleClose}
           className='w-full'

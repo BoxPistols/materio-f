@@ -38,10 +38,10 @@ const iconButton: Theme['components'] = {
         props: { color: 'primary' },
         style: {
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-primary-lightOpacity)'
+            backgroundColor: 'var(--mui-palette-primary-lighterOpacity)'
           },
           ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-primary-lightOpacity)' }
+            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-primary-lighterOpacity)' }
           }),
           '&.Mui-disabled': {
             opacity: 0.45,
@@ -53,10 +53,10 @@ const iconButton: Theme['components'] = {
         props: { color: 'secondary' },
         style: {
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-secondary-lightOpacity)'
+            backgroundColor: 'var(--mui-palette-secondary-lighterOpacity)'
           },
           ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-secondary-lightOpacity)' }
+            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-secondary-lighterOpacity)' }
           }),
           '&.Mui-disabled': {
             opacity: 0.45,
@@ -68,10 +68,10 @@ const iconButton: Theme['components'] = {
         props: { color: 'error' },
         style: {
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-error-lightOpacity)'
+            backgroundColor: 'var(--mui-palette-error-lighterOpacity)'
           },
           ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-error-lightOpacity)' }
+            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-error-lighterOpacity)' }
           }),
           '&.Mui-disabled': {
             opacity: 0.45,
@@ -83,10 +83,10 @@ const iconButton: Theme['components'] = {
         props: { color: 'warning' },
         style: {
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-warning-lightOpacity)'
+            backgroundColor: 'var(--mui-palette-warning-lighterOpacity)'
           },
           ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-warning-lightOpacity)' }
+            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-warning-lighterOpacity)' }
           }),
           '&.Mui-disabled': {
             opacity: 0.45,
@@ -98,10 +98,10 @@ const iconButton: Theme['components'] = {
         props: { color: 'info' },
         style: {
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-info-lightOpacity)'
+            backgroundColor: 'var(--mui-palette-info-lighterOpacity)'
           },
           ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-info-lightOpacity)' }
+            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-info-lighterOpacity)' }
           }),
           '&.Mui-disabled': {
             opacity: 0.45,
@@ -113,10 +113,10 @@ const iconButton: Theme['components'] = {
         props: { color: 'success' },
         style: {
           '&:not(.Mui-disabled):hover, &:not(.Mui-disabled):active': {
-            backgroundColor: 'var(--mui-palette-success-lightOpacity)'
+            backgroundColor: 'var(--mui-palette-success-lighterOpacity)'
           },
           ...(themeConfig.disableRipple && {
-            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-success-lightOpacity)' }
+            '&.Mui-focusVisible:not(.Mui-disabled)': { backgroundColor: 'var(--mui-palette-success-lighterOpacity)' }
           }),
           '&.Mui-disabled': {
             opacity: 0.45,

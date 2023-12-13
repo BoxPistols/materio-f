@@ -31,7 +31,11 @@ const timeline: Theme['components'] = {
       {
         props: { variant: 'outlined' },
         style: {
-          padding: 5
+          padding: 5,
+          '& + .MuiTimelineConnector-root': {
+            backgroundColor: 'transparent',
+            borderInlineStart: '1px dashed var(--mui-palette-divider)'
+          }
         }
       },
       {

@@ -16,11 +16,12 @@ const menu = (skin: Skin): Theme['components'] => ({
       })
     },
     styleOverrides: {
-      paper: {
+      paper: ({ theme }) => ({
+        marginBlockStart: theme.spacing(0.5),
         ...(skin !== 'bordered' && {
           boxShadow: 'var(--mui-customShadows-lg)'
         })
-      }
+      })
     }
   },
   MuiMenuItem: {

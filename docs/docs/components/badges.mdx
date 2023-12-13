@@ -111,9 +111,11 @@ Please refer to MUI's official docs for more details on component's [usage guide
       title="Custom Tonal Badges"
       code={SourceCodeBadgesTonal}
     >
-      <Typography className='mbe-6'>
+      {
+        <Typography className='mbe-6'>
         If you want to use Tonal variant of the badges, you need to use our custom component with <code>tonal='true'</code> prop.
-      </Typography>
+        </Typography>
+      }
       <BadgesTonal />
     </CardSnippet>
   </Grid>

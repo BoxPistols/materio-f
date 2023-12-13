@@ -49,11 +49,9 @@ const VerifyEmailV1 = () => {
               {themeConfig.templateName}
             </Typography>
           </div>
-          <Typography variant='h4' className='mbe-1'>
-            Verify your email ✉️
-          </Typography>
+          <Typography variant='h4'>Verify your email ✉️</Typography>
           <div className='flex flex-col gap-5'>
-            <Typography>
+            <Typography className='mbs-1'>
               Account activation link sent to your email address:{' '}
               <span className={classnames('font-medium', commonStyles.textPrimary)}>john.doe@email.com</span> Please
               follow the link inside to continue.

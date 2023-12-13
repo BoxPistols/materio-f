@@ -86,10 +86,8 @@ const VerifyEmailV2 = () => {
           })}
         >
           <div>
-            <Typography variant='h4' className='mbe-1'>
-              Verify your email ✉️
-            </Typography>
-            <Typography>
+            <Typography variant='h4'>Verify your email ✉️</Typography>
+            <Typography className='mbs-1'>
               Account activation link sent to your email address:{' '}
               <span className={classnames('font-medium', commonStyles.textPrimary)}>john.doe@email.com</span> Please
               follow the link inside to continue.

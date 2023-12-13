@@ -45,9 +45,10 @@ const ToastifyWrapper = styled('div')(({ theme }) => ({
   },
   '& .Toastify__toast-icon': {
     marginRight: theme.spacing(3),
-    height: 14,
-    width: 14,
+    height: 20,
+    width: 20,
     '& .Toastify__spinner': {
+      margin: 3,
       height: 14,
       width: 14
     }

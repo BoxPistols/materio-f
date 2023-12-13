@@ -98,10 +98,10 @@ const ResetPasswordV2 = ({ direction }: { direction: Direction }) => {
           })}
         >
           <div>
-            <Typography variant='h4' className='mbe-1'>
-              Reset Password 🔒
+            <Typography variant='h4'>Reset Password 🔒</Typography>
+            <Typography className='mbs-1'>
+              Your new password must be different from previously used passwords
             </Typography>
-            <Typography>Your new password must be different from previously used passwords</Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
             <TextField

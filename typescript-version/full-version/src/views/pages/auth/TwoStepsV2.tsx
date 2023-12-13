@@ -87,7 +87,7 @@ const TwoStepsV2 = () => {
         >
           <div className='flex flex-col gap-1'>
             <Typography variant='h4'>Two Step Verification 💬</Typography>
-            <Typography>
+            <Typography className='mbs-1'>
               We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </Typography>
             <Typography className='font-medium' color='text.primary'>

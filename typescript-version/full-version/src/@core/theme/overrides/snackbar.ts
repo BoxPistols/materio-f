@@ -15,7 +15,10 @@ const snackbar = (skin: Skin): Theme['components'] => ({
             }
           : {
               boxShadow: 'none'
-            })
+            }),
+        '& .MuiSnackbarContent-message': {
+          paddingBlock: theme.spacing(3)
+        }
       })
     }
   }

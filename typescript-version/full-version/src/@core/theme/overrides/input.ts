@@ -95,7 +95,8 @@ const input: Theme['components'] = {
   MuiFormHelperText: {
     styleOverrides: {
       root: {
-        lineHeight: 1
+        lineHeight: 1,
+        letterSpacing: 'unset'
       }
     }
   }

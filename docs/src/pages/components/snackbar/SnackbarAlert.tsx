@@ -28,7 +28,7 @@ const SnackbarAlert = () => {
       </Button>
       <Snackbar open={open} onClose={handleClose} autoHideDuration={3000}>
         <Alert
-          elevation={3}
+          sx={{ boxShadow: theme => theme.customShadows.xs }}
           variant='filled'
           severity='success'
           onClose={handleClose}

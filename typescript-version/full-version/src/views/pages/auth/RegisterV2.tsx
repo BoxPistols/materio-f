@@ -100,10 +100,8 @@ const RegisterV2 = () => {
           })}
         >
           <div>
-            <Typography variant='h4' className='mbe-1'>
-              Adventure starts here 🚀
-            </Typography>
-            <Typography>Make your app management easy and fun!</Typography>
+            <Typography variant='h4'>Adventure starts here 🚀</Typography>
+            <Typography className='mbs-1'>Make your app management easy and fun!</Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
             <TextField autoFocus fullWidth label='Username' />

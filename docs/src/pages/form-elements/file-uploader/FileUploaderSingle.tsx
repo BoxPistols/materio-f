@@ -73,7 +73,7 @@ const FileUploaderSingle = () => {
       ) : (
         <div className={classnames('flex items-center', {'flex-col': isBelowMdScreen})}
          >
-          <Img alt='Upload img' src='/assets/upload.png' />
+          <Img alt='Upload img' src='/images/misc/file-upload.png' className='max-bs-[160px] max-is-full bs-full' />
           <div className={classnames('flex flex-col', {
             'text-center': isBelowMdScreen,
             [styles.dropZoneTextAlign]: isAboveMdScreen
