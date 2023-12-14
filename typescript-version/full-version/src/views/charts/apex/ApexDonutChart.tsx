@@ -119,7 +119,7 @@ const ApexDonutChart = () => {
     <Card>
       <CardHeader title='Expense Ratio' subheader='Spending on various categories' />
       <CardContent>
-        <ReactApexcharts type='donut' height={400} options={options} series={[85, 16, 50, 50]} />
+        <ReactApexcharts type='donut' width='100%' height={400} options={options} series={[85, 16, 50, 50]} />
       </CardContent>
     </Card>
   )

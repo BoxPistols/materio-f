@@ -11,6 +11,7 @@ import classnames from 'classnames'
 
 // Type Imports
 import type { PricingPlanType } from '@/types/pages/pricingTypes'
+import type { Direction } from '@core/types'
 
 // Component Imports
 import Pricing from '@components/pricing'
@@ -18,7 +19,7 @@ import Pricing from '@components/pricing'
 // Style Imports
 import styles from './styles.module.css'
 
-const PricingPage = ({ data }: { data: PricingPlanType[] }) => {
+const PricingPage = ({ data, direction }: { data: PricingPlanType[]; direction: Direction }) => {
   const isAboveXlScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('xl'))
   const isBetweenSmXlScreen = useMediaQuery((theme: Theme) => theme.breakpoints.between('sm', 'xl'))
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
@@ -32,7 +33,7 @@ const PricingPage = ({ data }: { data: PricingPlanType[] }) => {
           '!p-16': isBetweenSmXlScreen
         })}
       >
-        <Pricing data={data} />
+        <Pricing data={data} direction={direction} />
       </CardContent>
     </Card>
   )

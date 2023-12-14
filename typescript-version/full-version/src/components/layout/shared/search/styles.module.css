@@ -52,7 +52,7 @@
 }
 
 .activeItemButton {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--mui-palette-action-hover);
 }
 
 /* Icon, Title and Subtitle Wrapper */
@@ -60,9 +60,6 @@
   font-size: 14px;
 }
 
-.itemLink {
-  gap: 10px;
-}
 .itemLink:hover {
   color: var(--primary-color);
 }

@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 
 const BadgesDot = () => {
   return (
-    <div className='flex gap-4'>
+    <div className='flex items-start gap-4'>
       <Badge variant='dot' color='primary'>
         <Avatar src='/images/avatars/1.png' alt='User Avatar' />
       </Badge>

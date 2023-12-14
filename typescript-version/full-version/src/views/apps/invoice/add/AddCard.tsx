@@ -270,6 +270,7 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                         <Typography component='span' color='text.primary'>
                           Discount:
                         </Typography>
+
                         <Typography component='span' color='text.primary'>
                           0%
                         </Typography>

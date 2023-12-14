@@ -27,51 +27,21 @@ const UserRight = ({ tabContentList }: { tabContentList: { [key: string]: ReactE
         <Grid container spacing={6}>
           <Grid item xs={12}>
             <CustomTabList onChange={handleChange} variant='scrollable' pill='true'>
+              <Tab icon={<i className='ri-user-3-line' />} value='overview' label='Overview' iconPosition='start' />
+              <Tab icon={<i className='ri-lock-line' />} value='security' label='Security' iconPosition='start' />
               <Tab
-                label={
-                  <div className='flex items-center gap-1.5'>
-                    <i className='ri-user-3-line text-lg' />
-                    Overview
-                  </div>
-                }
-                value='overview'
-              />
-              <Tab
-                label={
-                  <div className='flex items-center gap-1.5'>
-                    <i className='ri-lock-line text-lg' />
-                    Security
-                  </div>
-                }
-                value='security'
-              />
-              <Tab
-                label={
-                  <div className='flex items-center gap-1.5'>
-                    <i className='ri-bookmark-line text-lg' />
-                    Billing & Plans
-                  </div>
-                }
+                icon={<i className='ri-bookmark-line' />}
                 value='billing-plans'
+                label='Billing & Plans'
+                iconPosition='start'
               />
               <Tab
-                label={
-                  <div className='flex items-center gap-1.5'>
-                    <i className='ri-notification-2-line text-lg' />
-                    Notifications
-                  </div>
-                }
+                icon={<i className='ri-notification-2-line' />}
                 value='notifications'
+                label='Notifications'
+                iconPosition='start'
               />
-              <Tab
-                label={
-                  <div className='flex items-center gap-1.5'>
-                    <i className='ri-link-m text-lg' />
-                    Connections
-                  </div>
-                }
-                value='connections'
-              />
+              <Tab icon={<i className='ri-link-m' />} value='connections' label='Connections' iconPosition='start' />
             </CustomTabList>
           </Grid>
           <Grid item xs={12}>

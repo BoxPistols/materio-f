@@ -8,7 +8,9 @@ import type { ReactNode } from 'react'
 import { deepmerge } from '@mui/utils'
 import {
   Experimental_CssVarsProvider as CssVarsProvider,
-  experimental_extendTheme as extendTheme
+  experimental_extendTheme as extendTheme,
+  lighten,
+  darken
 } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import type {} from '@mui/material/themeCssVarsAugmentation' //! Do not remove this import otherwise you will get type errors while making a production build
@@ -57,14 +59,18 @@ const ThemeProvider = ({ children, direction }: { children: ReactNode; direction
         light: {
           palette: {
             primary: {
-              main: settings.primaryColor
+              main: settings.primaryColor,
+              light: lighten(settings.primaryColor as string, 0.2),
+              dark: darken(settings.primaryColor as string, 0.1)
             }
           }
         },
         dark: {
           palette: {
             primary: {
-              main: settings.primaryColor
+              main: settings.primaryColor,
+              light: lighten(settings.primaryColor as string, 0.2),
+              dark: darken(settings.primaryColor as string, 0.1)
             }
           }
         }
@@ -75,7 +81,7 @@ const ThemeProvider = ({ children, direction }: { children: ReactNode; direction
 
     return extendTheme(coreTheme)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [settings.primaryColor])
+  }, [settings])
 
   const cacheKey = useMemo(() => {
     const generateColorFrom = settings.primaryColor ? settings.primaryColor : primaryColorConfig[0].main
@@ -85,7 +91,7 @@ const ThemeProvider = ({ children, direction }: { children: ReactNode; direction
   }, [settings.primaryColor])
 
   return (
-    <EmotionCacheProvider options={{ key: cacheKey }}>
+    <EmotionCacheProvider options={{ key: cacheKey }} direction={direction}>
       <CssVarsProvider theme={theme} defaultMode={settings.mode}>
         <CssBaseline />
         {children}

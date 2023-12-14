@@ -27,7 +27,7 @@ import classnames from 'classnames'
 import commonStyles from '@/styles/common.module.css'
 
 // Type Imports
-import type { Direction } from '@/@core/types'
+import type { Direction } from '@core/types'
 
 type CustomInputProps = TextFieldProps & {
   label?: string

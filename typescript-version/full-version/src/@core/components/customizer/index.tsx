@@ -8,18 +8,18 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 // MUI Imports
+import Chip from '@mui/material/Chip'
 import Grow from '@mui/material/Grow'
 import Paper from '@mui/material/Paper'
 import Popper from '@mui/material/Popper'
 import { useTheme } from '@mui/material/styles'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
-import InputLabel from '@mui/material/InputLabel'
 import Checkbox from '@mui/material/Checkbox'
 import type { Breakpoint } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
-import { useMedia, useUpdateEffect } from 'react-use'
+import { useDebounce, useMedia, useUpdateEffect } from 'react-use'
 import { HexColorPicker, HexColorInput } from 'react-colorful'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -29,12 +29,7 @@ import type { Direction } from '@core/types'
 
 // Icon Imports
 import Cog from '@core/svg/Cog'
-import Refresh from '@core/svg/Refresh'
-import Close from '@menu-package/svg/Close'
 import EyeDropper from '@core/svg/EyeDropper'
-import ModeDark from '@core/svg/ModeDark'
-import ModeLight from '@core/svg/ModeLight'
-import ModeSystem from '@core/svg/ModeSystem'
 import SkinDefault from '@core/svg/SkinDefault'
 import SkinBordered from '@core/svg/SkinBordered'
 import LayoutVertical from '@core/svg/LayoutVertical'
@@ -100,6 +95,38 @@ export const primaryColorConfig: PrimaryColorConfig[] = [
     dark: '#1b5e20'
   }
 ]
+
+type DebouncedColorPickerProps = {
+  settings: Settings
+  isColorFromPrimaryConfig: PrimaryColorConfig | undefined
+  handleChange: (field: keyof Settings | 'primaryColor', value: Settings[keyof Settings] | string) => void
+}
+
+function DebouncedColorPicker(props: DebouncedColorPickerProps) {
+  // Props
+  const { settings, isColorFromPrimaryConfig, handleChange } = props
+
+  // States
+  const [debouncedColor, setDebouncedColor] = useState(settings.primaryColor ?? primaryColorConfig[0].main)
+
+  useDebounce(() => handleChange('primaryColor', debouncedColor), 200, [debouncedColor])
+
+  return (
+    <>
+      <HexColorPicker
+        color={!isColorFromPrimaryConfig ? settings.primaryColor ?? primaryColorConfig[0].main : '#eee'}
+        onChange={setDebouncedColor}
+      />
+      <HexColorInput
+        className={styles.colorInput}
+        color={!isColorFromPrimaryConfig ? settings.primaryColor ?? primaryColorConfig[0].main : '#eee'}
+        onChange={setDebouncedColor}
+        prefixed
+        placeholder='Type a color'
+      />
+    </>
+  )
+}
 
 const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
   // States
@@ -174,12 +201,10 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
   return (
     !breakpointReached && (
       <div
-        className={classnames(
-          'customizer',
-          styles.customizer,
-          { [styles.show]: isOpen, [styles.smallScreen]: isMobileScreen },
-          'bs-full flex flex-col'
-        )}
+        className={classnames('customizer bs-full flex flex-col', styles.customizer, {
+          [styles.show]: isOpen,
+          [styles.smallScreen]: isMobileScreen
+        })}
       >
         <div
           className={classnames('customizer-toggler flex items-center justify-center cursor-pointer', styles.toggler)}
@@ -193,19 +218,22 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
             <p>Customize & Preview in Real Time</p>
           </div>
           <div className='flex gap-4'>
-            <div onClick={resetSettings} className={classnames('flex cursor-pointer', styles.refreshWrapper)}>
-              <Refresh />
+            <div onClick={resetSettings} className='relative flex cursor-pointer'>
+              <i className={classnames('ri-refresh-line', styles.actionActiveColor)} />
               <div className={classnames(styles.dotStyles, { [styles.show]: isSettingsChanged })} />
             </div>
-            <Close onClick={handleToggle} className='cursor-pointer' />
+            <i
+              className={classnames('ri-close-line cursor-pointer', styles.actionActiveColor)}
+              onClick={handleToggle}
+            />
           </div>
         </div>
-        <PerfectScrollbar options={{ wheelPropagation: false }}>
+        <PerfectScrollbar options={{ wheelPropagation: false, suppressScrollX: true }}>
           <div className={classnames('customizer-body flex flex-col', styles.customizerBody)}>
-            <div className={classnames('theming-section flex flex-col', styles.section)}>
-              <p>Theming</p>
+            <div className='theming-section flex flex-col gap-6'>
+              <Chip label='Theming' size='small' color='primary' className={classnames('self-start', styles.chip)} />
               <div className='flex flex-col gap-2.5'>
-                <p className={styles.itemTitle}>Primary Color</p>
+                <p className='font-medium'>Primary Color</p>
                 <div className='flex items-center justify-between'>
                   {primaryColorConfig.map(item => (
                     <div
@@ -251,24 +279,10 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                         <Paper elevation={6} className={styles.colorPopup}>
                           <ClickAwayListener onClickAway={handleMenuClose}>
                             <div>
-                              <HexColorPicker
-                                color={
-                                  !isColorFromPrimaryConfig
-                                    ? settings.primaryColor ?? primaryColorConfig[0].main
-                                    : '#eee'
-                                }
-                                onChange={newColor => handleChange('primaryColor', newColor)}
-                              />
-                              <HexColorInput
-                                className={styles.colorInput}
-                                color={
-                                  !isColorFromPrimaryConfig
-                                    ? settings.primaryColor ?? primaryColorConfig[0].main
-                                    : '#eee'
-                                }
-                                onChange={newColor => handleChange('primaryColor', newColor)}
-                                prefixed
-                                placeholder='Type a color'
+                              <DebouncedColorPicker
+                                settings={settings}
+                                isColorFromPrimaryConfig={isColorFromPrimaryConfig}
+                                handleChange={handleChange}
                               />
                             </div>
                           </ClickAwayListener>
@@ -279,42 +293,42 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                 </div>
               </div>
               <div className='flex flex-col gap-2.5'>
-                <p className={styles.itemTitle}>Mode</p>
+                <p className='font-medium'>Mode</p>
                 <div className='flex items-center justify-between'>
-                  <div className='flex flex-col items-start gap-1'>
+                  <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, styles.modeWrapper, {
                         [styles.active]: settings.mode === 'light'
                       })}
                       onClick={() => handleChange('mode', 'light')}
                     >
-                      <ModeLight fontSize='1.875rem' />
+                      <i className='ri-sun-line text-[30px]' />
                     </div>
                     <p className={styles.itemLabel} onClick={() => handleChange('mode', 'light')}>
                       Light
                     </p>
                   </div>
-                  <div className='flex flex-col items-start gap-1'>
+                  <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, styles.modeWrapper, {
                         [styles.active]: settings.mode === 'dark'
                       })}
                       onClick={() => handleChange('mode', 'dark')}
                     >
-                      <ModeDark fontSize='1.875rem' />
+                      <i className='ri-moon-clear-line text-[30px]' />
                     </div>
                     <p className={styles.itemLabel} onClick={() => handleChange('mode', 'dark')}>
                       Dark
                     </p>
                   </div>
-                  <div className='flex flex-col items-start gap-1'>
+                  <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, styles.modeWrapper, {
                         [styles.active]: settings.mode === 'system'
                       })}
                       onClick={() => handleChange('mode', 'system')}
                     >
-                      <ModeSystem fontSize='1.875rem' />
+                      <i className='ri-computer-line text-[30px]' />
                     </div>
                     <p className={styles.itemLabel} onClick={() => handleChange('mode', 'system')}>
                       System
@@ -323,9 +337,9 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                 </div>
               </div>
               <div className='flex flex-col gap-2.5'>
-                <p className={styles.itemTitle}>Skin</p>
+                <p className='font-medium'>Skin</p>
                 <div className='flex items-center gap-4'>
-                  <div className='flex flex-col items-start gap-1'>
+                  <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, { [styles.active]: settings.skin === 'default' })}
                       onClick={() => handleChange('skin', 'default')}
@@ -336,7 +350,7 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                       Default
                     </p>
                   </div>
-                  <div className='flex flex-col items-start gap-1'>
+                  <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, { [styles.active]: settings.skin === 'bordered' })}
                       onClick={() => handleChange('skin', 'bordered')}
@@ -353,9 +367,9 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
               (settings.mode === 'system' && isSystemDark) ||
               settings.layout === 'horizontal' ? null : (
                 <div className='flex items-center justify-between'>
-                  <InputLabel className={classnames(styles.itemTitle, 'cursor-pointer')} htmlFor='customizer-semi-dark'>
+                  <label className='font-medium cursor-pointer' htmlFor='customizer-semi-dark'>
                     Semi Dark
-                  </InputLabel>
+                  </label>
                   <Checkbox
                     id='customizer-semi-dark'
                     checked={settings.semiDark === true}
@@ -365,12 +379,12 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
               )}
             </div>
             <hr className={styles.hr} />
-            <div className={classnames('layout-section flex flex-col', styles.section)}>
-              <p>Layout</p>
+            <div className='layout-section flex flex-col gap-6'>
+              <Chip label='Layout' size='small' color='primary' className={classnames('self-start', styles.chip)} />
               <div className='flex flex-col gap-2.5'>
-                <p className={styles.itemTitle}>Layouts</p>
+                <p className='font-medium'>Layouts</p>
                 <div className='flex items-center justify-between'>
-                  <div className='flex flex-col items-start gap-1'>
+                  <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, { [styles.active]: settings.layout === 'vertical' })}
                       onClick={() => handleChange('layout', 'vertical')}
@@ -381,7 +395,7 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                       Vertical
                     </p>
                   </div>
-                  <div className='flex flex-col items-start gap-1'>
+                  <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, { [styles.active]: settings.layout === 'collapsed' })}
                       onClick={() => handleChange('layout', 'collapsed')}
@@ -392,7 +406,7 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                       Collapsed
                     </p>
                   </div>
-                  <div className='flex flex-col items-start gap-1'>
+                  <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, { [styles.active]: settings.layout === 'horizontal' })}
                       onClick={() => handleChange('layout', 'horizontal')}
@@ -406,9 +420,9 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                 </div>
               </div>
               <div className='flex flex-col gap-2.5'>
-                <p className={styles.itemTitle}>Content</p>
+                <p className='font-medium'>Content</p>
                 <div className='flex items-center gap-4'>
-                  <div className='flex flex-col items-start gap-1'>
+                  <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, {
                         [styles.active]: settings.contentWidth === 'compact'
@@ -436,7 +450,7 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                       Compact
                     </p>
                   </div>
-                  <div className='flex flex-col items-start gap-1'>
+                  <div className='flex flex-col items-start gap-0.5'>
                     <div
                       className={classnames(styles.itemWrapper, { [styles.active]: settings.contentWidth === 'wide' })}
                       onClick={() =>
@@ -457,10 +471,10 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                 </div>
               </div>
               <div className='flex flex-col gap-2.5'>
-                <p className={styles.itemTitle}>Direction</p>
+                <p className='font-medium'>Direction</p>
                 <div className='flex items-center gap-4'>
                   <Link href={getLocalePath(pathName, 'en')}>
-                    <div className='flex flex-col items-start gap-1'>
+                    <div className='flex flex-col items-start gap-0.5'>
                       <div
                         className={classnames(styles.itemWrapper, {
                           [styles.active]: direction === 'ltr'
@@ -475,7 +489,7 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                     </div>
                   </Link>
                   <Link href={getLocalePath(pathName, 'ar')}>
-                    <div className='flex flex-col items-start gap-1'>
+                    <div className='flex flex-col items-start gap-0.5'>
                       <div
                         className={classnames(styles.itemWrapper, {
                           [styles.active]: direction === 'rtl'

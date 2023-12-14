@@ -118,11 +118,7 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
               <IconButton size='small' className={styles.closeIcon}>
                 <i className='ri-close-line text-lg' />
               </IconButton>
-              <div
-                className={classnames('flex justify-between w-full', {
-                  'flex-col items-center': isBelowSmScreen
-                })}
-              >
+              <div className={classnames('flex justify-between w-full', { 'flex-col items-center': isBelowSmScreen })}>
                 <div className={classnames('flex flex-col gap-2', { 'items-center': isBelowSmScreen })}>
                   <Typography className='font-medium' color='text.primary'>
                     {product.productName}

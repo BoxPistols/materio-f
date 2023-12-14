@@ -126,7 +126,7 @@ const ApexAreaChart = () => {
         }}
       />
       <CardContent>
-        <ReactApexcharts type='area' height={400} options={options} series={series} />
+        <ReactApexcharts type='area' width='100%' height={400} options={options} series={series} />
       </CardContent>
     </Card>
   )

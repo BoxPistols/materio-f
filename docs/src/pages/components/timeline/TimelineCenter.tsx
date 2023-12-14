@@ -122,7 +122,7 @@ const TimelineCenter = () => {
               <Typography variant='h5' className='mbe-4'>
                 You've uploaded doc pdf to the Themeselection project
               </Typography>
-              <Typography variant='body1' className='mbe-3'>
+              <Typography className='mbe-3'>
                 The process of recording the key project details and producing the documents that are required to
                 implement it successfully. Simply put, it's an umbrella term which includes all the documents created
                 over the course of the project.
@@ -170,10 +170,10 @@ const TimelineCenter = () => {
           )}
           <Card>
             <CardContent>
-              <Typography variant='h5' className='font-medium mbe-4'>
+              <Typography variant='h5' className='mbe-4'>
                 Heather added 4 images to the Team album
               </Typography>
-              <Typography variant='body1' className='mbe-3'>
+              <Typography className='mbe-3'>
                 In the Select Image for Project dialog box, choose one of the following: Under the Upload New Image
                 section
               </Typography>
@@ -215,7 +215,7 @@ const TimelineCenter = () => {
           )}
           <Card>
             <CardContent>
-              <Typography variant='h5' className='font-medium mbe-4'>
+              <Typography variant='h5' className='mbe-4'>
                 Loretta write a review on Themeselection
               </Typography>
               <div className='flex items-center gap-4 mbe-3'>
@@ -275,33 +275,22 @@ const TimelineCenter = () => {
             </Typography>
           )}
           <Card>
-            <CardHeader title='Julia stiles shared an earnings report'></CardHeader>
-            <CardContent className='flex flex-col gap-3'>
-              <div>
-                <div className='flex items-center gap-1'>
-                  <Typography variant='h4'>$24,895</Typography>
-                  <i
-                    className={classnames(
-                      'ri-arrow-up-s-fill text-3xl',
-                      commonStyles.successColor
-                    )}
-                  />
-                  <Typography
-                    variant='body2'
-                    className='font-medium' color='success.main'
-                  >
-                    10%
-                  </Typography>
-                </div>
-                <Typography variant='body2'>
-                  Compared to $84,325 last year
+            <CardContent>
+              <Typography variant='h5' className='mbe-4'>
+                Julia stiles shared an earnings report
+              </Typography>
+              <div className='flex items-center gap-0.5 mbe-0.5'>
+                <Typography variant='h4'>$24,895</Typography>
+                <i className={classnames('ri-arrow-up-s-fill text-3xl', commonStyles.successColor)} />
+                <Typography variant='body2' className='font-medium' color='success.main'>
+                  10%
                 </Typography>
               </div>
+              <Typography variant='body-2' className='mbe-2'>
+                Compared to $84,325 last year
+              </Typography>
               {Data.map((item, index) => (
-                <div
-                  key={index}
-                  className='flex justify-between items-center gap-2'
-                >
+                <div key={index} className='flex justify-between items-center gap-3'>
                   <div className='flex items-center gap-3'>
                     <img src={item.image} width={40} height={40} />
                     <div className='flex flex-col flex-wrap gap-0.5'>
@@ -351,10 +340,10 @@ const TimelineCenter = () => {
           )}
           <Card>
             <CardContent>
-              <Typography variant='h5' className='font-medium mbe-4'>
+              <Typography variant='h5' className='mbe-4'>
                 Josh Johnson shared Next js project progress report
               </Typography>
-              <Typography variant='body1' className='mbe-3'>
+              <Typography className='mbe-3'>
                 The structure and process are defined in the project organization considering the attainment of the
                 corporate objectives and therefore also project objectives. The components of the project process are
               </Typography>

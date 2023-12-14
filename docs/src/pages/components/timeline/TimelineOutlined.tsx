@@ -39,10 +39,10 @@ const TimelineOutlined = () => {
         </TimelineSeparator>
         <TimelineContent className={styles.timelineIcon}>
           <div className='flex flex-wrap items-center justify-between gap-x-2 mbe-2.5'>
-            <Typography variant='body1' className='font-medium'>
+            <Typography className='font-medium'>
               12 Invoices have been paid
             </Typography>
-            <Typography variant='caption' color='text.disabled'>
+            <Typography variant='caption'>
               12 min ago
             </Typography>
           </div>
@@ -73,10 +73,10 @@ const TimelineOutlined = () => {
         </TimelineSeparator>
         <TimelineContent>
           <div className='flex flex-wrap items-center justify-between gap-x-2 mbe-2.5'>
-            <Typography variant='body1' className='font-medium'>
+            <Typography className='font-medium'>
               Client Meeting
             </Typography>
-            <Typography variant='caption' color='text.disabled'>
+            <Typography variant='caption'>
               45 min ago
             </Typography>
           </div>
@@ -102,14 +102,14 @@ const TimelineOutlined = () => {
         </TimelineSeparator>
         <TimelineContent>
           <div className='flex flex-wrap items-center justify-between gap-x-2 mbe-2.5'>
-            <Typography variant='body1' className='font-medium'>
+            <Typography className='font-medium'>
               Create a new project for client
             </Typography>
-            <Typography variant='caption' color='text.disabled'>
+            <Typography variant='caption'>
               2 Day Ago
             </Typography>
           </div>
-          <Typography variant='body1' className='mbe-2'>
+          <Typography className='mbe-2'>
             6 team members in a project
           </Typography>
           <AvatarGroup total={6} className='pull-up'>
