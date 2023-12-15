@@ -213,9 +213,9 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
           <Cog />
         </div>
         <div className={classnames('customizer-header flex items-center justify-between', styles.header)}>
-          <div className='flex flex-col gap-2'>
-            <h4 className={styles.customizerTitle}>Theme Customizer</h4>
-            <p>Customize & Preview in Real Time</p>
+          <div className='flex flex-col'>
+            <h6 className={styles.customizerTitle}>Theme Customizer</h6>
+            <p className={styles.customizerSubtitle}>Customize & Preview in Real Time</p>
           </div>
           <div className='flex gap-4'>
             <div onClick={resetSettings} className='relative flex cursor-pointer'>
@@ -231,7 +231,13 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
         <PerfectScrollbar options={{ wheelPropagation: false, suppressScrollX: true }}>
           <div className={classnames('customizer-body flex flex-col', styles.customizerBody)}>
             <div className='theming-section flex flex-col gap-6'>
-              <Chip label='Theming' size='small' color='primary' className={classnames('self-start', styles.chip)} />
+              <Chip
+                label='Theming'
+                size='small'
+                color='primary'
+                variant='tonal'
+                className={classnames('self-start', styles.chip)}
+              />
               <div className='flex flex-col gap-2.5'>
                 <p className='font-medium'>Primary Color</p>
                 <div className='flex items-center justify-between'>
@@ -380,7 +386,13 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
             </div>
             <hr className={styles.hr} />
             <div className='layout-section flex flex-col gap-6'>
-              <Chip label='Layout' size='small' color='primary' className={classnames('self-start', styles.chip)} />
+              <Chip
+                label='Layout'
+                size='small'
+                color='primary'
+                variant='tonal'
+                className={classnames('self-start', styles.chip)}
+              />
               <div className='flex flex-col gap-2.5'>
                 <p className='font-medium'>Layouts</p>
                 <div className='flex items-center justify-between'>

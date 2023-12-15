@@ -1,5 +1,9 @@
 'use client'
 
+// MUI Imports
+import { useTheme } from '@mui/material/styles'
+import useScrollTrigger from '@mui/material/useScrollTrigger'
+
 // Third-party Imports
 import classnames from 'classnames'
 import type { CSSObject } from '@emotion/styled'
@@ -29,6 +33,11 @@ const Navbar = (props: Props) => {
 
   // Hooks
   const { settings } = useSettings()
+  const theme = useTheme()
+  const trigger = useScrollTrigger({
+    threshold: 0,
+    disableHysteresis: true
+  })
 
   const { navbarContentWidth, skin } = settings
 
@@ -44,6 +53,7 @@ const Navbar = (props: Props) => {
   return (
     <StyledHeader
       skin={skin}
+      theme={theme}
       overrideStyles={overrideStyles}
       className={classnames(verticalLayoutClasses.header, 'flex items-center justify-center is-full', {
         [verticalLayoutClasses.headerFixed]: headerFixed,
@@ -53,7 +63,8 @@ const Navbar = (props: Props) => {
         [verticalLayoutClasses.headerAttached]: !headerFloating && headerAttached,
         [verticalLayoutClasses.headerBlur]: headerBlur,
         [verticalLayoutClasses.headerContentCompact]: headerContentCompact,
-        [verticalLayoutClasses.headerContentWide]: headerContentWide
+        [verticalLayoutClasses.headerContentWide]: headerContentWide,
+        scrolled: trigger
       })}
     >
       <div className={classnames(verticalLayoutClasses.navbar, 'flex bs-full')}>{children}</div>

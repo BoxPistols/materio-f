@@ -1,5 +1,11 @@
 .maxHeight {
-  max-block-size: 434px;
+  max-block-size: 470px;
+}
+
+.avatar {
+  inline-size: 50px;
+  block-size: 50px;
+  background-color: var(--mui-palette-action-selected);
 }
 
 .gridItem:not(:last-of-type):not(:nth-last-of-type(2)) {
@@ -11,4 +17,8 @@
 
 .link:hover {
   background-color: var(--mui-palette-action-hover);
+}
+
+.icon {
+  font-size: 1.625rem;
 }

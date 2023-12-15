@@ -131,8 +131,8 @@ const ShortcutsDropdown = ({ shortcuts }: { shortcuts: ShortcutsType[] }) => {
                             href={shortcut.url}
                             className={classnames('flex items-center flex-col p-6 gap-3 bs-full', styles.link)}
                           >
-                            <Avatar>
-                              <i className={shortcut.icon} />
+                            <Avatar className={styles.avatar}>
+                              <i className={classnames(shortcut.icon, styles.icon)} />
                             </Avatar>
                             <div className='flex flex-col items-center text-center'>
                               <Typography className='font-medium' color='text.primary'>

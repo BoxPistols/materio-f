@@ -3,6 +3,6 @@
   z-index: 1;
 
   .paper {
-    box-shadow: var(--mui-shadows-8);
+    box-shadow: var(--mui-customShadows-lg);
   }
 }

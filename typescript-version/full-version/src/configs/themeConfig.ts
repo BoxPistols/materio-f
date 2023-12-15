@@ -52,7 +52,7 @@ export type Config = {
 }
 
 const themeConfig: Config = {
-  templateName: 'Master',
+  templateName: 'Materio',
   mode: 'system', // 'system', 'light', 'dark'
   skin: 'default', // 'default', 'bordered'
   semiDark: false, // true, false

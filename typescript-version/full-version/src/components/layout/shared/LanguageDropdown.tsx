@@ -28,6 +28,7 @@ import { getLocalePath } from '@/utils/get-locale-path'
 // Style Imports
 import commonDropdownStyles from '@components/layout/shared/styles.module.css'
 import commonStyles from '@/styles/common.module.css'
+import { getLocale } from '@/utils/get-locale'
 
 type LanguageDataType = {
   langCode: Locale
@@ -94,6 +95,7 @@ const LanguageDropdown = () => {
                       component={Link}
                       href={getLocalePath(pathName, locale.langCode)}
                       onClick={handleClose}
+                      selected={getLocale(pathName) === locale.langCode}
                     >
                       {locale.langName}
                     </MenuItem>

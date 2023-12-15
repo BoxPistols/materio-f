@@ -50,9 +50,14 @@
 }
 
 .customizerTitle {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 24px;
+}
+
+.customizerSubtitle {
+  font-size: 13px;
+  line-height: 1.538462;
+  color: var(--mui-palette-text-secondary);
 }
 
 .actionActiveColor {
@@ -77,9 +82,8 @@
 }
 
 .customizerBody {
-  padding-block: 20px;
-  padding-inline: 24px;
-  gap: 32px;
+  padding: 20px;
+  gap: 24px;
 }
 
 .chip {
@@ -104,8 +108,10 @@
 }
 
 .itemLabel {
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.538462;
   cursor: pointer;
+  color: var(--mui-palette-text-secondary);
 }
 
 .primaryColorWrapper {
@@ -137,6 +143,10 @@
   &.active {
     color: var(--primary-color);
   }
+}
+.modeWrapper.active {
+  color: var(--primary-color);
+  background-color: var(--mui-palette-primary-lighterOpacity);
 }
 
 .hr {

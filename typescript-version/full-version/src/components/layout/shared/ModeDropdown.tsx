@@ -55,7 +55,7 @@ const ModeDropdown = () => {
 
   const getModeIcon = () => {
     if (settings.mode === 'system') {
-      return 'ri-macbook-line'
+      return 'ri-computer-line'
     } else if (settings.mode === 'dark') {
       return 'ri-moon-clear-line'
     } else {
@@ -92,16 +92,28 @@ const ModeDropdown = () => {
             <Paper className={commonDropdownStyles.paper}>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList onKeyDown={handleClose}>
-                  <MenuItem className='gap-2.5' onClick={() => handleModeSwitch('light')}>
+                  <MenuItem
+                    className='gap-2.5'
+                    onClick={() => handleModeSwitch('light')}
+                    selected={settings.mode === 'light'}
+                  >
                     <i className='ri-sun-line' />
                     Light
                   </MenuItem>
-                  <MenuItem className='gap-2.5' onClick={() => handleModeSwitch('dark')}>
+                  <MenuItem
+                    className='gap-2.5'
+                    onClick={() => handleModeSwitch('dark')}
+                    selected={settings.mode === 'dark'}
+                  >
                     <i className='ri-moon-clear-line' />
                     Dark
                   </MenuItem>
-                  <MenuItem className='gap-2.5' onClick={() => handleModeSwitch('system')}>
-                    <i className='ri-macbook-line' />
+                  <MenuItem
+                    className='gap-2.5'
+                    onClick={() => handleModeSwitch('system')}
+                    selected={settings.mode === 'system'}
+                  >
+                    <i className='ri-computer-line' />
                     System
                   </MenuItem>
                 </MenuList>

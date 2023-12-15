@@ -5,41 +5,56 @@ import { usePathname, useParams } from 'next/navigation'
 
 // MUI Imports
 import { useTheme } from '@mui/material/styles'
+import Chip from '@mui/material/Chip'
 
 // Third-party Imports
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // Type Imports
+import type { VerticalMenuContextProps } from '@menu-package/components/vertical-menu/Menu'
 import type { Dictionary } from '@core/types'
 
 // Component Imports from @menu-package
 import { Menu, SubMenu, MenuItem, MenuSection } from '@menu-package/vertical-menu'
 
-// Icon Imports
-import LinkExternalIcon from '@layouts/svg/LinkExternal'
-
 // Hook Imports
-import { useSettings } from '@core/hooks/useSettings'
+import useVerticalNav from '@menu-package/hooks/useVerticalNav'
 
 // Util Imports
 import { getLocale } from '@/utils/get-locale'
-import useVerticalNav from '@menu-package/hooks/useVerticalNav'
 
 // import { generateVerticalMenu } from '@/utils/menuUtils'
 
+// Styled Component Imports
+import StyledVerticalNavExpandIcon from '@menu-package/styles/vertical/StyledVerticalNavExpandIcon'
+
 // Style Imports
 import menuItemStyles from '@core/styles/vertical/menuItemStyles'
+import menuSectionStyles from '@core/styles/vertical/menuSectionStyles'
 
 // Menu Data Imports
 // import menuData from '@/data/navigation/verticalMenuData'
+
+type RenderExpandIconProps = {
+  open?: boolean
+  transitionDuration?: VerticalMenuContextProps['transitionDuration']
+}
+
+const RenderExpandIcon = ({ open, transitionDuration }: RenderExpandIconProps) => (
+  <StyledVerticalNavExpandIcon open={open} transitionDuration={transitionDuration}>
+    <i className='ri-arrow-right-s-line' />
+  </StyledVerticalNavExpandIcon>
+)
 
 const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
   // Hooks
   const theme = useTheme()
   const pathName = usePathname()
-  const { settings } = useSettings()
+  const verticalNavOptions = useVerticalNav()
   const params = useParams()
   const { isBreakpointReached } = useVerticalNav()
+
+  const { transitionDuration } = verticalNavOptions
 
   // Get locale from pathname
   const locale = getLocale(pathName)
@@ -60,19 +75,41 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
     >
       {/* Incase you also want to scroll NavHeader to scroll with Vertical Menu, remove NavHeader from above and paste it below this comment */}
       {/* Vertical Menu */}
-      <Menu popoutMenuOffset={{ mainAxis: 10 }} menuItemStyles={menuItemStyles(settings, theme)}>
-        <SubMenu label={dictionary['navigation'].dashboards}>
+      <Menu
+        popoutMenuOffset={{ mainAxis: 10 }}
+        menuItemStyles={menuItemStyles(verticalNavOptions, theme)}
+        renderExpandIcon={({ open }) => <RenderExpandIcon open={open} transitionDuration={transitionDuration} />}
+        renderExpandedMenuItemIcon={{ icon: <i className='ri-circle-line' /> }}
+        menuSectionStyles={menuSectionStyles(verticalNavOptions, theme)}
+      >
+        <SubMenu
+          label={dictionary['navigation'].dashboards}
+          icon={<i className='ri-home-smile-line' />}
+          suffix={<Chip label='3' size='small' color='error' />}
+        >
           <MenuItem href={`/${locale}/dashboards/analytics`}>{dictionary['navigation'].analytics}</MenuItem>
           <MenuItem href={`/${locale}/dashboards/ecommerce`}>{dictionary['navigation'].eCommerce}</MenuItem>
         </SubMenu>
-        <MenuItem href={`/${locale}/about`}>About</MenuItem>
-        <MenuItem href={`/${locale}/user-list`}>User List</MenuItem>
-        <MenuItem href={`/${locale}/user-details`}>User Details</MenuItem>
+        <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/about`}>
+          About
+        </MenuItem>
+        <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/user-list`}>
+          User List
+        </MenuItem>
+        <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/user-details`}>
+          User Details
+        </MenuItem>
         <MenuSection label={dictionary['navigation'].appsPages}>
-          <MenuItem href={`/${locale}/email`}>{dictionary['navigation'].email}</MenuItem>
-          <MenuItem href={`/${locale}/chat`}>{dictionary['navigation'].chat}</MenuItem>
-          <MenuItem href={`/${locale}/apps/calendar`}>{dictionary['navigation'].calendar}</MenuItem>
-          <SubMenu label={dictionary['navigation'].invoice}>
+          <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/email`}>
+            {dictionary['navigation'].email}
+          </MenuItem>
+          <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/chat`}>
+            {dictionary['navigation'].chat}
+          </MenuItem>
+          <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/apps/calendar`}>
+            {dictionary['navigation'].calendar}
+          </MenuItem>
+          <SubMenu icon={<i className='ri-home-smile-line' />} label={dictionary['navigation'].invoice}>
             <MenuItem href={`/${locale}/apps/invoice/list`}>{dictionary['navigation'].list}</MenuItem>
             <MenuItem href={`/${locale}/apps/invoice/preview/${params.id || '4987'}`}>
               {dictionary['navigation'].preview}
@@ -82,15 +119,15 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
             </MenuItem>
             <MenuItem href={`/${locale}/apps/invoice/add`}>{dictionary['navigation'].add}</MenuItem>
           </SubMenu>
-          <SubMenu label={dictionary['navigation'].user}>
+          <SubMenu icon={<i className='ri-home-smile-line' />} label={dictionary['navigation'].user}>
             <MenuItem href={`/${locale}/apps/user/list`}>{dictionary['navigation'].list}</MenuItem>
             <MenuItem href={`/${locale}/apps/user/view`}>{dictionary['navigation'].view}</MenuItem>
           </SubMenu>
-          <SubMenu label={dictionary['navigation'].rolesPermissions}>
+          <SubMenu icon={<i className='ri-home-smile-line' />} label={dictionary['navigation'].rolesPermissions}>
             <MenuItem href={`/${locale}/apps/roles`}>{dictionary['navigation'].roles}</MenuItem>
             <MenuItem href={`/${locale}/apps/permissions`}>{dictionary['navigation'].permissions}</MenuItem>
           </SubMenu>
-          <SubMenu label={dictionary['navigation'].pages}>
+          <SubMenu icon={<i className='ri-home-smile-line' />} label={dictionary['navigation'].pages}>
             <MenuItem href={`/${locale}/pages/user-profile`}>{dictionary['navigation'].userProfile}</MenuItem>
             <MenuItem href={`/${locale}/pages/account-settings`}>{dictionary['navigation'].accountSettings}</MenuItem>
             <MenuItem href={`/${locale}/pages/faq`}>{dictionary['navigation'].faq}</MenuItem>
@@ -110,7 +147,7 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
               </MenuItem>
             </SubMenu>
           </SubMenu>
-          <SubMenu label={dictionary['navigation'].authPages}>
+          <SubMenu icon={<i className='ri-home-smile-line' />} label={dictionary['navigation'].authPages}>
             <SubMenu label={dictionary['navigation'].login}>
               <MenuItem href={`/${locale}/pages/auth/login-v1`} target='_blank'>
                 {dictionary['navigation'].loginV1}
@@ -163,7 +200,7 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
               </MenuItem>
             </SubMenu>
           </SubMenu>
-          <SubMenu label={dictionary['navigation'].wizardExamples}>
+          <SubMenu icon={<i className='ri-home-smile-line' />} label={dictionary['navigation'].wizardExamples}>
             <MenuItem href={`/${locale}/pages/wizard-examples/checkout`}>{dictionary['navigation'].checkout}</MenuItem>
             <MenuItem href={`/${locale}/pages/wizard-examples/property-listing`}>
               {dictionary['navigation'].propertyListing}
@@ -172,8 +209,10 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
               {dictionary['navigation'].createDeal}
             </MenuItem>
           </SubMenu>
-          <MenuItem href={`/${locale}/pages/dialog-examples`}>{dictionary['navigation'].dialogExamples}</MenuItem>
-          <SubMenu label={dictionary['navigation'].widgetExamples}>
+          <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/pages/dialog-examples`}>
+            {dictionary['navigation'].dialogExamples}
+          </MenuItem>
+          <SubMenu icon={<i className='ri-home-smile-line' />} label={dictionary['navigation'].widgetExamples}>
             <MenuItem href={`/${locale}/pages/widget-examples/advanced`}>{dictionary['navigation'].advanced}</MenuItem>
             <MenuItem href={`/${locale}/pages/widget-examples/statistics`}>
               {dictionary['navigation'].statistics}
@@ -183,59 +222,83 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
               {dictionary['navigation'].gamification}
             </MenuItem>
           </SubMenu>
-          <MenuItem href={`/${locale}/icons-test`}>Icons Test</MenuItem>
+          <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/icons-test`}>
+            Icons Test
+          </MenuItem>
         </MenuSection>
         <MenuSection label={dictionary['navigation'].formsAndTables}>
-          <MenuItem href={`/${locale}/forms/form-layouts`}>{dictionary['navigation'].formLayouts}</MenuItem>
-          <MenuItem href={`/${locale}/forms/form-validation`}>{dictionary['navigation'].formValidation}</MenuItem>
-          <MenuItem href={`/${locale}/forms/form-wizard`}>{dictionary['navigation'].formWizard}</MenuItem>
-          <MenuItem href={`/${locale}/react-table`}>{dictionary['navigation'].reactTable}</MenuItem>
+          <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/forms/form-layouts`}>
+            {dictionary['navigation'].formLayouts}
+          </MenuItem>
+          <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/forms/form-validation`}>
+            {dictionary['navigation'].formValidation}
+          </MenuItem>
+          <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/forms/form-wizard`}>
+            {dictionary['navigation'].formWizard}
+          </MenuItem>
+          <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/react-table`}>
+            {dictionary['navigation'].reactTable}
+          </MenuItem>
           <MenuItem
+            icon={<i className='ri-home-smile-line' />}
             href='http://localhost:3001/docs/forms-tables/intro#form-elements'
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
           >
             {dictionary['navigation'].formELements}
           </MenuItem>
           <MenuItem
+            icon={<i className='ri-home-smile-line' />}
             href='http://localhost:3001/docs/tables/mui-table'
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
           >
             {dictionary['navigation'].muiTables}
           </MenuItem>
         </MenuSection>
         <MenuSection label={dictionary['navigation'].chartsMisc}>
-          <SubMenu label={dictionary['navigation'].charts}>
+          <SubMenu icon={<i className='ri-home-smile-line' />} label={dictionary['navigation'].charts}>
             <MenuItem href={`/${locale}/charts/recharts`}>{dictionary['navigation'].recharts}</MenuItem>
             <MenuItem href={`/${locale}/charts/apex-charts`}>{dictionary['navigation'].apex}</MenuItem>
           </SubMenu>
           <MenuItem
+            icon={<i className='ri-home-smile-line' />}
             href='http://localhost:3001/docs/user-interface/intro'
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
           >
             {dictionary['navigation'].userInterface}
           </MenuItem>
           <MenuItem
+            icon={<i className='ri-home-smile-line' />}
             href='http://localhost:3001/docs/components/intro'
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
           >
             {dictionary['navigation'].components}
           </MenuItem>
-          <MenuItem suffix={<LinkExternalIcon fontSize='1.125rem' />} target='_blank'>
+          <MenuItem
+            icon={<i className='ri-home-smile-line' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
+            target='_blank'
+          >
             {dictionary['navigation'].raiseSupport}
           </MenuItem>
-          <MenuItem suffix={<LinkExternalIcon fontSize='1.125rem' />} target='_blank'>
+          <MenuItem
+            icon={<i className='ri-home-smile-line' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
+            target='_blank'
+          >
             {dictionary['navigation'].documentation}
           </MenuItem>
-          <SubMenu label={dictionary['navigation'].others}>
-            <MenuItem suffix='2️⃣'>{dictionary['navigation'].itemWithBadge}</MenuItem>
+          <SubMenu icon={<i className='ri-home-smile-line' />} label={dictionary['navigation'].others}>
+            <MenuItem suffix={<Chip label='New' size='small' color='info' />}>
+              {dictionary['navigation'].itemWithBadge}
+            </MenuItem>
             <MenuItem
               href='https://themeselection.com/'
               target='_blank'
-              suffix={<LinkExternalIcon fontSize='1.125rem' />}
+              suffix={<i className='ri-external-link-line text-xl' />}
             >
               {dictionary['navigation'].externalLink}
             </MenuItem>
@@ -251,7 +314,13 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
         </MenuSection>
       </Menu>
 
-      {/* <Menu popoutMenuOffset={{ mainAxis: 10 }} menuItemStyles={{ ...menuItemStyles(settings, theme) }}>
+      {/* <Menu
+        popoutMenuOffset={{ mainAxis: 10 }}
+        menuItemStyles={menuItemStyles(verticalNavOptions, theme)}
+        renderExpandIcon={({ open }) => <RenderExpandIcon open={open} transitionDuration={transitionDuration} />}
+        renderExpandedMenuItemIcon={{ icon: <i className='ri-circle-line' /> }}
+        menuSectionStyles={menuSectionStyles(verticalNavOptions, theme)}
+      >
         {generateVerticalMenu(menuData(locale, params), locale)}
       </Menu> */}
     </ScrollWrapper>
