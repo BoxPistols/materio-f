@@ -85,6 +85,7 @@ const notifications: NotificationsType[] = [
   },
   {
     avatarIcon: 'ri-bar-chart-line',
+    avatarColor: 'info',
     title: 'Monthly report generated',
     subtitle: 'July month financial report is generated',
     time: 'Apr 24, 10:30 AM',
@@ -92,6 +93,7 @@ const notifications: NotificationsType[] = [
   },
   {
     avatarText: 'MG',
+    avatarColor: 'success',
     title: 'Application has been approved 🚀',
     subtitle: 'Your Meta Gadgets project application has been approved.',
     time: 'Feb 17, 12:17 PM',
@@ -99,6 +101,7 @@ const notifications: NotificationsType[] = [
   },
   {
     avatarIcon: 'ri-mail-line',
+    avatarColor: 'error',
     title: 'New message from Harry',
     subtitle: 'You have new message from Harry',
     time: 'Jan 6, 1:48 PM',

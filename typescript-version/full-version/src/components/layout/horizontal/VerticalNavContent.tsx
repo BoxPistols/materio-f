@@ -15,6 +15,9 @@ import useHorizontalNav from '@menu-package/hooks/useHorizontalNav'
 // Util Imports
 import { mapHorizontalToVerticalMenu } from '@menu-package/utils/menuUtils'
 
+// Style Imports
+import commonStyles from '@/styles/common.module.css'
+
 const VerticalNavContent = ({ children }: ChildrenType) => {
   const { isBreakpointReached } = useHorizontalNav()
 
@@ -24,7 +27,12 @@ const VerticalNavContent = ({ children }: ChildrenType) => {
     <>
       <NavHeader>
         <Logo />
-        <NavCollapseIcons />
+        <NavCollapseIcons
+          lockedIcon={<i className='ri-radio-button-line' />}
+          unlockedIcon={<i className='ri-checkbox-blank-circle-line' />}
+          closeIcon={<i className='ri-close-line text-xl' />}
+          className={commonStyles.textSecondary}
+        />
       </NavHeader>
       <ScrollWrapper
         {...(isBreakpointReached

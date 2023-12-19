@@ -1,3 +1,6 @@
+// MUI Imports
+import type { Theme } from '@mui/material/styles'
+
 // Third-party Imports
 import styled from '@emotion/styled'
 import type { CSSObject } from '@emotion/styled'
@@ -13,18 +16,26 @@ import { horizontalLayoutClasses } from '@layouts/utils/layoutClasses'
 
 type StyledHeaderProps = {
   skin: Settings['skin']
+  theme: Theme
   overrideStyles?: CSSObject
 }
 
 const StyledHeader = styled.header<StyledHeaderProps>`
-  border-block-end: 1px solid var(--border-color);
+  ${({ skin, theme }) =>
+    skin === 'bordered'
+      ? `
+    border-block-end: 1px solid var(--border-color);
+  `
+      : `
+    box-shadow: 0 4px 8px -4px rgb(var(--mui-mainColorChannels-${theme.palette.mode}Shadow) / 0.42);
+  `}
 
   &:not(.${horizontalLayoutClasses.headerBlur}) {
-    background-color: var(--background-color);
+    background-color: var(--mui-palette-background-paper);
   }
 
   &.${horizontalLayoutClasses.headerBlur} {
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(9px);
     background-color: rgb(var(--background-color-rgb) / 0.9);
   }
 
@@ -41,7 +52,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
 
   .${horizontalLayoutClasses.navbar} {
     min-block-size: var(--header-height);
-    padding-block: 10px;
+    ${({ theme }) => `padding-block: ${theme.spacing(3)};`}
     padding-inline: ${themeConfig.layoutPadding}px;
   }
 

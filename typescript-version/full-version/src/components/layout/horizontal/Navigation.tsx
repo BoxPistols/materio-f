@@ -61,7 +61,7 @@ const Navigation = ({ dictionary }: { dictionary: Dictionary }) => {
         isContentCompact={headerContentCompact}
         isBreakpointReached={isBreakpointReached}
         {...(!isBreakpointReached && {
-          className: classnames(horizontalLayoutClasses.navigationContentWrapper, 'flex items-center is-full')
+          className: classnames(horizontalLayoutClasses.navigationContentWrapper, 'flex items-center is-full plb-2.5')
         })}
       >
         <HorizontalMenu dictionary={dictionary} />
