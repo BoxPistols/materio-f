@@ -1,14 +1,10 @@
 // MUI Imports
 import Card from '@mui/material/Card'
 import { styled } from '@mui/material/styles'
-
-// import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import InputAdornment from '@mui/material/InputAdornment'
 import MuiTextField from '@mui/material/TextField'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -29,10 +25,6 @@ type Props = {
 }
 
 const FaqHeader = ({ searchValue, setSearchValue }: Props) => {
-  // Hooks
-  const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   return (
     <Card className={classnames(styles.headerImage, 'bg-transparent bg-cover')} elevation={0}>
       <CardContent className={classnames(styles.headerPadding, 'flex flex-col items-center w-full text-center pli-5')}>
@@ -43,11 +35,7 @@ const FaqHeader = ({ searchValue, setSearchValue }: Props) => {
           or choose a category to quickly find the help you need
         </Typography>
         <TextField
-          fullWidth
-          className={classnames(styles.searchBar, {
-            [styles.inputWidth]: isBelowMdScreen,
-            '!max-w-full': isBelowSmScreen
-          })}
+          className='w-full sm:max-is-[55%] md:max-is-[600px]'
           variant='outlined'
           placeholder='Ask a question...'
           value={searchValue}

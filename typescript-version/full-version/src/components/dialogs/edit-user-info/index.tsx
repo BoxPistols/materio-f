@@ -20,14 +20,6 @@ import Typography from '@mui/material/Typography'
 import Switch from '@mui/material/Switch'
 import IconButton from '@mui/material/IconButton'
 import { FormControlLabel } from '@mui/material'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material'
-
-// Third-party Imports
-import classnames from 'classnames'
-
-// Style Imports
-import styles from '@components/dialogs/styles.module.css'
 
 type EditUserInfoData = {
   firstName?: string
@@ -71,9 +63,6 @@ const EditUserInfo = ({ open, setOpen, data }: EditUserInfoProps) => {
   // States
   const [userData, setUserData] = useState<EditUserInfoProps['data']>(data || initialData)
 
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   const handleClose = () => {
     setOpen(false)
     setUserData(initialData)
@@ -83,9 +72,7 @@ const EditUserInfo = ({ open, setOpen, data }: EditUserInfoProps) => {
     <Dialog fullWidth open={open} onClose={handleClose} maxWidth='md' scroll='body'>
       <DialogTitle
         variant='h4'
-        className={classnames('flex gap-2 flex-col text-center', styles.dialogTitle, {
-          [styles.smDialogTitle]: isBelowSmScreen
-        })}
+        className='flex gap-2 flex-col text-center pbs-10 pbe-6 pli-10 sm:pbs-16 sm:pbe-6 sm:pli-16'
       >
         Edit User Information
         <Typography component='span' className='flex flex-col text-center'>
@@ -93,12 +80,8 @@ const EditUserInfo = ({ open, setOpen, data }: EditUserInfoProps) => {
         </Typography>
       </DialogTitle>
       <form onSubmit={e => e.preventDefault()}>
-        <DialogContent
-          className={classnames('overflow-visible', styles.dialogContent, {
-            [styles.smDialogContent]: isBelowSmScreen
-          })}
-        >
-          <IconButton onClick={handleClose} className={styles.closeIcon}>
+        <DialogContent className='overflow-visible pbs-0 pbe-6 pli-10 sm:pli-16'>
+          <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
             <i className='ri-close-line' />
           </IconButton>
           <Grid container spacing={5}>
@@ -220,11 +203,7 @@ const EditUserInfo = ({ open, setOpen, data }: EditUserInfoProps) => {
             </Grid>
           </Grid>
         </DialogContent>
-        <DialogActions
-          className={classnames('gap-2 justify-center', styles.dialogActions, {
-            [styles.smDialogAction]: isBelowSmScreen
-          })}
-        >
+        <DialogActions className='gap-2 justify-center pbs-0 pbe-10 pli-10 sm:pbe-16 sm:pli-16'>
           <Button variant='contained' onClick={handleClose} type='submit'>
             Submit
           </Button>

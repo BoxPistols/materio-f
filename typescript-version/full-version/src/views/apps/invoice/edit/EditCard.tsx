@@ -23,21 +23,16 @@ import type { Theme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
-import DatePicker from 'react-datepicker'
 
 // Type Imports
 import type { InvoiceType } from '@/types/apps/invoiceTypes'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
+import AppReactDatepicker from '@core/styles/libs/AppReactDatepicker'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
-
-// Styles Imports
-import styles from '@views/apps/invoice/styles.module.css'
-import commonStyles from '@/styles/common.module.css'
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
 
 const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: string; data: InvoiceType[] }) => {
   // States
@@ -47,7 +42,6 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
   const [dueDate, setDueDate] = useState(new Date(invoiceData.dueDate))
 
   // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
   const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
 
   const deleteForm = (e: SyntheticEvent) => {
@@ -58,16 +52,16 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
   }
 
   return (
-    <DatePickerWrapper>
+    <>
       <Card>
-        <CardContent className={classnames({ '!p-12': !isBelowSmScreen })}>
+        <CardContent className='sm:!p-12'>
           <Grid container spacing={6}>
             <Grid item xs={12}>
-              <div className={classnames('p-6', commonStyles.actionHoverColor, commonStyles.borderRadius)}>
-                <div className={classnames('flex justify-between gap-4', { 'flex-col': isBelowSmScreen })}>
+              <div className='p-6 rounded bg-actionHover'>
+                <div className='flex justify-between gap-4 flex-col sm:flex-row'>
                   <div className='flex flex-col gap-6'>
                     <div className='flex items-center gap-2.5'>
-                      <Logo className={commonStyles.primaryColor} height={25} width={30} />
+                      <Logo className='text-primary' height={25} width={30} />
                       <Typography className='uppercase font-semibold text-xl leading-tight' color='text.primary'>
                         {themeConfig.templateName}
                       </Typography>
@@ -97,7 +91,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                       <Typography className='min-is-[100px] mie-4' color='text.primary'>
                         Date Issued:
                       </Typography>
-                      <DatePicker
+                      <AppReactDatepicker
                         selected={issueDate}
                         id='payment-date'
                         onChange={(date: Date) => setIssueDate(date)}
@@ -108,7 +102,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                       <Typography className='min-is-[100px] mie-4' color='text.primary'>
                         Date Due:
                       </Typography>
-                      <DatePicker
+                      <AppReactDatepicker
                         selected={dueDate}
                         id='payment-date'
                         onChange={(date: Date) => setDueDate(date)}
@@ -120,13 +114,13 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
               </div>
             </Grid>
             <Grid item xs={12}>
-              <div className={classnames('flex justify-between', { 'flex-col': isBelowSmScreen })}>
+              <div className='flex justify-between flex-col sm:flex-row'>
                 <div className='flex flex-col gap-4'>
                   <Typography className='font-medium' color='text.primary'>
                     Invoice To:
                   </Typography>
                   <Select
-                    className={classnames('min-is-[200px]', { 'w-1/2': isBelowSmScreen })}
+                    className='w-1/2 min-is-[200px] sm:w-auto'
                     size='small'
                     value={selectData.id}
                     onChange={e => {
@@ -183,26 +177,15 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
               {Array.from(Array(count).keys()).map((item, index) => (
                 <div
                   key={index}
-                  className={classnames(
-                    'repeater-item flex relative mbe-4',
-                    commonStyles.border,
-                    commonStyles.borderRadius,
-                    {
-                      'mbs-8': !isBelowMdScreen,
-                      '!mbs-14': index !== 0 && !isBelowMdScreen,
-                      'gap-5': isBelowMdScreen
-                    }
-                  )}
+                  className={classnames('repeater-item flex relative mbe-4 border rounded', {
+                    'mbs-8': !isBelowMdScreen,
+                    '!mbs-14': index !== 0 && !isBelowMdScreen,
+                    'gap-5': isBelowMdScreen
+                  })}
                 >
                   <Grid container spacing={5} className='m-0 pbe-5'>
                     <Grid item lg={6} md={5} xs={12}>
-                      <Typography
-                        className={classnames('font-medium', {
-                          static: isBelowSmScreen,
-                          'absolute -top-8': !isBelowMdScreen
-                        })}
-                        color='text.primary'
-                      >
+                      <Typography className='font-medium md:absolute md:-top-8' color='text.primary'>
                         Item
                       </Typography>
                       <Select fullWidth size='small' defaultValue='App Design' className='mbe-5'>
@@ -214,13 +197,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                       <TextField rows={2} fullWidth multiline size='small' defaultValue='Customization & Bug Fixes' />
                     </Grid>
                     <Grid item lg={2} md={3} xs={12}>
-                      <Typography
-                        className={classnames('font-medium', {
-                          static: isBelowSmScreen,
-                          'absolute -top-8': !isBelowMdScreen
-                        })}
-                        color='text.primary'
-                      >
+                      <Typography className='font-medium md:absolute md:-top-8' color='text.primary'>
                         Cost
                       </Typography>
                       <TextField
@@ -252,13 +229,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                       </div>
                     </Grid>
                     <Grid item md={2} xs={12}>
-                      <Typography
-                        className={classnames('font-medium', {
-                          static: isBelowSmScreen,
-                          'absolute -top-8': !isBelowMdScreen
-                        })}
-                        color='text.primary'
-                      >
+                      <Typography className='font-medium md:absolute md:-top-8' color='text.primary'>
                         Hours
                       </Typography>
                       <TextField
@@ -271,19 +242,13 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                       />
                     </Grid>
                     <Grid item md={2} xs={12}>
-                      <Typography
-                        className={classnames('font-medium', {
-                          static: isBelowSmScreen,
-                          'absolute -top-8': !isBelowMdScreen
-                        })}
-                        color='text.primary'
-                      >
+                      <Typography className='font-medium md:absolute md:-top-8' color='text.primary'>
                         Price
                       </Typography>
-                      <Typography color='text.primary'>$24.00</Typography>
+                      <Typography>$24.00</Typography>
                     </Grid>
                   </Grid>
-                  <div className={classnames('flex flex-col justify-start', styles.borderLeft)}>
+                  <div className='flex flex-col justify-start border-is'>
                     <IconButton size='small' onClick={deleteForm}>
                       <i className='ri-close-line' />
                     </IconButton>
@@ -305,8 +270,8 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
               <Divider className='border-dashed' />
             </Grid>
             <Grid item xs={12}>
-              <div className={classnames('flex justify-between', { 'flex-col': isBelowSmScreen })}>
-                <div className={classnames('flex flex-col gap-4', { 'order-2': isBelowSmScreen })}>
+              <div className='flex justify-between flex-col sm:flex-row'>
+                <div className='flex flex-col gap-4 order-2 sm:order-[unset]'>
                   <div className='flex items-center gap-2'>
                     <Typography className='font-medium' color='text.primary'>
                       Salesperson:
@@ -348,7 +313,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
               <Divider className='border-dashed' />
             </Grid>
             <Grid item xs={12}>
-              <InputLabel htmlFor='invoice-note' className={classnames('inline-flex mbe-1', commonStyles.textPrimary)}>
+              <InputLabel htmlFor='invoice-note' className='inline-flex mbe-1 text-textPrimary'>
                 Note:
               </InputLabel>
               <TextField
@@ -356,7 +321,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                 rows={2}
                 fullWidth
                 multiline
-                className={classnames(commonStyles.border, commonStyles.borderRadius)}
+                className='border rounded'
                 defaultValue='It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance
               projects. Thank You!'
               />
@@ -364,7 +329,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
           </Grid>
         </CardContent>
       </Card>
-    </DatePickerWrapper>
+    </>
   )
 }
 

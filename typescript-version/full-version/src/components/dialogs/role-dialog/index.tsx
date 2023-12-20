@@ -15,15 +15,6 @@ import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material'
-
-// Third-party Imports
-import classnames from 'classnames'
-
-// Style Imports
-import styles from './styles.module.css'
-import globalStyles from '@components/dialogs/styles.module.css'
 
 type RoleDialogProps = {
   open: boolean
@@ -55,9 +46,6 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
   // States
   const [selectedCheckbox, setSelectedCheckbox] = useState<string[]>([])
   const [isIndeterminateCheckbox, setIsIndeterminateCheckbox] = useState<boolean>(false)
-
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   const handleClose = () => {
     setOpen(false)
@@ -101,9 +89,7 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
     <Dialog fullWidth maxWidth='md' scroll='body' open={open} onClose={handleClose}>
       <DialogTitle
         variant='h4'
-        className={classnames('flex flex-col gap-2 text-center', globalStyles.dialogTitle, {
-          [globalStyles.smDialogTitle]: isBelowSmScreen
-        })}
+        className='flex flex-col gap-2 text-center pbs-10 pbe-6 pli-10 sm:pbs-16 sm:pbe-6 sm:pli-16'
       >
         Edit Role
         <Typography component='span' className='flex flex-col text-center'>
@@ -111,23 +97,14 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
         </Typography>
       </DialogTitle>
       <form onSubmit={e => e.preventDefault()}>
-        <DialogContent
-          className={classnames('overflow-visible flex flex-col gap-6', globalStyles.dialogContent, {
-            [globalStyles.smDialogContent]: isBelowSmScreen
-          })}
-        >
-          <IconButton onClick={handleClose} className={globalStyles.closeIcon}>
+        <DialogContent className='overflow-visible pbs-0 pbe-6 pli-10 sm:pli-16'>
+          <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
             <i className='ri-close-line' />
           </IconButton>
           <TextField label='Role Name' variant='outlined' fullWidth placeholder='Enter Role Name' />
           <Typography variant='h5'>Role Permissions</Typography>
           <div className='flex flex-col overflow-x-auto'>
-            <div
-              className={classnames(
-                'flex items-center justify-between plb-2.5 gap-6 whitespace-nowrap',
-                styles.borderBottom
-              )}
-            >
+            <div className='flex items-center justify-between plb-2.5 gap-6 whitespace-nowrap border-be'>
               <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]' color='text.primary'>
                 Administrator Access
               </Typography>
@@ -148,10 +125,7 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
 
               return (
                 <div
-                  className={classnames(
-                    'flex items-center justify-between plb-2.5 gap-6 whitespace-nowrap',
-                    styles.borderBottom
-                  )}
+                  className='flex items-center justify-between plb-2.5 gap-6 whitespace-nowrap border-be'
                   key={index}
                 >
                   <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]' color='text.primary'>
@@ -205,11 +179,7 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
             })}
           </div>
         </DialogContent>
-        <DialogActions
-          className={classnames('gap-2 justify-center', globalStyles.dialogActions, {
-            [globalStyles.smDialogAction]: isBelowSmScreen
-          })}
-        >
+        <DialogActions className='gap-2 justify-center pbs-0 pbe-10 pli-10 sm:pbe-16 sm:pli-16'>
           <Button variant='contained' type='submit' onClick={handleClose}>
             Submit
           </Button>

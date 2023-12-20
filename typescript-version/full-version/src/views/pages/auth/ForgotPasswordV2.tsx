@@ -55,18 +55,16 @@ const ForgotPasswordV2 = ({ direction }: { direction: Direction }) => {
 
   return (
     <div className='flex h-full justify-center'>
-      {isAboveMdScreen && (
-        <div className={'flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6'}>
-          <div className='plb-12 pis-12'>
-            <img src={characterIllustration} alt='' className={styles.illustrationSize} />
-          </div>
-          <Illustrations
-            image1={{ src: '/images/illustrations/objects/tree-2.png' }}
-            image2={null}
-            maskImg={{ src: authBackground }}
-          />
+      <div className={'flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden'}>
+        <div className='plb-12 pis-12'>
+          <img src={characterIllustration} alt='' className='max-bs-[500px] max-is-full bs-auto' />
         </div>
-      )}
+        <Illustrations
+          image1={{ src: '/images/illustrations/objects/tree-2.png' }}
+          image2={null}
+          maskImg={{ src: authBackground }}
+        />
+      </div>
       <div
         className={classnames('flex justify-center items-center h-full', commonStyles.paperColor, {
           '!min-is-full p-6': isBelowMdScreen,
@@ -74,9 +72,9 @@ const ForgotPasswordV2 = ({ direction }: { direction: Direction }) => {
           'p-12': isAboveMdScreen
         })}
       >
-        <div className={classnames('absolute', styles.templateName, { '!inline-start-6': isBelowSmScreen })}>
+        <div className='absolute block-start-[33px] !inline-start-6 sm:inline-start-[38px]'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
-            <Logo className={commonStyles.primaryColor} height={28} width={35} />
+            <Logo className='text-primary' height={28} width={35} />
             <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>

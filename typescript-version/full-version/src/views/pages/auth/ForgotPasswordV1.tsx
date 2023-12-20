@@ -10,11 +10,6 @@ import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import { useColorScheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Type Imports
 import type { Direction } from '@core/types'
@@ -29,10 +24,6 @@ import Illustrations from '@components/Illustrations'
 // Component Imports
 import Logo from '@core/svg/Logo'
 
-// Style Imports
-import styles from './v1.module.css'
-import commonStyles from '@/styles/common.module.css'
-
 const ForgotPasswordV1 = ({ direction }: { direction: Direction }) => {
   const { mode, systemMode } = useColorScheme()
 
@@ -41,15 +32,12 @@ const ForgotPasswordV1 = ({ direction }: { direction: Direction }) => {
       ? '/images/pages/auth-v1-mask-dark.png'
       : '/images/pages/auth-v1-mask-light.png'
 
-  // Hooks
-  const isAboveSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('sm'))
-
   return (
     <div className='flex flex-col justify-center items-center min-bs-[100dvh] relative p-6'>
-      <Card className={classnames('flex flex-col', { [styles.card]: isAboveSmScreen })}>
+      <Card className='flex flex-col sm:is-[450px]'>
         <CardContent className='!p-12'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
-            <Logo className={classnames('h-8 tracking-[0.15px]', commonStyles.primaryColor)} height={28} width={35} />
+            <Logo className='h-8 tracking-[0.15px] text-primary' height={28} width={35} />
             <Typography variant='h4' className='font-semibold'>
               {themeConfig.templateName}
             </Typography>

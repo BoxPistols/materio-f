@@ -15,10 +15,6 @@ import classnames from 'classnames'
 // Type Imports
 import type { ProfileHeaderType } from '@/types/pages/profileTypes'
 
-// Style Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
-
 const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
   // Hooks
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
@@ -26,20 +22,14 @@ const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
 
   return (
     <Card>
-      <CardMedia image={data?.coverImg} className={styles.cardMedia} />
+      <CardMedia image={data?.coverImg} className='bs-[250px]' />
       <CardContent
         className={classnames('flex gap-6 items-end pt-0 justify-start', {
           'justify-center flex-col items-center': isBelowMdScreen
         })}
       >
-        <div className={classnames('flex, rounded-bs-md', styles.profileImgMargin, styles.profileImgBorder)}>
-          <img
-            height={120}
-            width={120}
-            src={data?.profileImg}
-            className={commonStyles.borderRadius}
-            alt='Profile Background'
-          />
+        <div className='flex, rounded-bs-md mbs-[-45px] border-5 border-backgroundPaper'>
+          <img height={120} width={120} src={data?.profileImg} className='rounded' alt='Profile Background' />
         </div>
         <div
           className={classnames('flex w-full flex-wrap justify-between items-end gap-5', {
@@ -54,17 +44,15 @@ const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
               })}
             >
               <div className='flex items-center gap-2'>
-                {data?.designationIcon && (
-                  <i className={classnames(data?.designationIcon, commonStyles.textSecondary)} />
-                )}
+                {data?.designationIcon && <i className={classnames('text-textSecondary', data?.designationIcon)} />}
                 <Typography className='font-medium'>{data?.designation}</Typography>
               </div>
               <div className='flex items-center gap-2'>
-                <i className={classnames('ri-map-pin-2-line', commonStyles.textSecondary)} />
+                <i className='ri-map-pin-2-line text-textSecondary' />
                 <Typography className='font-medium'>{data?.location}</Typography>
               </div>
               <div className='flex items-center gap-2'>
-                <i className={classnames('ri-calendar-line', commonStyles.textSecondary)} />
+                <i className='ri-calendar-line text-textSecondary' />
                 <Typography className='font-medium'>{data?.joiningDate}</Typography>
               </div>
             </div>

@@ -41,7 +41,6 @@ import CustomAvatar from '@core/components/mui/Avatar'
 
 // Style Imports
 import tableStyles from '@core/styles/table.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 declare module '@tanstack/table-core' {
   interface FilterFns {
@@ -172,7 +171,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
               'Details',
               'Archive',
               { divider: true },
-              { text: 'Delete', menuItemProps: { className: commonStyles.errorColor } }
+              { text: 'Delete', menuItemProps: { className: 'text-error' } }
             ]}
           />
         ),
@@ -227,7 +226,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
 
       <div className='overflow-x-auto'>
         <table className={tableStyles.table}>
-          <thead className={tableStyles.thead}>
+          <thead>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
@@ -252,7 +251,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
               </tr>
             ))}
           </thead>
-          <tbody className={tableStyles.tbody}>
+          <tbody>
             {table
               .getRowModel()
               .rows.slice(0, table.getState().pagination.pageSize)
@@ -271,7 +270,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
       <TablePagination
         rowsPerPageOptions={[5, 7, 10]}
         component='div'
-        className={tableStyles.paginationWrapper}
+        className='border-bs'
         count={table.getFilteredRowModel().rows.length}
         rowsPerPage={table.getState().pagination.pageSize}
         page={table.getState().pagination.pageIndex}

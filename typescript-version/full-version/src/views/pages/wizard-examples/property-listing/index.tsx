@@ -12,11 +12,6 @@ import StepLabel from '@mui/material/StepLabel'
 import StepConnector from '@mui/material/StepConnector'
 import Typography from '@mui/material/Typography'
 import styled from '@mui/material/styles/styled'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Type Imports
 import type { Direction } from '@core/types'
@@ -31,10 +26,6 @@ import StepPriceDetails from './StepPriceDetails'
 // Styled Component Imports
 import StepperWrapper from '@core/styles/stepper'
 import StepperCustomDot from '@views/forms/form-wizard/StepperCustomDot'
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
-
-// Style Imports
-import styles from './styles.module.css'
 
 const steps = [
   {
@@ -126,9 +117,6 @@ const PropertyListingWizard = ({ direction }: { direction: Direction }) => {
   // States
   const [activeStep, setActiveStep] = useState<number>(0)
 
-  // Hooks
-  const isBelowLgScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-
   const handleNext = () => {
     if (activeStep !== steps.length - 1) {
       setActiveStep(activeStep + 1)
@@ -144,10 +132,8 @@ const PropertyListingWizard = ({ direction }: { direction: Direction }) => {
   }
 
   return (
-    <Card className={classnames('flex', { 'flex-col': isBelowLgScreen })}>
-      <CardContent
-        className={classnames({ [styles.topCardContent]: isBelowLgScreen, [styles.leftCardContent]: !isBelowLgScreen })}
-      >
+    <Card className='flex flex-col lg:flex-row'>
+      <CardContent className='border-be lg:border-ie lg:min-is-[300px]'>
         <StepperWrapper className='h-full'>
           <Stepper activeStep={activeStep} orientation='vertical' connector={<ConnectorHeight />}>
             {steps.map((step, index) => {
@@ -174,7 +160,7 @@ const PropertyListingWizard = ({ direction }: { direction: Direction }) => {
       </CardContent>
 
       <CardContent className='flex-1 !pbs-5'>
-        <DatePickerWrapper>{getStepContent(activeStep, handleNext, handlePrev, direction)}</DatePickerWrapper>
+        {getStepContent(activeStep, handleNext, handlePrev, direction)}
       </CardContent>
     </Card>
   )

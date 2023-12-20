@@ -32,9 +32,6 @@ import { email, object, minLength, string, array, forward, custom } from 'valibo
 import StepperWrapper from '@core/styles/stepper'
 import StepperCustomDot from './StepperCustomDot'
 
-// Style Imports
-import styles from './styles.module.css'
-
 const steps = [
   {
     title: 'Account Details',
@@ -69,8 +66,8 @@ const accountSchema = object(
 )
 
 const personalSchema = object({
-  'first-name': string([minLength(1, 'This field is required')]),
-  'last-name': string([minLength(1, 'This field is required')]),
+  firstName: string([minLength(1, 'This field is required')]),
+  lastName: string([minLength(1, 'This field is required')]),
   country: string([minLength(1, 'This field is required')]),
   language: array(string(), [minLength(1, 'This field is required')])
 })
@@ -114,8 +111,8 @@ const StepperLinearWithValidation = () => {
   } = useForm({
     resolver: valibotResolver(personalSchema),
     defaultValues: {
-      'first-name': '',
-      'last-name': '',
+      firstName: '',
+      lastName: '',
       country: '',
       language: []
     }
@@ -149,7 +146,7 @@ const StepperLinearWithValidation = () => {
   const handleReset = () => {
     setActiveStep(0)
     accountReset({ email: '', username: '', password: '', confirmPassword: '' })
-    personalReset({ 'last-name': '', 'first-name': '', country: '', language: [] })
+    personalReset({ firstName: '', lastName: '', country: '', language: [] })
     socialReset({ twitter: '', facebook: '', google: '', linkedIn: '' })
     setIsPasswordShown(false)
     setIsConfirmPasswordShown(false)
@@ -161,7 +158,7 @@ const StepperLinearWithValidation = () => {
     switch (activeStep) {
       case 0:
         return (
-          <form onSubmit={handleAccountSubmit(onSubmit)}>
+          <form key={0} onSubmit={handleAccountSubmit(onSubmit)}>
             <Grid container spacing={5}>
               <Grid item xs={12}>
                 <Typography className='font-medium' color='text.primary'>
@@ -282,7 +279,7 @@ const StepperLinearWithValidation = () => {
         )
       case 1:
         return (
-          <form onSubmit={handlePersonalSubmit(onSubmit)}>
+          <form key={1} onSubmit={handlePersonalSubmit(onSubmit)}>
             <Grid container spacing={5}>
               <Grid item xs={12}>
                 <Typography className='font-medium' color='text.primary'>
@@ -292,7 +289,7 @@ const StepperLinearWithValidation = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Controller
-                  name='first-name'
+                  name='firstName'
                   control={personalControl}
                   rules={{ required: true }}
                   render={({ field }) => (
@@ -301,9 +298,9 @@ const StepperLinearWithValidation = () => {
                       fullWidth
                       label='First Name'
                       placeholder='John'
-                      {...(personalErrors['first-name'] && {
+                      {...(personalErrors.firstName && {
                         error: true,
-                        helperText: personalErrors['first-name'].message
+                        helperText: personalErrors.firstName.message
                       })}
                     />
                   )}
@@ -311,7 +308,7 @@ const StepperLinearWithValidation = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Controller
-                  name='last-name'
+                  name='lastName'
                   control={personalControl}
                   rules={{ required: true }}
                   render={({ field }) => (
@@ -320,9 +317,9 @@ const StepperLinearWithValidation = () => {
                       fullWidth
                       label='Last Name'
                       placeholder='Doe'
-                      {...(personalErrors['last-name'] && {
+                      {...(personalErrors.lastName && {
                         error: true,
-                        helperText: personalErrors['last-name'].message
+                        helperText: personalErrors.lastName.message
                       })}
                     />
                   )}
@@ -386,7 +383,7 @@ const StepperLinearWithValidation = () => {
         )
       case 2:
         return (
-          <form onSubmit={handleSocialSubmit(onSubmit)}>
+          <form key={2} onSubmit={handleSocialSubmit(onSubmit)}>
             <Grid container spacing={5}>
               <Grid item xs={12}>
                 <Typography className='font-medium' color='text.primary'>
@@ -497,10 +494,10 @@ const StepperLinearWithValidation = () => {
                 ) {
                   labelProps.error = true
                 } else if (
-                  (personalErrors.country ||
-                    personalErrors.language ||
-                    personalErrors['last-name'] ||
-                    personalErrors['first-name']) &&
+                  (personalErrors.firstName ||
+                    personalErrors.lastName ||
+                    personalErrors.country ||
+                    personalErrors.language) &&
                   activeStep === 1
                 ) {
                   labelProps.error = true
@@ -539,7 +536,7 @@ const StepperLinearWithValidation = () => {
       <CardContent>
         {activeStep === steps.length ? (
           <>
-            <Typography className={styles.completedText} color='text.primary'>
+            <Typography className='mlb-2 mli-1' color='text.primary'>
               All steps are completed!
             </Typography>
             <div className='flex justify-end mt-4'>

@@ -20,8 +20,8 @@ import InputLabel from '@mui/material/InputLabel'
 import InputAdornment from '@mui/material/InputAdornment'
 import IconButton from '@mui/material/IconButton'
 
-// Third-party Imports
-import DatePicker from 'react-datepicker'
+// Component Imports
+import AppReactDatepicker from '@core/styles/libs/AppReactDatepicker'
 
 type FormDataType = {
   username: string
@@ -219,11 +219,11 @@ const FormLayoutsSeparator = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <DatePicker
+              <AppReactDatepicker
                 selected={formData.date}
                 showYearDropdown
                 showMonthDropdown
-                onChange={date => setFormData({ ...formData, date })}
+                onChange={(date: Date) => setFormData({ ...formData, date })}
                 placeholderText='MM/DD/YYYY'
                 customInput={<TextField fullWidth label='Birth Date' placeholder='MM-DD-YYYY' />}
               />

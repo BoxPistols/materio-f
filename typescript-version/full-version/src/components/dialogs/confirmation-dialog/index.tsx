@@ -9,15 +9,9 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material'
 
 // Third-party Imports
 import classnames from 'classnames'
-
-// Style Imports
-import styles from '@components/dialogs/styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 type ConfirmationType = 'delete-account' | 'unsubscribe' | 'suspend-account'
 
@@ -31,9 +25,6 @@ const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) =>
   // States
   const [secondDialog, setSecondDialog] = useState(false)
   const [userInput, setUserInput] = useState(false)
-
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   const handleSecondDialogClose = () => {
     setSecondDialog(false)
@@ -51,12 +42,8 @@ const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) =>
   return (
     <>
       <Dialog fullWidth maxWidth='xs' open={open} onClose={() => setOpen(false)}>
-        <DialogContent
-          className={classnames('flex items-center flex-col text-center', styles.dialogTitle, {
-            [styles.smDialogTitle]: isBelowSmScreen
-          })}
-        >
-          <i className={classnames('ri-error-warning-line text-[88px] mbe-6', commonStyles.warningColor)} />
+        <DialogContent className='flex items-center flex-col text-center pbs-10 pbe-6 pli-10 sm:pbs-16 sm:pbe-6 sm:pli-16'>
+          <i className='ri-error-warning-line text-[88px] mbe-6 text-warning' />
           <Wrapper
             {...(type === 'suspend-account' && {
               className: 'flex flex-col items-center gap-5'
@@ -72,11 +59,7 @@ const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) =>
             )}
           </Wrapper>
         </DialogContent>
-        <DialogActions
-          className={classnames('gap-2 justify-center', styles.dialogActions, {
-            [styles.smDialogActions]: isBelowSmScreen
-          })}
-        >
+        <DialogActions className='gap-2 justify-center pbs-0 pbe-10 pli-10 sm:pbe-16 sm:pli-16'>
           <Button variant='contained' onClick={() => handleConfirmation(true)}>
             {type === 'suspend-account' ? 'Yes, Suspend User!' : 'Yes'}
           </Button>
@@ -94,17 +77,13 @@ const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) =>
 
       {/* Delete Account Dialog */}
       <Dialog open={secondDialog} onClose={handleSecondDialogClose}>
-        <DialogContent
-          className={classnames('flex items-center flex-col text-center', styles.dialogTitle, {
-            [styles.smDialogTitle]: isBelowSmScreen
-          })}
-        >
+        <DialogContent className='flex items-center flex-col text-center pbs-10 pbe-6 pli-10 sm:pbs-16 sm:pbe-6 sm:pli-16'>
           <i
             className={classnames('text-[88px] mbe-8', {
               'ri-checkbox-circle-line': userInput,
-              [commonStyles.successColor]: userInput,
+              'text-success': userInput,
               'ri-close-circle-line': !userInput,
-              [commonStyles.errorColor]: !userInput
+              'text-error': !userInput
             })}
           />
           <Typography variant='h4' className='mbe-5'>
@@ -128,11 +107,7 @@ const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) =>
             )}
           </Typography>
         </DialogContent>
-        <DialogActions
-          className={classnames('justify-center', styles.dialogActions, {
-            [styles.smDialogActions]: isBelowSmScreen
-          })}
-        >
+        <DialogActions className='justify-center pbs-0 pbe-10 pli-10 sm:pbe-16 sm:pli-16'>
           <Button variant='contained' color='success' onClick={handleSecondDialogClose}>
             Ok
           </Button>

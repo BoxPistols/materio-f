@@ -12,28 +12,19 @@ import StepConnector from '@mui/material/StepConnector'
 import StepLabel from '@mui/material/StepLabel'
 import Typography from '@mui/material/Typography'
 import styled from '@mui/material/styles/styled'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Type Imports
 import type { Direction } from '@core/types'
 
 // Component Imports
 import StepDealType from './StepDealType'
+import StepDealDetails from './StepDealDetails'
+import StepDealUsage from './StepDealUsage'
+import StepReview from './StepReview'
 
 // Styled Component Imports
 import StepperWrapper from '@core/styles/stepper'
 import StepperCustomDot from '@views/forms/form-wizard/StepperCustomDot'
-import DatePickerWrapper from '@core/styles/libs/react-datepicker'
-
-// style Imports
-import styles from './styles.module.css'
-import StepDealDetails from './StepDealDetails'
-import StepDealUsage from './StepDealUsage'
-import StepReview from './StepReview'
 
 const steps = [
   {
@@ -111,9 +102,6 @@ const CreateDeal = ({ direction }: { direction: Direction }) => {
   // States
   const [activeStep, setActiveStep] = useState(0)
 
-  // Hooks
-  const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
-
   const handleNext = () => {
     if (activeStep !== steps.length - 1) {
       setActiveStep(activeStep + 1)
@@ -129,10 +117,8 @@ const CreateDeal = ({ direction }: { direction: Direction }) => {
   }
 
   return (
-    <Card className={classnames('flex', { 'flex-col': isBelowMdScreen })}>
-      <CardContent
-        className={classnames({ [styles.topCardContent]: isBelowMdScreen, [styles.leftCardContent]: !isBelowMdScreen })}
-      >
+    <Card className='flex flex-col md:flex-row'>
+      <CardContent className='border-be md:border-ie md:min-is-[300px]'>
         <StepperWrapper className='h-full'>
           <Stepper activeStep={activeStep} connector={<ConnectorHeight />} orientation='vertical'>
             {steps.map((step, index) => {
@@ -158,9 +144,7 @@ const CreateDeal = ({ direction }: { direction: Direction }) => {
         </StepperWrapper>
       </CardContent>
 
-      <CardContent className='flex-1'>
-        <DatePickerWrapper>{getStepContent(activeStep, handleNext, handlePrev, direction)}</DatePickerWrapper>
-      </CardContent>
+      <CardContent className='flex-1'>{getStepContent(activeStep, handleNext, handlePrev, direction)}</CardContent>
     </Card>
   )
 }

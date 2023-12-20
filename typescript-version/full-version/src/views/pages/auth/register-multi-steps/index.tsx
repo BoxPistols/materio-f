@@ -24,10 +24,6 @@ import StepPersonalInfo from './StepPersonalInfo'
 import StepBillingDetails from './StepBillingDetails'
 import StepperCustomDot from '@views/forms/form-wizard/StepperCustomDot'
 
-// Style Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
-
 const steps = [
   {
     title: 'Account',
@@ -77,19 +73,19 @@ const RegisterMultiSteps = ({ direction }: { direction: Direction }) => {
   return (
     <div className='flex h-full justify-between items-center'>
       {isAboveLgScreen && (
-        <div className={classnames('flex h-full items-center justify-center w-full', styles.imgWidth)}>
+        <div className='flex h-full items-center justify-center w-full is-[594px]'>
           <img
             src='/images/illustrations/characters/8.png'
             alt='multi-steps-character'
-            className={classnames('mis-[85px]', styles.characterHeight, {
-              [styles.characterRtl]: direction === 'rtl'
+            className={classnames('mis-[85px] bs-auto max-ps-[268px] max-is-full', {
+              'scale-[-1]': direction === 'rtl'
             })}
           />
         </div>
       )}
 
-      <div className={classnames('flex justify-center items-center h-full w-full', commonStyles.paperColor)}>
-        <StepperWrapper className={classnames('p-8', styles.contentWidth)}>
+      <div className='flex justify-center items-center h-full w-full bg-backgroundPaper'>
+        <StepperWrapper className='p-8 is-[700px]'>
           <Stepper activeStep={activeStep} className='mbe-12'>
             {steps.map((step, index) => {
               return (

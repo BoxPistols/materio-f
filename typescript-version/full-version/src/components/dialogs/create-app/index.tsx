@@ -13,10 +13,8 @@ import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
 import Stepper from '@mui/material/Stepper'
 import Avatar from '@mui/material/Avatar'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
 
-// Third-Party Imports
+// Third-party Imports
 import classnames from 'classnames'
 
 // Type Imports
@@ -31,10 +29,6 @@ import Submit from './Submit'
 
 // Styled Component Imports
 import StepperWrapper from '@core/styles/stepper'
-
-// Style Imports
-import styles from './styles.module.css'
-import globalDialogStyles from '@components/dialogs/styles.module.css'
 
 type CreateAppProps = {
   open: boolean
@@ -145,10 +139,6 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
   // States
   const [activeStep, setActiveStep] = useState(0)
 
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-  const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
-
   const handleClose = () => {
     setOpen(false)
     setActiveStep(0)
@@ -176,38 +166,35 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
     <Dialog fullWidth maxWidth='md' open={open} onClose={handleClose}>
       <DialogTitle
         variant='h4'
-        className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
-          [globalDialogStyles.smDialogTitle]: isBelowSmScreen
-        })}
+        className='flex gap-2 flex-col text-center pbs-10 pbe-6 pli-10 sm:pbs-16 sm:pbe-6 sm:pli-16'
       >
         Create App
         <Typography component='span' className='flex flex-col text-center'>
           Provide data with this form to create your app.
         </Typography>
       </DialogTitle>
-      <DialogContent
-        className={classnames('overflow-visible', globalDialogStyles.dialogContentWithActions, {
-          [globalDialogStyles.smDialogContentWithActions]: isBelowSmScreen
-        })}
-      >
-        <IconButton onClick={handleClose} className={styles.closeIcon}>
+      <DialogContent className='overflow-visible pbs-0 pbe-10 pli-10 sm:pli-16 sm:pbe-16'>
+        <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
           <i className='ri-close-line' />
         </IconButton>
-        <div className={classnames('flex gap-y-6', { 'flex-col': isBelowMdScreen })}>
+        <div className='flex gap-y-6 flex-col md:flex-row'>
           <StepperWrapper>
             <Stepper
               nonLinear
               activeStep={activeStep}
               orientation='vertical'
               connector={<></>}
-              className={classnames('flex flex-col gap-6', styles.stepperMinWidth)}
+              className='flex flex-col gap-6 min-is-[220px]'
             >
               {steps.map((label, index) => {
                 return (
                   <Step key={index} onClick={handleStep(index)}>
                     <StepLabel icon={<></>} className='p-0 cursor-pointer'>
                       <div className='step-label gap-4'>
-                        <Avatar variant='rounded' className={classnames({ [styles.activeStep]: activeStep === index })}>
+                        <Avatar
+                          variant='rounded'
+                          className={classnames({ 'bg-primary text-white': activeStep === index })}
+                        >
                           <i className={label.icon as string} />
                         </Avatar>
                         <div className='flex flex-col gap-1'>

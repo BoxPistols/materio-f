@@ -3,14 +3,8 @@ import Chip from '@mui/material/Chip'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Component Imports
 import CustomAvatar from '@core/components/mui/Avatar'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const FaqFooter = () => {
   return (
@@ -24,13 +18,7 @@ const FaqFooter = () => {
       </div>
       <Grid container spacing={6} className='mbs-6'>
         <Grid item xs={12} md={6}>
-          <div
-            className={classnames(
-              'flex justify-center items-center flex-col gap-4 p-6',
-              commonStyles.actionHoverColor,
-              commonStyles.borderRadius
-            )}
-          >
+          <div className='flex justify-center items-center flex-col gap-4 p-6 rounded bg-actionHover'>
             <CustomAvatar variant='rounded' skin='light' size={50}>
               <i className='ri-phone-line text-3xl' />
             </CustomAvatar>
@@ -41,13 +29,7 @@ const FaqFooter = () => {
           </div>
         </Grid>
         <Grid item xs={12} md={6}>
-          <div
-            className={classnames(
-              'flex justify-center items-center flex-col gap-4 p-6',
-              commonStyles.actionHoverColor,
-              commonStyles.borderRadius
-            )}
-          >
+          <div className='flex justify-center items-center flex-col gap-4 p-6 rounded bg-actionHover'>
             <CustomAvatar variant='rounded' skin='light' size={50}>
               <i className='ri-mail-line text-3xl' />
             </CustomAvatar>

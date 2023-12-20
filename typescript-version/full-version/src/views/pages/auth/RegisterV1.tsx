@@ -18,11 +18,6 @@ import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Divider from '@mui/material/Divider'
 import { useColorScheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Component Imports
 import Illustrations from '@components/Illustrations'
@@ -33,10 +28,6 @@ import themeConfig from '@configs/themeConfig'
 // Component Imports
 import Logo from '@core/svg/Logo'
 
-// Style Imports
-import styles from './v1.module.css'
-import commonStyles from '@/styles/common.module.css'
-
 const RegisterV1 = () => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
@@ -45,7 +36,6 @@ const RegisterV1 = () => {
 
   // Hooks
   const { mode, systemMode } = useColorScheme()
-  const isAboveSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('sm'))
 
   const authBackground =
     mode === 'dark' || systemMode === 'dark'
@@ -54,10 +44,10 @@ const RegisterV1 = () => {
 
   return (
     <div className='flex flex-col justify-center items-center min-bs-[100dvh] relative p-6'>
-      <Card className={classnames('flex flex-col', { [styles.card]: isAboveSmScreen })}>
+      <Card className='flex flex-col sm:is-[450px]'>
         <CardContent className='!p-12'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
-            <Logo className={commonStyles.primaryColor} height={28} width={35} />
+            <Logo className='text-primary' height={28} width={35} />
             <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>
@@ -87,7 +77,7 @@ const RegisterV1 = () => {
                 label={
                   <>
                     <span>I agree to </span>
-                    <Link className={commonStyles.primaryColor} href='/' onClick={e => e.preventDefault()}>
+                    <Link className='text-primary' href='/' onClick={e => e.preventDefault()}>
                       privacy policy & terms
                     </Link>
                   </>
@@ -105,16 +95,16 @@ const RegisterV1 = () => {
               <Divider className='gap-3'>Or</Divider>
               <div className='flex justify-center items-center gap-2'>
                 <IconButton>
-                  <i className={classnames('ri-facebook-fill', commonStyles.facebookColor)} />
+                  <i className='ri-facebook-fill text-[#497ce2]' />
                 </IconButton>
                 <IconButton>
-                  <i className={classnames('ri-twitter-fill', commonStyles.twitterColor)} />
+                  <i className='ri-twitter-fill text-[#1da1f2]' />
                 </IconButton>
                 <IconButton>
-                  <i className={classnames('ri-github-fill', commonStyles.githubColor)} />
+                  <i className='ri-github-fill text-[#272727]' />
                 </IconButton>
                 <IconButton>
-                  <i className={classnames('ri-google-line', commonStyles.googleColor)} />
+                  <i className='ri-google-line text-[#db4437]' />
                 </IconButton>
               </div>
             </form>

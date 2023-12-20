@@ -23,11 +23,8 @@ import Divider from '@mui/material/Divider'
 import InputAdornment from '@mui/material/InputAdornment'
 import IconButton from '@mui/material/IconButton'
 
-// Third-party Imports
-import DatePicker from 'react-datepicker'
-
-// Style Imports
-import styles from './styles.module.css'
+// Component Imports
+import AppReactDatepicker from '@core/styles/libs/AppReactDatepicker'
 
 type FormDataType = {
   firstName: string
@@ -109,7 +106,7 @@ const FormLayoutsWithTabs = () => {
   return (
     <Card>
       <TabContext value={value}>
-        <TabList variant='scrollable' onChange={handleTabChange} className={styles.tabBorder}>
+        <TabList variant='scrollable' onChange={handleTabChange} className='border-be'>
           <Tab label='Personal Info' value='personal_info' />
           <Tab label='Account Details' value='account_details' />
           <Tab label='Social Links' value='social_links' />
@@ -171,11 +168,11 @@ const FormLayoutsWithTabs = () => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <DatePicker
+                  <AppReactDatepicker
                     selected={formData.date}
                     showYearDropdown
                     showMonthDropdown
-                    onChange={date => setFormData({ ...formData, date })}
+                    onChange={(date: Date) => setFormData({ ...formData, date })}
                     placeholderText='MM/DD/YYYY'
                     customInput={<TextField fullWidth label='Birth Date' placeholder='MM-DD-YYYY' />}
                   />

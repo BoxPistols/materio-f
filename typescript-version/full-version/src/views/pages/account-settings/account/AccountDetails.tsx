@@ -15,16 +15,8 @@ import FormControl from '@mui/material/FormControl'
 import InputLabel from '@mui/material/InputLabel'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Chip from '@mui/material/Chip'
-import type { Theme } from '@mui/material/styles'
 import type { SelectChangeEvent } from '@mui/material/Select'
-
-// Third-party Imports
-import classnames from 'classnames'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 type Data = {
   firstName: string
@@ -73,9 +65,6 @@ const AccountDetails = () => {
     setLanguage(event.target.value as string[])
   }
 
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   const handleFormChange = (field: keyof Data, value: Data[keyof Data]) => {
     setFormData({ ...formData, [field]: value })
   }
@@ -103,14 +92,10 @@ const AccountDetails = () => {
     <Card>
       <CardContent className='mbe-1'>
         <div className='flex items-center gap-6'>
-          <img height={120} width={120} className={commonStyles.borderRadius} src={imgSrc} alt='Profile' />
+          <img height={120} width={120} className='rounded' src={imgSrc} alt='Profile' />
           <div className='flex flex-grow flex-col gap-4'>
-            <div className={classnames('flex gap-4', { 'flex-col': isBelowSmScreen })}>
-              <Button
-                size='small'
-                variant='contained'
-                className={classnames({ 'w-full text-center': isBelowSmScreen })}
-              >
+            <div className='flex flex-col sm:flex-row gap-4'>
+              <Button component='label' size='small' variant='contained' htmlFor='account-settings-upload-image'>
                 Upload New Photo
                 <input
                   hidden
@@ -121,13 +106,7 @@ const AccountDetails = () => {
                   id='account-settings-upload-image'
                 />
               </Button>
-              <Button
-                size='small'
-                variant='outlined'
-                color='error'
-                onClick={handleFileInputReset}
-                className={classnames({ 'w-full text-center': isBelowSmScreen })}
-              >
+              <Button size='small' variant='outlined' color='error' onClick={handleFileInputReset}>
                 Reset
               </Button>
             </div>

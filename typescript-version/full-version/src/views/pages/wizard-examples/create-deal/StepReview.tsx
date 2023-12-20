@@ -6,15 +6,11 @@ import Switch from '@mui/material/Switch'
 import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { Direction } from '@core/types'
 
 // Style Imports
 import tableStyles from '@core/styles/table.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 type Props = {
   activeStep: number
@@ -77,13 +73,7 @@ const StepReview = ({ activeStep, handleNext, handlePrev, steps, direction }: Pr
         <FormControlLabel control={<Switch />} label='I have confirmed the deal details.' />
       </Grid>
       <Grid item lg={6} xl={5} xs={12}>
-        <div
-          className={classnames(
-            commonStyles.border,
-            commonStyles.borderRadius,
-            'flex justify-center items-end w-full h-full'
-          )}
-        >
+        <div className='flex justify-center items-end w-full h-full border rounded'>
           <img alt='review-illustration' src='/images/illustrations/characters/6.png' height={305} />
         </div>
       </Grid>

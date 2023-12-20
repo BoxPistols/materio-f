@@ -17,9 +17,6 @@ import type { ConnectionsTabType } from '@/types/pages/profileTypes'
 import OptionMenu from '@core/components/option-menu'
 import Link from '@components/Link'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 const Connections = ({ data }: { data?: ConnectionsTabType[] }) => {
   return (
     <Grid container spacing={6}>
@@ -33,7 +30,7 @@ const Connections = ({ data }: { data?: ConnectionsTabType[] }) => {
                     'Share Connection',
                     'Block Connection',
                     { divider: true },
-                    { text: 'Delete', menuItemProps: { className: commonStyles.errorColor } }
+                    { text: 'Delete', menuItemProps: { className: 'text-error' } }
                   ]}
                   iconButtonProps={{
                     size: 'small',

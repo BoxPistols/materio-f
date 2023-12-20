@@ -16,11 +16,3 @@
 .errorColor {
   color: var(--mui-palette-error-main);
 }
-
-.completedColor {
-  color: var(--mui-palette-primary-main);
-}
-
-.completedText {
-  margin-block: 8px 4px;
-}

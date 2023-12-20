@@ -7,16 +7,9 @@ import LinearProgress from '@mui/material/LinearProgress'
 import Button from '@mui/material/Button'
 import type { ButtonProps } from '@mui/material/Button'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Component Imports
 import UpgradePlan from '@components/dialogs/upgrade-plan'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
-
-// Style Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 const UserPlan = () => {
   const buttonProps: ButtonProps = {
@@ -26,7 +19,7 @@ const UserPlan = () => {
 
   return (
     <>
-      <Card className={classnames(styles.cardBorder, commonStyles.borderRadius)}>
+      <Card className='border-2 border-primary rounded'>
         <CardContent className='flex flex-col gap-6'>
           <div className='flex justify-between'>
             <Chip label='standard' size='small' color='primary' variant='tonal' />
@@ -44,19 +37,19 @@ const UserPlan = () => {
           </div>
           <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-2'>
-              <i className={classnames('ri-circle-fill text-[10px]', commonStyles.textSecondary)} />
+              <i className='ri-circle-fill text-[10px] text-textSecondary' />
               <Typography component='span' color='text.primary'>
                 10 Users
               </Typography>
             </div>
             <div className='flex items-center gap-2'>
-              <i className={classnames('ri-circle-fill text-[10px]', commonStyles.textSecondary)} />
+              <i className='ri-circle-fill text-[10px] text-textSecondary' />
               <Typography component='span' color='text.primary'>
                 Up to 10 GB storage
               </Typography>
             </div>
             <div className='flex items-center gap-2'>
-              <i className={classnames('ri-circle-fill text-[10px]', commonStyles.textSecondary)} />
+              <i className='ri-circle-fill text-[10px] text-textSecondary' />
               <Typography component='span' color='text.primary'>
                 Basic Support
               </Typography>

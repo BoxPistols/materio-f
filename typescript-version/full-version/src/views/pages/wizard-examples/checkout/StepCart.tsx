@@ -15,21 +15,12 @@ import Divider from '@mui/material/Divider'
 import Chip from '@mui/material/Chip'
 import IconButton from '@mui/material/IconButton'
 import Rating from '@mui/material/Rating'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import CardContent from '@mui/material/CardContent'
 import Collapse from '@mui/material/Collapse'
 import Fade from '@mui/material/Fade'
-import type { Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Type Imports
 import type { Direction } from '@core/types'
-
-// Style Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 const products = [
   {
@@ -60,10 +51,6 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
   // States
   const [openCollapse, setOpenCollapse] = useState<boolean>(true)
   const [openFade, setOpenFade] = useState<boolean>(true)
-
-  // Hooks
-  const isBetweenSmAndLg = useMediaQuery((theme: Theme) => theme.breakpoints.between('sm', 'lg'))
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   useEffect(() => {
     if (!openFade) {
@@ -103,23 +90,21 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
             </Alert>
           </Fade>
         </Collapse>
-        <Typography className={commonStyles.borderRadius} variant='h5'>
+        <Typography className='rounded' variant='h5'>
           My Shopping Bag (2 Items)
         </Typography>
-        <div className={styles.border}>
+        <div className='border rounded'>
           {products.map((product, index) => (
             <div
               key={index}
-              className={classnames('flex items-center relative p-5 gap-4', styles.borderBottom, {
-                'flex-col': isBelowSmScreen
-              })}
+              className='flex flex-col sm:flex-row items-center relative p-5 gap-4 [&:not(:last-child)]:border-be'
             >
               <img height={140} width={140} src={product.imgSrc} alt={product.imgAlt} />
-              <IconButton size='small' className={styles.closeIcon}>
+              <IconButton size='small' className='absolute block-start-2 inline-end-2'>
                 <i className='ri-close-line text-lg' />
               </IconButton>
-              <div className={classnames('flex justify-between w-full', { 'flex-col items-center': isBelowSmScreen })}>
-                <div className={classnames('flex flex-col gap-2', { 'items-center': isBelowSmScreen })}>
+              <div className='flex flex-col sm:flex-row items-center sm:justify-between w-full'>
+                <div className='flex flex-col gap-2 items-center sm:items-start'>
                   <Typography className='font-medium' color='text.primary'>
                     {product.productName}
                   </Typography>
@@ -137,18 +122,9 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
                     )}
                   </div>
                   <Rating name='google-nest-rating' value={product.rating} readOnly />
-                  <TextField
-                    size='small'
-                    type='number'
-                    defaultValue={product.count}
-                    className={classnames('block', styles.maxWidth)}
-                  />
+                  <TextField size='small' type='number' defaultValue={product.count} className='block max-is-[100px]' />
                 </div>
-                <div
-                  className={classnames('flex flex-col justify-between items-end mt-4 gap-1', {
-                    'items-center': isBelowSmScreen
-                  })}
-                >
+                <div className='flex flex-col justify-between items-center mt-4 gap-1 sm:items-end'>
                   <div className='flex'>
                     <Typography color='primary'>{`$${product.price}`}</Typography>
                     <Typography className='line-through'>{`/$${product.originalPrice}`}</Typography>
@@ -165,11 +141,7 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
           href='/'
           component={Link}
           onClick={e => e.preventDefault()}
-          className={classnames(
-            'flex items-center justify-between gap-4 plb-2 pli-5',
-            commonStyles.border,
-            commonStyles.borderRadius
-          )}
+          className='flex items-center justify-between gap-4 plb-2 pli-5 border rounded'
           color='primary'
         >
           Add more products from wishlist
@@ -177,7 +149,7 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
         </Typography>
       </Grid>
       <Grid item xs={12} lg={4} className='flex flex-col gap-2'>
-        <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
+        <div className='border rounded'>
           <CardContent className='flex flex-col gap-4'>
             <Typography className='font-medium' color='text.primary'>
               Offer
@@ -188,13 +160,7 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
                 Apply
               </Button>
             </div>
-            <div
-              className={classnames(
-                commonStyles.actionHoverColor,
-                commonStyles.borderRadius,
-                'flex flex-col gap-2 p-5'
-              )}
-            >
+            <div className='flex flex-col gap-2 p-5 rounded bg-actionHove'>
               <Typography className='font-medium' color='text.primary'>
                 Buying gift for a loved one?
               </Typography>
@@ -253,8 +219,8 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
             </div>
           </CardContent>
         </div>
-        <div className={classnames({ 'justify-end': isBetweenSmAndLg }, 'flex')}>
-          <Button fullWidth={!isBetweenSmAndLg} variant='contained' onClick={handleNext}>
+        <div className='flex justify-normal sm:justify-end xl:justify-normal'>
+          <Button className='is-full sm:is-auto lg:is-full' variant='contained' onClick={handleNext}>
             Place Order
           </Button>
         </div>

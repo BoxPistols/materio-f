@@ -11,7 +11,6 @@ import { IconButton } from '@mui/material'
 
 // Third-party Imports
 import { useMedia } from 'react-use'
-import classnames from 'classnames'
 import { KBarProvider, KBarPortal, KBarPositioner, KBarSearch, useKBar } from 'kbar'
 
 // Type Imports
@@ -26,10 +25,6 @@ import { useSettings } from '@core/hooks/useSettings'
 
 // Styled Component Imports
 import StyledKBarAnimator from './StyledKBarAnimator'
-
-// Style Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 // Data Imports
 import data from '@/data/searchData'
@@ -80,32 +75,34 @@ const NavSearch = () => {
     <KBarProvider actions={searchActions}>
       <ComponentWithUseKBar
         triggerClick
-        className={classnames('ts-nav-search-icon flex cursor-pointer', commonStyles.textPrimary)}
+        className='ts-nav-search-icon flex cursor-pointer text-textPrimary'
         icon={<i className='ri-search-line' />}
         tag={IconButton}
       />
       <KBarPortal>
-        <KBarPositioner className={styles.positioner}>
+        <KBarPositioner className='!p-0 !items-center z-[calc(var(--search-z-index)+1)]'>
           <StyledKBarAnimator skin={settings.skin} isSmallScreen={isSmallScreen}>
-            <div className={classnames('flex items-center gap-2', styles.inputWrapper)}>
+            <div className='flex items-center gap-2 plb-5 pli-6 border-be'>
               <div className='flex'>
                 <i className='ri-search-line' />
               </div>
-              <KBarSearch defaultPlaceholder='' className={classnames('grow min-is-0', styles.searchInput)} />
-              <ComponentWithUseKBar className={classnames(styles.escape, commonStyles.textDisabled)}>
-                {`[esc]`}
-              </ComponentWithUseKBar>
+              <KBarSearch
+                defaultPlaceholder=''
+                name='search-input'
+                className='grow min-is-0 plb-1 pli-1.5 text-[16px] outline-0 border-0 bg-transparent text-inherit font-[inherit]'
+              />
+              <ComponentWithUseKBar className='select-none text-textDisabled'>{`[esc]`}</ComponentWithUseKBar>
               <ComponentWithUseKBar
                 triggerClick
                 className='flex cursor-pointer'
-                icon={<i className={classnames('ri-close-line', commonStyles.textSecondary)} />}
+                icon={<i className='ri-close-line text-textSecondary' />}
               />
             </div>
             <SearchResults />
           </StyledKBarAnimator>
         </KBarPositioner>
         <div
-          className={classnames('ts-nav-search-backdrop', styles.searchBackdrop)}
+          className='ts-nav-search-backdrop fixed inset-0 z-search bg-[rgba(0,0,0,0.3)]'
           role='button'
           aria-label='backdrop'
         />

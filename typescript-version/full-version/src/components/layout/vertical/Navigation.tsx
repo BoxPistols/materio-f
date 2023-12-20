@@ -24,20 +24,12 @@ import commonStyles from '@/styles/common.module.css'
 const Navigation = ({ dictionary }: { dictionary: Dictionary }) => {
   // Hooks
   const verticalNavOptions = useVerticalNav()
-  const { settings, updateSettings } = useSettings()
+  const { settings } = useSettings()
   const { mode, systemMode } = useColorScheme()
   const theme = useTheme()
 
   const { isCollapsed, isHovered } = verticalNavOptions
   const { skin, semiDark } = settings
-
-  const handleClick = () => {
-    if (isCollapsed) {
-      updateSettings({ layout: 'vertical' })
-    } else {
-      updateSettings({ layout: 'collapsed' })
-    }
-  }
 
   return (
     // eslint-disable-next-line lines-around-comment
@@ -61,7 +53,6 @@ const Navigation = ({ dictionary }: { dictionary: Dictionary }) => {
         <Logo />
         {!(isCollapsed && !isHovered) && (
           <NavCollapseIcons
-            onClick={handleClick}
             lockedIcon={<i className='ri-radio-button-line text-xl' />}
             unlockedIcon={<i className='ri-checkbox-blank-circle-line text-xl' />}
             closeIcon={<i className='ri-close-line text-xl' />}

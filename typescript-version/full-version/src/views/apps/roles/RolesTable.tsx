@@ -21,8 +21,6 @@ import Checkbox from '@mui/material/Checkbox'
 import IconButton from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
 import TablePagination from '@mui/material/TablePagination'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
 import type { TextFieldProps } from '@mui/material/TextField'
 
 // Third-party Imports
@@ -54,7 +52,6 @@ import CustomAvatar from '@core/components/mui/Avatar'
 import { getInitials } from '@/utils/get-initials'
 
 // Style Imports
-import styles from './style.module.css'
 import tableStyles from '@core/styles/table.module.css'
 
 declare module '@tanstack/table-core' {
@@ -143,9 +140,6 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
   const [data, setData] = useState(...[tableData])
   const [globalFilter, setGlobalFilter] = useState('')
 
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   useEffect(() => {
     const filteredData = tableData?.filter(user => {
       if (role && user.role !== role) return false
@@ -205,7 +199,7 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
               <Typography
                 component={Link}
                 href='/apps/user/view'
-                className={classnames('font-medium', styles.title)}
+                className='font-medium hover:text-primary'
                 color='text.primary'
               >
                 {row.original.fullName}
@@ -310,34 +304,23 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
 
   return (
     <Card>
-      <CardContent
-        className={classnames('flex justify-between', {
-          'flex-col items-start': isBelowSmScreen,
-          'items-center': !isBelowSmScreen
-        })}
-      >
+      <CardContent className='flex justify-between flex-col items-start sm:flex-row sm:items-center'>
         <Button
           variant='outlined'
           color='secondary'
           startIcon={<i className='ri-upload-2-line' />}
-          {...(isBelowSmScreen && { fullWidth: true })}
+          className='is-full sm:is-auto'
         >
           Export
         </Button>
-        <div
-          className={classnames('flex gap-4', {
-            'flex-col !items-start is-full': isBelowSmScreen,
-            'items-center': !isBelowSmScreen
-          })}
-        >
+        <div className='flex gap-4 flex-col !items-start is-full sm:flex-row sm:is-auto sm:items-center'>
           <DebouncedInput
             value={globalFilter ?? ''}
-            className={styles.searchWidth}
+            className='is-full sm:is-auto min-is-[220px]'
             onChange={value => setGlobalFilter(String(value))}
             placeholder='Search User'
-            {...(isBelowSmScreen && { fullWidth: true })}
           />
-          <FormControl size='small' {...(isBelowSmScreen && { fullWidth: true })}>
+          <FormControl size='small' className='is-full sm:is-auto'>
             <InputLabel id='roles-app-role-select-label'>Select Role</InputLabel>
             <Select
               value={role}
@@ -345,7 +328,7 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
               label='Select Role'
               id='roles-app-role-select'
               labelId='roles-app-role-select-label'
-              className={styles.minWidth150}
+              className='min-is-[150px]'
             >
               <MenuItem value=''>Select Role</MenuItem>
               <MenuItem value='admin'>Admin</MenuItem>
@@ -359,7 +342,7 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
       </CardContent>
       <div className='overflow-x-auto'>
         <table className={tableStyles.table}>
-          <thead className={tableStyles.thead}>
+          <thead>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
@@ -386,7 +369,7 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
               </tr>
             ))}
           </thead>
-          <tbody className={tableStyles.tbody}>
+          <tbody>
             {table
               .getRowModel()
               .rows.slice(0, table.getState().pagination.pageSize)
@@ -405,7 +388,7 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
       <TablePagination
         rowsPerPageOptions={[10, 25, 50]}
         component='div'
-        className={tableStyles.paginationWrapper}
+        className='border-bs'
         count={table.getFilteredRowModel().rows.length}
         rowsPerPage={table.getState().pagination.pageSize}
         page={table.getState().pagination.pageIndex}

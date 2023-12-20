@@ -10,10 +10,6 @@ import classnames from 'classnames'
 // Type Imports
 import type { PricingPlanType } from '@/types/pages/pricingTypes'
 
-// Style Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
-
 type Props = {
   pricingPlan: 'monthly' | 'annually'
   data: PricingPlanType
@@ -22,15 +18,9 @@ type Props = {
 const PlanDetails = ({ data, pricingPlan }: Props) => {
   return (
     <CardContent
-      className={classnames(
-        'relative pli-5 !pbe-5 flex flex-col gap-5',
-        styles.cardPadding,
-        commonStyles.border,
-        commonStyles.borderRadius,
-        {
-          [styles.active]: data?.popularPlan
-        }
-      )}
+      className={classnames('relative pli-5 !pbe-5 flex flex-col gap-5 border rounded pbs-[3.75rem]', {
+        'border-primary': data?.popularPlan
+      })}
     >
       {data?.popularPlan ? (
         <Chip
@@ -66,7 +56,7 @@ const PlanDetails = ({ data, pricingPlan }: Props) => {
           </Typography>
         </div>
         {pricingPlan !== 'monthly' && data?.monthlyPrice !== 0 ? (
-          <Typography variant='caption' className={classnames(styles.transformation, 'absolute inline-end-1/2 ')}>
+          <Typography variant='caption' className='absolute inline-end-1/2 translate-x-[50%]'>
             {`USD ${data?.yearlyPlan.annually}/year`}
           </Typography>
         ) : null}
@@ -75,7 +65,7 @@ const PlanDetails = ({ data, pricingPlan }: Props) => {
         {data?.planBenefits.map((item: string, index: number) => (
           <div key={index} className='flex items-center gap-2'>
             <span className='inline-flex'>
-              <i className={classnames('ri-checkbox-blank-circle-line text-sm', commonStyles.textSecondary)} />
+              <i className='ri-checkbox-blank-circle-line text-sm text-textSecondary' />
             </span>
             <Typography>{item}</Typography>
           </div>

@@ -212,7 +212,7 @@ const KitchenSink = () => {
       />
       <div className='overflow-x-auto'>
         <table className={styles.table}>
-          <thead className={styles.thead}>
+          <thead>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => {
@@ -242,7 +242,7 @@ const KitchenSink = () => {
               </tr>
             ))}
           </thead>
-          <tbody className={styles.tbody}>
+          <tbody>
             {table.getRowModel().rows.map(row => {
               return (
                 <tr key={row.id}>
@@ -258,7 +258,7 @@ const KitchenSink = () => {
       <TablePagination
         rowsPerPageOptions={[7, 10, 25, { label: 'All', value: data.length }]}
         component='div'
-        className={styles.paginationWrapper}
+        className='border-bs'
         count={table.getFilteredRowModel().rows.length}
         rowsPerPage={table.getState().pagination.pageSize}
         page={table.getState().pagination.pageIndex}

@@ -11,14 +11,6 @@ import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
-
-// Style Imports
-import styles from '@components/dialogs/styles.module.css'
 
 type PermissionDialogProps = {
   open: boolean
@@ -28,29 +20,20 @@ type PermissionDialogProps = {
 
 type EditProps = {
   handleClose: () => void
-  isBelowSmScreen: boolean
   data: string
 }
 
-const AddContent = ({ handleClose, isBelowSmScreen }: { handleClose: () => void; isBelowSmScreen: boolean }) => {
+const AddContent = ({ handleClose }: { handleClose: () => void }) => {
   return (
     <>
-      <DialogContent
-        className={classnames('overflow-visible', styles.dialogContent, {
-          [styles.smDialogContent]: isBelowSmScreen
-        })}
-      >
-        <IconButton onClick={handleClose} className={styles.closeIcon}>
+      <DialogContent className='overflow-visible pbs-0 pbe-6 pli-10 sm:pli-16'>
+        <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
           <i className='ri-close-line' />
         </IconButton>
         <TextField fullWidth label='Permission Name' variant='outlined' placeholder='Enter Permission Name' />
         <FormControlLabel control={<Checkbox />} label='Set as core permission' />
       </DialogContent>
-      <DialogActions
-        className={classnames('gap-2 justify-center', styles.dialogActions, {
-          [styles.smDialogAction]: isBelowSmScreen
-        })}
-      >
+      <DialogActions className='gap-2 justify-center pbs-0 pbe-10 pli-10 sm:pbe-16 sm:pli-16'>
         <Button type='submit' variant='contained' onClick={handleClose}>
           Create Permission
         </Button>
@@ -62,14 +45,10 @@ const AddContent = ({ handleClose, isBelowSmScreen }: { handleClose: () => void;
   )
 }
 
-const EditContent = ({ handleClose, isBelowSmScreen, data }: EditProps) => {
+const EditContent = ({ handleClose, data }: EditProps) => {
   return (
-    <DialogContent
-      className={classnames('overflow-visible', styles.dialogContentAlone, {
-        [styles.smDialogContentAlone]: isBelowSmScreen
-      })}
-    >
-      <IconButton onClick={handleClose} className={styles.closeIcon}>
+    <DialogContent className='overflow-visible pbs-0 pbe-6 pli-10 sm:pli-16'>
+      <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
         <i className='ri-close-line' />
       </IconButton>
       <Alert severity='warning' className='mbe-8'>
@@ -96,9 +75,6 @@ const EditContent = ({ handleClose, isBelowSmScreen, data }: EditProps) => {
 }
 
 const PermissionDialog = ({ open, setOpen, data }: PermissionDialogProps) => {
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   const handleClose = () => {
     setOpen(false)
   }
@@ -107,20 +83,14 @@ const PermissionDialog = ({ open, setOpen, data }: PermissionDialogProps) => {
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle
         variant='h4'
-        className={classnames('flex flex-col gap-2 text-center', styles.dialogTitle, {
-          [styles.smDialogTitle]: isBelowSmScreen
-        })}
+        className='flex flex-col gap-2 text-center pbs-10 pbe-6 pli-10 sm:pbs-16 sm:pbe-6 sm:pli-16'
       >
         {data ? 'Edit Permission' : 'Add New Permission'}
         <Typography component='span' className='flex flex-col text-center'>
           {data ? 'Edit permission as per your requirements.' : 'Permissions you may use and assign to your users.'}
         </Typography>
       </DialogTitle>
-      {data ? (
-        <EditContent handleClose={handleClose} isBelowSmScreen={isBelowSmScreen} data={data} />
-      ) : (
-        <AddContent handleClose={handleClose} isBelowSmScreen={isBelowSmScreen} />
-      )}
+      {data ? <EditContent handleClose={handleClose} data={data} /> : <AddContent handleClose={handleClose} />}
     </Dialog>
   )
 }

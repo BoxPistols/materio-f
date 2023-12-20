@@ -5,12 +5,6 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
 
-// Third-party Imports
-import classnames from 'classnames'
-
-// Styles Imports
-import commonStyles from '@/styles/common.module.css'
-
 type ApiKeyListType = {
   title: string
   access: string
@@ -50,10 +44,7 @@ const ApiKeyList = () => {
           billing.
         </Typography>
         {apiKeyList.map((item, index) => (
-          <div
-            key={index}
-            className={classnames('flex flex-col gap-2 p-4', commonStyles.borderRadius, commonStyles.actionHoverColor)}
-          >
+          <div key={index} className='flex flex-col gap-2 p-4 rounded bg-activeHover'>
             <div className='flex items-center gap-3'>
               <Typography variant='h6'>{item.title}</Typography>
               <Chip variant='tonal' color='primary' label={item.access} size='small' />
@@ -61,7 +52,7 @@ const ApiKeyList = () => {
             <div className='flex items-center gap-3'>
               <Typography className='font-medium'>{item.key}</Typography>
               <div className='flex'>
-                <i className={classnames('ri-file-copy-line text-xl', commonStyles.textSecondary)} />
+                <i className='ri-file-copy-line text-xl text-textSecondary' />
               </div>
             </div>
             <Typography color='text.disabled'>{`Created on ${item.date}`}</Typography>

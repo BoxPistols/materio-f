@@ -7,16 +7,6 @@ import DialogContent from '@mui/material/DialogContent'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Avatar from '@mui/material/Avatar'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
-
-// Style Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
-import globalDialogStyles from '@components/dialogs/styles.module.css'
 
 type PaymentProvidersProps = {
   open: boolean
@@ -199,51 +189,33 @@ const cardList: CardList[] = [
 ]
 
 const PaymentProviders = ({ open, setOpen }: PaymentProvidersProps) => {
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   return (
     <Dialog fullWidth open={open} onClose={() => setOpen(false)} maxWidth='md' scroll='body'>
       <DialogTitle
         variant='h4'
-        className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
-          [globalDialogStyles.smDialogTitle]: isBelowSmScreen
-        })}
+        className='flex gap-2 flex-col text-center pbs-10 pbe-6 pli-10 sm:pbs-16 sm:pbe-6 sm:pli-16'
       >
         Select Payment Providers
         <Typography component='span' className='flex flex-col text-center'>
           Third-party payment providers
         </Typography>
       </DialogTitle>
-      <DialogContent
-        className={classnames(globalDialogStyles.dialogContentWithActions, {
-          [globalDialogStyles.smDialogContentWithActions]: isBelowSmScreen
-        })}
-      >
-        <IconButton onClick={() => setOpen(false)} className={styles.closeIcon}>
+      <DialogContent className='pbs-0 pbe-10 pli-10 sm:pbe-16 sm:pli-16'>
+        <IconButton onClick={() => setOpen(false)} className='absolute block-start-4 inline-end-4'>
           <i className='ri-close-line' />
         </IconButton>
         <div>
           {cardList?.map((card, index) => (
             <div
               key={index}
-              className={classnames(
-                'flex items-center justify-between flex-wrap gap-x-4 gap-y-1',
-                styles.paymentItem,
-                styles.borderBottom,
-                { 'flex-col !items-start': isBelowSmScreen }
-              )}
+              className='flex sm:items-center flex-col sm:flex-row items-start justify-between flex-wrap gap-x-4 gap-y-1 first:pbe-4 last:pbs-4 [&:not(:last-child):not(:first-child)]:plb-4 [&:not(:last-child)]:border-be'
             >
               <Typography className='font-medium' color='text.primary'>
                 {card.providerName}
               </Typography>
               <div className='flex gap-x-4 gap-y-2 flex-wrap'>
                 {card.images.map((image, index) => (
-                  <Avatar
-                    key={index}
-                    variant='rounded'
-                    className={classnames(styles.avatarIcon, commonStyles.actionHoverColor)}
-                  >
+                  <Avatar key={index} variant='rounded' className='bg-actionHover  is-[50px] bs-[30px]'>
                     <img src={image.src} alt={image.alt} height={image.height} width={image.width} />
                   </Avatar>
                 ))}

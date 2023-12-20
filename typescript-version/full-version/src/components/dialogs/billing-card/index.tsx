@@ -15,17 +15,9 @@ import DialogActions from '@mui/material/DialogActions'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Type Imports
 import type { ThemeColor } from '@core/types'
-
-// Style Imports
-import styles from '@components/dialogs/styles.module.css'
 
 type BillingCardData = {
   cardNumber?: string
@@ -59,9 +51,6 @@ const BillingCard = ({ open, setOpen, data }: BillingCardProps) => {
   // States
   const [cardData, setCardData] = useState(initialCardData)
 
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   const handleClose = () => {
     setOpen(false)
     setCardData(initialCardData)
@@ -76,9 +65,7 @@ const BillingCard = ({ open, setOpen, data }: BillingCardProps) => {
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle
         variant='h4'
-        className={classnames('flex flex-col gap-2 text-center', styles.dialogTitle, {
-          [styles.smDialogTitle]: isBelowSmScreen
-        })}
+        className='flex flex-col gap-2 text-center pbs-10 pbe-6 pli-10 sm:pbs-16 sm:pbe-6 sm:pli-16'
       >
         {data ? 'Edit Card' : 'Add New Card'}
         <Typography component='span' className='flex flex-col text-center'>
@@ -86,12 +73,8 @@ const BillingCard = ({ open, setOpen, data }: BillingCardProps) => {
         </Typography>
       </DialogTitle>
       <form onSubmit={e => e.preventDefault()}>
-        <DialogContent
-          className={classnames('overflow-visible', styles.dialogContent, {
-            [styles.smDialogContent]: isBelowSmScreen
-          })}
-        >
-          <IconButton onClick={handleClose} className={styles.closeIcon}>
+        <DialogContent className='overflow-visible pbs-0 pbe-6 pli-10 sm:pli-16'>
+          <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
             <i className='ri-close-line' />
           </IconButton>
           <Grid container spacing={5}>
@@ -144,11 +127,7 @@ const BillingCard = ({ open, setOpen, data }: BillingCardProps) => {
             </Grid>
           </Grid>
         </DialogContent>
-        <DialogActions
-          className={classnames('gap-2 justify-center', styles.dialogActions, {
-            [styles.smDialogAction]: isBelowSmScreen
-          })}
-        >
+        <DialogActions className='gap-2 justify-center pbs-0 pbe-10 pli-10 sm:pbe-16 sm:pli-16'>
           <Button variant='contained' type='submit' onClick={handleClose}>
             {data ? 'Update' : 'Submit'}
           </Button>

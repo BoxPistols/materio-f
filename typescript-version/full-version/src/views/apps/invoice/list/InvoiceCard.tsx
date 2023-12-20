@@ -4,7 +4,6 @@
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Grid from '@mui/material/Grid'
-import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -13,8 +12,8 @@ import type { Theme } from '@mui/material/styles'
 // Third-party Imports
 import classnames from 'classnames'
 
-// Style Imports
-import styles from './styles.module.css'
+// Component Imports
+import CustomAvatar from '@core/components/mui/Avatar'
 
 const data = [
   {
@@ -56,8 +55,9 @@ const InvoiceCard = () => {
               md={3}
               key={index}
               className={classnames({
-                [styles.gridItemBelowMd]: isBelowMdScreen && !isBelowSmScreen,
-                [styles.gridItemAboveMd]: !isBelowMdScreen
+                '[&:nth-of-type(odd)>div]:pie-6 [&:nth-of-type(odd)>div]:border-ie':
+                  isBelowMdScreen && !isBelowSmScreen,
+                '[&:not(:last-child)>div]:pie-6 [&:not(:last-child)>div]:border-ie': !isBelowMdScreen
               })}
             >
               <div className='flex justify-between'>
@@ -65,9 +65,9 @@ const InvoiceCard = () => {
                   <Typography variant='h4'>{item.title}</Typography>
                   <Typography>{item.subtitle}</Typography>
                 </div>
-                <Avatar variant='rounded' className={styles.avatarSize}>
+                <CustomAvatar variant='rounded' size={42}>
                   <i className={classnames('text-[26px]', item.icon)}></i>
-                </Avatar>
+                </CustomAvatar>
               </div>
               {isBelowMdScreen && !isBelowSmScreen && index < data.length - 2 && (
                 <Divider

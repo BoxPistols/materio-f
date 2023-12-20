@@ -10,7 +10,7 @@ import CardContent from '@mui/material/CardContent'
 import type { ApexOptions } from 'apexcharts'
 
 // Component Imports
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
@@ -119,7 +119,7 @@ const ApexDonutChart = () => {
     <Card>
       <CardHeader title='Expense Ratio' subheader='Spending on various categories' />
       <CardContent>
-        <ReactApexcharts type='donut' width='100%' height={400} options={options} series={[85, 16, 50, 50]} />
+        <AppReactApexCharts type='donut' width='100%' height={400} options={options} series={[85, 16, 50, 50]} />
       </CardContent>
     </Card>
   )

@@ -10,7 +10,6 @@ import Link from 'next/link'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Button from '@mui/material/Button'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Typography from '@mui/material/Typography'
 import Checkbox from '@mui/material/Checkbox'
 import Chip from '@mui/material/Chip'
@@ -23,7 +22,6 @@ import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import TablePagination from '@mui/material/TablePagination'
 import type { TextFieldProps } from '@mui/material/TextField'
-import type { Theme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -135,9 +133,6 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [data, setData] = useState(...[invoiceData])
   const [globalFilter, setGlobalFilter] = useState('')
-
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   useEffect(() => {
     const filteredData = invoiceData?.filter(invoice => {
@@ -309,31 +304,22 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
 
   return (
     <Card>
-      <CardContent
-        className={classnames('flex justify-between', {
-          'flex-col items-start': isBelowSmScreen,
-          'items-center': !isBelowSmScreen
-        })}
-      >
+      <CardContent className='flex justify-between flex-col sm:flex-row items-start sm:items-center'>
         <Button
           variant='contained'
           component={Link}
           startIcon={<i className='ri-add-line' />}
           href={`/apps/invoice/add/`}
-          {...(isBelowSmScreen && { fullWidth: true })}
+          className='is-full sm:is-auto'
         >
           Create Invoice
         </Button>
-        <div
-          className={classnames('flex items-center gap-x-4', {
-            'is-full flex-col': isBelowSmScreen
-          })}
-        >
+        <div className='flex items-center flex-col sm:flex-row is-full sm:is-auto gap-x-4'>
           <DebouncedInput
             value={globalFilter ?? ''}
             onChange={value => setGlobalFilter(String(value))}
             placeholder='Search Invoice'
-            {...(isBelowSmScreen && { fullWidth: true })}
+            className='is-full sm:is-auto'
           />
           <FormControl fullWidth size='small'>
             <InputLabel id='status-select'>Invoice Status</InputLabel>
@@ -358,7 +344,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
       </CardContent>
       <div className='overflow-x-auto'>
         <table className={tableStyles.table}>
-          <thead className={tableStyles.thead}>
+          <thead>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
@@ -385,7 +371,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
               </tr>
             ))}
           </thead>
-          <tbody className={tableStyles.tbody}>
+          <tbody>
             {table
               .getRowModel()
               .rows.slice(0, table.getState().pagination.pageSize)
@@ -404,7 +390,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
       <TablePagination
         rowsPerPageOptions={[10, 25, 50]}
         component='div'
-        className={tableStyles.paginationWrapper}
+        className='border-bs'
         count={table.getFilteredRowModel().rows.length}
         rowsPerPage={table.getState().pagination.pageSize}
         page={table.getState().pagination.pageIndex}

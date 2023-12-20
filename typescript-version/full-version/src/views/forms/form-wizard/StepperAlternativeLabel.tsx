@@ -27,9 +27,6 @@ import { toast } from 'react-toastify'
 import StepperWrapper from '@core/styles/stepper'
 import StepperCustomDot from './StepperCustomDot'
 
-// Style Imports
-import styles from './styles.module.css'
-
 type FormDataType = {
   username: string
   email: string
@@ -325,7 +322,7 @@ const StepperAlternativeLabel = () => {
         <CardContent>
           {activeStep === steps.length ? (
             <>
-              <Typography className={styles.completedText} color='text.primary'>
+              <Typography className='mlb-2 mli-1' color='text.primary'>
                 All steps are completed!
               </Typography>
               <div className='flex justify-end mt-4'>

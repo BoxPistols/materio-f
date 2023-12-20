@@ -7,9 +7,6 @@ import Box from '@mui/material/Box'
 // Third-party Imports
 import classnames from 'classnames'
 
-// Style Imports
-import styles from './styles.module.css'
-
 const IconsTest = ({ data }: { data: string[] }) => {
   return (
     <>
@@ -45,7 +42,7 @@ const IconsTest = ({ data }: { data: string[] }) => {
 
       <Typography className='mbe-4' color='text.primary'>
         Our logo wrapped with <code>Box</code> component
-        <Box component='span' className={classnames(styles.primaryMain, 'mis-5 inline-flex')}>
+        <Box component='span' className='mis-5 inline-flex text-primary'>
           <i className='custom-logo' />
         </Box>
       </Typography>
@@ -68,7 +65,7 @@ const IconsTest = ({ data }: { data: string[] }) => {
       </Typography>
       <Typography className='flex items-center' color='text.primary'>
         Remix Icon wrapped with <code>Box</code> component
-        <Box component='span' className={classnames(styles.successMain, 'mis-5 inline-flex')}>
+        <Box component='span' className='mis-5 inline-flex text-success'>
           <i className='ri-bike-line' />
         </Box>
       </Typography>
@@ -82,7 +79,7 @@ const IconsTest = ({ data }: { data: string[] }) => {
       </Typography>
       <Typography color='text.primary'>
         Remix Icon with color using CSS modules
-        <i className={classnames('ri-bike-line', styles.iconColor)} />
+        <i className='ri-bike-line text-[#09a6eb] text-lg' />
       </Typography>
       <Typography color='text.primary'>
         Remix Icon with style
@@ -136,7 +133,7 @@ const IconsTest = ({ data }: { data: string[] }) => {
       </Typography>
       <Typography color='text.primary'>
         Remix Icon with transform scale
-        <i className={classnames('ri-bike-line', styles.iconScale)} />
+        <i className='ri-bike-line scale-[2]' />
       </Typography>
       <Typography color='text.primary'>
         Remix Icon with visibility hidden

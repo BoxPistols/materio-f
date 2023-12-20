@@ -66,12 +66,8 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
     /* Custom scrollbar instead of browser scroll, remove if you want browser scroll only */
     <ScrollWrapper
       {...(isBreakpointReached
-        ? {
-            className: 'bs-full overflow-y-auto overflow-x-hidden'
-          }
-        : {
-            options: { wheelPropagation: false, suppressScrollX: true }
-          })}
+        ? { className: 'bs-full overflow-y-auto overflow-x-hidden' }
+        : { options: { wheelPropagation: false, suppressScrollX: true } })}
     >
       {/* Incase you also want to scroll NavHeader to scroll with Vertical Menu, remove NavHeader from above and paste it below this comment */}
       {/* Vertical Menu */}
@@ -321,7 +317,7 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
         renderExpandedMenuItemIcon={{ icon: <i className='ri-circle-line' /> }}
         menuSectionStyles={menuSectionStyles(verticalNavOptions, theme)}
       >
-        {generateVerticalMenu(menuData(locale, params), locale)}
+        {generateVerticalMenu(menuData(dictionary, params), locale)}
       </Menu> */}
     </ScrollWrapper>
   )

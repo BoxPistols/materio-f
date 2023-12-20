@@ -15,18 +15,11 @@ import LinearProgress from '@mui/material/LinearProgress'
 import AvatarGroup from '@mui/material/AvatarGroup'
 import Tooltip from '@mui/material/Tooltip'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { ProjectsTabType } from '@/types/pages/profileTypes'
 
 // Component Imports
 import OptionMenu from '@core/components/option-menu'
-
-// Style Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
   return (
@@ -46,7 +39,7 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                           href='/'
                           component={Link}
                           onClick={e => e.preventDefault()}
-                          className={styles.title}
+                          className='hover:text-primary'
                         >
                           {item.title}
                         </Typography>
@@ -59,21 +52,19 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                     <OptionMenu
                       iconButtonProps={{
                         size: 'small',
-                        className: commonStyles.textDisabled
+                        className: 'text-textDisabled'
                       }}
                       options={[
                         'Rename Project',
                         'View Details',
                         'Add to Favorite',
                         { divider: true },
-                        { text: 'Leave Project', menuItemProps: { className: commonStyles.errorColor } }
+                        { text: 'Leave Project', menuItemProps: { className: 'text-error' } }
                       ]}
                     />
                   </div>
                   <div className='flex items-center justify-between flex-wrap'>
-                    <div
-                      className={classnames('plb-2 pli-3', commonStyles.borderRadius, commonStyles.actionHoverColor)}
-                    >
+                    <div className='rounded bg-actionHover plb-2 pli-3'>
                       <div className='flex'>
                         <Typography className='font-medium' color='text.primary'>
                           {item.budgetSpent}
@@ -139,7 +130,7 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                       </Typography>
                     </div>
                     <div className='flex items-center gap-1'>
-                      <i className={classnames('ri-wechat-line', commonStyles.textDisabled)} />
+                      <i className='ri-wechat-line text-textDisabled' />
                       <Typography color='text.disabled'>{item.comments}</Typography>
                     </div>
                   </div>

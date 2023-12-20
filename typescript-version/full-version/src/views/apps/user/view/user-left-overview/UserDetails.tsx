@@ -3,13 +3,9 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
-import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
 import Button from '@mui/material/Button'
 import type { ButtonProps } from '@mui/material/Button'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Type Imports
 import type { ThemeColor } from '@core/types'
@@ -19,9 +15,6 @@ import EditUserInfo from '@components/dialogs/edit-user-info'
 import ConfirmationDialog from '@components/dialogs/confirmation-dialog'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
 import CustomAvatar from '@core/components/mui/Avatar'
-
-// Style Imports
-import styles from './styles.module.css'
 
 const userData = {
   firstName: 'Seth',
@@ -51,12 +44,7 @@ const UserDetails = () => {
           <div className='flex flex-col gap-6'>
             <div className='flex items-center justify-center flex-col gap-4'>
               <div className='flex flex-col items-center gap-4'>
-                <Avatar
-                  alt='user-profile'
-                  src='/images/avatars/1.png'
-                  variant='rounded'
-                  className={styles.avatarImage}
-                />
+                <CustomAvatar alt='user-profile' src='/images/avatars/1.png' variant='rounded' size={120} />
                 <Typography variant='h5'>{`${userData.firstName} ${userData.lastName}`}</Typography>
               </div>
               <Chip label='Subscriber' color='error' size='small' variant='tonal' />
@@ -64,7 +52,7 @@ const UserDetails = () => {
             <div className='flex items-center justify-around'>
               <div className='flex items-center gap-4'>
                 <CustomAvatar variant='rounded' skin='light'>
-                  <i className={classnames('ri-check-line', styles.iconSize)} />
+                  <i className='ri-check-line' />
                 </CustomAvatar>
                 <div>
                   <Typography variant='h5'>1.23k</Typography>
@@ -73,7 +61,7 @@ const UserDetails = () => {
               </div>
               <div className='flex items-center gap-4'>
                 <CustomAvatar variant='rounded' skin='light'>
-                  <i className={classnames('ri-star-line', styles.iconSize)} />
+                  <i className='ri-star-line' />
                 </CustomAvatar>
                 <div>
                   <Typography variant='h5'>568</Typography>

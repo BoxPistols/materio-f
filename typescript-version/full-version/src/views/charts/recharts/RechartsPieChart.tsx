@@ -10,9 +10,6 @@ import CardContent from '@mui/material/CardContent'
 // Third-party Imports
 import { Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from '@components/charts/recharts'
 
-// Style Imports
-import styles from './styles.module.css'
-
 type LabelProp = {
   cx: number
   cy: number
@@ -50,7 +47,7 @@ const RechartsPieChart = () => {
     <Card>
       <CardHeader title='Expense Ratio' subheader='Spending on various categories' />
       <CardContent>
-        <div className={styles.chartHeight}>
+        <div className='bs-[350px]'>
           <ResponsiveContainer>
             <PieChart height={350} style={{ direction: 'ltr' }}>
               <Pie data={data} innerRadius={80} dataKey='value' label={renderCustomizedLabel} labelLine={false}>

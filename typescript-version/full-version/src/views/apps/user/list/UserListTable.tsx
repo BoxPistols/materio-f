@@ -16,8 +16,6 @@ import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
 import Checkbox from '@mui/material/Checkbox'
 import IconButton from '@mui/material/IconButton'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
 import { styled } from '@mui/material/styles'
 import TablePagination from '@mui/material/TablePagination'
 import type { TextFieldProps } from '@mui/material/TextField'
@@ -53,7 +51,6 @@ import CustomAvatar from '@core/components/mui/Avatar'
 import { getInitials } from '@/utils/get-initials'
 
 // Styles Imports
-import styles from './styles.module.css'
 import tableStyles from '@core/styles/table.module.css'
 
 declare module '@tanstack/table-core' {
@@ -142,9 +139,6 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
   const [data, setData] = useState(...[tableData])
   const [globalFilter, setGlobalFilter] = useState('')
 
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   const getAvatar = (params: Pick<UsersType, 'avatar' | 'fullName'>) => {
     const { avatar, fullName } = params
 
@@ -194,7 +188,7 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
               <Typography
                 component={Link}
                 href='/apps/user/view'
-                className={classnames('font-medium', styles.title)}
+                className='font-medium hover:text-primary'
                 color='text.primary'
               >
                 {row.original.fullName}
@@ -303,43 +297,30 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
         <CardHeader title='Filters' />
         <TableFilters setData={setData} tableData={tableData} />
         <Divider />
-        <div
-          className={classnames('flex justify-between p-5', {
-            'flex-col items-start': isBelowSmScreen,
-            'items-center': !isBelowSmScreen
-          })}
-        >
+        <div className='flex justify-between p-5 flex-col items-start sm:flex-row sm:items-center'>
           <Button
             color='secondary'
             variant='outlined'
             startIcon={<i className='ri-upload-2-line text-xl' />}
-            {...(isBelowSmScreen && { fullWidth: true })}
+            className='is-full sm:is-auto'
           >
             Export
           </Button>
-          <div
-            className={classnames('flex items-center gap-x-4', {
-              'is-full flex-col': isBelowSmScreen
-            })}
-          >
+          <div className='flex items-center gap-x-4 is-full flex-col sm:is-auto sm:flex-row'>
             <DebouncedInput
               value={globalFilter ?? ''}
               onChange={value => setGlobalFilter(String(value))}
               placeholder='Search User'
-              {...(isBelowSmScreen && { fullWidth: true })}
+              className='is-full sm:is-auto'
             />
-            <Button
-              variant='contained'
-              onClick={() => setAddUserOpen(!addUserOpen)}
-              {...(isBelowSmScreen && { fullWidth: true })}
-            >
+            <Button variant='contained' onClick={() => setAddUserOpen(!addUserOpen)} className='is-full sm:is-auto'>
               Add New User
             </Button>
           </div>
         </div>
         <div className='overflow-x-auto'>
           <table className={tableStyles.table}>
-            <thead className={tableStyles.thead}>
+            <thead>
               {table.getHeaderGroups().map(headerGroup => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map(header => (
@@ -366,7 +347,7 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
                 </tr>
               ))}
             </thead>
-            <tbody className={tableStyles.tbody}>
+            <tbody>
               {table
                 .getRowModel()
                 .rows.slice(0, table.getState().pagination.pageSize)
@@ -385,7 +366,7 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
         <TablePagination
           rowsPerPageOptions={[10, 25, 50]}
           component='div'
-          className={tableStyles.paginationWrapper}
+          className='border-bs'
           count={table.getFilteredRowModel().rows.length}
           rowsPerPage={table.getState().pagination.pageSize}
           page={table.getState().pagination.pageIndex}

@@ -7,11 +7,6 @@ import { useEffect, useRef } from 'react'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Divider from '@mui/material/Divider'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Type Imports
 import type { InvoiceType } from '@/types/apps/invoiceTypes'
@@ -23,8 +18,6 @@ import Logo from '@core/svg/Logo'
 import themeConfig from '@configs/themeConfig'
 
 // Styles Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 import tableStyles from '@core/styles/table.module.css'
 
 const data = [
@@ -59,9 +52,6 @@ const data = [
 ]
 
 const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }) => {
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   const initialized = useRef(false)
 
   useEffect(() => {
@@ -76,11 +66,11 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <div className={classnames('p-6', commonStyles.actionHoverColor, commonStyles.borderRadius)}>
-          <div className={classnames('flex justify-between gap-y-4', { 'flex-col': isBelowSmScreen })}>
+        <div className='p-6 bg-actionHover rounded'>
+          <div className='flex justify-between gap-y-4 flex-col sm:flex-row'>
             <div className='flex flex-col gap-6'>
               <div className='flex items-center gap-2.5'>
-                <Logo className={commonStyles.primaryColor} height={25} width={30} />
+                <Logo className='text-primary' height={25} width={30} />
                 <Typography className='uppercase font-semibold text-xl leading-tight' color='text.primary'>
                   {themeConfig.templateName}
                 </Typography>
@@ -124,23 +114,23 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
               </Typography>
               <div>
                 <div className='flex items-center gap-4'>
-                  <Typography className={styles.minWidth100}>Total Due:</Typography>
+                  <Typography className='min-is-[100px]'>Total Due:</Typography>
                   <Typography>$12,110.55</Typography>
                 </div>
                 <div className='flex items-center gap-4'>
-                  <Typography className={styles.minWidth100}>Bank name:</Typography>
+                  <Typography className='min-is-[100px]'>Bank name:</Typography>
                   <Typography>American Bank</Typography>
                 </div>
                 <div className='flex items-center gap-4'>
-                  <Typography className={styles.minWidth100}>Country:</Typography>
+                  <Typography className='min-is-[100px]'>Country:</Typography>
                   <Typography>United States</Typography>
                 </div>
                 <div className='flex items-center gap-4'>
-                  <Typography className={styles.minWidth100}>IBAN:</Typography>
+                  <Typography className='min-is-[100px]'>IBAN:</Typography>
                   <Typography>ETD95476213874685</Typography>
                 </div>
                 <div className='flex items-center gap-4'>
-                  <Typography className={styles.minWidth100}>SWIFT code:</Typography>
+                  <Typography className='min-is-[100px]'>SWIFT code:</Typography>
                   <Typography>BR91905</Typography>
                 </div>
               </div>
@@ -149,10 +139,10 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
         </Grid>
       </Grid>
       <Grid item xs={12}>
-        <div className={classnames('overflow-x-auto', commonStyles.border, commonStyles.borderRadius)}>
-          <table className={classnames(tableStyles.table)}>
-            <thead className={tableStyles.thead}>
-              <tr className={styles.borderBottom}>
+        <div className='overflow-x-auto border rounded'>
+          <table className={tableStyles.table}>
+            <thead>
+              <tr className='border-be'>
                 <th>Item</th>
                 <th>Description</th>
                 <th>Hours</th>
@@ -160,7 +150,7 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
                 <th>Total</th>
               </tr>
             </thead>
-            <tbody className={tableStyles.tbody}>
+            <tbody>
               {data.map((item, index) => (
                 <tr key={index}>
                   <td>
@@ -185,8 +175,8 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
         </div>
       </Grid>
       <Grid item xs={12}>
-        <div className={classnames('flex justify-between', { 'flex-col': isBelowSmScreen })}>
-          <div className={classnames('flex flex-col gap-1', { 'order-2': isBelowSmScreen })}>
+        <div className='flex justify-between flex-col sm:flex-row'>
+          <div className='flex flex-col gap-1 order-2 sm:order-[unset]'>
             <div className='flex items-center gap-2'>
               <Typography className='font-medium' color='text.primary'>
                 Salesperson:

@@ -4,7 +4,6 @@
 import { useState, useMemo, useEffect } from 'react'
 
 // MUI Imports
-import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import LinearProgress from '@mui/material/LinearProgress'
 import TextField from '@mui/material/TextField'
@@ -34,8 +33,10 @@ import type { RankingInfo } from '@tanstack/match-sorter-utils'
 // Type Imports
 import type { ThemeColor } from '@core/types'
 
+// Component Imports
+import CustomAvatar from '@/@core/components/mui/Avatar'
+
 // Style Imports
-import styles from './styles.module.css'
 import tableStyles from '@core/styles/table.module.css'
 
 type ProjectListDataType = {
@@ -187,7 +188,7 @@ const ProjectListTable = () => {
         header: 'Project',
         cell: ({ row }) => (
           <div className='flex items-center gap-4'>
-            <Avatar src={row.original.img} className={styles.avatarSize} />
+            <CustomAvatar src={row.original.img} size={34} />
             <div className='flex flex-col'>
               <Typography className='font-medium' color='text.primary'>
                 {row.original.projectTitle}
@@ -268,7 +269,7 @@ const ProjectListTable = () => {
 
       <div className='overflow-x-auto'>
         <table className={tableStyles.table}>
-          <thead className={tableStyles.thead}>
+          <thead>
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
@@ -295,7 +296,7 @@ const ProjectListTable = () => {
               </tr>
             ))}
           </thead>
-          <tbody className={tableStyles.tbody}>
+          <tbody>
             {table
               .getRowModel()
               .rows.slice(0, table.getState().pagination.pageSize)
@@ -314,7 +315,7 @@ const ProjectListTable = () => {
       <TablePagination
         rowsPerPageOptions={[7, 10, 15]}
         component='div'
-        className={tableStyles.paginationWrapper}
+        className='border-bs'
         count={table.getFilteredRowModel().rows.length}
         rowsPerPage={table.getState().pagination.pageSize}
         page={table.getState().pagination.pageIndex}

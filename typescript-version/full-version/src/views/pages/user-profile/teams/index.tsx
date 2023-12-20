@@ -9,9 +9,6 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import Tooltip from '@mui/material/Tooltip'
 import Chip from '@mui/material/Chip'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { TeamsTabType } from '@/types/pages/profileTypes'
 
@@ -19,9 +16,6 @@ import type { TeamsTabType } from '@/types/pages/profileTypes'
 import CustomAvatar from '@core/components/mui/Avatar'
 import OptionMenu from '@core/components/option-menu'
 import Link from '@components/Link'
-
-// Style Import
-import commonStyles from '@/styles/common.module.css'
 
 const Teams = ({ data }: { data?: TeamsTabType[] }) => {
   return (
@@ -39,19 +33,19 @@ const Teams = ({ data }: { data?: TeamsTabType[] }) => {
                     </div>
                     <div className='flex items-center gap-2'>
                       <IconButton size='small'>
-                        <i className={classnames('ri-star-line', commonStyles.textDisabled)} />
+                        <i className='ri-star-line text-textDisabled' />
                       </IconButton>
                       <OptionMenu
                         iconButtonProps={{
                           size: 'small',
-                          className: commonStyles.textDisabled
+                          className: 'text-textDisabled'
                         }}
                         options={[
                           'Rename Team',
                           'View Details',
                           'Add to Favorite',
                           { divider: true },
-                          { text: 'Delete Team', menuItemProps: { className: commonStyles.errorColor } }
+                          { text: 'Delete Team', menuItemProps: { className: 'text-error' } }
                         ]}
                       />
                     </div>

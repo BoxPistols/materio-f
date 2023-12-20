@@ -16,8 +16,6 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import OutlinedInput from '@mui/material/OutlinedInput'
 import InputAdornment from '@mui/material/InputAdornment'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -27,11 +25,6 @@ import CustomAvatar from '@core/components/mui/Avatar'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
-
-// Style Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
-import globalDialogStyles from '@components/dialogs/styles.module.css'
 
 type ReferEarnProps = {
   open: boolean
@@ -63,16 +56,11 @@ const options: Options[] = [
 ]
 
 const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   return (
     <Dialog fullWidth open={open} onClose={() => setOpen(false)} maxWidth='md' scroll='body'>
       <DialogTitle
         variant='h4'
-        className={classnames('flex gap-2 flex-col text-center', globalDialogStyles.dialogTitle, {
-          [globalDialogStyles.smDialogTitle]: isBelowSmScreen
-        })}
+        className='flex gap-2 flex-col text-center pbs-10 pbe-6 pli-10 sm:pbs-16 sm:pbe-6 sm:pli-16'
       >
         Refer & Earn
         <Typography component='span' className='flex flex-col text-center'>
@@ -80,26 +68,17 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
           trial
         </Typography>
       </DialogTitle>
-      <DialogContent
-        className={classnames('flex flex-col gap-6', globalDialogStyles.dialogContentWithActions, {
-          [globalDialogStyles.smDialogContentWithActions]: isBelowSmScreen
-        })}
-      >
-        <IconButton onClick={() => setOpen(false)} className={styles.closeIcon}>
+      <DialogContent className='flex flex-col gap-6 pbs-0 pbe-10 pli-10 sm:pli-16 sm:pbe-16'>
+        <IconButton onClick={() => setOpen(false)} className='absolute block-start-4 inline-end-4'>
           <i className='ri-close-line' />
         </IconButton>
         <Grid container spacing={6} className='pbs-6'>
           {options?.map((option, index) => (
             <Grid item xs={12} md={4} key={index}>
               <div className='flex items-center flex-col gap-4'>
-                <CustomAvatar size={isBelowSmScreen ? 66 : 88} skin='light'>
+                <CustomAvatar className='bs-[66px] is-[66px] sm:bs-[88px] sm:is-[88px]' skin='light'>
                   {typeof option.icon === 'string' ? (
-                    <i
-                      className={classnames(option.icon, {
-                        'text-[32px]': isBelowSmScreen,
-                        'text-[40px]': !isBelowSmScreen
-                      })}
-                    />
+                    <i className={classnames('text-[32px] sm:text-[40px]', option.icon)} />
                   ) : (
                     option.icon
                   )}
@@ -121,9 +100,9 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
             <Typography component={InputLabel} htmlFor='refer-email' className='inline-flex whitespace-break-spaces'>
               Enter your friend&#39;s email address and invite them to join {themeConfig.templateName} 😍
             </Typography>
-            <div className={classnames('flex items-center w-full gap-4', { 'flex-wrap': isBelowSmScreen })}>
+            <div className='flex items-center w-full gap-4 flex-wrap sm:flex-nowrap'>
               <TextField fullWidth size='small' id='refer-email' placeholder='johnDoe@email.com' />
-              <Button variant='contained' className={classnames({ 'w-full': isBelowSmScreen })}>
+              <Button variant='contained' className='w-full sm:w-auto'>
                 Send
               </Button>
             </div>
@@ -135,11 +114,7 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
             <Typography component={InputLabel} htmlFor='refer-social' className='inline-flex whitespace-break-spaces'>
               You can also copy and send it or share it on your social media. 🚀
             </Typography>
-            <div
-              className={classnames('flex items-center justify-initial w-full gap-4', {
-                'flex-wrap justify-end': isBelowSmScreen
-              })}
-            >
+            <div className='flex items-center justify-end sm:justify-initial w-full gap-4 flex-wrap sm:flex-nowrap'>
               <OutlinedInput
                 fullWidth
                 size='small'
@@ -147,7 +122,7 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
                 className='pie-1'
                 placeholder='http://referral.link'
                 endAdornment={
-                  <InputAdornment position='end' className={commonStyles.primaryColor}>
+                  <InputAdornment position='end' className='text-primary'>
                     <Button size='small' className='uppercase'>
                       Copy Link
                     </Button>
@@ -155,14 +130,14 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
                 }
               />
               <div className='flex items-center gap-1'>
-                <Button className={classnames('p-2 min-w-0', styles.facebookIcon, commonStyles.borderRadius)}>
+                <Button className='rounded text-white bg-[#4267b2] p-2 min-w-0'>
                   <i className='ri-facebook-circle-line' />
                 </Button>
-                <Button className={classnames('p-2 min-w-0', styles.twitterIcon, commonStyles.borderRadius)}>
+                <Button className='rounded text-white bg-[#1da1f2] p-2 min-w-0'>
                   <i className='ri-twitter-line' />
                 </Button>
-                <Button className={classnames('p-2 min-w-0', styles.linkedinIcon, commonStyles.borderRadius)}>
-                  <i className='ri-linkedin-line' />
+                <Button className='rounded text-white bg-[#0077b5] p-2 min-w-0'>
+                  <i className='ri-linkedin-box-line' />
                 </Button>
               </div>
             </div>

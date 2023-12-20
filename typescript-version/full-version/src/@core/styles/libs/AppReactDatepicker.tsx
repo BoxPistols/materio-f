@@ -1,12 +1,29 @@
+'use client'
+
+// React Imports
+import type { ComponentProps } from 'react'
+
 // MUI imports
 import Box from '@mui/material/Box'
 import { styled, useColorScheme } from '@mui/material/styles'
 import type { BoxProps } from '@mui/material/Box'
 
+// Third-party Imports
+import ReactDatePicker from 'react-datepicker'
+
+// Hook Imports
+import { useSettings } from '@/@core/hooks/useSettings'
+
 // Styles
 import 'react-datepicker/dist/react-datepicker.css'
 
-const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
+type Props = ComponentProps<typeof ReactDatePicker> & {
+  boxProps?: BoxProps
+}
+
+const StyledReactDatePicker = styled(Box)<BoxProps>(({ theme }) => {
+  // Hooks
+  const { settings } = useSettings()
   const { mode } = useColorScheme()
 
   return {
@@ -21,8 +38,8 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
       borderRadius: theme.shape.borderRadius,
       fontFamily: theme.typography.fontFamily,
       backgroundColor: theme.palette.background.paper,
-      boxShadow: 'var(--mui-customShadows-md)',
-      border: 'none',
+      boxShadow: settings.skin === 'bordered' ? 'none' : 'var(--mui-customShadows-md)',
+      border: settings.skin === 'bordered' ? `1px solid ${theme.palette.divider}` : 'none',
       '& .react-datepicker__header': {
         padding: 0,
         border: 'none',
@@ -81,7 +98,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
         ...theme.typography.subtitle1,
         padding: theme.spacing(3),
         paddingBottom: theme.spacing(4.5),
-        color: 'var(--mui-palette-text-primary)',
+        color: 'var(--mui-palette-text-primary)'
       },
       '& .react-datepicker__day-name': {
         margin: 0,
@@ -209,7 +226,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
       },
       '& .react-datepicker__year-text--keyboard-selected, & .react-datepicker__quarter-text--keyboard-selected': {
         color: theme.palette.primary.main,
-        backgroundColor: 'rgb(var(--mui-palette-primary-mainChannel) / 0.16)',
+        backgroundColor: 'rgb(var(--mui-palette-primary-mainChannel) / 0.16)'
       },
       '& .react-datepicker__day--selected, & .react-datepicker__month-text--selected, & .react-datepicker__year-text--selected, & .react-datepicker__quarter-text--selected':
         {
@@ -250,7 +267,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
         },
         '& .react-datepicker__month-option, & .react-datepicker__year-option': {
           ...theme.typography.body1,
-          padding: theme.spacing(1.5,4), 
+          padding: theme.spacing(1.5, 4),
           '&:first-of-type, &:last-of-type': {
             borderRadius: 0
           },
@@ -357,7 +374,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
           [theme.breakpoints.up('sm')]: {
             width: '7.4375rem'
           }
-        },
+        }
       },
       '&.react-datepicker--time-only': {
         width: '7.4375rem',
@@ -404,7 +421,7 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
             fontWeight: 'normal',
             color: `${theme.palette.common.white} !important`,
             backgroundColor: `${theme.palette.primary.main} !important`,
-            boxShadow: 'var(--mui-customShadows-xs)',
+            boxShadow: 'var(--mui-customShadows-xs)'
           }
         },
 
@@ -452,4 +469,15 @@ const DatePickerWrapper = styled(Box)<BoxProps>(({ theme }) => {
   }
 })
 
-export default DatePickerWrapper
+const AppReactDatepicker = (props: Props) => {
+  // Props
+  const { boxProps, ...rest } = props
+
+  return (
+    <StyledReactDatePicker {...boxProps}>
+      <ReactDatePicker {...rest} />
+    </StyledReactDatePicker>
+  )
+}
+
+export default AppReactDatepicker

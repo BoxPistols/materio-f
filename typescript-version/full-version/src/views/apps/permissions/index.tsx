@@ -12,8 +12,6 @@ import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
 import TablePagination from '@mui/material/TablePagination'
 import IconButton from '@mui/material/IconButton'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
 import type { TextFieldProps } from '@mui/material/TextField'
 import type { ButtonProps } from '@mui/material/Button'
 
@@ -39,10 +37,12 @@ import type { RankingInfo } from '@tanstack/match-sorter-utils'
 import type { ThemeColor } from '@core/types'
 import type { PermissionRowType } from '@/types/apps/permissionTypes'
 
-// Style Imports
-import tableStyles from '@core/styles/table.module.css'
+// Component Imports
 import PermissionDialog from '@components/dialogs/permission-dialog'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
+
+// Style Imports
+import tableStyles from '@core/styles/table.module.css'
 
 declare module '@tanstack/table-core' {
   interface FilterFns {
@@ -118,9 +118,6 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [data, setData] = useState(...[permissionsData])
   const [globalFilter, setGlobalFilter] = useState('')
-
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   const handleEditPermission = (name: string) => {
     setOpen(true)
@@ -219,23 +216,18 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
     variant: 'contained',
     children: 'Add Permission',
     onClick: () => handleAddPermission(),
-    ...(isBelowSmScreen && { fullWidth: true })
+    className: 'is-full sm:is-auto'
   }
 
   return (
     <>
       <Card>
-        <CardContent
-          className={classnames('flex justify-between', {
-            'flex-col items-start': isBelowSmScreen,
-            'items-center': !isBelowSmScreen
-          })}
-        >
+        <CardContent className='flex flex-col sm:flex-row items-start sm:items-center justify-between'>
           <DebouncedInput
             value={globalFilter ?? ''}
             onChange={value => setGlobalFilter(String(value))}
             placeholder='Search Permissions'
-            {...(isBelowSmScreen && { fullWidth: true })}
+            className='is-full sm:is-auto'
           />
           <OpenDialogOnElementClick
             element={Button}
@@ -246,7 +238,7 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
         </CardContent>
         <div className='overflow-x-auto'>
           <table className={tableStyles.table}>
-            <thead className={tableStyles.thead}>
+            <thead>
               {table.getHeaderGroups().map(headerGroup => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map(header => (
@@ -273,7 +265,7 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
                 </tr>
               ))}
             </thead>
-            <tbody className={tableStyles.tbody}>
+            <tbody>
               {table
                 .getRowModel()
                 .rows.slice(0, table.getState().pagination.pageSize)
@@ -292,7 +284,7 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
         <TablePagination
           rowsPerPageOptions={[5, 7, 10]}
           component='div'
-          className={tableStyles.paginationWrapper}
+          className='border-bs'
           count={table.getFilteredRowModel().rows.length}
           rowsPerPage={table.getState().pagination.pageSize}
           page={table.getState().pagination.pageIndex}

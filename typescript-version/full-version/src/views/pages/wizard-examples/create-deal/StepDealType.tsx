@@ -25,9 +25,6 @@ import type { CustomInputVerticalData } from '@core/components/custom-inputs/typ
 // Component Imports
 import CustomInputVertical from '@core/components/custom-inputs/Vertical'
 
-// style Imports
-import commonStyles from '@/styles/common.module.css'
-
 type Props = {
   activeStep: number
   handleNext: () => void
@@ -84,7 +81,7 @@ const StepDealType = ({ activeStep, handleNext, handlePrev, steps, direction }: 
   return (
     <Grid container spacing={5}>
       <Grid item xs={12}>
-        <div className={classnames('flex mbs-5', commonStyles.border, commonStyles.borderRadius)}>
+        <div className='flex mbs-5 border rounded'>
           <img
             alt='illustration'
             src='/images/illustrations/characters-with-objects/6.png'

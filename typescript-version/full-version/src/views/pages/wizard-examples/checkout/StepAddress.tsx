@@ -11,11 +11,9 @@ import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
 import Divider from '@mui/material/Divider'
 import Button from '@mui/material/Button'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import CardContent from '@mui/material/CardContent'
 import { styled } from '@mui/material/styles'
 import type { TypographyProps } from '@mui/material/Typography'
-import type { Theme } from '@mui/material/styles'
 import type { ButtonProps } from '@mui/material/Button'
 
 // Third-party Imports
@@ -27,10 +25,7 @@ import type { CustomInputHorizontalData, CustomInputVerticalData } from '@core/c
 // Component Imports
 import CustomInputHorizontal from '@core/components/custom-inputs/Horizontal'
 import CustomInputVertical from '@core/components/custom-inputs/Vertical'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-import AddEditAddress from '@/components/dialogs/add-edit-address'
+import AddEditAddress from '@components/dialogs/add-edit-address'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
 
 const HorizontalContent = styled(Typography, {
@@ -147,9 +142,6 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
   const [selectedOption, setSelectedOption] = useState<string>(initialSelectedOption)
   const [selectedSpeed, setSelectedSpeed] = useState<string>('standard')
 
-  // Hooks
-  const isBetweenSmAndLg = useMediaQuery((theme: Theme) => theme.breakpoints.between('sm', 'lg'))
-
   const buttonProps: ButtonProps = {
     variant: 'outlined',
     children: 'Add New Address'
@@ -217,7 +209,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
         </div>
       </Grid>
       <Grid item xs={12} lg={4} className='flex flex-col gap-4'>
-        <div className={classnames(commonStyles.border, commonStyles.borderRadius)}>
+        <div className='border rounded'>
           <CardContent className='flex flex-col gap-4'>
             <Typography className='font-medium' color='text.primary'>
               Estimated Delivery Date
@@ -269,7 +261,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
           </CardContent>
         </div>
         <div className='flex justify-end'>
-          <Button fullWidth={!isBetweenSmAndLg} variant='contained' onClick={handleNext}>
+          <Button className='is-full sm:is-auto lg:is-full' variant='contained' onClick={handleNext}>
             Place Order
           </Button>
         </div>

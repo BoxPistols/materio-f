@@ -10,12 +10,7 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Chip from '@mui/material/Chip'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
 import type { ButtonProps } from '@mui/material/Button'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Type Imports
 import type { ThemeColor } from '@core/types'
@@ -23,9 +18,6 @@ import type { ThemeColor } from '@core/types'
 // Component Imports
 import BillingCard from '@components/dialogs/billing-card'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
-
-// Styles Imports
-import commonStyles from '@/styles/common.module.css'
 
 type DataType = {
   name: string
@@ -73,9 +65,6 @@ const PaymentMethod = () => {
   // States
   const [creditCard, setCreditCard] = useState(0)
 
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   const handleAddCard = () => {
     setCreditCard(-1)
   }
@@ -110,14 +99,7 @@ const PaymentMethod = () => {
           {data.map((item, index) => (
             <div
               key={index}
-              className={classnames(
-                'flex justify-between items-center p-5',
-                commonStyles.border,
-                commonStyles.borderRadius,
-                {
-                  'flex-col !items-start': isBelowSmScreen
-                }
-              )}
+              className='flex justify-between border rounded sm:items-center p-5 flex-col !items-start sm:flex-row'
             >
               <div className='flex flex-col items-start gap-2'>
                 <img src={item.imgSrc} alt={item.imgAlt} height={25} />
