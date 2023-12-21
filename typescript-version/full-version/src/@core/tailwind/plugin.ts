@@ -27,8 +27,17 @@ module.exports = plugin(function () {}, {
       '2xl': '1920px'
     },
     extend: {
+      boxShadow: {
+        xs: 'var(--mui-customShadows-xs)',
+        sm: 'var(--mui-customShadows-sm)',
+        DEFAULT: 'var(--mui-customShadows-md)',
+        md: 'var(--mui-customShadows-md)',
+        lg: 'var(--mui-customShadows-lg)',
+        xl: 'var(--mui-customShadows-xl)'
+      },
       colors: {
         primary: 'var(--primary-color)',
+        primaryLight: 'var(--mui-palette-primary-lightOpacity)',
         secondary: 'var(--mui-palette-secondary-main)',
         error: 'var(--mui-palette-error-main)',
         warning: 'var(--mui-palette-warning-main)',
@@ -42,7 +51,12 @@ module.exports = plugin(function () {}, {
         actionSelected: 'var(--mui-palette-action-selected)',
         actionFocus: 'var(--mui-palette-action-focus)',
         backgroundPaper: 'var(--mui-palette-background-paper)',
-        backgroundDefault: 'var(--mui-palette-background-default)'
+        backgroundDefault: 'var(--mui-palette-background-default)',
+        track: 'var(--mui-palette-customColors-trackBg)',
+        facebook: '#497ce2',
+        twitter: '#1da1f2',
+        github: '#272727',
+        googlePlus: '#db4437'
       },
       zIndex: {
         header: 'var(--header-z-index)',

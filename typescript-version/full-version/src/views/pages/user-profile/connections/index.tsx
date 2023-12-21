@@ -7,9 +7,6 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { ConnectionsTabType } from '@/types/pages/profileTypes'
 
@@ -34,7 +31,7 @@ const Connections = ({ data }: { data?: ConnectionsTabType[] }) => {
                   ]}
                   iconButtonProps={{
                     size: 'small',
-                    className: classnames('absolute top-5 right-5', commonStyles.textDisabled)
+                    className: 'absolute top-5 right-5 text-textDisabled'
                   }}
                 />
                 <CardContent className='flex items-center flex-col gap-6'>
