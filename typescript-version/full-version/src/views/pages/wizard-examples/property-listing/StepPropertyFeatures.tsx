@@ -16,14 +16,8 @@ import Autocomplete from '@mui/material/Autocomplete'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Chip from '@mui/material/Chip'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { Direction } from '@core/types'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 type Props = {
   activeStep: number
@@ -92,9 +86,7 @@ const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps, direc
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className={classnames(commonStyles.textPrimary, 'text-sm font-medium')}>
-            Is There Any Common Area
-          </FormLabel>
+          <FormLabel className='text-sm font-medium text-textPrimary'>Is There Any Common Area</FormLabel>
           <RadioGroup defaultValue='yes'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />
@@ -103,9 +95,7 @@ const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps, direc
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className={classnames(commonStyles.textPrimary, 'text-sm font-medium')}>
-            Is There Any Attached Balcony
-          </FormLabel>
+          <FormLabel className='text-sm font-medium text-textPrimary'>Is There Any Attached Balcony</FormLabel>
           <RadioGroup defaultValue='yes'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />

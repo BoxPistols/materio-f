@@ -59,25 +59,23 @@ const FAQ = ({ faqData, searchValue }: props) => {
   return filteredData.length > 0 ? (
     <TabContext value={activeTab}>
       <Grid container spacing={6}>
-        <Grid item xs={12} md={4} xl={3} className='flex flex-col items-center'>
-          <CustomTabList orientation='vertical' onChange={handleChange} className='w-full' pill='true'>
+        <Grid item xs={12} md={4} xl={3} className='flex !flex-col items-center'>
+          <CustomTabList orientation='vertical' onChange={handleChange} className='!w-full' pill='true'>
             {filteredData.map((faq, index) => (
               <Tab
                 key={index}
                 label={faq.title}
                 value={faq.id}
                 icon={<i className={classnames(faq.icon, '!mbe-0 mie-1.5')} />}
-                className='flex-row justify-start'
+                className='!flex-row !justify-start'
               />
             ))}
           </CustomTabList>
-          (
           <img
             src='/images/illustrations/characters-with-objects/7.png'
             className='max-md:hidden w-60'
             alt='john image'
           />
-          )
         </Grid>
         <Grid item xs={12} md={8} xl={9}>
           {filteredData.map((faq, index) => (

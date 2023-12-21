@@ -17,57 +17,52 @@ import RevenueReport from '@views/pages/widget-examples/charts/RevenueReport'
 import ActivityTimeline from '@views/pages/widget-examples/charts/ActivityTimeline'
 import SalesOverview from '@views/pages/widget-examples/charts/SalesOverview'
 
-// Style Imports
-import ApexChartWrapper from '@core/styles/libs/ReactApexCharts'
-
 const Charts = () => {
   return (
-    <ApexChartWrapper>
-      <Grid container spacing={6}>
-        <Grid item xs={12} lg={8}>
-          <ProfitStackedBar />
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4}>
-          <TotalVisitors />
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4}>
-          <WeeklySales />
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4}>
-          <TotalRevenue />
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4}>
-          <WeeklyOverview />
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4}>
-          <Performance />
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4}>
-          <Analytics />
-        </Grid>
-        <Grid item xs={12} sm={6} lg={4}>
-          <SalesState />
-        </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
-          <TotalProfitRadialBar />
-        </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
-          <TotalSales />
-        </Grid>
-        <Grid item xs={12} sm={6} lg={3}>
-          <TotalVisits />
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <RevenueReport />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <ActivityTimeline />
-        </Grid>
-        <Grid item xs={12} lg={6}>
-          <SalesOverview />
-        </Grid>
+    <Grid container spacing={6}>
+      <Grid item xs={12} lg={8}>
+        <ProfitStackedBar />
       </Grid>
-    </ApexChartWrapper>
+      <Grid item xs={12} sm={6} lg={4}>
+        <TotalVisitors />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={4}>
+        <WeeklySales />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={4}>
+        <TotalRevenue />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={4}>
+        <WeeklyOverview />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={4}>
+        <Performance />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={4}>
+        <Analytics />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={4}>
+        <SalesState />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={3}>
+        <TotalProfitRadialBar />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={3}>
+        <TotalSales />
+      </Grid>
+      <Grid item xs={12} sm={6} lg={3}>
+        <TotalVisits />
+      </Grid>
+      <Grid item xs={12} md={6} lg={3}>
+        <RevenueReport />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <ActivityTimeline />
+      </Grid>
+      <Grid item xs={12} lg={6}>
+        <SalesOverview />
+      </Grid>
+    </Grid>
   )
 }
 

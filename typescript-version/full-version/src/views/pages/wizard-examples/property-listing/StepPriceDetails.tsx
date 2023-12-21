@@ -13,14 +13,8 @@ import RadioGroup from '@mui/material/RadioGroup'
 import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { Direction } from '@core/types'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 type Props = {
   activeStep: number
@@ -123,7 +117,7 @@ const StepPriceDetails = ({ activeStep, handleNext, handlePrev, steps, direction
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className={classnames(commonStyles.textPrimary, 'text-sm font-medium')} id='price-radio'>
+          <FormLabel className='text-sm font-medium text-textPrimary' id='price-radio'>
             Show Price As
           </FormLabel>
           <RadioGroup name='price-group' defaultValue='negotiable' aria-labelledby='price-radio'>
@@ -134,7 +128,7 @@ const StepPriceDetails = ({ activeStep, handleNext, handlePrev, steps, direction
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className={classnames(commonStyles.textPrimary, 'text-sm font-medium')}>Price Includes</FormLabel>
+          <FormLabel className='text-sm font-medium text-textPrimary'>Price Includes</FormLabel>
           <FormControlLabel control={<Checkbox defaultChecked />} label='Car Parking' />
           <FormControlLabel control={<Checkbox />} label='Club Membership' />
         </FormControl>

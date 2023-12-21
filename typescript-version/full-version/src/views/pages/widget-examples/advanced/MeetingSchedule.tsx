@@ -6,18 +6,12 @@ import Chip from '@mui/material/Chip'
 
 import Typography from '@mui/material/Typography'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { ThemeColor } from '@core/types'
 
 // Components Imports
 import OptionMenu from '@core/components/option-menu'
 import CustomAvatar from '@core/components/mui/Avatar'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 type DataType = {
   avatarSrc: string
@@ -76,9 +70,7 @@ const MeetingSchedule = () => {
     <Card>
       <CardHeader
         title='Meeting Schedule'
-        action={
-          <OptionMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       ></CardHeader>
       <CardContent className='flex flex-col gap-[1.71rem]'>
         {data.map((item, index) => (
@@ -91,7 +83,7 @@ const MeetingSchedule = () => {
                   {item.title}
                 </Typography>
                 <div className='flex items-center gap-2'>
-                  <i className={classnames('ri-calendar-line text-base', commonStyles.textSecondary)}></i>
+                  <i className='ri-calendar-line text-base text-textSecondary' />
                   <Typography variant='body2'>{item.subtitle}</Typography>
                 </div>
               </div>

@@ -11,13 +11,10 @@ import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const TotalVisitors = () => {
   // Hooks
@@ -107,10 +104,10 @@ const TotalVisitors = () => {
     <Card>
       <CardHeader
         title='Total Visitors'
-        action={<OptionsMenu iconClassName={commonStyles.textPrimary} options={['Refresh', 'Update', 'Delete']} />}
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Refresh', 'Update', 'Delete']} />}
       />
       <CardContent>
-        <ReactApexcharts type='donut' height={292} series={[12, 25, 13, 50]} options={options} />
+        <AppReactApexCharts type='donut' height={292} width='100%' series={[12, 25, 13, 50]} options={options} />
       </CardContent>
     </Card>
   )

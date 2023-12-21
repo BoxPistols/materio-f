@@ -10,9 +10,6 @@ import type { CardStatsVerticalProps } from '@/types/pages/widgetTypes'
 import CustomAvatar from '@core/components/mui/Avatar'
 import OptionMenu from '@core/components/option-menu'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 const CardStatVertical = (props: CardStatsVerticalProps) => {
   const { title, stats, avatarIcon, avatarColor, trendNumber, trend, subtitle, avatarSkin, avatarSize, moreOptions } =
     props
@@ -29,7 +26,7 @@ const CardStatVertical = (props: CardStatsVerticalProps) => {
               ? moreOptions
               : {
                   options: ['Refresh', 'Share', 'Update'],
-                  iconButtonProps: { className: commonStyles.textPrimary }
+                  iconButtonProps: { className: 'text-textPrimary' }
                 })}
           />
         </div>

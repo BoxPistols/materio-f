@@ -11,13 +11,10 @@ import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const TotalSales = () => {
   //  Hook
@@ -79,14 +76,13 @@ const TotalSales = () => {
         subheader='$21,845'
         subheaderTypographyProps={{ sx: { color: theme => `${theme.palette.text.primary} !important` } }}
         className='pbe-0'
-        action={
-          <OptionsMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent>
-        <ReactApexcharts
+        <AppReactApexCharts
           type='line'
-          height={219}
+          height={240}
+          width='100%'
           options={options}
           series={[{ name: 'Total Sales', data: [0, 258, 30, 240, 150, 400] }]}
         />

@@ -19,7 +19,6 @@ import { useSettings } from '@core/hooks/useSettings'
 
 // Style Imports
 import navigationCustomStyles from '@core/styles/vertical/navigationCustomStyles'
-import commonStyles from '@/styles/common.module.css'
 
 const Navigation = ({ dictionary }: { dictionary: Dictionary }) => {
   // Hooks
@@ -56,7 +55,7 @@ const Navigation = ({ dictionary }: { dictionary: Dictionary }) => {
             lockedIcon={<i className='ri-radio-button-line text-xl' />}
             unlockedIcon={<i className='ri-checkbox-blank-circle-line text-xl' />}
             closeIcon={<i className='ri-close-line text-xl' />}
-            className={commonStyles.textSecondary}
+            className='text-textSecondary'
           />
         )}
       </NavHeader>

@@ -7,17 +7,11 @@ import LinearProgress from '@mui/material/LinearProgress'
 
 import Typography from '@mui/material/Typography'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { ThemeColor } from '@core/types'
 
 // Components Imports
 import OptionMenu from '@core/components/option-menu'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 type DataType = {
   title: string
@@ -59,14 +53,12 @@ const TotalEarning = () => {
     <Card>
       <CardHeader
         title='Total Earning'
-        action={
-          <OptionMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       ></CardHeader>
       <CardContent>
         <div className='flex items-center'>
           <Typography variant='h3'>$24,895</Typography>
-          <i className={classnames('ri-arrow-up-s-line align-bottom', commonStyles.successColor)}></i>
+          <i className='ri-arrow-up-s-line align-bottom text-success' />
           <Typography component='span' color='success.main'>
             10%
           </Typography>
@@ -75,7 +67,7 @@ const TotalEarning = () => {
         <div className='flex flex-col gap-3.5 mbs-4'>
           {data.map((item, index) => (
             <div key={index} className='flex items-center gap-3'>
-              <Avatar src={item.imgSrc} variant='rounded' className={commonStyles.actionHoverColor} />
+              <Avatar src={item.imgSrc} variant='rounded' className='bg-actionHover' />
               <div className='flex justify-between items-center is-full flex-wrap gap-x-4 gap-y-2'>
                 <div className='flex flex-col gap-0.5'>
                   <Typography color='text.primary' className='font-medium'>

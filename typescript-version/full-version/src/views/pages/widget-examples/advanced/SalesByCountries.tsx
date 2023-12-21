@@ -10,9 +10,6 @@ import classnames from 'classnames'
 // Type Imports
 import type { ThemeColor } from '@core/types'
 
-// Styles Imports
-import commonStyles from '@/styles/common.module.css'
-
 // Components Imports
 import OptionMenu from '@core/components/option-menu'
 import CustomAvatar from '@core/components/mui/Avatar'
@@ -88,9 +85,7 @@ const SalesByCountries = () => {
     <Card>
       <CardHeader
         title='Sales by Countries'
-        action={
-          <OptionMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent className='flex flex-col gap-[1.3rem]'>
         {data.map((item, index) => (
@@ -108,7 +103,7 @@ const SalesByCountries = () => {
                     <i
                       className={classnames(
                         item.trend === 'up' ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line',
-                        item.trend === 'up' ? commonStyles.successColor : commonStyles.errorColor
+                        item.trend === 'up' ? 'text-success' : 'text-error'
                       )}
                     ></i>
                     <Typography color={item.trend === 'up' ? 'success.main' : 'error.main'}>

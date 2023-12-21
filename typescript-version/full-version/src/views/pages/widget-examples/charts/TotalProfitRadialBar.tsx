@@ -13,13 +13,10 @@ import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const TotalProfitRadialBar = () => {
   // Hooks
@@ -80,10 +77,10 @@ const TotalProfitRadialBar = () => {
     <Card>
       <CardHeader
         title='Total Profit'
-        action={<OptionsMenu iconClassName={commonStyles.textPrimary} options={['Refresh', 'Edit', 'Delete']} />}
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Refresh', 'Edit', 'Delete']} />}
       />
       <CardContent className='flex items-center flex-col' sx={{ pt: `${theme.spacing(7)} !important` }}>
-        <ReactApexcharts type='radialBar' height={228.5} series={[80]} options={options} />
+        <AppReactApexCharts type='radialBar' height={228.5} width='100%' series={[80]} options={options} />
         <div className='flex flex-col gap-2 mt-10'>
           <Typography>18k New Sales</Typography>
           <Chip variant='tonal' color='primary' label='This Year' size='small' />

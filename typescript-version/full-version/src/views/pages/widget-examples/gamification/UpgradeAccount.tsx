@@ -4,9 +4,6 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 const UpgradeAccount = () => {
   return (
     <Card>
@@ -16,7 +13,7 @@ const UpgradeAccount = () => {
           <Typography>Add 15 team members</Typography>
         </div>
         <div>
-          <Typography variant='h4' className={commonStyles.primaryColor}>
+          <Typography variant='h4' color='primary'>
             $199
           </Typography>
           <Typography>40% OFF 😍</Typography>

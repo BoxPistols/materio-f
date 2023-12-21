@@ -101,6 +101,7 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                         Date Issued:
                       </Typography>
                       <AppReactDatepicker
+                        boxProps={{ className: 'w-full' }}
                         selected={issuedDate}
                         placeholderText='YYYY-MM-DD'
                         dateFormat={'yyyy-MM-dd'}
@@ -113,6 +114,7 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                         Date Due:
                       </Typography>
                       <AppReactDatepicker
+                        boxProps={{ className: 'w-full' }}
                         selected={dueDate}
                         placeholderText='YYYY-MM-DD'
                         dateFormat={'yyyy-MM-dd'}
@@ -223,7 +225,7 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                       <Typography className='font-medium md:absolute md:-top-8' color='text.primary'>
                         Item
                       </Typography>
-                      <Select fullWidth size='small' defaultValue='App Design'>
+                      <Select fullWidth size='small' defaultValue='App Design' className='mbe-5'>
                         <MenuItem value='App Design'>App Design</MenuItem>
                         <MenuItem value='App Customization'>App Customization</MenuItem>
                         <MenuItem value='ABC Template'>ABC Template</MenuItem>

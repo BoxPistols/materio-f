@@ -8,11 +8,8 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import { useColorScheme, useTheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
 
 // Third Party Imports
-import classnames from 'classnames'
 import type { ApexOptions } from 'apexcharts'
 
 // Types Imports
@@ -21,14 +18,10 @@ import type { ThemeColor } from '@core/types'
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
 import CustomAvatar from '@core/components/mui/Avatar'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 interface DataType {
   title: string
@@ -79,7 +72,6 @@ const ProfitStackedBar = () => {
   const { mode, systemMode } = useColorScheme()
 
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   const disabledText = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`)
 
@@ -238,15 +230,10 @@ const ProfitStackedBar = () => {
   return (
     <Card>
       <Grid container>
-        <Grid
-          item
-          xs={12}
-          sm={7}
-          className={classnames({ [styles.borderBottom]: isBelowSmScreen, [styles.borderRight]: !isBelowSmScreen })}
-        >
+        <Grid item xs={12} sm={7} className='border-be sm:border-be-0 sm:border-ie'>
           <CardHeader title='Total Profit' />
           <CardContent sx={{ '& .apexcharts-xcrosshairs.apexcharts-active': { opacity: 0 } }}>
-            <ReactApexcharts type='bar' height={262} series={series} options={options} />
+            <AppReactApexCharts type='bar' height={262} width='100%' series={series} options={options} />
           </CardContent>
         </Grid>
         <Grid item xs={12} sm={5}>
@@ -254,10 +241,7 @@ const ProfitStackedBar = () => {
             title='$482.85k'
             subheader='Last month balance $234.40k'
             action={
-              <OptionsMenu
-                iconClassName={commonStyles.textPrimary}
-                options={['Last 28 Days', 'Last Month', 'Last Year']}
-              />
+              <OptionsMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />
             }
           />
           <CardContent className='flex flex-col gap-4 !pbs-2.5'>

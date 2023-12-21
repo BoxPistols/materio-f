@@ -13,13 +13,10 @@ import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const WeeklyOverview = () => {
   // Hooks
@@ -109,12 +106,13 @@ const WeeklyOverview = () => {
     <Card>
       <CardHeader
         title='Weekly Overview'
-        action={<OptionsMenu iconClassName={commonStyles.textPrimary} options={['Refresh', 'Update', 'Delete']} />}
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Refresh', 'Update', 'Delete']} />}
       />
       <CardContent sx={{ '& .apexcharts-xcrosshairs.apexcharts-active': { opacity: 0 } }}>
-        <ReactApexcharts
+        <AppReactApexCharts
           type='bar'
           height={201}
+          width='100%'
           series={[{ name: 'Sales', data: [37, 57, 45, 75, 57, 40, 65] }]}
           options={options}
         />

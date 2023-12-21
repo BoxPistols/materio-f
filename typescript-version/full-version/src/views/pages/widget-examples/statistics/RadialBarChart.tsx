@@ -10,7 +10,7 @@ import { useColorScheme, useTheme } from '@mui/material/styles'
 import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
@@ -74,7 +74,7 @@ const RadialBarChart = () => {
     <Card>
       <CardContent>
         <Typography variant='h4'>135k</Typography>
-        <ReactApexcharts type='radialBar' height={212} options={options} series={[78]} />
+        <AppReactApexCharts type='radialBar' height={212} width='100%' options={options} series={[78]} />
         <Typography color='text.primary' className='font-medium text-center'>
           Total Sales
         </Typography>

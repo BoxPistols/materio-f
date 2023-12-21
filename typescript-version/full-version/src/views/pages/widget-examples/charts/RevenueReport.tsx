@@ -9,15 +9,12 @@ import CardContent from '@mui/material/CardContent'
 // Third Party Imports
 import type { ApexOptions } from 'apexcharts'
 
-// Custom Components Imports
+// Components Imports
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const series = [
   {
@@ -178,12 +175,10 @@ const RevenueReport = () => {
     <Card>
       <CardHeader
         title='Revenue Report'
-        action={
-          <OptionsMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent>
-        <ReactApexcharts type='bar' height={237} series={series} options={options} />
+        <AppReactApexCharts type='bar' height={238} width='100%' series={series} options={options} />
       </CardContent>
     </Card>
   )

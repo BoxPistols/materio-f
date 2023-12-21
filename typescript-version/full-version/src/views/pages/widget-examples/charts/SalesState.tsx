@@ -10,10 +10,7 @@ import type { ApexOptions } from 'apexcharts'
 
 // Custom Components Imports
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 const SalesState = () => {
   // Hook
@@ -88,7 +85,7 @@ const SalesState = () => {
     markers: {
       size: 1,
       offsetY: 1,
-      offsetX: -10,
+      offsetX: -5,
       strokeWidth: 5,
       colors: ['transparent'],
       strokeColors: 'transparent',
@@ -119,13 +116,12 @@ const SalesState = () => {
       <CardHeader
         title='Sales State'
         subheader='Total $42,580 Sales'
-        action={
-          <OptionsMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
-      <ReactApexcharts
+      <AppReactApexCharts
         type='area'
         height={301}
+        width='100%'
         options={options}
         series={[{ name: 'Traffic Rate', data: [300, 450, 390, 600, 550, 700] }]}
       />

@@ -7,7 +7,6 @@ import Link from 'next/link'
 
 // Third-party Imports
 import styled from '@emotion/styled'
-import classnames from 'classnames'
 
 // Type Imports
 import type { VerticalNavContextProps } from '@menu-package/contexts/verticalNavContext'
@@ -21,9 +20,6 @@ import themeConfig from '@configs/themeConfig'
 // Hook Imports
 import useVerticalNav from '@menu-package/hooks/useVerticalNav'
 import { useSettings } from '@core/hooks/useSettings'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 type LogoTextProps = {
   isHovered?: VerticalNavContextProps['isHovered']
@@ -75,7 +71,7 @@ const Logo = () => {
   // return <Img src='/next.svg' width={100} height={25} alt='logo' /> // for example
   return (
     <Link href='/' className='flex items-center min-bs-[24px]'>
-      <MaterioLogo className={classnames('text-[22px]', commonStyles.primaryColor)} />
+      <MaterioLogo className='text-[22px] text-primary' />
       <LogoText
         ref={logoTextRef}
         isHovered={isHovered}

@@ -17,12 +17,15 @@ import Typography from '@mui/material/Typography'
 import Tooltip from '@mui/material/Tooltip'
 import Divider from '@mui/material/Divider'
 import Grid from '@mui/material/Grid'
-import Avatar from '@mui/material/Avatar'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import type { Theme } from '@mui/material/styles'
 
 // Third Party Components
+import classnames from 'classnames'
 import PerfectScrollbar from 'react-perfect-scrollbar'
+
+// Component Imports
+import CustomAvatar from '@/@core/components/mui/Avatar'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -67,7 +70,7 @@ const ShortcutsDropdown = ({ shortcuts }: { shortcuts: ShortcutsType[] }) => {
 
   return (
     <>
-      <IconButton ref={anchorRef} onClick={handleToggle} className='text-textPrimary'>
+      <IconButton ref={anchorRef} onClick={handleToggle} className='!text-textPrimary'>
         <i className='ri-star-smile-line' />
       </IconButton>
       <Popper
@@ -78,7 +81,7 @@ const ShortcutsDropdown = ({ shortcuts }: { shortcuts: ShortcutsType[] }) => {
         anchorEl={anchorRef.current}
         {...(isSmallScreen
           ? {
-              className: 'is-full  !mbs-4 z-[1]',
+              className: 'is-full !mbs-4 z-[1]',
               modifiers: [
                 {
                   name: 'preventOverflow',
@@ -88,11 +91,11 @@ const ShortcutsDropdown = ({ shortcuts }: { shortcuts: ShortcutsType[] }) => {
                 }
               ]
             }
-          : { className: 'is-96  !mbs-4 z-[1]' })}
+          : { className: 'is-96 !mbs-4 z-[1]' })}
       >
         {({ TransitionProps, placement }) => (
           <Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom-end' ? 'right top' : 'left top' }}>
-            <Paper elevation={8}>
+            <Paper className='shadow-lg'>
               <ClickAwayListener onClickAway={handleClose}>
                 <div>
                   <div className='flex items-center justify-between plb-4 pli-5 is-full gap-2'>
@@ -131,9 +134,9 @@ const ShortcutsDropdown = ({ shortcuts }: { shortcuts: ShortcutsType[] }) => {
                             href={shortcut.url}
                             className='flex items-center flex-col p-6 gap-3 bs-full hover:bg-actionHover'
                           >
-                            <Avatar className={styles.avatar}>
-                              <i className={classnames(shortcut.icon, styles.icon)} />
-                            </Avatar>
+                            <CustomAvatar size={50} className='bg-actionSelected'>
+                              <i className={classnames('text-[1.625rem]', shortcut.icon)} />
+                            </CustomAvatar>
                             <div className='flex flex-col items-center text-center'>
                               <Typography className='font-medium' color='text.primary'>
                                 {shortcut.title}

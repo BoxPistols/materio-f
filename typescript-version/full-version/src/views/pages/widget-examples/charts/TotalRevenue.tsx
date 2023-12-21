@@ -9,18 +9,14 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
 // Third Party Imports
-import classnames from 'classnames'
 import type { ApexOptions } from 'apexcharts'
 
 // Component Imports
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Import
-import commonStyles from '@/styles/common.module.css'
 
 const TotalRevenue = () => {
   // Hooks
@@ -89,16 +85,14 @@ const TotalRevenue = () => {
     <Card>
       <CardHeader
         title='Total Revenue'
-        action={
-          <OptionsMenu options={['Last 28 Days', 'Last Month', 'Last Year']} iconClassName={commonStyles.textPrimary} />
-        }
+        action={<OptionsMenu options={['Last 28 Days', 'Last Month', 'Last Year']} iconClassName='text-textPrimary' />}
       />
       <CardContent>
-        <ReactApexcharts type='radialBar' height={250} series={[71, 78, 86]} options={options} />
+        <AppReactApexCharts type='radialBar' height={250} width='100%' series={[71, 78, 86]} options={options} />
         <div className='flex justify-around'>
           <div className='flex items-center flex-col justify-center gap-1'>
             <div className='flex items-center justify-center gap-2'>
-              <i className={classnames('ri-circle-fill text-[10px]', commonStyles.successColor)} />
+              <i className='ri-circle-fill text-[10px] text-success' />
               <Typography className='font-medium' color='text.primary'>
                 856
               </Typography>
@@ -108,7 +102,7 @@ const TotalRevenue = () => {
           <Divider orientation='vertical' className='h-auto' />
           <div className='flex items-center flex-col justify-center gap-1'>
             <div className='flex items-center justify-center gap-2'>
-              <i className={classnames('ri-circle-fill text-[10px]', commonStyles.primaryColor)} />
+              <i className='ri-circle-fill text-[10px] text-primary' />
               <Typography className='font-medium' color='text.primary'>
                 345
               </Typography>
@@ -118,7 +112,7 @@ const TotalRevenue = () => {
           <Divider orientation='vertical' className='h-auto' />
           <div className='flex items-center flex-col justify-center gap-1'>
             <div className='flex items-center justify-center gap-2'>
-              <i className={classnames('ri-circle-fill text-[10px]', commonStyles.warningColor)} />
+              <i className='ri-circle-fill text-[10px] text-warning' />
               <Typography className='font-medium' color='text.primary'>
                 258
               </Typography>

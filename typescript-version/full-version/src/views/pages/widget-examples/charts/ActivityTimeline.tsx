@@ -16,13 +16,6 @@ import TimelineConnector from '@mui/lab/TimelineConnector'
 import MuiTimeline from '@mui/lab/Timeline'
 import type { TimelineProps } from '@mui/lab/Timeline'
 
-// Third-party Imports
-import classnames from 'classnames'
-
-// Styles Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
-
 // Styled Timeline component
 const Timeline = styled(MuiTimeline)<TimelineProps>({
   paddingLeft: 0,
@@ -56,14 +49,7 @@ const ActivityTimeline = () => {
                 </Typography>
               </div>
               <Typography className='mbe-2'>Invoices have been paid to the company</Typography>
-              <div
-                className={classnames(
-                  'flex items-center gap-2.5 w-fit',
-                  styles.imageWrapper,
-                  commonStyles.borderRadius,
-                  commonStyles.actionHoverColor
-                )}
-              >
+              <div className='flex items-center gap-2.5 w-fit rounded bg-actionHover plb-[5px] pls-2.5'>
                 <img height={20} alt='invoice.pdf' src='/images/icons/pdf-document.png' />
                 <Typography className='font-medium'>invoices.pdf</Typography>
               </div>

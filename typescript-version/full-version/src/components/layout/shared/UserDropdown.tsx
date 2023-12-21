@@ -106,7 +106,7 @@ const UserDropdown = () => {
               transformOrigin: placement === 'bottom-end' ? 'right top' : 'left top'
             }}
           >
-            <Paper elevation={8}>
+            <Paper className='shadow-lg'>
               <ClickAwayListener onClickAway={e => handleDropdownClose(e as MouseEvent | TouchEvent)}>
                 <MenuList>
                   <div className='flex items-center plb-2 pli-4 gap-2' tabIndex={-1}>

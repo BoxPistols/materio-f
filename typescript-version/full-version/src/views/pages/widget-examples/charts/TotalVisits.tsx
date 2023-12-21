@@ -13,13 +13,10 @@ import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const TotalVisits = () => {
   // Hook
@@ -92,12 +89,10 @@ const TotalVisits = () => {
     <Card>
       <CardHeader
         title='Total Visits'
-        action={
-          <OptionsMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent className='flex items-center flex-col'>
-        <ReactApexcharts type='radialBar' height={192} series={[78]} options={options} />
+        <AppReactApexCharts type='radialBar' height={183} width='100%' series={[78]} options={options} />
         <div className='flex flex-col gap-2'>
           <Typography>42.2k New Visits</Typography>
           <Chip variant='tonal' color='info' label='This Year' size='small' />

@@ -5,18 +5,12 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { ThemeColor } from '@core/types'
 
 // Components Imports
 import OptionMenu from '@core/components/option-menu'
 import CustomAvatar from '@core/components/mui/Avatar'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 type DataType = {
   icon: string
@@ -57,11 +51,10 @@ const Transactions = () => {
     <Card>
       <CardHeader
         title='Transactions'
-        action={<OptionMenu iconClassName={commonStyles.textPrimary} options={['Refresh', 'Share', 'Update']} />}
+        action={<OptionMenu iconClassName='text-textPrimary' options={['Refresh', 'Share', 'Update']} />}
         subheader={
           <>
-            <span className={classnames('font-medium', commonStyles.textPrimary)}>Total 48.5% Growth 😎</span> this
-            month
+            <span className='font-medium text-textPrimary'>Total 48.5% Growth 😎</span> this month
           </>
         }
       />

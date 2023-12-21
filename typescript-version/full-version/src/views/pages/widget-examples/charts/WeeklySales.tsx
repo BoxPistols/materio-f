@@ -8,19 +8,15 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
 // Third Party Imports
-import classnames from 'classnames'
 import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
 import CustomAvatar from '@core/components/mui/Avatar'
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const WeeklySales = () => {
   // Hooks
@@ -89,16 +85,20 @@ const WeeklySales = () => {
       <CardHeader
         title='Weekly Sales'
         subheader='Total 85.4k Sales'
-        action={
-          <OptionsMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent>
-        <ReactApexcharts type='bar' height={237} series={[{ data: [40, 60, 50, 60, 90, 40, 50] }]} options={options} />
+        <AppReactApexCharts
+          type='bar'
+          height={237}
+          width='100%'
+          series={[{ data: [40, 60, 50, 60, 90, 40, 50] }]}
+          options={options}
+        />
         <div className='flex items-center justify-around'>
           <div className='flex items-center gap-3'>
             <CustomAvatar skin='light' variant='rounded'>
-              <i className={classnames('ri-pie-chart-2-line', commonStyles.primaryColor)} />
+              <i className='ri-pie-chart-2-line text-primary' />
             </CustomAvatar>
             <div className='flex flex-col'>
               <Typography className='font-medium' color='text.primary'>
@@ -109,7 +109,7 @@ const WeeklySales = () => {
           </div>
           <div className='flex items-center gap-3'>
             <CustomAvatar skin='light' color='success' variant='rounded'>
-              <i className={classnames('ri-money-dollar-circle-line', commonStyles.successColor)} />
+              <i className='ri-money-dollar-circle-line text-success' />
             </CustomAvatar>
             <div className='flex flex-col'>
               <Typography className='font-medium' color='text.primary'>

@@ -4,9 +4,6 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 const Award = () => {
   return (
     <Card>
@@ -16,7 +13,7 @@ const Award = () => {
           <Typography>Best seller of the month</Typography>
         </div>
         <div>
-          <Typography variant='h4' className={commonStyles.primaryColor}>
+          <Typography variant='h4' color='primary'>
             $42.8k
           </Typography>
           <Typography>78% of target 🚀</Typography>

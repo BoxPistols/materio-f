@@ -37,9 +37,6 @@ import themeConfig from '@configs/themeConfig'
 // Util Imports
 import { getInitials } from '@/utils/get-initials'
 
-// Style Imports
-import commonDropdownStyles from './styles.module.css'
-
 export type NotificationsType = {
   title: string
   subtitle: string
@@ -157,7 +154,7 @@ const NotificationDropdown = ({ notifications }: { notifications: NotificationsT
 
   return (
     <>
-      <IconButton ref={anchorRef} onClick={handleToggle} className='text-textPrimary'>
+      <IconButton ref={anchorRef} onClick={handleToggle} className='!text-textPrimary'>
         <Badge
           color='error'
           className='cursor-pointer'
@@ -191,7 +188,7 @@ const NotificationDropdown = ({ notifications }: { notifications: NotificationsT
       >
         {({ TransitionProps, placement }) => (
           <Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom-end' ? 'right top' : 'left top' }}>
-            <Paper className={commonDropdownStyles.paper}>
+            <Paper className='shadow-lg'>
               <ClickAwayListener onClickAway={handleClose}>
                 <div>
                   <div className='flex items-center justify-between p-4 is-full gap-4'>

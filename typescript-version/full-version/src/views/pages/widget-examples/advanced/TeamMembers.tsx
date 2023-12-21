@@ -11,7 +11,6 @@ import Chip from '@mui/material/Chip'
 import CircularProgress from '@mui/material/CircularProgress'
 
 // Third-party Imports
-import classnames from 'classnames'
 import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
 
 // Type Imports
@@ -22,9 +21,7 @@ import OptionsMenu from '@core/components/option-menu'
 import CustomAvatar from '@core/components/mui/Avatar'
 
 // Style Imports
-import styles from './styles.module.css'
 import tableStyles from '@core/styles/table.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 type DataType = {
   src: string
@@ -116,7 +113,7 @@ const columns = [
     header: 'Tasks',
     cell: ({ row }) => (
       <Typography className='font-medium'>
-        <span className={commonStyles.primaryColor}>{`${row.original.completedTasks}/`}</span>
+        <span className='text-primary'>{`${row.original.completedTasks}/`}</span>
         <span>{row.original.totalTasks}</span>
       </Typography>
     )
@@ -125,12 +122,7 @@ const columns = [
     header: 'Progress',
     cell: ({ row }) => (
       <div className='flex relative justify-center'>
-        <CircularProgress
-          variant='determinate'
-          value={100}
-          className={classnames('absolute', commonStyles.trackColor)}
-          size={32}
-        />
+        <CircularProgress variant='determinate' value={100} className='absolute text-track' size={32} />
         <CircularProgress
           variant='determinate'
           thickness={4}
@@ -162,28 +154,28 @@ const TeamMembers = () => {
     <Card>
       <CardHeader
         title='Team Members'
-        action={<OptionsMenu iconClassName={commonStyles.textPrimary} options={['Refresh', 'Share', 'Update']} />}
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Refresh', 'Share', 'Update']} />}
         className='pbe-2.5'
       />
       <div className='overflow-x-auto'>
         <table className={tableStyles.table}>
-          <thead className={tableStyles.thead}>
+          <thead>
             {table.getHeaderGroups().map(headerGroup => (
-              <tr key={headerGroup.id} className={styles.tableBorderBottom}>
+              <tr key={headerGroup.id} className='border-be'>
                 {headerGroup.headers.map(header => (
-                  <th key={header.id} className={classnames('!bs-8', commonStyles.paperColor)}>
+                  <th key={header.id} className='!bs-8 bg-backgroundPaper'>
                     {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                   </th>
                 ))}
               </tr>
             ))}
           </thead>
-          <tbody className={tableStyles.tbody}>
+          <tbody>
             {table
               .getRowModel()
               .rows.slice(0, 10)
               .map(row => (
-                <tr key={row.id} className={classnames('!border-be-0', styles.tablePadding)}>
+                <tr key={row.id} className='!border-be-0 [&:first-child_td]:!pbs-5 [&:last-child_td]:!pbe-5'>
                   {row.getVisibleCells().map(cell => (
                     <td key={cell.id} {...(cell.id.includes('value') && { align: 'center' })}>
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}

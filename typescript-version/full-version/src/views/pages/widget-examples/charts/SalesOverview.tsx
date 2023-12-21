@@ -16,13 +16,10 @@ import type { ApexOptions } from 'apexcharts'
 // Components Imports
 import CustomAvatar from '@core/components/mui/Avatar'
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const CardWidgetsSalesOverview = () => {
   // Hooks
@@ -97,19 +94,17 @@ const CardWidgetsSalesOverview = () => {
     <Card>
       <CardHeader
         title='Sales Overview'
-        action={
-          <OptionsMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent>
         <Grid container>
           <Grid item xs={12} sm={6} sx={{ mb: [3, 0] }}>
-            <ReactApexcharts type='donut' height={265} series={[12, 25, 13, 50]} options={options} />
+            <AppReactApexCharts type='donut' height={265} width='100%' series={[12, 25, 13, 50]} options={options} />
           </Grid>
           <Grid item xs={12} sm={6} sx={{ my: 'auto' }}>
             <div className='flex items-center gap-3'>
               <CustomAvatar skin='light' variant='rounded'>
-                <i className={classnames('ri-wallet-line', commonStyles.primaryColor)} />
+                <i className='ri-wallet-line text-primary' />
               </CustomAvatar>
               <div className='flex flex-col'>
                 <Typography>Number of Sales</Typography>
@@ -120,7 +115,7 @@ const CardWidgetsSalesOverview = () => {
             <Grid container spacing={6}>
               <Grid item xs={6}>
                 <div className='flex items-center gap-2 mbe-1'>
-                  <i className={classnames('ri-circle-fill text-sm', commonStyles.primaryColor)} />
+                  <i className='ri-circle-fill text-sm text-primary' />
                   <Typography>Apparel</Typography>
                 </div>
                 <Typography className='font-medium'>$12,150</Typography>

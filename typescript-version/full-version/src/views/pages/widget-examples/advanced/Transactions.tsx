@@ -14,9 +14,6 @@ import type { ThemeColor } from '@core/types'
 import OptionMenu from '@core/components/option-menu'
 import CustomAvatar from '@core/components/mui/Avatar'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 type DataType = {
   avatarSrc: string
   title: string
@@ -87,9 +84,7 @@ const Transactions = () => {
     <Card>
       <CardHeader
         title='Transactions'
-        action={
-          <OptionMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent className='flex flex-col gap-[1.58rem]'>
         {data.map((item, index) => (
@@ -112,7 +107,7 @@ const Transactions = () => {
                 <i
                   className={classnames(
                     item.trend === 'up' ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line',
-                    item.trend === 'up' ? commonStyles.successColor : commonStyles.errorColor
+                    item.trend === 'up' ? 'text-success' : 'text-error'
                   )}
                 ></i>
               </div>

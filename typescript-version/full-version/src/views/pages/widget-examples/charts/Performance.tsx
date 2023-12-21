@@ -11,13 +11,10 @@ import type { ApexOptions } from 'apexcharts'
 
 // Component Imports
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const series = [
   {
@@ -92,12 +89,10 @@ const Performance = () => {
     <Card>
       <CardHeader
         title='Performance'
-        action={
-          <OptionsMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent>
-        <ReactApexcharts type='radar' height={299} series={series} options={options} />
+        <AppReactApexCharts type='radar' height={299} width='100%' series={series} options={options} />
       </CardContent>
     </Card>
   )

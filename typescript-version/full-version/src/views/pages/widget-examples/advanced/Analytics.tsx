@@ -11,9 +11,6 @@ import type { ThemeColor } from '@core/types'
 import OptionMenu from '@core/components/option-menu'
 import CustomAvatar from '@core/components/mui/Avatar'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 type DataType = {
   title: string
   imgAlt: string
@@ -67,7 +64,7 @@ const Analytics = () => {
     <Card>
       <CardHeader
         title='Analytics'
-        action={<OptionMenu iconClassName={commonStyles.textPrimary} options={['Refresh', 'Share', 'Update']} />}
+        action={<OptionMenu iconClassName='text-textPrimary' options={['Refresh', 'Share', 'Update']} />}
       />
       <CardContent className='flex flex-col gap-2.5'>
         {data.map((item, index) => (

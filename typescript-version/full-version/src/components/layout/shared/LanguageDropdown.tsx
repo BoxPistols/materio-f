@@ -63,7 +63,7 @@ const LanguageDropdown = () => {
 
   return (
     <>
-      <IconButton ref={anchorRef} onClick={handleToggle} className='text-textPrimary'>
+      <IconButton ref={anchorRef} onClick={handleToggle} className='!text-textPrimary'>
         <i className='ri-translate-2' />
       </IconButton>
       <Popper
@@ -79,7 +79,7 @@ const LanguageDropdown = () => {
             {...TransitionProps}
             style={{ transformOrigin: placement === 'bottom-start' ? 'left top' : 'right top' }}
           >
-            <Paper elevation={8}>
+            <Paper className='shadow-lg'>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList onKeyDown={handleClose}>
                   {languageData.map(locale => (

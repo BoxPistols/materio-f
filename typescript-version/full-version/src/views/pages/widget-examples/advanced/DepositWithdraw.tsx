@@ -8,15 +8,7 @@ import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import Grid from '@mui/material/Grid'
-import type { Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
-
-// Style Imports
-import styles from './styles.module.css'
 
 type DataType = {
   logo: string
@@ -92,19 +84,10 @@ const withdrawData = [
 ]
 
 const DepositWithdraw = () => {
-  // Hooks
-  const isAboveMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
-  const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
-
   return (
     <Card>
       <Grid container>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          className={classnames({ [styles.borderAboveMd]: isAboveMdScreen, [styles.borderBelowMd]: isBelowMdScreen })}
-        >
+        <Grid item xs={12} md={6} className='border-be md:border-be-0 md:border-ie'>
           <CardHeader
             title='Deposit'
             action={

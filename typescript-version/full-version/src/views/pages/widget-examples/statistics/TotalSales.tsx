@@ -7,17 +7,13 @@ import Typography from '@mui/material/Typography'
 import { useColorScheme, useTheme } from '@mui/material/styles'
 
 // Third-party Imports
-import classnames from 'classnames'
 import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const TotalSales = () => {
   // Hooks
@@ -99,12 +95,12 @@ const TotalSales = () => {
           <div className='flex items-center flex-wrap'>
             <Typography variant='h4'>$25,980</Typography>
             <div>
-              <i className={classnames('ri-arrow-up-s-line align-bottom', commonStyles.successColor)}></i>
-              <span className={commonStyles.successColor}>15.6%</span>
+              <i className='ri-arrow-up-s-line align-bottom text-success' />
+              <span className='text-success'>15.6%</span>
             </div>
           </div>
         </div>
-        <ReactApexcharts type='donut' width={120} height={134} options={options} series={[80, 22, 30, 50]} />
+        <AppReactApexCharts type='donut' width={120} height={134} options={options} series={[80, 22, 30, 50]} />
       </CardContent>
     </Card>
   )

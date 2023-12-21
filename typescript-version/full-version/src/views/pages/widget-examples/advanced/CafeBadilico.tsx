@@ -12,9 +12,6 @@ import Button from '@mui/material/Button'
 // Components Imports
 import OptionMenu from '@core/components/option-menu'
 
-// Styles Imports
-import commonStyles from '@/styles/common.module.css'
-
 const CafeBadilico = () => {
   return (
     <Card>
@@ -23,10 +20,7 @@ const CafeBadilico = () => {
         <div>
           <div className='flex items-center justify-between mbe-2.5'>
             <Typography variant='h5'>Cafe Badilico</Typography>
-            <OptionMenu
-              iconClassName={commonStyles.textPrimary}
-              options={['Edit Title', 'Edit Timings', 'Edit Description']}
-            />
+            <OptionMenu iconClassName='text-textPrimary' options={['Edit Title', 'Edit Timings', 'Edit Description']} />
           </div>
           <div className='flex items-center gap-2'>
             <Rating

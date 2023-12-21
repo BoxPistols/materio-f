@@ -65,7 +65,7 @@ const ModeDropdown = () => {
         open={open ? false : tooltipOpen ? true : false}
         PopperProps={{ className: 'capitalize' }}
       >
-        <IconButton ref={anchorRef} onClick={handleToggle} className='text-textPrimary'>
+        <IconButton ref={anchorRef} onClick={handleToggle} className='!text-textPrimary'>
           <i className={getModeIcon()} />
         </IconButton>
       </Tooltip>
@@ -82,7 +82,7 @@ const ModeDropdown = () => {
             {...TransitionProps}
             style={{ transformOrigin: placement === 'bottom-start' ? 'left top' : 'right top' }}
           >
-            <Paper elevation={8}>
+            <Paper className='shadow-lg'>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList onKeyDown={handleClose}>
                   <MenuItem

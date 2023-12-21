@@ -13,9 +13,6 @@ import AlertTitle from '@mui/material/AlertTitle'
 import LinearProgress from '@mui/material/LinearProgress'
 import type { ButtonProps } from '@mui/material/Button'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { ThemeColor } from '@core/types'
 import type { PricingPlanType } from '@/types/pages/pricingTypes'
@@ -24,9 +21,6 @@ import type { PricingPlanType } from '@/types/pages/pricingTypes'
 import ConfirmationDialog from '@components/dialogs/confirmation-dialog'
 import UpgradePlan from '@components/dialogs/upgrade-plan'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
   const buttonProps = (children: string, variant: ButtonProps['variant'], color: ThemeColor): ButtonProps => ({
@@ -43,7 +37,7 @@ const CurrentPlan = ({ data }: { data: PricingPlanType[] }) => {
           <Grid item xs={12} md={6} className='flex flex-col gap-4'>
             <div>
               <Typography>
-                Your Current Plan is <span className={classnames('font-medium', commonStyles.textPrimary)}>Basic</span>
+                Your Current Plan is <span className='font-medium text-textPrimary'>Basic</span>
               </Typography>
               <Typography>A simple start for everyone</Typography>
             </div>

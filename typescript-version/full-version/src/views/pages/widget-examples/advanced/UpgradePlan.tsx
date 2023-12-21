@@ -12,15 +12,8 @@ import Avatar from '@mui/material/Avatar'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Components Imports
 import OptionMenu from '@core/components/option-menu'
-
-// Styles Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 type DataType = {
   avatarSrc: string
@@ -49,16 +42,14 @@ const UpgradePlan = () => {
     <Card>
       <CardHeader
         title='Upgrade Plan'
-        action={
-          <OptionMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent className='flex flex-col gap-3'>
         <Typography variant='body2'>
           Please make the payment to start enjoying all the features of our premium plan as soon as possible.
         </Typography>
-        <div className={classnames('p-4 flex gap-4', styles.upgradePlan, commonStyles.borderRadius)}>
-          <div className={classnames('is-10 bs-10 p-2', styles.briefcase, commonStyles.borderRadius)}>
+        <div className='p-4 flex gap-4 rounded bg-primaryLight'>
+          <div className='is-10 bs-10 p-2 rounded border-primary'>
             <img src='/images/cards/briefcase.png' alt='briefcase' width={23} />
           </div>
           <div className='flex items-center justify-between is-full flex-wrap gap-x-4 gap-y-2'>
@@ -89,7 +80,7 @@ const UpgradePlan = () => {
           </Typography>
           {data.map((item, index) => (
             <div key={index} className='flex items-center gap-3'>
-              <Avatar variant='rounded' className={classnames(styles.avatarIcon, commonStyles.actionHoverColor)}>
+              <Avatar variant='rounded' className='bg-actionHover is-[42px] bs-[30px]'>
                 <img src={item.avatarSrc} alt={item.alt} width={30} />
               </Avatar>
 

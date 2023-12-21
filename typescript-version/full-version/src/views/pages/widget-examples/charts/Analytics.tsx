@@ -13,13 +13,10 @@ import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 type AnalyticsDataType = {
   title: string
@@ -224,12 +221,10 @@ const Analytics = () => {
     <Card>
       <CardHeader
         title='Analytics'
-        action={
-          <OptionsMenu iconClassName={commonStyles.textPrimary} options={['Last 28 Days', 'Last Month', 'Last Year']} />
-        }
+        action={<OptionsMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent sx={{ '& .apexcharts-xcrosshairs.apexcharts-active': { opacity: 0 } }}>
-        <ReactApexcharts type='bar' height={211} series={series} options={options} />
+        <AppReactApexCharts type='bar' height={211} width='100%' series={series} options={options} />
         <div className='flex flex-col gap-2'>
           {analyticsData.map((item, index) => {
             return (
@@ -241,12 +236,7 @@ const Analytics = () => {
                 <Typography className='font-medium' color='text.primary'>
                   {item.percentage}
                 </Typography>
-                <i
-                  className={classnames(
-                    item.icon,
-                    item.trend === 'up' ? commonStyles.successColor : commonStyles.errorColor
-                  )}
-                />
+                <i className={classnames(item.icon, item.trend === 'up' ? 'text-success' : 'text-error')} />
               </div>
             )
           })}

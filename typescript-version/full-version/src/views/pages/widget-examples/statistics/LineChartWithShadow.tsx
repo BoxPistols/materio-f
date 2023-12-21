@@ -10,7 +10,7 @@ import { useTheme } from '@mui/material/styles'
 import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
-import ReactApexcharts from '@components/charts/apexchart'
+import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
 
 const series = [
   {
@@ -81,7 +81,7 @@ const LineChartWithShadow = () => {
     <Card>
       <CardContent>
         <Typography variant='h4'>$35.4k</Typography>
-        <ReactApexcharts type='line' height={116} options={options} series={series} />
+        <AppReactApexCharts type='line' height={116} width='100%' options={options} series={series} />
         <Typography color='text.primary' className='font-medium text-center'>
           Total Revenue
         </Typography>
