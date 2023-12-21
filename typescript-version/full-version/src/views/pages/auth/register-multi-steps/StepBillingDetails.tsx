@@ -10,18 +10,12 @@ import Typography from '@mui/material/Typography'
 import type { TypographyProps } from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { Direction } from '@core/types'
 
 // Component Imports
 import CustomInputVertical from '@core/components/custom-inputs/Vertical'
 import type { CustomInputVerticalData } from '@core/components/custom-inputs/types'
-
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
 
 const Content = styled(Typography, {
   name: 'MuiCustomInputVertical',
@@ -41,13 +35,13 @@ const customInputData: CustomInputVerticalData[] = [
           A simple start for start ups & Students
         </Typography>
         <div>
-          <Typography variant='body2' component='sup' className={classnames('self-start', commonStyles.primaryColor)}>
+          <Typography color='primary' variant='body2' component='sup' className='self-start'>
             $
           </Typography>
-          <Typography variant='h4' component='span' className={commonStyles.primaryColor}>
+          <Typography color='primary' variant='h4' component='span'>
             0
           </Typography>
-          <Typography variant='body2' component='sub' className='self-end' color='text.disabled'>
+          <Typography color='text.disabled' variant='body2' component='sub' className='self-end'>
             /month
           </Typography>
         </div>
@@ -64,10 +58,10 @@ const customInputData: CustomInputVerticalData[] = [
           For small to medium businesses
         </Typography>
         <div>
-          <Typography variant='body2' component='sup' className={classnames('self-start', commonStyles.primaryColor)}>
+          <Typography color='primary' variant='body2' component='sup' className='self-start'>
             $
           </Typography>
-          <Typography variant='h4' component='span' className={commonStyles.primaryColor}>
+          <Typography color='primary' variant='h4' component='span'>
             99
           </Typography>
           <Typography variant='body2' component='sub' className='self-end' color='text.disabled'>
@@ -86,10 +80,10 @@ const customInputData: CustomInputVerticalData[] = [
           Solution for enterprise & organizations
         </Typography>
         <div>
-          <Typography variant='body2' component='sup' className={classnames('self-start', commonStyles.primaryColor)}>
+          <Typography color='primary' variant='body2' component='sup' className='self-start'>
             $
           </Typography>
-          <Typography variant='h4' component='span' className={commonStyles.primaryColor}>
+          <Typography color='primary' variant='h4' component='span'>
             499
           </Typography>
           <Typography variant='body2' component='sub' className='self-end' color='text.disabled'>

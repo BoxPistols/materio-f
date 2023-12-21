@@ -8,8 +8,6 @@ import Stepper from '@mui/material/Stepper'
 import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
 import Typography from '@mui/material/Typography'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -67,22 +65,17 @@ const RegisterMultiSteps = ({ direction }: { direction: Direction }) => {
     }
   }
 
-  // Hooks
-  const isAboveLgScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('lg'))
-
   return (
     <div className='flex h-full justify-between items-center'>
-      {isAboveLgScreen && (
-        <div className='flex h-full items-center justify-center w-full is-[594px]'>
-          <img
-            src='/images/illustrations/characters/8.png'
-            alt='multi-steps-character'
-            className={classnames('mis-[85px] bs-auto max-ps-[268px] max-is-full', {
-              'scale-[-1]': direction === 'rtl'
-            })}
-          />
-        </div>
-      )}
+      <div className='flex h-full items-center justify-center w-full is-[594px] max-md:hidden'>
+        <img
+          src='/images/illustrations/characters/8.png'
+          alt='multi-steps-character'
+          className={classnames('mis-[85px] bs-auto max-bs-[628px] max-is-full', {
+            'scale-x-[-1]': direction === 'rtl'
+          })}
+        />
+      </div>
 
       <div className='flex justify-center items-center h-full w-full bg-backgroundPaper'>
         <StepperWrapper className='p-8 is-[700px]'>

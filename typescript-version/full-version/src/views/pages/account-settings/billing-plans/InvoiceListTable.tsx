@@ -54,7 +54,6 @@ import { getInitials } from '@/utils/get-initials'
 
 // Style Imports
 import tableStyles from '@core/styles/table.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 declare module '@tanstack/table-core' {
   interface FilterFns {
@@ -247,20 +246,20 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                 {
                   text: 'Download',
                   icon: 'ri-download-fill text-[22px]',
-                  menuItemProps: { className: classnames('flex items-center gap-2', commonStyles.textSecondary) }
+                  menuItemProps: { className: 'flex items-center gap-2 text-textSecondary' }
                 },
                 {
                   text: 'Edit',
                   icon: 'ri-pencil-line text-[22px]',
                   href: `/apps/invoice/edit/${row.original.id}`,
                   linkProps: {
-                    className: classnames('flex items-center w-full plb-2 pli-4 gap-2', commonStyles.textSecondary)
+                    className: 'flex items-center w-full plb-2 pli-4 gap-2 text-textSecondary'
                   }
                 },
                 {
                   text: 'Duplicate',
                   icon: 'ri-file-copy-line text-[22px]',
-                  menuItemProps: { className: classnames('flex items-center gap-2', commonStyles.textSecondary) }
+                  menuItemProps: { className: 'flex items-center gap-2 text-textSecondary' }
                 }
               ]}
             />

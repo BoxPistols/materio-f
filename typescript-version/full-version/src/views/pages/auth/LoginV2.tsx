@@ -15,12 +15,7 @@ import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Divider from '@mui/material/Divider'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import { useColorScheme } from '@mui/material/styles'
-import type { Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -32,18 +27,10 @@ import { useSettings } from '@core/hooks/useSettings'
 import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
-// Style Imports
-import styles from './v2.module.css'
-import commonStyles from '@/styles/common.module.css'
-
 const LoginV2 = () => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
 
-  // Hooks
-  const isAboveMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
-  const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
   const { settings } = useSettings()
   const { mode, systemMode } = useColorScheme()
 
@@ -65,9 +52,13 @@ const LoginV2 = () => {
 
   return (
     <div className='flex h-full justify-center'>
-      <div className={'flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden'}>
+      <div className='flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden'>
         <div className='plb-12 pis-12'>
-          <img src={characterIllustration} alt='' className='max-bs-[500px] max-is-full bs-auto' />
+          <img
+            src={characterIllustration}
+            alt='character-illustration'
+            className='max-bs-[500px] max-is-full bs-auto'
+          />
         </div>
         <Illustrations
           image1={{ src: '/images/illustrations/objects/tree-2.png' }}
@@ -75,13 +66,7 @@ const LoginV2 = () => {
           maskImg={{ src: authBackground }}
         />
       </div>
-      <div
-        className={classnames('flex justify-center items-center h-full', commonStyles.paperColor, {
-          '!min-is-full p-6': isBelowMdScreen,
-          [styles.rightWrapper]: isAboveMdScreen,
-          'p-12': isAboveMdScreen
-        })}
-      >
+      <div className='flex justify-center items-center h-full bg-backgroundPaper !min-is-full p-6 md:!min-is-[unset] md:p-12 md:is-[480px]'>
         <div className='absolute block-start-[33px] !inline-start-6 sm:inline-start-[38px]'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className='text-primary' height={28} width={35} />
@@ -90,12 +75,7 @@ const LoginV2 = () => {
             </Typography>
           </div>
         </div>
-        <div
-          className={classnames('flex flex-col gap-5', {
-            [styles.rightWrapperBelowMd]: isBelowMdScreen && !isBelowSmScreen,
-            'is-[100%]': isAboveMdScreen || isBelowSmScreen
-          })}
-        >
+        <div className='flex flex-col gap-5 is-full sm:is-auto md:is-full sm:max-is-[400px] md:max-is-[unset]'>
           <div>
             <Typography variant='h4'>{`Welcome to ${themeConfig.templateName}!👋🏻`}</Typography>
             <Typography className='mbs-1'>Please sign-in to your account and start the adventure</Typography>
@@ -134,16 +114,16 @@ const LoginV2 = () => {
             <Divider className='gap-3'>or</Divider>
             <div className='flex justify-center items-center gap-2'>
               <IconButton>
-                <i className='ri-facebook-fill text-[#497ce2]' />
+                <i className='ri-facebook-fill text-facebook' />
               </IconButton>
               <IconButton>
-                <i className='ri-twitter-fill text-[#1da1f2]' />
+                <i className='ri-twitter-fill text-twitter' />
               </IconButton>
               <IconButton>
-                <i className='ri-github-fill text-[#272727]' />
+                <i className='ri-github-fill text-github' />
               </IconButton>
               <IconButton>
-                <i className='ri-google-line text-[#db4437]' />
+                <i className='ri-google-line text-googlePlus' />
               </IconButton>
             </div>
           </form>

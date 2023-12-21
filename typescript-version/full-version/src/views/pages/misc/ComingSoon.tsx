@@ -4,25 +4,13 @@
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { useColorScheme, type Theme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
+import { useColorScheme } from '@mui/material/styles'
 
 // Component Imports
 import Form from '@components/Form'
 import Illustrations from '@components/Illustrations'
 
-// Style Imports
-import styles from '@views/misc.module.css'
-
 const ComingSoon = () => {
-  // Hooks
-  const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
-  const isBelowLgScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-
   const { mode, systemMode } = useColorScheme()
 
   const miscBackground =
@@ -32,7 +20,7 @@ const ComingSoon = () => {
     <>
       <div className='flex flex-col items-center justify-center min-bs-[100dvh] relative p-6 overflow-x-hidden'>
         <div className='flex items-center flex-col text-center gap-10'>
-          <div className={classnames({ [styles.viewPortWidth]: isBelowSmScreen })}>
+          <div className='is-[90vw] sm:is-[unset]'>
             <div className='flex flex-col gap-2'>
               <Typography variant='h4'>We are launching soon 🚀</Typography>
               <Typography className='mbe-10'>
@@ -51,10 +39,7 @@ const ComingSoon = () => {
           <img
             alt='error-illustration'
             src='/images/illustrations/characters/11.png'
-            className={classnames('object-cover', styles.illustrationHeight, {
-              [styles.illustrationHeightBelowLg]: isBelowLgScreen,
-              [styles.illustrationHeightBelowMd]: isBelowMdScreen
-            })}
+            className='object-cover bs-[400px] md:bs-[450px] lg:bs-[500px]'
           />
         </div>
         <Illustrations maskImg={{ src: miscBackground }} />

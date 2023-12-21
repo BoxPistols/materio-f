@@ -19,9 +19,6 @@ import type { ProfileTeamsTechType, ProfileConnectionsType } from '@/types/pages
 import CustomAvatar from '@core/components/mui/Avatar'
 import OptionMenu from '@core/components/option-menu'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 type Props = {
   teamsTech?: ProfileTeamsTechType[]
   connections?: ProfileConnectionsType[]
@@ -39,7 +36,7 @@ const ConnectionsTeams = (props: Props) => {
             title='Connections'
             action={
               <OptionMenu
-                iconButtonProps={{ size: 'small', className: commonStyles.textDisabled }}
+                iconButtonProps={{ size: 'small', className: '!text-textDisabled' }}
                 options={['Share Connections', 'Suggest Edits', { divider: true }, 'Report Bug']}
               />
             }

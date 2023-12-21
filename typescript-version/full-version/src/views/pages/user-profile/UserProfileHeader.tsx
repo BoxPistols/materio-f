@@ -6,8 +6,6 @@ import CardMedia from '@mui/material/CardMedia'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
-import { useMediaQuery } from '@mui/material'
-import type { Theme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -16,33 +14,17 @@ import classnames from 'classnames'
 import type { ProfileHeaderType } from '@/types/pages/profileTypes'
 
 const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
-  // Hooks
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-  const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
-
   return (
     <Card>
       <CardMedia image={data?.coverImg} className='bs-[250px]' />
-      <CardContent
-        className={classnames('flex gap-6 items-end pt-0 justify-start', {
-          'justify-center flex-col items-center': isBelowMdScreen
-        })}
-      >
-        <div className='flex, rounded-bs-md mbs-[-45px] border-5 border-backgroundPaper'>
+      <CardContent className='flex gap-6 justify-center flex-col items-center md:items-end md:flex-row !pt-0 md:justify-start'>
+        <div className='flex, rounded-bs-md mbs-[-45px] border-[5px] border-backgroundPaper bg-backgroundPaper'>
           <img height={120} width={120} src={data?.profileImg} className='rounded' alt='Profile Background' />
         </div>
-        <div
-          className={classnames('flex w-full flex-wrap justify-between items-end gap-5', {
-            'justify-center flex-col items-center': isBelowSmScreen
-          })}
-        >
-          <div className={classnames('flex flex-col items-start gap-2', { 'items-center': isBelowSmScreen })}>
+        <div className='flex w-full flex-wrap justify-center flex-col items-center sm:flex-row sm:justify-between sm:items-end gap-5'>
+          <div className='flex flex-col items-center sm:items-start gap-2'>
             <Typography variant='h4'>{data?.fullName}</Typography>
-            <div
-              className={classnames('flex flex-wrap gap-6', {
-                'justify-center': isBelowSmScreen
-              })}
-            >
+            <div className='flex flex-wrap gap-6 justify-center sm:justify-normal'>
               <div className='flex items-center gap-2'>
                 {data?.designationIcon && <i className={classnames('text-textSecondary', data?.designationIcon)} />}
                 <Typography className='font-medium'>{data?.designation}</Typography>

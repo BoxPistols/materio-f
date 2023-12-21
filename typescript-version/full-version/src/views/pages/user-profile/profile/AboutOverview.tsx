@@ -7,9 +7,6 @@ import CardContent from '@mui/material/CardContent'
 // Third-party Imports
 import classnames from 'classnames'
 
-// Style Imports
-import commonStyles from '@/styles/common.module.css'
-
 // Type Imports
 import type { ProfileTeamsType, ProfileCommonType, ProfileTabType } from '@/types/pages/profileTypes'
 
@@ -19,7 +16,7 @@ const renderList = (list: ProfileCommonType[]) => {
     list.map((item, index) => {
       return (
         <div key={index} className='flex items-center gap-2'>
-          <i className={classnames(item.icon, commonStyles.textSecondary)} />
+          <i className={classnames(item.icon, 'text-textSecondary')} />
           <div className='flex items-center flex-wrap gap-2'>
             <Typography className='font-medium'>
               {`${item.property.charAt(0).toUpperCase() + item.property.slice(1)}:`}

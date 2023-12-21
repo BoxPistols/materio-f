@@ -16,13 +16,6 @@ import { styled } from '@mui/material/styles'
 import MuiTimeline from '@mui/lab/Timeline'
 import type { TimelineProps } from '@mui/lab/Timeline'
 
-// Third-Party Imports
-import classnames from 'classnames'
-
-// Style Imports
-import styles from '../styles.module.css'
-import commonStyles from '@/styles/common.module.css'
-
 const Timeline = styled(MuiTimeline)<TimelineProps>({
   '& .MuiTimelineItem-root': {
     '&:before': {
@@ -36,7 +29,7 @@ const ActivityTimeline = () => {
     <Card>
       <CardHeader
         title='Activity Timeline'
-        avatar={<i className={classnames('ri-bar-chart-2-line', commonStyles.textSecondary)} />}
+        avatar={<i className='ri-bar-chart-2-line text-textSecondary' />}
         titleTypographyProps={{ variant: 'h5' }}
       />
       <CardContent>
@@ -55,15 +48,8 @@ const ActivityTimeline = () => {
               </div>
               <Typography className='mbe-2'>Invoices have been paid to the company.</Typography>
               <div className='flex'>
-                <div
-                  className={classnames(
-                    'flex gap-2.5 items-center pli-2.5',
-                    styles.pdfBackground,
-                    commonStyles.actionHoverColor,
-                    commonStyles.borderRadius
-                  )}
-                >
-                  <img alt='invoice.pdf' src='/images/icons/pdf-document.png' className='h-5' />
+                <div className='flex gap-2.5 items-center pli-2.5 bg-actionHover plb-[0.3125rem] rounded'>
+                  <img alt='invoice.pdf' src='/images/icons/pdf-document.png' className='bs-5' />
                   <Typography className='font-medium'>invoice.pdf</Typography>
                 </div>
               </div>

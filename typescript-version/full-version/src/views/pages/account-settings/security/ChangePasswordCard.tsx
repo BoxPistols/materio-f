@@ -14,12 +14,6 @@ import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
-// Third-party Imports
-import classnames from 'classnames'
-
-// Styles Imports
-import commonStyles from '@/styles/common.module.css'
-
 const ChangePasswordCard = () => {
   // States
   const [isCurrentPasswordShown, setIsCurrentPasswordShown] = useState(false)
@@ -103,15 +97,15 @@ const ChangePasswordCard = () => {
                 Password Requirements:
               </Typography>
               <div className='flex flex-col gap-4'>
-                <div className={classnames('flex items-center gap-2.5', commonStyles.textSecondary)}>
+                <div className='flex items-center gap-2.5 text-textSecondary'>
                   <i className='ri-checkbox-blank-circle-fill text-[8px]' />
                   Minimum 8 characters long - the more, the better
                 </div>
-                <div className={classnames('flex items-center gap-2.5', commonStyles.textSecondary)}>
+                <div className='flex items-center gap-2.5 text-textSecondary'>
                   <i className='ri-checkbox-blank-circle-fill text-[8px]' />
                   At least one lowercase & one uppercase character
                 </div>
-                <div className={classnames('flex items-center gap-2.5', commonStyles.textSecondary)}>
+                <div className='flex items-center gap-2.5 text-textSecondary'>
                   <i className='ri-checkbox-blank-circle-fill text-[8px]' />
                   At least one number, symbol, or whitespace character
                 </div>

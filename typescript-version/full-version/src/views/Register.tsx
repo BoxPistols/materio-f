@@ -15,12 +15,7 @@ import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Divider from '@mui/material/Divider'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import type { Theme } from '@mui/material/styles'
 import { useColorScheme } from '@mui/material/styles'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -32,18 +27,9 @@ import { useSettings } from '@core/hooks/useSettings'
 import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
-// Style Imports
-import styles from '@views/pages/auth/v2.module.css'
-import commonStyles from '@/styles/common.module.css'
-
 const RegisterV2 = () => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
-
-  // Hooks
-  const isAboveMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
-  const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
-  const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
   const { settings } = useSettings()
   const { mode, systemMode } = useColorScheme()
 
@@ -65,45 +51,34 @@ const RegisterV2 = () => {
 
   return (
     <div className='flex h-full justify-center'>
-      {isAboveMdScreen && (
-        <div className={'flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6'}>
-          <div className='plb-12 pis-12'>
-            <img src={characterIllustration} alt='' className={styles.illustrationSize} />
-          </div>
-          <Illustrations
-            image1={{ src: '/images/illustrations/objects/tree-3.png' }}
-            image2={null}
-            maskImg={{ src: authBackground }}
+      <div className='flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden'>
+        <div className='plb-12 pis-12'>
+          <img
+            src={characterIllustration}
+            alt='character-illustration'
+            className='max-bs-[500px] max-is-full bs-auto'
           />
         </div>
-      )}
-      <div
-        className={classnames('flex justify-center items-center h-full', commonStyles.paperColor, {
-          '!min-is-full p-6': isBelowMdScreen,
-          [styles.rightWrapper]: isAboveMdScreen,
-          'p-12': isAboveMdScreen
-        })}
-      >
-        <div className={classnames('absolute', styles.templateName, { '!inline-start-6': isBelowSmScreen })}>
+        <Illustrations
+          image1={{ src: '/images/illustrations/objects/tree-3.png' }}
+          image2={null}
+          maskImg={{ src: authBackground }}
+        />
+      </div>
+      <div className='flex justify-center items-center h-full bg-backgroundPaper !min-is-full p-6 md:!min-is-[unset] md:p-12 md:is-[480px]'>
+        <div className='absolute block-start-[33px] !inline-start-6 sm:inline-start-[38px]'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
-            <Logo className={commonStyles.primaryColor} height={28} width={35} />
+            <Logo className='text-primary' height={28} width={35} />
             <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>
           </div>
         </div>
 
-        <div
-          className={classnames('flex flex-col gap-5', {
-            [styles.rightWrapperBelowMd]: isBelowMdScreen && !isBelowSmScreen,
-            'is-[100%]': isAboveMdScreen || isBelowSmScreen
-          })}
-        >
+        <div className='flex flex-col gap-5 is-full sm:is-auto md:is-full sm:max-is-[400px] md:max-is-[unset]'>
           <div>
-            <Typography variant='h4' className='mbe-1'>
-              Adventure starts here 🚀
-            </Typography>
-            <Typography>Make your app management easy and fun!</Typography>
+            <Typography variant='h4'>Adventure starts here 🚀</Typography>
+            <Typography className='mbe-1'>Make your app management easy and fun!</Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
             <TextField autoFocus fullWidth label='Username' />
@@ -128,7 +103,7 @@ const RegisterV2 = () => {
                 label={
                   <>
                     <span>I agree to </span>
-                    <Link className={commonStyles.primaryColor} href='/' onClick={e => e.preventDefault()}>
+                    <Link className='text-primary' href='/' onClick={e => e.preventDefault()}>
                       privacy policy & terms
                     </Link>
                   </>
@@ -147,16 +122,16 @@ const RegisterV2 = () => {
             <Divider className='gap-3'>or</Divider>
             <div className='flex justify-center items-center gap-2'>
               <IconButton>
-                <i className={classnames('ri-facebook-fill', commonStyles.facebookColor)} />
+                <i className='ri-facebook-fill text-facebook' />
               </IconButton>
               <IconButton>
-                <i className={classnames('ri-twitter-fill', commonStyles.twitterColor)} />
+                <i className='ri-twitter-fill text-twitter' />
               </IconButton>
               <IconButton>
-                <i className={classnames('ri-github-fill', commonStyles.githubColor)} />
+                <i className='ri-github-fill text-github' />
               </IconButton>
               <IconButton>
-                <i className={classnames('ri-google-line', commonStyles.googleColor)} />
+                <i className='ri-google-line text-googlePlus' />
               </IconButton>
             </div>
           </form>
