@@ -14,10 +14,9 @@ import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import Button from '@mui/material/Button'
-import { useColorScheme } from '@mui/material/styles'
 
 // Type Imports
-import type { Direction } from '@core/types'
+import type { Direction, Mode } from '@core/types'
 
 // Component Imports
 import Illustrations from '@components/Illustrations'
@@ -28,7 +27,10 @@ import themeConfig from '@configs/themeConfig'
 // Component Imports
 import Logo from '@core/svg/Logo'
 
-const ResetPasswordV1 = ({ direction }: { direction: Direction }) => {
+// Hook Imports
+import { useImageVariant } from '@core/hooks/useImageVariant'
+
+const ResetPasswordV1 = ({ direction, mode }: { direction: Direction; mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState(false)
@@ -37,12 +39,10 @@ const ResetPasswordV1 = ({ direction }: { direction: Direction }) => {
 
   const handleClickShowConfirmPassword = () => setIsConfirmPasswordShown(show => !show)
 
-  const { mode, systemMode } = useColorScheme()
+  const darkImg = '/images/pages/auth-v1-mask-dark.png'
+  const lightImg = '/images/pages/auth-v1-mask-light.png'
 
-  const authBackground =
-    mode === 'dark' || systemMode === 'dark'
-      ? '/images/pages/auth-v1-mask-dark.png'
-      : '/images/pages/auth-v1-mask-light.png'
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   return (
     <div className='flex flex-col justify-center items-center min-bs-[100dvh] relative p-6'>

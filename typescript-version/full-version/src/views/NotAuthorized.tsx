@@ -6,16 +6,21 @@ import Link from 'next/link'
 // MUI Imports
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
-import { useColorScheme } from '@mui/material/styles'
+
+// Type Imports
+import type { Mode } from '@core/types'
 
 // Component Imports
 import Illustrations from '@components/Illustrations'
 
-const NotAuthorized = () => {
-  const { mode, systemMode } = useColorScheme()
+// Hook Imports
+import { useImageVariant } from '@core/hooks/useImageVariant'
 
-  const miscBackground =
-    mode === 'dark' || systemMode === 'dark' ? '/images/pages/misc-mask-dark.png' : '/images/pages/misc-mask-light.png'
+const NotAuthorized = ({ mode }: { mode: Mode }) => {
+  const darkImg = '/images/pages/misc-mask-dark.png'
+  const lightImg = '/images/pages/misc-mask-light.png'
+
+  const miscBackground = useImageVariant(mode, lightImg, darkImg)
 
   return (
     <div className='flex items-center justify-center min-bs-[100dvh] relative p-6 overflow-x-hidden'>

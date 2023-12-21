@@ -5,7 +5,13 @@ import type { ReactNode } from 'react'
 
 // MUI Components
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { styled, useTheme, useColorScheme } from '@mui/material/styles'
+import { styled, useTheme } from '@mui/material/styles'
+
+// Type Imports
+import type { Mode } from '@core/types'
+
+// Hook Imports
+import { useImageVariant } from '@core/hooks/useImageVariant'
 
 type ImageObj = {
   src: string
@@ -19,6 +25,7 @@ type IllustrationsProp = {
   image1?: ReactNode | ImageObj
   image2?: ReactNode | ImageObj
   maskImg?: ReactNode | ImageObj
+  mode?: Mode
 }
 
 // Styled Components
@@ -31,14 +38,17 @@ const MaskImg = styled('img')({
 
 const Illustrations = (props: IllustrationsProp) => {
   // Props
-  const { image1, image2, maskImg } = props
+  const { image1, image2, maskImg, mode } = props
 
   // Hook
   const theme = useTheme()
-  const { mode, systemMode } = useColorScheme()
 
   // Vars
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
+  const darkImg = '/images/pages/misc-mask-dark.png'
+  const lightImg = '/images/pages/misc-mask-light.png'
+
+  const maskBackground = useImageVariant(mode as Mode, lightImg, darkImg)
 
   function isImageObj(obj: any): obj is ImageObj {
     return obj && typeof obj === 'object' && 'src' in obj
@@ -61,12 +71,7 @@ const Illustrations = (props: IllustrationsProp) => {
         {typeof maskImg === 'undefined' || isImageObj(maskImg) ? (
           <MaskImg
             alt={maskImg?.alt || 'mask'}
-            src={
-              maskImg?.src ||
-              (mode === 'dark' || systemMode === 'dark'
-                ? '/images/pages/misc-mask-dark.png'
-                : '/images/pages/misc-mask-light.png')
-            }
+            src={maskImg?.src || maskBackground}
             className={maskImg?.className}
             width={maskImg?.width}
             height={maskImg?.height}

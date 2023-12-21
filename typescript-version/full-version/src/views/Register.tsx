@@ -15,39 +15,43 @@ import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Divider from '@mui/material/Divider'
-import { useColorScheme } from '@mui/material/styles'
+
+// Type Imports
+import type { Mode } from '@core/types'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
-import { useSettings } from '@core/hooks/useSettings'
+import { useImageVariant } from '@core/hooks/useImageVariant'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
-const RegisterV2 = () => {
+const RegisterV2 = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
-  const { settings } = useSettings()
-  const { mode, systemMode } = useColorScheme()
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
-  const authBackground =
-    mode === 'dark' || systemMode === 'dark'
-      ? '/images/pages/auth-v2-mask-dark.png'
-      : '/images/pages/auth-v2-mask-light.png'
+  const darkImg = '/images/pages/auth-v2-mask-dark.png'
+  const lightImg = '/images/pages/auth-v2-mask-light.png'
 
-  const characterIllustration =
-    settings.skin === 'bordered'
-      ? mode === 'dark' || systemMode === 'dark'
-        ? '/images/illustrations/auth/v2-register-dark-border.png'
-        : '/images/illustrations/auth/v2-register-light-border.png'
-      : mode === 'dark' || systemMode === 'dark'
-        ? '/images/illustrations/auth/v2-register-dark.png'
-        : '/images/illustrations/auth/v2-register-light.png'
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
+
+  const darkIllustration = '/images/illustrations/auth/v2-register-dark.png'
+  const lightIllustration = '/images/illustrations/auth/v2-register-light.png'
+  const borderedDarkIllustration = '/images/illustrations/auth/v2-register-dark-border.png'
+  const borderedLightIllustration = '/images/illustrations/auth/v2-register-light-border.png'
+
+  const characterIllustration = useImageVariant(
+    mode,
+    lightIllustration,
+    darkIllustration,
+    borderedLightIllustration,
+    borderedDarkIllustration
+  )
 
   return (
     <div className='flex h-full justify-center'>

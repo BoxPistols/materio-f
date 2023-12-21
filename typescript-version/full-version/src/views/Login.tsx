@@ -17,7 +17,8 @@ import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Divider from '@mui/material/Divider'
 import Alert from '@mui/material/Alert'
-import { useColorScheme } from '@mui/material/styles'
+
+// Third-party Imports
 import { signIn } from 'next-auth/react'
 import { Controller, useForm } from 'react-hook-form'
 import { valibotResolver } from '@hookform/resolvers/valibot'
@@ -25,11 +26,14 @@ import { object, minLength, string, email } from 'valibot'
 import type { SubmitHandler } from 'react-hook-form'
 import type { Input } from 'valibot'
 
+// Type Imports
+import type { Mode } from '@core/types'
+
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
-import { useSettings } from '@core/hooks/useSettings'
+import { useImageVariant } from '@core/hooks/useImageVariant'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
@@ -49,13 +53,11 @@ const schema = object({
 
 type FormData = Input<typeof schema>
 
-const LoginV2 = () => {
+const LoginV2 = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [errorState, setErrorState] = useState<ErrorType | null>(null)
 
-  const { settings } = useSettings()
-  const { mode, systemMode } = useColorScheme()
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -93,19 +95,23 @@ const LoginV2 = () => {
     }
   })
 
-  const authBackground =
-    mode === 'dark' || systemMode === 'dark'
-      ? '/images/pages/auth-v2-mask-dark.png'
-      : '/images/pages/auth-v2-mask-light.png'
+  const darkImg = '/images/pages/auth-v2-mask-dark.png'
+  const lightImg = '/images/pages/auth-v2-mask-light.png'
 
-  const characterIllustration =
-    settings.skin === 'bordered'
-      ? mode === 'dark' || systemMode === 'dark'
-        ? '/images/illustrations/auth/v2-login-dark-border.png'
-        : '/images/illustrations/auth/v2-login-light-border.png'
-      : mode === 'dark' || systemMode === 'dark'
-        ? '/images/illustrations/auth/v2-login-dark.png'
-        : '/images/illustrations/auth/v2-login-light.png'
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
+
+  const darkIllustration = '/images/illustrations/auth/v2-login-dark.png'
+  const lightIllustration = '/images/illustrations/auth/v2-login-light.png'
+  const borderedDarkIllustration = '/images/illustrations/auth/v2-login-dark-border.png'
+  const borderedLightIllustration = '/images/illustrations/auth/v2-login-light-border.png'
+
+  const characterIllustration = useImageVariant(
+    mode,
+    lightIllustration,
+    darkIllustration,
+    borderedLightIllustration,
+    borderedDarkIllustration
+  )
 
   return (
     <div className='flex h-full justify-center'>

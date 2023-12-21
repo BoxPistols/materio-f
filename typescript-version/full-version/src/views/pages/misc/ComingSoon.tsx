@@ -4,17 +4,22 @@
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
-import { useColorScheme } from '@mui/material/styles'
+
+// Type Imports
+import type { Mode } from '@core/types'
 
 // Component Imports
 import Form from '@components/Form'
 import Illustrations from '@components/Illustrations'
 
-const ComingSoon = () => {
-  const { mode, systemMode } = useColorScheme()
+// Hook Imports
+import { useImageVariant } from '@core/hooks/useImageVariant'
 
-  const miscBackground =
-    mode === 'dark' || systemMode === 'dark' ? '/images/pages/misc-mask-dark.png' : '/images/pages/misc-mask-light.png'
+const ComingSoon = ({ mode }: { mode: Mode }) => {
+  const darkImg = '/images/pages/misc-mask-dark.png'
+  const lightImg = '/images/pages/misc-mask-light.png'
+
+  const miscBackground = useImageVariant(mode, lightImg, darkImg)
 
   return (
     <>

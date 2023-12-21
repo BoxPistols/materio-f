@@ -6,7 +6,9 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-import { useColorScheme } from '@mui/material/styles'
+
+// Type Imports
+import type { Mode } from '@core/types'
 
 // Component Imports
 import Form from '@components/Form'
@@ -16,16 +18,17 @@ import Illustrations from '@components/Illustrations'
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
+// Hook Imports
+import { useImageVariant } from '@core/hooks/useImageVariant'
+
 // Component Imports
 import Logo from '@core/svg/Logo'
 
-const TwoStepsV1 = () => {
-  const { mode, systemMode } = useColorScheme()
+const TwoStepsV1 = ({ mode }: { mode: Mode }) => {
+  const darkImg = '/images/pages/auth-v1-mask-dark.png'
+  const lightImg = '/images/pages/auth-v1-mask-light.png'
 
-  const authBackground =
-    mode === 'dark' || systemMode === 'dark'
-      ? '/images/pages/auth-v1-mask-dark.png'
-      : '/images/pages/auth-v1-mask-light.png'
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   return (
     <div className='flex flex-col justify-center items-center min-bs-[100dvh] relative p-6'>

@@ -17,7 +17,9 @@ import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Divider from '@mui/material/Divider'
-import { useColorScheme } from '@mui/material/styles'
+
+// Type Imports
+import type { Mode } from '@core/types'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -26,18 +28,19 @@ import themeConfig from '@configs/themeConfig'
 import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
-const LoginV1 = () => {
+// Hook Imports
+import { useImageVariant } from '@core/hooks/useImageVariant'
+
+const LoginV1 = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
-  const { mode, systemMode } = useColorScheme()
+  const darkImg = '/images/pages/auth-v1-mask-dark.png'
+  const lightImg = '/images/pages/auth-v1-mask-light.png'
 
-  const authBackground =
-    mode === 'dark' || systemMode === 'dark'
-      ? '/images/pages/auth-v1-mask-dark.png'
-      : '/images/pages/auth-v1-mask-light.png'
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   return (
     <div className='flex flex-col justify-center items-center min-bs-[100dvh] relative p-6'>

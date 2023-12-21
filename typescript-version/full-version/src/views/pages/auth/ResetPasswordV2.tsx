@@ -12,45 +12,46 @@ import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import Button from '@mui/material/Button'
-import { useColorScheme } from '@mui/material/styles'
 
 // Type Imports
-import type { Direction } from '@core/types'
+import type { Direction, Mode } from '@core/types'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
-import { useSettings } from '@core/hooks/useSettings'
+import { useImageVariant } from '@core/hooks/useImageVariant'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
-const ResetPasswordV2 = ({ direction }: { direction: Direction }) => {
+const ResetPasswordV2 = ({ direction, mode }: { direction: Direction; mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState(false)
-  const { settings } = useSettings()
-  const { mode, systemMode } = useColorScheme()
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   const handleClickShowConfirmPassword = () => setIsConfirmPasswordShown(show => !show)
 
-  const authBackground =
-    mode === 'dark' || systemMode === 'dark'
-      ? '/images/pages/auth-v2-mask-dark.png'
-      : '/images/pages/auth-v2-mask-light.png'
+  const darkImg = '/images/pages/auth-v2-mask-dark.png'
+  const lightImg = '/images/pages/auth-v2-mask-light.png'
 
-  const characterIllustration =
-    settings.skin === 'bordered'
-      ? mode === 'dark' || systemMode === 'dark'
-        ? '/images/illustrations/auth/v2-reset-password-dark-border.png'
-        : '/images/illustrations/auth/v2-reset-password-light-border.png'
-      : mode === 'dark' || systemMode === 'dark'
-        ? '/images/illustrations/auth/v2-reset-password-dark.png'
-        : '/images/illustrations/auth/v2-reset-password-light.png'
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
+
+  const darkIllustration = '/images/illustrations/auth/v2-reset-password-dark.png'
+  const lightIllustration = '/images/illustrations/auth/v2-reset-password-light.png'
+  const borderedDarkIllustration = '/images/illustrations/auth/v2-reset-password-dark-border.png'
+  const borderedLightIllustration = '/images/illustrations/auth/v2-reset-password-light-border.png'
+
+  const characterIllustration = useImageVariant(
+    mode,
+    lightIllustration,
+    darkIllustration,
+    borderedLightIllustration,
+    borderedDarkIllustration
+  )
 
   return (
     <div className='flex h-full justify-center'>

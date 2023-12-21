@@ -9,13 +9,15 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
-import { useColorScheme } from '@mui/material/styles'
 
 // Type Imports
-import type { Direction } from '@core/types'
+import type { Direction, Mode } from '@core/types'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
+
+// Hook Imports
+import { useImageVariant } from '@core/hooks/useImageVariant'
 
 // Component Imports
 import Form from '@components/Form'
@@ -24,13 +26,10 @@ import Illustrations from '@components/Illustrations'
 // Component Imports
 import Logo from '@core/svg/Logo'
 
-const ForgotPasswordV1 = ({ direction }: { direction: Direction }) => {
-  const { mode, systemMode } = useColorScheme()
-
-  const authBackground =
-    mode === 'dark' || systemMode === 'dark'
-      ? '/images/pages/auth-v1-mask-dark.png'
-      : '/images/pages/auth-v1-mask-light.png'
+const ForgotPasswordV1 = ({ direction, mode }: { direction: Direction; mode: Mode }) => {
+  const darkImg = '/images/pages/auth-v1-mask-dark.png'
+  const lightImg = '/images/pages/auth-v1-mask-light.png'
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   return (
     <div className='flex flex-col justify-center items-center min-bs-[100dvh] relative p-6'>
