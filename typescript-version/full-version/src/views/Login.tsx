@@ -237,22 +237,17 @@ const LoginV2 = () => {
                 Create an account
               </Typography>
             </div>
-            <Divider className='gap-3'>or</Divider>
-            <div className='flex justify-center items-center gap-2'>
-              <IconButton>
-                <i className={classnames('ri-facebook-fill', commonStyles.facebookColor)} />
-              </IconButton>
-              <IconButton>
-                <i className={classnames('ri-twitter-fill', commonStyles.twitterColor)} />
-              </IconButton>
-              <IconButton>
-                <i className={classnames('ri-github-fill', commonStyles.githubColor)} />
-              </IconButton>
-              <IconButton>
-                <i className={classnames('ri-google-line', commonStyles.googleColor)} />
-              </IconButton>
-            </div>
           </form>
+          <Divider className='gap-3'>or</Divider>
+          <Button
+            color='secondary'
+            className='self-center text-textPrimary'
+            startIcon={<img src='/images/logos/google.png' alt='Google' width={22} />}
+            sx={{ '& .MuiButton-startIcon': { marginInlineEnd: 3 } }}
+            onClick={() => signIn('google')}
+          >
+            Sign in with Google
+          </Button>
         </div>
       </div>
     </div>
