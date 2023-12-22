@@ -18,6 +18,10 @@ const horizontalMenuData = (dictionary: Dictionary, params: Params): HorizontalM
       {
         label: dictionary['navigation'].eCommerce,
         href: '/dashboards/ecommerce'
+      },
+      {
+        label: dictionary['navigation'].CRM,
+        href: '/dashboards/crm'
       }
     ]
   },

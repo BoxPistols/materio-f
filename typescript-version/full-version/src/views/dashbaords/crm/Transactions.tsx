@@ -35,14 +35,8 @@ const data: DataType[] = [
   {
     stats: '1.54k',
     color: 'warning',
-    title: 'Products',
+    title: 'Product',
     icon: 'ri-macbook-line'
-  },
-  {
-    stats: '$88k',
-    color: 'info',
-    title: 'Revenue',
-    icon: 'ri-money-dollar-circle-line'
   }
 ]
 
@@ -61,7 +55,7 @@ const Transactions = () => {
       <CardContent>
         <Grid container spacing={2}>
           {data.map((item, index) => (
-            <Grid item xs={6} md={3} key={index}>
+            <Grid item xs={12} sm={4} key={index}>
               <div className='flex items-center gap-3'>
                 <CustomAvatar variant='rounded' color={item.color}>
                   <i className={item.icon}></i>

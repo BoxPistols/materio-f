@@ -93,7 +93,6 @@ const Connections = () => {
         <Grid item xs={12} md={6}>
           <CardHeader
             title='Connected Accounts'
-            titleTypographyProps={{ variant: 'h5' }}
             subheader='Display content from your connected accounts on your site'
           />
           <CardContent className='flex flex-col gap-4'>
@@ -114,11 +113,7 @@ const Connections = () => {
           </CardContent>
         </Grid>
         <Grid item xs={12} md={6}>
-          <CardHeader
-            title='Social Accounts'
-            titleTypographyProps={{ variant: 'h5' }}
-            subheader='Display content from social accounts on your site'
-          />
+          <CardHeader title='Social Accounts' subheader='Display content from social accounts on your site' />
           <CardContent className='flex flex-col gap-4'>
             {socialAccountsArr.map((item, index) => (
               <div key={index} className='flex items-center justify-between gap-4'>

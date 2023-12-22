@@ -74,13 +74,16 @@ const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps, direc
           onChange={(event, value) => setFurnishingDetails(value as string[])}
           id='select-furnishing-details'
           options={furnishingArray}
+          value={furnishingDetails}
           defaultValue={furnishingDetails}
           getOptionLabel={option => option || ''}
           renderInput={params => <TextField {...params} label='Furnishing Details' />}
           renderTags={(value: string[], getTagProps) =>
-            value.map((option: string, index: number) => (
-              <Chip key={index} size='small' label={option} {...(getTagProps({ index }) as {})} />
-            ))
+            value.map((option: string, index: number) => {
+              const { key, ...otherProps } = getTagProps({ index })
+
+              return <Chip key={key} size='small' label={option} {...otherProps} />
+            })
           }
         />
       </Grid>

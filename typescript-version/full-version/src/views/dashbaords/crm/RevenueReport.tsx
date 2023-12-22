@@ -40,6 +40,7 @@ const RevenueReport = () => {
       parentHeightOffset: 0,
       toolbar: { show: false }
     },
+    tooltip: { enabled: false },
     grid: {
       show: false,
       padding: {
@@ -105,13 +106,9 @@ const RevenueReport = () => {
       {
         breakpoint: theme.breakpoints.values.lg,
         options: {
-          chart: {
-            height: 364
-          },
           plotOptions: {
             bar: {
-              borderRadius: 7,
-              columnWidth: '35%'
+              columnWidth: '65%'
             }
           }
         }
@@ -121,8 +118,8 @@ const RevenueReport = () => {
         options: {
           plotOptions: {
             bar: {
-              borderRadius: 10,
-              columnWidth: '30%'
+              borderRadius: 8,
+              columnWidth: '50%'
             }
           }
         }
@@ -132,7 +129,8 @@ const RevenueReport = () => {
         options: {
           plotOptions: {
             bar: {
-              columnWidth: '35%'
+              borderRadius: 6,
+              columnWidth: '55%'
             }
           }
         }
@@ -142,6 +140,7 @@ const RevenueReport = () => {
         options: {
           plotOptions: {
             bar: {
+              borderRadius: 8,
               columnWidth: '40%'
             }
           }

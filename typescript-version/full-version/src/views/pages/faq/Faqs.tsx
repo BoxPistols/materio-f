@@ -59,7 +59,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
   return filteredData.length > 0 ? (
     <TabContext value={activeTab}>
       <Grid container spacing={6}>
-        <Grid item xs={12} md={4} xl={3} className='flex !flex-col items-center'>
+        <Grid item xs={12} md={4} xl={3} className='flex !flex-col items-center gap-12'>
           <CustomTabList orientation='vertical' onChange={handleChange} className='!w-full' pill='true'>
             {filteredData.map((faq, index) => (
               <Tab
@@ -72,7 +72,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
             ))}
           </CustomTabList>
           <img
-            src='/images/illustrations/characters-with-objects/7.png'
+            src='/images/illustrations/characters-with-objects/9.png'
             className='max-md:hidden w-60'
             alt='john image'
           />

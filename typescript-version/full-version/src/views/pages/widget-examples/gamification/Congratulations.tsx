@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 
 const Congratulations = () => {
   return (
-    <Card className='relative overflow-visible sm:mt-6 md:mt-0'>
+    <Card className='relative overflow-visible self-end sm:mt-6 md:mt-0'>
       <CardContent className='!pbe-0 sm:!pbe-5'>
         <Grid container spacing={6}>
           <Grid item xs={12} sm={6}>

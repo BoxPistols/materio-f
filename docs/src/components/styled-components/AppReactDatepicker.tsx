@@ -5,7 +5,7 @@ import type { ComponentProps } from 'react'
 
 // MUI imports
 import Box from '@mui/material/Box'
-import { styled, useColorScheme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import type { BoxProps } from '@mui/material/Box'
 
 
@@ -259,7 +259,7 @@ const StyledReactDatePicker = styled(Box)<BoxProps>(({ theme }) => {
           borderColor: theme.palette.divider,
           borderRadius: theme.shape.borderRadius,
           backgroundColor: theme.palette.background.paper,
-          boxShadow: mode === 'light' ? theme.shadows[8] : theme.shadows[9]
+          boxShadow: 'var(--mui-customShadows-lg)'
         },
         '& .react-datepicker__month-option, & .react-datepicker__year-option': {
           ...theme.typography.body1,

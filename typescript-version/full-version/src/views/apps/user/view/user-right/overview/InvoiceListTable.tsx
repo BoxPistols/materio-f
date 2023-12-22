@@ -148,7 +148,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
               </Link>
             </IconButton>
             <OptionMenu
-              icon='ri-more-2-line text-[22px]'
+              iconClassName='text-[22px]'
               options={[
                 {
                   text: 'Download',

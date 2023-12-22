@@ -18,6 +18,10 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
       {
         label: dictionary['navigation'].eCommerce,
         href: '/dashboards/ecommerce'
+      },
+      {
+        label: dictionary['navigation'].CRM,
+        href: '/dashboards/crm'
       }
     ]
   },

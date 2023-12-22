@@ -28,6 +28,7 @@ const TotalSales = () => {
       parentHeightOffset: 0,
       toolbar: { show: false }
     },
+    tooltip: { enabled: false },
     fill: {
       type: 'gradient',
       gradient: {
@@ -81,7 +82,7 @@ const TotalSales = () => {
       <CardContent>
         <AppReactApexCharts
           type='line'
-          height={239}
+          height={240}
           width='100%'
           options={options}
           series={[{ name: 'Total Sales', data: [0, 258, 30, 240, 150, 400] }]}

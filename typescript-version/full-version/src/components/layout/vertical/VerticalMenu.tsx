@@ -85,6 +85,7 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
         >
           <MenuItem href={`/${locale}/dashboards/analytics`}>{dictionary['navigation'].analytics}</MenuItem>
           <MenuItem href={`/${locale}/dashboards/ecommerce`}>{dictionary['navigation'].eCommerce}</MenuItem>
+          <MenuItem href={`/${locale}/dashboards/crm`}>{dictionary['navigation'].CRM}</MenuItem>
         </SubMenu>
         <MenuItem icon={<i className='ri-home-smile-line' />} href={`/${locale}/about`}>
           About

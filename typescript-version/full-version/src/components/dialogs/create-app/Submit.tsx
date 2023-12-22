@@ -16,12 +16,12 @@ type Props = {
 const Submit = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: Props) => {
   return (
     <div className='flex flex-col gap-6'>
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center gap-4'>
         <div className='flex flex-col items-center gap-1'>
           <Typography variant='h5'>Submit 🥳</Typography>
           <Typography variant='body2'>Submit to kickstart your project.</Typography>
         </div>
-        <img alt='submit-img' src='/images/illustrations/characters-with-objects/7.png' height={174} />
+        <img alt='submit-img' src='/images/illustrations/characters-with-objects/9.png' height={174} />
       </div>
       <div className='flex items-center justify-between'>
         <Button
