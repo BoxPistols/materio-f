@@ -12,7 +12,7 @@ import type { BoxProps } from '@mui/material/Box'
 import ReactDatePicker from 'react-datepicker'
 
 // Hook Imports
-import { useSettings } from '@/@core/hooks/useSettings'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Styles
 import 'react-datepicker/dist/react-datepicker.css'

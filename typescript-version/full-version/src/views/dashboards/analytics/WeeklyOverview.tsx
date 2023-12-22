@@ -84,22 +84,7 @@ const WeeklyOverview = () => {
         style: { colors: disabled, fontSize: theme.typography.body2.fontSize as string },
         formatter: value => `${value > 999 ? `${(value / 1000).toFixed(0)}` : value}k`
       }
-    },
-    responsive: [
-      {
-        breakpoint: 1300,
-        options: {
-          bar: { columnWidth: '65%' },
-          stroke: { width: 1 }
-        }
-      },
-      {
-        breakpoint: theme.breakpoints.values.lg,
-        options: {
-          bar: { columnWidth: '45%' }
-        }
-      }
-    ]
+    }
   }
 
   return (
@@ -111,7 +96,7 @@ const WeeklyOverview = () => {
       <CardContent sx={{ '& .apexcharts-xcrosshairs.apexcharts-active': { opacity: 0 } }}>
         <AppReactApexCharts
           type='bar'
-          height={201}
+          height={242}
           width='100%'
           series={[{ name: 'Sales', data: [37, 57, 45, 75, 57, 40, 65] }]}
           options={options}

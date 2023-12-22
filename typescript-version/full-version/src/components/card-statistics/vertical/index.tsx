@@ -15,7 +15,7 @@ const CardStatVertical = (props: CardStatsVerticalProps) => {
     props
 
   return (
-    <Card>
+    <Card className='bs-full'>
       <CardContent>
         <div className='flex justify-between is-full mbe-5'>
           <CustomAvatar color={avatarColor} skin={avatarSkin} size={avatarSize}>
@@ -34,7 +34,7 @@ const CardStatVertical = (props: CardStatsVerticalProps) => {
           <Typography color='text.primary' className='font-medium'>
             {title}
           </Typography>
-          <div className='flex gap-2 items-center'>
+          <div className='flex gap-x-2 gap-y-0.5 items-center flex-wrap'>
             <Typography variant='h4'>{stats}</Typography>
             <Typography color={trend === 'negative' ? 'error.main' : 'success.main'}>
               {`${trend === 'negative' ? '-' : '+'}${trendNumber}`}

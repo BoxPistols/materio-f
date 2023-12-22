@@ -34,7 +34,7 @@ import type { RankingInfo } from '@tanstack/match-sorter-utils'
 import type { ThemeColor } from '@core/types'
 
 // Component Imports
-import CustomAvatar from '@/@core/components/mui/Avatar'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 // Style Imports
 import tableStyles from '@core/styles/table.module.css'

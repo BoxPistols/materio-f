@@ -6,22 +6,24 @@ import CardContent from '@mui/material/CardContent'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
-const WelcomeBack = () => {
+const Congratulations = () => {
   return (
     <Card className='relative overflow-visible sm:mt-6 md:mt-0'>
       <CardContent className='!pbe-0 sm:!pbe-5'>
         <Grid container spacing={6}>
           <Grid item xs={12} sm={6}>
             <Typography variant='h4' className='mbe-9'>
-              Welcome back <span className='font-bold'>John!</span> 🥳
+              Congratulations <span className='font-bold'>John!</span> 🎉
             </Typography>
-            <Typography>You have 4 tasks to finish today, You already completed 68% 😍 tasks. Good job!</Typography>
+            <Typography>
+              You have done 72% 😎 more sales today. Check your new raising badge in your profile.
+            </Typography>
           </Grid>
-          <Grid item xs={12} sm={6} className='flex justify-center sm:absolute sm:inline-end-11 sm:bottom-0 sm'>
+          <Grid item xs={12} sm={6} className='flex justify-center sm:absolute sm:inline-end-11 sm:bottom-0'>
             <img
               alt='Congratulations John'
-              src='/images/illustrations/characters-with-objects/9.png'
-              className='bs-auto max-is-full max-bs-[200px]'
+              src='/images/illustrations/characters-with-objects/8.png'
+              className='bs-auto max-is-full max-bs-[189px]'
             />
           </Grid>
         </Grid>
@@ -30,4 +32,4 @@ const WelcomeBack = () => {
   )
 }
 
-export default WelcomeBack
+export default Congratulations

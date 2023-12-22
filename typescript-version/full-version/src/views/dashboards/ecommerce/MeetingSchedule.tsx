@@ -73,7 +73,7 @@ const MeetingSchedule = () => {
         title='Meeting Schedule'
         action={<OptionMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       ></CardHeader>
-      <CardContent className='flex flex-col gap-[1.71rem]'>
+      <CardContent className='flex flex-col gap-3.5 lg:gap-8'>
         {data.map((item, index) => (
           <div key={index} className='flex items-center gap-3'>
             <CustomAvatar src={item.avatarSrc} size={38} />

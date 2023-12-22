@@ -18,7 +18,7 @@ import Avatar from '@mui/material/Avatar'
 import AvatarGroup from '@mui/material/AvatarGroup'
 
 // Components Imports
-import CustomAvatar from '@/@core/components/mui/Avatar'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 // Styled Timeline component
 const Timeline = styled(MuiTimeline)<TimelineProps>({
