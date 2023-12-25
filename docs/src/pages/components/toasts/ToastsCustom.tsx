@@ -6,10 +6,6 @@ import Typography from '@mui/material/Typography'
 
 // Third-party Imports
 import { toast } from 'react-toastify'
-import classnames from 'classnames'
-
-// Styles Imports
-import commonStyles from '@/styles/common.module.css'
 
 const ToastsCustom = () => {
   const handleClick = () => {
@@ -24,7 +20,7 @@ const ToastsCustom = () => {
             </div>
           </div>
           <IconButton onClick={() => toast.dismiss(t.toastProps.toastId)} size='small'>
-            <i className={classnames('ri-close-line text-xl', commonStyles.textPrimary)} />
+            <i className='ri-close-line text-xl text-textPrimary' />
           </IconButton>
         </div>
       ),

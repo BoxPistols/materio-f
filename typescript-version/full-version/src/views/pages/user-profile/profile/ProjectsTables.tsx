@@ -214,7 +214,8 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
   return (
     <Card>
       <CardHeader
-        title='Project List'
+        className='flex-wrap gap-x-4 gap-y-2'
+        title='Projects'
         action={
           <DebouncedInput
             value={globalFilter ?? ''}

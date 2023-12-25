@@ -16,6 +16,9 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
 
+// Styles Imports
+import tableStyles from '@core/styles/table.module.css'
+
 type RoleDialogProps = {
   open: boolean
   setOpen: (open: boolean) => void
@@ -102,81 +105,107 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
             <i className='ri-close-line' />
           </IconButton>
           <TextField label='Role Name' variant='outlined' fullWidth placeholder='Enter Role Name' />
-          <Typography variant='h5'>Role Permissions</Typography>
+          <Typography variant='h5' className='plb-6'>
+            Role Permissions
+          </Typography>
           <div className='flex flex-col overflow-x-auto'>
-            <div className='flex items-center justify-between plb-2.5 gap-6 whitespace-nowrap border-be'>
-              <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]' color='text.primary'>
-                Administrator Access
-              </Typography>
-              <FormControlLabel
-                className='mie-0'
-                control={
-                  <Checkbox
-                    onChange={handleSelectAllCheckbox}
-                    indeterminate={isIndeterminateCheckbox}
-                    checked={selectedCheckbox.length === defaultData.length * 3}
-                  />
-                }
-                label='Select All'
-              />
-            </div>
-            {defaultData.map((item, index) => {
-              const id = (typeof item === 'string' ? item : item.title).toLowerCase().split(' ').join('-')
+            <table className={tableStyles.table}>
+              <tbody>
+                <tr>
+                  <th>
+                    <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]' color='text.primary'>
+                      Administrator Access
+                    </Typography>
+                  </th>
+                  <th className='!text-end'>
+                    <FormControlLabel
+                      className='mie-0 capitalize'
+                      control={
+                        <Checkbox
+                          onChange={handleSelectAllCheckbox}
+                          indeterminate={isIndeterminateCheckbox}
+                          checked={selectedCheckbox.length === defaultData.length * 3}
+                        />
+                      }
+                      label='Select All'
+                    />
+                  </th>
+                </tr>
+                {defaultData.map((item, index) => {
+                  const id = (typeof item === 'string' ? item : item.title).toLowerCase().split(' ').join('-')
 
-              return (
-                <div
-                  className='flex items-center justify-between plb-2.5 gap-6 whitespace-nowrap border-be'
-                  key={index}
-                >
-                  <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]' color='text.primary'>
-                    {typeof item === 'object' ? item.title : item}
-                  </Typography>
-                  {typeof item === 'object' ? (
-                    <FormGroup className='flex-row gap-6 flex-nowrap'>
-                      <FormControlLabel className='mie-0' control={<Checkbox checked={item.read} />} label='Read' />
-                      <FormControlLabel className='mie-0' control={<Checkbox checked={item.write} />} label='Write' />
-                      <FormControlLabel className='mie-0' control={<Checkbox checked={item.select} />} label='Select' />
-                    </FormGroup>
-                  ) : (
-                    <FormGroup className='flex-row gap-6 flex-nowrap'>
-                      <FormControlLabel
-                        className='mie-0'
-                        control={
-                          <Checkbox
-                            id={`${id}-read`}
-                            onChange={() => togglePermission(`${id}-read`)}
-                            checked={selectedCheckbox.includes(`${id}-read`)}
-                          />
-                        }
-                        label='Read'
-                      />
-                      <FormControlLabel
-                        className='mie-0'
-                        control={
-                          <Checkbox
-                            id={`${id}-write`}
-                            onChange={() => togglePermission(`${id}-write`)}
-                            checked={selectedCheckbox.includes(`${id}-write`)}
-                          />
-                        }
-                        label='Write'
-                      />
-                      <FormControlLabel
-                        className='mie-0'
-                        control={
-                          <Checkbox
-                            id={`${id}-create`}
-                            onChange={() => togglePermission(`${id}-create`)}
-                            checked={selectedCheckbox.includes(`${id}-create`)}
-                          />
-                        }
-                        label='Create'
-                      />
-                    </FormGroup>
-                  )}
-                </div>
-              )
-            })}
+                  return (
+                    <tr key={index}>
+                      <td>
+                        <Typography
+                          className='font-medium whitespace-nowrap flex-grow min-is-[225px]'
+                          color='text.primary'
+                        >
+                          {typeof item === 'object' ? item.title : item}
+                        </Typography>
+                      </td>
+                      <td className='!text-end'>
+                        {typeof item === 'object' ? (
+                          <FormGroup className='flex-row gap-6 flex-nowrap justify-end'>
+                            <FormControlLabel
+                              className='mie-0'
+                              control={<Checkbox checked={item.read} />}
+                              label='Read'
+                            />
+                            <FormControlLabel
+                              className='mie-0'
+                              control={<Checkbox checked={item.write} />}
+                              label='Write'
+                            />
+                            <FormControlLabel
+                              className='mie-0'
+                              control={<Checkbox checked={item.select} />}
+                              label='Select'
+                            />
+                          </FormGroup>
+                        ) : (
+                          <FormGroup className='flex-row gap-6 flex-nowrap justify-end'>
+                            <FormControlLabel
+                              className='mie-0'
+                              control={
+                                <Checkbox
+                                  id={`${id}-read`}
+                                  onChange={() => togglePermission(`${id}-read`)}
+                                  checked={selectedCheckbox.includes(`${id}-read`)}
+                                />
+                              }
+                              label='Read'
+                            />
+                            <FormControlLabel
+                              className='mie-0'
+                              control={
+                                <Checkbox
+                                  id={`${id}-write`}
+                                  onChange={() => togglePermission(`${id}-write`)}
+                                  checked={selectedCheckbox.includes(`${id}-write`)}
+                                />
+                              }
+                              label='Write'
+                            />
+                            <FormControlLabel
+                              className='mie-0 text-textPrimary'
+                              control={
+                                <Checkbox
+                                  id={`${id}-create`}
+                                  onChange={() => togglePermission(`${id}-create`)}
+                                  checked={selectedCheckbox.includes(`${id}-create`)}
+                                />
+                              }
+                              label='Create'
+                            />
+                          </FormGroup>
+                        )}
+                      </td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
           </div>
         </DialogContent>
         <DialogActions className='gap-2 justify-center pbs-0 pbe-10 pli-10 sm:pbe-16 sm:pli-16'>

@@ -1,7 +1,6 @@
 // MUI Imports
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
-import CardHeader from '@mui/material/CardHeader'
 import Typography from '@mui/material/Typography'
 import Avatar from '@mui/material/Avatar'
 import Rating from '@mui/material/Rating'
@@ -18,15 +17,8 @@ import LinearProgress from '@mui/material/LinearProgress'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import type { TimelineProps } from '@mui/lab/Timeline'
 
-// Third-party Imports
-import classnames from 'classnames'
-
 // Type Imports
 import type { ThemeColor } from '@core/types'
-
-// Styles Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
 
 type DataProps = {
   image: string
@@ -127,21 +119,9 @@ const TimelineCenter = () => {
                 implement it successfully. Simply put, it's an umbrella term which includes all the documents created
                 over the course of the project.
               </Typography>
-              <div
-                className={classnames(
-                  'flex items-center gap-2.5 w-fit',
-                  styles.imageWrapper,
-                  styles.borderRadius
-                )}
-              >
-                <img
-                  height={20}
-                  alt='documentation.pdf'
-                  src='/images/icons/pdf-document.png'
-                />
-                <Typography className='font-medium'>
-                  documentation.pdf
-                </Typography>
+              <div className='flex items-center gap-2.5 w-fit rounded bg-actionHover plb-[5px] pli-2.5'>
+                <img height={20} alt='documentation.pdf' src='/images/icons/pdf-document.png' />
+                <Typography className='font-medium'>documentation.pdf</Typography>
               </div>
             </CardContent>
           </Card>
@@ -181,7 +161,7 @@ const TimelineCenter = () => {
                 {ImageList.map((image, index) => (
                   <img
                     key={index}
-                    className={styles.borderRadius}
+                    className='rounded'
                     height={114}
                     alt='documentation.pdf'
                     src={image}
@@ -221,7 +201,7 @@ const TimelineCenter = () => {
               <div className='flex items-center gap-4 mbe-3'>
                 <Avatar
                   src='/images/avatars/8.png'
-                  className={styles.avatarSize}
+                  className='bs-[38px] is-[38px]'
                 />
                 <div className='flex flex-col flex-wrap'>
                   <Typography className='font-medium'>
@@ -281,12 +261,12 @@ const TimelineCenter = () => {
               </Typography>
               <div className='flex items-center gap-0.5 mbe-0.5'>
                 <Typography variant='h4'>$24,895</Typography>
-                <i className={classnames('ri-arrow-up-s-fill text-3xl', commonStyles.successColor)} />
+                <i className='ri-arrow-up-s-fill text-3xl text-success'/>
                 <Typography variant='body2' className='font-medium' color='success.main'>
                   10%
                 </Typography>
               </div>
-              <Typography variant='body-2' className='mbe-2'>
+              <Typography variant='body2' className='mbe-2'>
                 Compared to $84,325 last year
               </Typography>
               {Data.map((item, index) => (
@@ -347,13 +327,7 @@ const TimelineCenter = () => {
                 The structure and process are defined in the project organization considering the attainment of the
                 corporate objectives and therefore also project objectives. The components of the project process are
               </Typography>
-              <div
-                className={classnames(
-                  'mbe-3 flex items-center gap-2 w-fit',
-                  styles.imageWrapper,
-                  styles.borderRadius
-                )}
-              >
+              <div className='mbe-3 flex items-center gap-2 w-fit rounded bg-actionHover plb-[5px] pli-2.5'>
                 <img height={20} alt='progress-report.xls.pdf' src='/images/icons/xls-document.png' />
                 <Typography className='font-medium'>progress-report.xls</Typography>
               </div>

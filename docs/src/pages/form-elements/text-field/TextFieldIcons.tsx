@@ -6,13 +6,6 @@ import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// Third-party Imports
-import classnames from 'classnames'
-
-// Styles Imports
-import styles from './styles.module.css'
-import commonStyles from '@/styles/common.module.css'
-
 const TextFieldIcons = () => {
   return (
     <Grid container spacing={6}>
@@ -47,7 +40,7 @@ const TextFieldIcons = () => {
       <Grid item xs={12}>
         <Grid container spacing={2} className='items-end'>
           <Grid item xs={1} className='flex justify-center'>
-            <i className={classnames('ri-account-circle-line', commonStyles.textPrimary)} />
+            <i className='ri-account-circle-line text-actionActive' />
           </Grid>
           <Grid item xs={11}>
             <TextField fullWidth variant='standard' id='input-with-icon-grid' label='With a grid' />

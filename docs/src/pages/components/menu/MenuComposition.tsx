@@ -12,9 +12,6 @@ import MenuList from '@mui/material/MenuList'
 import MenuItem from '@mui/material/MenuItem'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
 
-// Styles Imports
-import styles from './styles.module.css'
-
 const MenuComposition = () => {
   // States
   const [open, setOpen] = useState<boolean>(false)
@@ -61,7 +58,6 @@ const MenuComposition = () => {
         id='composition-button'
         aria-expanded={open ? 'true' : undefined}
         aria-controls={open ? 'composition-menu' : undefined}
-        className={styles.menuZIndex}
       >
         Open Menu
       </Button>
@@ -72,6 +68,7 @@ const MenuComposition = () => {
         role={undefined}
         placement='bottom-start'
         anchorEl={anchorRef.current}
+        className='z-[var(--mui-zIndex-modal)]'
         popperOptions={{
           modifiers: [
             {

@@ -20,8 +20,6 @@ type Props = ComponentProps<typeof ReactDatePicker> & {
 }
 
 const StyledReactDatePicker = styled(Box)<BoxProps>(({ theme }) => {
-  const { mode } = useColorScheme()
-
   return {
     '& .react-datepicker-popper': {
       zIndex: 20
