@@ -276,6 +276,14 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
           </MenuItem>
           <MenuItem
             icon={<i className='ri-home-smile-line' />}
+            href='http://localhost:3001/docs/menu-examples/'
+            suffix={<i className='ri-external-link-line text-xl' />}
+            target='_blank'
+          >
+            {dictionary['navigation'].menuExamples}
+          </MenuItem>
+          <MenuItem
+            icon={<i className='ri-home-smile-line' />}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
           >

@@ -51,6 +51,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
   }
 
   .${horizontalLayoutClasses.navbar} {
+    position: relative;
     min-block-size: var(--header-height);
     ${({ theme }) => `padding-block: ${theme.spacing(3)};`}
     padding-inline: ${themeConfig.layoutPadding}px;
