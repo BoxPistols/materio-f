@@ -80,19 +80,14 @@ const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme): Men
       })
     }),
     icon: ({ level }) => ({
+      transition: `margin-inline-end ${transitionDuration}ms ease-in-out`,
       ...(level === 0 && {
-        fontSize: '1.375rem',
-        '& > i, & > svg': {
-          fontSize: 'inherit'
-        }
+        fontSize: '1.375rem'
       }),
       ...(level > 0 && {
-        color: 'var(--mui-palette-text-secondary)',
-        '& > i, & > svg': {
-          fontSize: '0.75rem'
-        }
+        fontSize: '0.75rem',
+        color: 'var(--mui-palette-text-secondary)'
       }),
-      transition: `margin-inline-end ${transitionDuration}ms ease-in-out`,
       ...(level === 0 && {
         marginInlineEnd: theme.spacing(2)
       }),
@@ -112,7 +107,10 @@ const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme): Men
       ...(popoutCollapsed &&
         level > 0 && {
           marginInlineEnd: theme.spacing(2)
-        })
+        }),
+      '& > i, & > svg': {
+        fontSize: 'inherit'
+      }
     }),
     prefix: {
       marginInlineEnd: theme.spacing(2)
@@ -128,6 +126,13 @@ const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme): Men
     suffix: {
       marginInlineStart: theme.spacing(2)
     },
+    subMenuExpandIcon: {
+      fontSize: '1.375rem',
+      marginInlineStart: theme.spacing(2),
+      '& i, & svg': {
+        fontSize: 'inherit'
+      }
+    },
     subMenuContent: ({ level }) => ({
       zIndex: 'calc(var(--drawer-z-index) + 1)',
       backgroundColor: popoutCollapsed ? 'var(--mui-palette-background-paper)' : 'transparent',
@@ -139,14 +144,7 @@ const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme): Men
             paddingInline: theme.spacing(4)
           }
         })
-    }),
-    subMenuExpandIcon: {
-      fontSize: '1.375rem',
-      marginInlineStart: theme.spacing(2),
-      '& i, & svg': {
-        fontSize: 'inherit'
-      }
-    }
+    })
   }
 }
 

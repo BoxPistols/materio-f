@@ -21,14 +21,14 @@ type StyledHeaderProps = {
 }
 
 const StyledHeader = styled.header<StyledHeaderProps>`
-  ${({ skin, theme }) =>
-    skin === 'bordered'
-      ? `
-    border-block-end: 1px solid var(--border-color);
-  `
-      : `
+  ${({ theme }) => `
     box-shadow: 0 4px 8px -4px rgb(var(--mui-mainColorChannels-${theme.palette.mode}Shadow) / 0.42);
   `}
+
+  [data-skin="bordered"] & {
+    box-shadow: none;
+    border-block-end: 1px solid var(--border-color);
+  }
 
   &:not(.${horizontalLayoutClasses.headerBlur}) {
     background-color: var(--mui-palette-background-paper);
@@ -36,7 +36,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
 
   &.${horizontalLayoutClasses.headerBlur} {
     backdrop-filter: blur(9px);
-    background-color: rgb(var(--background-color-rgb) / 0.9);
+    background-color: rgb(var(--background-color-rgb) / 0.85);
   }
 
   &.${horizontalLayoutClasses.headerFixed} {

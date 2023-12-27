@@ -53,6 +53,7 @@ module.exports = plugin(function () {}, {
         backgroundPaper: 'var(--mui-palette-background-paper)',
         backgroundDefault: 'var(--mui-palette-background-default)',
         track: 'var(--mui-palette-customColors-trackBg)',
+        backdrop: 'var(--backdrop-color)',
         facebook: '#497ce2',
         twitter: '#1da1f2',
         github: '#272727',

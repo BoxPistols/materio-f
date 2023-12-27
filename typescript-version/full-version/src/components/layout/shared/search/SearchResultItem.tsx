@@ -8,9 +8,9 @@ import type { ActionId, ActionImpl } from 'kbar'
 
 const Title = ({ title, flexGrow = false }: { title: string; flexGrow?: boolean }) => {
   return flexGrow ? (
-    <span className='grow text-sm overflow-hidden whitespace-nowrap overflow-ellipsis'>{title}</span>
+    <span className='grow text-[15px] leading-[1.4667] truncate'>{title}</span>
   ) : (
-    <span className='text-sm overflow-hidden whitespace-nowrap overflow-ellipsis'>{title}</span>
+    <span className='text-[15px] leading-[1.4667] truncate'>{title}</span>
   )
 }
 
@@ -43,10 +43,7 @@ const Shortcut = ({ shortcut }: { shortcut: string[] }) => {
     return (
       <div className='flex items-center gap-1.5'>
         {shortcut.map(sc => (
-          <kbd
-            key={sc}
-            className='kbd flex items-center justify-center is-6 bs-6 rounded-sm text-sm bg-[rgba(0,0,0,0.1)]'
-          >
+          <kbd key={sc} className='kbd flex items-center justify-center is-6 bs-6 rounded-sm text-sm bg-actionSelected'>
             {sc}
           </kbd>
         ))}
@@ -55,7 +52,7 @@ const Shortcut = ({ shortcut }: { shortcut: string[] }) => {
   }
 
   return (
-    <kbd className='kbd flex items-center justify-center is-6 bs-6 rounded-sm text-sm bg-[rgba(0,0,0,0.1)]'>
+    <kbd className='kbd flex items-center justify-center is-6 bs-6 rounded-sm text-sm bg-actionSelected'>
       {shortcut[0]}
     </kbd>
   )
@@ -89,17 +86,19 @@ const SearchResultItem = forwardRef(
     return (
       <div
         ref={ref}
-        className={classnames('flex items-center justify-between gap-4 relative plb-2.5 pli-6 cursor-pointer', {
-          ['bg-[var(--mui-palette-action-hover)]']: active
+        className={classnames('flex items-center justify-between gap-4 relative plb-2 pli-4 cursor-pointer', {
+          ['bg-actionHover']: active
         })}
       >
         <div className='flex items-center grow gap-2 text-sm'>
           {action.icon && <i className={classnames(action.icon as string, 'text-xl')} />}
           {action.name &&
             (action.subtitle ? (
-              <div className='flex flex-col grow gap-0.5'>
+              <div className='flex flex-col grow'>
                 <TitleWithAncestors title={action.name} ancestors={ancestors} />
-                {action.subtitle && <span className='text-xs'>{action.subtitle}</span>}
+                {action.subtitle && (
+                  <span className='text-[13px] leading-[1.538462] text-textSecondary'>{action.subtitle}</span>
+                )}
               </div>
             ) : (
               <TitleWithAncestors flexGrow title={action.name} ancestors={ancestors} />

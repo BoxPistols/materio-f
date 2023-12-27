@@ -11,9 +11,6 @@ import type { BoxProps } from '@mui/material/Box'
 // Third-party Imports
 import ReactDatePicker from 'react-datepicker'
 
-// Hook Imports
-import { useSettings } from '@core/hooks/useSettings'
-
 // Styles
 import 'react-datepicker/dist/react-datepicker.css'
 
@@ -22,9 +19,6 @@ type Props = ComponentProps<typeof ReactDatePicker> & {
 }
 
 const StyledReactDatePicker = styled(Box)<BoxProps>(({ theme }) => {
-  // Hooks
-  const { settings } = useSettings()
-
   return {
     '& .react-datepicker-popper': {
       zIndex: 20
@@ -37,8 +31,8 @@ const StyledReactDatePicker = styled(Box)<BoxProps>(({ theme }) => {
       borderRadius: theme.shape.borderRadius,
       fontFamily: theme.typography.fontFamily,
       backgroundColor: theme.palette.background.paper,
-      boxShadow: settings.skin === 'bordered' ? 'none' : 'var(--mui-customShadows-md)',
-      border: settings.skin === 'bordered' ? `1px solid ${theme.palette.divider}` : 'none',
+      boxShadow: 'var(--mui-customShadows-md)',
+      border: 'none',
       '& .react-datepicker__header': {
         padding: 0,
         border: 'none',
@@ -452,7 +446,11 @@ const StyledReactDatePicker = styled(Box)<BoxProps>(({ theme }) => {
       '& .react-datepicker__day:hover, & .react-datepicker__month-text:hover, & .react-datepicker__quarter-text:hover, & .react-datepicker__year-text:hover':
         {
           backgroundColor: theme.palette.action.hover
-        }
+        },
+      '[data-skin="bordered"] &': {
+        boxShadow: 'none',
+        border: `1px solid var(--mui-palette-divider)`
+      }
     },
     '& .react-datepicker__close-icon': {
       paddingRight: theme.spacing(4),

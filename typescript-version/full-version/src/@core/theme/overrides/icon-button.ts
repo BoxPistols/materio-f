@@ -8,12 +8,16 @@ const iconButton: Theme['components'] = {
   MuiIconButton: {
     styleOverrides: {
       sizeSmall: ({ theme }) => ({
-        padding: theme.spacing(1),
+        padding: theme.spacing(1.75),
         fontSize: '1.25rem'
       }),
+      sizeMedium: ({ theme }) => ({
+        padding: theme.spacing(1.75),
+        fontSize: '1.5rem'
+      }),
       sizeLarge: ({ theme }) => ({
-        padding: theme.spacing(2.25),
-        fontSize: '2rem'
+        padding: theme.spacing(1.75),
+        fontSize: '1.75rem'
       })
     },
     variants: [

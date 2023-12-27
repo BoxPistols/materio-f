@@ -61,15 +61,15 @@ const StyledHeader = styled.header<StyledHeaderProps>`
     }
 
     &.${verticalLayoutClasses.headerDetached}.scrolled .${verticalLayoutClasses.navbar} {
-      ${({ skin, theme }) =>
-        skin === 'bordered'
-          ? `
-        border-inline: 1px solid var(--border-color);
-        border-block-end: 1px solid var(--border-color);
-      `
-          : `
+      ${({ theme }) => `
         box-shadow: 0 4px 8px -4px rgb(var(--mui-mainColorChannels-${theme.palette.mode}Shadow) / 0.42);
       `}
+
+      [data-skin="bordered"] & {
+        box-shadow: none;
+        border-inline: 1px solid var(--border-color);
+        border-block-end: 1px solid var(--border-color);
+      }
     }
     &.${verticalLayoutClasses.headerDetached} .${verticalLayoutClasses.navbar} {
       border-end-start-radius: var(--border-radius);
@@ -91,7 +91,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
         &.${verticalLayoutClasses.headerFloating}
         .${verticalLayoutClasses.navbar} {
         backdrop-filter: blur(9px);
-        background-color: rgb(var(--background-color-rgb) / 0.9);
+        background-color: rgb(var(--background-color-rgb) / 0.85);
       }
 
       &.${verticalLayoutClasses.headerFloating} {
@@ -119,14 +119,14 @@ const StyledHeader = styled.header<StyledHeaderProps>`
     }
 
     &.${verticalLayoutClasses.headerAttached}.scrolled {
-      ${({ skin, theme }) =>
-        skin === 'bordered'
-          ? `
-        border-block-end: 1px solid var(--border-color);
-      `
-          : `
+      ${({ theme }) => `
         box-shadow: 0 4px 8px -4px rgb(var(--mui-mainColorChannels-${theme.palette.mode}Shadow) / 0.42);
       `}
+
+      [data-skin="bordered"] & {
+        box-shadow: none;
+        border-block-end: 1px solid var(--border-color);
+      }
     }
 
     &.${verticalLayoutClasses.headerFloating}
@@ -152,14 +152,14 @@ const StyledHeader = styled.header<StyledHeaderProps>`
       background-color: var(--mui-palette-background-paper);
       border-radius: var(--border-radius);
       padding-inline: ${themeConfig.layoutPadding}px;
-      ${({ skin, theme }) =>
-        skin === 'bordered'
-          ? `
-        border: 1px solid var(--border-color);
-      `
-          : `
+      ${({ theme }) => `
         box-shadow: 0 4px 8px -4px rgb(var(--mui-mainColorChannels-${theme.palette.mode}Shadow) / 0.42);
       `}
+
+      [data-skin="bordered"] & {
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+      }
     }
   }
 

@@ -4,7 +4,7 @@
 import { useColorScheme, useTheme } from '@mui/material/styles'
 
 // Type Imports
-import type { Dictionary, Skin } from '@core/types'
+import type { Dictionary } from '@core/types'
 
 // Component Imports from @menu-package
 import VerticalNav, { NavHeader, NavCollapseIcons } from '@menu-package/vertical-menu'
@@ -34,7 +34,7 @@ const Navigation = ({ dictionary }: { dictionary: Dictionary }) => {
     // eslint-disable-next-line lines-around-comment
     // Sidebar Vertical Menu
     <VerticalNav
-      customStyles={navigationCustomStyles(verticalNavOptions, theme, skin as Skin)}
+      customStyles={navigationCustomStyles(verticalNavOptions, theme)}
       collapsedWidth={68}
       backgroundColor={
         skin === 'bordered' ? 'var(--mui-palette-background-paper)' : 'var(--mui-palette-background-default)'

@@ -42,10 +42,10 @@ export type ShortcutsType = {
 
 const ScrollWrapper = ({ children, hidden }: { children: ReactNode; hidden: boolean }) => {
   if (hidden) {
-    return <div className='overflow-x-hidden max-bs-[434px]'>{children}</div>
+    return <div className='overflow-x-hidden max-bs-[458px]'>{children}</div>
   } else {
     return (
-      <PerfectScrollbar className='max-bs-[434px]' options={{ wheelPropagation: false, suppressScrollX: true }}>
+      <PerfectScrollbar className='max-bs-[458px]' options={{ wheelPropagation: false, suppressScrollX: true }}>
         {children}
       </PerfectScrollbar>
     )
@@ -95,7 +95,7 @@ const ShortcutsDropdown = ({ shortcuts }: { shortcuts: ShortcutsType[] }) => {
                 }
               ]
             }
-          : { className: 'is-96 !mbs-4 z-[1]' })}
+          : { className: 'is-[380px] !mbs-4 z-[1]' })}
       >
         {({ TransitionProps, placement }) => (
           <Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom-end' ? 'right top' : 'left top' }}>
@@ -103,7 +103,7 @@ const ShortcutsDropdown = ({ shortcuts }: { shortcuts: ShortcutsType[] }) => {
               <ClickAwayListener onClickAway={handleClose}>
                 <div>
                   <div className='flex items-center justify-between plb-2 pli-4 is-full gap-2'>
-                    <Typography variant='h6'>Shortcuts</Typography>
+                    <Typography variant='h5'>Shortcuts</Typography>
                     <Tooltip
                       title='Add Shortcut'
                       placement={placement === 'bottom-end' ? 'left' : 'right'}
@@ -138,7 +138,7 @@ const ShortcutsDropdown = ({ shortcuts }: { shortcuts: ShortcutsType[] }) => {
                             href={shortcut.url}
                             className='flex items-center flex-col p-6 gap-3 bs-full hover:bg-actionHover'
                           >
-                            <CustomAvatar size={50} className='bg-actionSelected'>
+                            <CustomAvatar size={50} className='bg-actionSelected text-textPrimary'>
                               <i className={classnames('text-[1.625rem]', shortcut.icon)} />
                             </CustomAvatar>
                             <div className='flex flex-col items-center text-center'>

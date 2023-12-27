@@ -61,7 +61,7 @@ const SearchResults = () => {
       items={getFilteredResults(results)}
       onRender={({ item, active }) =>
         typeof item === 'string' ? (
-          <div className='pbs-[15px] pbe-1.5 pli-6 text-[12px] uppercase'>{item}</div>
+          <div className='pbs-4 pbe-2 pli-4 text-[12px] leading-[1.16667] text-textDisabled uppercase'>{item}</div>
         ) : (
           <SearchResultItem action={item} active={active} currentRootActionId={rootActionId} />
         )

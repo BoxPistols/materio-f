@@ -31,7 +31,7 @@ const StyledKBarAnimator = styled(KBarAnimator)<StyledKBarAnimatorProps>`
       max-inline-size: 100dvw;
       border-radius: 0;
     `}
-    ${({ skin }) => skin !== 'bordered' && `box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);`}
+    ${({ skin }) => skin !== 'bordered' && `box-shadow: var(--mui-customShadows-xl);`}
   }
 `
 

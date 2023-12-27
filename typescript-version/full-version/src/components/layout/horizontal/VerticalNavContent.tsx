@@ -25,8 +25,8 @@ const VerticalNavContent = ({ children }: ChildrenType) => {
       <NavHeader>
         <Logo />
         <NavCollapseIcons
-          lockedIcon={<i className='ri-radio-button-line' />}
-          unlockedIcon={<i className='ri-checkbox-blank-circle-line' />}
+          lockedIcon={<i className='ri-radio-button-line text-xl' />}
+          unlockedIcon={<i className='ri-checkbox-blank-circle-line text-xl' />}
           closeIcon={<i className='ri-close-line text-xl' />}
           className='text-textSecondary'
         />

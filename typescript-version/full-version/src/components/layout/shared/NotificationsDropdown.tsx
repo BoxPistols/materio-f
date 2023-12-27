@@ -196,7 +196,7 @@ const NotificationDropdown = ({ notifications }: { notifications: NotificationsT
               <ClickAwayListener onClickAway={handleClose}>
                 <div>
                   <div className='flex items-center justify-between plb-2 pli-4 is-full gap-4'>
-                    <Typography variant='h6' className='flex-auto'>
+                    <Typography variant='h5' className='flex-auto'>
                       Notifications
                     </Typography>
                     {notificationCount > 0 && (
@@ -250,10 +250,10 @@ const NotificationDropdown = ({ notifications }: { notifications: NotificationsT
                         >
                           {getAvatar({ avatarImage, avatarIcon, title, avatarText, avatarColor, avatarSkin })}
                           <div className='flex flex-col flex-auto'>
-                            <Typography variant='body2' className='font-medium mbe-1' color='text.primary'>
+                            <Typography className='font-medium mbe-1' color='text.primary'>
                               {title}
                             </Typography>
-                            <Typography variant='caption' className='mbe-2'>
+                            <Typography variant='caption' color='text.secondary' className='mbe-2'>
                               {subtitle}
                             </Typography>
                             <Typography variant='caption'>{time}</Typography>

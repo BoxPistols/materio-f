@@ -35,6 +35,11 @@
   --border-color: #efefef;
   --primary-color: #765feb;
   --background-color: #fff;
+  --backdrop-color: rgb(var(--mui-mainColorChannels-light) / 0.5);
+}
+
+[data-mui-color-scheme='dark'] {
+  --backdrop-color: rgb(21 16 43 / 0.6);
 }
 
 *,

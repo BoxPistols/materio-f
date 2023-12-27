@@ -26,14 +26,14 @@ const StyledFooter = styled.footer<StyledFooterProps>`
     inset-block-end: 0;
     z-index: var(--footer-z-index);
     background-color: var(--mui-palette-background-paper);
-    ${({ skin, theme }) =>
-      skin === 'bordered'
-        ? `
-      border-block-start: 1px solid var(--border-color);
-    `
-        : `
+    ${({ theme }) => `
       box-shadow: 0 -4px 8px -4px rgb(var(--mui-mainColorChannels-${theme.palette.mode}Shadow) / 0.42);
     `}
+
+    [data-skin="bordered"] & {
+      box-shadow: none;
+      border-block-start: 1px solid var(--border-color);
+    }
   }
 
   &.${horizontalLayoutClasses.footerContentCompact} .${horizontalLayoutClasses.footerContentWrapper} {

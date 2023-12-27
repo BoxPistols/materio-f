@@ -3,12 +3,11 @@ import type { Theme } from '@mui/material/styles'
 
 // Type Imports
 import type { VerticalNavState } from '@menu-package/contexts/verticalNavContext'
-import type { Skin } from '@core/types'
 
 // Util Imports
 import { menuClasses, verticalNavClasses } from '@menu-package/utils/menuClasses'
 
-const navigationCustomStyles = (verticalNavOptions: VerticalNavState, theme: Theme, skin: Skin) => {
+const navigationCustomStyles = (verticalNavOptions: VerticalNavState, theme: Theme) => {
   const { isCollapsed, isHovered, collapsedWidth, transitionDuration } = verticalNavOptions
 
   const collapsedHovered = isCollapsed && isHovered
@@ -35,18 +34,15 @@ const navigationCustomStyles = (verticalNavOptions: VerticalNavState, theme: The
         duration: transitionDuration,
         easing: 'ease-in-out'
       }),
-      ...(skin === 'bordered'
-        ? {
-            borderColor: 'var(--mui-palette-divider)'
-          }
-        : {
-            borderColor: 'transparent'
-          }),
+      borderColor: 'transparent',
       ...(collapsedHovered && {
         boxShadow: 'var(--mui-customShadows-lg)'
       }),
       [`& .${verticalNavClasses.toggled}`]: {
         boxShadow: 'var(--mui-customShadows-lg)'
+      },
+      '[data-skin="bordered"] &': {
+        borderColor: 'var(--mui-palette-divider)'
       }
     },
     [`& .${menuClasses.root}`]: {
@@ -58,6 +54,9 @@ const navigationCustomStyles = (verticalNavOptions: VerticalNavState, theme: The
         : {
             paddingInlineEnd: theme.spacing(4)
           })
+    },
+    [`& .${verticalNavClasses.backdrop}`]: {
+      backgroundColor: 'var(--backdrop-color)'
     }
   }
 }

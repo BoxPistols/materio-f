@@ -28,9 +28,7 @@ const menuItemStyles = (settings: Settings, theme: Theme): MenuItemStyles => ({
     }
   }),
   button: ({ level }) => ({
-    ...(level > 0 && {
-      paddingInline: theme.spacing(4)
-    }),
+    paddingInline: theme.spacing(4),
     '&:not(:has(.MuiChip-root))': {
       paddingBlock: theme.spacing(2)
     },

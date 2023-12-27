@@ -40,8 +40,8 @@ const NoResult = (props: NoResultProps) => {
     <div className='flex items-center justify-center grow flex-wrap plb-14 pli-16 overflow-y-auto overflow-x-hidden'>
       <div className='flex flex-col items-center'>
         <i className='ri-file-forbid-line text-[64px] mbe-2.5' />
-        <p className='text-xl mbe-11'>{`No result for "${query}"`}</p>
-        <p className='mbe-[18px] text-textDisabled'>Try searching for</p>
+        <p className='text-lg font-medium leading-[1.55556] mbe-11'>{`No result for "${query}"`}</p>
+        <p className='text-[15px] leading-[1.4667] mbe-4 text-textDisabled'>Try searching for</p>
         <ul className='flex flex-col gap-4'>
           {noResultData.map((item, index) => (
             <li key={index} className='flex items-center'>
@@ -50,7 +50,7 @@ const NoResult = (props: NoResultProps) => {
                 className='flex items-center gap-2 hover:text-primary focus-visible:text-primary focus-visible:outline-0'
               >
                 <i className={classnames(item.icon, 'text-xl')} />
-                <p className='text-sm overflow-hidden whitespace-nowrap overflow-ellipsis'>{item.label}</p>
+                <p className='text-[15px] leading-[1.4667] truncate'>{item.label}</p>
               </Link>
             </li>
           ))}

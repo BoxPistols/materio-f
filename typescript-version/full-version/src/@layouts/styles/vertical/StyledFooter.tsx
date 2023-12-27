@@ -50,29 +50,29 @@ const StyledFooter = styled.footer<StyledFooterProps>`
 
       & .${verticalLayoutClasses.footerContentWrapper} {
         pointer-events: auto;
-        ${({ skin, theme }) =>
-          skin === 'bordered'
-            ? `
-          border-inline: 1px solid var(--border-color);
-          border-block-start: 1px solid var(--border-color);
-        `
-            : `
+        ${({ theme }) => `
           box-shadow: 0 -4px 8px -4px rgb(var(--mui-mainColorChannels-${theme.palette.mode}Shadow) / 0.42);
         `}
         border-start-start-radius: var(--border-radius);
         border-start-end-radius: var(--border-radius);
+
+        [data-skin='bordered'] & {
+          box-shadow: none;
+          border-inline: 1px solid var(--border-color);
+          border-block-start: 1px solid var(--border-color);
+        }
       }
     }
 
     &.${verticalLayoutClasses.footerAttached} {
-      ${({ skin, theme }) =>
-        skin === 'bordered'
-          ? `
-      border-block-start: 1px solid var(--border-color);
-      `
-          : `
+      ${({ theme }) => `
         box-shadow: 0 -4px 8px -4px rgb(var(--mui-mainColorChannels-${theme.palette.mode}Shadow) / 0.42);
       `}
+
+      [data-skin="bordered"] & {
+        box-shadow: none;
+        border-block-start: 1px solid var(--border-color);
+      }
     }
   }
 

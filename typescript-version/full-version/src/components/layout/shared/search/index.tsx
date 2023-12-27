@@ -82,14 +82,14 @@ const NavSearch = () => {
       <KBarPortal>
         <KBarPositioner className='!p-0 !items-center z-[calc(var(--search-z-index)+1)]'>
           <StyledKBarAnimator skin={settings.skin} isSmallScreen={isSmallScreen}>
-            <div className='flex items-center gap-2 plb-5 pli-6 border-be'>
+            <div className='flex items-center gap-2 p-4 border-be'>
               <div className='flex'>
                 <i className='ri-search-line' />
               </div>
               <KBarSearch
                 defaultPlaceholder=''
                 name='search-input'
-                className='grow min-is-0 plb-1 pli-1.5 text-[16px] outline-0 border-0 bg-transparent text-inherit font-[inherit]'
+                className='grow min-is-0 plb-1 pli-1.5 text-[15px] leading-[1.46667] outline-0 border-0 bg-transparent text-inherit font-[inherit]'
               />
               <ComponentWithUseKBar className='select-none text-textDisabled'>{`[esc]`}</ComponentWithUseKBar>
               <ComponentWithUseKBar
@@ -102,7 +102,7 @@ const NavSearch = () => {
           </StyledKBarAnimator>
         </KBarPositioner>
         <div
-          className='ts-nav-search-backdrop fixed inset-0 z-search bg-[rgba(0,0,0,0.3)]'
+          className='ts-nav-search-backdrop fixed inset-0 z-search bg-backdrop'
           role='button'
           aria-label='backdrop'
         />

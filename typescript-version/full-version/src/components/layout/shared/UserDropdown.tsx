@@ -116,26 +116,26 @@ const UserDropdown = () => {
                   <div className='flex items-center plb-2 pli-4 gap-2' tabIndex={-1}>
                     <Avatar alt={session?.user?.name || ''} src={session?.user?.image || ''} />
                     <div className='flex items-start flex-col'>
-                      <Typography variant='body2' className='font-medium' color='text.primary'>
+                      <Typography className='font-medium' color='text.primary'>
                         {session?.user?.name || ''}
                       </Typography>
                       <Typography variant='caption'>{session?.user?.email || ''}</Typography>
                     </div>
                   </div>
                   <Divider className='mlb-1' />
-                  <MenuItem className='gap-2' onClick={e => handleDropdownClose(e, '/pages/user-profile')}>
+                  <MenuItem className='gap-3' onClick={e => handleDropdownClose(e, '/pages/user-profile')}>
                     <i className='ri-user-3-line text-[22px]' />
                     <Typography color='text.primary'>My Profile</Typography>
                   </MenuItem>
-                  <MenuItem className='gap-2' onClick={e => handleDropdownClose(e, '/pages/account-settings')}>
+                  <MenuItem className='gap-3' onClick={e => handleDropdownClose(e, '/pages/account-settings')}>
                     <i className='ri-settings-4-line text-[22px]' />
                     <Typography color='text.primary'>Settings</Typography>
                   </MenuItem>
-                  <MenuItem className='gap-2' onClick={e => handleDropdownClose(e, '/pages/pricing')}>
+                  <MenuItem className='gap-3' onClick={e => handleDropdownClose(e, '/pages/pricing')}>
                     <i className='ri-money-dollar-circle-line text-[22px]' />
                     <Typography color='text.primary'>Pricing</Typography>
                   </MenuItem>
-                  <MenuItem className='gap-2' onClick={e => handleDropdownClose(e, '/pages/faq')}>
+                  <MenuItem className='gap-3' onClick={e => handleDropdownClose(e, '/pages/faq')}>
                     <i className='ri-question-line text-[22px]' />
                     <Typography color='text.primary'>FAQ</Typography>
                   </MenuItem>
@@ -144,7 +144,8 @@ const UserDropdown = () => {
                       fullWidth
                       variant='contained'
                       color='error'
-                      endIcon={<i className='ri-logout-box-r-line !text-sm' />}
+                      size='small'
+                      endIcon={<i className='ri-logout-box-r-line' />}
                       onClick={handleUserLogout}
                       sx={{ '& .MuiButton-endIcon': { marginInlineStart: 1.5 } }}
                     >

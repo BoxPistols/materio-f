@@ -86,27 +86,27 @@ const ModeDropdown = () => {
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList onKeyDown={handleClose}>
                   <MenuItem
-                    className='gap-2.5'
+                    className='gap-3'
                     onClick={() => handleModeSwitch('light')}
                     selected={settings.mode === 'light'}
                   >
-                    <i className='ri-sun-line' />
+                    <i className='ri-sun-line text-[22px]' />
                     Light
                   </MenuItem>
                   <MenuItem
-                    className='gap-2.5'
+                    className='gap-3'
                     onClick={() => handleModeSwitch('dark')}
                     selected={settings.mode === 'dark'}
                   >
-                    <i className='ri-moon-clear-line' />
+                    <i className='ri-moon-clear-line text-[22px]' />
                     Dark
                   </MenuItem>
                   <MenuItem
-                    className='gap-2.5'
+                    className='gap-3'
                     onClick={() => handleModeSwitch('system')}
                     selected={settings.mode === 'system'}
                   >
-                    <i className='ri-computer-line' />
+                    <i className='ri-computer-line text-[22px]' />
                     System
                   </MenuItem>
                 </MenuList>

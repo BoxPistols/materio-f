@@ -128,7 +128,7 @@ const DefaultSuggestions = () => {
           key={index}
           className='flex flex-col justify-center overflow-x-hidden gap-4 basis-full sm:basis-[calc((100%-3rem)/2)]'
         >
-          <p className='text-xs uppercase text-textDisabled'>{section.sectionLabel}</p>
+          <p className='text-xs leading-[1.16667] uppercase text-textDisabled'>{section.sectionLabel}</p>
           <ul className='flex flex-col gap-4'>
             {section.items.map((item, i) => (
               <li key={i} className='flex'>
@@ -138,7 +138,7 @@ const DefaultSuggestions = () => {
                   className='flex items-center overflow-x-hidden cursor-pointer gap-2 hover:text-primary focus-visible:text-primary focus-visible:outline-0'
                 >
                   {item.icon && <i className={classnames(item.icon, 'flex text-xl')} />}
-                  <p className='text-sm overflow-hidden whitespace-nowrap overflow-ellipsis'>{item.label}</p>
+                  <p className='text-[15px] leading-[1.4667] truncate'>{item.label}</p>
                 </Link>
               </li>
             ))}
