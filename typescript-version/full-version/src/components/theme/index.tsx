@@ -18,6 +18,7 @@ import type {} from '@mui/material/themeCssVarsAugmentation' //! Do not remove t
 import type {} from '@mui/lab/themeAugmentation' //! Do not remove this import otherwise you will get type errors while making a production build
 
 // Third-party Imports
+import { useCookie } from 'react-use'
 import stylisRTLPlugin from 'stylis-plugin-rtl'
 
 // Type Imports
@@ -44,6 +45,20 @@ const ThemeProvider = (props: Props) => {
 
   // Hooks
   const { settings } = useSettings()
+  const [colorPref] = useCookie('colorPref')
+
+  const isServer = typeof window === 'undefined'
+  let currentMode: SystemMode
+
+  if (isServer) {
+    currentMode = systemMode
+  } else {
+    if (settings.mode === 'system') {
+      currentMode = colorPref as SystemMode
+    } else {
+      currentMode = settings.mode as SystemMode
+    }
+  }
 
   // Merge the primary color scheme override with the core theme
   const theme = useMemo(() => {
@@ -70,12 +85,12 @@ const ThemeProvider = (props: Props) => {
       }
     }
 
-    const coreTheme = deepmerge(defaultCoreTheme(settings, systemMode, direction), newColorScheme)
+    const coreTheme = deepmerge(defaultCoreTheme(settings, currentMode, direction), newColorScheme)
 
     return extendTheme(coreTheme)
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [settings.primaryColor, settings.skin])
+  }, [settings.primaryColor, settings.skin, settings.mode])
 
   return (
     <AppRouterCacheProvider
