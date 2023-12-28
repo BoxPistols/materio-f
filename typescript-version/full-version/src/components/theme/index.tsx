@@ -1,7 +1,7 @@
 'use client'
 
 // React Imports
-import { useEffect, useState, useMemo } from 'react'
+import { useMemo } from 'react'
 import type { ReactNode } from 'react'
 
 // MUI Imports
@@ -12,45 +12,38 @@ import {
   lighten,
   darken
 } from '@mui/material/styles'
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import CssBaseline from '@mui/material/CssBaseline'
 import type {} from '@mui/material/themeCssVarsAugmentation' //! Do not remove this import otherwise you will get type errors while making a production build
 import type {} from '@mui/lab/themeAugmentation' //! Do not remove this import otherwise you will get type errors while making a production build
-import type { PaletteMode } from '@mui/material'
 
 // Third-party Imports
-import { useMedia } from 'react-use'
+import stylisRTLPlugin from 'stylis-plugin-rtl'
 
 // Type Imports
-import type { Direction } from '@core/types'
+import type { Direction, SystemMode } from '@core/types'
 
 // Component Imports
-import EmotionCacheProvider from './EmotionCache'
+import ModeChanger from './ModeChanger'
 
 // Hook Imports
 import { useSettings } from '@core/hooks/useSettings'
 
-// Util Imports
-import hexToUniqueString from '@/utils/get-hexToString'
-
 // Core Theme Imports
 import defaultCoreTheme from '@core/theme'
-import { primaryColorConfig } from '@core/components/customizer'
 
-const ThemeProvider = ({ children, direction }: { children: ReactNode; direction: Direction }) => {
+type Props = {
+  children: ReactNode
+  direction: Direction
+  systemMode: SystemMode
+}
+
+const ThemeProvider = (props: Props) => {
+  // Props
+  const { children, direction, systemMode } = props
+
   // Hooks
   const { settings } = useSettings()
-  const isPreferredDark = useMedia('(prefers-color-scheme: dark)', false)
-
-  // States
-  const [mode, setMode] = useState<PaletteMode>(isPreferredDark || settings.mode === 'dark' ? 'dark' : 'light')
-
-  useEffect(() => {
-    if (settings.mode === 'system') {
-      setMode(isPreferredDark ? 'dark' : 'light')
-    } else {
-      setMode(settings.mode as PaletteMode)
-    }
-  }, [isPreferredDark, settings.mode])
 
   // Merge the primary color scheme override with the core theme
   const theme = useMemo(() => {
@@ -77,26 +70,31 @@ const ThemeProvider = ({ children, direction }: { children: ReactNode; direction
       }
     }
 
-    const coreTheme = deepmerge(defaultCoreTheme(settings, mode, direction), newColorScheme)
+    const coreTheme = deepmerge(defaultCoreTheme(settings, systemMode, direction), newColorScheme)
 
     return extendTheme(coreTheme)
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [settings])
-
-  const cacheKey = useMemo(() => {
-    const generateColorFrom = settings.primaryColor ? settings.primaryColor : primaryColorConfig[0].main
-
-    // Create string that persists between hydration and SSR but changes when the primary color changes
-    return hexToUniqueString(generateColorFrom.replace('#', ''))
-  }, [settings.primaryColor])
+  }, [settings.primaryColor, settings.skin])
 
   return (
-    <EmotionCacheProvider options={{ key: cacheKey }} direction={direction}>
-      <CssVarsProvider theme={theme} defaultMode={settings.mode}>
-        <CssBaseline />
-        {children}
+    <AppRouterCacheProvider
+      options={{
+        prepend: true,
+        ...(direction === 'rtl' && {
+          key: 'rtl',
+          stylisPlugins: [stylisRTLPlugin]
+        })
+      }}
+    >
+      <CssVarsProvider theme={theme} defaultMode={systemMode}>
+        <>
+          <ModeChanger />
+          <CssBaseline />
+          {children}
+        </>
       </CssVarsProvider>
-    </EmotionCacheProvider>
+    </AppRouterCacheProvider>
   )
 }
 

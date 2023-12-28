@@ -1,6 +1,3 @@
-// Next Imports
-import { cookies } from 'next/headers'
-
 // Type Imports
 import type { ChildrenType } from '@core/types'
 import type { Locale } from '@configs/i18n'
@@ -11,16 +8,19 @@ import BlankLayout from '@layouts/BlankLayout'
 
 // Util Imports
 import { getDirection } from '@/utils/get-direction'
+import { getSystemMode } from '@core/server/actions'
 
-const Layout = ({ children, params }: ChildrenType & { params: { lang: Locale } }) => {
+type Props = ChildrenType & {
+  params: { lang: Locale }
+}
+
+const Layout = ({ children, params }: Props) => {
   const direction = getDirection(params.lang)
-  const cookieStore = cookies()
-
-  const settingsCookie = JSON.parse(cookieStore.get('settings')?.value || '{}')
+  const systemMode = getSystemMode()
 
   return (
-    <Providers settingsCookie={settingsCookie} direction={direction}>
-      <BlankLayout>{children}</BlankLayout>
+    <Providers direction={direction}>
+      <BlankLayout systemMode={systemMode}>{children}</BlankLayout>
     </Providers>
   )
 }

@@ -46,7 +46,7 @@ const StepperWrapper = styled(Box)<BoxProps>(({ theme }) => {
     },
     '& .MuiStepConnector-root': {
       '& .MuiStepConnector-line': {
-        borderWidth: 3,
+        borderBlockStartWidth: 3,
         borderRadius: 3
       },
       '&.Mui-active, &.Mui-completed': {
@@ -74,7 +74,7 @@ const StepperWrapper = styled(Box)<BoxProps>(({ theme }) => {
           justifyContent: 'flex-start'
         },
         '& .MuiStepContent-root': {
-          borderWidth: 3,
+          borderInlineStartWidth: 3,
           marginLeft: theme.spacing(2.25),
           borderColor: theme.vars.palette.primary.main
         },
@@ -88,11 +88,8 @@ const StepperWrapper = styled(Box)<BoxProps>(({ theme }) => {
       '& .MuiStepConnector-root': {
         marginLeft: theme.spacing(2.25),
         '& .MuiStepConnector-line': {
-          ...(theme.direction === 'rtl' && {
-            borderRightStyle: 'solid',
-            borderLeftStyle: 'none',
-            marginRight: theme.spacing(4)
-          }),
+          borderBlockStartWidth: 0,
+          borderInlineStartWidth: 3,
           borderRadius: 0
         }
       }

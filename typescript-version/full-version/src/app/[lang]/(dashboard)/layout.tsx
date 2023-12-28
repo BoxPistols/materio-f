@@ -1,6 +1,3 @@
-// Next Imports
-import { cookies } from 'next/headers'
-
 // MUI Imports
 import Button from '@mui/material/Button'
 
@@ -26,21 +23,31 @@ import ScrollToTop from '@core/components/scroll-to-top'
 // Util Imports
 import { getDirection } from '@/utils/get-direction'
 import { getDictionary } from '@/utils/get-dictionary'
+import { getMode, getSettingsFromCookie, getSkin, getSystemMode } from '@core/server/actions'
 
 const Layout = async ({ children, params }: ChildrenType & { params: { lang: Locale } }) => {
   const direction = getDirection(params.lang)
   const dictionary = await getDictionary(params.lang)
-  const cookieStore = cookies()
-
-  const settingsCookie = JSON.parse(cookieStore.get('settings')?.value || '{}')
+  const mode = getMode()
+  const systemMode = getSystemMode()
+  const settingsCookie = getSettingsFromCookie()
+  const skin = getSkin()
 
   return (
-    <Providers settingsCookie={settingsCookie} direction={direction}>
+    <Providers direction={direction}>
       <LayoutWrapper
-        settingsCookie={settingsCookie}
+        systemMode={systemMode}
         verticalLayout={
           <VerticalLayout
-            navigation={<Navigation dictionary={dictionary} />}
+            navigation={
+              <Navigation
+                settingsCookie={settingsCookie}
+                dictionary={dictionary}
+                mode={mode}
+                systemMode={systemMode}
+                skin={skin}
+              />
+            }
             navbar={<Navbar />}
             footer={<VerticalFooter />}
           >

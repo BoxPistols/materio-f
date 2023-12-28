@@ -17,6 +17,9 @@ import Logo from '@core/svg/Logo'
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
+// Hook Imports
+import { useSettings } from '@core/hooks/useSettings'
+
 // Styles Imports
 import tableStyles from '@core/styles/table.module.css'
 
@@ -52,7 +55,11 @@ const data = [
 ]
 
 const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }) => {
+  // Refs
   const initialized = useRef(false)
+
+  // Hooks
+  const { updatePageSettings } = useSettings()
 
   useEffect(() => {
     if (!initialized.current) {
@@ -61,6 +68,11 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
         window.print()
       }, 100)
     }
+
+    return updatePageSettings({
+      mode: 'light'
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
