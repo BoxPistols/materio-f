@@ -88,6 +88,14 @@ const menuItemStyles = (settings: Settings, theme: Theme): MenuItemStyles => ({
   },
   subMenuContent: {
     backgroundColor: 'var(--mui-palette-background-paper)',
+    ...(settings.skin === 'bordered'
+      ? {
+          boxShadow: 'none',
+          border: '1px solid var(--mui-palette-divider)'
+        }
+      : {
+          boxShadow: 'var(--mui-customShadows-lg)'
+        }),
     '& > ul, & > div > ul': {
       paddingBlock: theme.spacing(2)
     }

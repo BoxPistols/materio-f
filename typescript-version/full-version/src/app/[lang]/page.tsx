@@ -16,7 +16,7 @@ export default async function Page() {
 
   // If session exists, get the redirect URL
   if (session) {
-    redirectURL = `/about`
+    redirectURL = `/dashboards/crm`
   }
 
   // Redirect user to respective home page

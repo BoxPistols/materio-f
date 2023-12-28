@@ -1,8 +1,10 @@
 // MUI Imports
 import type { Theme } from '@mui/material/styles'
-import type { PaletteMode } from '@mui/material'
 
-const chip = (mode: PaletteMode): Theme['components'] => ({
+// Type Imports
+import type { SystemMode } from '@core/types'
+
+const chip = (mode: SystemMode): Theme['components'] => ({
   MuiChip: {
     variants: [
       {

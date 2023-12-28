@@ -7,6 +7,11 @@ import themeConfig from '@configs/themeConfig'
 const iconButton: Theme['components'] = {
   MuiIconButton: {
     styleOverrides: {
+      root: {
+        '& .MuiSvgIcon-root': {
+          fontSize: 'inherit'
+        }
+      },
       sizeSmall: ({ theme }) => ({
         padding: theme.spacing(1.75),
         fontSize: '1.25rem'

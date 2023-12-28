@@ -1,8 +1,10 @@
 // MUI Imports
 import type { Theme } from '@mui/material/styles'
-import type { PaletteMode } from '@mui/material'
 
-const customShadows = (mode: PaletteMode): Theme['customShadows'] => {
+// Type Imports
+import type { SystemMode } from '@core/types'
+
+const customShadows = (mode: SystemMode): Theme['customShadows'] => {
   return {
     xs: `0px 2px 4px rgb(var(--mui-mainColorChannels-${mode}Shadow) / ${mode === 'light' ? 0.16 : 0.2})`,
     sm: `0px 3px 6px rgb(var(--mui-mainColorChannels-${mode}Shadow) / ${mode === 'light' ? 0.18 : 0.22})`,

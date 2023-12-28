@@ -1,8 +1,10 @@
 // MUI Imports
 import type { Theme } from '@mui/material/styles'
-import type { PaletteMode } from '@mui/material'
 
-const shadows = (mode: PaletteMode): Theme['shadows'] => {
+// Type Imports
+import type { SystemMode } from '@core/types'
+
+const shadows = (mode: SystemMode): Theme['shadows'] => {
   const color = `var(--mui-mainColorChannels-${mode}Shadow)`
 
   return [
