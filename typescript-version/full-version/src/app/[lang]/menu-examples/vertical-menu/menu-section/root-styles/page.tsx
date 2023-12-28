@@ -8,7 +8,7 @@ const RootStyles = () => {
     <VerticalNav customBreakpoint='200px'>
       <Menu menuItemStyles={{ button: { paddingBlock: '12px' } }}>
         <MenuSection
-          label='Dashbaords & Apps'
+          label='Dashboards & Apps'
           rootStyles={{
             color: 'red',
             fontSize: '1.3em',

@@ -13,8 +13,14 @@ import type {
 } from '@menu-package/horizontal-menu'
 
 // Vertical Menu Data
-export type VerticalMenuItemDataType = Omit<VerticalMenuItemProps, 'children'> & { label: ReactNode }
-export type VerticalSubMenuDataType = Omit<VerticalSubMenuProps, 'children'> & { children: VerticalMenuDataType[] }
+export type VerticalMenuItemDataType = Omit<VerticalMenuItemProps, 'children' | 'icon'> & {
+  label: ReactNode
+  icon?: string
+}
+export type VerticalSubMenuDataType = Omit<VerticalSubMenuProps, 'children' | 'icon'> & {
+  children: VerticalMenuDataType[]
+  icon?: string
+}
 export type VerticalSectionDataType = Omit<VerticalMenuSectionProps, 'children'> & {
   isSection: boolean
   children: VerticalMenuDataType[]
@@ -22,8 +28,12 @@ export type VerticalSectionDataType = Omit<VerticalMenuSectionProps, 'children'>
 export type VerticalMenuDataType = VerticalMenuItemDataType | VerticalSubMenuDataType | VerticalSectionDataType
 
 // Horizontal Menu Data
-export type HorizontalMenuItemDataType = Omit<HorizontalMenuItemProps, 'children'> & { label: ReactNode }
-export type HorizontalSubMenuDataType = Omit<HorizontalSubMenuProps, 'children'> & {
+export type HorizontalMenuItemDataType = Omit<HorizontalMenuItemProps, 'children' | 'icon'> & {
+  label: ReactNode
+  icon?: string
+}
+export type HorizontalSubMenuDataType = Omit<HorizontalSubMenuProps, 'children' | 'icon'> & {
   children: HorizontalMenuDataType[]
+  icon?: string
 }
 export type HorizontalMenuDataType = HorizontalMenuItemDataType | HorizontalSubMenuDataType

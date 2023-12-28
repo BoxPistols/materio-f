@@ -7,7 +7,7 @@ const Prefix = () => {
   return (
     <VerticalNav customBreakpoint='200px'>
       <Menu menuItemStyles={{ button: { paddingBlock: '12px' } }}>
-        <MenuSection label='Dashbaords & Apps' prefix='😁'>
+        <MenuSection label='Dashboards & Apps' prefix='😁'>
           <SubMenu label='Dashboards'>
             <MenuItem>Analytics</MenuItem>
             <MenuItem>eCommerce</MenuItem>

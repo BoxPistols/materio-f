@@ -7,7 +7,7 @@ const Icon = () => {
   return (
     <VerticalNav customBreakpoint='200px'>
       <Menu menuItemStyles={{ button: { paddingBlock: '12px' } }}>
-        <MenuSection label='Dashbaords & Apps' icon={<>🔥</>}>
+        <MenuSection label='Dashboards & Apps' icon={<>🔥</>}>
           <SubMenu label='Dashboards'>
             <MenuItem>Analytics</MenuItem>
             <MenuItem>eCommerce</MenuItem>

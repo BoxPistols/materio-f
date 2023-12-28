@@ -27,6 +27,8 @@ export const generateVerticalMenu = (menuData: VerticalMenuDataType[], locale: L
     const subMenuItem = item as VerticalSubMenuDataType
     const menuItem = item as VerticalMenuItemDataType
 
+    const icon = <i className={menuItem.icon} />
+
     // Check if the current item is a section
     if (menuSectionItem.isSection) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -46,7 +48,7 @@ export const generateVerticalMenu = (menuData: VerticalMenuDataType[], locale: L
 
       // If it is, return a SubMenu component and call generateMenu with the current subMenuItem's children
       return (
-        <VerticalSubMenu key={index} {...rest}>
+        <VerticalSubMenu key={index} {...rest} icon={icon}>
           {children && generateVerticalMenu(children, locale)}
         </VerticalSubMenu>
       )
@@ -59,7 +61,7 @@ export const generateVerticalMenu = (menuData: VerticalMenuDataType[], locale: L
 
     // If the current item is neither a section nor a sub menu, return a MenuItem component
     return (
-      <VerticalMenuItem key={index} href={href} {...menuItem}>
+      <VerticalMenuItem key={index} href={href} {...menuItem} icon={icon}>
         {menuItem.label}
       </VerticalMenuItem>
     )
@@ -73,13 +75,15 @@ export const generateHorizontalMenu = (menuData: HorizontalMenuDataType[], local
     const subMenuItem = item as HorizontalSubMenuDataType
     const menuItem = item as HorizontalMenuItemDataType
 
+    const icon = <i className={menuItem.icon} />
+
     // Check if the current item is a sub menu
     if (subMenuItem.children) {
       const { children, ...rest } = subMenuItem
 
       // If it is, return a SubMenu component and call generateMenu with the current subMenuItem's children
       return (
-        <HorizontalSubMenu key={index} {...rest}>
+        <HorizontalSubMenu key={index} {...rest} icon={icon}>
           {children && generateHorizontalMenu(children, locale)}
         </HorizontalSubMenu>
       )
@@ -92,7 +96,7 @@ export const generateHorizontalMenu = (menuData: HorizontalMenuDataType[], local
 
     // If the current item is neither a section nor a sub menu, return a MenuItem component
     return (
-      <HorizontalMenuItem key={index} href={href} {...menuItem}>
+      <HorizontalMenuItem key={index} href={href} {...menuItem} icon={icon}>
         {menuItem.label}
       </HorizontalMenuItem>
     )

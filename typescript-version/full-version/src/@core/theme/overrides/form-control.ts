@@ -5,10 +5,6 @@ const formControl: Theme['components'] = {
   MuiFormControlLabel: {
     styleOverrides: {
       root: {
-        '&.Mui-disabled .MuiFormControlLabel-label': {
-          color: 'var(--mui-palette-text-primary)'
-        },
-
         // Radio & Checkbox
         '&.Mui-disabled:not(:has(.MuiSwitch-switchBase))': {
           opacity: 0.45
@@ -19,6 +15,11 @@ const formControl: Theme['components'] = {
           {
             opacity: 0.45
           }
+      },
+      label: {
+        '&, &.Mui-disabled': {
+          color: 'var(--mui-palette-text-primary)'
+        }
       }
     }
   }

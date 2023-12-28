@@ -7,7 +7,7 @@ const Suffix = () => {
   return (
     <VerticalNav customBreakpoint='200px'>
       <Menu menuItemStyles={{ button: { paddingBlock: '12px' } }}>
-        <MenuSection label='Dashbaords & Apps' suffix='😁'>
+        <MenuSection label='Dashboards & Apps' suffix='😁'>
           <SubMenu label='Dashboards'>
             <MenuItem>Analytics</MenuItem>
             <MenuItem>eCommerce</MenuItem>
