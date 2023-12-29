@@ -45,6 +45,7 @@ import type { UsersType } from '@/types/apps/userTypes'
 // Component Imports
 import TableFilters from './TableFilters'
 import AddUserDrawer from './AddUserDrawer'
+import OptionMenu from '@core/components/option-menu'
 import CustomAvatar from '@core/components/mui/Avatar'
 
 // Util Imports
@@ -185,12 +186,7 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
           <div className='flex items-center gap-4'>
             {getAvatar({ avatar: row.original.avatar, fullName: row.original.fullName })}
             <div className='flex flex-col'>
-              <Typography
-                component={Link}
-                href='/apps/user/view'
-                className='font-medium hover:text-primary'
-                color='text.primary'
-              >
+              <Typography className='font-medium' color='text.primary'>
                 {row.original.fullName}
               </Typography>
               <Typography variant='body2'>{row.original.username}</Typography>
@@ -246,13 +242,24 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
               <i className='ri-delete-bin-7-line text-[22px]' />
             </IconButton>
             <IconButton>
-              <i className='ri-edit-box-line text-[22px]' />
-            </IconButton>
-            <IconButton>
               <Link href='/apps/user/view' className='flex'>
                 <i className='ri-eye-line text-[22px]' />
               </Link>
             </IconButton>
+            <OptionMenu
+              options={[
+                {
+                  text: 'Download',
+                  icon: 'ri-download-line text-[22px]',
+                  menuItemProps: { className: 'flex items-center' }
+                },
+                {
+                  text: 'Edit',
+                  icon: 'ri-edit-box-line text-[22px]',
+                  linkProps: { className: 'flex items-center' }
+                }
+              ]}
+            />
           </div>
         ),
         enableSorting: false

@@ -37,6 +37,7 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
     children: [
       {
         label: dictionary['navigation'].calendar,
+        href: '/apps/calendar',
         icon: 'ri-calendar-line'
       },
       {

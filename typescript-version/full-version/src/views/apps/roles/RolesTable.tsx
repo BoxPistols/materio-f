@@ -47,6 +47,7 @@ import type { UsersType } from '@/types/apps/userTypes'
 
 // Component Imports
 import CustomAvatar from '@core/components/mui/Avatar'
+import OptionMenu from '@core/components/option-menu'
 
 // Util Imports
 import { getInitials } from '@/utils/get-initials'
@@ -257,13 +258,24 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
               <i className='ri-delete-bin-7-line text-[22px]' />
             </IconButton>
             <IconButton>
-              <i className='ri-edit-box-line text-[22px]' />
-            </IconButton>
-            <IconButton>
               <Link href='/apps/user/view' className='flex'>
                 <i className='ri-eye-line text-[22px]' />
               </Link>
             </IconButton>
+            <OptionMenu
+              options={[
+                {
+                  text: 'Download',
+                  icon: 'ri-download-line text-[22px]',
+                  menuItemProps: { className: 'flex items-center' }
+                },
+                {
+                  text: 'Edit',
+                  icon: 'ri-edit-box-line text-[22px]',
+                  linkProps: { className: 'flex items-center' }
+                }
+              ]}
+            />
           </div>
         ),
         enableSorting: false

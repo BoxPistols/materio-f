@@ -9,12 +9,12 @@ import { styled } from '@mui/material/styles'
 import type { BoxProps } from '@mui/material/Box'
 
 // Third-party Imports
-import ReactDatePicker from 'react-datepicker'
+import ReactDatePickerComponent from 'react-datepicker'
 
 // Styles
 import 'react-datepicker/dist/react-datepicker.css'
 
-type Props = ComponentProps<typeof ReactDatePicker> & {
+type Props = ComponentProps<typeof ReactDatePickerComponent> & {
   boxProps?: BoxProps
 }
 
@@ -472,7 +472,7 @@ const AppReactDatepicker = (props: Props) => {
 
   return (
     <StyledReactDatePicker {...boxProps}>
-      <ReactDatePicker {...rest} />
+      <ReactDatePickerComponent {...rest} />
     </StyledReactDatePicker>
   )
 }

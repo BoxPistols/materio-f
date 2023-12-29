@@ -15,6 +15,7 @@ import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
+import Tooltip from '@mui/material/Tooltip'
 import TablePagination from '@mui/material/TablePagination'
 
 // Third-party Imports
@@ -122,9 +123,23 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
       columnHelper.accessor('invoiceStatus', {
         header: 'Status',
         cell: ({ row }) => (
-          <CustomAvatar skin='light' color={invoiceStatusObj[row.original.invoiceStatus].color} size={28}>
-            <i className={classnames('text-base', invoiceStatusObj[row.original.invoiceStatus].icon)} />
-          </CustomAvatar>
+          <Tooltip
+            title={
+              <div>
+                <Typography variant='caption'>{row.original.invoiceStatus}</Typography>
+                <br />
+                <Typography variant='caption'>Balance:</Typography>
+                {row.original.balance}
+                <br />
+                <Typography variant='caption'>Due Date:</Typography>
+                {row.original.dueDate}
+              </div>
+            }
+          >
+            <CustomAvatar skin='light' color={invoiceStatusObj[row.original.invoiceStatus].color} size={28}>
+              <i className={classnames('text-base', invoiceStatusObj[row.original.invoiceStatus].icon)} />
+            </CustomAvatar>
+          </Tooltip>
         )
       }),
       columnHelper.accessor('total', {
@@ -152,7 +167,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
               options={[
                 {
                   text: 'Download',
-                  icon: 'ri-download-fill text-[22px]',
+                  icon: 'ri-download-line text-[22px]',
                   menuItemProps: { className: 'flex items-center gap-2 text-textSecondary' }
                 },
                 {

@@ -35,6 +35,7 @@ const horizontalMenuData = (dictionary: Dictionary, params: Params): HorizontalM
     children: [
       {
         label: dictionary['navigation'].calendar,
+        href: '/apps/calendar',
         icon: 'ri-calendar-line'
       },
       {
