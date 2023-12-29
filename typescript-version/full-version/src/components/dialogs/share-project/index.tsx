@@ -25,6 +25,9 @@ import MenuItem from '@mui/material/MenuItem'
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
+// Component Imports
+import CustomAvatar from '@/@core/components/mui/Avatar'
+
 type ShareProjectProps = {
   open: boolean
   setOpen: (open: boolean) => void
@@ -166,7 +169,7 @@ const ShareProject = ({ open, setOpen }: ShareProjectProps) => {
             renderOption={(props, option) => (
               <ListItem {...props} key={option.name}>
                 <ListItemAvatar>
-                  <Avatar src={`/images/avatars/${option.avatar}`} alt={option.name} />
+                  <CustomAvatar src={`/images/avatars/${option.avatar}`} alt={option.name} size={30} />
                 </ListItemAvatar>
                 <ListItemText primary={option.name} />
               </ListItem>
@@ -177,14 +180,14 @@ const ShareProject = ({ open, setOpen }: ShareProjectProps) => {
           <Typography variant='h6'>{`${data.length} Members`}</Typography>
           <div className='flex flex-col flex-wrap gap-4'>
             {data.map((member, index) => (
-              <div key={index} className='flex items-center w-full gap-4'>
+              <div key={index} className='flex items-center is-full gap-4'>
                 <Avatar src={`/images/avatars/${member.avatar}`} alt={member.name} />
-                <div className='flex justify-between items-center w-full overflow-hidden'>
+                <div className='flex justify-between items-center is-full overflow-hidden'>
                   <div className='flex flex-col items-start overflow-hidden'>
-                    <Typography className='truncate w-full' color='text.primary'>
+                    <Typography className='truncate is-full' color='text.primary'>
                       {member.name}
                     </Typography>
-                    <Typography variant='body2' className='truncate w-full'>
+                    <Typography variant='body2' className='truncate is-full'>
                       {member.email}
                     </Typography>
                   </div>
@@ -227,7 +230,7 @@ const ShareProject = ({ open, setOpen }: ShareProjectProps) => {
             </Menu>
           </div>
         </div>
-        <div className='flex items-center justify-between flex-wrap'>
+        <div className='flex items-center justify-between flex-wrap gap-3'>
           <div className='flex items-center flex-grow gap-2'>
             <i className='ri-group-line text-xl' />
             <Typography className='font-medium' color='text.primary'>

@@ -41,7 +41,7 @@ const Details = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: 
         <div onClick={() => setValue('crm')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
             <CustomAvatar variant='rounded' skin='light' color='info' size={46}>
-              <i className='ri-bar-chart-box-line text-[28px]' />
+              <i className='ri-bar-chart-box-line text-3xl' />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography className='font-medium' color='text.primary'>
@@ -55,7 +55,7 @@ const Details = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: 
         <div onClick={() => setValue('eCommerce')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
             <CustomAvatar variant='rounded' skin='light' color='success' size={46}>
-              <i className='ri-shopping-cart-2-line text-[28px]' />
+              <i className='ri-shopping-cart-2-line text-3xl' />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography className='font-medium' color='text.primary'>
@@ -69,7 +69,7 @@ const Details = ({ activeStep, isLastStep, handleNext, handlePrev, direction }: 
         <div onClick={() => setValue('learning')} className='flex items-center justify-between cursor-pointer gap-4'>
           <div className='flex items-center gap-4'>
             <CustomAvatar variant='rounded' skin='light' color='error' size={46}>
-              <i className='ri-video-upload-line text-[28px]' />
+              <i className='ri-video-upload-line text-3xl' />
             </CustomAvatar>
             <div className='flex flex-col gap-1'>
               <Typography className='font-medium' color='text.primary'>

@@ -44,7 +44,7 @@ const ApiKeyList = () => {
           billing.
         </Typography>
         {apiKeyList.map((item, index) => (
-          <div key={index} className='flex flex-col gap-2 p-4 rounded bg-activeHover'>
+          <div key={index} className='flex flex-col gap-2 p-4 rounded bg-actionHover'>
             <div className='flex items-center gap-3'>
               <Typography variant='h6'>{item.title}</Typography>
               <Chip variant='tonal' color='primary' label={item.access} size='small' />

@@ -201,6 +201,7 @@ const KitchenSink = () => {
   return (
     <Card>
       <CardHeader
+        className='flex flex-wrap gap-y-2'
         title='Kitchen Sink'
         action={
           <DebouncedInput

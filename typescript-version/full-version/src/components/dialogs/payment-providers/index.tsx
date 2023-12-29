@@ -202,7 +202,7 @@ const PaymentProviders = ({ open, setOpen }: PaymentProvidersProps) => {
       </DialogTitle>
       <DialogContent className='pbs-0 pbe-10 pli-10 sm:pbe-16 sm:pli-16'>
         <IconButton onClick={() => setOpen(false)} className='absolute block-start-4 inline-end-4'>
-          <i className='ri-close-line' />
+          <i className='ri-close-line text-textSecondary' />
         </IconButton>
         <div>
           {cardList?.map((card, index) => (

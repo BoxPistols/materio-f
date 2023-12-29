@@ -62,7 +62,7 @@ const Pricing = ({ data, direction }: { data: PricingPlanType[]; direction: Dire
                   'ri-corner-right-down-line': direction === 'rtl',
                   'ri-corner-left-down-line': direction !== 'rtl'
                 },
-                'mbs-2 mie-1 text-disabled'
+                'mbs-2 mie-1 text-textDisabled'
               )}
             />
             <Chip label='Save up to 10%' size='small' color='primary' variant='tonal' />

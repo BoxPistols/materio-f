@@ -262,7 +262,7 @@ const FormLayoutsWithTabs = () => {
                 </Grid>
               </Grid>
             </TabPanel>
-            <TabPanel value='social_links'>
+            <TabPanel value='social_links' className='pbs-0'>
               <Grid container spacing={5}>
                 <Grid item xs={12} sm={6}>
                   <TextField

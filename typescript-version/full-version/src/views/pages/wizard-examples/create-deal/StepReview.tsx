@@ -9,9 +9,6 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 // Type Imports
 import type { Direction } from '@core/types'
 
-// Style Imports
-import tableStyles from '@core/styles/table.module.css'
-
 type Props = {
   activeStep: number
   handleNext: () => void
@@ -26,7 +23,7 @@ const StepReview = ({ activeStep, handleNext, handlePrev, steps, direction }: Pr
       <Grid item xs={12} lg={6} className='flex flex-col gap-4'>
         <Typography variant='h4'>Almost done! 🚀</Typography>
         <Typography>Confirm your deal details information and submit to create it.</Typography>
-        <table className={tableStyles.table}>
+        <table>
           <tbody>
             <tr>
               <td className='plb-1'>

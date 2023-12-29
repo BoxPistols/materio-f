@@ -45,10 +45,11 @@ const Transactions = () => {
     <Card>
       <CardHeader
         title='Transactions'
-        action={<OptionMenu iconClassName='text-textPrimary' options={['Refresh', 'Share', 'Update']} />}
+        action={<OptionMenu options={['Refresh', 'Share', 'Update']} />}
         subheader={
           <>
-            <span className='font-medium text-textPrimary'>Total 48.5% Growth 😎</span> this month
+            <span className='font-medium text-textPrimary'>Total 48.5% Growth 😎</span>{' '}
+            <span className='text-textSecondary'>this month</span>
           </>
         }
       />
@@ -57,7 +58,7 @@ const Transactions = () => {
           {data.map((item, index) => (
             <Grid item xs={12} sm={4} key={index}>
               <div className='flex items-center gap-3'>
-                <CustomAvatar variant='rounded' color={item.color}>
+                <CustomAvatar variant='rounded' color={item.color} className='shadow-xs'>
                   <i className={item.icon}></i>
                 </CustomAvatar>
                 <div>

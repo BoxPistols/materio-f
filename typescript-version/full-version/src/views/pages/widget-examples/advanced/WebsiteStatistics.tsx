@@ -131,8 +131,8 @@ const WebsiteStatistics = () => {
         title='Website Statistics'
         action={<OptionMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
-      <CardContent className='!pbe-1'>
-        <div className='flex items-center justify-between plb-5'>
+      <CardContent className='!pbe-2.5'>
+        <div className='flex items-center justify-between lg:plb-5'>
           <div className='flex flex-col gap-2'>
             <Typography variant='h1'>4,590</Typography>
             <Typography variant='body2'>Total Traffic</Typography>
@@ -149,16 +149,16 @@ const WebsiteStatistics = () => {
           <tbody>
             {data.map((row, index) => (
               <tr key={index} className='[&:not(:last-child)]:border-be'>
-                <td className='flex items-center gap-2 plb-2.5'>
+                <td className='flex items-center gap-2 !plb-2.5 !pis-0 !bs-[unset]'>
                   <i className={classnames('ri-circle-fill text-base', `text-${row.color}`)} />
                   <Typography color='text.primary'>{row.title}</Typography>
                 </td>
-                <td className='text-end plb-2.5'>
+                <td className='text-end plb-2.5 !bs-[unset]'>
                   <Typography color='text.primary' className='font-medium'>
                     {row.sales}
                   </Typography>
                 </td>
-                <td className='flex gap-2 justify-end plb-2.5'>
+                <td className='flex gap-2 justify-end plb-2.5 !pie-0 !bs-[unset]'>
                   <Typography color='text.primary' className='font-medium'>
                     {row.trendNumber}
                   </Typography>

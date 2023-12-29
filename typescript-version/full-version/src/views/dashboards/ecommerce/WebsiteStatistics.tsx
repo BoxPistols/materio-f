@@ -145,7 +145,7 @@ const WebsiteStatistics = () => {
           <tbody>
             {data.map((row, index) => (
               <tr key={index}>
-                <td className='flex items-center gap-2 !plb-2.5 !bs-[unset]'>
+                <td className='flex items-center gap-2 !plb-2.5 !pis-0 !bs-[unset]'>
                   <i className={classnames('ri-circle-fill text-base', `text-${row.color}`)} />
                   <Typography color='text.primary'>{row.title}</Typography>
                 </td>
@@ -154,7 +154,7 @@ const WebsiteStatistics = () => {
                     {row.sales}
                   </Typography>
                 </td>
-                <td className='flex gap-2 justify-end !plb-2.5 !bs-[unset]'>
+                <td className='flex gap-2 justify-end !plb-2.5 !pie-0 !bs-[unset]'>
                   <Typography color='text.primary' className='font-medium'>
                     {row.trendNumber}
                   </Typography>

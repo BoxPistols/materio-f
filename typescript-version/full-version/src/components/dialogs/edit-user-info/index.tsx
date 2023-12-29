@@ -82,7 +82,7 @@ const EditUserInfo = ({ open, setOpen, data }: EditUserInfoProps) => {
       <form onSubmit={e => e.preventDefault()}>
         <DialogContent className='overflow-visible pbs-0 pbe-6 pli-10 sm:pli-16'>
           <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
-            <i className='ri-close-line' />
+            <i className='ri-close-line text-textSecondary' />
           </IconButton>
           <Grid container spacing={5}>
             <Grid item xs={12} sm={6}>

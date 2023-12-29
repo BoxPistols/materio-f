@@ -22,7 +22,7 @@ const DialogCreateApp = ({ direction }: { direction: Direction }) => {
     <>
       <Card>
         <CardContent className='flex flex-col items-center text-center gap-4'>
-          <i className='ri-box-3-line text-[28px]' />
+          <i className='ri-box-3-line text-[28px] text-textPrimary' />
           <Typography variant='h5'>Create App</Typography>
           <Typography color='text.primary'>
             Provide application data with this form to create the app dialog popup example, easy to use in any page.

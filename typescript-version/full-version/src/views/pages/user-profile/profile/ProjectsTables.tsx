@@ -1,18 +1,16 @@
 'use client'
 
 // React Imports
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 // MUI Imports
 import AvatarGroup from '@mui/material/AvatarGroup'
 import Typography from '@mui/material/Typography'
 import LinearProgress from '@mui/material/LinearProgress'
-import TextField from '@mui/material/TextField'
 import Card from '@mui/material/Card'
 import Checkbox from '@mui/material/Checkbox'
 import CardHeader from '@mui/material/CardHeader'
 import TablePagination from '@mui/material/TablePagination'
-import type { TextFieldProps } from '@mui/material/TextField'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -62,34 +60,6 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
 
   // Return if the item should be filtered in/out
   return itemRank.passed
-}
-
-const DebouncedInput = ({
-  value: initialValue,
-  onChange,
-  debounce = 500,
-  ...props
-}: {
-  value: string | number
-  onChange: (value: string | number) => void
-  debounce?: number
-} & Omit<TextFieldProps, 'onChange'>) => {
-  const [value, setValue] = useState(initialValue)
-
-  useEffect(() => {
-    setValue(initialValue)
-  }, [initialValue])
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      onChange(value)
-    }, debounce)
-
-    return () => clearTimeout(timeout)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value])
-
-  return <TextField {...props} value={value} onChange={e => setValue(e.target.value)} size='small' />
 }
 
 const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] }) => {
@@ -146,7 +116,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
       columnHelper.accessor('avatarGroup', {
         header: 'Team',
         cell: ({ row }) => (
-          <AvatarGroup max={4} className='flex items-center'>
+          <AvatarGroup max={4} className='flex items-center pull-up'>
             {row.original.avatarGroup.map((avatar, index) => (
               <CustomAvatar key={index} src={avatar} size={26} />
             ))}
@@ -167,6 +137,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
         header: 'Actions',
         cell: () => (
           <OptionMenu
+            iconClassName='text-textSecondary'
             options={[
               'Details',
               'Archive',
@@ -213,17 +184,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
 
   return (
     <Card>
-      <CardHeader
-        className='flex-wrap gap-x-4 gap-y-2'
-        title='Projects'
-        action={
-          <DebouncedInput
-            value={globalFilter ?? ''}
-            onChange={value => setGlobalFilter(String(value))}
-            placeholder='Search all columns...'
-          />
-        }
-      />
+      <CardHeader className='flex-wrap gap-x-4 gap-y-2' title='Projects' />
 
       <div className='overflow-x-auto'>
         <table className={tableStyles.table}>

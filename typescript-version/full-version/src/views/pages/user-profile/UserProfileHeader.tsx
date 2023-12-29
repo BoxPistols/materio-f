@@ -26,7 +26,7 @@ const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
             <Typography variant='h4'>{data?.fullName}</Typography>
             <div className='flex flex-wrap gap-6 justify-center sm:justify-normal'>
               <div className='flex items-center gap-2'>
-                {data?.designationIcon && <i className={classnames('text-textSecondary', data?.designationIcon)} />}
+                {data?.designationIcon && <i className={classnames(data?.designationIcon, 'text-textSecondary')} />}
                 <Typography className='font-medium'>{data?.designation}</Typography>
               </div>
               <div className='flex items-center gap-2'>

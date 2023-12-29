@@ -28,7 +28,7 @@ const AddContent = ({ handleClose }: { handleClose: () => void }) => {
     <>
       <DialogContent className='overflow-visible pbs-0 pbe-6 pli-10 sm:pli-16'>
         <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
-          <i className='ri-close-line' />
+          <i className='ri-close-line text-textSecondary' />
         </IconButton>
         <TextField fullWidth label='Permission Name' variant='outlined' placeholder='Enter Permission Name' />
         <FormControlLabel control={<Checkbox />} label='Set as core permission' />
@@ -49,7 +49,7 @@ const EditContent = ({ handleClose, data }: EditProps) => {
   return (
     <DialogContent className='overflow-visible pbs-0 pbe-6 pli-10 sm:pli-16'>
       <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
-        <i className='ri-close-line' />
+        <i className='ri-close-line text-textSecondary' />
       </IconButton>
       <Alert severity='warning' className='mbe-8'>
         <AlertTitle>Warning!</AlertTitle>

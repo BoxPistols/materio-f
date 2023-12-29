@@ -38,7 +38,10 @@ const tabs: Theme['components'] = {
                       color: 'var(--mui-palette-primary-main)',
                       borderInlineEnd: '2px solid var(--mui-palette-primary-mainOpacity)'
                     })
-              })
+              }),
+          '& .MuiTabScrollButton-root': {
+            borderRadius: theme.shape.borderRadius
+          }
         }
       }),
       vertical: {

@@ -10,7 +10,6 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 
 // Third Party Imports
-import classnames from 'classnames'
 import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
@@ -115,34 +114,36 @@ const CardWidgetsSalesOverview = () => {
             <Grid container spacing={6}>
               <Grid item xs={6}>
                 <div className='flex items-center gap-2 mbe-1'>
-                  <i className='ri-circle-fill text-sm text-primary' />
+                  <div>
+                    <i className='ri-circle-fill text-[10px] text-primary' />
+                  </div>
                   <Typography>Apparel</Typography>
                 </div>
                 <Typography className='font-medium'>$12,150</Typography>
               </Grid>
               <Grid item xs={6}>
                 <div className='flex items-center gap-2 mbe-1'>
-                  <i
-                    className={classnames('ri-circle-fill text-sm')}
-                    style={{ color: rgbaToHex(`rgb(${theme.palette.primary.mainChannel} / 0.7)`) }}
-                  />
+                  <div>
+                    <i className='ri-circle-fill text-[10px] text-primary' />
+                  </div>
                   <Typography>Electronics</Typography>
                 </div>
                 <Typography className='font-medium'>$24,900</Typography>
               </Grid>
               <Grid item xs={6}>
                 <div className='flex items-center gap-2 mbe-1'>
-                  <i
-                    className='ri-circle-fill text-sm'
-                    style={{ color: rgbaToHex(`rgb(${theme.palette.primary.mainChannel} / 0.5)`) }}
-                  />
+                  <div>
+                    <i className='ri-circle-fill text-[10px] text-primary' />
+                  </div>
                   <Typography>FMCG</Typography>
                 </div>
                 <Typography className='font-medium'>$12,750</Typography>
               </Grid>
               <Grid item xs={6}>
                 <div className='flex items-center gap-2 mbe-1'>
-                  <i className='ri-circle-fill text-sm' style={{ color: theme.palette.customColors.trackBg }} />
+                  <div>
+                    <i className='ri-circle-fill text-[10px] text-primary' />
+                  </div>
                   <Typography>Other Sales</Typography>
                 </div>
                 <Typography className='font-medium'>$50,200</Typography>

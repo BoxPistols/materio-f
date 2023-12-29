@@ -13,6 +13,9 @@ import IconButton from '@mui/material/IconButton'
 import InputAdornment from '@mui/material/InputAdornment'
 import Button from '@mui/material/Button'
 
+// Third-party Imports
+import classnames from 'classnames'
+
 // Type Imports
 import type { Direction, Mode } from '@core/types'
 
@@ -21,6 +24,7 @@ import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
@@ -34,6 +38,9 @@ const ResetPasswordV2 = ({ direction, mode }: { direction: Direction; mode: Mode
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   const handleClickShowConfirmPassword = () => setIsConfirmPasswordShown(show => !show)
+
+  // Hooks
+  const { settings } = useSettings()
 
   const darkImg = '/images/pages/auth-v2-mask-dark.png'
   const lightImg = '/images/pages/auth-v2-mask-light.png'
@@ -55,7 +62,14 @@ const ResetPasswordV2 = ({ direction, mode }: { direction: Direction; mode: Mode
 
   return (
     <div className='flex h-full justify-center'>
-      <div className='flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden'>
+      <div
+        className={classnames(
+          'flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden',
+          {
+            'border-ie': settings.skin === 'bordered'
+          }
+        )}
+      >
         <div className='plb-12 pis-12'>
           <img
             src={characterIllustration}
@@ -119,8 +133,8 @@ const ResetPasswordV2 = ({ direction, mode }: { direction: Direction; mode: Mode
               Set New Password
             </Button>
             <Typography className='flex justify-center items-center' color='primary'>
-              <Link href='/pages/auth/login-v2' onClick={e => e.preventDefault()} className='flex items-center'>
-                <i className={direction === 'rtl' ? 'ri-arrow-right-s-line' : 'ri-arrow-left-s-line'} />
+              <Link href='/pages/auth/login-v2' className='flex items-center gap-1.5'>
+                <i className={direction === 'rtl' ? 'ri-arrow-right-s-line text-xl' : 'ri-arrow-left-s-line text-xl'} />
                 <span>Back to Login</span>
               </Link>
             </Typography>

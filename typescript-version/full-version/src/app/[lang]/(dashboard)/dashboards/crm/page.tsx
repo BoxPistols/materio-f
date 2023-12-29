@@ -4,16 +4,16 @@ import Grid from '@mui/material/Grid'
 // Components Imports
 import CardStatWithImage from '@components/card-statistics/character'
 import CardStatVertical from '@components/card-statistics/vertical'
-import Transactions from '@views/dashbaords/crm/Transactions'
-import TotalSales from '@views/dashbaords/crm/TotalSales'
-import RevenueReport from '@views/dashbaords/crm/RevenueReport'
-import CardWidgetsSalesOverview from '@views/dashbaords/crm/SalesOverview'
-import ActivityTimeline from '@views/dashbaords/crm/ActivityTimeline'
-import WeeklySales from '@views/dashbaords/crm/WeeklySales'
-import LineAreaChart from '@views/dashbaords/crm/LineAreaChart'
-import UpgradePlan from '@views/dashbaords/crm/UpgradePlan'
-import MeetingSchedule from '@views/dashbaords/crm/MeetingSchedule'
-import DeveloperMeetup from '@views/dashbaords/crm/DeveloperMeetup'
+import Transactions from '@views/dashboards/crm/Transactions'
+import TotalSales from '@views/dashboards/crm/TotalSales'
+import RevenueReport from '@views/dashboards/crm/RevenueReport'
+import CardWidgetsSalesOverview from '@views/dashboards/crm/SalesOverview'
+import ActivityTimeline from '@views/dashboards/crm/ActivityTimeline'
+import WeeklySales from '@views/dashboards/crm/WeeklySales'
+import LineAreaChart from '@views/dashboards/crm/LineAreaChart'
+import UpgradePlan from '@views/dashboards/crm/UpgradePlan'
+import MeetingSchedule from '@views/dashboards/crm/MeetingSchedule'
+import DeveloperMeetup from '@views/dashboards/crm/DeveloperMeetup'
 
 const DashboardCRM = () => {
   return (
@@ -77,13 +77,13 @@ const DashboardCRM = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} sm={6} lg={4}>
         <UpgradePlan />
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} sm={6} lg={4}>
         <MeetingSchedule />
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} sm={6} lg={4}>
         <DeveloperMeetup />
       </Grid>
     </Grid>

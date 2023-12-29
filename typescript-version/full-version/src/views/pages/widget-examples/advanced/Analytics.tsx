@@ -66,7 +66,7 @@ const Analytics = () => {
         title='Analytics'
         action={<OptionMenu iconClassName='text-textPrimary' options={['Refresh', 'Share', 'Update']} />}
       />
-      <CardContent className='flex flex-col gap-2.5'>
+      <CardContent className='flex flex-col gap-2.5 md:gap-7 lg:gap-2.5'>
         {data.map((item, index) => (
           <div key={index} className='flex items-center gap-4'>
             <CustomAvatar skin='light' color={item.avatarColor}>

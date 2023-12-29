@@ -37,7 +37,7 @@ const UserProfile = ({ tabContentList, data }: { tabContentList: { [key: string]
               <Tab
                 label={
                   <div className='flex items-center gap-1.5'>
-                    <i className='ri-user-3-line text-xl' />
+                    <i className='ri-user-3-line text-lg' />
                     Profile
                   </div>
                 }
@@ -46,7 +46,7 @@ const UserProfile = ({ tabContentList, data }: { tabContentList: { [key: string]
               <Tab
                 label={
                   <div className='flex items-center gap-1.5'>
-                    <i className='ri-team-line text-xl' />
+                    <i className='ri-team-line text-lg' />
                     Teams
                   </div>
                 }
@@ -55,7 +55,7 @@ const UserProfile = ({ tabContentList, data }: { tabContentList: { [key: string]
               <Tab
                 label={
                   <div className='flex items-center gap-1.5'>
-                    <i className='ri-computer-line text-xl' />
+                    <i className='ri-computer-line text-lg' />
                     Projects
                   </div>
                 }
@@ -64,7 +64,7 @@ const UserProfile = ({ tabContentList, data }: { tabContentList: { [key: string]
               <Tab
                 label={
                   <div className='flex items-center gap-1.5'>
-                    <i className='ri-link-m text-xl' />
+                    <i className='ri-link-m text-lg' />
                     Connections
                   </div>
                 }

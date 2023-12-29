@@ -74,7 +74,7 @@ const PaymentMethod = ({ open, setOpen }: PaymentMethodProps) => {
       </DialogTitle>
       <DialogContent className='pbs-0 pbe-10 pli-10 sm:pli-16 sm:pbe-16'>
         <IconButton onClick={() => setOpen(false)} className='absolute block-start-4 inline-end-4'>
-          <i className='ri-close-line' />
+          <i className='ri-close-line text-textSecondary' />
         </IconButton>
         <div>
           {cardList?.map((card, index) => (
@@ -90,7 +90,7 @@ const PaymentMethod = ({ open, setOpen }: PaymentMethodProps) => {
                   {card.cardName}
                 </Typography>
               </div>
-              <Typography>{card.cardType}</Typography>
+              <Typography className='hidden sm:block'>{card.cardType}</Typography>
             </div>
           ))}
         </div>

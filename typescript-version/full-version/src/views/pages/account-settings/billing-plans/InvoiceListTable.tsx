@@ -318,7 +318,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
 
   return (
     <Card>
-      <CardContent className='flex justify-between flex-col sm:flex-row items-start sm:items-center'>
+      <CardContent className='flex justify-between flex-col sm:flex-row gap-4 flex-wrap items-start sm:items-center'>
         <Button
           variant='contained'
           component={Link}
@@ -328,14 +328,14 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
         >
           Create Invoice
         </Button>
-        <div className='flex items-center flex-col sm:flex-row is-full sm:is-auto gap-x-4'>
+        <div className='flex items-center flex-col sm:flex-row is-full gap-4 sm:is-auto'>
           <DebouncedInput
             value={globalFilter ?? ''}
             onChange={value => setGlobalFilter(String(value))}
             placeholder='Search Invoice'
-            className='is-full sm:is-auto'
+            className='is-full sm:is-auto min-is-[200px]'
           />
-          <FormControl fullWidth size='small'>
+          <FormControl fullWidth size='small' className='min-is-[175px]'>
             <InputLabel id='status-select'>Invoice Status</InputLabel>
             <Select
               fullWidth

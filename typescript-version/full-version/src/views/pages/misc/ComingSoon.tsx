@@ -34,7 +34,7 @@ const ComingSoon = ({ mode }: { mode: Mode }) => {
             </div>
             <Form noValidate autoComplete='off'>
               <div className='flex justify-center gap-4'>
-                <TextField autoFocus size='small' type='email' placeholder='Enter your email' />
+                <TextField autoFocus size='small' type='email' placeholder='Enter your email' className='is-[70%]' />
                 <Button type='submit' variant='contained'>
                   Notify
                 </Button>

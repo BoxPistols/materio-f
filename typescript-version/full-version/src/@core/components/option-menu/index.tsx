@@ -25,6 +25,9 @@ import classnames from 'classnames'
 // Type Imports
 import type { OptionsMenuType, OptionType, OptionMenuItemType } from './types'
 
+// Hooks Imports
+import { useSettings } from '@core/hooks/useSettings'
+
 // Util Imports
 import { getLocale } from '@/utils/get-locale'
 import { getDirection } from '@/utils/get-direction'
@@ -53,6 +56,7 @@ const OptionMenu = (props: OptionsMenuType) => {
   const pathname = usePathname()
   const locale = getLocale(pathname)
   const direction = getDirection(locale)
+  const { settings } = useSettings()
 
   const handleToggle = () => {
     setOpen(prevOpen => !prevOpen)
@@ -107,7 +111,7 @@ const OptionMenu = (props: OptionsMenuType) => {
                       : 'left bottom'
             }}
           >
-            <Paper>
+            <Paper className={settings.skin === 'bordered' ? 'border shadow-none' : 'shadow-lg'}>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList autoFocusItem={open}>
                   {options.map((option: OptionType, index: number) => {

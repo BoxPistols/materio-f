@@ -34,9 +34,11 @@ const TotalSales = () => {
       width: 6,
       colors: [theme.palette.background.paper]
     },
+    labels: ['Direct', 'Organic', 'Referral', 'Mail'],
     legend: { show: false },
-    tooltip: { enabled: false },
-    dataLabels: { enabled: false },
+    dataLabels: {
+      enabled: false
+    },
     colors: [theme.palette.primary.main, theme.palette.info.main, theme.palette.warning.main, theme.palette.error.main],
     grid: {
       padding: {
@@ -60,23 +62,24 @@ const TotalSales = () => {
           labels: {
             show: true,
             name: {
-              offsetY: -2,
-              formatter: () => '28%',
+              offsetY: 18,
               color: textPrimary
             },
             value: {
-              offsetY: 2,
-              fontSize: '0.8125rem',
-              formatter: () => '1 Quarter',
-              color: rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.7)`)
+              offsetY: -18,
+              fontSize: '1.125rem',
+              fontWeight: 500,
+              formatter: value => `${value}%`,
+              color: textPrimary
             },
             total: {
               show: true,
-              label: '18%',
-              fontWeight: 500,
-              fontSize: '1.125rem',
-              formatter: () => '1 Quarter',
-              color: textPrimary
+              fontSize: '0.8125rem',
+              label: '1 Quarter',
+              formatter: function () {
+                return '28%'
+              },
+              color: rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.7)`)
             }
           }
         }
@@ -85,7 +88,7 @@ const TotalSales = () => {
   }
 
   return (
-    <Card>
+    <Card className='overflow-visible'>
       <CardContent className='flex justify-between bs-full'>
         <div className='flex flex-col justify-between'>
           <div className='flex flex-col gap-1'>

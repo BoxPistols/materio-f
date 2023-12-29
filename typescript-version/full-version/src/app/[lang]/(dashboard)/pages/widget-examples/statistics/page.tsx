@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid'
 import type { CardStatsType } from '@/types/pages/widgetTypes'
 
 // Components Imports
-import Transactions from '@/views/dashboards/analytics/Transactions'
+import Transactions from '@views/pages/widget-examples/statistics/Transactions'
 import TotalSales from '@views/pages/widget-examples/statistics/TotalSales'
 import Horizontal from '@views/pages/widget-examples/statistics/Horizontal'
 import Vertical from '@views/pages/widget-examples/statistics/Vertical'

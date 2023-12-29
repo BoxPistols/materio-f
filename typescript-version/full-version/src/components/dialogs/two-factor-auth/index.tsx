@@ -33,8 +33,8 @@ const data: CustomInputHorizontalData[] = [
   {
     title: (
       <div className='flex items-center gap-1'>
-        <i className='ri-settings-3-line text-xl' />
-        <Typography className='font-medium' color='text.primary'>
+        <i className='ri-settings-3-line text-textPrimary text-xl' />
+        <Typography className='font-medium whitespace-nowrap' color='text.primary'>
           Authenticator Apps
         </Typography>
       </div>
@@ -46,7 +46,7 @@ const data: CustomInputHorizontalData[] = [
   {
     title: (
       <div className='flex items-center gap-1'>
-        <i className='ri-wechat-line text-xl' />
+        <i className='ri-wechat-line text-textPrimary text-xl' />
         <Typography className='font-medium' color='text.primary'>
           SMS
         </Typography>
@@ -68,7 +68,7 @@ const SMSDialog = (handleAuthDialogClose: () => void) => {
       </DialogTitle>
       <DialogContent className='overflow-visible pbs-0 pbe-6 pli-10 sm:pli-16'>
         <IconButton className='absolute block-start-4 inline-end-4' onClick={handleAuthDialogClose}>
-          <i className='ri-close-line' />
+          <i className='ri-close-line text-textSecondary' />
         </IconButton>
 
         <TextField fullWidth type='number' label='Mobile Number' placeholder='123 456 7890' />
@@ -99,7 +99,7 @@ const AppDialog = (handleAuthDialogClose: () => void) => {
       </DialogTitle>
       <DialogContent className='flex flex-col gap-6 pbs-0 pbe-6 pli-10 sm:pli-16'>
         <IconButton className='absolute block-start-4 inline-end-4' onClick={handleAuthDialogClose}>
-          <i className='ri-close-line' />
+          <i className='ri-close-line text-textSecondary' />
         </IconButton>
         <div className='flex flex-col gap-2'>
           <Typography variant='h5'>Authenticator Apps</Typography>
@@ -187,7 +187,7 @@ const TwoFactorAuth = ({ open, setOpen, direction }: TwoFactorAuthProps) => {
         </DialogTitle>
         <DialogContent className='pbs-0 pbe-6 pli-10 sm:pli-16'>
           <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
-            <i className='ri-close-line' />
+            <i className='ri-close-line text-textSecondary' />
           </IconButton>
           <Grid container spacing={6}>
             {data.map((item, index) => (

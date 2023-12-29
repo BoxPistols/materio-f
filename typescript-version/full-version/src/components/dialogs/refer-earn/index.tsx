@@ -70,7 +70,7 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
       </DialogTitle>
       <DialogContent className='flex flex-col gap-6 pbs-0 pbe-10 pli-10 sm:pli-16 sm:pbe-16'>
         <IconButton onClick={() => setOpen(false)} className='absolute block-start-4 inline-end-4'>
-          <i className='ri-close-line' />
+          <i className='ri-close-line text-textSecondary' />
         </IconButton>
         <Grid container spacing={6} className='pbs-6'>
           {options?.map((option, index) => (

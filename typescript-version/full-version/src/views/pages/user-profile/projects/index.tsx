@@ -1,8 +1,5 @@
 'use client'
 
-// Next Imports
-import Link from 'next/link'
-
 // MUI Imports
 import Grid from '@mui/material/Grid'
 import Avatar from '@mui/material/Avatar'
@@ -20,6 +17,7 @@ import type { ProjectsTabType } from '@/types/pages/profileTypes'
 
 // Component Imports
 import OptionMenu from '@core/components/option-menu'
+import CustomAvatar from '@/@core/components/mui/Avatar'
 
 const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
   return (
@@ -32,17 +30,9 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                 <CardContent className='flex flex-col gap-4'>
                   <div className='flex items-center justify-between gap-4'>
                     <div className='flex items-center gap-4'>
-                      <Avatar src={item.avatar} />
+                      <CustomAvatar src={item.avatar} size={38} />
                       <div>
-                        <Typography
-                          variant='h5'
-                          href='/'
-                          component={Link}
-                          onClick={e => e.preventDefault()}
-                          className='hover:text-primary'
-                        >
-                          {item.title}
-                        </Typography>
+                        <Typography variant='h5'>{item.title}</Typography>
                         <Typography>
                           <span className='font-medium'>Client: </span>
                           {item.client}
@@ -103,8 +93,11 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                   </div>
                   <div>
                     <div className='flex items-center justify-between mbe-2'>
-                      <Typography variant='caption'>{`Tasks: ${item.completedTask}/${item.totalTask}`}</Typography>
-                      <Typography variant='caption'>
+                      <Typography
+                        variant='caption'
+                        className='text-textSecondary'
+                      >{`Tasks: ${item.completedTask}/${item.totalTask}`}</Typography>
+                      <Typography variant='caption' className='text-textSecondary'>
                         {`${Math.round((item.completedTask / item.totalTask) * 100)}% Completed`}
                       </Typography>
                     </div>
@@ -112,6 +105,7 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                       color='primary'
                       variant='determinate'
                       value={Math.round((item.completedTask / item.totalTask) * 100)}
+                      className='bs-2'
                     />
                   </div>
                   <div className='flex items-center justify-between gap-1'>

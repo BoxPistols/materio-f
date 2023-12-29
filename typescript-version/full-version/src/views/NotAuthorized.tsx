@@ -25,7 +25,7 @@ const NotAuthorized = ({ mode }: { mode: Mode }) => {
   return (
     <div className='flex items-center justify-center min-bs-[100dvh] relative p-6 overflow-x-hidden'>
       <div className='flex items-center flex-col text-center gap-10'>
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-2 is-[90vw] sm:is-[unset]'>
           <Typography className='text-8xl font-medium' color='text.primary'>
             401
           </Typography>

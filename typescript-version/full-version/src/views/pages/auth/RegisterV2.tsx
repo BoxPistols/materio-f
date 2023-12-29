@@ -16,6 +16,9 @@ import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Divider from '@mui/material/Divider'
 
+// Third-party Imports
+import classnames from 'classnames'
+
 // Type Imports
 import type { Mode } from '@core/types'
 
@@ -24,6 +27,7 @@ import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
@@ -34,6 +38,9 @@ const RegisterV2 = ({ mode }: { mode: Mode }) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false)
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
+
+  // Hooks
+  const { settings } = useSettings()
 
   const darkImg = '/images/pages/auth-v2-mask-dark.png'
   const lightImg = '/images/pages/auth-v2-mask-light.png'
@@ -55,7 +62,14 @@ const RegisterV2 = ({ mode }: { mode: Mode }) => {
 
   return (
     <div className='flex h-full justify-center'>
-      <div className='flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden'>
+      <div
+        className={classnames(
+          'flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden',
+          {
+            'border-ie': settings.skin === 'bordered'
+          }
+        )}
+      >
         <div className='plb-12 pis-12'>
           <img
             src={characterIllustration}
@@ -125,17 +139,17 @@ const RegisterV2 = ({ mode }: { mode: Mode }) => {
             </div>
             <Divider className='gap-3'>or</Divider>
             <div className='flex justify-center items-center gap-2'>
-              <IconButton>
-                <i className='ri-facebook-fill text-facebook' />
+              <IconButton className='text-facebook'>
+                <i className='ri-facebook-fill' />
               </IconButton>
-              <IconButton>
-                <i className='ri-twitter-fill text-twitter' />
+              <IconButton className='text-twitter'>
+                <i className='ri-twitter-fill' />
               </IconButton>
-              <IconButton>
-                <i className='ri-github-fill text-github' />
+              <IconButton className='text-github'>
+                <i className='ri-github-fill' />
               </IconButton>
-              <IconButton>
-                <i className='ri-google-line text-googlePlus' />
+              <IconButton className='text-googlePlus'>
+                <i className='ri-google-line' />
               </IconButton>
             </div>
           </form>

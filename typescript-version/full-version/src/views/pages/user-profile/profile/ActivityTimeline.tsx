@@ -92,7 +92,7 @@ const ActivityTimeline = () => {
                 <Typography variant='caption'>2 Day Ago</Typography>
               </div>
               <Typography className='mbe-2'>6 team members in a project</Typography>
-              <AvatarGroup total={6}>
+              <AvatarGroup total={6} className='pull-up'>
                 <Avatar alt='Remy Sharp' src='/images/avatars/1.png' />
                 <Avatar alt='Travis Howard' src='/images/avatars/8.png' />
                 <Avatar alt='Cindy Baker' src='/images/avatars/6.png' />

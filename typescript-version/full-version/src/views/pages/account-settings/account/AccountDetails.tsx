@@ -91,8 +91,8 @@ const AccountDetails = () => {
   return (
     <Card>
       <CardContent className='mbe-1'>
-        <div className='flex items-center gap-6'>
-          <img height={120} width={120} className='rounded' src={imgSrc} alt='Profile' />
+        <div className='flex items-start sm:items-center gap-6'>
+          <img height={100} width={100} className='rounded' src={imgSrc} alt='Profile' />
           <div className='flex flex-grow flex-col gap-4'>
             <div className='flex flex-col sm:flex-row gap-4'>
               <Button component='label' size='small' variant='contained' htmlFor='account-settings-upload-image'>

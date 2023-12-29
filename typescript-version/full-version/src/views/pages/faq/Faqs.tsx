@@ -67,7 +67,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
                 label={faq.title}
                 value={faq.id}
                 icon={<i className={classnames(faq.icon, '!mbe-0 mie-1.5')} />}
-                className='!flex-row !justify-start !min-is-full'
+                className='!flex-row !justify-start whitespace-nowrap !min-is-full'
               />
             ))}
           </CustomTabList>

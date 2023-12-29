@@ -61,8 +61,10 @@ const customInputData: CustomInputHorizontalData[] = [
   {
     title: (
       <Title component='div' className='flex items-center gap-1'>
-        <i className='ri-home-4-line text-xl' />
-        <Typography className='font-medium'>Home</Typography>
+        <i className='ri-home-4-line text-xl text-textPrimary' />
+        <Typography color='text.primary' className='font-medium'>
+          Home
+        </Typography>
       </Title>
     ),
     content: 'Delivery Time (7am - 9pm)',
@@ -72,8 +74,10 @@ const customInputData: CustomInputHorizontalData[] = [
   {
     title: (
       <Title component='div' className='flex items-center gap-1'>
-        <i className='ri-building-4-line text-xl' />
-        <Typography className='font-medium'>Office</Typography>
+        <i className='ri-building-4-line text-xl text-textPrimary' />
+        <Typography color='text.primary' className='font-medium'>
+          Office
+        </Typography>
       </Title>
     ),
     content: 'Delivery Time (10am - 6pm)',
@@ -118,7 +122,7 @@ const AddEditAddress = ({ open, setOpen, data }: AddEditAddressProps) => {
       <form onSubmit={e => e.preventDefault()}>
         <DialogContent className='pbs-0 pbe-6 pli-10 sm:pli-16'>
           <IconButton onClick={() => setOpen(false)} className='absolute block-start-4 inline-end-4'>
-            <i className='ri-close-line' />
+            <i className='ri-close-line text-textSecondary' />
           </IconButton>
           <Grid container spacing={5}>
             {customInputData.map((item, index) => (

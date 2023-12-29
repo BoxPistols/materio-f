@@ -18,7 +18,7 @@ const DialogAddNewAddress = () => {
   return (
     <Card>
       <CardContent className='flex flex-col items-center text-center gap-4'>
-        <i className='ri-home-4-line text-[28px]' />
+        <i className='ri-home-4-line text-[28px] text-textPrimary' />
         <Typography variant='h5'>Add New Address</Typography>
         <Typography color='text.primary'>
           Ready to use form to collect user address data with validation and custom input support.

@@ -8,6 +8,9 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 
+// Third-party Imports
+import classnames from 'classnames'
+
 // Type Imports
 import type { Mode } from '@core/types'
 
@@ -16,12 +19,16 @@ import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
 const TwoStepsV2 = ({ mode }: { mode: Mode }) => {
+  // Hooks
+  const { settings } = useSettings()
+
   const darkImg = '/images/pages/auth-v2-mask-dark.png'
   const lightImg = '/images/pages/auth-v2-mask-light.png'
 
@@ -42,7 +49,14 @@ const TwoStepsV2 = ({ mode }: { mode: Mode }) => {
 
   return (
     <div className='flex h-full justify-center'>
-      <div className='flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden'>
+      <div
+        className={classnames(
+          'flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden',
+          {
+            'border-ie': settings.skin === 'bordered'
+          }
+        )}
+      >
         <div className='plb-12 pis-12'>
           <img
             src={characterIllustration}
@@ -68,7 +82,7 @@ const TwoStepsV2 = ({ mode }: { mode: Mode }) => {
         <div className='flex flex-col gap-5 is-full sm:is-auto md:is-full sm:max-is-[400px] md:max-is-[unset]'>
           <div className='flex flex-col gap-1'>
             <Typography variant='h4'>Two Step Verification 💬</Typography>
-            <Typography className='mbs-1'>
+            <Typography>
               We sent a verification code to your mobile. Enter the code from the mobile in the field below.
             </Typography>
             <Typography className='font-medium' color='text.primary'>
@@ -76,17 +90,20 @@ const TwoStepsV2 = ({ mode }: { mode: Mode }) => {
             </Typography>
           </div>
           <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()} className='flex flex-col gap-5'>
-            <Button fullWidth variant='contained' type='submit'>
-              Skip For Now
-            </Button>
-            <div className='flex items-center justify-between gap-4'>
-              <TextField autoFocus className='[&_input]:text-center' />
-              <TextField className='[&_input]:text-center' />
-              <TextField className='[&_input]:text-center' />
-              <TextField className='[&_input]:text-center' />
-              <TextField className='[&_input]:text-center' />
-              <TextField className='[&_input]:text-center' />
+            <div className='flex flex-col gap-2'>
+              <Typography>Type your 6 digit security code</Typography>
+              <div className='flex items-center justify-between gap-4'>
+                <TextField autoFocus className='[&_input]:text-center' />
+                <TextField className='[&_input]:text-center' />
+                <TextField className='[&_input]:text-center' />
+                <TextField className='[&_input]:text-center' />
+                <TextField className='[&_input]:text-center' />
+                <TextField className='[&_input]:text-center' />
+              </div>
             </div>
+            <Button fullWidth variant='contained' type='submit'>
+              Verify My Account
+            </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
               <Typography>Didn&#39;t get the code?</Typography>
               <Typography color='primary' component={Link} href='/' onClick={e => e.preventDefault()}>

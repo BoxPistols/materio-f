@@ -50,7 +50,7 @@ const AccountDelete = () => {
             />
             {errors.checkbox && <FormHelperText error>Please confirm you want to delete account</FormHelperText>}
           </FormControl>
-          <Button variant='contained' color='primary' type='submit' disabled={Boolean(errors.checkbox)}>
+          <Button variant='contained' color='error' type='submit' disabled={Boolean(errors.checkbox)}>
             Deactivate Account
           </Button>
           <ConfirmationDialog open={open} setOpen={setOpen} type='delete-account' />

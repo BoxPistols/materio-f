@@ -40,7 +40,7 @@ const DeveloperMeetup = () => {
             <Typography>Joined</Typography>
           </div>
           <div className='flex flex-col gap-1 items-center'>
-            <i className='ri-group-line text-textSecondary' />
+            <i className='ri-group-line text-primary' />
             <Typography color='primary'>Invited</Typography>
           </div>
           <div className='flex flex-col gap-1 items-center'>

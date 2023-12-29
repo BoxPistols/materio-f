@@ -97,8 +97,10 @@ const ResetPasswordV1 = ({ direction, mode }: { direction: Direction; mode: Mode
                 Set New Password
               </Button>
               <Typography className='flex justify-center items-center' color='primary'>
-                <Link href='/pages/auth/login-v1' onClick={e => e.preventDefault()} className='flex items-center'>
-                  <i className={direction === 'rtl' ? 'ri-arrow-right-s-line' : 'ri-arrow-left-s-line'} />
+                <Link href='/pages/auth/login-v1' className='flex items-center gap-1.5'>
+                  <i
+                    className={direction === 'rtl' ? 'ri-arrow-right-s-line text-xl' : 'ri-arrow-left-s-line text-xl'}
+                  />
                   <span>Back to Login</span>
                 </Link>
               </Typography>

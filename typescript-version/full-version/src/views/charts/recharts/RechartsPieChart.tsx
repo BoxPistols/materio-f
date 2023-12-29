@@ -50,7 +50,14 @@ const RechartsPieChart = () => {
         <div className='bs-[350px]'>
           <ResponsiveContainer>
             <PieChart height={350} style={{ direction: 'ltr' }}>
-              <Pie data={data} innerRadius={80} dataKey='value' label={renderCustomizedLabel} labelLine={false}>
+              <Pie
+                data={data}
+                innerRadius={80}
+                dataKey='value'
+                label={renderCustomizedLabel}
+                labelLine={false}
+                stroke='none'
+              >
                 {data.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.color} />
                 ))}

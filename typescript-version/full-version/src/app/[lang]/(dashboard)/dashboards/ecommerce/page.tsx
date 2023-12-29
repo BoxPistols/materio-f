@@ -84,7 +84,7 @@ const DashboardECommerce = async () => {
               title='Logistics'
               stats='$44.10k'
               avatarIcon='ri-car-line'
-              avatarColor='success'
+              avatarColor='error'
               subtitle='Revenue Increase'
               trendNumber='42%'
               trend='positive'

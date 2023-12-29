@@ -101,7 +101,7 @@ const UpgradePlan = () => {
             </Typography>
           </div>
         </div>
-        <TextField fullWidth name='email' label='Email Address' placeholder='john.doe@gmail.com' size='small' />
+        <TextField fullWidth name='email' placeholder='Email Address' size='small' />
         <Button variant='contained' color='primary' fullWidth>
           Contact Now
         </Button>

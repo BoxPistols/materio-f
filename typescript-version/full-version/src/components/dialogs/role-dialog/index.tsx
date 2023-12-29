@@ -109,7 +109,7 @@ const RoleDialog = ({ open, setOpen }: RoleDialogProps) => {
       <form onSubmit={e => e.preventDefault()}>
         <DialogContent className='overflow-visible pbs-0 pbe-6 pli-10 sm:pli-16'>
           <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
-            <i className='ri-close-line' />
+            <i className='ri-close-line text-textSecondary' />
           </IconButton>
           <TextField label='Role Name' variant='outlined' fullWidth placeholder='Enter Role Name' />
           <Typography variant='h5' className='plb-6'>

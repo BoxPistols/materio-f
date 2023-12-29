@@ -7,6 +7,9 @@ import Link from 'next/link'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
+// Third-party Imports
+import classnames from 'classnames'
+
 // Type Imports
 import type { Mode } from '@core/types'
 
@@ -15,12 +18,16 @@ import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
 const VerifyEmailV2 = ({ mode }: { mode: Mode }) => {
+  // Hooks
+  const { settings } = useSettings()
+
   const darkImg = '/images/pages/auth-v2-mask-dark.png'
   const lightImg = '/images/pages/auth-v2-mask-light.png'
 
@@ -41,7 +48,14 @@ const VerifyEmailV2 = ({ mode }: { mode: Mode }) => {
 
   return (
     <div className='flex h-full justify-center'>
-      <div className='flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden'>
+      <div
+        className={classnames(
+          'flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden',
+          {
+            'border-ie': settings.skin === 'bordered'
+          }
+        )}
+      >
         <div className='plb-12 pis-12'>
           <img
             src={characterIllustration}

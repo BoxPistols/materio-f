@@ -23,7 +23,7 @@ const DialogPricing = ({ data, direction }: { data: PricingPlanType[]; direction
     <>
       <Card>
         <CardContent className='flex flex-col items-center text-center gap-4'>
-          <i className='ri-money-dollar-circle-line text-[28px]' />
+          <i className='ri-money-dollar-circle-line text-[28px] text-textPrimary' />
           <Typography variant='h5'>Pricing</Typography>
           <Typography color='text.primary'>
             Elegant pricing options dialog popup example, easy to use in any page.

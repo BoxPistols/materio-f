@@ -175,7 +175,7 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
       </DialogTitle>
       <DialogContent className='pbs-0 pbe-10 pli-10 sm:pli-16 sm:pbe-16'>
         <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
-          <i className='ri-close-line' />
+          <i className='ri-close-line text-textSecondary' />
         </IconButton>
         <div className='flex gap-y-6 flex-col md:flex-row'>
           <StepperWrapper>
@@ -193,17 +193,18 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
                       <div className='step-label gap-4'>
                         <Avatar
                           variant='rounded'
-                          className={classnames({ 'bg-primary text-white': activeStep === index })}
+                          className={classnames(
+                            { 'bg-primary text-white': activeStep === index },
+                            { 'bg-primaryLight text-primary': activeStep > index }
+                          )}
                         >
                           <i className={label.icon as string} />
                         </Avatar>
                         <div className='flex flex-col gap-1'>
-                          <Typography className='uppercase' color='text.primary'>
+                          <Typography className='uppercase font-medium' color='text.primary'>
                             {label.title}
                           </Typography>
-                          <Typography variant='body2' color='text.disabled'>
-                            {label.subtitle}
-                          </Typography>
+                          <Typography variant='body2'>{label.subtitle}</Typography>
                         </div>
                       </div>
                     </StepLabel>

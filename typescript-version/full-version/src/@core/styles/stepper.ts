@@ -60,7 +60,7 @@ const StepperWrapper = styled(Box)<BoxProps>(({ theme }) => {
     },
     '& .MuiStepper-alternativeLabel': {
       '& .MuiStepConnector-root': {
-        top: 10
+        top: 9
       },
       '& .MuiStepLabel-labelContainer': {
         display: 'flex',

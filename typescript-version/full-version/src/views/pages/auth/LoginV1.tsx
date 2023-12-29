@@ -91,17 +91,17 @@ const LoginV1 = ({ mode }: { mode: Mode }) => {
               </div>
               <Divider className='gap-3'>or</Divider>
               <div className='flex justify-center items-center gap-2'>
-                <IconButton>
-                  <i className='ri-facebook-fill text-facebook' />
+                <IconButton className='text-facebook'>
+                  <i className='ri-facebook-fill' />
                 </IconButton>
-                <IconButton>
-                  <i className='ri-twitter-fill text-twitter' />
+                <IconButton className='text-twitter'>
+                  <i className='ri-twitter-fill' />
                 </IconButton>
-                <IconButton>
-                  <i className='ri-github-fill text-github' />
+                <IconButton className='text-github'>
+                  <i className='ri-github-fill' />
                 </IconButton>
-                <IconButton>
-                  <i className='ri-google-line text-googlePlus' />
+                <IconButton className='text-googlePlus'>
+                  <i className='ri-google-line' />
                 </IconButton>
               </div>
             </form>
