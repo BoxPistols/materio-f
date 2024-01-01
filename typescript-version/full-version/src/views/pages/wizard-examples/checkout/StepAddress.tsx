@@ -47,7 +47,7 @@ const data: CustomInputHorizontalData[] = [
     value: 'home',
     isSelected: true,
     content: (
-      <HorizontalContent component='div' className='flex flex-col h-full gap-3'>
+      <HorizontalContent component='div' className='flex flex-col bs-full gap-3'>
         <Typography variant='body2'>
           4135 Parkway Street, Los Angeles, CA, 90017.
           <br />
@@ -70,7 +70,7 @@ const data: CustomInputHorizontalData[] = [
     meta: <Chip size='small' variant='tonal' label='Office' color='success' />,
     value: 'office',
     content: (
-      <HorizontalContent component='div' className='flex flex-col h-full gap-3'>
+      <HorizontalContent component='div' className='flex flex-col bs-full gap-3'>
         <Typography variant='body2'>
           87 Hoffman Avenue, New York, NY, 10016.
           <br />

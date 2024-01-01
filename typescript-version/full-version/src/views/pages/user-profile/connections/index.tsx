@@ -47,7 +47,7 @@ const Connections = ({ data }: { data?: ConnectionsTabType[] }) => {
                       </Link>
                     ))}
                   </div>
-                  <div className='flex w-full items-center justify-around flex-wrap'>
+                  <div className='flex is-full items-center justify-around flex-wrap'>
                     <div className='flex items-center flex-col'>
                       <Typography variant='h5'>{item.projects}</Typography>
                       <Typography>Projects</Typography>
@@ -68,7 +68,7 @@ const Connections = ({ data }: { data?: ConnectionsTabType[] }) => {
                     >
                       {item.isConnected ? 'Connected' : 'Connect'}
                     </Button>
-                    <Button variant='outlined' color='secondary' className='bs-[38px] is-[38px] min-w-0 p-1.5'>
+                    <Button variant='outlined' color='secondary' className='bs-[38px] is-[38px] min-is-0 p-1.5'>
                       <i className='ri-mail-open-line' />
                     </Button>
                   </div>

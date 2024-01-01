@@ -92,7 +92,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                         Date Issued:
                       </Typography>
                       <AppReactDatepicker
-                        boxProps={{ className: 'w-full' }}
+                        boxProps={{ className: 'is-full' }}
                         selected={issueDate}
                         id='payment-date'
                         onChange={(date: Date) => setIssueDate(date)}
@@ -104,7 +104,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                         Date Due:
                       </Typography>
                       <AppReactDatepicker
-                        boxProps={{ className: 'w-full' }}
+                        boxProps={{ className: 'is-full' }}
                         selected={dueDate}
                         id='payment-date'
                         onChange={(date: Date) => setDueDate(date)}
@@ -122,7 +122,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                     Invoice To:
                   </Typography>
                   <Select
-                    className='w-1/2 min-is-[200px] sm:w-auto'
+                    className='is-1/2 min-is-[200px] sm:is-auto'
                     size='small'
                     value={selectData.id}
                     onChange={e => {

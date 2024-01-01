@@ -99,7 +99,7 @@ const TotalRevenue = () => {
             </div>
             <Typography>New User</Typography>
           </div>
-          <Divider orientation='vertical' className='h-auto' />
+          <Divider orientation='vertical' className='bs-auto' />
           <div className='flex items-center flex-col justify-center gap-1'>
             <div className='flex items-center justify-center gap-2'>
               <i className='ri-circle-fill text-[10px] text-primary' />
@@ -109,7 +109,7 @@ const TotalRevenue = () => {
             </div>
             <Typography>Returning</Typography>
           </div>
-          <Divider orientation='vertical' className='h-auto' />
+          <Divider orientation='vertical' className='bs-auto' />
           <div className='flex items-center flex-col justify-center gap-1'>
             <div className='flex items-center justify-center gap-2'>
               <i className='ri-circle-fill text-[10px] text-warning' />

@@ -268,7 +268,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                   icon: 'ri-pencil-line text-[22px]',
                   href: `/apps/invoice/edit/${row.original.id}`,
                   linkProps: {
-                    className: 'flex items-center w-full plb-2 pli-4 gap-2 text-textSecondary'
+                    className: 'flex items-center is-full plb-2 pli-4 gap-2 text-textSecondary'
                   }
                 },
                 {

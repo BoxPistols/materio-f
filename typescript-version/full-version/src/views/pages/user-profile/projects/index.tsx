@@ -114,7 +114,7 @@ const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
                         {item.avatarGroup.map((person, index) => {
                           return (
                             <Tooltip key={index} title={person.name}>
-                              <Avatar src={person.avatar} alt={person.name} className='h-8 w-8' />
+                              <Avatar src={person.avatar} alt={person.name} className='bs-8 is-8' />
                             </Tooltip>
                           )
                         })}

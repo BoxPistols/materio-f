@@ -73,7 +73,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
           </CustomTabList>
           <img
             src='/images/illustrations/characters-with-objects/9.png'
-            className='max-md:hidden w-60'
+            className='max-md:hidden is-60'
             alt='john image'
           />
         </Grid>

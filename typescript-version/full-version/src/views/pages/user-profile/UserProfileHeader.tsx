@@ -21,7 +21,7 @@ const UserProfileHeader = ({ data }: { data?: ProfileHeaderType }) => {
         <div className='flex, rounded-bs-md mbs-[-45px] border-[5px] border-backgroundPaper bg-backgroundPaper'>
           <img height={120} width={120} src={data?.profileImg} className='rounded' alt='Profile Background' />
         </div>
-        <div className='flex w-full flex-wrap justify-center flex-col items-center sm:flex-row sm:justify-between sm:items-end gap-5'>
+        <div className='flex is-full flex-wrap justify-center flex-col items-center sm:flex-row sm:justify-between sm:items-end gap-5'>
           <div className='flex flex-col items-center sm:items-start gap-2'>
             <Typography variant='h4'>{data?.fullName}</Typography>
             <div className='flex flex-wrap gap-6 justify-center sm:justify-normal'>

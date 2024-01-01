@@ -76,7 +76,7 @@ const RegisterMultiSteps = ({ direction }: { direction: Direction }) => {
   }
 
   return (
-    <div className='flex h-full justify-between items-center'>
+    <div className='flex bs-full justify-between items-center'>
       <div
         className={classnames('flex bs-full items-center justify-center is-[594px] max-md:hidden', {
           'border-ie': settings.skin === 'bordered'

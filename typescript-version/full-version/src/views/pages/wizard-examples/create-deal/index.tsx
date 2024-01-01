@@ -119,7 +119,7 @@ const CreateDeal = ({ direction }: { direction: Direction }) => {
   return (
     <Card className='flex flex-col md:flex-row'>
       <CardContent className='border-be md:border-ie md:min-is-[300px]'>
-        <StepperWrapper className='h-full'>
+        <StepperWrapper className='bs-full'>
           <Stepper activeStep={activeStep} connector={<ConnectorHeight />} orientation='vertical'>
             {steps.map((step, index) => {
               return (

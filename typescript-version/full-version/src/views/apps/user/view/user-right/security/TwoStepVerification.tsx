@@ -18,10 +18,10 @@ const TwoStepVerification = () => {
         <div className='flex items-center mbe-4 gap-5'>
           <TextField id='sms' placeholder='+1(968) 819-2547' fullWidth size='small' />
           <div className='flex items-center gap-2'>
-            <Button variant='outlined' color='secondary' className='p-1.5 h-[38px] w-[38px] min-w-0'>
+            <Button variant='outlined' color='secondary' className='p-1.5 bs-[38px] is-[38px] min-is-0'>
               <i className='ri-edit-box-line' />
             </Button>
-            <Button variant='outlined' color='secondary' className='p-1.5 h-[38px] w-[38px] min-w-0'>
+            <Button variant='outlined' color='secondary' className='p-1.5 bs-[38px] is-[38px] min-is-0'>
               <i className='ri-user-add-line' />
             </Button>
           </div>

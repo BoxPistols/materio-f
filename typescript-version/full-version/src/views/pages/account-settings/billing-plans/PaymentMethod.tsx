@@ -176,7 +176,7 @@ const PaymentMethod = () => {
                 className='flex flex-col rounded bg-actionHover sm:flex-row items-start sm:justify-between'
               >
                 <div className='flex flex-col items-start gap-2 p-5'>
-                  <img src={item.imgSrc} alt={item.imgAlt} className='h-6' />
+                  <img src={item.imgSrc} alt={item.imgAlt} className='bs-6' />
                   <div className='flex items-center gap-4'>
                     <Typography className='font-medium' color='text.primary'>
                       {item.name}

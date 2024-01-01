@@ -16,6 +16,9 @@ import TimelineConnector from '@mui/lab/TimelineConnector'
 import MuiTimeline from '@mui/lab/Timeline'
 import type { TimelineProps } from '@mui/lab/Timeline'
 
+// Component Imports
+import CustomAvatarAvatar from '@core/components/mui/Avatar'
+
 // Styled Timeline component
 const Timeline = styled(MuiTimeline)<TimelineProps>({
   paddingLeft: 0,
@@ -47,7 +50,7 @@ const UserActivityTimeLine = () => {
                 <Typography variant='caption'>12 min ago</Typography>
               </div>
               <Typography className='mbe-2'>Invoices have been paid to the company</Typography>
-              <div className='flex items-center gap-2.5 w-fit bg-actionHover rounded plb-[5px] pli-2.5'>
+              <div className='flex items-center gap-2.5 is-fit bg-actionHover rounded plb-[5px] pli-2.5'>
                 <img height={20} alt='invoice.pdf' src='/images/icons/pdf-document.png' />
                 <Typography className='font-medium' color='text.primary'>
                   invoices.pdf
@@ -69,7 +72,7 @@ const UserActivityTimeLine = () => {
               </div>
               <Typography className='mbe-2'>Project meeting with john @10:15am</Typography>
               <div className='flex items-center gap-2.5'>
-                <Avatar src='/images/avatars/1.png' className='w-8 h-8' />
+                <CustomAvatarAvatar src='/images/avatars/1.png' size={32} />
                 <div className='flex flex-col flex-wrap'>
                   <Typography variant='body2' className='font-medium'>
                     Lester McCarthy (Client)

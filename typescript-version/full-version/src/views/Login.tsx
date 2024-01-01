@@ -114,8 +114,8 @@ const LoginV2 = ({ mode }: { mode: Mode }) => {
   )
 
   return (
-    <div className='flex h-full justify-center'>
-      <div className='flex h-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden'>
+    <div className='flex bs-full justify-center'>
+      <div className='flex bs-full items-center justify-center flex-1 min-bs-[100dvh] relative p-6 max-md:hidden'>
         <div className='plb-12 pis-12'>
           <img
             src={characterIllustration}
@@ -129,7 +129,7 @@ const LoginV2 = ({ mode }: { mode: Mode }) => {
           maskImg={{ src: authBackground }}
         />
       </div>
-      <div className='flex justify-center items-center h-full bg-backgroundPaper !min-is-full p-6 md:!min-is-[unset] md:p-12 md:is-[480px]'>
+      <div className='flex justify-center items-center bs-full bg-backgroundPaper !min-is-full p-6 md:!min-is-[unset] md:p-12 md:is-[480px]'>
         <div className='absolute block-start-[33px] !inline-start-6 sm:inline-start-[38px]'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className='text-primary' height={28} width={35} />

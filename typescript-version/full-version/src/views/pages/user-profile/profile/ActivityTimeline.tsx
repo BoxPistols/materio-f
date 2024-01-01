@@ -16,6 +16,9 @@ import { styled } from '@mui/material/styles'
 import MuiTimeline from '@mui/lab/Timeline'
 import type { TimelineProps } from '@mui/lab/Timeline'
 
+// Component Imports
+import CustomAvatar from '@core/components/mui/Avatar'
+
 const Timeline = styled(MuiTimeline)<TimelineProps>({
   '& .MuiTimelineItem-root': {
     '&:before': {
@@ -69,7 +72,7 @@ const ActivityTimeline = () => {
               </div>
               <Typography className='mbe-2'>Project meeting with john @10:15am</Typography>
               <div className='flex items-center gap-2.5'>
-                <Avatar src='/images/avatars/1.png' className='w-8 h-8' />
+                <CustomAvatar src='/images/avatars/1.png' size={32} />
                 <div>
                   <Typography variant='body2' className='font-medium'>
                     Lester McCarthy (Client)

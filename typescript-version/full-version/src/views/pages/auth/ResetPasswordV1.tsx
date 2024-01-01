@@ -49,7 +49,7 @@ const ResetPasswordV1 = ({ direction, mode }: { direction: Direction; mode: Mode
       <Card className='flex flex-col sm:is-[450px]'>
         <CardContent className='!p-12'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
-            <Logo className='h-8 text-primary' height={28} width={35} />
+            <Logo className='bs-8 text-primary' height={28} width={35} />
             <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
               {themeConfig.templateName}
             </Typography>

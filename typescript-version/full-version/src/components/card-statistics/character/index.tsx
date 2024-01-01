@@ -16,7 +16,7 @@ const CardStatWithImage = (props: CardStatsCharacterProps) => {
         <Typography color='text.primary' className='font-medium'>
           {title}
         </Typography>
-        <div className='flex items-center gap-2 pbs-4 pbe-1.5 w-1/2 flex-wrap'>
+        <div className='flex items-center gap-2 pbs-4 pbe-1.5 is-1/2 flex-wrap'>
           <Typography variant='h4'>{stats}</Typography>
           <Typography color={trend === 'negative' ? 'error.main' : 'success.main'}>
             {`${trend === 'negative' ? '-' : '+'}${trendNumber}`}

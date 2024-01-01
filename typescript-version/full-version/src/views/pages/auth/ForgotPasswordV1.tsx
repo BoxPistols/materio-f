@@ -36,7 +36,7 @@ const ForgotPasswordV1 = ({ direction, mode }: { direction: Direction; mode: Mod
       <Card className='flex flex-col sm:is-[450px]'>
         <CardContent className='!p-12'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
-            <Logo className='h-8 tracking-[0.15px] text-primary' height={28} width={35} />
+            <Logo className='bs-8 tracking-[0.15px] text-primary' height={28} width={35} />
             <Typography variant='h4' className='font-semibold'>
               {themeConfig.templateName}
             </Typography>

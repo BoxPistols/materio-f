@@ -6,7 +6,7 @@ import VerticalNav, { Menu, MenuItem, SubMenu } from '@menu-package/vertical-men
 
 const Overlay = () => {
   return (
-    <div className='flex h-full'>
+    <div className='flex bs-full'>
       <VerticalNav breakpoint='always'>
         <Menu menuItemStyles={{ button: { paddingBlock: '12px' } }}>
           <SubMenu label='Dashboards'>

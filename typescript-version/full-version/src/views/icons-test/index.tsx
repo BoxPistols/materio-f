@@ -107,11 +107,11 @@ const IconsTest = ({ data }: { data: string[] }) => {
       </Typography>
       <Typography color='text.primary'>
         Remix Icon with width
-        <i className='ri-bike-line w-24' />
+        <i className='ri-bike-line is-24' />
       </Typography>
       <Typography color='text.primary'>
         Remix Icon with height
-        <i className='ri-bike-line h-20' />
+        <i className='ri-bike-line bs-20' />
       </Typography>
       <Typography color='text.primary'>
         Remix Icon with cursor pointer

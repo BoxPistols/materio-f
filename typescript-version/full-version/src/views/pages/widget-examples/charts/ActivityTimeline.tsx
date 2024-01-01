@@ -49,7 +49,7 @@ const ActivityTimeline = () => {
                 </Typography>
               </div>
               <Typography className='mbe-2'>Invoices have been paid to the company</Typography>
-              <div className='flex items-center gap-2.5 w-fit rounded bg-actionHover plb-[5px] pls-2.5'>
+              <div className='flex items-center gap-2.5 is-fit rounded bg-actionHover plb-[5px] pls-2.5'>
                 <img height={20} alt='invoice.pdf' src='/images/icons/pdf-document.png' />
                 <Typography className='font-medium'>invoices.pdf</Typography>
               </div>

@@ -30,7 +30,7 @@ const customInputData: CustomInputVerticalData[] = [
     title: 'Basic',
     value: 'basic',
     content: (
-      <Content component='div' className='flex justify-center items-center flex-col h-full gap-2'>
+      <Content component='div' className='flex justify-center items-center flex-col bs-full gap-2'>
         <Typography variant='body2' className='mlb-auto'>
           A simple start for start ups & Students
         </Typography>
@@ -53,7 +53,7 @@ const customInputData: CustomInputVerticalData[] = [
     title: 'Standard',
     value: 'standard',
     content: (
-      <Content component='div' className='flex justify-center items-center flex-col h-full'>
+      <Content component='div' className='flex justify-center items-center flex-col bs-full'>
         <Typography variant='body2' className='mlb-auto'>
           For small to medium businesses
         </Typography>
@@ -75,7 +75,7 @@ const customInputData: CustomInputVerticalData[] = [
     title: 'Enterprise',
     value: 'enterprise',
     content: (
-      <Content component='div' className='flex justify-center items-center flex-col h-full'>
+      <Content component='div' className='flex justify-center items-center flex-col bs-full'>
         <Typography variant='body2' className='mlb-auto'>
           Solution for enterprise & organizations
         </Typography>

@@ -17,7 +17,7 @@ const CreateApiKey = () => {
       <CardContent className='!pb-0'>
         <Grid container spacing={6}>
           <Grid item xs={12} md={6}>
-            <form className='flex justify-end items-end h-full flex-col gap-5 pbe-5'>
+            <form className='flex justify-end items-end bs-full flex-col gap-5 pbe-5'>
               <FormControl fullWidth>
                 <InputLabel>Choose the API key type</InputLabel>
                 <Select label='Choose the API key type' defaultValue=''>

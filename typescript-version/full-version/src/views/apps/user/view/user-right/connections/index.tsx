@@ -132,7 +132,7 @@ const ConnectionsTab = () => {
                     )}
                   </div>
                 </div>
-                <Button variant='outlined' color='secondary' className='p-1.5 is-[38px] bs-[38px] min-w-0'>
+                <Button variant='outlined' color='secondary' className='p-1.5 is-[38px] bs-[38px] min-is-0'>
                   <i className={item.isConnected ? 'ri-delete-bin-7-line' : 'ri-link-m'} />
                 </Button>
               </div>

@@ -57,7 +57,7 @@ const ConnectionsTeams = (props: Props) => {
                   <Button
                     variant={connection.isFriend ? 'contained' : 'outlined'}
                     size='small'
-                    className='is-[38px] bs-[38px] min-w-0 p-1.5'
+                    className='is-[38px] bs-[38px] min-is-0 p-1.5'
                   >
                     <i className={connection.isFriend ? 'ri-user-3-line' : 'ri-user-add-line'} />
                   </Button>

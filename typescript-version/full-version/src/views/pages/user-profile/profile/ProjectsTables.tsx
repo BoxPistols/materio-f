@@ -128,7 +128,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
         header: 'Progress',
         cell: ({ row }) => (
           <div className='flex items-center gap-3'>
-            <LinearProgress color='primary' value={row.original.status} variant='determinate' className='w-20' />
+            <LinearProgress color='primary' value={row.original.status} variant='determinate' className='is-20' />
             <Typography color='text.primary'>{`${row.original.status}%`}</Typography>
           </div>
         )

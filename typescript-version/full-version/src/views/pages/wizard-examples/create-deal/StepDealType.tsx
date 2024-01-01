@@ -80,7 +80,7 @@ const StepDealType = ({ activeStep, handleNext, handlePrev, steps, direction }: 
           <img
             alt='illustration'
             src='/images/illustrations/characters-with-objects/6.png'
-            className='w-full max-w-full h-auto'
+            className='is-full max-is-full bs-auto'
           />
         </div>
       </Grid>

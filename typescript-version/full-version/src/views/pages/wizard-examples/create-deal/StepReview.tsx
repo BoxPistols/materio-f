@@ -70,7 +70,7 @@ const StepReview = ({ activeStep, handleNext, handlePrev, steps, direction }: Pr
         <FormControlLabel control={<Switch />} label='I have confirmed the deal details.' />
       </Grid>
       <Grid item lg={6} xl={5} xs={12}>
-        <div className='flex justify-center items-end w-full h-full border rounded'>
+        <div className='flex justify-center items-end is-full bs-full border rounded'>
           <img alt='review-illustration' src='/images/illustrations/characters/6.png' height={305} />
         </div>
       </Grid>

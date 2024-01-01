@@ -21,13 +21,13 @@ type Props = {
 const FaqHeader = ({ searchValue, setSearchValue }: Props) => {
   return (
     <Card className='shadow-none bg-transparent bg-cover bg-[url("/images/pages/faq-header.png")]' elevation={0}>
-      <CardContent className='flex flex-col items-center w-full text-center !pbs-[4.5625rem] !pbe-[5.9375rem] pli-5'>
+      <CardContent className='flex flex-col items-center is-full text-center !pbs-[4.5625rem] !pbe-[5.9375rem] pli-5'>
         <Typography variant='h4' color='primary' className='mbe-2.5'>
           Hello, how can we help?
         </Typography>
         <Typography className='mbe-6'>or choose a category to quickly find the help you need</Typography>
         <TextField
-          className='w-full sm:max-is-[55%] md:max-is-[600px]'
+          className='is-full sm:max-is-[55%] md:max-is-[600px]'
           variant='outlined'
           placeholder='Ask a question...'
           value={searchValue}

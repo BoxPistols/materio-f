@@ -100,9 +100,9 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
             <Typography component={InputLabel} htmlFor='refer-email' className='inline-flex whitespace-break-spaces'>
               Enter your friend&#39;s email address and invite them to join {themeConfig.templateName} 😍
             </Typography>
-            <div className='flex items-center w-full gap-4 flex-wrap sm:flex-nowrap'>
+            <div className='flex items-center is-full gap-4 flex-wrap sm:flex-nowrap'>
               <TextField fullWidth size='small' id='refer-email' placeholder='johnDoe@email.com' />
-              <Button variant='contained' className='w-full sm:w-auto'>
+              <Button variant='contained' className='is-full sm:is-auto'>
                 Send
               </Button>
             </div>
@@ -114,7 +114,7 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
             <Typography component={InputLabel} htmlFor='refer-social' className='inline-flex whitespace-break-spaces'>
               You can also copy and send it or share it on your social media. 🚀
             </Typography>
-            <div className='flex items-center justify-end sm:justify-initial w-full gap-4 flex-wrap sm:flex-nowrap'>
+            <div className='flex items-center justify-end sm:justify-initial is-full gap-4 flex-wrap sm:flex-nowrap'>
               <OutlinedInput
                 fullWidth
                 size='small'
@@ -130,13 +130,13 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
                 }
               />
               <div className='flex items-center gap-1'>
-                <Button className='rounded text-white bg-[#4267b2] p-2 min-w-0'>
+                <Button className='rounded text-white bg-[#4267b2] p-2 min-is-0'>
                   <i className='ri-facebook-circle-line' />
                 </Button>
-                <Button className='rounded text-white bg-[#1da1f2] p-2 min-w-0'>
+                <Button className='rounded text-white bg-[#1da1f2] p-2 min-is-0'>
                   <i className='ri-twitter-line' />
                 </Button>
-                <Button className='rounded text-white bg-[#0077b5] p-2 min-w-0'>
+                <Button className='rounded text-white bg-[#0077b5] p-2 min-is-0'>
                   <i className='ri-linkedin-box-line' />
                 </Button>
               </div>
