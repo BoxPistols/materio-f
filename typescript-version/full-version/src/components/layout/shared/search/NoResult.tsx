@@ -2,11 +2,12 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+// Third-party Imports
+import { useKBar } from 'kbar'
+import classnames from 'classnames'
+
 // Util Imports
 import { getLocale } from '@/utils/get-locale'
-
-// Third-party Imports
-import classnames from 'classnames'
 
 type NoResultProps = {
   query: string | undefined
@@ -42,6 +43,7 @@ const NoResult = (props: NoResultProps) => {
 
   // Hooks
   const pathname = usePathname()
+  const { query: kbarQuery } = useKBar()
 
   const locale = getLocale(pathname)
 
@@ -57,6 +59,7 @@ const NoResult = (props: NoResultProps) => {
               <Link
                 href={`/${locale}/${item.href}`}
                 className='flex items-center gap-2 hover:text-primary focus-visible:text-primary focus-visible:outline-0'
+                onClick={kbarQuery.toggle}
               >
                 <i className={classnames(item.icon, 'text-xl')} />
                 <p className='text-[15px] leading-[1.4667] truncate'>{item.label}</p>
