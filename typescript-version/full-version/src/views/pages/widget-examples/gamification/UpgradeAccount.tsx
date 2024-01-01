@@ -13,7 +13,7 @@ const UpgradeAccount = () => {
           <Typography>Add 15 team members</Typography>
         </div>
         <div>
-          <Typography variant='h4' color='primary'>
+          <Typography variant='h4' className='primary'>
             $199
           </Typography>
           <Typography>40% OFF 😍</Typography>
@@ -22,7 +22,7 @@ const UpgradeAccount = () => {
           Upgrade Plan
         </Button>
         <img
-          src='/images/illustrations/characters/13.png'
+          src='/images/illustrations/characters/17.png'
           alt='character image'
           height={160}
           className='absolute inline-end-11 bottom-5'

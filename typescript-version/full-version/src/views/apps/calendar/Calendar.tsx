@@ -76,7 +76,7 @@ const Calendar = (props: CalenderProps) => {
     },
     views: {
       week: {
-        titleFormat: { year: 'numeric', month: 'long', day: 'numeric' }
+        titleFormat: { year: 'numeric', month: 'short', day: 'numeric' }
       }
     },
 
@@ -120,9 +120,16 @@ const Calendar = (props: CalenderProps) => {
       ]
     },
 
-    eventClick({ event: clickedEvent }: any) {
+    eventClick({ event: clickedEvent, jsEvent }: any) {
+      jsEvent.preventDefault()
+
       handleSelectEvent(clickedEvent)
       handleAddEventSidebarToggle()
+
+      if (clickedEvent.url) {
+        // Open the URL in a new tab
+        window.open(clickedEvent.url, '_blank')
+      }
 
       // * Only grab required field otherwise it goes in infinity loop
       // ! Always grab all fields rendered by form (even if it get `undefined`)

@@ -133,7 +133,7 @@ const PropertyListingWizard = ({ direction }: { direction: Direction }) => {
 
   return (
     <Card className='flex flex-col lg:flex-row'>
-      <CardContent className='border-be lg:border-ie lg:min-is-[300px]'>
+      <CardContent className='border-be lg:border-be-0 lg:border-ie lg:min-is-[300px]'>
         <StepperWrapper className='bs-full'>
           <Stepper activeStep={activeStep} orientation='vertical' connector={<ConnectorHeight />}>
             {steps.map((step, index) => {

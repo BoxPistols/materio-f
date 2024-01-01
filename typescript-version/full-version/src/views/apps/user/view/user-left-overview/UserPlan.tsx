@@ -30,7 +30,7 @@ const UserPlan = () => {
               <Typography component='span' variant='h1' color='primary'>
                 99
               </Typography>
-              <Typography component='sub' className='self-end' color='text.primaryColor'>
+              <Typography component='sub' className='self-end' color='text.primary'>
                 /month
               </Typography>
             </div>
@@ -38,21 +38,15 @@ const UserPlan = () => {
           <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-2'>
               <i className='ri-circle-fill text-[10px] text-textSecondary' />
-              <Typography component='span' color='text.primary'>
-                10 Users
-              </Typography>
+              <Typography component='span'>10 Users</Typography>
             </div>
             <div className='flex items-center gap-2'>
               <i className='ri-circle-fill text-[10px] text-textSecondary' />
-              <Typography component='span' color='text.primary'>
-                Up to 10 GB storage
-              </Typography>
+              <Typography component='span'>Up to 10 GB storage</Typography>
             </div>
             <div className='flex items-center gap-2'>
               <i className='ri-circle-fill text-[10px] text-textSecondary' />
-              <Typography component='span' color='text.primary'>
-                Basic Support
-              </Typography>
+              <Typography component='span'>Basic Support</Typography>
             </div>
           </div>
           <div className='flex flex-col gap-1'>
@@ -61,7 +55,7 @@ const UserPlan = () => {
                 Days
               </Typography>
               <Typography className='font-medium' color='text.primary'>
-                65%
+                26 of 30 Days
               </Typography>
             </div>
             <LinearProgress variant='determinate' value={65} />

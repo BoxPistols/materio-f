@@ -111,7 +111,7 @@ const PaymentMethod = () => {
                     <Chip color={item.badgeColor} label={item.cardStatus} size='small' variant='tonal' />
                   ) : null}
                 </div>
-                <Typography color='text.primary'>
+                <Typography>
                   {item.cardNumber && item.cardNumber.slice(0, -4).replace(/[0-9]/g, '*') + item.cardNumber.slice(-4)}
                 </Typography>
               </div>

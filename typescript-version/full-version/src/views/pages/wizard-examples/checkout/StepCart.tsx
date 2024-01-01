@@ -127,7 +127,8 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
                 <div className='flex flex-col justify-between items-center mt-4 gap-1 sm:items-end'>
                   <div className='flex'>
                     <Typography color='primary'>{`$${product.price}`}</Typography>
-                    <Typography className='line-through'>{`/$${product.originalPrice}`}</Typography>
+                    <span className='text-textSecondary'>/</span>
+                    <Typography className='line-through'>{`$${product.originalPrice}`}</Typography>
                   </div>
                   <Button variant='outlined' size='small'>
                     Move to wishlist
@@ -141,11 +142,11 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
           href='/'
           component={Link}
           onClick={e => e.preventDefault()}
-          className='flex items-center justify-between gap-4 plb-2 pli-5 border rounded'
+          className='flex items-center font-medium justify-between gap-4 plb-2 pli-5 border rounded'
           color='primary'
         >
           Add more products from wishlist
-          <i className={direction === 'rtl' ? 'ri-arrow-left-line' : 'ri-arrow-right-line'} />
+          <i className={direction === 'rtl' ? 'ri-arrow-left-line text-base' : 'ri-arrow-right-line text-base'} />
         </Typography>
       </Grid>
       <Grid item xs={12} lg={4} className='flex flex-col gap-2'>
@@ -160,7 +161,7 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
                 Apply
               </Button>
             </div>
-            <div className='flex flex-col gap-2 p-5 rounded bg-actionHove'>
+            <div className='flex flex-col gap-2 p-5 rounded bg-actionHover'>
               <Typography className='font-medium' color='text.primary'>
                 Buying gift for a loved one?
               </Typography>
@@ -220,7 +221,7 @@ const StepCart = ({ handleNext, direction }: { handleNext: () => void; direction
           </CardContent>
         </div>
         <div className='flex justify-normal sm:justify-end xl:justify-normal'>
-          <Button className='is-full sm:is-auto lg:is-full' variant='contained' onClick={handleNext}>
+          <Button fullWidth variant='contained' onClick={handleNext}>
             Place Order
           </Button>
         </div>

@@ -197,12 +197,7 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
           <div className='flex items-center gap-4'>
             {getAvatar({ avatar: row.original.avatar, fullName: row.original.fullName })}
             <div className='flex flex-col'>
-              <Typography
-                component={Link}
-                href='/apps/user/view'
-                className='font-medium hover:text-primary'
-                color='text.primary'
-              >
+              <Typography className='font-medium' color='text.primary'>
                 {row.original.fullName}
               </Typography>
               <Typography variant='body2'>{row.original.username}</Typography>
@@ -267,12 +262,12 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
                 {
                   text: 'Download',
                   icon: 'ri-download-line text-[22px]',
-                  menuItemProps: { className: 'flex items-center' }
+                  menuItemProps: { className: 'flex items-center gap-2 text-textSecondary' }
                 },
                 {
                   text: 'Edit',
                   icon: 'ri-edit-box-line text-[22px]',
-                  linkProps: { className: 'flex items-center' }
+                  menuItemProps: { className: 'flex items-center gap-2 text-textSecondary' }
                 }
               ]}
             />
@@ -316,7 +311,7 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
 
   return (
     <Card>
-      <CardContent className='flex justify-between flex-col items-start sm:flex-row sm:items-center'>
+      <CardContent className='flex justify-between flex-col gap-4 items-start sm:flex-row sm:items-center'>
         <Button
           variant='outlined'
           color='secondary'
@@ -381,20 +376,30 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
               </tr>
             ))}
           </thead>
-          <tbody>
-            {table
-              .getRowModel()
-              .rows.slice(0, table.getState().pagination.pageSize)
-              .map(row => {
-                return (
-                  <tr key={row.id} className={classnames({ selected: row.getIsSelected() })}>
-                    {row.getVisibleCells().map(cell => (
-                      <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
-                    ))}
-                  </tr>
-                )
-              })}
-          </tbody>
+          {table.getFilteredRowModel().rows.length === 0 ? (
+            <tbody>
+              <tr>
+                <td colSpan={table.getVisibleFlatColumns().length} className='text-center'>
+                  No data available
+                </td>
+              </tr>
+            </tbody>
+          ) : (
+            <tbody>
+              {table
+                .getRowModel()
+                .rows.slice(0, table.getState().pagination.pageSize)
+                .map(row => {
+                  return (
+                    <tr key={row.id} className={classnames({ selected: row.getIsSelected() })}>
+                      {row.getVisibleCells().map(cell => (
+                        <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                      ))}
+                    </tr>
+                  )
+                })}
+            </tbody>
+          )}
         </table>
       </div>
       <TablePagination

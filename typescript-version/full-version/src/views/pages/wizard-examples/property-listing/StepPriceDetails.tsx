@@ -117,9 +117,7 @@ const StepPriceDetails = ({ activeStep, handleNext, handlePrev, steps, direction
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className='text-sm font-medium text-textPrimary' id='price-radio'>
-            Show Price As
-          </FormLabel>
+          <FormLabel id='price-radio'>Show Price As</FormLabel>
           <RadioGroup name='price-group' defaultValue='negotiable' aria-labelledby='price-radio'>
             <FormControlLabel value='negotiable' control={<Radio />} label='Negotiable' />
             <FormControlLabel value='call-for-price' control={<Radio />} label='Call For Price' />
@@ -128,7 +126,7 @@ const StepPriceDetails = ({ activeStep, handleNext, handlePrev, steps, direction
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className='text-sm font-medium text-textPrimary'>Price Includes</FormLabel>
+          <FormLabel>Price Includes</FormLabel>
           <FormControlLabel control={<Checkbox defaultChecked />} label='Car Parking' />
           <FormControlLabel control={<Checkbox />} label='Club Membership' />
         </FormControl>

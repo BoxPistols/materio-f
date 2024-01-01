@@ -41,9 +41,6 @@ export async function POST(request: NextRequest) {
     // Generate new event id
     event['id'] = events[events.length - 1].id + 1
 
-    // add new event to events array
-    events.push(event)
-
     const json_response = {
       status: 'success',
       results: events.length,

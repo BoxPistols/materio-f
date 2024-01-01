@@ -10,8 +10,7 @@ const menu = (skin: Skin): Theme['components'] => ({
       ...(skin === 'bordered' && {
         slotProps: {
           paper: {
-            elevation: 0,
-            variant: 'outlined'
+            elevation: 0
           }
         }
       })

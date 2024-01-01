@@ -1,5 +1,8 @@
 'use client'
 
+// Next Imports
+import Link from 'next/link'
+
 // MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -21,6 +24,7 @@ type SocialAccountsType = {
   logo: string
   username?: string
   isConnected: boolean
+  href?: string
 }
 
 const connectedAccountsArr: ConnectedAccountsType[] = [
@@ -66,13 +70,15 @@ const socialAccountsArr: SocialAccountsType[] = [
     title: 'Twitter',
     isConnected: true,
     username: '@Theme_Selection',
-    logo: '/images/logos/twitter.png'
+    logo: '/images/logos/twitter.png',
+    href: 'https://twitter.com/Theme_Selection'
   },
   {
     title: 'Linkedin',
     isConnected: true,
     username: '@ThemeSelection',
-    logo: '/images/logos/linkedin.png'
+    logo: '/images/logos/linkedin.png',
+    href: 'https://in.linkedin.com/company/themeselection'
   },
   {
     title: 'Dribbble',
@@ -126,14 +132,20 @@ const ConnectionsTab = () => {
                       {item.title}
                     </Typography>
                     {item.isConnected ? (
-                      <Typography>{item.username}</Typography>
+                      <Typography color='primary' component={Link} href={item.href || '/'} target='_blank'>
+                        {item.username}
+                      </Typography>
                     ) : (
                       <Typography>Not Connected</Typography>
                     )}
                   </div>
                 </div>
-                <Button variant='outlined' color='secondary' className='p-1.5 is-[38px] bs-[38px] min-is-0'>
-                  <i className={item.isConnected ? 'ri-delete-bin-7-line' : 'ri-link-m'} />
+                <Button
+                  variant='outlined'
+                  color={item.isConnected ? 'error' : 'secondary'}
+                  className='p-1.5 is-[38px] bs-[38px] min-is-0'
+                >
+                  <i className={item.isConnected ? 'ri-delete-bin-7-line text-error' : 'ri-link-m'} />
                 </Button>
               </div>
             ))}

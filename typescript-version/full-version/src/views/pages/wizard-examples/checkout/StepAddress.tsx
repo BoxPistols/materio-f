@@ -167,7 +167,9 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
     <Grid container spacing={6}>
       <Grid item xs={12} lg={8} className='flex flex-col gap-6'>
         <div className='flex flex-col items-start gap-4'>
-          <Typography color='text.primary'>Select your preferable address</Typography>
+          <Typography color='text.primary' className='font-medium'>
+            Select your preferable address
+          </Typography>
           <Grid container spacing={6}>
             {data.map((item, index) => (
               <CustomInputHorizontal
@@ -184,7 +186,9 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
           <OpenDialogOnElementClick element={Button} elementProps={buttonProps} dialog={AddEditAddress} />
         </div>
         <div className='flex flex-col items-start gap-4'>
-          <Typography color='text.primary'>Choose Delivery Speed</Typography>
+          <Typography color='text.primary' className='font-medium'>
+            Choose Delivery Speed
+          </Typography>
           <Grid container spacing={6}>
             {dataIcons.map((item, index) => {
               let asset

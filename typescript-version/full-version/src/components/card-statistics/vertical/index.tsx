@@ -18,7 +18,7 @@ const CardStatVertical = (props: CardStatsVerticalProps) => {
     <Card className='bs-full'>
       <CardContent>
         <div className='flex justify-between items-center is-full mbe-5'>
-          <CustomAvatar color={avatarColor} skin={avatarSkin} size={avatarSize}>
+          <CustomAvatar color={avatarColor} skin={avatarSkin} size={avatarSize} className='shadow-xs'>
             <i className={avatarIcon} />
           </CustomAvatar>
           <OptionMenu

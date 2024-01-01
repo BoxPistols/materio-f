@@ -62,7 +62,10 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                   <div className='flex flex-col gap-6'>
                     <div className='flex items-center gap-2.5'>
                       <Logo className='text-primary' height={25} width={30} />
-                      <Typography className='uppercase font-semibold text-xl leading-tight' color='text.primary'>
+                      <Typography
+                        className='uppercase font-semibold text-xl leading-tight tracking-[0.15px]'
+                        color='text.primary'
+                      >
                         {themeConfig.templateName}
                       </Typography>
                     </div>
@@ -74,7 +77,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                   </div>
                   <div className='flex flex-col gap-2'>
                     <div className='flex items-center gap-4'>
-                      <Typography variant='h5' className='min-is-[100px]'>
+                      <Typography variant='h5' className='min-is-[95px]'>
                         Invoice
                       </Typography>
                       <TextField
@@ -88,7 +91,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                       />
                     </div>
                     <div className='flex items-center'>
-                      <Typography className='min-is-[100px] mie-4' color='text.primary'>
+                      <Typography className='min-is-[95px] mie-4' color='text.primary'>
                         Date Issued:
                       </Typography>
                       <AppReactDatepicker
@@ -100,7 +103,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                       />
                     </div>
                     <div className='flex items-center'>
-                      <Typography className='min-is-[100px] mie-4' color='text.primary'>
+                      <Typography className='min-is-[95px] mie-4' color='text.primary'>
                         Date Due:
                       </Typography>
                       <AppReactDatepicker
@@ -122,7 +125,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                     Invoice To:
                   </Typography>
                   <Select
-                    className='is-1/2 min-is-[200px] sm:is-auto'
+                    className='is-1/2 min-is-[220px] sm:is-auto'
                     size='small'
                     value={selectData.id}
                     onChange={e => {
@@ -211,23 +214,25 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                         className='mbe-5'
                         InputProps={{ inputProps: { min: 0 } }}
                       />
-                      <div>
+                      <div className='flex flex-col'>
                         <Typography component='span' color='text.primary'>
                           Discount:
                         </Typography>
-                        <Typography component='span' color='text.primary'>
-                          0%
-                        </Typography>
-                        <Tooltip title='Tax 1' placement='top'>
+                        <div className='flex gap-2'>
                           <Typography component='span' color='text.primary'>
                             0%
                           </Typography>
-                        </Tooltip>
-                        <Tooltip title='Tax 2' placement='top'>
-                          <Typography component='span' color='text.primary'>
-                            0%
-                          </Typography>
-                        </Tooltip>
+                          <Tooltip title='Tax 1' placement='top'>
+                            <Typography component='span' color='text.primary'>
+                              0%
+                            </Typography>
+                          </Tooltip>
+                          <Tooltip title='Tax 2' placement='top'>
+                            <Typography component='span' color='text.primary'>
+                              0%
+                            </Typography>
+                          </Tooltip>
+                        </div>
                       </div>
                     </Grid>
                     <Grid item md={2} xs={12}>
@@ -272,7 +277,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
               <Divider className='border-dashed' />
             </Grid>
             <Grid item xs={12}>
-              <div className='flex justify-between flex-col sm:flex-row'>
+              <div className='flex justify-between flex-col gap-y-2 sm:flex-row'>
                 <div className='flex flex-col gap-4 order-2 sm:order-[unset]'>
                   <div className='flex items-center gap-2'>
                     <Typography className='font-medium' color='text.primary'>

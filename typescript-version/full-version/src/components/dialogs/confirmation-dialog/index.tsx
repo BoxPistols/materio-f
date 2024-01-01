@@ -49,7 +49,7 @@ const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) =>
               className: 'flex flex-col items-center gap-5'
             })}
           >
-            <Typography color='text.primary'>
+            <Typography variant='h5'>
               {type === 'delete-account' && 'Are you sure you want to deactivate your account?'}
               {type === 'unsubscribe' && 'Are you sure to cancel your subscription?'}
               {type === 'suspend-account' && 'Are you sure?'}

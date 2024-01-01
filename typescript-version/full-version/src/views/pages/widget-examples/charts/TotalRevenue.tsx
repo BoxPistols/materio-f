@@ -60,7 +60,7 @@ const TotalRevenue = () => {
           value: {
             offsetY: -12,
             fontWeight: 500,
-            fontSize: '2.125rem',
+            fontSize: '1.75rem',
             color: rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.9)`),
             formatter(value) {
               return `${value}k`

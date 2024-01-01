@@ -26,7 +26,7 @@ const TwoStepVerification = () => {
             </Button>
           </div>
         </div>
-        <Typography variant='body2'>
+        <Typography>
           Two-factor authentication adds an additional layer of security to your account by requiring more than just a
           password to log in. <span className='text-primary'>Learn more.</span>
         </Typography>

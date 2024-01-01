@@ -199,12 +199,18 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
           <Tooltip
             title={
               <div>
-                <Typography variant='caption'>{row.original.invoiceStatus}</Typography>
+                <Typography variant='body2' component='span' className='text-inherit'>
+                  {row.original.invoiceStatus}
+                </Typography>
                 <br />
-                <Typography variant='caption'>Balance:</Typography>
+                <Typography variant='body2' component='span' className='text-inherit'>
+                  Balance:
+                </Typography>{' '}
                 {row.original.balance}
                 <br />
-                <Typography variant='caption'>Due Date:</Typography>
+                <Typography variant='body2' component='span' className='text-inherit'>
+                  Due Date:
+                </Typography>{' '}
                 {row.original.dueDate}
               </div>
             }
@@ -322,7 +328,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
 
   return (
     <Card>
-      <CardContent className='flex justify-between gap-4 flex-wrap flex-col sm:flex-row items-center sm:items-start'>
+      <CardContent className='flex justify-between gap-4 flex-wrap flex-col sm:flex-row items-center'>
         <Button
           variant='contained'
           component={Link}

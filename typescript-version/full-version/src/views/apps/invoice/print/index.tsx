@@ -17,9 +17,6 @@ import Logo from '@core/svg/Logo'
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
-// Hook Imports
-import { useSettings } from '@core/hooks/useSettings'
-
 // Styles Imports
 import tableStyles from '@core/styles/table.module.css'
 
@@ -58,9 +55,6 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
   // Refs
   const initialized = useRef(false)
 
-  // Hooks
-  const { updatePageSettings } = useSettings()
-
   useEffect(() => {
     if (!initialized.current) {
       initialized.current = true
@@ -68,10 +62,6 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
         window.print()
       }, 100)
     }
-
-    return updatePageSettings({
-      mode: 'light'
-    })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -83,7 +73,10 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
             <div className='flex flex-col gap-6'>
               <div className='flex items-center gap-2.5'>
                 <Logo className='text-primary' height={25} width={30} />
-                <Typography className='uppercase font-semibold text-xl leading-tight' color='text.primary'>
+                <Typography
+                  className='uppercase font-semibold text-xl leading-tight tracking-[0.15px]'
+                  color='text.primary'
+                >
                   {themeConfig.templateName}
                 </Typography>
               </div>
@@ -155,11 +148,11 @@ const PrintPage = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string }
           <table className={tableStyles.table}>
             <thead>
               <tr className='border-be'>
-                <th>Item</th>
-                <th>Description</th>
-                <th>Hours</th>
-                <th>Qty</th>
-                <th>Total</th>
+                <th className='!bg-transparent'>Item</th>
+                <th className='!bg-transparent'>Description</th>
+                <th className='!bg-transparent'>Hours</th>
+                <th className='!bg-transparent'>Qty</th>
+                <th className='!bg-transparent'>Total</th>
               </tr>
             </thead>
             <tbody>

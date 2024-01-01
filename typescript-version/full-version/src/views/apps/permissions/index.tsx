@@ -222,7 +222,7 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
   return (
     <>
       <Card>
-        <CardContent className='flex flex-col sm:flex-row items-start sm:items-center justify-between'>
+        <CardContent className='flex flex-col gap-4 sm:flex-row items-start sm:items-center justify-between'>
           <DebouncedInput
             value={globalFilter ?? ''}
             onChange={value => setGlobalFilter(String(value))}
@@ -265,20 +265,30 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
                 </tr>
               ))}
             </thead>
-            <tbody>
-              {table
-                .getRowModel()
-                .rows.slice(0, table.getState().pagination.pageSize)
-                .map(row => {
-                  return (
-                    <tr key={row.id} className={classnames({ selected: row.getIsSelected() })}>
-                      {row.getVisibleCells().map(cell => (
-                        <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
-                      ))}
-                    </tr>
-                  )
-                })}
-            </tbody>
+            {table.getFilteredRowModel().rows.length === 0 ? (
+              <tbody>
+                <tr>
+                  <td colSpan={table.getVisibleFlatColumns().length} className='text-center'>
+                    No data available
+                  </td>
+                </tr>
+              </tbody>
+            ) : (
+              <tbody>
+                {table
+                  .getRowModel()
+                  .rows.slice(0, table.getState().pagination.pageSize)
+                  .map(row => {
+                    return (
+                      <tr key={row.id} className={classnames({ selected: row.getIsSelected() })}>
+                        {row.getVisibleCells().map(cell => (
+                          <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                        ))}
+                      </tr>
+                    )
+                  })}
+              </tbody>
+            )}
           </table>
         </div>
         <TablePagination

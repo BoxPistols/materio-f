@@ -72,7 +72,7 @@ const EditActions = ({ id }: { id: string }) => {
       </Grid>
 
       <Grid item xs={12}>
-        <FormControl fullWidth>
+        <FormControl fullWidth className='mbe-4'>
           <InputLabel id='payment-select'>Accept payments via</InputLabel>
           <Select fullWidth defaultValue='Internet Banking' label='Accept payments via' labelId='payment-select'>
             <MenuItem value='Internet Banking'>Internet Banking</MenuItem>
@@ -82,19 +82,19 @@ const EditActions = ({ id }: { id: string }) => {
             <MenuItem value='UPI Transfer'>UPI Transfer</MenuItem>
           </Select>
         </FormControl>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between gap-6'>
           <InputLabel htmlFor='invoice-edit-payment-terms' className='cursor-pointer'>
             Payment Terms
           </InputLabel>
           <Switch defaultChecked id='invoice-edit-payment-terms' />
         </div>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between gap-6'>
           <InputLabel htmlFor='invoice-edit-client-notes' className='cursor-pointer'>
             Client Notes
           </InputLabel>
           <Switch id='invoice-edit-client-notes' />
         </div>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between gap-6'>
           <InputLabel htmlFor='invoice-edit-payment-stub' className='cursor-pointer'>
             Payment Stub
           </InputLabel>

@@ -1,3 +1,5 @@
+'use client'
+
 // MUI Imports
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -12,13 +14,27 @@ import type { CardStatsHorizontalProps } from '@/types/pages/widgetTypes'
 // Components Imports
 import CustomAvatar from '@core/components/mui/Avatar'
 
+// Hooks Imports
+import { useSettings } from '@core/hooks/useSettings'
+
 const CardStatHorizontal = (props: CardStatsHorizontalProps) => {
   const { title, stats, icon, color, trendNumber, trend } = props
+
+  // Hooks
+  const { settings } = useSettings()
 
   return (
     <Card className='bg-transparent border rounded shadow-none'>
       <CardContent className='flex items-center gap-4'>
-        <CustomAvatar variant='rounded' skin='light' color={color} className='bg-backgroundPaper shadow-xs'>
+        <CustomAvatar
+          variant='rounded'
+          skin='light'
+          color={color}
+          className={classnames('bg-backgroundPaper', {
+            'shadow-none border rounded': settings.skin === 'bordered',
+            'shadow-xs': settings.skin === 'default'
+          })}
+        >
           <i className={icon} />
         </CustomAvatar>
         <div>

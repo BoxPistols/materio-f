@@ -28,9 +28,13 @@ const Root = styled('div', {
   borderRadius: 'var(--mui-shape-borderRadius)',
   border: '1px solid var(--mui-palette-customColors-inputBorder)',
   transition: theme.transitions.create(['border-color'], { duration: theme.transitions.duration.shorter }),
+  '-webkit-tap-highlight-color': 'transparent',
 
   '&:hover': {
     borderColor: 'var(--mui-palette-action-active)'
+  },
+  '& > svg, & > i': {
+    color: 'var(--mui-palette-text-primary)'
   },
   '&.active': {
     borderColor: 'var(--mui-palette-primary-main)',

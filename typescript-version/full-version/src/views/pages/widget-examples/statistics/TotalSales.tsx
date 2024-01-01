@@ -36,9 +36,7 @@ const TotalSales = () => {
     },
     labels: ['Direct', 'Organic', 'Referral', 'Mail'],
     legend: { show: false },
-    dataLabels: {
-      enabled: false
-    },
+    dataLabels: { enabled: false },
     colors: [theme.palette.primary.main, theme.palette.info.main, theme.palette.warning.main, theme.palette.error.main],
     grid: {
       padding: {

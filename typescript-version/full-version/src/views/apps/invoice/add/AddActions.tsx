@@ -57,7 +57,7 @@ const AddActions = () => {
       </Grid>
 
       <Grid item xs={12}>
-        <FormControl fullWidth>
+        <FormControl fullWidth className='mbe-4'>
           <InputLabel id='payment-select'>Accept payments via</InputLabel>
           <Select fullWidth defaultValue='Internet Banking' label='Accept payments via' labelId='payment-select'>
             <MenuItem value='Internet Banking'>Internet Banking</MenuItem>

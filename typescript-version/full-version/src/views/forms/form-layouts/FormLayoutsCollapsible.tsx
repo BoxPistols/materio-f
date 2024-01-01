@@ -121,7 +121,7 @@ const FormLayoutsCollapsible = () => {
   return (
     <form onSubmit={e => e.preventDefault()}>
       <Accordion expanded={expanded === 'panel1'} onChange={handleExpandChange('panel1')}>
-        <AccordionSummary expandIcon={<i className='ri-arrow-down-s-line' />} className='plb-0'>
+        <AccordionSummary className='plb-0'>
           <Typography color='text.primary'>Delivery Address</Typography>
         </AccordionSummary>
         <Divider />

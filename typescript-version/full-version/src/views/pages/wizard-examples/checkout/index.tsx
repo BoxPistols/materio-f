@@ -141,6 +141,9 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
         }
       }
     },
+    '&.Mui-completed + i': {
+      color: theme.palette.primary.main
+    },
 
     [theme.breakpoints.up('md')]: {
       paddingBottom: 0,
@@ -181,12 +184,12 @@ const CheckoutWizard = ({ direction }: { direction: Direction }) => {
       <CardContent>
         <StepperWrapper>
           <Stepper
-            className='gap-4'
+            className='gap-10 md:gap-4'
             activeStep={activeStep}
             connector={
               <i
                 className={classnames(
-                  'mli-12',
+                  'mli-12 hidden md:block',
                   direction === 'rtl' ? 'ri-arrow-left-s-line text-lg' : 'ri-arrow-right-s-line text-lg'
                 )}
               />

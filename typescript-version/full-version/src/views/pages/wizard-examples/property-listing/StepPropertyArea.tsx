@@ -76,9 +76,7 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps, direct
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className='text-sm font-medium text-textPrimary' id='possession-status-radio'>
-            Possession Status
-          </FormLabel>
+          <FormLabel id='possession-status-radio'>Possession Status</FormLabel>
           <RadioGroup name='possession-status-group' defaultValue='under-construction'>
             <FormControlLabel value='under-construction' control={<Radio />} label='Under Construction' />
             <FormControlLabel value='ready-to-move' control={<Radio />} label='Ready to Move' />
@@ -87,9 +85,7 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps, direct
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className='text-sm font-medium text-textPrimary' id='transaction-radio'>
-            Transaction Type
-          </FormLabel>
+          <FormLabel id='transaction-radio'>Transaction Type</FormLabel>
           <RadioGroup defaultValue='new-property' name='transaction-group' aria-labelledby='transaction-radio'>
             <FormControlLabel value='new-property' control={<Radio />} label='New property' />
             <FormControlLabel value='resale' control={<Radio />} label='Resale' />
@@ -98,9 +94,7 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps, direct
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className='text-sm font-medium text-textPrimary' id='main-road-radio'>
-            Is Property Facing Main Road
-          </FormLabel>
+          <FormLabel id='main-road-radio'>Is Property Facing Main Road</FormLabel>
           <RadioGroup defaultValue='yes' name='main-road-group' aria-labelledby='main-road-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />
@@ -109,9 +103,7 @@ const StepPropertyDetails = ({ activeStep, handleNext, handlePrev, steps, direct
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className='text-sm font-medium text-textPrimary' id='gated-colony-radio'>
-            Gated Colony
-          </FormLabel>
+          <FormLabel id='gated-colony-radio'>Gated Colony</FormLabel>
           <RadioGroup defaultValue='yes' name='gated-colony-group' aria-labelledby='gated-colony-radio'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />

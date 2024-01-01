@@ -25,6 +25,7 @@ const Root = styled('div', {
   flexDirection: 'column',
   justifyContent: 'center',
   border: '1px solid var(--mui-palette-customColors-inputBorder)',
+  '-webkit-tap-highlight-color': 'transparent',
 
   '&:hover': {
     borderColor: 'var(--mui-palette-action-active)'
@@ -49,7 +50,9 @@ const CheckboxInput = styled(Checkbox, {
 const Image = styled('img', {
   name: 'MuiCustomImage',
   slot: 'Image'
-})({})
+})({
+  maxWidth: '100%'
+})
 
 const CustomCheckboxImg = (props: CustomInputImgProps) => {
   // Props

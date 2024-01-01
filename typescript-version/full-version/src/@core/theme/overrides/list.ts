@@ -4,19 +4,8 @@ import type { Theme } from '@mui/material/styles'
 const list: Theme['components'] = {
   MuiListItem: {
     styleOverrides: {
-      root: ({ theme, ownerState }) => ({
-        gap: theme.spacing(4),
-        ...(ownerState.dense
-          ? {
-              '& .MuiListItemIcon-root': {
-                marginInlineEnd: theme.spacing(2)
-              }
-            }
-          : {
-              '& .MuiListItemIcon-root': {
-                marginInlineEnd: theme.spacing(3)
-              }
-            })
+      root: ({ theme }) => ({
+        gap: theme.spacing(4)
       }),
       padding: ({ theme, ownerState }) => ({
         ...(!ownerState.dense && {

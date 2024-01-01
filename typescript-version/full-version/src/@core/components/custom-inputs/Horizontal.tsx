@@ -25,6 +25,7 @@ const Root = styled('div', {
   position: 'relative',
   alignItems: 'flex-start',
   border: '1px solid var(--mui-palette-customColors-inputBorder)',
+  '-webkit-tap-highlight-color': 'transparent',
   padding: theme.spacing(4),
   transition: theme.transitions.create(['border-color'], {
     duration: theme.transitions.duration.shorter

@@ -30,7 +30,13 @@ const AddContent = ({ handleClose }: { handleClose: () => void }) => {
         <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
           <i className='ri-close-line text-textSecondary' />
         </IconButton>
-        <TextField fullWidth label='Permission Name' variant='outlined' placeholder='Enter Permission Name' />
+        <TextField
+          fullWidth
+          label='Permission Name'
+          variant='outlined'
+          placeholder='Enter Permission Name'
+          className='mbe-2'
+        />
         <FormControlLabel control={<Checkbox />} label='Set as core permission' />
       </DialogContent>
       <DialogActions className='gap-2 justify-center pbs-0 pbe-10 pli-10 sm:pbe-16 sm:pli-16'>
@@ -56,15 +62,8 @@ const EditContent = ({ handleClose, data }: EditProps) => {
         By editing the permission name, you might break the system permissions functionality. Please ensure you&#39;re
         absolutely certain before proceeding.
       </Alert>
-      <div className='flex items-center gap-4'>
-        <TextField
-          fullWidth
-          size='small'
-          defaultValue={data}
-          variant='outlined'
-          label='Permission Name'
-          placeholder='Enter Permission Name'
-        />
+      <div className='flex items-center gap-4 mbe-2'>
+        <TextField fullWidth size='small' defaultValue={data} variant='outlined' placeholder='Enter Permission Name' />
         <Button variant='contained' onClick={handleClose}>
           Update
         </Button>

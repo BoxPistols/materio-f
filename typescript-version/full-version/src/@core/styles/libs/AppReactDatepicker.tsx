@@ -21,7 +21,8 @@ type Props = ComponentProps<typeof ReactDatePickerComponent> & {
 const StyledReactDatePicker = styled(Box)<BoxProps>(({ theme }) => {
   return {
     '& .react-datepicker-popper': {
-      zIndex: 20
+      zIndex: 20,
+      paddingTop: `${theme.spacing(0.5)} !important`
     },
     '& .react-datepicker-wrapper': {
       width: '100%'
@@ -140,10 +141,13 @@ const StyledReactDatePicker = styled(Box)<BoxProps>(({ theme }) => {
       },
       '& .react-datepicker__day--in-range, & .react-datepicker__day--in-selecting-range': {
         borderRadius: 0,
-        color: theme.palette.primary.main,
-        backgroundColor: 'var(--mui-palette-primary-lightOpacity)',
+        color: `${theme.palette.primary.main} !important`,
+        backgroundColor: 'var(--mui-palette-primary-lightOpacity) !important',
         '&:hover': {
           backgroundColor: 'var(--mui-palette-primary-mainOpacity) !important'
+        },
+        '&.react-datepicker__day--today': {
+          backgroundColor: `rgb(${theme.vars.palette.primary.mainChannel} / 0.24) !important`
         }
       },
       '& .react-datepicker__day--today': {
@@ -153,12 +157,12 @@ const StyledReactDatePicker = styled(Box)<BoxProps>(({ theme }) => {
           color: theme.palette.primary.main,
           border: `1px solid ${theme.palette.primary.main}`,
           '&:hover': {
-            backgroundColor: `rgb(${theme.vars.palette.primary.mainChannel} / 0.04)`
+            backgroundColor: `rgb(${theme.vars.palette.primary.mainChannel} / 0.24)`
           },
           '&.react-datepicker__day--keyboard-selected': {
-            backgroundColor: `rgb(${theme.vars.palette.primary.mainChannel} / 0.06)`,
+            backgroundColor: `rgb(${theme.vars.palette.primary.mainChannel} / 0.16)`,
             '&:hover': {
-              backgroundColor: `rgb(${theme.vars.palette.primary.mainChannel} / 0.06)`
+              backgroundColor: `rgb(${theme.vars.palette.primary.mainChannel} / 0.16)`
             }
           }
         }

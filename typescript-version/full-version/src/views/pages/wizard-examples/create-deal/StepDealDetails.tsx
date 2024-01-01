@@ -107,7 +107,7 @@ const StepDealDetails = ({ activeStep, handleNext, handlePrev, steps, direction 
                 labelId='select-offered-items'
                 input={<OutlinedInput label='Offered Items' />}
                 renderValue={selected => (
-                  <div className='flex flex-wrap'>
+                  <div className='flex flex-wrap gap-2'>
                     {selected.map((value, index) => (
                       <Chip key={index} label={value} />
                     ))}
@@ -149,7 +149,7 @@ const StepDealDetails = ({ activeStep, handleNext, handlePrev, steps, direction 
       </Grid>
       <Grid item xs={12} sm={6}>
         <FormControl>
-          <FormLabel className='text-sm font-medium text-textPrimary'>Notify Users</FormLabel>
+          <FormLabel className='text-[.8125rem] leading-5'>Notify Users</FormLabel>
           <FormGroup aria-label='position' row>
             <FormControlLabel value='email' label='Email' control={<Checkbox />} />
             <FormControlLabel value='sms' label='SMS' control={<Checkbox />} />

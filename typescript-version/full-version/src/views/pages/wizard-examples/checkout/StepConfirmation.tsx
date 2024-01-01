@@ -56,9 +56,9 @@ const StepConfirmation = () => {
       </Grid>
       <Grid item xs={12}>
         <div className='flex flex-col md:flex-row border rounded'>
-          <div className='flex flex-col is-full p-5 gap-4 items-center sm:items-start [&:not(:last-child)]:border-be md:[&:not(:last-child)]:border-ie'>
+          <div className='flex flex-col is-full p-5 gap-4 items-center sm:items-start [&:not(:last-child)]:border-be md:[&:not(:last-child)]:border-be-0 md:[&:not(:last-child)]:border-ie'>
             <div className='flex items-center gap-2'>
-              <i className='ri-map-pin-line text-2xl' />
+              <i className='ri-map-pin-line text-xl text-textPrimary' />
               <Typography className='font-medium' color='text.primary'>
                 Shipping
               </Typography>
@@ -71,9 +71,9 @@ const StepConfirmation = () => {
             </div>
             <Typography className='font-medium'>+123456789</Typography>
           </div>
-          <div className='flex flex-col is-full p-5 gap-4 items-center sm:items-start [&:not(:last-child)]:border-be md:[&:not(:last-child)]:border-ie'>
+          <div className='flex flex-col is-full p-5 gap-4 items-center sm:items-start [&:not(:last-child)]:border-be md:[&:not(:last-child)]:border-be-0 md:[&:not(:last-child)]:border-ie'>
             <div className='flex items-center gap-2'>
-              <i className='ri-bank-card-line text-2xl' />
+              <i className='ri-bank-card-line text-xl text-textPrimary' />
               <Typography className='font-medium' color='text.primary'>
                 Billing Address
               </Typography>
@@ -88,7 +88,7 @@ const StepConfirmation = () => {
           </div>
           <div className='flex flex-col is-full p-5 gap-4 items-center sm:items-start'>
             <div className='flex items-center gap-2'>
-              <i className='ri-ship-2-line text-2xl' />
+              <i className='ri-ship-2-line text-xl text-textPrimary' />
               <Typography className='font-medium' color='text.primary'>
                 Shipping Method
               </Typography>

@@ -23,6 +23,7 @@ const AppFullCalendar = styled('div')(({ theme }: { theme: Theme }) => ({
         marginBottom: theme.spacing(5)
       },
       '& .fc-sidebarToggle-button': {
+        color: `${theme.palette.text.secondary} !important`,
         marginInlineEnd: theme.spacing(2)
       },
       '& .fc-button-group:has(.fc-next-button)': {
@@ -32,10 +33,10 @@ const AppFullCalendar = styled('div')(({ theme }: { theme: Theme }) => ({
         display: 'flex',
         backgroundColor: 'transparent',
         padding: theme.spacing(1.5),
-        border: '1px solid var(--mui-palette-divider)',
+        border: '1px solid var(--mui-palette-secondary-main)',
         borderRadius: 'var(--mui-shape-borderRadius) !important',
         '& .fc-icon': {
-          color: theme.palette.text.primary,
+          color: theme.palette.text.secondary,
           fontSize: '1.25rem'
         },
         '&:hover, &:active, &:focus': {
@@ -325,7 +326,7 @@ const AppFullCalendar = styled('div')(({ theme }: { theme: Theme }) => ({
     // All Views Event
     '& .fc-daygrid-day-number, & .fc-timegrid-slot-label-cushion, & .fc-list-event-time': {
       textDecoration: 'none !important',
-      color: `${theme.palette.text.primary} !important`
+      color: `${theme.palette.text.secondary} !important`
     },
     '& .fc-day-today:not(.fc-popover)': {
       backgroundColor: 'var(--mui-palette-action-hover)'

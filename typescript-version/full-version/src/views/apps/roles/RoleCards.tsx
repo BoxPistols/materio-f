@@ -86,7 +86,7 @@ const RoleCards = () => {
                     <OpenDialogOnElementClick element={Typography} elementProps={typographyProps} dialog={RoleDialog} />
                   </div>
                   <IconButton className='p-[7px]'>
-                    <i className='ri-file-copy-line' />
+                    <i className='ri-file-copy-line text-textSecondary' />
                   </IconButton>
                 </div>
               </CardContent>

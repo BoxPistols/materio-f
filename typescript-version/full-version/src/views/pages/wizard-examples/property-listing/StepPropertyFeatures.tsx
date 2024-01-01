@@ -89,7 +89,7 @@ const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps, direc
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className='text-sm font-medium text-textPrimary'>Is There Any Common Area</FormLabel>
+          <FormLabel>Is There Any Common Area</FormLabel>
           <RadioGroup defaultValue='yes'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />
@@ -98,7 +98,7 @@ const StepPropertyFeatures = ({ activeStep, handleNext, handlePrev, steps, direc
       </Grid>
       <Grid item xs={12} md={6}>
         <FormControl className='gap-2'>
-          <FormLabel className='text-sm font-medium text-textPrimary'>Is There Any Attached Balcony</FormLabel>
+          <FormLabel>Is There Any Attached Balcony</FormLabel>
           <RadioGroup defaultValue='yes'>
             <FormControlLabel value='yes' control={<Radio />} label='Yes' />
             <FormControlLabel value='no' control={<Radio />} label='No' />

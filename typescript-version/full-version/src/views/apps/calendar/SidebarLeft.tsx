@@ -72,7 +72,7 @@ const SidebarLeft = (props: SidebarLeftProps) => {
         }}
         className={classnames('block', { static: mdAbove, absolute: !mdAbove })}
         PaperProps={{
-          className: classnames('items-start is-[280px] rounded shadow-none', {
+          className: classnames('items-start is-[280px] shadow-none', {
             static: mdAbove,
             absolute: !mdAbove
           })
@@ -91,7 +91,12 @@ const SidebarLeft = (props: SidebarLeftProps) => {
         }}
       >
         <div className='is-full p-5'>
-          <Button fullWidth variant='contained' onClick={handleSidebarToggleSidebar}>
+          <Button
+            fullWidth
+            variant='contained'
+            onClick={handleSidebarToggleSidebar}
+            startIcon={<i className='ri-add-line' />}
+          >
             Add Event
           </Button>
         </div>

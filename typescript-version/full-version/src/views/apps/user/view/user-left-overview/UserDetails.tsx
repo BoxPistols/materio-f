@@ -49,23 +49,23 @@ const UserDetails = () => {
               </div>
               <Chip label='Subscriber' color='error' size='small' variant='tonal' />
             </div>
-            <div className='flex items-center justify-around'>
+            <div className='flex items-center justify-around flex-wrap gap-4'>
               <div className='flex items-center gap-4'>
                 <CustomAvatar variant='rounded' skin='light'>
                   <i className='ri-check-line' />
                 </CustomAvatar>
                 <div>
                   <Typography variant='h5'>1.23k</Typography>
-                  <Typography color='text.primary'>Task Done</Typography>
+                  <Typography>Task Done</Typography>
                 </div>
               </div>
               <div className='flex items-center gap-4'>
                 <CustomAvatar variant='rounded' skin='light'>
-                  <i className='ri-star-line' />
+                  <i className='ri-star-smile-line' />
                 </CustomAvatar>
                 <div>
                   <Typography variant='h5'>568</Typography>
-                  <Typography color='text.primary'>Project Done</Typography>
+                  <Typography>Project Done</Typography>
                 </div>
               </div>
             </div>
@@ -78,13 +78,13 @@ const UserDetails = () => {
                 <Typography className='font-medium' color='text.primary'>
                   Username:
                 </Typography>
-                <Typography color='text.primary'>{userData.userName}</Typography>
+                <Typography>{userData.userName}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography className='font-medium' color='text.primary'>
                   Billing Email:
                 </Typography>
-                <Typography color='text.primary'>{userData.billingEmail}</Typography>
+                <Typography>{userData.billingEmail}</Typography>
               </div>
               <div className='flex items-center flex-wrap gap-x-1.5'>
                 <Typography className='font-medium' color='text.primary'>

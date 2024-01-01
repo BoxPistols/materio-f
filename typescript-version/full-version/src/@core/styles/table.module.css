@@ -33,7 +33,7 @@
           padding-inline: 1.25rem 1rem;
         }
         &:has(input[type='checkbox']) {
-          padding-inline-start: 0.5rem;
+          padding-inline-start: 0.6875rem;
         }
       }
       &:last-of-type {
@@ -61,7 +61,7 @@
           padding-inline: 1.25rem 1rem;
         }
         &:has(input[type='checkbox']) {
-          padding-inline-start: 0.5rem;
+          padding-inline-start: 0.6875rem;
         }
       }
       &:last-of-type {

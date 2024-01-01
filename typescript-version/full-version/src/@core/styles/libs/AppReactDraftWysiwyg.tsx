@@ -6,8 +6,9 @@ import { styled } from '@mui/material/styles'
 import type { Theme } from '@mui/material/styles'
 import type { BoxProps } from '@mui/material/Box'
 
-import { Editor } from 'react-draft-wysiwyg'
 import type { EditorProps } from 'react-draft-wysiwyg'
+
+import Editor from '@components/Editor'
 
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 
@@ -47,6 +48,9 @@ const EditorWrapper = styled(Box)<BoxProps>(({ theme }: { theme: Theme }) => ({
         '& .rdw-dropdownoption-active': {
           backgroundColor: theme.vars.palette.action.selected
         }
+      },
+      '& .rdw-option-wrapper': {
+        boxSizing: 'initial'
       },
       '& .rdw-option-wrapper, & .rdw-dropdown-wrapper': {
         borderColor: theme.vars.palette.divider,

@@ -1,7 +1,7 @@
 'use client'
 
 // React Imports
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 // MUI Imports
 import MuiAvatar from '@mui/material/Avatar'
@@ -38,11 +38,11 @@ const Avatar = styled(MuiAvatar)<CustomAvatarProps>(({ skin, color, size, theme 
   }
 })
 
-const CustomAvatar = (props: CustomAvatarProps) => {
+const CustomAvatar = forwardRef<HTMLDivElement, CustomAvatarProps>((props: CustomAvatarProps, ref) => {
   // Props
   const { color = 'primary', skin = 'filled', ...rest } = props
 
-  return <Avatar color={color} skin={skin} {...rest} />
-}
+  return <Avatar color={color} skin={skin} ref={ref} {...rest} />
+})
 
 export default CustomAvatar

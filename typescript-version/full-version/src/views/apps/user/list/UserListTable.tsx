@@ -239,11 +239,11 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
         cell: () => (
           <div className='flex items-center'>
             <IconButton>
-              <i className='ri-delete-bin-7-line text-[22px]' />
+              <i className='ri-delete-bin-7-line text-[22px] text-textSecondary' />
             </IconButton>
             <IconButton>
               <Link href='/apps/user/view' className='flex'>
-                <i className='ri-eye-line text-[22px]' />
+                <i className='ri-eye-line text-[22px] text-textSecondary' />
               </Link>
             </IconButton>
             <OptionMenu
@@ -251,12 +251,12 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
                 {
                   text: 'Download',
                   icon: 'ri-download-line text-[22px]',
-                  menuItemProps: { className: 'flex items-center' }
+                  menuItemProps: { className: 'flex items-center gap-2 text-textSecondary' }
                 },
                 {
                   text: 'Edit',
                   icon: 'ri-edit-box-line text-[22px]',
-                  linkProps: { className: 'flex items-center' }
+                  menuItemProps: { className: 'flex items-center gap-2 text-textSecondary' }
                 }
               ]}
             />
@@ -304,7 +304,7 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
         <CardHeader title='Filters' />
         <TableFilters setData={setData} tableData={tableData} />
         <Divider />
-        <div className='flex justify-between p-5 flex-col items-start sm:flex-row sm:items-center'>
+        <div className='flex justify-between p-5 gap-4 flex-col items-start sm:flex-row sm:items-center'>
           <Button
             color='secondary'
             variant='outlined'
@@ -313,7 +313,7 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
           >
             Export
           </Button>
-          <div className='flex items-center gap-x-4 is-full flex-col sm:is-auto sm:flex-row'>
+          <div className='flex items-center gap-x-4 is-full gap-4 flex-col sm:is-auto sm:flex-row'>
             <DebouncedInput
               value={globalFilter ?? ''}
               onChange={value => setGlobalFilter(String(value))}
@@ -354,20 +354,30 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
                 </tr>
               ))}
             </thead>
-            <tbody>
-              {table
-                .getRowModel()
-                .rows.slice(0, table.getState().pagination.pageSize)
-                .map(row => {
-                  return (
-                    <tr key={row.id} className={classnames({ selected: row.getIsSelected() })}>
-                      {row.getVisibleCells().map(cell => (
-                        <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
-                      ))}
-                    </tr>
-                  )
-                })}
-            </tbody>
+            {table.getFilteredRowModel().rows.length === 0 ? (
+              <tbody>
+                <tr>
+                  <td colSpan={table.getVisibleFlatColumns().length} className='text-center'>
+                    No data available
+                  </td>
+                </tr>
+              </tbody>
+            ) : (
+              <tbody>
+                {table
+                  .getRowModel()
+                  .rows.slice(0, table.getState().pagination.pageSize)
+                  .map(row => {
+                    return (
+                      <tr key={row.id} className={classnames({ selected: row.getIsSelected() })}>
+                        {row.getVisibleCells().map(cell => (
+                          <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                        ))}
+                      </tr>
+                    )
+                  })}
+              </tbody>
+            )}
           </table>
         </div>
         <TablePagination

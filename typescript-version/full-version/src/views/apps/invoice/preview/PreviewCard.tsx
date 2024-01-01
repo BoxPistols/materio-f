@@ -61,7 +61,10 @@ const PreviewCard = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string
                 <div className='flex flex-col gap-6'>
                   <div className='flex items-center gap-2.5'>
                     <Logo className='text-primary' height={25} width={30} />
-                    <Typography className='uppercase font-semibold text-xl leading-tight' color='text.primary'>
+                    <Typography
+                      className='uppercase font-semibold text-xl leading-tight tracking-[0.15px]'
+                      color='text.primary'
+                    >
                       {themeConfig.templateName}
                     </Typography>
                   </div>
@@ -133,11 +136,11 @@ const PreviewCard = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string
               <table className={tableStyles.table}>
                 <thead>
                   <tr className='border-be'>
-                    <th>Item</th>
-                    <th>Description</th>
-                    <th>Hours</th>
-                    <th>Qty</th>
-                    <th>Total</th>
+                    <th className='!bg-transparent'>Item</th>
+                    <th className='!bg-transparent'>Description</th>
+                    <th className='!bg-transparent'>Hours</th>
+                    <th className='!bg-transparent'>Qty</th>
+                    <th className='!bg-transparent'>Total</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -165,7 +168,7 @@ const PreviewCard = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string
             </div>
           </Grid>
           <Grid item xs={12}>
-            <div className='flex justify-between flex-col sm:flex-row'>
+            <div className='flex justify-between flex-col gap-y-2 sm:flex-row'>
               <div className='flex flex-col gap-1 order-2 sm:order-[unset]'>
                 <div className='flex items-center gap-2'>
                   <Typography className='font-medium' color='text.primary'>

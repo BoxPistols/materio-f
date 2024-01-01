@@ -4,7 +4,9 @@ import type { Theme } from '@mui/material/styles'
 const formControl: Theme['components'] = {
   MuiFormControlLabel: {
     styleOverrides: {
-      root: {
+      root: ({ theme }) => ({
+        marginInlineStart: theme.spacing(-2),
+
         // Radio & Checkbox
         '&.Mui-disabled:not(:has(.MuiSwitch-switchBase))': {
           opacity: 0.45
@@ -15,7 +17,7 @@ const formControl: Theme['components'] = {
           {
             opacity: 0.45
           }
-      },
+      }),
       label: {
         '&, &.Mui-disabled': {
           color: 'var(--mui-palette-text-primary)'

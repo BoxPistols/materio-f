@@ -89,7 +89,7 @@ const StepPayment = ({ handleNext }: { handleNext: () => void }) => {
           </CustomTabList>
           <Grid container>
             <Grid item md={8} xs={12}>
-              <TabPanel value='credit-card'>
+              <TabPanel value='credit-card' className='p-0'>
                 <form>
                   <Grid container spacing={5}>
                     <Grid item xs={12}>
