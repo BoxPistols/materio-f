@@ -15,9 +15,6 @@ import type { VerticalMenuContextProps } from '@menu-package/components/vertical
 import HorizontalNav, { Menu, SubMenu, MenuItem } from '@menu-package/horizontal-menu'
 import VerticalNavContent from './VerticalNavContent'
 
-// Icon Imports
-import LinkExternalIcon from '@layouts/svg/LinkExternal'
-
 // Hook Imports
 import useVerticalNav from '@menu-package/hooks/useVerticalNav'
 import { useSettings } from '@core/hooks/useSettings'
@@ -260,7 +257,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
           </MenuItem>
           <MenuItem
             href='http://localhost:3001/docs/forms-tables/intro#form-elements'
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-radio-button-line' />}
           >
@@ -268,7 +265,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
           </MenuItem>
           <MenuItem
             href='http://localhost:3001/docs/tables/mui-table'
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-table-2' />}
           >
@@ -286,7 +283,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
         <SubMenu label={dictionary['navigation'].others} icon={<i className='ri-more-line' />}>
           <MenuItem
             href='http://localhost:3001/docs/user-interface/intro'
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-pantone-line' />}
           >
@@ -294,7 +291,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
           </MenuItem>
           <MenuItem
             href='http://localhost:3001/docs/components/intro'
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-toggle-line' />}
           >
@@ -302,21 +299,21 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
           </MenuItem>
           <MenuItem
             href='http://localhost:3001/docs/menu-examples/'
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-menu-search-line' />}
           >
             {dictionary['navigation'].menuExamples}
           </MenuItem>
           <MenuItem
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-lifebuoy-line' />}
           >
             {dictionary['navigation'].raiseSupport}
           </MenuItem>
           <MenuItem
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-book-line' />}
           >
@@ -328,7 +325,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
           <MenuItem
             href='https://themeselection.com/'
             target='_blank'
-            suffix={<LinkExternalIcon fontSize='1.125rem' />}
+            suffix={<i className='ri-external-link-line text-xl' />}
             icon={<i className='ri-link' />}
           >
             {dictionary['navigation'].externalLink}

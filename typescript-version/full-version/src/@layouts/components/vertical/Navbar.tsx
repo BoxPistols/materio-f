@@ -39,7 +39,7 @@ const Navbar = (props: Props) => {
     disableHysteresis: true
   })
 
-  const { navbarContentWidth, skin } = settings
+  const { navbarContentWidth } = settings
 
   const headerFixed = themeConfig.navbar.type === 'fixed'
   const headerStatic = themeConfig.navbar.type === 'static'
@@ -52,7 +52,6 @@ const Navbar = (props: Props) => {
 
   return (
     <StyledHeader
-      skin={skin}
       theme={theme}
       overrideStyles={overrideStyles}
       className={classnames(verticalLayoutClasses.header, 'flex items-center justify-center is-full', {

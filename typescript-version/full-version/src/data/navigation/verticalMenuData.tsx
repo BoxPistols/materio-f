@@ -2,9 +2,6 @@
 import type { VerticalMenuDataType } from '@/types/menuTypes'
 import type { Dictionary, Params } from '@core/types'
 
-// Icon Imports
-import LinkExternalIcon from '@layouts/svg/LinkExternal'
-
 const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuDataType[] => [
   // This is how you will normally render submenu
   {
@@ -360,7 +357,7 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
       {
         label: dictionary['navigation'].formELements,
         icon: 'ri-radio-button-line',
-        suffix: <LinkExternalIcon fontSize='1.125rem' />,
+        suffix: <i className='ri-external-link-line text-xl' />,
         href: 'http://localhost:3001/docs/forms-tables/intro#form-elements',
         target: '_blank'
       },
@@ -368,7 +365,7 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
         label: dictionary['navigation'].muiTables,
         icon: 'ri-table-2',
         href: 'http://localhost:3001/docs/tables/mui-table',
-        suffix: <LinkExternalIcon fontSize='1.125rem' />,
+        suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       }
     ]
@@ -399,33 +396,33 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
         label: dictionary['navigation'].userInterface,
         icon: 'ri-pantone-line',
         href: 'http://localhost:3001/docs/user-interface/intro',
-        suffix: <LinkExternalIcon fontSize='1.125rem' />,
+        suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].components,
         icon: 'ri-toggle-line',
         href: 'http://localhost:3001/docs/components/intro',
-        suffix: <LinkExternalIcon fontSize='1.125rem' />,
+        suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].menuExamples,
         icon: 'ri-menu-search-line',
         href: 'http://localhost:3001/docs/menu-examples/',
-        suffix: <LinkExternalIcon fontSize='1.125rem' />,
+        suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].raiseSupport,
         icon: 'ri-lifebuoy-line',
-        suffix: <LinkExternalIcon fontSize='1.125rem' />,
+        suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].documentation,
         icon: 'ri-book-line',
-        suffix: <LinkExternalIcon fontSize='1.125rem' />,
+        suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
@@ -441,7 +438,7 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
             icon: 'ri-circle-line',
             href: 'https://themeselection.com/',
             target: '_blank',
-            suffix: <LinkExternalIcon fontSize='1.125rem' />
+            suffix: <i className='ri-external-link-line text-xl' />
           },
           {
             label: dictionary['navigation'].menuLevels,

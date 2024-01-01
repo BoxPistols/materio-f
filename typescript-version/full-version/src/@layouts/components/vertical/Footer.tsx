@@ -34,7 +34,7 @@ const Footer = (props: Props) => {
   const { settings } = useSettings()
   const theme = useTheme()
 
-  const { footerContentWidth, skin } = settings
+  const { footerContentWidth } = settings
 
   const footerDetached = themeConfig.footer.detached === true
   const footerAttached = themeConfig.footer.detached === false
@@ -45,7 +45,6 @@ const Footer = (props: Props) => {
 
   return (
     <StyledFooter
-      skin={skin}
       theme={theme}
       overrideStyles={overrideStyles}
       className={classnames(verticalLayoutClasses.footer, 'is-full', {

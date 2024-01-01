@@ -34,7 +34,7 @@ const Footer = (props: Props) => {
   const { settings } = useSettings()
   const theme = useTheme()
 
-  const { footerContentWidth, skin } = settings
+  const { footerContentWidth } = settings
 
   const footerStatic = themeConfig.footer.type === 'static'
   const footerFixed = themeConfig.footer.type === 'fixed'
@@ -43,7 +43,6 @@ const Footer = (props: Props) => {
 
   return (
     <StyledFooter
-      skin={skin}
       theme={theme}
       overrideStyles={overrideStyles}
       className={classnames(horizontalLayoutClasses.footer, {

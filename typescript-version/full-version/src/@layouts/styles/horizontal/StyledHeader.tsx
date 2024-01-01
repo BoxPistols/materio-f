@@ -5,9 +5,6 @@ import type { Theme } from '@mui/material/styles'
 import styled from '@emotion/styled'
 import type { CSSObject } from '@emotion/styled'
 
-// Type Imports
-import type { Settings } from '@core/contexts/settingsContext'
-
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
@@ -15,7 +12,6 @@ import themeConfig from '@configs/themeConfig'
 import { horizontalLayoutClasses } from '@layouts/utils/layoutClasses'
 
 type StyledHeaderProps = {
-  skin: Settings['skin']
   theme: Theme
   overrideStyles?: CSSObject
 }

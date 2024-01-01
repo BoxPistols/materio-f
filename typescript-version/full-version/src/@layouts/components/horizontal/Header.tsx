@@ -34,7 +34,7 @@ const Header = (props: Props) => {
   const { settings } = useSettings()
   const theme = useTheme()
 
-  const { navbarContentWidth, skin } = settings
+  const { navbarContentWidth } = settings
 
   const headerFixed = themeConfig.navbar.type === 'fixed'
   const headerStatic = themeConfig.navbar.type === 'static'
@@ -44,7 +44,6 @@ const Header = (props: Props) => {
 
   return (
     <StyledHeader
-      skin={skin}
       theme={theme}
       overrideStyles={overrideStyles}
       className={classnames(horizontalLayoutClasses.header, {
