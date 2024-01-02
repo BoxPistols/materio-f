@@ -2,10 +2,10 @@
 import NotAuthorized from '@views/NotAuthorized'
 
 // Server Action Imports
-import { getMode } from '@core/server/actions'
+import { getServerMode } from '@core/server/actions'
 
 const Error401 = () => {
-  const mode = getMode()
+  const mode = getServerMode()
 
   return <NotAuthorized mode={mode} />
 }

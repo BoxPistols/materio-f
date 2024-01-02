@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import Login from '@views/Login'
 
 // Server Action Imports
-import { getMode } from '@core/server/actions'
+import { getServerMode } from '@core/server/actions'
 
 export const metadata: Metadata = {
   title: 'Login',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 const LoginPage = () => {
-  const mode = getMode()
+  const mode = getServerMode()
 
   return <Login mode={mode} />
 }

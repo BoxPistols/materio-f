@@ -2,10 +2,10 @@
 import VerifyEmailV2 from '@views/pages/auth/VerifyEmailV2'
 
 // Server Action Imports
-import { getMode } from '@core/server/actions'
+import { getServerMode } from '@core/server/actions'
 
 const VerifyEmailV2Page = () => {
-  const mode = getMode()
+  const mode = getServerMode()
 
   return <VerifyEmailV2 mode={mode} />
 }

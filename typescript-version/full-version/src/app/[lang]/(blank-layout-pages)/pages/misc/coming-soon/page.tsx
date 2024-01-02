@@ -2,10 +2,10 @@
 import ComingSoon from '@views/pages/misc/ComingSoon'
 
 // Server Action Imports
-import { getMode } from '@core/server/actions'
+import { getServerMode } from '@core/server/actions'
 
 const ComingSoonPage = () => {
-  const mode = getMode()
+  const mode = getServerMode()
 
   return <ComingSoon mode={mode} />
 }

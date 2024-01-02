@@ -2,10 +2,10 @@
 import RegisterV1 from '@views/pages/auth/RegisterV1'
 
 // Server Action Imports
-import { getMode } from '@core/server/actions'
+import { getServerMode } from '@core/server/actions'
 
 const RegisterV1Page = () => {
-  const mode = getMode()
+  const mode = getServerMode()
 
   return <RegisterV1 mode={mode} />
 }

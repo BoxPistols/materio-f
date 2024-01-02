@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import Register from '@views/Register'
 
 // Server Action Imports
-import { getMode } from '@core/server/actions'
+import { getServerMode } from '@core/server/actions'
 
 export const metadata: Metadata = {
   title: 'Register',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 const RegisterPage = () => {
-  const mode = getMode()
+  const mode = getServerMode()
 
   return <Register mode={mode} />
 }

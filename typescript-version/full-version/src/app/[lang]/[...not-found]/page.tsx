@@ -7,11 +7,11 @@ import NotFound from '@views/NotFound'
 
 // Util Imports
 import { getDirection } from '@/utils/get-direction'
-import { getMode } from '@core/server/actions'
+import { getServerMode } from '@core/server/actions'
 
 const NotFoundPage = ({ params }: { params: { lang: Locale } }) => {
   const direction = getDirection(params.lang)
-  const mode = getMode()
+  const mode = getServerMode()
 
   return (
     <Providers direction={direction}>
