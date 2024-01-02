@@ -57,9 +57,7 @@ const Logo = () => {
 
     if (logoTextRef && logoTextRef.current) {
       if (isCollapsed && !isHovered) {
-        setTimeout(() => {
-          logoTextRef.current?.classList.add('hidden')
-        }, transitionDuration)
+        logoTextRef.current?.classList.add('hidden')
       } else {
         logoTextRef.current.classList.remove('hidden')
       }
