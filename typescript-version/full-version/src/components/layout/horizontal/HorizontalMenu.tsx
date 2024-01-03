@@ -359,7 +359,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
           menuSectionStyles: verticalMenuSectionStyles(verticalNavOptions, theme)
         }}
       >
-        {generateHorizontalMenu(menuData(locale, params), locale)}
+        {generateHorizontalMenu(menuData(dictionary, params), locale)}
       </Menu> */}
     </HorizontalNav>
   )
