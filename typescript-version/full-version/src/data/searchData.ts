@@ -8,23 +8,23 @@ type SearchData = Action & {
 const data: SearchData[] = [
   {
     id: '1',
+    name: 'CRM',
+    url: '/dashboards/crm',
+    icon: 'ri-pie-chart-2-line',
+    section: 'Dashboards'
+  },
+  {
+    id: '2',
     name: 'Analytics Dashboard',
     url: '/dashboards/analytics',
     icon: 'ri-bar-chart-line',
     section: 'Dashboards'
   },
   {
-    id: '2',
+    id: '3',
     name: 'eCommerce Dashboard',
     url: '/dashboards/ecommerce',
     icon: 'ri-shopping-bag-3-line',
-    section: 'Dashboards'
-  },
-  {
-    id: '3',
-    name: 'CRM',
-    url: '/dashboards/crm',
-    icon: 'ri-pie-chart-2-line',
     section: 'Dashboards'
   },
   {

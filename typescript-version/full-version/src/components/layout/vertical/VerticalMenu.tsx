@@ -5,6 +5,7 @@ import { usePathname, useParams } from 'next/navigation'
 
 // MUI Imports
 import { useTheme } from '@mui/material/styles'
+import Chip from '@mui/material/Chip'
 
 // Third-party Imports
 import PerfectScrollbar from 'react-perfect-scrollbar'
@@ -18,6 +19,7 @@ import { Menu, SubMenu, MenuItem, MenuSection } from '@menu-package/vertical-men
 
 // Hook Imports
 import useVerticalNav from '@menu-package/hooks/useVerticalNav'
+import { useSettings } from '@core/hooks/useSettings'
 
 // Util Imports
 import { getLocale } from '@/utils/get-locale'
@@ -39,19 +41,25 @@ type RenderExpandIconProps = {
   transitionDuration?: VerticalMenuContextProps['transitionDuration']
 }
 
+type Props = {
+  dictionary: Dictionary
+  scrollMenu: (container: any, isPerfectScrollbar: boolean) => void
+}
+
 const RenderExpandIcon = ({ open, transitionDuration }: RenderExpandIconProps) => (
   <StyledVerticalNavExpandIcon open={open} transitionDuration={transitionDuration}>
     <i className='ri-arrow-right-s-line' />
   </StyledVerticalNavExpandIcon>
 )
 
-const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
+const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
   // Hooks
   const theme = useTheme()
   const pathName = usePathname()
   const verticalNavOptions = useVerticalNav()
   const params = useParams()
   const { isBreakpointReached } = useVerticalNav()
+  const { settings } = useSettings()
 
   const { transitionDuration } = verticalNavOptions
 
@@ -65,22 +73,32 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
     /* Custom scrollbar instead of browser scroll, remove if you want browser scroll only */
     <ScrollWrapper
       {...(isBreakpointReached
-        ? { className: 'bs-full overflow-y-auto overflow-x-hidden' }
-        : { options: { wheelPropagation: false, suppressScrollX: true } })}
+        ? {
+            className: 'bs-full overflow-y-auto overflow-x-hidden',
+            onScroll: container => scrollMenu(container, false)
+          }
+        : {
+            options: { wheelPropagation: false, suppressScrollX: true },
+            onScrollY: container => scrollMenu(container, true)
+          })}
     >
       {/* Incase you also want to scroll NavHeader to scroll with Vertical Menu, remove NavHeader from above and paste it below this comment */}
       {/* Vertical Menu */}
       <Menu
         popoutMenuOffset={{ mainAxis: 10 }}
-        menuItemStyles={menuItemStyles(verticalNavOptions, theme)}
+        menuItemStyles={menuItemStyles(verticalNavOptions, theme, settings)}
         renderExpandIcon={({ open }) => <RenderExpandIcon open={open} transitionDuration={transitionDuration} />}
         renderExpandedMenuItemIcon={{ icon: <i className='ri-circle-line' /> }}
         menuSectionStyles={menuSectionStyles(verticalNavOptions, theme)}
       >
-        <SubMenu label={dictionary['navigation'].dashboards} icon={<i className='ri-home-smile-line' />}>
+        <SubMenu
+          label={dictionary['navigation'].dashboards}
+          icon={<i className='ri-home-smile-line' />}
+          suffix={<Chip label='3' size='small' color='error' />}
+        >
+          <MenuItem href={`/${locale}/dashboards/crm`}>{dictionary['navigation'].crm}</MenuItem>
           <MenuItem href={`/${locale}/dashboards/analytics`}>{dictionary['navigation'].analytics}</MenuItem>
           <MenuItem href={`/${locale}/dashboards/ecommerce`}>{dictionary['navigation'].eCommerce}</MenuItem>
-          <MenuItem href={`/${locale}/dashboards/crm`}>{dictionary['navigation'].CRM}</MenuItem>
         </SubMenu>
         <MenuSection label={dictionary['navigation'].appsPages}>
           <MenuItem href={`/${locale}/apps/calendar`} icon={<i className='ri-calendar-line' />}>
@@ -260,6 +278,7 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
             {dictionary['navigation'].menuExamples}
           </MenuItem>
           <MenuItem
+            href='https://themeselection.com/support'
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-lifebuoy-line' />}
@@ -267,6 +286,7 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
             {dictionary['navigation'].raiseSupport}
           </MenuItem>
           <MenuItem
+            href='https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation'
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-book-line' />}
@@ -274,7 +294,9 @@ const VerticalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
             {dictionary['navigation'].documentation}
           </MenuItem>
           <SubMenu label={dictionary['navigation'].others} icon={<i className='ri-more-line' />}>
-            <MenuItem suffix='2️⃣'>{dictionary['navigation'].itemWithBadge}</MenuItem>
+            <MenuItem suffix={<Chip label='New' size='small' color='info' />}>
+              {dictionary['navigation'].itemWithBadge}
+            </MenuItem>
             <MenuItem
               href='https://themeselection.com/'
               target='_blank'

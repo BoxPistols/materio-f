@@ -11,14 +11,15 @@ const SelectIcon = () => {
 const iconStyles = (theme: Theme) => ({
   userSelect: 'none',
   display: 'inline-block',
+  fill: 'currentColor',
   flexShrink: 0,
   transition: theme.transitions.create('fill', {
     duration: theme.transitions.duration.shorter
   }),
-  fontSize: '1.5rem',
+  fontSize: '1.25rem',
   position: 'absolute',
   right: '1rem',
-  top: 'calc(50% - 0.6rem)',
+  top: 'calc(50% - 0.5em)',
   pointerEvents: 'none'
 })
 

@@ -6,6 +6,7 @@ import { usePathname, useParams } from 'next/navigation'
 
 // MUI Imports
 import { useTheme } from '@mui/material/styles'
+import Chip from '@mui/material/Chip'
 
 // Type Imports
 import type { Dictionary } from '@core/types'
@@ -93,7 +94,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
           alignmentAxis: ({ level }) => (level && level > 0 ? -5 : 0)
         }}
         verticalMenuProps={{
-          menuItemStyles: verticalMenuItemStyles(verticalNavOptions, theme),
+          menuItemStyles: verticalMenuItemStyles(verticalNavOptions, theme, settings),
           renderExpandIcon: ({ open }) => (
             <RenderVerticalExpandIcon open={open} transitionDuration={transitionDuration} />
           ),
@@ -102,14 +103,14 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
         }}
       >
         <SubMenu label={dictionary['navigation'].dashboards} icon={<i className='ri-home-smile-line' />}>
+          <MenuItem href={`/${locale}/dashboards/crm`} icon={<i className='ri-pie-chart-2-line' />}>
+            {dictionary['navigation'].crm}
+          </MenuItem>
           <MenuItem href={`/${locale}/dashboards/analytics`} icon={<i className='ri-bar-chart-line' />}>
             {dictionary['navigation'].analytics}
           </MenuItem>
           <MenuItem href={`/${locale}/dashboards/ecommerce`} icon={<i className='ri-shopping-bag-3-line' />}>
             {dictionary['navigation'].eCommerce}
-          </MenuItem>
-          <MenuItem href={`/${locale}/dashboards/crm`} icon={<i className='ri-pie-chart-2-line' />}>
-            {dictionary['navigation'].CRM}
           </MenuItem>
         </SubMenu>
 
@@ -306,6 +307,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
             {dictionary['navigation'].menuExamples}
           </MenuItem>
           <MenuItem
+            href='https://themeselection.com/support'
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-lifebuoy-line' />}
@@ -313,13 +315,17 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Dictionary }) => {
             {dictionary['navigation'].raiseSupport}
           </MenuItem>
           <MenuItem
+            href='https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation'
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-book-line' />}
           >
             {dictionary['navigation'].documentation}
           </MenuItem>
-          <MenuItem suffix='2️⃣' icon={<i className='ri-notification-badge-line' />}>
+          <MenuItem
+            suffix={<Chip label='New' size='small' color='info' />}
+            icon={<i className='ri-notification-badge-line' />}
+          >
             {dictionary['navigation'].itemWithBadge}
           </MenuItem>
           <MenuItem

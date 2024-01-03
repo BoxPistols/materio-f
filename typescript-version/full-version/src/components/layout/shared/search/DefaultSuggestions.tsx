@@ -135,7 +135,9 @@ const DefaultSuggestions = () => {
           key={index}
           className='flex flex-col justify-center overflow-x-hidden gap-4 basis-full sm:basis-[calc((100%-3rem)/2)]'
         >
-          <p className='text-xs leading-[1.16667] uppercase text-textDisabled'>{section.sectionLabel}</p>
+          <p className='text-xs leading-[1.16667] uppercase tracking-[0.8px] text-textDisabled'>
+            {section.sectionLabel}
+          </p>
           <ul className='flex flex-col gap-4'>
             {section.items.map((item, i) => (
               <li key={i} className='flex'>

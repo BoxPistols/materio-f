@@ -1,7 +1,10 @@
 'use client'
 
+// React Imports
+import { useRef } from 'react'
+
 // MUI Imports
-import { useColorScheme, useTheme } from '@mui/material/styles'
+import { styled, useColorScheme, useTheme } from '@mui/material/styles'
 
 // Type Imports
 import type { Settings } from '@core/contexts/settingsContext'
@@ -29,6 +32,24 @@ type Props = {
   skin: Skin
 }
 
+const StyledBoxForShadow = styled('div')(({ theme }) => ({
+  top: 60,
+  left: -8,
+  zIndex: 2,
+  opacity: 0,
+  position: 'absolute',
+  pointerEvents: 'none',
+  width: 'calc(100% + 15px)',
+  height: theme.mixins.toolbar.minHeight,
+  transition: 'opacity .15s ease-in-out',
+  background: `linear-gradient(var(--mui-palette-background-default) ${
+    theme.direction === 'rtl' ? '95%' : '5%'
+  }, rgb(var(--mui-palette-background-defaultChannel) / 0.85) 30%, rgb(var(--mui-palette-background-defaultChannel) / 0.5) 65%, rgb(var(--mui-palette-background-defaultChannel) / 0.3) 75%, transparent)`,
+  '&.scrolled': {
+    opacity: 1
+  }
+}))
+
 const Navigation = (props: Props) => {
   // Props
   const { settingsCookie, dictionary, mode, systemMode, skin } = props
@@ -39,7 +60,10 @@ const Navigation = (props: Props) => {
   const { mode: muiMode, systemMode: muiSystemMode } = useColorScheme()
   const theme = useTheme()
 
-  const { isCollapsed, isHovered } = verticalNavOptions
+  // Refs
+  const shadowRef = useRef(null)
+
+  const { isCollapsed, isHovered, isBreakpointReached } = verticalNavOptions
   const isServer = typeof window === 'undefined'
 
   let isSemiDark, isDark, isSkinBordered
@@ -52,6 +76,21 @@ const Navigation = (props: Props) => {
     isSemiDark = settings.semiDark
     isDark = muiMode === 'system' ? muiSystemMode === 'dark' : muiMode === 'dark'
     isSkinBordered = settings.skin === 'bordered'
+  }
+
+  const scrollMenu = (container: any, isPerfectScrollbar: boolean) => {
+    container = isBreakpointReached || !isPerfectScrollbar ? container.target : container
+
+    if (shadowRef && container.scrollTop > 0) {
+      // @ts-ignore
+      if (!shadowRef.current.classList.contains('scrolled')) {
+        // @ts-ignore
+        shadowRef.current.classList.add('scrolled')
+      }
+    } else {
+      // @ts-ignore
+      shadowRef.current.classList.remove('scrolled')
+    }
   }
 
   return (
@@ -81,7 +120,8 @@ const Navigation = (props: Props) => {
           />
         )}
       </NavHeader>
-      <VerticalMenu dictionary={dictionary} />
+      <StyledBoxForShadow ref={shadowRef} />
+      <VerticalMenu dictionary={dictionary} scrollMenu={scrollMenu} />
     </VerticalNav>
   )
 }

@@ -19,7 +19,7 @@ const menuSectionStyles = (verticalNavOptions: VerticalNavState, theme: Theme): 
       [`& .${menuClasses.menuSectionContent}`]: {
         color: 'var(--mui-palette-text-disabled)',
         paddingInline: '0 !important',
-        paddingBlock: `${theme.spacing(collapsedNotHovered ? 4.25 : 1.75)} !important`,
+        paddingBlock: `${theme.spacing(collapsedNotHovered ? 3.875 : 1.75)} !important`,
         gap: theme.spacing(2.5),
         ...(collapsedNotHovered && {
           paddingInlineStart: `${theme.spacing(((collapsedWidth as number) - 22) / 8)} !important`,
@@ -43,6 +43,8 @@ const menuSectionStyles = (verticalNavOptions: VerticalNavState, theme: Theme): 
       },
       [`& .${menuClasses.menuSectionLabel}`]: {
         flexGrow: 0,
+        fontSize: '13px',
+        lineHeight: 1.38462,
         ...(collapsedNotHovered && {
           display: 'none'
         })

@@ -10,6 +10,11 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
     children: [
       // This is how you will normally render menu item
       {
+        label: dictionary['navigation'].crm,
+        icon: 'ri-circle-line',
+        href: '/dashboards/crm'
+      },
+      {
         label: dictionary['navigation'].analytics,
         icon: 'ri-circle-line',
         href: '/dashboards/analytics'
@@ -18,11 +23,6 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
         label: dictionary['navigation'].eCommerce,
         icon: 'ri-circle-line',
         href: '/dashboards/ecommerce'
-      },
-      {
-        label: dictionary['navigation'].CRM,
-        icon: 'ri-circle-line',
-        href: '/dashboards/crm'
       }
     ]
   },
@@ -416,12 +416,14 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
       {
         label: dictionary['navigation'].raiseSupport,
         icon: 'ri-lifebuoy-line',
+        href: 'https://themeselection.com/support',
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].documentation,
         icon: 'ri-book-line',
+        href: 'https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation',
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },

@@ -5,11 +5,12 @@ import type { Theme } from '@mui/material/styles'
 // Type Imports
 import type { VerticalNavState } from '@menu-package/contexts/verticalNavContext'
 import type { MenuItemStyles } from '@menu-package/types'
+import type { Settings } from '@core/contexts/settingsContext'
 
 // Util Imports
 import { menuClasses } from '@menu-package/utils/menuClasses'
 
-const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme): MenuItemStyles => {
+const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme, settings: Settings): MenuItemStyles => {
   const { isCollapsed, isHovered, collapsedWidth, isPopoutWhenCollapsed, transitionDuration } = verticalNavOptions
 
   const popoutCollapsed = isPopoutWhenCollapsed && isCollapsed
@@ -60,12 +61,12 @@ const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme): Men
       }
     }),
     button: ({ level, active }) => ({
-      '&:not(:has(.MuiChip-root))': {
-        paddingBlock: theme.spacing(2)
-      },
-      '&:has(.MuiChip-root)': {
-        paddingBlock: theme.spacing(1.75)
-      },
+      paddingBlock: theme.spacing(2),
+      ...(!(isCollapsed && !isHovered) && {
+        '&:has(.MuiChip-root)': {
+          paddingBlock: theme.spacing(1.75)
+        }
+      }),
       ...((!isPopoutWhenCollapsed || popoutExpanded || (popoutCollapsed && level === 0)) && {
         transition: `padding-inline-start ${transitionDuration}ms ease-in-out`,
         paddingInlineStart: theme.spacing(collapsedNotHovered ? ((collapsedWidth as number) - 25) / 8 : 5.5),
@@ -74,8 +75,11 @@ const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme): Men
         borderEndEndRadius: 50
       }),
       ...(!active && {
-        '&:hover, &:focus-visible, &[aria-expanded="true"]': {
+        '&:hover, &:focus-visible': {
           backgroundColor: 'var(--mui-palette-action-hover)'
+        },
+        '&[aria-expanded="true"]': {
+          backgroundColor: 'var(--mui-palette-action-selected)'
         }
       })
     }),
@@ -136,10 +140,23 @@ const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme): Men
     subMenuContent: ({ level }) => ({
       zIndex: 'calc(var(--drawer-z-index) + 1)',
       backgroundColor: popoutCollapsed ? 'var(--mui-palette-background-paper)' : 'transparent',
-      ...(isPopoutWhenCollapsed &&
-        isCollapsed &&
+      ...(!isCollapsed && {
+        paddingBlockEnd: theme.spacing(2.5),
+        paddingInlineEnd: theme.spacing(1.5),
+        marginBlockEnd: theme.spacing(-2.5),
+        marginInlineEnd: theme.spacing(-1.5)
+      }),
+      ...(popoutCollapsed &&
         level === 0 && {
           paddingBlock: theme.spacing(2),
+          ...(settings.skin === 'bordered'
+            ? {
+                boxShadow: 'none',
+                border: '1px solid var(--mui-palette-divider)'
+              }
+            : {
+                boxShadow: 'var(--mui-customShadows-lg)'
+              }),
           [`& .${menuClasses.button}`]: {
             paddingInline: theme.spacing(4)
           }

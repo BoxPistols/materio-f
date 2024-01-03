@@ -10,6 +10,11 @@ const horizontalMenuData = (dictionary: Dictionary, params: Params): HorizontalM
     children: [
       // This is how you will normally render menu item
       {
+        label: dictionary['navigation'].crm,
+        icon: 'ri-pie-chart-2-line',
+        href: '/dashboards/crm'
+      },
+      {
         label: dictionary['navigation'].analytics,
         icon: 'ri-bar-chart-line',
         href: '/dashboards/analytics'
@@ -18,11 +23,6 @@ const horizontalMenuData = (dictionary: Dictionary, params: Params): HorizontalM
         label: dictionary['navigation'].eCommerce,
         icon: 'ri-shopping-bag-3-line',
         href: '/dashboards/ecommerce'
-      },
-      {
-        label: dictionary['navigation'].CRM,
-        icon: 'ri-pie-chart-2-line',
-        href: '/dashboards/crm'
       }
     ]
   },
@@ -411,12 +411,14 @@ const horizontalMenuData = (dictionary: Dictionary, params: Params): HorizontalM
       {
         label: dictionary['navigation'].raiseSupport,
         icon: 'ri-lifebuoy-line',
+        href: 'https://themeselection.com/support',
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].documentation,
         icon: 'ri-book-line',
+        href: 'https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation',
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },

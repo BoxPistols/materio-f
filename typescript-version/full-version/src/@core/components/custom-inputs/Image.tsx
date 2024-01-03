@@ -25,7 +25,6 @@ const Root = styled('div', {
   flexDirection: 'column',
   justifyContent: 'center',
   border: '1px solid var(--mui-palette-customColors-inputBorder)',
-  '-webkit-tap-highlight-color': 'transparent',
 
   '&:hover': {
     borderColor: 'var(--mui-palette-action-active)'

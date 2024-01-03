@@ -106,7 +106,7 @@ const notifications: NotificationsType[] = [
 const NavbarContent = () => {
   return (
     <div className={classnames(verticalLayoutClasses.navbarContent, 'flex items-center justify-between gap-4 is-full')}>
-      <div className='flex items-center gap-4'>
+      <div className='flex items-center gap-[7px]'>
         <NavToggle />
         <NavSearch />
       </div>

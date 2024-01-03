@@ -8,7 +8,7 @@ const tablePagination: Theme['components'] = {
         paddingInlineEnd: `${theme.spacing(3)} !important`
       }),
       select: {
-        '& ~ svg': {
+        '& ~ i, & ~ svg': {
           right: '2px !important'
         }
       }

@@ -1,8 +1,8 @@
 {
   "navigation": {
     "dashboards": "Tableaux de bord",
+    "crm": "GRC",
     "analytics": "Analytique",
-    "CRM": "GRC",
     "eCommerce": "commerce électronique",
     "appsPages": "Applications et pages",
     "apps": "Apps",
