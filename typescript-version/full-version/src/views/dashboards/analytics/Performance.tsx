@@ -82,15 +82,7 @@ const Performance = () => {
         }
       }
     },
-    yaxis: { show: false },
-    responsive: [
-      {
-        breakpoint: 1200,
-        options: {
-          chart: { height: 340 }
-        }
-      }
-    ]
+    yaxis: { show: false }
   }
 
   return (
@@ -100,7 +92,7 @@ const Performance = () => {
         action={<OptionsMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       />
       <CardContent>
-        <AppReactApexCharts type='radar' height={306} width='100%' series={series} options={options} />
+        <AppReactApexCharts type='radar' height={300} width='100%' series={series} options={options} />
       </CardContent>
     </Card>
   )

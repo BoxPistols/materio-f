@@ -95,7 +95,7 @@ export const db: CardStatsType = {
       chipText: `Year of ${new Date().getFullYear()}`
     },
     {
-      stats: '24.5k',
+      stats: '24k',
       trend: 'negative',
       title: 'Sessions',
       trendNumber: '20%',
@@ -103,7 +103,7 @@ export const db: CardStatsType = {
       src: '/images/illustrations/characters/14.png'
     },
     {
-      stats: '2,856',
+      stats: '28k',
       chipColor: 'info',
       title: 'Customers',
       trendNumber: '59%',
@@ -111,7 +111,7 @@ export const db: CardStatsType = {
       src: '/images/illustrations/characters/15.png'
     },
     {
-      stats: '42.5k',
+      stats: '42k',
       trendNumber: '26%',
       chipColor: 'warning',
       title: 'Total Orders',

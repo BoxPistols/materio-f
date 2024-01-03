@@ -61,7 +61,7 @@ const steps: stepperProps[] = [
     subtitle: 'Select Database'
   },
   {
-    icon: 'ri-pie-chart-line',
+    icon: 'ri-bank-card-line',
     title: 'Billing',
     subtitle: 'Payment Details'
   },

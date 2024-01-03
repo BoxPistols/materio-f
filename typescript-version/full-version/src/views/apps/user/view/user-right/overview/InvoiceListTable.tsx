@@ -266,7 +266,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
-                  <th key={header.id}>
+                  <th key={header.id} {...(header.id === 'action' && { className: 'max-is-24' })}>
                     {header.isPlaceholder ? null : (
                       <>
                         <div
@@ -297,7 +297,9 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                 return (
                   <tr key={row.id} className={classnames({ selected: row.getIsSelected() })}>
                     {row.getVisibleCells().map(cell => (
-                      <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                      <td key={cell.id} {...(cell.id.includes('action') && { className: 'max-is-24' })}>
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </td>
                     ))}
                   </tr>
                 )

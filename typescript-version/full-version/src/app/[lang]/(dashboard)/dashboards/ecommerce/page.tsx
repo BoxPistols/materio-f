@@ -37,7 +37,7 @@ const DashboardECommerce = async () => {
           <Grid item xs={12} sm={6}>
             <CardStatVertical
               title='Revenue'
-              stats='$95.2k'
+              stats='$95k'
               avatarIcon='ri-money-dollar-circle-line'
               avatarColor='success'
               subtitle='Revenue Increase'
@@ -48,7 +48,7 @@ const DashboardECommerce = async () => {
           <Grid item xs={12} sm={6}>
             <CardStatVertical
               title='Transactions'
-              stats='1.2k'
+              stats='12.1k'
               avatarIcon='ri-bank-card-line'
               avatarColor='info'
               subtitle='Daily Transactions'
@@ -82,7 +82,7 @@ const DashboardECommerce = async () => {
           <Grid item xs={12} sm={6}>
             <CardStatVertical
               title='Logistics'
-              stats='$44.10k'
+              stats='$44k'
               avatarIcon='ri-car-line'
               avatarColor='error'
               subtitle='Revenue Increase'

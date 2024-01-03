@@ -77,7 +77,17 @@ const LineAreaChart = () => {
       axisTicks: { show: false },
       axisBorder: { show: false }
     },
-    yaxis: { show: false }
+    yaxis: { show: false },
+    responsive: [
+      {
+        breakpoint: 600,
+        options: {
+          chart: {
+            height: 90
+          }
+        }
+      }
+    ]
   }
 
   return (

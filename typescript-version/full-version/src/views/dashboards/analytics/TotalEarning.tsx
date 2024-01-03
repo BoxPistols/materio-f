@@ -55,7 +55,7 @@ const TotalEarning = () => {
         title='Total Earning'
         action={<OptionMenu iconClassName='text-textPrimary' options={['Last 28 Days', 'Last Month', 'Last Year']} />}
       ></CardHeader>
-      <CardContent className='flex flex-col gap-11 mbs-1 md:mbs-[46px]'>
+      <CardContent className='flex flex-col gap-11 md:mbs-2.5'>
         <div>
           <div className='flex items-center'>
             <Typography variant='h3'>$24,895</Typography>

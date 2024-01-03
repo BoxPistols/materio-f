@@ -96,7 +96,7 @@ const DistributedColumnChart = () => {
     <Card>
       <CardContent>
         <Typography variant='h4'>2,856</Typography>
-        <AppReactApexCharts type='bar' height={104} width='100%' options={options} series={series} />
+        <AppReactApexCharts type='bar' height={88} width='100%' options={options} series={series} />
         <Typography color='text.primary' className='font-medium text-center'>
           Sessions
         </Typography>

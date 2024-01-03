@@ -69,25 +69,7 @@ const NewVisitors = () => {
       axisBorder: { show: false },
       categories: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
     },
-    yaxis: { show: false },
-    responsive: [
-      {
-        breakpoint: 1508,
-        options: {
-          chart: {
-            height: 115
-          }
-        }
-      },
-      {
-        breakpoint: 1200,
-        options: {
-          chart: {
-            height: 140
-          }
-        }
-      }
-    ]
+    yaxis: { show: false }
   }
 
   return (
@@ -107,7 +89,7 @@ const NewVisitors = () => {
         <AppReactApexCharts
           type='bar'
           width='100%'
-          height={140}
+          height={145}
           series={[{ data: [40, 60, 50, 60, 90, 40, 50] }]}
           options={options}
         />

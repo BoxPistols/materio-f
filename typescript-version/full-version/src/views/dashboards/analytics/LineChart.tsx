@@ -84,7 +84,7 @@ const LineChart = () => {
     <Card>
       <CardContent>
         <Typography variant='h4'>$86.4k</Typography>
-        <AppReactApexCharts type='line' height={104} width='100%' options={options} series={series} />
+        <AppReactApexCharts type='line' height={88} width='100%' options={options} series={series} />
         <Typography color='text.primary' className='font-medium text-center'>
           Total Profit
         </Typography>

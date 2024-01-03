@@ -66,7 +66,7 @@ const AddCustomerDrawer = ({ open, setOpen, onFormSubmit }: Props) => {
       ModalProps={{ keepMounted: true }}
       sx={{ '& .MuiDrawer-paper': { width: { xs: 300, sm: 400 } } }}
     >
-      <div className='flex items-center justify-between p-5'>
+      <div className='flex items-center justify-between pli-5 plb-[15px]'>
         <Typography variant='h6'>Add New Customer</Typography>
         <IconButton onClick={handleReset}>
           <i className='ri-close-line' />

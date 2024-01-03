@@ -82,7 +82,7 @@ const TotalSales = () => {
       <CardContent>
         <AppReactApexCharts
           type='line'
-          height={240}
+          height={248}
           width='100%'
           options={options}
           series={[{ name: 'Total Sales', data: [0, 258, 30, 240, 150, 400] }]}
