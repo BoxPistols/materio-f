@@ -10,7 +10,7 @@ import Link from 'next/link'
 // MUI Imports
 import IconButton from '@mui/material/IconButton'
 import Popper from '@mui/material/Popper'
-import Grow from '@mui/material/Grow'
+import Fade from '@mui/material/Fade'
 import Paper from '@mui/material/Paper'
 import ClickAwayListener from '@mui/material/ClickAwayListener'
 import Typography from '@mui/material/Typography'
@@ -98,7 +98,7 @@ const ShortcutsDropdown = ({ shortcuts }: { shortcuts: ShortcutsType[] }) => {
           : { className: 'is-[380px] !mbs-4 z-[1]' })}
       >
         {({ TransitionProps, placement }) => (
-          <Grow {...TransitionProps} style={{ transformOrigin: placement === 'bottom-end' ? 'right top' : 'left top' }}>
+          <Fade {...TransitionProps} style={{ transformOrigin: placement === 'bottom-end' ? 'right top' : 'left top' }}>
             <Paper className={settings.skin === 'bordered' ? 'border shadow-none' : 'shadow-lg'}>
               <ClickAwayListener onClickAway={handleClose}>
                 <div>
@@ -157,7 +157,7 @@ const ShortcutsDropdown = ({ shortcuts }: { shortcuts: ShortcutsType[] }) => {
                 </div>
               </ClickAwayListener>
             </Paper>
-          </Grow>
+          </Fade>
         )}
       </Popper>
     </>
