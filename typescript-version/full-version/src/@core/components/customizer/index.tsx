@@ -19,7 +19,7 @@ import type { Breakpoint } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
-import { useDebounce, useMedia, useUpdateEffect } from 'react-use'
+import { useDebounce, useMedia } from 'react-use'
 import { HexColorPicker, HexColorInput } from 'react-colorful'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
@@ -51,8 +51,9 @@ import { getLocalePath } from '@/utils/get-locale-path'
 import styles from './styles.module.css'
 
 type CustomizerProps = {
-  breakpoint?: Breakpoint | 'xxl' | string
+  breakpoint?: Breakpoint | 'xxl' | `${number}px` | `${number}rem` | `${number}em`
   dir?: Direction
+  disableDirection?: boolean
 }
 
 export type PrimaryColorConfig = {
@@ -128,7 +129,7 @@ const DebouncedColorPicker = (props: DebouncedColorPickerProps) => {
   )
 }
 
-const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
+const Customizer = ({ breakpoint = 'lg', dir = 'ltr', disableDirection = false }: CustomizerProps) => {
   // States
   const [isOpen, setIsOpen] = useState(false)
   const [direction, setDirection] = useState(dir)
@@ -143,20 +144,30 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
   const { settings, updateSettings, resetSettings, isSettingsChanged } = useSettings()
   const { collapseVerticalNav } = useVerticalNav()
   const isSystemDark = useMedia('(prefers-color-scheme: dark)', false)
-  const breakpointValue =
-    breakpoint === 'xxl'
-      ? '1920px'
-      : breakpoint === 'xl'
-        ? `${theme.breakpoints.values.xl}px`
-        : breakpoint === 'lg'
-          ? `${theme.breakpoints.values.lg}px`
-          : breakpoint === 'md'
-            ? `${theme.breakpoints.values.md}px`
-            : breakpoint === 'sm'
-              ? `${theme.breakpoints.values.sm}px`
-              : breakpoint === 'xs'
-                ? `${theme.breakpoints.values.xs}px`
-                : breakpoint
+  let breakpointValue: CustomizerProps['breakpoint']
+
+  switch (breakpoint) {
+    case 'xxl':
+      breakpointValue = '1920px'
+      break
+    case 'xl':
+      breakpointValue = `${theme.breakpoints.values.xl}px`
+      break
+    case 'lg':
+      breakpointValue = `${theme.breakpoints.values.lg}px`
+      break
+    case 'md':
+      breakpointValue = `${theme.breakpoints.values.md}px`
+      break
+    case 'sm':
+      breakpointValue = `${theme.breakpoints.values.sm}px`
+      break
+    case 'xs':
+      breakpointValue = `${theme.breakpoints.values.xs}px`
+      break
+    default:
+      breakpointValue = breakpoint
+  }
 
   const breakpointReached = useMedia(`(max-width: ${breakpointValue})`, false)
   const isMobileScreen = useMedia('(max-width: 600px)', false)
@@ -193,11 +204,6 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [settings.layout])
-
-  // Update html `dir` attribute when changing direction
-  useUpdateEffect(() => {
-    document.documentElement.setAttribute('dir', direction)
-  }, [direction])
 
   const ScrollWrapper = isBelowLgScreen ? 'div' : PerfectScrollbar
 
@@ -490,41 +496,43 @@ const Customizer = ({ breakpoint = 'lg', dir = 'ltr' }: CustomizerProps) => {
                   </div>
                 </div>
               </div>
-              <div className='flex flex-col gap-2.5'>
-                <p className='font-medium'>Direction</p>
-                <div className='flex items-center gap-4'>
-                  <Link href={getLocalePath(pathName, 'en')}>
-                    <div className='flex flex-col items-start gap-0.5'>
-                      <div
-                        className={classnames(styles.itemWrapper, {
-                          [styles.active]: direction === 'ltr'
-                        })}
-                      >
-                        <DirectionLtr />
+              {!disableDirection && (
+                <div className='flex flex-col gap-2.5'>
+                  <p className='font-medium'>Direction</p>
+                  <div className='flex items-center gap-4'>
+                    <Link href={getLocalePath(pathName, 'en')}>
+                      <div className='flex flex-col items-start gap-0.5'>
+                        <div
+                          className={classnames(styles.itemWrapper, {
+                            [styles.active]: direction === 'ltr'
+                          })}
+                        >
+                          <DirectionLtr />
+                        </div>
+                        <p className={styles.itemLabel}>
+                          Left to Right <br />
+                          (English)
+                        </p>
                       </div>
-                      <p className={styles.itemLabel}>
-                        Left to Right <br />
-                        (English)
-                      </p>
-                    </div>
-                  </Link>
-                  <Link href={getLocalePath(pathName, 'ar')}>
-                    <div className='flex flex-col items-start gap-0.5'>
-                      <div
-                        className={classnames(styles.itemWrapper, {
-                          [styles.active]: direction === 'rtl'
-                        })}
-                      >
-                        <DirectionRtl />
+                    </Link>
+                    <Link href={getLocalePath(pathName, 'ar')}>
+                      <div className='flex flex-col items-start gap-0.5'>
+                        <div
+                          className={classnames(styles.itemWrapper, {
+                            [styles.active]: direction === 'rtl'
+                          })}
+                        >
+                          <DirectionRtl />
+                        </div>
+                        <p className={styles.itemLabel}>
+                          Right to Left <br />
+                          (Arabic)
+                        </p>
                       </div>
-                      <p className={styles.itemLabel}>
-                        Right to Left <br />
-                        (Arabic)
-                      </p>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </ScrollWrapper>

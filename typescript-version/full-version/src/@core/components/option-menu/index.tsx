@@ -6,7 +6,6 @@ import type { ReactNode, SyntheticEvent } from 'react'
 
 // Next Imports
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 // MUI Imports
 import Box from '@mui/material/Box'
@@ -25,12 +24,8 @@ import classnames from 'classnames'
 // Type Imports
 import type { OptionsMenuType, OptionType, OptionMenuItemType } from './types'
 
-// Hooks Imports
+// Hook Imports
 import { useSettings } from '@core/hooks/useSettings'
-
-// Util Imports
-import { getLocale } from '@/utils/get-locale'
-import { getDirection } from '@/utils/get-direction'
 
 const MenuItemWrapper = ({ children, option }: { children: ReactNode; option: OptionMenuItemType }) => {
   if (option.href) {
@@ -50,12 +45,11 @@ const OptionMenu = (props: OptionsMenuType) => {
 
   // States
   const [open, setOpen] = useState(false)
+
+  // Refs
   const anchorRef = useRef<HTMLButtonElement>(null)
 
   // Hooks
-  const pathname = usePathname()
-  const locale = getLocale(pathname)
-  const direction = getDirection(locale)
   const { settings } = useSettings()
 
   const handleToggle = () => {
@@ -89,28 +83,8 @@ const OptionMenu = (props: OptionsMenuType) => {
         disablePortal
         sx={{ zIndex: 1 }}
       >
-        {({ TransitionProps, placement }) => (
-          <Fade
-            {...TransitionProps}
-            style={{
-              transformOrigin:
-                direction === 'ltr'
-                  ? leftAlignMenu
-                    ? placement === 'bottom-start'
-                      ? 'left top'
-                      : 'left bottom'
-                    : placement === 'bottom-end'
-                      ? 'right top'
-                      : 'right bottom'
-                  : leftAlignMenu
-                    ? placement === 'bottom-end'
-                      ? 'right top'
-                      : 'right bottom'
-                    : placement === 'bottom-start'
-                      ? 'left top'
-                      : 'left bottom'
-            }}
-          >
+        {({ TransitionProps }) => (
+          <Fade {...TransitionProps}>
             <Paper className={settings.skin === 'bordered' ? 'border shadow-none' : 'shadow-lg'}>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList autoFocusItem={open}>
