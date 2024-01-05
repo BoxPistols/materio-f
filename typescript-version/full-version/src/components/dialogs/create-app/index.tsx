@@ -56,7 +56,7 @@ const steps: stepperProps[] = [
     active: true
   },
   {
-    icon: 'ri-pie-chart-line',
+    icon: 'ri-pie-chart-2-line',
     title: 'Database',
     subtitle: 'Select Database'
   },

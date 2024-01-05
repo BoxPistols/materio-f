@@ -83,7 +83,12 @@ const RoleCards = () => {
                 <div className='flex justify-between items-center'>
                   <div className='flex flex-col items-start gap-1'>
                     <Typography variant='h5'>{item.title}</Typography>
-                    <OpenDialogOnElementClick element={Typography} elementProps={typographyProps} dialog={RoleDialog} />
+                    <OpenDialogOnElementClick
+                      element={Typography}
+                      elementProps={typographyProps}
+                      dialog={RoleDialog}
+                      dialogProps={{ title: item.title }}
+                    />
                   </div>
                   <IconButton className='p-[7px]'>
                     <i className='ri-file-copy-line text-textSecondary' />
