@@ -53,7 +53,6 @@ const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme, sett
                       theme.palette.primary.main,
                       0.5
                     )}, var(--mui-palette-primary-main) 100%)`,
-              boxShadow: 'var(--mui-customShadows-sm)',
               [`& .${menuClasses.icon}`]: {
                 color: 'var(--mui-palette-common-white)'
               }
@@ -140,12 +139,6 @@ const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme, sett
     subMenuContent: ({ level }) => ({
       zIndex: 'calc(var(--drawer-z-index) + 1)',
       backgroundColor: popoutCollapsed ? 'var(--mui-palette-background-paper)' : 'transparent',
-      ...(!isCollapsed && {
-        paddingBlockEnd: theme.spacing(2.5),
-        paddingInlineEnd: theme.spacing(1.5),
-        marginBlockEnd: theme.spacing(-2.5),
-        marginInlineEnd: theme.spacing(-1.5)
-      }),
       ...(popoutCollapsed &&
         level === 0 && {
           paddingBlock: theme.spacing(2),
