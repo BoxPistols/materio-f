@@ -12,7 +12,13 @@ import InputAdornment from '@mui/material/InputAdornment'
 // Type Imports
 import type { Direction } from '@core/types'
 
-const StepAccountDetails = ({ handleNext, direction }: { handleNext: () => void; direction: Direction }) => {
+type StepAccountDetailsProps = {
+  handleNext: () => void
+  direction: Direction
+  activeStep: number
+}
+
+const StepAccountDetails = ({ handleNext, direction, activeStep }: StepAccountDetailsProps) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState<boolean>(false)
   const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState<boolean>(false)
@@ -88,7 +94,7 @@ const StepAccountDetails = ({ handleNext, direction }: { handleNext: () => void;
         </Grid>
         <Grid item xs={12} className='flex justify-between'>
           <Button
-            disabled
+            disabled={activeStep === 0}
             color='secondary'
             variant='outlined'
             startIcon={<i className={direction === 'rtl' ? 'ri-arrow-right-line' : 'ri-arrow-left-line'} />}

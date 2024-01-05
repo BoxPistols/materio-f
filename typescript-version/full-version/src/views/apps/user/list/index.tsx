@@ -6,13 +6,13 @@ import type { UsersType } from '@/types/apps/userTypes'
 
 // Component Imports
 import UserListTable from './UserListTable'
-import CardStatHorizontal from './CardStatisticsHorizontal'
+import UserListCards from './UserListCards'
 
 const UserList = ({ userData }: { userData?: UsersType[] }) => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <CardStatHorizontal />
+        <UserListCards />
       </Grid>
       <Grid item xs={12}>
         <UserListTable tableData={userData} />

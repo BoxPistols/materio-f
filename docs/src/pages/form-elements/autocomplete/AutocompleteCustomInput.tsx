@@ -13,12 +13,12 @@ const AutocompleteCustomInput = () => {
           <input type='text' {...params.inputProps} />
         </div>
       )}
-      // className={classnames('inline-block', styles.autocompleteCustomInput)}
       sx={{
         display: 'inline-block',
         '& input': {
           width: 200,
-          backgroundColor: 'background.paper',
+          borderWidth: 2,
+          backgroundColor: 'background.paper', 
           color: theme => theme.palette.getContrastText(theme.palette.background.paper)
         }
       }}

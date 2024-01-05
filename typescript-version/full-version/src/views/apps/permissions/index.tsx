@@ -169,10 +169,10 @@ const Permissions = ({ permissionsData }: { permissionsData: PermissionRowType[]
         cell: ({ row }) => (
           <div className='flex items-center'>
             <IconButton onClick={() => handleEditPermission(row.original.name)}>
-              <i className='ri-edit-box-line text-[22px]' />
+              <i className='ri-edit-box-line text-[22px] text-textSecondary' />
             </IconButton>
             <IconButton>
-              <i className='ri-more-2-line text-[22px]' />
+              <i className='ri-more-2-line text-[22px] text-textSecondary' />
             </IconButton>
           </div>
         ),

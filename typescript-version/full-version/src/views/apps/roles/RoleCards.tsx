@@ -91,7 +91,7 @@ const RoleCards = () => {
                     />
                   </div>
                   <IconButton className='p-[7px]'>
-                    <i className='ri-file-copy-line text-textSecondary' />
+                    <i className='ri-file-copy-line text-secondary' />
                   </IconButton>
                 </div>
               </CardContent>

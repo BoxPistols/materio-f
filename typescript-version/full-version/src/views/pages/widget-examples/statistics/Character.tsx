@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid'
 import type { CardStatsCharacterProps } from '@/types/pages/widgetTypes'
 
 // Components Imports
-import CardStatWithImage from '@/components/card-statistics/character'
+import CardStatWithImage from '@/components/card-statistics/Character'
 
 const Character = ({ data }: { data: CardStatsCharacterProps[] }) => {
   if (data) {

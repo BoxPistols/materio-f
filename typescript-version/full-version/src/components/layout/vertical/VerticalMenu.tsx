@@ -213,6 +213,9 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
               {dictionary['navigation'].statistics}
             </MenuItem>
             <MenuItem href={`/${locale}/pages/widget-examples/charts`}>{dictionary['navigation'].charts}</MenuItem>
+            <MenuItem href={`/${locale}/pages/widget-examples/gamification`}>
+              {dictionary['navigation'].gamification}
+            </MenuItem>
           </SubMenu>
           <MenuItem href={`/${locale}/icons-test`} icon={<i className='ri-remixicon-line' />}>
             Icons Test

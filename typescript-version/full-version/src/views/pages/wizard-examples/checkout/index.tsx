@@ -142,7 +142,7 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
       }
     },
     '&.Mui-completed + i': {
-      color: theme.palette.primary.main
+      color: `${theme.palette.primary.main} !important`
     },
 
     [theme.breakpoints.up('md')]: {
@@ -190,7 +190,9 @@ const CheckoutWizard = ({ direction }: { direction: Direction }) => {
               <i
                 className={classnames(
                   'mli-12 hidden md:block',
-                  direction === 'rtl' ? 'ri-arrow-left-s-line text-lg' : 'ri-arrow-right-s-line text-lg'
+                  direction === 'rtl'
+                    ? 'ri-arrow-left-s-line text-lg text-textDisabled'
+                    : 'ri-arrow-right-s-line text-lg text-textDisabled'
                 )}
               />
             }

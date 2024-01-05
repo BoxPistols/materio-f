@@ -4,7 +4,6 @@ import { useState } from 'react'
 // MUI Imports
 import List from '@mui/material/List'
 import Button from '@mui/material/Button'
-import Avatar from '@mui/material/Avatar'
 import Dialog from '@mui/material/Dialog'
 import MuiAvatar from '@mui/material/Avatar'
 import ListItem from '@mui/material/ListItem'
@@ -13,6 +12,9 @@ import DialogTitle from '@mui/material/DialogTitle'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
+
+// Component Imports
+import CustomAvatar from '@site/src/components/mui/Avatar'
 
 const emails = ['username@gmail.com', 'user02@gmail.com']
 
@@ -45,9 +47,9 @@ const DialogsBasic = () => {
             <ListItem key={email} disablePadding onClick={() => handleClose(email)}>
               <ListItemButton>
                 <ListItemAvatar>
-                  <Avatar>
+                  <CustomAvatar skin='light' >
                     <i className='ri-user-3-line' />
-                  </Avatar>
+                  </CustomAvatar>
                 </ListItemAvatar>
                 <ListItemText primary={email} />
               </ListItemButton>

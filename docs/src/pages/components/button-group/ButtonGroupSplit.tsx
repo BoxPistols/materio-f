@@ -60,7 +60,7 @@ const ButtonGroupSplit = () => {
             {...TransitionProps}
             style={{ transformOrigin: placement === 'bottom-end' ? 'right top' : 'right bottom' }}
           >
-            <Paper sx={{ boxShadow: 'var(--mui-customShadows-lg)', marginBlockStart: '0.125rem' }}>
+            <Paper className='shadow-lg mbs-0.5'>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList id='split-button-menu'>
                   {options.map((option, index) => (

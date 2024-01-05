@@ -32,9 +32,9 @@ type TwoFactorAuthProps = {
 const data: CustomInputHorizontalData[] = [
   {
     title: (
-      <div className='flex items-center gap-1'>
+      <div className='flex gap-1'>
         <i className='ri-settings-3-line text-textPrimary text-xl' />
-        <Typography className='font-medium whitespace-nowrap' color='text.primary'>
+        <Typography className='font-medium' color='text.primary'>
           Authenticator Apps
         </Typography>
       </div>
@@ -45,7 +45,7 @@ const data: CustomInputHorizontalData[] = [
   },
   {
     title: (
-      <div className='flex items-center gap-1'>
+      <div className='flex gap-1'>
         <i className='ri-wechat-line text-textPrimary text-xl' />
         <Typography className='font-medium' color='text.primary'>
           SMS

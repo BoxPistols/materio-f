@@ -119,7 +119,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
               </div>
             </Grid>
             <Grid item xs={12}>
-              <div className='flex justify-between flex-col sm:flex-row'>
+              <div className='flex justify-between flex-col gap-4 flex-wrap sm:flex-row'>
                 <div className='flex flex-col gap-4'>
                   <Typography className='font-medium' color='text.primary'>
                     Invoice To:
@@ -257,7 +257,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
                   </Grid>
                   <div className='flex flex-col justify-start border-is'>
                     <IconButton size='small' onClick={deleteForm}>
-                      <i className='ri-close-line' />
+                      <i className='ri-close-line text-actionActive' />
                     </IconButton>
                   </div>
                 </div>
@@ -277,7 +277,7 @@ const EditCard = ({ invoiceData, id, data }: { invoiceData: InvoiceType; id: str
               <Divider className='border-dashed' />
             </Grid>
             <Grid item xs={12}>
-              <div className='flex justify-between flex-col gap-y-2 sm:flex-row'>
+              <div className='flex justify-between flex-col gap-4 sm:flex-row'>
                 <div className='flex flex-col gap-4 order-2 sm:order-[unset]'>
                   <div className='flex items-center gap-2'>
                     <Typography className='font-medium' color='text.primary'>

@@ -15,7 +15,7 @@ const CardStatVertical = (props: CardStatsVerticalProps) => {
     props
 
   return (
-    <Card>
+    <Card className='bs-full'>
       <CardContent>
         <div className='flex justify-between items-center is-full mbe-5'>
           <CustomAvatar color={avatarColor} skin={avatarSkin} size={avatarSize} className='shadow-xs'>

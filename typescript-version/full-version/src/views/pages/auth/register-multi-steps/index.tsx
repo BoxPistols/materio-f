@@ -47,11 +47,13 @@ const steps = [
 const getStepContent = (step: number, handleNext: () => void, handlePrev: () => void, direction: Direction) => {
   switch (step) {
     case 0:
-      return <StepAccountDetails handleNext={handleNext} direction={direction} />
+      return <StepAccountDetails activeStep={step} handleNext={handleNext} direction={direction} />
     case 1:
-      return <StepPersonalInfo handleNext={handleNext} handlePrev={handlePrev} direction={direction} />
+      return (
+        <StepPersonalInfo activeStep={step} handleNext={handleNext} handlePrev={handlePrev} direction={direction} />
+      )
     case 2:
-      return <StepBillingDetails handlePrev={handlePrev} direction={direction} />
+      return <StepBillingDetails activeStep={step} handlePrev={handlePrev} direction={direction} />
 
     default:
       return null
@@ -100,12 +102,12 @@ const RegisterMultiSteps = ({ direction }: { direction: Direction }) => {
           </div>
         </div>
         <StepperWrapper className='p-8 is-[700px]'>
-          <Stepper activeStep={activeStep} className='mbe-12'>
+          <Stepper className='mbe-12' activeStep={activeStep}>
             {steps.map((step, index) => {
               return (
-                <Step key={index}>
+                <Step key={index} onClick={() => setActiveStep(index)}>
                   <StepLabel StepIconComponent={StepperCustomDot}>
-                    <div className='step-label'>
+                    <div className='step-label cursor-pointer'>
                       <Typography className='step-number' color='text.primary'>{`0${index + 1}`}</Typography>
                       <div>
                         <Typography className='step-title' color='text.primary'>

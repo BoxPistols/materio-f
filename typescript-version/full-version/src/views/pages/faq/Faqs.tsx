@@ -59,8 +59,8 @@ const FAQ = ({ faqData, searchValue }: props) => {
   return filteredData.length > 0 ? (
     <TabContext value={activeTab}>
       <Grid container spacing={6}>
-        <Grid item xs={12} sm={5} md={4} xl={3} className='flex !flex-col items-center gap-12'>
-          <CustomTabList orientation='vertical' onChange={handleChange} className='!bs-full' pill='true'>
+        <Grid item xs={12} sm={5} md={4} xl={3} className='flex !flex-col gap-12'>
+          <CustomTabList orientation='vertical' onChange={handleChange} className='!is-full' pill='true'>
             {filteredData.map((faq, index) => (
               <Tab
                 key={index}

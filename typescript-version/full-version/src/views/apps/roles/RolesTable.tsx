@@ -250,14 +250,15 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
         cell: () => (
           <div className='flex items-center'>
             <IconButton>
-              <i className='ri-delete-bin-7-line text-[22px]' />
+              <i className='ri-delete-bin-7-line text-[22px] text-textSecondary' />
             </IconButton>
             <IconButton>
               <Link href='/apps/user/view' className='flex'>
-                <i className='ri-eye-line text-[22px]' />
+                <i className='ri-eye-line text-[22px] text-textSecondary' />
               </Link>
             </IconButton>
             <OptionMenu
+              iconClassName='text-[22px] text-textSecondary'
               options={[
                 {
                   text: 'Download',

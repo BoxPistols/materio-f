@@ -62,10 +62,9 @@ const SnackbarConsecutive = () => {
         message={messageInfo ? messageInfo.message : undefined}
       >
         <Alert
-          sx={{ boxShadow: theme => theme.customShadows.xs }}
           variant='filled'
           onClose={handleClose}
-          className='w-full'
+          className='w-full shadow-xs'
           severity={messageInfo?.message === 'success' ? 'success' : 'error'}
         >
           This is {messageInfo?.message === 'success' ? 'a success' : 'an error'} message!

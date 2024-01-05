@@ -177,7 +177,7 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
         <IconButton onClick={handleClose} className='absolute block-start-4 inline-end-4'>
           <i className='ri-close-line text-textSecondary' />
         </IconButton>
-        <div className='flex gap-y-6 flex-col md:flex-row'>
+        <div className='flex gap-y-6 pbs-1 flex-col md:flex-row'>
           <StepperWrapper>
             <Stepper
               nonLinear
@@ -194,7 +194,7 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
                         <Avatar
                           variant='rounded'
                           className={classnames(
-                            { 'bg-primary text-white': activeStep === index },
+                            { 'bg-primary text-white shadow-xs': activeStep === index },
                             { 'bg-primaryLight text-primary': activeStep > index }
                           )}
                         >

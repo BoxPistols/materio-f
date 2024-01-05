@@ -22,17 +22,14 @@ const input: Theme['components'] = {
   },
   MuiFilledInput: {
     styleOverrides: {
-      root: ({ theme }) => ({
-        '& .MuiFilledInput-input': {
-          paddingInline: theme.spacing(4)
-        },
+      root: {
         '&:before': {
           borderBottom: '1px solid var(--mui-palette-text-secondary)'
         },
         '&.Mui-disabled:before': {
           borderBottomStyle: 'solid'
         }
-      })
+      }
     }
   },
   MuiInputLabel: {
@@ -64,7 +61,7 @@ const input: Theme['components'] = {
       input: ({ theme, ownerState }) => ({
         ...(ownerState?.size === 'medium' && {
           '&:not(.MuiInputBase-inputMultiline, .MuiInputBase-inputAdornedStart)': {
-            padding: theme.spacing(4)
+            paddingBlock: theme.spacing(4)
           },
           height: '1.5em'
         }),

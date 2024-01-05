@@ -247,6 +247,7 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
               </Link>
             </IconButton>
             <OptionMenu
+              iconClassName='text-[22px] text-textSecondary'
               options={[
                 {
                   text: 'Download',

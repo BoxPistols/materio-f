@@ -215,7 +215,7 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
       ModalProps={{ keepMounted: true }}
       sx={{ '& .MuiDrawer-paper': { width: ['100%', 400] } }}
     >
-      <Box className='flex justify-between sidebar-header p-3 pis-[1.31375rem] pie-[0.81375rem] border-be'>
+      <Box className='flex justify-between items-center sidebar-header p-3 pis-[1.31375rem] pie-[0.81375rem] border-be'>
         <Typography variant='h5'>
           {calendars.selectedEvent && calendars.selectedEvent.title.length ? 'Update Event' : 'Add Event'}
         </Typography>

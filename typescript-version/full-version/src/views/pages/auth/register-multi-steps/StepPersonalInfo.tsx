@@ -12,15 +12,14 @@ import InputAdornment from '@mui/material/InputAdornment'
 // Type Imports
 import type { Direction } from '@core/types'
 
-const StepPersonalInfo = ({
-  handleNext,
-  handlePrev,
-  direction
-}: {
+type StepPersonalInfoProps = {
   handleNext: () => void
   handlePrev: () => void
   direction: Direction
-}) => {
+  activeStep: number
+}
+
+const StepPersonalInfo = ({ handleNext, handlePrev, direction, activeStep }: StepPersonalInfoProps) => {
   return (
     <>
       <div className='mbe-5'>
@@ -71,6 +70,7 @@ const StepPersonalInfo = ({
         </Grid>
         <Grid item xs={12} className='flex justify-between'>
           <Button
+            disabled={activeStep === 0}
             variant='outlined'
             color='secondary'
             onClick={handlePrev}

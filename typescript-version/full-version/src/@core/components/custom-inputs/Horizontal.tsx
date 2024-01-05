@@ -34,7 +34,10 @@ const Root = styled('div', {
     borderColor: 'var(--mui-palette-action-active)'
   },
   '&.active': {
-    borderColor: 'var(--mui-palette-primary-main)'
+    borderColor: 'var(--mui-palette-primary-main)',
+    '& i, & svg': {
+      color: 'var(--mui-palette-primary-main) !important'
+    }
   }
 }))
 

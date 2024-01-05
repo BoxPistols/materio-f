@@ -45,7 +45,7 @@ const Transactions = () => {
     <Card>
       <CardHeader
         title='Transactions'
-        action={<OptionMenu options={['Refresh', 'Share', 'Update']} />}
+        action={<OptionMenu iconClassName='text-textPrimary' options={['Refresh', 'Share', 'Update']} />}
         subheader={
           <>
             <span className='font-medium text-textPrimary'>Total 48.5% Growth 😎</span>{' '}

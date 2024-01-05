@@ -168,7 +168,7 @@ const PreviewCard = ({ invoiceData, id }: { invoiceData: InvoiceType; id: string
             </div>
           </Grid>
           <Grid item xs={12}>
-            <div className='flex justify-between flex-col gap-y-2 sm:flex-row'>
+            <div className='flex justify-between flex-col gap-y-4 sm:flex-row'>
               <div className='flex flex-col gap-1 order-2 sm:order-[unset]'>
                 <div className='flex items-center gap-2'>
                   <Typography className='font-medium' color='text.primary'>

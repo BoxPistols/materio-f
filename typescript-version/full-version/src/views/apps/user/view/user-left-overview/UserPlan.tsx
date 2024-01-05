@@ -22,7 +22,7 @@ const UserPlan = () => {
       <Card className='border-2 border-primary rounded'>
         <CardContent className='flex flex-col gap-6'>
           <div className='flex justify-between'>
-            <Chip label='standard' size='small' color='primary' variant='tonal' />
+            <Chip label='Standard' size='small' color='primary' variant='tonal' />
             <div className='flex justify-center'>
               <Typography variant='h5' component='sup' className='self-start' color='primary'>
                 $

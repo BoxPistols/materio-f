@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid'
 
 // Components Imports
 import Congratulations from '@views/dashboards/ecommerce/Congratulations'
-import CardStatVertical from '@components/card-statistics/vertical'
+import CardStatVertical from '@/components/card-statistics/Vertical'
 import TotalProfitStackedBar from '@views/dashboards/ecommerce/TotalProfitStackedBar'
 import TotalSales from '@views/dashboards/ecommerce/TotalSales'
 import LineChartWithShadow from '@views/dashboards/ecommerce/LineChartWithShadow'

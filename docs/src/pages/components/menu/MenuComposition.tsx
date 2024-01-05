@@ -6,7 +6,6 @@ import type { KeyboardEvent, MouseEvent, TouchEvent } from 'react'
 import Grow from '@mui/material/Grow'
 import Paper from '@mui/material/Paper'
 import Button from '@mui/material/Button'
-import { styled } from '@mui/material/styles'
 import Popper from '@mui/material/Popper'
 import MenuList from '@mui/material/MenuList'
 import MenuItem from '@mui/material/MenuItem'
@@ -86,7 +85,7 @@ const MenuComposition = () => {
             {...TransitionProps}
             style={{ transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom' }}
           >
-            <Paper sx={{ boxShadow: 'var(--mui-customShadows-lg)', marginBlockStart: '0.125rem' }}>
+            <Paper className='shadow-lg mbs-0.5'>
               <ClickAwayListener onClickAway={() => setOpen(false)}>
                 <MenuList autoFocusItem={open} id='composition-menu' onKeyDown={handleListKeyDown}>
                   <MenuItem onClick={handleClose}>Profile</MenuItem>

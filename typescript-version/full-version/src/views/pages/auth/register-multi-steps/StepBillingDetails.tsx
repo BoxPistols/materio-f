@@ -17,6 +17,12 @@ import type { Direction } from '@core/types'
 import CustomInputVertical from '@core/components/custom-inputs/Vertical'
 import type { CustomInputVerticalData } from '@core/components/custom-inputs/types'
 
+type StepBillingDetailsProps = {
+  handlePrev: () => void
+  direction: Direction
+  activeStep: number
+}
+
 const Content = styled(Typography, {
   name: 'MuiCustomInputVertical',
   slot: 'content'
@@ -95,7 +101,7 @@ const customInputData: CustomInputVerticalData[] = [
   }
 ]
 
-const StepBillingDetails = ({ handlePrev, direction }: { handlePrev: () => void; direction: Direction }) => {
+const StepBillingDetails = ({ handlePrev, direction, activeStep }: StepBillingDetailsProps) => {
   const initialSelectedOption: string = customInputData.filter(item => item.isSelected)[
     customInputData.filter(item => item.isSelected).length - 1
   ].value
@@ -149,6 +155,7 @@ const StepBillingDetails = ({ handlePrev, direction }: { handlePrev: () => void;
         </Grid>
         <Grid item xs={12} className='flex justify-between'>
           <Button
+            disabled={activeStep === 0}
             variant='outlined'
             color='secondary'
             onClick={handlePrev}

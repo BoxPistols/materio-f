@@ -10,6 +10,7 @@ import Link from 'next/link'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
+import Tooltip from '@mui/material/Tooltip'
 
 // Third-party Imports
 import classnames from 'classnames'
@@ -75,9 +76,29 @@ const columns = [
   columnHelper.accessor('invoiceStatus', {
     header: 'Status',
     cell: ({ row }) => (
-      <CustomAvatar skin='light' color={invoiceStatusObj[row.original.invoiceStatus].color} size={28}>
-        <i className={classnames('text-base', invoiceStatusObj[row.original.invoiceStatus].icon)} />
-      </CustomAvatar>
+      <Tooltip
+        title={
+          <div>
+            <Typography variant='body2' component='span' className='text-inherit'>
+              {row.original.invoiceStatus}
+            </Typography>
+            <br />
+            <Typography variant='body2' component='span' className='text-inherit'>
+              Balance:
+            </Typography>{' '}
+            {row.original.balance}
+            <br />
+            <Typography variant='body2' component='span' className='text-inherit'>
+              Due Date:
+            </Typography>{' '}
+            {row.original.dueDate}
+          </div>
+        }
+      >
+        <CustomAvatar skin='light' color={invoiceStatusObj[row.original.invoiceStatus].color} size={28}>
+          <i className={classnames('text-base', invoiceStatusObj[row.original.invoiceStatus].icon)} />
+        </CustomAvatar>
+      </Tooltip>
     )
   }),
   columnHelper.accessor('name', {
