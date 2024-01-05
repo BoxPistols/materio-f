@@ -31,7 +31,9 @@ import type { FormDataType } from './AddCustomerDrawer'
 // Component Imports
 import AddCustomerDrawer, { initialFormData } from './AddCustomerDrawer'
 import Logo from '@core/svg/Logo'
-import AppReactDatepicker from '@core/styles/libs/AppReactDatepicker'
+
+// Styled Component Imports
+import AppReactDatepicker from '@/libs/styles/AppReactDatepicker'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'

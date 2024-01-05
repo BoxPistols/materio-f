@@ -17,8 +17,8 @@ import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 
-// Component Imports
-import AppReactDatepicker from '@core/styles/libs/AppReactDatepicker'
+// Styled Component Imports
+import AppReactDatepicker from '@/libs/styles/AppReactDatepicker'
 
 type Props = {
   open: boolean

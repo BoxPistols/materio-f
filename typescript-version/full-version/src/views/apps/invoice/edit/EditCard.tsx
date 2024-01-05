@@ -29,7 +29,9 @@ import type { InvoiceType } from '@/types/apps/invoiceTypes'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
-import AppReactDatepicker from '@core/styles/libs/AppReactDatepicker'
+
+// Styled Component Imports
+import AppReactDatepicker from '@/libs/styles/AppReactDatepicker'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'

@@ -15,7 +15,7 @@ import type { ThemeColor } from '@core/types'
 
 // Components Imports
 import OptionMenu from '@core/components/option-menu'
-import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
+import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 // Styles Imports
 import tableStyles from '@core/styles/table.module.css'

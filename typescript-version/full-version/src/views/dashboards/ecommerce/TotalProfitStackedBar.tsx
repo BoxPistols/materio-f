@@ -18,7 +18,7 @@ import type { ThemeColor } from '@core/types'
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
 import CustomAvatar from '@core/components/mui/Avatar'
-import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
+import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'

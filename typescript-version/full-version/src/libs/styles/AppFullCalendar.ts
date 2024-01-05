@@ -49,6 +49,7 @@ const AppFullCalendar = styled('div')(({ theme }: { theme: Theme }) => ({
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
+        rowGap: theme.spacing(2),
         [theme.breakpoints.down('md')]: {
           '& div:first-of-type': {
             display: 'flex',
@@ -122,7 +123,6 @@ const AppFullCalendar = styled('div')(({ theme }: { theme: Theme }) => ({
         marginLeft: 0
       },
       '& .fc-toolbar-title': {
-        marginBlockStart: theme.spacing(2),
         marginInline: theme.spacing(4),
         ...theme.typography.h4
       },

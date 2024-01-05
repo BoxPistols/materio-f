@@ -9,7 +9,7 @@ import { useTheme } from '@mui/material/styles'
 import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
-import AppReactApexCharts from '@core/styles/libs/AppReactApexCharts'
+import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 const series = [
   {

@@ -23,11 +23,11 @@ import type { Theme } from '@mui/material/styles'
 import { useForm, Controller } from 'react-hook-form'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
-// Types
+// Type Imports
 import type { EventDateType, AddEventSidebarType } from '@/types/apps/calendarTypes'
 
-// Component Imports
-import AppReactDatepicker from '@core/styles/libs/AppReactDatepicker'
+// Styled Component Imports
+import AppReactDatepicker from '@/libs/styles/AppReactDatepicker'
 
 interface PickerProps {
   label?: string

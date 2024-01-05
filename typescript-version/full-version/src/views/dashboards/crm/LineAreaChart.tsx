@@ -8,8 +8,8 @@ import { useTheme } from '@mui/material/styles'
 
 import type { ApexOptions } from 'apexcharts'
 
-// Components Imports
-import ReactApexcharts from '@components/charts/apexchart'
+// Styled Components Imports
+import ReactApexcharts from '@/libs/styles/AppReactApexCharts'
 
 const series = [
   {
