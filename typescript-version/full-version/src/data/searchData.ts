@@ -345,7 +345,7 @@ const data: SearchData[] = [
   {
     id: '49',
     name: 'Menu Examples',
-    url: 'http://localhost:3001/docs/menu-examples/',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/menu-examples/`,
     icon: 'ri-menu-add-line',
     section: 'Others'
   },
@@ -366,252 +366,252 @@ const data: SearchData[] = [
   {
     id: '52',
     name: 'Typography',
-    url: 'http://localhost:3001/docs/user-interface/typography',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/typography`,
     icon: 'ri-text',
     section: 'User Interface'
   },
   {
     id: '53',
     name: 'Icons',
-    url: 'http://localhost:3001/docs/user-interface/icons',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/icons`,
     icon: 'ri-remixicon-line',
     section: 'User Interface'
   },
   {
     id: '54',
     name: 'Card Basic',
-    url: 'http://localhost:3001/docs/user-interface/cards-basic',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/cards-basic`,
     icon: 'ri-rectangle-line',
     section: 'User Interface'
   },
   {
     id: '55',
     name: 'Card Actions',
-    url: 'http://localhost:3001/docs/user-interface/cards-actions',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/cards-actions`,
     icon: 'ri-toggle-line',
     section: 'User Interface'
   },
   {
     id: '56',
     name: 'Accordion',
-    url: 'http://localhost:3001/docs/components/accordion',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/accordion`,
     icon: 'ri-fullscreen-exit-line',
     section: 'Components'
   },
   {
     id: '57',
     name: 'Alerts',
-    url: 'http://localhost:3001/docs/components/alerts',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/alerts`,
     icon: 'ri-alert-line',
     section: 'Components'
   },
   {
     id: '58',
     name: 'Avatars',
-    url: 'http://localhost:3001/docs/components/avatars',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/avatars`,
     icon: 'ri-account-circle-line',
     section: 'Components'
   },
   {
     id: '59',
     name: 'Badges',
-    url: 'http://localhost:3001/docs/components/badges',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/badges`,
     icon: 'ri-notification-badge-line',
     section: 'Components'
   },
   {
     id: '60',
     name: 'Buttons',
-    url: 'http://localhost:3001/docs/components/buttons',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/buttons`,
     icon: 'ri-download-2-line',
     section: 'Components'
   },
   {
     id: '61',
     name: 'Button Group',
-    url: 'http://localhost:3001/docs/components/button-group',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/button-group`,
     icon: 'ri-file-copy-line',
     section: 'Components'
   },
   {
     id: '62',
     name: 'Chips',
-    url: 'http://localhost:3001/docs/components/chips',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/chips`,
     icon: 'ri-text-snippet',
     section: 'Components'
   },
   {
     id: '63',
     name: 'Dialogs',
-    url: 'http://localhost:3001/docs/components/dialogs',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/dialogs`,
     icon: 'ri-tv-2-line',
     section: 'Components'
   },
   {
     id: '64',
     name: 'List',
-    url: 'http://localhost:3001/docs/components/list',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/list`,
     icon: 'ri-list-ordered',
     section: 'Components'
   },
   {
     id: '65',
     name: 'Menu',
-    url: 'http://localhost:3001/docs/components/menu',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/menu`,
     icon: 'ri-menu-line',
     section: 'Components'
   },
   {
     id: '66',
     name: 'Pagination',
-    url: 'http://localhost:3001/docs/components/pagination',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/pagination`,
     icon: 'ri-skip-right-line',
     section: 'Components'
   },
   {
     id: '67',
     name: 'Progress',
-    url: 'http://localhost:3001/docs/components/progress',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/progress`,
     icon: 'ri-progress-3-line',
     section: 'Components'
   },
   {
     id: '68',
     name: 'Ratings',
-    url: 'http://localhost:3001/docs/components/ratings',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/ratings`,
     icon: 'ri-star-line',
     section: 'Components'
   },
   {
     id: '69',
     name: 'Snackbar',
-    url: 'http://localhost:3001/docs/components/snackbar',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/snackbar`,
     icon: 'ri-message-3-line',
     section: 'Components'
   },
   {
     id: '70',
     name: 'Swiper',
-    url: 'http://localhost:3001/docs/components/swiper',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/swiper`,
     icon: 'ri-slideshow-4-line',
     section: 'Components'
   },
   {
     id: '71',
     name: 'Tabs',
-    url: 'http://localhost:3001/docs/components/tabs',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/tabs`,
     icon: 'ri-tv-2-line',
     section: 'Components'
   },
   {
     id: '72',
     name: 'Timeline',
-    url: 'http://localhost:3001/docs/components/timeline',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/timeline`,
     icon: 'ri-timeline-view',
     section: 'Components'
   },
   {
     id: '73',
     name: 'Toasts',
-    url: 'http://localhost:3001/docs/components/toasts',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/toasts`,
     icon: 'ri-notification-2-line',
     section: 'Components'
   },
   {
     id: '74',
     name: 'More Components',
-    url: 'http://localhost:3001/docs/components/more',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/more`,
     icon: 'ri-layout-grid-line',
     section: 'Components'
   },
   {
     id: '75',
     name: 'Text Field',
-    url: 'http://localhost:3001/docs/form-elements/text-field',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/text-field`,
     icon: 'ri-input-field',
     section: 'Forms & Tables'
   },
   {
     id: '76',
     name: 'Select',
-    url: 'http://localhost:3001/docs/form-elements/select',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/select`,
     icon: 'ri-list-check',
     section: 'Forms & Tables'
   },
   {
     id: '77',
     name: 'Checkbox',
-    url: 'http://localhost:3001/docs/form-elements/checkbox',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/checkbox`,
     icon: 'ri-checkbox-line',
     section: 'Forms & Tables'
   },
   {
     id: '78',
     name: 'Radio',
-    url: 'http://localhost:3001/docs/form-elements/radio',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/radio`,
     icon: 'ri-radio-button-line',
     section: 'Forms & Tables'
   },
   {
     id: '79',
     name: 'Custom Inputs',
-    url: 'http://localhost:3001/docs/form-elements/custom-inputs',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/custom-inputs`,
     icon: 'ri-list-radio',
     section: 'Forms & Tables'
   },
   {
     id: '80',
     name: 'Textarea',
-    url: 'http://localhost:3001/docs/form-elements/textarea',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/textarea`,
     icon: 'ri-rectangle-line',
     section: 'Forms & Tables'
   },
   {
     id: '81',
     name: 'Autocomplete',
-    url: 'http://localhost:3001/docs/form-elements/autocomplete',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/autocomplete`,
     icon: 'ri-list-check',
     section: 'Forms & Tables'
   },
   {
     id: '82',
     name: 'Picker',
-    url: 'http://localhost:3001/docs/form-elements/picker',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/picker`,
     icon: 'ri-calendar-check-line',
     section: 'Forms & Tables'
   },
   {
     id: '83',
     name: 'Switch',
-    url: 'http://localhost:3001/docs/form-elements/switch',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/switch`,
     icon: 'ri-toggle-line',
     section: 'Forms & Tables'
   },
   {
     id: '84',
     name: 'File Uploader',
-    url: 'http://localhost:3001/docs/form-elements/file-uploader',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/file-uploader`,
     icon: 'ri-file-upload-line',
     section: 'Forms & Tables'
   },
   {
     id: '85',
     name: 'Editor',
-    url: 'http://localhost:3001/docs/form-elements/editor',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/editor`,
     icon: 'ri-ai-generate',
     section: 'Forms & Tables'
   },
   {
     id: '86',
     name: 'Slider',
-    url: 'http://localhost:3001/docs/form-elements/slider',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/slider`,
     icon: 'ri-equalizer-2-line',
     section: 'Forms & Tables'
   },
   {
     id: '87',
     name: 'MUI Tables',
-    url: 'http://localhost:3001/docs/tables/mui-table',
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/tables/mui-table`,
     icon: 'ri-table-2',
     section: 'Forms & Tables'
   }

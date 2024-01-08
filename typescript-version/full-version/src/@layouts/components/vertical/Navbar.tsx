@@ -34,6 +34,7 @@ const Navbar = (props: Props) => {
   // Hooks
   const { settings } = useSettings()
   const theme = useTheme()
+
   const trigger = useScrollTrigger({
     threshold: 0,
     disableHysteresis: true

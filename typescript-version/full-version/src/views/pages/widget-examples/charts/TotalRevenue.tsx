@@ -26,6 +26,7 @@ const TotalRevenue = () => {
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
 
   const textSecondaryColor = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.7)`)
+
   const options: ApexOptions = {
     chart: {
       sparkline: { enabled: true }

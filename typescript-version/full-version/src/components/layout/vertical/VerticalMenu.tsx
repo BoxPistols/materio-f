@@ -235,7 +235,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             {dictionary['navigation'].reactTable}
           </MenuItem>
           <MenuItem
-            href='http://localhost:3001/docs/forms-tables/intro#form-elements'
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/forms-tables/intro#form-elements`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-radio-button-line' />}
@@ -243,7 +243,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             {dictionary['navigation'].formELements}
           </MenuItem>
           <MenuItem
-            href='http://localhost:3001/docs/forms-tables/intro#tables'
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/tables/mui-table`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-table-2' />}
@@ -257,7 +257,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             <MenuItem href={`/${locale}/charts/apex-charts`}>{dictionary['navigation'].apex}</MenuItem>
           </SubMenu>
           <MenuItem
-            href='http://localhost:3001/docs/user-interface/intro'
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/intro`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-pantone-line' />}
@@ -265,7 +265,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             {dictionary['navigation'].userInterface}
           </MenuItem>
           <MenuItem
-            href='http://localhost:3001/docs/components/intro'
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/intro`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-toggle-line' />}
@@ -273,7 +273,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
             {dictionary['navigation'].components}
           </MenuItem>
           <MenuItem
-            href='http://localhost:3001/docs/menu-examples/'
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/menu-examples/`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-menu-search-line' />}

@@ -156,6 +156,7 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
     }
   }
 }))
+
 const getStepContent = (step: number, handleNext: () => void, direction: Direction) => {
   switch (step) {
     case 0:

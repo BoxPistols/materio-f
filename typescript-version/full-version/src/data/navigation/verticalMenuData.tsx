@@ -358,13 +358,13 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
         label: dictionary['navigation'].formELements,
         icon: 'ri-radio-button-line',
         suffix: <i className='ri-external-link-line text-xl' />,
-        href: 'http://localhost:3001/docs/forms-tables/intro#form-elements',
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/forms-tables/intro#form-elements`,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].muiTables,
         icon: 'ri-table-2',
-        href: 'http://localhost:3001/docs/tables/mui-table',
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/tables/mui-table`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       }
@@ -395,21 +395,21 @@ const verticalMenuData = (dictionary: Dictionary, params: Params): VerticalMenuD
       {
         label: dictionary['navigation'].userInterface,
         icon: 'ri-pantone-line',
-        href: 'http://localhost:3001/docs/user-interface/intro',
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/intro`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].components,
         icon: 'ri-toggle-line',
-        href: 'http://localhost:3001/docs/components/intro',
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/intro`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].menuExamples,
         icon: 'ri-menu-search-line',
-        href: 'http://localhost:3001/docs/menu-examples/',
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/menu-examples/`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },

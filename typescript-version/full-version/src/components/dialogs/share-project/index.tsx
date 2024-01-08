@@ -130,6 +130,7 @@ const ShareProject = ({ open, setOpen }: ShareProjectProps) => {
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
   }
+
   const handleClose = () => {
     setAnchorEl(null)
   }

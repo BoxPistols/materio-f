@@ -26,6 +26,7 @@ const StepAccountDetails = ({ handleNext, direction, activeStep }: StepAccountDe
   const handleClickShowPassword = () => {
     setIsPasswordShown(!isPasswordShown)
   }
+
   const handleClickShowConfirmPassword = () => {
     setIsConfirmPasswordShown(!isConfirmPasswordShown)
   }
