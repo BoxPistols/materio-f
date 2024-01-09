@@ -16,7 +16,10 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Button from '@mui/material/Button'
 
 // Type Imports
-import type { Direction, Mode } from '@core/types'
+import type { Mode } from '@core/types'
+
+// Component Imports
+import DirectionalIcon from '@components/DirectionalIcon'
 
 // Component Imports
 import Illustrations from '@components/Illustrations'
@@ -30,7 +33,7 @@ import Logo from '@core/svg/Logo'
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
 
-const ResetPasswordV1 = ({ direction, mode }: { direction: Direction; mode: Mode }) => {
+const ResetPasswordV1 = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState(false)
@@ -98,9 +101,7 @@ const ResetPasswordV1 = ({ direction, mode }: { direction: Direction; mode: Mode
               </Button>
               <Typography className='flex justify-center items-center' color='primary'>
                 <Link href='/pages/auth/login-v1' className='flex items-center gap-1.5'>
-                  <i
-                    className={direction === 'rtl' ? 'ri-arrow-right-s-line text-xl' : 'ri-arrow-left-s-line text-xl'}
-                  />
+                  <DirectionalIcon ltrIconClass='ri-arrow-left-s-line' rtlIconClass='ri-arrow-right-s-line' />
                   <span>Back to Login</span>
                 </Link>
               </Typography>

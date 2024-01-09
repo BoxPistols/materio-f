@@ -12,7 +12,10 @@ import Button from '@mui/material/Button'
 import classnames from 'classnames'
 
 // Type Imports
-import type { Direction, Mode } from '@core/types'
+import type { Mode } from '@core/types'
+
+// Component Imports
+import DirectionalIcon from '@components/DirectionalIcon'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -25,7 +28,7 @@ import { useSettings } from '@core/hooks/useSettings'
 import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
-const ForgotPasswordV2 = ({ direction, mode }: { direction: Direction; mode: Mode }) => {
+const ForgotPasswordV2 = ({ mode }: { mode: Mode }) => {
   // Hooks
   const { settings } = useSettings()
 
@@ -92,7 +95,7 @@ const ForgotPasswordV2 = ({ direction, mode }: { direction: Direction; mode: Mod
             </Button>
             <Typography className='flex justify-center items-center' color='primary'>
               <Link href='/pages/auth/login-v2' className='flex items-center'>
-                <i className={direction === 'rtl' ? 'ri-arrow-right-s-line' : 'ri-arrow-left-s-line'} />
+                <DirectionalIcon ltrIconClass='ri-arrow-left-s-line' rtlIconClass='ri-arrow-right-s-line' />
                 <span>Back to Login</span>
               </Link>
             </Typography>

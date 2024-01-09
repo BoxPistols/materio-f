@@ -11,7 +11,7 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 
 // Type Imports
-import type { Direction, Mode } from '@core/types'
+import type { Mode } from '@core/types'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -21,12 +21,13 @@ import { useImageVariant } from '@core/hooks/useImageVariant'
 
 // Component Imports
 import Form from '@components/Form'
+import DirectionalIcon from '@components/DirectionalIcon'
 import Illustrations from '@components/Illustrations'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
 
-const ForgotPasswordV1 = ({ direction, mode }: { direction: Direction; mode: Mode }) => {
+const ForgotPasswordV1 = ({ mode }: { mode: Mode }) => {
   const darkImg = '/images/pages/auth-v1-mask-dark.png'
   const lightImg = '/images/pages/auth-v1-mask-light.png'
   const authBackground = useImageVariant(mode, lightImg, darkImg)
@@ -53,7 +54,7 @@ const ForgotPasswordV1 = ({ direction, mode }: { direction: Direction; mode: Mod
               </Button>
               <Typography className='flex justify-center items-center' color='primary'>
                 <Link href='/pages/auth/login-v1' className='flex items-center'>
-                  <i className={direction === 'rtl' ? 'ri-arrow-right-s-line' : 'ri-arrow-left-s-line'} />
+                  <DirectionalIcon ltrIconClass='ri-arrow-left-s-line' rtlIconClass='ri-arrow-right-s-line' />
                   <span>Back to Login</span>
                 </Link>
               </Typography>

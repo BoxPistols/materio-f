@@ -9,16 +9,15 @@ import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import InputAdornment from '@mui/material/InputAdornment'
 
-// Type Imports
-import type { Direction } from '@core/types'
+// Component Imports
+import DirectionalIcon from '@components/DirectionalIcon'
 
 type StepAccountDetailsProps = {
   handleNext: () => void
-  direction: Direction
   activeStep: number
 }
 
-const StepAccountDetails = ({ handleNext, direction, activeStep }: StepAccountDetailsProps) => {
+const StepAccountDetails = ({ handleNext, activeStep }: StepAccountDetailsProps) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState<boolean>(false)
   const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState<boolean>(false)
@@ -98,14 +97,14 @@ const StepAccountDetails = ({ handleNext, direction, activeStep }: StepAccountDe
             disabled={activeStep === 0}
             color='secondary'
             variant='outlined'
-            startIcon={<i className={direction === 'rtl' ? 'ri-arrow-right-line' : 'ri-arrow-left-line'} />}
+            startIcon={<DirectionalIcon ltrIconClass='ri-arrow-left-line' rtlIconClass='ri-arrow-right-line' />}
           >
             Previous
           </Button>
           <Button
             variant='contained'
             onClick={handleNext}
-            endIcon={<i className={direction === 'rtl' ? 'ri-arrow-left-line' : 'ri-arrow-right-line'} />}
+            endIcon={<DirectionalIcon ltrIconClass='ri-arrow-right-line' rtlIconClass='ri-arrow-left-line' />}
           >
             Next
           </Button>

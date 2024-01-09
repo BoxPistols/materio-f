@@ -8,12 +8,10 @@ import Stepper from '@mui/material/Stepper'
 import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
 import Typography from '@mui/material/Typography'
+import { useTheme } from '@mui/material/styles'
 
 // Third-party Imports
 import classnames from 'classnames'
-
-// Type Imports
-import type { Direction } from '@core/types'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -44,28 +42,27 @@ const steps = [
   }
 ]
 
-const getStepContent = (step: number, handleNext: () => void, handlePrev: () => void, direction: Direction) => {
+const getStepContent = (step: number, handleNext: () => void, handlePrev: () => void) => {
   switch (step) {
     case 0:
-      return <StepAccountDetails activeStep={step} handleNext={handleNext} direction={direction} />
+      return <StepAccountDetails activeStep={step} handleNext={handleNext} />
     case 1:
-      return (
-        <StepPersonalInfo activeStep={step} handleNext={handleNext} handlePrev={handlePrev} direction={direction} />
-      )
+      return <StepPersonalInfo activeStep={step} handleNext={handleNext} handlePrev={handlePrev} />
     case 2:
-      return <StepBillingDetails activeStep={step} handlePrev={handlePrev} direction={direction} />
+      return <StepBillingDetails activeStep={step} handlePrev={handlePrev} />
 
     default:
       return null
   }
 }
 
-const RegisterMultiSteps = ({ direction }: { direction: Direction }) => {
+const RegisterMultiSteps = () => {
   // States
   const [activeStep, setActiveStep] = useState<number>(0)
 
   // Hooks
   const { settings } = useSettings()
+  const theme = useTheme()
 
   // Handle Stepper
   const handleNext = () => {
@@ -89,7 +86,7 @@ const RegisterMultiSteps = ({ direction }: { direction: Direction }) => {
           src='/images/illustrations/characters/8.png'
           alt='multi-steps-character'
           className={classnames('mis-[92px] bs-auto max-bs-[628px] max-is-full', {
-            'scale-x-[-1]': direction === 'rtl'
+            'scale-x-[-1]': theme.direction === 'rtl'
           })}
         />
       </div>
@@ -124,7 +121,7 @@ const RegisterMultiSteps = ({ direction }: { direction: Direction }) => {
               )
             })}
           </Stepper>
-          {getStepContent(activeStep, handleNext, handlePrev, direction)}
+          {getStepContent(activeStep, handleNext, handlePrev)}
         </StepperWrapper>
       </div>
     </div>

@@ -11,10 +11,7 @@ import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
 import StepConnector from '@mui/material/StepConnector'
 import Typography from '@mui/material/Typography'
-import styled from '@mui/material/styles/styled'
-
-// Type Imports
-import type { Direction } from '@core/types'
+import { styled } from '@mui/material/styles'
 
 // Component Imports
 import StepPersonalDetails from './StepPersonalDetails'
@@ -50,61 +47,19 @@ const steps = [
   }
 ]
 
-const getStepContent = (step: number, handleNext: () => void, handlePrev: () => void, direction: Direction) => {
-  switch (step) {
-    case 0:
-      return (
-        <StepPersonalDetails
-          activeStep={step}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          steps={steps}
-          direction={direction}
-        />
-      )
-    case 1:
-      return (
-        <StepPropertyDetails
-          activeStep={step}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          steps={steps}
-          direction={direction}
-        />
-      )
-    case 2:
-      return (
-        <StepPropertyFeatures
-          activeStep={step}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          steps={steps}
-          direction={direction}
-        />
-      )
-    case 3:
-      return (
-        <StepPropertyArea
-          activeStep={step}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          steps={steps}
-          direction={direction}
-        />
-      )
-    case 4:
-      return (
-        <StepPriceDetails
-          activeStep={step}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          steps={steps}
-          direction={direction}
-        />
-      )
-    default:
-      return null
-  }
+const getStepContent = (step: number, handleNext: () => void, handlePrev: () => void) => {
+  const Tag =
+    step === 0
+      ? StepPersonalDetails
+      : step === 1
+        ? StepPropertyDetails
+        : step === 2
+          ? StepPropertyFeatures
+          : step === 3
+            ? StepPropertyArea
+            : StepPriceDetails
+
+  return <Tag activeStep={step} handleNext={handleNext} handlePrev={handlePrev} steps={steps} />
 }
 
 const ConnectorHeight = styled(StepConnector)(() => ({
@@ -113,7 +68,7 @@ const ConnectorHeight = styled(StepConnector)(() => ({
   }
 }))
 
-const PropertyListingWizard = ({ direction }: { direction: Direction }) => {
+const PropertyListingWizard = () => {
   // States
   const [activeStep, setActiveStep] = useState<number>(0)
 
@@ -159,9 +114,7 @@ const PropertyListingWizard = ({ direction }: { direction: Direction }) => {
         </StepperWrapper>
       </CardContent>
 
-      <CardContent className='flex-1 !pbs-5'>
-        {getStepContent(activeStep, handleNext, handlePrev, direction)}
-      </CardContent>
+      <CardContent className='flex-1 !pbs-5'>{getStepContent(activeStep, handleNext, handlePrev)}</CardContent>
     </Card>
   )
 }

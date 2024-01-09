@@ -14,17 +14,12 @@ import MuiStepper from '@mui/material/Stepper'
 import styled from '@mui/material/styles/styled'
 import type { StepperProps } from '@mui/material/Stepper'
 
-// Third-party Imports
-import classnames from 'classnames'
-
-// Type Imports
-import type { Direction } from '@core/types'
-
 // Component Imports
 import StepCart from './StepCart'
 import StepAddress from './StepAddress'
 import StepPayment from './StepPayment'
 import StepConfirmation from './StepConfirmation'
+import DirectionalIcon from '@components/DirectionalIcon'
 
 // Styled Component Imports
 import StepperWrapper from '@core/styles/stepper'
@@ -157,10 +152,10 @@ const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
   }
 }))
 
-const getStepContent = (step: number, handleNext: () => void, direction: Direction) => {
+const getStepContent = (step: number, handleNext: () => void) => {
   switch (step) {
     case 0:
-      return <StepCart handleNext={handleNext} direction={direction} />
+      return <StepCart handleNext={handleNext} />
     case 1:
       return <StepAddress handleNext={handleNext} />
     case 2:
@@ -172,7 +167,7 @@ const getStepContent = (step: number, handleNext: () => void, direction: Directi
   }
 }
 
-const CheckoutWizard = ({ direction }: { direction: Direction }) => {
+const CheckoutWizard = () => {
   // States
   const [activeStep, setActiveStep] = useState<number>(0)
 
@@ -188,13 +183,10 @@ const CheckoutWizard = ({ direction }: { direction: Direction }) => {
             className='gap-10 md:gap-4'
             activeStep={activeStep}
             connector={
-              <i
-                className={classnames(
-                  'mli-12 hidden md:block',
-                  direction === 'rtl'
-                    ? 'ri-arrow-left-s-line text-lg text-textDisabled'
-                    : 'ri-arrow-right-s-line text-lg text-textDisabled'
-                )}
+              <DirectionalIcon
+                ltrIconClass='ri-arrow-right-s-line'
+                rtlIconClass='ri-arrow-left-s-line'
+                className='mli-12 hidden md:block text-lg text-textDisabled'
               />
             }
           >
@@ -213,7 +205,7 @@ const CheckoutWizard = ({ direction }: { direction: Direction }) => {
       </CardContent>
       <Divider />
 
-      <CardContent>{getStepContent(activeStep, handleNext, direction)}</CardContent>
+      <CardContent>{getStepContent(activeStep, handleNext)}</CardContent>
     </Card>
   )
 }

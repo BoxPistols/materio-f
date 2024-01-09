@@ -17,9 +17,6 @@ import Avatar from '@mui/material/Avatar'
 // Third-party Imports
 import classnames from 'classnames'
 
-// Type Imports
-import type { Direction } from '@core/types'
-
 // Component Imports
 import Details from './Details'
 import FrameWork from './FrameWork'
@@ -33,7 +30,6 @@ import StepperWrapper from '@core/styles/stepper'
 type CreateAppProps = {
   open: boolean
   setOpen: (open: boolean) => void
-  direction: Direction
 }
 
 type stepperProps = {
@@ -72,70 +68,22 @@ const steps: stepperProps[] = [
   }
 ]
 
-const renderStepCount = (
-  activeStep: number,
-  isLastStep: boolean,
-  handleNext: () => void,
-  handlePrev: () => void,
-  direction: Direction
-) => {
-  switch (activeStep) {
-    case 0:
-      return (
-        <Details
-          activeStep={activeStep}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          isLastStep={isLastStep}
-          direction={direction}
-        />
-      )
-    case 1:
-      return (
-        <FrameWork
-          activeStep={activeStep}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          isLastStep={isLastStep}
-          direction={direction}
-        />
-      )
-    case 2:
-      return (
-        <Database
-          activeStep={activeStep}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          isLastStep={isLastStep}
-          direction={direction}
-        />
-      )
-    case 3:
-      return (
-        <Billing
-          activeStep={activeStep}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          isLastStep={isLastStep}
-          direction={direction}
-        />
-      )
-    case 4:
-      return (
-        <Submit
-          activeStep={activeStep}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          isLastStep={isLastStep}
-          direction={direction}
-        />
-      )
-    default:
-      return null
-  }
+const renderStepCount = (activeStep: number, isLastStep: boolean, handleNext: () => void, handlePrev: () => void) => {
+  const Tag =
+    activeStep === 0
+      ? Details
+      : activeStep === 1
+        ? FrameWork
+        : activeStep === 2
+          ? Database
+          : activeStep === 3
+            ? Billing
+            : Submit
+
+  return <Tag activeStep={activeStep} handleNext={handleNext} handlePrev={handlePrev} isLastStep={isLastStep} />
 }
 
-const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
+const CreateApp = ({ open, setOpen }: CreateAppProps) => {
   // States
   const [activeStep, setActiveStep] = useState(0)
 
@@ -213,7 +161,7 @@ const CreateApp = ({ open, setOpen, direction }: CreateAppProps) => {
               })}
             </Stepper>
           </StepperWrapper>
-          <div className='flex-1'>{renderStepCount(activeStep, isLastStep, handleNext, handlePrev, direction)}</div>
+          <div className='flex-1'>{renderStepCount(activeStep, isLastStep, handleNext, handlePrev)}</div>
         </div>
       </DialogContent>
     </Dialog>

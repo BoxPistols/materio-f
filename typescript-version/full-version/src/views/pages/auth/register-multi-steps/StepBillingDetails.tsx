@@ -10,16 +10,13 @@ import Typography from '@mui/material/Typography'
 import type { TypographyProps } from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-// Type Imports
-import type { Direction } from '@core/types'
-
 // Component Imports
 import CustomInputVertical from '@core/components/custom-inputs/Vertical'
+import DirectionalIcon from '@components/DirectionalIcon'
 import type { CustomInputVerticalData } from '@core/components/custom-inputs/types'
 
 type StepBillingDetailsProps = {
   handlePrev: () => void
-  direction: Direction
   activeStep: number
 }
 
@@ -101,7 +98,7 @@ const customInputData: CustomInputVerticalData[] = [
   }
 ]
 
-const StepBillingDetails = ({ handlePrev, direction, activeStep }: StepBillingDetailsProps) => {
+const StepBillingDetails = ({ handlePrev, activeStep }: StepBillingDetailsProps) => {
   const initialSelectedOption: string = customInputData.filter(item => item.isSelected)[
     customInputData.filter(item => item.isSelected).length - 1
   ].value
@@ -159,7 +156,7 @@ const StepBillingDetails = ({ handlePrev, direction, activeStep }: StepBillingDe
             variant='outlined'
             color='secondary'
             onClick={handlePrev}
-            startIcon={<i className={direction === 'rtl' ? 'ri-arrow-right-line' : 'ri-arrow-left-line'} />}
+            startIcon={<DirectionalIcon ltrIconClass='ri-arrow-left-line' rtlIconClass='ri-arrow-right-line' />}
           >
             Previous
           </Button>
