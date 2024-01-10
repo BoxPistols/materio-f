@@ -2,6 +2,7 @@
 
 // Next Imports
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 // MUI Imports
 import Card from '@mui/material/Card'
@@ -30,6 +31,9 @@ import Logo from '@core/svg/Logo'
 const ForgotPasswordV1 = ({ mode }: { mode: Mode }) => {
   const darkImg = '/images/pages/auth-v1-mask-dark.png'
   const lightImg = '/images/pages/auth-v1-mask-light.png'
+
+  // Hooks
+  const { lang: locale } = useParams()
   const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   return (
@@ -53,7 +57,7 @@ const ForgotPasswordV1 = ({ mode }: { mode: Mode }) => {
                 Send reset link
               </Button>
               <Typography className='flex justify-center items-center' color='primary'>
-                <Link href='/pages/auth/login-v1' className='flex items-center'>
+                <Link href={`/${locale}/pages/auth/login-v1`} className='flex items-center'>
                   <DirectionalIcon ltrIconClass='ri-arrow-left-s-line' rtlIconClass='ri-arrow-right-s-line' />
                   <span>Back to Login</span>
                 </Link>

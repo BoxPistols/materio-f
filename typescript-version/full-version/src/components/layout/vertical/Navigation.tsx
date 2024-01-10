@@ -7,8 +7,9 @@ import { useRef } from 'react'
 import { styled, useColorScheme, useTheme } from '@mui/material/styles'
 
 // Type Imports
+import type { getDictionary } from '@/utils/get-dictionary'
 import type { Settings } from '@core/contexts/settingsContext'
-import type { Dictionary, Mode, Skin, SystemMode } from '@core/types'
+import type { Mode, Skin, SystemMode } from '@core/types'
 
 // Component Imports from @menu-package
 import VerticalNav, { NavHeader, NavCollapseIcons } from '@menu-package/vertical-menu'
@@ -26,7 +27,7 @@ import navigationCustomStyles from '@core/styles/vertical/navigationCustomStyles
 
 type Props = {
   settingsCookie: Settings
-  dictionary: Dictionary
+  dictionary: Awaited<ReturnType<typeof getDictionary>>
   mode: Mode
   systemMode: SystemMode
   skin: Skin

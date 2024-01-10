@@ -5,7 +5,7 @@ import { useRef, useState } from 'react'
 
 // Next Imports
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useParams, usePathname } from 'next/navigation'
 
 // MUI Imports
 import IconButton from '@mui/material/IconButton'
@@ -22,9 +22,14 @@ import type { Locale } from '@configs/i18n'
 // Hook Imports
 import { useSettings } from '@core/hooks/useSettings'
 
-// Util Imports
-import { getLocalePath } from '@/utils/get-locale-path'
-import { getLocale } from '@/utils/get-locale'
+const getLocalePath = (pathName: string, locale: string) => {
+  if (!pathName) return '/'
+  const segments = pathName.split('/')
+
+  segments[1] = locale
+
+  return segments.join('/')
+}
 
 type LanguageDataType = {
   langCode: Locale
@@ -56,6 +61,7 @@ const LanguageDropdown = () => {
   // Hooks
   const pathName = usePathname()
   const { settings } = useSettings()
+  const { lang } = useParams()
 
   const handleClose = () => {
     setOpen(false)
@@ -92,7 +98,7 @@ const LanguageDropdown = () => {
                       component={Link}
                       href={getLocalePath(pathName, locale.langCode)}
                       onClick={handleClose}
-                      selected={getLocale(pathName) === locale.langCode}
+                      selected={lang === locale.langCode}
                     >
                       {locale.langName}
                     </MenuItem>

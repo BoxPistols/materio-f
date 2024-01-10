@@ -6,6 +6,7 @@ import type { MouseEvent } from 'react'
 
 // Next Imports
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 // MUI Imports
 import Card from '@mui/material/Card'
@@ -97,6 +98,9 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   const [globalFilter, setGlobalFilter] = useState('')
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
+  // Hooks
+  const { lang: locale } = useParams()
+
   const open = Boolean(anchorEl)
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -116,7 +120,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
         cell: ({ row }) => (
           <Typography
             component={Link}
-            href={`/apps/invoice/preview/${row.original.id}`}
+            href={`/${locale}/apps/invoice/preview/${row.original.id}`}
             color='primary'
           >{`#${row.original.id}`}</Typography>
         )
@@ -165,7 +169,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
               <i className='ri-delete-bin-7-line text-[22px] text-textSecondary' />
             </IconButton>
             <IconButton>
-              <Link href={`/apps/invoice/preview/${row.original.id}`} className='flex'>
+              <Link href={`/${locale}/apps/invoice/preview/${row.original.id}`} className='flex'>
                 <i className='ri-eye-line text-[22px] text-textSecondary' />
               </Link>
             </IconButton>
@@ -180,7 +184,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                 {
                   text: 'Edit',
                   icon: 'ri-pencil-line text-[22px]',
-                  href: `/apps/invoice/edit/${row.original.id}`,
+                  href: `/${locale}/apps/invoice/edit/${row.original.id}`,
                   linkProps: {
                     className: classnames('flex items-center bs-[40px] plb-2 pli-4 is-full gap-2 text-textSecondary')
                   }

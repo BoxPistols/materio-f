@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 // Next Imports
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 // MUI Imports
 import Card from '@mui/material/Card'
@@ -25,6 +26,9 @@ const EditActions = ({ id }: { id: string }) => {
   // States
   const [paymentDrawerOpen, setPaymentDrawerOpen] = useState(false)
   const [sendDrawerOpen, setSendDrawerOpen] = useState(false)
+
+  // Hooks
+  const { lang: locale } = useParams()
 
   return (
     <Grid container spacing={6}>
@@ -47,7 +51,7 @@ const EditActions = ({ id }: { id: string }) => {
                 color='secondary'
                 variant='outlined'
                 className='capitalize'
-                href={`/apps/invoice/preview/${id}`}
+                href={`/${locale}/apps/invoice/preview/${id}`}
               >
                 Preview
               </Button>

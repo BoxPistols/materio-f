@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 // Next Imports
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 // MUI Imports
 import Typography from '@mui/material/Typography'
@@ -36,6 +37,9 @@ import Illustrations from '@components/Illustrations'
 const RegisterV2 = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
+
+  // Hooks
+  const { lang: locale } = useParams()
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
@@ -133,7 +137,7 @@ const RegisterV2 = ({ mode }: { mode: Mode }) => {
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
               <Typography>Already have an account?</Typography>
-              <Typography component={Link} href='/pages/auth/login-v2' color='primary'>
+              <Typography component={Link} href={`/${locale}/pages/auth/login-v2`} color='primary'>
                 Sign in instead
               </Typography>
             </div>

@@ -5,6 +5,7 @@ import { useState, useEffect, useMemo } from 'react'
 
 // Next Imports
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 // MUI Imports
 import Card from '@mui/material/Card'
@@ -134,6 +135,9 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   const [data, setData] = useState(...[invoiceData])
   const [globalFilter, setGlobalFilter] = useState('')
 
+  // Hooks
+  const { lang: locale } = useParams()
+
   useEffect(() => {
     const filteredData = invoiceData?.filter(invoice => {
       if (status && invoice.invoiceStatus.toLowerCase().replace(/\s+/g, '-') !== status) return false
@@ -185,7 +189,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
         cell: ({ row }) => (
           <Typography
             component={Link}
-            href={`/apps/invoice/preview/${row.original.id}`}
+            href={`/${locale}/apps/invoice/preview/${row.original.id}`}
             color='primary'
           >{`#${row.original.id}`}</Typography>
         )
@@ -258,7 +262,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
               <i className={'ri-delete-bin-7-line text-[22px] text-textSecondary'} />
             </IconButton>
             <IconButton>
-              <Link href={`/apps/invoice/preview/${row.original.id}`} className='flex'>
+              <Link href={`/${locale}/apps/invoice/preview/${row.original.id}`} className='flex'>
                 <i className='ri-eye-line text-[22px] text-textSecondary' />
               </Link>
             </IconButton>
@@ -273,7 +277,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                 {
                   text: 'Edit',
                   icon: 'ri-pencil-line text-[22px]',
-                  href: `/apps/invoice/edit/${row.original.id}`,
+                  href: `/${locale}/apps/invoice/edit/${row.original.id}`,
                   linkProps: {
                     className: 'flex items-center is-full plb-2 pli-4 gap-2 text-textSecondary'
                   }
@@ -330,7 +334,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
           variant='contained'
           component={Link}
           startIcon={<i className='ri-add-line' />}
-          href={`/apps/invoice/add/`}
+          href={`/${locale}/apps/invoice/add/`}
           className='is-full sm:is-auto'
         >
           Create Invoice

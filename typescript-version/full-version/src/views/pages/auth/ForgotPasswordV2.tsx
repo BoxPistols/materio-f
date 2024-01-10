@@ -2,6 +2,7 @@
 
 // Next Imports
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 // MUI Imports
 import Typography from '@mui/material/Typography'
@@ -29,17 +30,18 @@ import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
 const ForgotPasswordV2 = ({ mode }: { mode: Mode }) => {
-  // Hooks
-  const { settings } = useSettings()
-
   const darkImg = '/images/pages/auth-v2-mask-dark.png'
   const lightImg = '/images/pages/auth-v2-mask-light.png'
-  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   const darkIllustration = '/images/illustrations/auth/v2-forgot-password-dark.png'
   const lightIllustration = '/images/illustrations/auth/v2-forgot-password-light.png'
   const borderedDarkIllustration = '/images/illustrations/auth/v2-forgot-password-dark-border.png'
   const borderedLightIllustration = '/images/illustrations/auth/v2-forgot-password-light-border.png'
+
+  // Hooks
+  const { lang: locale } = useParams()
+  const { settings } = useSettings()
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   const characterIllustration = useImageVariant(
     mode,
@@ -94,7 +96,7 @@ const ForgotPasswordV2 = ({ mode }: { mode: Mode }) => {
               Send reset link
             </Button>
             <Typography className='flex justify-center items-center' color='primary'>
-              <Link href='/pages/auth/login-v2' className='flex items-center'>
+              <Link href={`/${locale}/pages/auth/login-v2`} className='flex items-center'>
                 <DirectionalIcon ltrIconClass='ri-arrow-left-s-line' rtlIconClass='ri-arrow-right-s-line' />
                 <span>Back to Login</span>
               </Link>

@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 // Next Imports
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 
 // MUI Imports
 import Typography from '@mui/material/Typography'
@@ -37,6 +38,9 @@ const ResetPasswordV2 = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState(false)
+
+  // Hooks
+  const { lang: locale } = useParams()
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
@@ -136,7 +140,7 @@ const ResetPasswordV2 = ({ mode }: { mode: Mode }) => {
               Set New Password
             </Button>
             <Typography className='flex justify-center items-center' color='primary'>
-              <Link href='/pages/auth/login-v2' className='flex items-center gap-1.5'>
+              <Link href={`/${locale}/pages/auth/login-v2`} className='flex items-center gap-1.5'>
                 <DirectionalIcon
                   ltrIconClass='ri-arrow-left-s-line'
                   rtlIconClass='ri-arrow-right-s-line'
