@@ -334,7 +334,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
           variant='contained'
           component={Link}
           startIcon={<i className='ri-add-line' />}
-          href={`/${locale}/apps/invoice/add/`}
+          href={`/${locale}/apps/invoice/add`}
           className='is-full sm:is-auto'
         >
           Create Invoice

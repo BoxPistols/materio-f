@@ -17,7 +17,7 @@ import type { ProjectsTabType } from '@/types/pages/profileTypes'
 
 // Component Imports
 import OptionMenu from '@core/components/option-menu'
-import CustomAvatar from '@/@core/components/mui/Avatar'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 const Projects = ({ data }: { data?: ProjectsTabType[] }) => {
   return (

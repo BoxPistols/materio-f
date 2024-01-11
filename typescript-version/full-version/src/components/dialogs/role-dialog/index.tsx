@@ -132,12 +132,12 @@ const RoleDialog = ({ open, setOpen, title }: RoleDialogProps) => {
             <table className={tableStyles.table}>
               <tbody>
                 <tr>
-                  <th>
+                  <th className='pis-0'>
                     <Typography className='font-medium whitespace-nowrap flex-grow min-is-[225px]' color='text.primary'>
                       Administrator Access
                     </Typography>
                   </th>
-                  <th className='!text-end'>
+                  <th className='!text-end pie-0'>
                     <FormControlLabel
                       className='mie-0 capitalize'
                       control={
@@ -156,7 +156,7 @@ const RoleDialog = ({ open, setOpen, title }: RoleDialogProps) => {
 
                   return (
                     <tr key={index}>
-                      <td>
+                      <td className='pis-0'>
                         <Typography
                           className='font-medium whitespace-nowrap flex-grow min-is-[225px]'
                           color='text.primary'
@@ -164,7 +164,7 @@ const RoleDialog = ({ open, setOpen, title }: RoleDialogProps) => {
                           {typeof item === 'object' ? item.title : item}
                         </Typography>
                       </td>
-                      <td className='!text-end'>
+                      <td className='!text-end pie-0'>
                         {typeof item === 'object' ? (
                           <FormGroup className='flex-row gap-6 flex-nowrap justify-end'>
                             <FormControlLabel

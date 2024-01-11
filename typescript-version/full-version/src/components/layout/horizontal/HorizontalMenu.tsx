@@ -86,7 +86,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
         menuItemStyles={menuItemStyles(settings, theme)}
         popoutMenuOffset={{
           mainAxis: ({ level }) => (level && level > 0 ? 4 : 16),
-          alignmentAxis: ({ level }) => (level && level > 0 ? -5 : 0)
+          alignmentAxis: 0
         }}
         verticalMenuProps={{
           menuItemStyles: verticalMenuItemStyles(verticalNavOptions, theme, settings),

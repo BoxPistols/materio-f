@@ -205,7 +205,7 @@ const FormLayoutsCollapsible = () => {
               <RadioGroup
                 row
                 name='radio-buttons-group'
-                value={cardData.addressType}
+                defaultValue='home'
                 onChange={e => setCardData({ ...cardData, addressType: e.target.value })}
               >
                 <FormControlLabel value='home' control={<Radio />} label='Home (All day delivery)' />

@@ -173,14 +173,6 @@ const PaymentMethod = () => {
                 </Button>
               </Grid>
             </Grid>
-            <Grid item xs={12} className='flex gap-4 flex-wrap'>
-              <Button type='submit' variant='contained'>
-                Save Changes
-              </Button>
-              <Button type='reset' variant='outlined' color='secondary' onClick={handleReset}>
-                Reset
-              </Button>
-            </Grid>
           </Grid>
 
           <Grid item xs={12} md={6} className='flex flex-col gap-6'>

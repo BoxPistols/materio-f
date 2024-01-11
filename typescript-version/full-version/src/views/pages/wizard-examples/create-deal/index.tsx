@@ -74,7 +74,7 @@ const CreateDeal = () => {
 
   return (
     <Card className='flex flex-col md:flex-row'>
-      <CardContent className='border-be md:border-ie md:min-is-[300px]'>
+      <CardContent className='border-be md:border-be-0 md:border-ie md:min-is-[300px]'>
         <StepperWrapper className='bs-full'>
           <Stepper activeStep={activeStep} connector={<ConnectorHeight />} orientation='vertical'>
             {steps.map((step, index) => {

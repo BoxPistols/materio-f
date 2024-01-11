@@ -144,20 +144,13 @@ const StyledReactDatePicker = styled(Box)<BoxProps>(({ theme }) => {
       '& .react-datepicker__day--in-range, & .react-datepicker__day--in-selecting-range': {
         borderRadius: 0,
         color: `${theme.palette.primary.main} !important`,
-        backgroundColor: 'var(--mui-palette-primary-lightOpacity) !important',
-        '&:hover': {
-          backgroundColor: 'var(--mui-palette-primary-mainOpacity) !important'
-        },
-        '&.react-datepicker__day--today': {
-          backgroundColor: `rgb(${theme.vars.palette.primary.mainChannel} / 0.24) !important`
-        }
+        backgroundColor: 'var(--mui-palette-primary-lightOpacity) !important'
       },
       '& .react-datepicker__day--today': {
         fontWeight: 'normal',
         '&:not(.react-datepicker__day--selected):not(:empty)': {
-          lineHeight: '2.125rem',
           color: theme.palette.primary.main,
-          border: `1px solid ${theme.palette.primary.main}`,
+          backgroundColor: `rgb(${theme.vars.palette.primary.mainChannel} / 0.16)`,
           '&:hover': {
             backgroundColor: `rgb(${theme.vars.palette.primary.mainChannel} / 0.24)`
           },

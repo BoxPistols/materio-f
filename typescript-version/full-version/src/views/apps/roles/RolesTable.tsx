@@ -257,7 +257,7 @@ const RolesTable = ({ tableData }: { tableData?: UsersType[] }) => {
               <i className='ri-delete-bin-7-line text-[22px] text-textSecondary' />
             </IconButton>
             <IconButton>
-              <Link href={`/${locale}/apps/user/view/`} className='flex'>
+              <Link href={`/${locale}/apps/user/view`} className='flex'>
                 <i className='ri-eye-line text-[22px] text-textSecondary' />
               </Link>
             </IconButton>
