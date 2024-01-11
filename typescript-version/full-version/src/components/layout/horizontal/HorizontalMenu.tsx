@@ -10,23 +10,21 @@ import Chip from '@mui/material/Chip'
 
 // Type Imports
 import type { getDictionary } from '@/utils/get-dictionary'
-import type { VerticalMenuContextProps } from '@menu-package/components/vertical-menu/Menu'
-
-// Component Imports from @menu-package
-import HorizontalNav, { Menu, SubMenu, MenuItem } from '@menu-package/horizontal-menu'
+import type { VerticalMenuContextProps } from '@menu/components/vertical-menu/Menu'
 
 // Component Imports
+import HorizontalNav, { Menu, SubMenu, MenuItem } from '@menu/horizontal-menu'
 import VerticalNavContent from './VerticalNavContent'
 
 // import { GenerateHorizontalMenu } from '@components/GenerateMenu'
 
 // Hook Imports
-import useVerticalNav from '@menu-package/hooks/useVerticalNav'
+import useVerticalNav from '@menu/hooks/useVerticalNav'
 import { useSettings } from '@core/hooks/useSettings'
 
 // Styled Component Imports
-import StyledHorizontalNavExpandIcon from '@menu-package/styles/horizontal/StyledHorizontalNavExpandIcon'
-import StyledVerticalNavExpandIcon from '@menu-package/styles/vertical/StyledVerticalNavExpandIcon'
+import StyledHorizontalNavExpandIcon from '@menu/styles/horizontal/StyledHorizontalNavExpandIcon'
+import StyledVerticalNavExpandIcon from '@menu/styles/vertical/StyledVerticalNavExpandIcon'
 
 // Style Imports
 import verticalNavigationCustomStyles from '@core/styles/vertical/navigationCustomStyles'

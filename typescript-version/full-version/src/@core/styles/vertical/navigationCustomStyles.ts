@@ -2,10 +2,10 @@
 import type { Theme } from '@mui/material/styles'
 
 // Type Imports
-import type { VerticalNavState } from '@menu-package/contexts/verticalNavContext'
+import type { VerticalNavState } from '@menu/contexts/verticalNavContext'
 
 // Util Imports
-import { menuClasses, verticalNavClasses } from '@menu-package/utils/menuClasses'
+import { menuClasses, verticalNavClasses } from '@menu/utils/menuClasses'
 
 const navigationCustomStyles = (verticalNavOptions: VerticalNavState, theme: Theme) => {
   const { isCollapsed, isHovered, collapsedWidth, transitionDuration } = verticalNavOptions

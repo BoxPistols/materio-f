@@ -7,19 +7,18 @@ import { useRef } from 'react'
 import { styled, useColorScheme, useTheme } from '@mui/material/styles'
 
 // Type Imports
+import Logo from '@components/layout/shared/Logo'
+
 import type { getDictionary } from '@/utils/get-dictionary'
 import type { Settings } from '@core/contexts/settingsContext'
 import type { Mode, Skin, SystemMode } from '@core/types'
 
-// Component Imports from @menu-package
-import VerticalNav, { NavHeader, NavCollapseIcons } from '@menu-package/vertical-menu'
-
 // Component Imports
-import Logo from '@components/layout/shared/Logo'
+import VerticalNav, { NavHeader, NavCollapseIcons } from '@menu/vertical-menu'
 import VerticalMenu from './VerticalMenu'
 
 // Hook Imports
-import useVerticalNav from '@menu-package/hooks/useVerticalNav'
+import useVerticalNav from '@menu/hooks/useVerticalNav'
 import { useSettings } from '@core/hooks/useSettings'
 
 // Style Imports

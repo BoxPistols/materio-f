@@ -12,20 +12,19 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // Type Imports
 import type { getDictionary } from '@/utils/get-dictionary'
-import type { VerticalMenuContextProps } from '@menu-package/components/vertical-menu/Menu'
-
-// Component Imports from @menu-package
-import { Menu, SubMenu, MenuItem, MenuSection } from '@menu-package/vertical-menu'
+import type { VerticalMenuContextProps } from '@menu/components/vertical-menu/Menu'
 
 // Component Imports
+import { Menu, SubMenu, MenuItem, MenuSection } from '@menu/vertical-menu'
+
 // import { GenerateVerticalMenu } from '@components/GenerateMenu'
 
 // Hook Imports
-import useVerticalNav from '@menu-package/hooks/useVerticalNav'
+import useVerticalNav from '@menu/hooks/useVerticalNav'
 import { useSettings } from '@core/hooks/useSettings'
 
 // Styled Component Imports
-import StyledVerticalNavExpandIcon from '@menu-package/styles/vertical/StyledVerticalNavExpandIcon'
+import StyledVerticalNavExpandIcon from '@menu/styles/vertical/StyledVerticalNavExpandIcon'
 
 // Style Imports
 import menuItemStyles from '@core/styles/vertical/menuItemStyles'
