@@ -110,9 +110,11 @@ const FAQ = ({ faqData, searchValue }: props) => {
       </Grid>
     </TabContext>
   ) : (
-    <div className='flex justify-center items-center'>
+    <div className='flex justify-center items-center gap-2'>
       <i className='ri-error-warning-line' />
-      <Typography color='text.primary'>No results found</Typography>
+      <Typography variant='h4' color='text.primary'>
+        No results found!!
+      </Typography>
     </div>
   )
 }
