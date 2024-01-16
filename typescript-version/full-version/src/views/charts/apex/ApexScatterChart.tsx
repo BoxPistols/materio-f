@@ -15,6 +15,7 @@ import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
+// Vars
 const scatterColors = {
   series1: '#ff9f43',
   series2: '#7367f0',
@@ -80,8 +81,8 @@ const ApexScatterChart = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const divider = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.12)`)
   const textDisabled = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`)
 

@@ -24,6 +24,7 @@ import DirectionalIcon from '@components/DirectionalIcon'
 // Styled Component Imports
 import StepperWrapper from '@core/styles/stepper'
 
+// Vars
 const steps = [
   {
     title: 'Cart',
@@ -112,6 +113,7 @@ const steps = [
   }
 ]
 
+// Styled Components
 const Stepper = styled(MuiStepper)<StepperProps>(({ theme }) => ({
   justifyContent: 'center',
   '& .MuiStep-root': {

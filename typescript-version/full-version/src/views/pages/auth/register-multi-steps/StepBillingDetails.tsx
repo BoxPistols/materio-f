@@ -20,6 +20,7 @@ type StepBillingDetailsProps = {
   activeStep: number
 }
 
+// Styled Components
 const Content = styled(Typography, {
   name: 'MuiCustomInputVertical',
   slot: 'content'
@@ -28,6 +29,7 @@ const Content = styled(Typography, {
   textAlign: 'center'
 }))
 
+// Vars
 const customInputData: CustomInputVerticalData[] = [
   {
     title: 'Basic',
@@ -99,6 +101,7 @@ const customInputData: CustomInputVerticalData[] = [
 ]
 
 const StepBillingDetails = ({ handlePrev, activeStep }: StepBillingDetailsProps) => {
+  // Vars
   const initialSelectedOption: string = customInputData.filter(item => item.isSelected)[
     customInputData.filter(item => item.isSelected).length - 1
   ].value

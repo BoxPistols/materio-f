@@ -52,7 +52,7 @@ import CustomAvatar from '@core/components/mui/Avatar'
 // Util Imports
 import { getInitials } from '@/utils/get-initials'
 
-// Styles Imports
+// Style Imports
 import tableStyles from '@core/styles/table.module.css'
 
 declare module '@tanstack/table-core' {
@@ -76,6 +76,7 @@ type UserStatusType = {
   [key: string]: ThemeColor
 }
 
+// Styled Components
 const Icon = styled('i')({})
 
 const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
@@ -101,6 +102,7 @@ const DebouncedInput = ({
   onChange: (value: string | number) => void
   debounce?: number
 } & Omit<TextFieldProps, 'onChange'>) => {
+  // States
   const [value, setValue] = useState(initialValue)
 
   useEffect(() => {
@@ -119,6 +121,7 @@ const DebouncedInput = ({
   return <TextField {...props} value={value} onChange={e => setValue(e.target.value)} size='small' />
 }
 
+// Vars
 const userRoleObj: UserRoleType = {
   admin: { icon: 'ri-vip-crown-line', color: 'error' },
   author: { icon: 'ri-computer-line', color: 'warning' },
@@ -133,6 +136,9 @@ const userStatusObj: UserStatusType = {
   inactive: 'secondary'
 }
 
+// Column Definitions
+const columnHelper = createColumnHelper<UsersTypeWithAction>()
+
 const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
   // States
   const [addUserOpen, setAddUserOpen] = useState(false)
@@ -143,22 +149,6 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
 
   // Hooks
   const { lang: locale } = useParams()
-
-  const getAvatar = (params: Pick<UsersType, 'avatar' | 'fullName'>) => {
-    const { avatar, fullName } = params
-
-    if (avatar) {
-      return <CustomAvatar src={avatar} skin='light' size={34} />
-    } else {
-      return (
-        <CustomAvatar skin='light' size={34}>
-          {getInitials(fullName as string)}
-        </CustomAvatar>
-      )
-    }
-  }
-
-  const columnHelper = createColumnHelper<UsersTypeWithAction>()
 
   const columns = useMemo<ColumnDef<UsersTypeWithAction, any>[]>(
     () => [
@@ -302,6 +292,20 @@ const UserListTable = ({ tableData }: { tableData?: UsersType[] }) => {
     getFacetedUniqueValues: getFacetedUniqueValues(),
     getFacetedMinMaxValues: getFacetedMinMaxValues()
   })
+
+  const getAvatar = (params: Pick<UsersType, 'avatar' | 'fullName'>) => {
+    const { avatar, fullName } = params
+
+    if (avatar) {
+      return <CustomAvatar src={avatar} skin='light' size={34} />
+    } else {
+      return (
+        <CustomAvatar skin='light' size={34}>
+          {getInitials(fullName as string)}
+        </CustomAvatar>
+      )
+    }
+  }
 
   return (
     <>

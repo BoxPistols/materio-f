@@ -34,6 +34,7 @@ const Footer = (props: Props) => {
   const { settings } = useSettings()
   const theme = useTheme()
 
+  // Vars
   const { footerContentWidth } = settings
 
   const footerDetached = themeConfig.footer.detached === true

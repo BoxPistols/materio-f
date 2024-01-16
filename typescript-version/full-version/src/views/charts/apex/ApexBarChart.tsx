@@ -20,8 +20,8 @@ const ApexBarChart = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const divider = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.12)`)
   const disabledText = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`)
 

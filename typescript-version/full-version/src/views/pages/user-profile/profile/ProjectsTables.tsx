@@ -62,6 +62,9 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
   return itemRank.passed
 }
 
+// Column Definitions
+const columnHelper = createColumnHelper<ProjectTableRowType>()
+
 const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] }) => {
   // States
   const [rowSelection, setRowSelection] = useState({})
@@ -69,8 +72,7 @@ const ProjectTables = ({ projectTable }: { projectTable?: ProjectTableRowType[] 
   const [data, setData] = useState(...[projectTable])
   const [globalFilter, setGlobalFilter] = useState('')
 
-  const columnHelper = createColumnHelper<ProjectTableRowType>()
-
+  // Hooks
   const columns = useMemo<ColumnDef<ProjectTableRowType, any>[]>(
     () => [
       {

@@ -19,6 +19,7 @@ import type { TimelineProps } from '@mui/lab/Timeline'
 // Component Imports
 import CustomAvatar from '@core/components/mui/Avatar'
 
+// Styled Components
 const Timeline = styled(MuiTimeline)<TimelineProps>({
   '& .MuiTimelineItem-root': {
     '&:before': {

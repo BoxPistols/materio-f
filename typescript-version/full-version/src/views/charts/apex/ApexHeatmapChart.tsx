@@ -38,6 +38,7 @@ const generateDataHeat = (count: number, yrange: YRange) => {
   return series
 }
 
+// Vars
 const series = [
   {
     name: 'Sun',
@@ -74,6 +75,7 @@ const ApexHeatmapChart = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
 
   const options: ApexOptions = {

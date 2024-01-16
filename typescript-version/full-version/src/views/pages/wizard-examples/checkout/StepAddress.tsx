@@ -28,6 +28,7 @@ import CustomInputVertical from '@core/components/custom-inputs/Vertical'
 import AddEditAddress from '@components/dialogs/add-edit-address'
 import OpenDialogOnElementClick from '@components/dialogs/OpenDialogOnElementClick'
 
+// Styled Components
 const HorizontalContent = styled(Typography, {
   name: 'MuiCustomInputHorizontal',
   slot: 'content'
@@ -40,6 +41,7 @@ const VerticalContent = styled(Typography, {
   textAlign: 'center'
 })
 
+// Vars
 const data: CustomInputHorizontalData[] = [
   {
     title: 'John Doe (Default)',
@@ -134,18 +136,19 @@ const dataIcons: CustomInputVerticalData[] = [
 ]
 
 const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
+  // Vars
   const initialSelectedOption: string = data.filter(item => item.isSelected)[
     data.filter(item => item.isSelected).length - 1
   ].value
-
-  // States
-  const [selectedOption, setSelectedOption] = useState<string>(initialSelectedOption)
-  const [selectedSpeed, setSelectedSpeed] = useState<string>('standard')
 
   const buttonProps: ButtonProps = {
     variant: 'outlined',
     children: 'Add New Address'
   }
+
+  // States
+  const [selectedOption, setSelectedOption] = useState<string>(initialSelectedOption)
+  const [selectedSpeed, setSelectedSpeed] = useState<string>('standard')
 
   const handleOptionChange = (prop: string | ChangeEvent<HTMLInputElement>) => {
     if (typeof prop === 'string') {

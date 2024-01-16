@@ -31,6 +31,7 @@ type Props = {
   steps: { title: string; subtitle: string }[]
 }
 
+// Vars
 const data: CustomInputVerticalData[] = [
   {
     title: 'Percentage',
@@ -56,6 +57,7 @@ const data: CustomInputVerticalData[] = [
 const regionArray = ['Asia', 'Europe', 'Africa', 'Australia', 'North America', 'South America']
 
 const StepDealType = ({ activeStep, handleNext, handlePrev, steps }: Props) => {
+  // Vars
   const initialSelectedOption: string = data.filter(item => item.isSelected)[
     data.filter(item => item.isSelected).length - 1
   ].value

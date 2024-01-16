@@ -15,6 +15,7 @@ import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
+// Vars
 const radialBarColors = {
   series1: '#fdd835',
   series2: '#32baff',
@@ -28,8 +29,8 @@ const ApexRadialBarChart = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const textSecondary = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.7)`)
 
   const options: ApexOptions = {

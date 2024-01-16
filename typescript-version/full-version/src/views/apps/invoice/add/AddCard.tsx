@@ -32,11 +32,11 @@ import type { FormDataType } from './AddCustomerDrawer'
 import AddCustomerDrawer, { initialFormData } from './AddCustomerDrawer'
 import Logo from '@core/svg/Logo'
 
-// Styled Component Imports
-import AppReactDatepicker from '@/libs/styles/AppReactDatepicker'
-
 // Config Imports
 import themeConfig from '@configs/themeConfig'
+
+// Styled Component Imports
+import AppReactDatepicker from '@/libs/styles/AppReactDatepicker'
 
 const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   // States

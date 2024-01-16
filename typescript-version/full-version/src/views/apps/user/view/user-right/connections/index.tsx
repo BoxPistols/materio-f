@@ -27,6 +27,7 @@ type SocialAccountsType = {
   href?: string
 }
 
+// Vars
 const connectedAccountsArr: ConnectedAccountsType[] = [
   {
     checked: true,

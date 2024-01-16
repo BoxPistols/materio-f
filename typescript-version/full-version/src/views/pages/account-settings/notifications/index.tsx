@@ -13,7 +13,7 @@ import Button from '@mui/material/Button'
 import Link from '@components/Link'
 import Form from '@components/Form'
 
-// Styles Imports
+// Style Imports
 import tableStyles from '@core/styles/table.module.css'
 
 type TableDataType = {
@@ -23,6 +23,7 @@ type TableDataType = {
   browser: boolean
 }
 
+// Vars
 const tableData: TableDataType[] = [
   {
     app: false,

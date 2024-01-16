@@ -1,7 +1,7 @@
 'use client'
 
 // React Imports
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import type { MouseEvent } from 'react'
 
 // Next Imports
@@ -81,6 +81,7 @@ const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
   return itemRank.passed
 }
 
+// Vars
 const invoiceStatusObj: InvoiceStatusObj = {
   Sent: { color: 'secondary', icon: 'ri-send-plane-2-line' },
   Paid: { color: 'success', icon: 'ri-check-line' },
@@ -90,6 +91,9 @@ const invoiceStatusObj: InvoiceStatusObj = {
   Downloaded: { color: 'info', icon: 'ri-arrow-down-line' }
 }
 
+// Column Definitions
+const columnHelper = createColumnHelper<InvoiceTypeWithAction>()
+
 const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   // States
   const [rowSelection, setRowSelection] = useState({})
@@ -98,20 +102,11 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   const [globalFilter, setGlobalFilter] = useState('')
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
-  // Hooks
-  const { lang: locale } = useParams()
-
+  // Vars
   const open = Boolean(anchorEl)
 
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
-  const columnHelper = createColumnHelper<InvoiceTypeWithAction>()
+  // Hooks
+  const { lang: locale } = useParams()
 
   const columns = useMemo<ColumnDef<InvoiceTypeWithAction, any>[]>(
     () => [
@@ -233,6 +228,25 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
     getFacetedUniqueValues: getFacetedUniqueValues(),
     getFacetedMinMaxValues: getFacetedMinMaxValues()
   })
+
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  useEffect(() => {
+    const filteredData = invoiceData?.filter(invoice => {
+      if (status && invoice.invoiceStatus.toLowerCase().replace(/\s+/g, '-') !== status) return false
+
+      return true
+    })
+
+    setData(filteredData)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, invoiceData, setData])
 
   return (
     <Card>

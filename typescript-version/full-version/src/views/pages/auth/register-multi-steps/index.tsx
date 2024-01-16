@@ -27,6 +27,7 @@ import StepBillingDetails from './StepBillingDetails'
 import StepperCustomDot from '@views/forms/form-wizard/StepperCustomDot'
 import Logo from '@core/svg/Logo'
 
+// Vars
 const steps = [
   {
     title: 'Account',

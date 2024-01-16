@@ -64,9 +64,9 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
   const { settings } = useSettings()
   const params = useParams()
 
+  // Vars
   const { skin } = settings
   const { transitionDuration } = verticalNavOptions
-
   const { lang: locale, id } = params
 
   return (

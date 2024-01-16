@@ -13,6 +13,7 @@ import type { Theme } from '@mui/material/styles'
 // Third-party Imports
 import classnames from 'classnames'
 
+// Vars
 const data = [
   {
     title: 24,

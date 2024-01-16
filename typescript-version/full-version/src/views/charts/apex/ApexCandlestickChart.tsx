@@ -15,6 +15,7 @@ import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
+// Vars
 const candlestickColors = {
   series1: '#28c76f',
   series2: '#ea5455'
@@ -88,8 +89,8 @@ const ApexCandlestickChart = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const divider = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.12)`)
   const disabledText = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`)
 

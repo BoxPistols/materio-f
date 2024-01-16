@@ -32,6 +32,7 @@ type FormDataType = {
   paymentNote: string
 }
 
+// Vars
 const initialData: FormDataType = {
   paymentDate: new Date(),
   paymentMethod: 'select-method',

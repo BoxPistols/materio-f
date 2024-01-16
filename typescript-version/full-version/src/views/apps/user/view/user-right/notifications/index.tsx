@@ -10,7 +10,7 @@ import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
 
-// Styles Imports
+// Style Imports
 import tableStyles from '@core/styles/table.module.css'
 
 type TableDataType = {
@@ -20,6 +20,7 @@ type TableDataType = {
   browser: boolean
 }
 
+// Vars
 const tableData: TableDataType[] = [
   {
     app: false,

@@ -15,6 +15,7 @@ import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
+// Vars
 const series = [
   {
     data: [280, 200, 220, 180, 270, 250, 70, 90, 200, 150, 160, 100, 150, 100, 50]
@@ -26,8 +27,8 @@ const ApexLineChart = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const divider = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.12)`)
   const disabledText = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`)
 

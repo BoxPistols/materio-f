@@ -40,6 +40,7 @@ const Navbar = (props: Props) => {
     disableHysteresis: true
   })
 
+  // Vars
   const { navbarContentWidth } = settings
 
   const headerFixed = themeConfig.navbar.type === 'fixed'

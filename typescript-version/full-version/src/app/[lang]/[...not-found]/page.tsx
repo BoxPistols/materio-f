@@ -12,6 +12,7 @@ import { i18n } from '@configs/i18n'
 import { getServerMode } from '@core/server/actions'
 
 const NotFoundPage = ({ params }: { params: { lang: Locale } }) => {
+  // Vars
   const direction = i18n.langDirection[params.lang]
   const mode = getServerMode()
 

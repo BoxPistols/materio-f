@@ -23,6 +23,7 @@ import StepReview from './StepReview'
 import StepperWrapper from '@core/styles/stepper'
 import StepperCustomDot from '@views/forms/form-wizard/StepperCustomDot'
 
+// Vars
 const steps = [
   {
     title: 'Deal Type',

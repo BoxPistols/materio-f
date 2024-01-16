@@ -17,6 +17,7 @@ type Props = ToastContainerProps & {
   boxProps?: BoxProps
 }
 
+// Styled Components
 const ToastifyWrapper = styled(Box)<BoxProps>(({ theme }) => {
   // Hooks
   const { settings } = useSettings()

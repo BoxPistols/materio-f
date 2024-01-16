@@ -15,6 +15,7 @@ import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
+// Vars
 const donutColors = {
   series1: '#fdd835',
   series2: '#00d4bd',
@@ -28,8 +29,8 @@ const ApexDonutChart = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const textSecondary = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.7)`)
 
   const options: ApexOptions = {

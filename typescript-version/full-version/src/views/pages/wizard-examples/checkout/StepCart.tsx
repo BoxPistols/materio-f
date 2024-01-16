@@ -22,6 +22,7 @@ import Fade from '@mui/material/Fade'
 // Component Imports
 import DirectionalIcon from '@components/DirectionalIcon'
 
+// Vars
 const products = [
   {
     imgSrc: '/images/pages/google-home.png',

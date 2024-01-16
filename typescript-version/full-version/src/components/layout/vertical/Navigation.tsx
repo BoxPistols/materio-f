@@ -7,8 +7,6 @@ import { useRef } from 'react'
 import { styled, useColorScheme, useTheme } from '@mui/material/styles'
 
 // Type Imports
-import Logo from '@components/layout/shared/Logo'
-
 import type { getDictionary } from '@/utils/get-dictionary'
 import type { Settings } from '@core/contexts/settingsContext'
 import type { Mode, Skin, SystemMode } from '@core/types'
@@ -16,6 +14,7 @@ import type { Mode, Skin, SystemMode } from '@core/types'
 // Component Imports
 import VerticalNav, { NavHeader, NavCollapseIcons } from '@menu/vertical-menu'
 import VerticalMenu from './VerticalMenu'
+import Logo from '@components/layout/shared/Logo'
 
 // Hook Imports
 import useVerticalNav from '@menu/hooks/useVerticalNav'
@@ -56,16 +55,16 @@ const Navigation = (props: Props) => {
 
   // Hooks
   const verticalNavOptions = useVerticalNav()
-  const { settings } = useSettings()
+  const { updateSettings, settings } = useSettings()
   const { mode: muiMode, systemMode: muiSystemMode } = useColorScheme()
   const theme = useTheme()
 
   // Refs
   const shadowRef = useRef(null)
 
+  // Vars
   const { isCollapsed, isHovered, isBreakpointReached } = verticalNavOptions
   const isServer = typeof window === 'undefined'
-
   let isSemiDark, isDark, isSkinBordered
 
   if (isServer) {
@@ -117,6 +116,7 @@ const Navigation = (props: Props) => {
             unlockedIcon={<i className='ri-checkbox-blank-circle-line text-xl' />}
             closeIcon={<i className='ri-close-line text-xl' />}
             className='text-textSecondary'
+            onClick={() => updateSettings({ layout: !isCollapsed ? 'collapsed' : 'vertical' })}
           />
         )}
       </NavHeader>

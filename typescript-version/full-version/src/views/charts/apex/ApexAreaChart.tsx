@@ -15,6 +15,7 @@ import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
+// Vars
 const areaColors = {
   series1: '#ab7efd',
   series2: '#b992fe',
@@ -41,8 +42,8 @@ const ApexAreaChart = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const divider = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.12)`)
   const textDisabled = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`)
 

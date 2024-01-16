@@ -100,6 +100,7 @@ const DebouncedInput = ({
   onChange: (value: string | number) => void
   debounce?: number
 } & Omit<TextFieldProps, 'onChange'>) => {
+  // States
   const [value, setValue] = useState(initialValue)
 
   useEffect(() => {
@@ -118,6 +119,7 @@ const DebouncedInput = ({
   return <TextField {...props} value={value} onChange={e => setValue(e.target.value)} size='small' />
 }
 
+// Vars
 const invoiceStatusObj: InvoiceStatusObj = {
   Sent: { color: 'secondary', icon: 'ri-send-plane-2-line' },
   Paid: { color: 'success', icon: 'ri-check-line' },
@@ -126,6 +128,9 @@ const invoiceStatusObj: InvoiceStatusObj = {
   'Past Due': { color: 'error', icon: 'ri-information-line' },
   Downloaded: { color: 'info', icon: 'ri-arrow-down-line' }
 }
+
+// Column Definitions
+const columnHelper = createColumnHelper<InvoiceTypeWithAction>()
 
 const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   // States
@@ -137,28 +142,6 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
 
   // Hooks
   const { lang: locale } = useParams()
-
-  useEffect(() => {
-    const filteredData = invoiceData?.filter(invoice => {
-      if (status && invoice.invoiceStatus.toLowerCase().replace(/\s+/g, '-') !== status) return false
-
-      return true
-    })
-
-    setData(filteredData)
-  }, [status, invoiceData, setData])
-
-  const getAvatar = (params: Pick<InvoiceType, 'avatar' | 'name'>) => {
-    const { avatar, name } = params
-
-    if (avatar) {
-      return <Avatar src={avatar} />
-    } else {
-      return <Avatar>{getInitials(name as string)}</Avatar>
-    }
-  }
-
-  const columnHelper = createColumnHelper<InvoiceTypeWithAction>()
 
   const columns = useMemo<ColumnDef<InvoiceTypeWithAction, any>[]>(
     () => [
@@ -326,6 +309,26 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
     getFacetedUniqueValues: getFacetedUniqueValues(),
     getFacetedMinMaxValues: getFacetedMinMaxValues()
   })
+
+  const getAvatar = (params: Pick<InvoiceType, 'avatar' | 'name'>) => {
+    const { avatar, name } = params
+
+    if (avatar) {
+      return <Avatar src={avatar} />
+    } else {
+      return <Avatar>{getInitials(name as string)}</Avatar>
+    }
+  }
+
+  useEffect(() => {
+    const filteredData = invoiceData?.filter(invoice => {
+      if (status && invoice.invoiceStatus.toLowerCase().replace(/\s+/g, '-') !== status) return false
+
+      return true
+    })
+
+    setData(filteredData)
+  }, [status, invoiceData, setData])
 
   return (
     <Card>

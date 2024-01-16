@@ -19,6 +19,7 @@ export async function GET(request: NextRequest) {
       ? events.filter(event => selectedCalendars.includes(event.extendedProps.calendar as CalendarFiltersType))
       : events
 
+    // Vars
     const json_response = {
       status: 'success',
       results: filtered_events.length,
@@ -36,16 +37,17 @@ export async function GET(request: NextRequest) {
 // Add new event
 export async function POST(request: NextRequest) {
   try {
+    // Vars
     const event = await request.json()
-
-    // Generate new event id
-    event['id'] = events[events.length - 1].id + 1
 
     const json_response = {
       status: 'success',
       results: events.length,
       event
     }
+
+    // Generate new event id
+    event['id'] = events[events.length - 1].id + 1
 
     // return new event
     return NextResponse.json(json_response)
@@ -59,7 +61,14 @@ export async function POST(request: NextRequest) {
 // Update event
 export async function PUT(request: NextRequest) {
   try {
+    // Vars
     const event = await request.json()
+
+    const json_response = {
+      status: 'success',
+      results: events.length,
+      event
+    }
 
     // console.log(event)
 
@@ -74,12 +83,6 @@ export async function PUT(request: NextRequest) {
     // update event
     events[index] = event
 
-    const json_response = {
-      status: 'success',
-      results: events.length,
-      event
-    }
-
     // return updated event
     return NextResponse.json(json_response)
   } catch (error) {
@@ -92,7 +95,14 @@ export async function PUT(request: NextRequest) {
 // Delete event
 export async function DELETE(request: NextRequest) {
   try {
+    // Vars
     const event = await request.json()
+
+    const json_response = {
+      status: 'success',
+      results: events.length,
+      event
+    }
 
     // check if event id is present
     if (!event.id) {
@@ -104,12 +114,6 @@ export async function DELETE(request: NextRequest) {
 
     // remove event
     events.splice(index, 1)
-
-    const json_response = {
-      status: 'success',
-      results: events.length,
-      event
-    }
 
     // return deleted event
     return NextResponse.json(json_response)

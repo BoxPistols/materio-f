@@ -59,6 +59,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
 
   const { transitionDuration } = verticalNavOptions
 
+  // Vars
   const { lang: locale, id } = params
 
   const ScrollWrapper = isBreakpointReached ? 'div' : PerfectScrollbar
