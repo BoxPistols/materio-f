@@ -17,6 +17,7 @@ type DataType = {
   subtitle: string
 }
 
+// Vars
 const depositData: DataType[] = [
   {
     amount: '+$4,650',

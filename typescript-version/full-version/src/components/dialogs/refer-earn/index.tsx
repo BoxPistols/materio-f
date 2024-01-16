@@ -37,6 +37,7 @@ type Options = {
   subtitle?: string
 }
 
+// Vars
 const options: Options[] = [
   {
     icon: 'ri-send-plane-2-line',

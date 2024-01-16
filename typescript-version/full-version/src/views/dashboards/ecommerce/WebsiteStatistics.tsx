@@ -15,10 +15,12 @@ import type { ThemeColor } from '@core/types'
 
 // Components Imports
 import OptionMenu from '@core/components/option-menu'
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 // Styles Imports
 import tableStyles from '@core/styles/table.module.css'
+
+// Styled Components Imports
+import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 type DataType = {
   title: string
@@ -28,6 +30,7 @@ type DataType = {
   trendNumber: string
 }
 
+// Vars
 const data: DataType[] = [
   {
     sales: '86,471',
@@ -60,6 +63,7 @@ const data: DataType[] = [
 ]
 
 const WebsiteStatistics = () => {
+  // Vars
   const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,

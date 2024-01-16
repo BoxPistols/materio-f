@@ -18,10 +18,12 @@ import type { ThemeColor } from '@core/types'
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
 import CustomAvatar from '@core/components/mui/Avatar'
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
+
+// Styled Components Imports
+import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 interface DataType {
   title: string
@@ -30,6 +32,7 @@ interface DataType {
   avatarColor: ThemeColor
 }
 
+// Vars
 const data: DataType[] = [
   {
     title: '$48,568.20',
@@ -71,8 +74,8 @@ const ProfitStackedBar = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const disabledText = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`)
 
   const options: ApexOptions = {

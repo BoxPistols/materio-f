@@ -24,6 +24,7 @@ type DataType = {
   height: number
 }
 
+// Vars
 const data: DataType[] = [
   {
     avatarSrc: '/images/cards/paypal.png',

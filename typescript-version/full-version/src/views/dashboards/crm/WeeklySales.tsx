@@ -13,15 +13,18 @@ import type { ApexOptions } from 'apexcharts'
 // Components Imports
 import CustomAvatar from '@core/components/mui/Avatar'
 import OptionsMenu from '@core/components/option-menu'
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
+
+// Styled Components Imports
+import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 const WeeklySales = () => {
   // Hooks
   const theme = useTheme()
 
+  // Vars
   const primaryColorWithOpacity = rgbaToHex(`rgb(${theme.palette.primary.mainChannel} / 0.1)`)
 
   const options: ApexOptions = {

@@ -9,9 +9,10 @@ import { useTheme } from '@mui/material/styles'
 // Third-party Imports
 import type { ApexOptions } from 'apexcharts'
 
-// Components Imports
+// Styled Components Imports
 import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
+// Vars
 const series = [
   {
     data: [30, 60, 36, 68]
@@ -21,6 +22,8 @@ const series = [
 const LineChartWithShadow = () => {
   // Hooks
   const theme = useTheme()
+
+  // Vars
   const primaryColor = theme.palette.primary.main
 
   const options: ApexOptions = {

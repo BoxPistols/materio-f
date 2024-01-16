@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid'
 import type { CardStatsVerticalProps } from '@/types/pages/widgetTypes'
 
 // Components Imports
-import CardStatVertical from '@/components/card-statistics/Vertical'
+import CardStatVertical from '@components/card-statistics/Vertical'
 
 const Vertical = ({ data }: { data: CardStatsVerticalProps[] }) => {
   if (data) {

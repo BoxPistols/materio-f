@@ -32,7 +32,6 @@ const userData = {
 }
 
 const UserDetails = () => {
-  // Vars
   const buttonProps = (children: string, color: ThemeColor, variant: ButtonProps['variant']): ButtonProps => ({
     children,
     color,

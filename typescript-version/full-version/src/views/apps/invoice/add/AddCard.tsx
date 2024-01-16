@@ -47,7 +47,7 @@ const AddAction = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   const [dueDate, setDueDate] = useState<Date | null | undefined>(null)
   const [formData, setFormData] = useState<FormDataType>(initialFormData)
 
-  // Hook Imports
+  // Hooks
   const isBelowMdScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'))
   const isBelowSmScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 

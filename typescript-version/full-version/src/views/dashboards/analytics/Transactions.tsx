@@ -19,6 +19,7 @@ type DataType = {
   color: ThemeColor
 }
 
+// Vars
 const data: DataType[] = [
   {
     stats: '245k',

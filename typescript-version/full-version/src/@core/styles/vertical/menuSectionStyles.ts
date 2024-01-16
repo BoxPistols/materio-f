@@ -9,6 +9,7 @@ import type { MenuProps } from '@menu/vertical-menu'
 import { menuClasses } from '@menu/utils/menuClasses'
 
 const menuSectionStyles = (verticalNavOptions: VerticalNavState, theme: Theme): MenuProps['menuSectionStyles'] => {
+  // Vars
   const { isCollapsed, isHovered, collapsedWidth } = verticalNavOptions
 
   const collapsedNotHovered = isCollapsed && !isHovered

@@ -23,6 +23,7 @@ type TableBodyRowType = {
   status: string
 }
 
+// Vars
 const rowsData: TableBodyRowType[] = [
   {
     avatarSrc: '/images/avatars/1.png',

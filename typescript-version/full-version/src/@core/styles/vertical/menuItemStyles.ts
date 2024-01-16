@@ -11,6 +11,7 @@ import type { Settings } from '@core/contexts/settingsContext'
 import { menuClasses } from '@menu/utils/menuClasses'
 
 const menuItemStyles = (verticalNavOptions: VerticalNavState, theme: Theme, settings: Settings): MenuItemStyles => {
+  // Vars
   const { isCollapsed, isHovered, collapsedWidth, isPopoutWhenCollapsed, transitionDuration } = verticalNavOptions
 
   const popoutCollapsed = isPopoutWhenCollapsed && isCollapsed

@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid'
 import type { CardStatsHorizontalProps } from '@/types/pages/widgetTypes'
 
 // Components Imports
-import CardStatHorizontal from '@/components/card-statistics/Horizontal'
+import CardStatHorizontal from '@components/card-statistics/Horizontal'
 
 const Horizontal = ({ data }: { data: CardStatsHorizontalProps[] }) => {
   if (data) {

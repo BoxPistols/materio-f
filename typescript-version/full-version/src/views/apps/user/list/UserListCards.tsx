@@ -2,11 +2,12 @@
 import Grid from '@mui/material/Grid'
 
 // Type Imports
-import type { UserDataType } from '@/components/card-statistics/HorizontalWithSubtitle'
+import type { UserDataType } from '@components/card-statistics/HorizontalWithSubtitle'
 
 // Component Imports
-import HorizontalWithSubtitle from '@/components/card-statistics/HorizontalWithSubtitle'
+import HorizontalWithSubtitle from '@components/card-statistics/HorizontalWithSubtitle'
 
+// Vars
 const data: UserDataType[] = [
   {
     title: 'Session',

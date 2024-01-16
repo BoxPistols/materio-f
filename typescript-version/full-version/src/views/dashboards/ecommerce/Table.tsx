@@ -36,23 +36,10 @@ type InvoiceStatusObj = {
   }
 }
 
-const getAvatar = (params: Pick<InvoiceType, 'avatar' | 'name'>) => {
-  const { avatar, name } = params
-
-  if (avatar) {
-    return <CustomAvatar src={avatar} skin='light' size={34} />
-  } else {
-    return (
-      <CustomAvatar skin='light' size={34}>
-        {getInitials(name as string)}
-      </CustomAvatar>
-    )
-  }
-}
-
 // Column Definitions
 const columnHelper = createColumnHelper<InvoiceType>()
 
+// Vars
 const invoiceStatusObj: InvoiceStatusObj = {
   Sent: { color: 'secondary', icon: 'ri-send-plane-2-line' },
   Paid: { color: 'success', icon: 'ri-check-line' },
@@ -130,6 +117,20 @@ const columns = [
     }
   })
 ]
+
+const getAvatar = (params: Pick<InvoiceType, 'avatar' | 'name'>) => {
+  const { avatar, name } = params
+
+  if (avatar) {
+    return <CustomAvatar src={avatar} skin='light' size={34} />
+  } else {
+    return (
+      <CustomAvatar skin='light' size={34}>
+        {getInitials(name as string)}
+      </CustomAvatar>
+    )
+  }
+}
 
 const DashboardTables = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   // States

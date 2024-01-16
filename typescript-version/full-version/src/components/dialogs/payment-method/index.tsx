@@ -26,6 +26,7 @@ type CardList = {
   cardType: string
 }
 
+// Vars
 const cardList: CardList[] = [
   {
     image: '/images/logos/visa.png',

@@ -29,6 +29,7 @@ type CardList = {
   providerName: string
 }
 
+// Vars
 const cardList: CardList[] = [
   {
     images: [

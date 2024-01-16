@@ -8,6 +8,7 @@ import Chip from '@mui/material/Chip'
 import type { CardStatsCharacterProps } from '@/types/pages/widgetTypes'
 
 const CardStatWithImage = (props: CardStatsCharacterProps) => {
+  // Props
   const { title, src, stats, trendNumber, trend, chipText, chipColor } = props
 
   return (

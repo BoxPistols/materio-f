@@ -9,9 +9,10 @@ import { useTheme } from '@mui/material/styles'
 // Third-party Imports
 import type { ApexOptions } from 'apexcharts'
 
-// Components Imports
+// Styled Components Imports
 import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
+// Vars
 const series = [
   {
     name: '2022',
@@ -22,6 +23,8 @@ const series = [
 const DistributedColumnChart = () => {
   // Hooks
   const theme = useTheme()
+
+  // Vars
   const primaryColor = theme.palette.primary.main
   const errorColor = theme.palette.error.main
   const trackBgColor = theme.palette.customColors.trackBg

@@ -36,6 +36,7 @@ type BillingCardProps = {
   data?: BillingCardData
 }
 
+// Vars
 const initialCardData: BillingCardProps['data'] = {
   cardNumber: '',
   name: '',

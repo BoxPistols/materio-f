@@ -22,6 +22,11 @@ import type { Locale } from '@configs/i18n'
 // Hook Imports
 import { useSettings } from '@core/hooks/useSettings'
 
+type LanguageDataType = {
+  langCode: Locale
+  langName: string
+}
+
 const getLocalePath = (pathName: string, locale: string) => {
   if (!pathName) return '/'
   const segments = pathName.split('/')
@@ -31,11 +36,7 @@ const getLocalePath = (pathName: string, locale: string) => {
   return segments.join('/')
 }
 
-type LanguageDataType = {
-  langCode: Locale
-  langName: string
-}
-
+// Vars
 const languageData: LanguageDataType[] = [
   {
     langCode: 'en',

@@ -18,6 +18,7 @@ import CustomAvatar from '@core/components/mui/Avatar'
 import { useSettings } from '@core/hooks/useSettings'
 
 const CardStatHorizontal = (props: CardStatsHorizontalProps) => {
+  // Props
   const { title, stats, icon, color, trendNumber, trend } = props
 
   // Hooks

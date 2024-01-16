@@ -76,7 +76,6 @@ const AddEventSidebar = (props: AddEventSidebarType) => {
   // States
   const [values, setValues] = useState<DefaultStateType>(defaultState)
 
-  // Refs
   const PickersComponent = forwardRef(({ ...props }: PickerProps, ref) => {
     return (
       <TextField

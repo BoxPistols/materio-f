@@ -11,6 +11,7 @@ import type { ApexOptions } from 'apexcharts'
 // Styled Components Imports
 import ReactApexcharts from '@/libs/styles/AppReactApexCharts'
 
+// Vars
 const series = [
   {
     name: 'Subscribers',
@@ -21,6 +22,8 @@ const series = [
 const LineAreaChart = () => {
   // Hooks
   const theme = useTheme()
+
+  // Vars
   const successColor = theme.palette.success.main
 
   const options: ApexOptions = {

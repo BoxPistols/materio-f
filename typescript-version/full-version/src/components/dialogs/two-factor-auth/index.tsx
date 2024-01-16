@@ -28,6 +28,7 @@ type TwoFactorAuthProps = {
   setOpen: (open: boolean) => void
 }
 
+// Vars
 const data: CustomInputHorizontalData[] = [
   {
     title: (

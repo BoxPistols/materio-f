@@ -26,6 +26,9 @@ const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) =>
   const [secondDialog, setSecondDialog] = useState(false)
   const [userInput, setUserInput] = useState(false)
 
+  // Vars
+  const Wrapper = type === 'suspend-account' ? 'div' : Fragment
+
   const handleSecondDialogClose = () => {
     setSecondDialog(false)
     setOpen(false)
@@ -36,9 +39,6 @@ const ConfirmationDialog = ({ open, setOpen, type }: ConfirmationDialogProps) =>
     setSecondDialog(true)
     setOpen(false)
   }
-
-  // Vars
-  const Wrapper = type === 'suspend-account' ? 'div' : Fragment
 
   return (
     <>

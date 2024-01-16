@@ -11,6 +11,7 @@ import CustomAvatar from '@core/components/mui/Avatar'
 import OptionMenu from '@core/components/option-menu'
 
 const CardStatVertical = (props: CardStatsVerticalProps) => {
+  // Props
   const { title, stats, avatarIcon, avatarColor, trendNumber, trend, subtitle, avatarSkin, avatarSize, moreOptions } =
     props
 

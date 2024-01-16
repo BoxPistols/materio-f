@@ -141,6 +141,7 @@ const StepAddress = ({ handleNext }: { handleNext: () => void }) => {
     data.filter(item => item.isSelected).length - 1
   ].value
 
+  // Vars
   const buttonProps: ButtonProps = {
     variant: 'outlined',
     children: 'Add New Address'

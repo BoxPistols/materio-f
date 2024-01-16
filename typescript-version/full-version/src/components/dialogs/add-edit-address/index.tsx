@@ -47,6 +47,7 @@ type AddEditAddressProps = {
   data?: AddEditAddressData
 }
 
+// Vars
 const countries = ['Select Country', 'France', 'Russia', 'China', 'UK', 'US']
 
 const initialAddressData: AddEditAddressProps['data'] = {
@@ -61,6 +62,7 @@ const initialAddressData: AddEditAddressProps['data'] = {
   zipCode: ''
 }
 
+// Styled Components
 const Title = styled(Typography, {
   name: 'MuiCustomInputVertical',
   slot: 'title'

@@ -40,14 +40,13 @@ const Illustrations = (props: IllustrationsProp) => {
   // Props
   const { image1, image2, maskImg, mode } = props
 
-  // Hook
-  const theme = useTheme()
-
   // Vars
-  const hidden = useMediaQuery(theme.breakpoints.down('md'))
   const darkImg = '/images/pages/misc-mask-dark.png'
   const lightImg = '/images/pages/misc-mask-light.png'
 
+  // Hook
+  const theme = useTheme()
+  const hidden = useMediaQuery(theme.breakpoints.down('md'))
   const maskBackground = useImageVariant(mode as Mode, lightImg, darkImg)
 
   function isImageObj(obj: any): obj is ImageObj {

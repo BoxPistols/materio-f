@@ -87,6 +87,9 @@ const CreateApp = ({ open, setOpen }: CreateAppProps) => {
   // States
   const [activeStep, setActiveStep] = useState(0)
 
+  // Vars
+  const isLastStep = activeStep === steps.length - 1
+
   const handleClose = () => {
     setOpen(false)
     setActiveStep(0)
@@ -95,9 +98,6 @@ const CreateApp = ({ open, setOpen }: CreateAppProps) => {
   const handleStep = (step: number) => () => {
     setActiveStep(step)
   }
-
-  // Vars
-  const isLastStep = activeStep === steps.length - 1
 
   const handleNext = () => {
     if (!isLastStep) {

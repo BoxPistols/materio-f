@@ -43,13 +43,13 @@ const ThemeProvider = (props: Props) => {
   // Props
   const { children, direction, systemMode } = props
 
-  // Hooks
-  const { settings } = useSettings()
-  const isDark = useMedia('(prefers-color-scheme: dark)', false)
-
   // Vars
   const isServer = typeof window === 'undefined'
   let currentMode: SystemMode
+
+  // Hooks
+  const { settings } = useSettings()
+  const isDark = useMedia('(prefers-color-scheme: dark)', false)
 
   if (isServer) {
     currentMode = systemMode

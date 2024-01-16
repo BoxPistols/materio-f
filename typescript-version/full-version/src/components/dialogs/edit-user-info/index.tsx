@@ -40,6 +40,7 @@ type EditUserInfoProps = {
   data?: EditUserInfoData
 }
 
+// Vars
 const initialData: EditUserInfoProps['data'] = {
   firstName: 'Oliver',
   lastName: 'Queen',

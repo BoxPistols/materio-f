@@ -18,6 +18,19 @@ import interactionPlugin from '@fullcalendar/interaction'
 // Type Imports
 import type { AddEventType, CalendarColors, CalendarType } from '@/types/apps/calendarTypes'
 
+type CalenderProps = {
+  mdAbove: boolean
+  calendars: CalendarType
+  calendarApi: any
+  setCalendarApi: (val: any) => void
+  calendarsColor: CalendarColors
+  handleSelectEvent: (event: any) => void
+  handleUpdateEvent: (event: any) => void
+  handleLeftSidebarToggle: () => void
+  handleAddEventSidebarToggle: () => void
+}
+
+// Vars
 const blankEvent: AddEventType = {
   title: '',
   start: '',
@@ -29,18 +42,6 @@ const blankEvent: AddEventType = {
     guests: [],
     description: ''
   }
-}
-
-type CalenderProps = {
-  mdAbove: boolean
-  calendars: CalendarType
-  calendarApi: any
-  setCalendarApi: (val: any) => void
-  calendarsColor: CalendarColors
-  handleSelectEvent: (event: any) => void
-  handleUpdateEvent: (event: any) => void
-  handleLeftSidebarToggle: () => void
-  handleAddEventSidebarToggle: () => void
 }
 
 const Calendar = (props: CalenderProps) => {
@@ -58,6 +59,8 @@ const Calendar = (props: CalenderProps) => {
 
   // Refs
   const calendarRef = useRef()
+
+  // Hooks
   const theme = useTheme()
 
   useEffect(() => {

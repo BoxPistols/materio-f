@@ -22,6 +22,7 @@ type DataType = {
   color?: ThemeColor
 }
 
+// Vars
 const data: DataType[] = [
   {
     progress: 75,

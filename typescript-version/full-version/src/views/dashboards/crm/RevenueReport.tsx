@@ -12,12 +12,13 @@ import type { ApexOptions } from 'apexcharts'
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
 
-// Styled Components Imports
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
-
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
+// Styled Components Imports
+import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
+
+// Vars
 const series = [
   {
     name: 'Earning',
@@ -34,6 +35,7 @@ const RevenueReport = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
 
   const options: ApexOptions = {

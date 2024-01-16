@@ -45,6 +45,7 @@ type DataType = {
   email: string
 }
 
+// Vars
 const data: DataType[] = [
   {
     avatar: '1.png',
