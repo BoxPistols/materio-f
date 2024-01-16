@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 }
 
 const RegisterPage = () => {
+  // Vars
   const mode = getServerMode()
 
   return <Register mode={mode} />

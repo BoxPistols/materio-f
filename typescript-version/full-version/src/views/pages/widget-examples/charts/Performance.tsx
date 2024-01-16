@@ -11,11 +11,14 @@ import type { ApexOptions } from 'apexcharts'
 
 // Component Imports
 import OptionsMenu from '@core/components/option-menu'
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
+// Styled Component Imports
+import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
+
+// Vars
 const series = [
   {
     name: 'Income',
@@ -32,8 +35,8 @@ const Performance = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const divider = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.12)`)
   const textDisabled = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.4)`)
 

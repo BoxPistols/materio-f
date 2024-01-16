@@ -21,6 +21,7 @@ type DataType = {
   avatarColor?: ThemeColor
 }
 
+// Vars
 const data: DataType[] = [
   {
     width: 22,

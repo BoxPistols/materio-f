@@ -11,26 +11,27 @@ import Button from '@mui/material/Button'
 // Type Imports
 import type { Mode } from '@core/types'
 
+// Component Imports
+import Logo from '@core/svg/Logo'
+import Illustrations from '@components/Illustrations'
+
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
 
-// Component Imports
-import Logo from '@core/svg/Logo'
-import Illustrations from '@components/Illustrations'
-
 const ForgotPasswordV2 = ({ mode }: { mode: Mode }) => {
+  // Vars
   const darkImg = '/images/pages/auth-v2-mask-dark.png'
   const lightImg = '/images/pages/auth-v2-mask-light.png'
-
-  const authBackground = useImageVariant(mode, lightImg, darkImg)
-
   const darkIllustration = '/images/illustrations/auth/v2-forgot-password-dark.png'
   const lightIllustration = '/images/illustrations/auth/v2-forgot-password-light.png'
   const borderedDarkIllustration = '/images/illustrations/auth/v2-forgot-password-dark-border.png'
   const borderedLightIllustration = '/images/illustrations/auth/v2-forgot-password-light-border.png'
+
+  // Hooks
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   const characterIllustration = useImageVariant(
     mode,

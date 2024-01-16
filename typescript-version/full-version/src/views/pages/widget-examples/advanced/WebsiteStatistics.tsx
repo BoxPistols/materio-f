@@ -7,14 +7,16 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 
 // Third-party Imports
-import type { ApexOptions } from 'apexcharts'
 import classnames from 'classnames'
+import type { ApexOptions } from 'apexcharts'
 
 // Type Imports
 import type { ThemeColor } from '@core/types'
 
 // Components Imports
 import OptionMenu from '@core/components/option-menu'
+
+// Styled Component Imports
 import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 // Styles Imports
@@ -28,6 +30,7 @@ type DataType = {
   trendNumber: string
 }
 
+// Vars
 const data: DataType[] = [
   {
     sales: '86,471',
@@ -74,6 +77,7 @@ const data: DataType[] = [
 ]
 
 const WebsiteStatistics = () => {
+  // Vars
   const options: ApexOptions = {
     chart: {
       parentHeightOffset: 0,

@@ -5,6 +5,7 @@ import ResetPasswordV1 from '@views/pages/auth/ResetPasswordV1'
 import { getServerMode } from '@core/server/actions'
 
 const ResetPasswordV1Page = () => {
+  // Vars
   const mode = getServerMode()
 
   return <ResetPasswordV1 mode={mode} />

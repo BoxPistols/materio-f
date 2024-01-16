@@ -16,9 +16,11 @@ import Illustrations from '@components/Illustrations'
 import { useImageVariant } from '@core/hooks/useImageVariant'
 
 const ComingSoon = ({ mode }: { mode: Mode }) => {
+  // Vars
   const darkImg = '/images/pages/misc-mask-dark.png'
   const lightImg = '/images/pages/misc-mask-light.png'
 
+  // Hooks
   const miscBackground = useImageVariant(mode, lightImg, darkImg)
 
   return (

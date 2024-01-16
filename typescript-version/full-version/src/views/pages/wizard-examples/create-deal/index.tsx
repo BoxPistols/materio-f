@@ -43,6 +43,7 @@ const steps = [
   }
 ]
 
+// Styled Components
 const ConnectorHeight = styled(StepConnector)(() => ({
   '& .MuiStepConnector-line': {
     minHeight: 20

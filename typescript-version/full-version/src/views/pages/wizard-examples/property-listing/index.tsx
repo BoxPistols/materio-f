@@ -63,6 +63,7 @@ const getStepContent = (step: number, handleNext: () => void, handlePrev: () => 
   return <Tag activeStep={step} handleNext={handleNext} handlePrev={handlePrev} steps={steps} />
 }
 
+// Styled Components
 const ConnectorHeight = styled(StepConnector)(() => ({
   '& .MuiStepConnector-line': {
     minHeight: 20

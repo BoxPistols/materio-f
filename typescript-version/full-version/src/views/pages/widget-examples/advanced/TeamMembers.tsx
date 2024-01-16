@@ -37,6 +37,7 @@ type DataType = {
 // Column Definitions
 const columnHelper = createColumnHelper<DataType>()
 
+// Vars
 const teamData: DataType[] = [
   {
     value: 60,

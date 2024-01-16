@@ -11,18 +11,20 @@ import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
+
+// Styled Component Imports
+import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 const TotalVisitors = () => {
   // Hooks
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const textSecondary = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.7)`)
 
   const options: ApexOptions = {

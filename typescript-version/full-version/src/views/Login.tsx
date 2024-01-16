@@ -29,19 +29,21 @@ import type { Input } from 'valibot'
 // Type Imports
 import type { Mode } from '@core/types'
 
+// Component Imports
+import Logo from '@core/svg/Logo'
+import Illustrations from '@components/Illustrations'
+
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
 
-// Component Imports
-import Logo from '@core/svg/Logo'
-import Illustrations from '@components/Illustrations'
-
 type ErrorType = {
   message: string[]
 }
+
+type FormData = Input<typeof schema>
 
 const schema = object({
   email: string([minLength(1, 'This field is required'), email('Email is invalid')]),
@@ -51,37 +53,22 @@ const schema = object({
   ])
 })
 
-type FormData = Input<typeof schema>
-
 const LoginV2 = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [errorState, setErrorState] = useState<ErrorType | null>(null)
 
+  // Vars
+  const darkImg = '/images/pages/auth-v2-mask-dark.png'
+  const lightImg = '/images/pages/auth-v2-mask-light.png'
+  const darkIllustration = '/images/illustrations/auth/v2-login-dark.png'
+  const lightIllustration = '/images/illustrations/auth/v2-login-light.png'
+  const borderedDarkIllustration = '/images/illustrations/auth/v2-login-dark-border.png'
+  const borderedLightIllustration = '/images/illustrations/auth/v2-login-light-border.png'
+
+  // Hooks
   const router = useRouter()
   const searchParams = useSearchParams()
-
-  const handleClickShowPassword = () => setIsPasswordShown(show => !show)
-
-  const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
-    const res = await signIn('credentials', {
-      email: data.email,
-      password: data.password,
-      redirect: false
-    })
-
-    if (res && res.ok && res.error === null) {
-      const redirectURL = searchParams.get('redirectTo') ?? '/'
-
-      router.push(redirectURL)
-    } else {
-      if (res?.error) {
-        const error = JSON.parse(res.error)
-
-        setErrorState(error)
-      }
-    }
-  }
 
   const {
     control,
@@ -95,15 +82,7 @@ const LoginV2 = ({ mode }: { mode: Mode }) => {
     }
   })
 
-  const darkImg = '/images/pages/auth-v2-mask-dark.png'
-  const lightImg = '/images/pages/auth-v2-mask-light.png'
-
   const authBackground = useImageVariant(mode, lightImg, darkImg)
-
-  const darkIllustration = '/images/illustrations/auth/v2-login-dark.png'
-  const lightIllustration = '/images/illustrations/auth/v2-login-light.png'
-  const borderedDarkIllustration = '/images/illustrations/auth/v2-login-dark-border.png'
-  const borderedLightIllustration = '/images/illustrations/auth/v2-login-light-border.png'
 
   const characterIllustration = useImageVariant(
     mode,
@@ -112,6 +91,29 @@ const LoginV2 = ({ mode }: { mode: Mode }) => {
     borderedLightIllustration,
     borderedDarkIllustration
   )
+
+  const handleClickShowPassword = () => setIsPasswordShown(show => !show)
+
+  const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
+    const res = await signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      redirect: false
+    })
+
+    if (res && res.ok && res.error === null) {
+      // Vars
+      const redirectURL = searchParams.get('redirectTo') ?? '/'
+
+      router.push(redirectURL)
+    } else {
+      if (res?.error) {
+        const error = JSON.parse(res.error)
+
+        setErrorState(error)
+      }
+    }
+  }
 
   return (
     <div className='flex bs-full justify-center'>

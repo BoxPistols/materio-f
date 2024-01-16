@@ -18,6 +18,7 @@ import DistributedColumnChart from '@views/pages/widget-examples/statistics/Dist
 import LineChart from '@views/pages/widget-examples/statistics/LineChart'
 
 const getData = async () => {
+  // Vars
   const res = await fetch(`${process.env.API_URL}/pages/widget-examples`)
 
   if (!res.ok) {
@@ -28,6 +29,7 @@ const getData = async () => {
 }
 
 const Statistics = async () => {
+  // Vars
   const data: CardStatsType = await getData()
 
   return (

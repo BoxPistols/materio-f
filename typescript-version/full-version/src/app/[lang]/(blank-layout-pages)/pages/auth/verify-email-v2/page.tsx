@@ -5,6 +5,7 @@ import VerifyEmailV2 from '@views/pages/auth/VerifyEmailV2'
 import { getServerMode } from '@core/server/actions'
 
 const VerifyEmailV2Page = () => {
+  // Vars
   const mode = getServerMode()
 
   return <VerifyEmailV2 mode={mode} />

@@ -14,21 +14,20 @@ import Button from '@mui/material/Button'
 // Type Imports
 import type { Mode } from '@core/types'
 
+// Component Imports
+import Form from '@components/Form'
+import DirectionalIcon from '@components/DirectionalIcon'
+import Illustrations from '@components/Illustrations'
+import Logo from '@core/svg/Logo'
+
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
 
-// Component Imports
-import Form from '@components/Form'
-import DirectionalIcon from '@components/DirectionalIcon'
-import Illustrations from '@components/Illustrations'
-
-// Component Imports
-import Logo from '@core/svg/Logo'
-
 const ForgotPasswordV1 = ({ mode }: { mode: Mode }) => {
+  // Vars
   const darkImg = '/images/pages/auth-v1-mask-dark.png'
   const lightImg = '/images/pages/auth-v1-mask-light.png'
 

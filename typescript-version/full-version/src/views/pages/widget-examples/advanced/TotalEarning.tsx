@@ -4,7 +4,6 @@ import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import Avatar from '@mui/material/Avatar'
 import LinearProgress from '@mui/material/LinearProgress'
-
 import Typography from '@mui/material/Typography'
 
 // Type Imports
@@ -22,6 +21,7 @@ type DataType = {
   color?: ThemeColor
 }
 
+// Vars
 const data: DataType[] = [
   {
     progress: 75,

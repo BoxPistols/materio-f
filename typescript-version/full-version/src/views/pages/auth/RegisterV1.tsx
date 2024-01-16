@@ -24,12 +24,10 @@ import type { Mode } from '@core/types'
 
 // Component Imports
 import Illustrations from '@components/Illustrations'
+import Logo from '@core/svg/Logo'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
-
-// Component Imports
-import Logo from '@core/svg/Logo'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
@@ -38,15 +36,15 @@ const RegisterV1 = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
 
-  // Hooks
-  const { lang: locale } = useParams()
-
-  const handleClickShowPassword = () => setIsPasswordShown(show => !show)
-
+  // Vars
   const darkImg = '/images/pages/auth-v1-mask-dark.png'
   const lightImg = '/images/pages/auth-v1-mask-light.png'
 
+  // Hooks
+  const { lang: locale } = useParams()
   const authBackground = useImageVariant(mode, lightImg, darkImg)
+
+  const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   return (
     <div className='flex flex-col justify-center items-center min-bs-[100dvh] relative p-6'>

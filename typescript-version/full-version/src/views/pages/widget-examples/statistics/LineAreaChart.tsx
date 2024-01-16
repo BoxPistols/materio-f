@@ -6,11 +6,13 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { useTheme } from '@mui/material/styles'
 
+// Third-party Imports
 import type { ApexOptions } from 'apexcharts'
 
-// Components Imports
+// Styled Component Imports
 import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
+// Vars
 const series = [
   {
     name: 'Subscribers',
@@ -21,6 +23,8 @@ const series = [
 const LineAreaChart = () => {
   // Hooks
   const theme = useTheme()
+
+  // Vars
   const successColor = theme.palette.success.main
 
   const options: ApexOptions = {

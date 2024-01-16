@@ -24,6 +24,7 @@ type DataType = {
   trendPercentage: string
 }
 
+// Vars
 const data: DataType[] = [
   {
     avatarLabel: 'US',

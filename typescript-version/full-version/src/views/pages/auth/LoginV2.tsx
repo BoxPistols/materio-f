@@ -23,6 +23,10 @@ import classnames from 'classnames'
 // Type Imports
 import type { Mode } from '@core/types'
 
+// Component Imports
+import Logo from '@core/svg/Logo'
+import Illustrations from '@components/Illustrations'
+
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
@@ -30,30 +34,22 @@ import themeConfig from '@configs/themeConfig'
 import { useImageVariant } from '@core/hooks/useImageVariant'
 import { useSettings } from '@core/hooks/useSettings'
 
-// Component Imports
-import Logo from '@core/svg/Logo'
-import Illustrations from '@components/Illustrations'
-
 const LoginV2 = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
 
-  // Hooks
-  const { lang: locale } = useParams()
-
-  const handleClickShowPassword = () => setIsPasswordShown(show => !show)
-
-  // Hooks
-  const { settings } = useSettings()
-
+  // Vars
   const darkImg = '/images/pages/auth-v2-mask-dark.png'
   const lightImg = '/images/pages/auth-v2-mask-light.png'
-  const authBackground = useImageVariant(mode, lightImg, darkImg)
-
   const darkIllustration = '/images/illustrations/auth/v2-login-dark.png'
   const lightIllustration = '/images/illustrations/auth/v2-login-light.png'
   const borderedDarkIllustration = '/images/illustrations/auth/v2-login-dark-border.png'
   const borderedLightIllustration = '/images/illustrations/auth/v2-login-light-border.png'
+
+  // Hooks
+  const { lang: locale } = useParams()
+  const { settings } = useSettings()
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   const characterIllustration = useImageVariant(
     mode,
@@ -62,6 +58,8 @@ const LoginV2 = ({ mode }: { mode: Mode }) => {
     borderedLightIllustration,
     borderedDarkIllustration
   )
+
+  const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   return (
     <div className='flex bs-full justify-center'>

@@ -5,6 +5,7 @@ import TwoStepsV2 from '@views/pages/auth/TwoStepsV2'
 import { getServerMode } from '@core/server/actions'
 
 const TwoStepsV2Page = () => {
+  // Vars
   const mode = getServerMode()
 
   return <TwoStepsV2 mode={mode} />

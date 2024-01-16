@@ -14,6 +14,7 @@ import type { Mode } from '@core/types'
 import Form from '@components/Form'
 import Link from '@components/Link'
 import Illustrations from '@components/Illustrations'
+import Logo from '@core/svg/Logo'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
@@ -21,13 +22,12 @@ import themeConfig from '@configs/themeConfig'
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
 
-// Component Imports
-import Logo from '@core/svg/Logo'
-
 const TwoStepsV1 = ({ mode }: { mode: Mode }) => {
+  // Vars
   const darkImg = '/images/pages/auth-v1-mask-dark.png'
   const lightImg = '/images/pages/auth-v1-mask-light.png'
 
+  // Hooks
   const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   return (

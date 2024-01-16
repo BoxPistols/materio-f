@@ -5,6 +5,7 @@ import ForgotPasswordV2 from '@views/pages/auth/ForgotPasswordV2'
 import { getServerMode } from '@core/server/actions'
 
 const ForgotPasswordV2Page = () => {
+  // Vars
   const mode = getServerMode()
 
   return <ForgotPasswordV2 mode={mode} />

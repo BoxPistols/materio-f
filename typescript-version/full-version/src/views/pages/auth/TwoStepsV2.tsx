@@ -14,6 +14,10 @@ import classnames from 'classnames'
 // Type Imports
 import type { Mode } from '@core/types'
 
+// Component Imports
+import Logo from '@core/svg/Logo'
+import Illustrations from '@components/Illustrations'
+
 // Config Imports
 import themeConfig from '@configs/themeConfig'
 
@@ -21,23 +25,18 @@ import themeConfig from '@configs/themeConfig'
 import { useImageVariant } from '@core/hooks/useImageVariant'
 import { useSettings } from '@core/hooks/useSettings'
 
-// Component Imports
-import Logo from '@core/svg/Logo'
-import Illustrations from '@components/Illustrations'
-
 const TwoStepsV2 = ({ mode }: { mode: Mode }) => {
-  // Hooks
-  const { settings } = useSettings()
-
+  // Vars
   const darkImg = '/images/pages/auth-v2-mask-dark.png'
   const lightImg = '/images/pages/auth-v2-mask-light.png'
-
-  const authBackground = useImageVariant(mode, lightImg, darkImg)
-
   const darkIllustration = '/images/illustrations/auth/v2-two-steps-dark.png'
   const lightIllustration = '/images/illustrations/auth/v2-two-steps-light.png'
   const borderedDarkIllustration = '/images/illustrations/auth/v2-two-steps-dark-border.png'
   const borderedLightIllustration = '/images/illustrations/auth/v2-two-steps-light-border.png'
+
+  // Hooks
+  const { settings } = useSettings()
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   const characterIllustration = useImageVariant(
     mode,

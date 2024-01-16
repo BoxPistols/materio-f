@@ -5,6 +5,7 @@ import NotFound from '@views/NotFound'
 import { getServerMode } from '@core/server/actions'
 
 const Error = () => {
+  // Vars
   const mode = getServerMode()
 
   return <NotFound mode={mode} />

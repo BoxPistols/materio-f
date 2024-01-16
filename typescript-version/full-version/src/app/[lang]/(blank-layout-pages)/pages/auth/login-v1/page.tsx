@@ -5,6 +5,7 @@ import LoginV1 from '@views/pages/auth/LoginV1'
 import { getServerMode } from '@core/server/actions'
 
 const LoginV1Page = () => {
+  // Vars
   const mode = getServerMode()
 
   return <LoginV1 mode={mode} />

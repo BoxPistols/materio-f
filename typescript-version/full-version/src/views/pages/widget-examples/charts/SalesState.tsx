@@ -8,14 +8,17 @@ import CardHeader from '@mui/material/CardHeader'
 // Third Party Imports
 import type { ApexOptions } from 'apexcharts'
 
-// Custom Components Imports
+// Components Imports
 import OptionsMenu from '@core/components/option-menu'
+
+// Styled Component Imports
 import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 const SalesState = () => {
-  // Hook
+  // Hooks
   const theme = useTheme()
 
+  // Vars
   const options: ApexOptions = {
     chart: {
       offsetY: -30,

@@ -1,6 +1,6 @@
 // React Imports
-import type { SyntheticEvent } from 'react'
 import { useState, forwardRef } from 'react'
+import type { SyntheticEvent } from 'react'
 
 // MUI Imports
 import Grid from '@mui/material/Grid'
@@ -45,9 +45,9 @@ type Props = {
 const offeredItemsArray = ['Apple iPhone 12 Pro', 'Apple iPhone 12 Mini', 'Apple iPhone 12', 'Apple iPhone 11 Pro Max']
 
 const CustomInput = forwardRef((props: CustomInputProps, ref) => {
+  // Vars
   const startDate = props.start !== null ? dateFormat(props.start, 'MM/dd/yyyy') : ''
   const endDate = props.end !== null ? ` - ${dateFormat(props.end, 'MM/dd/yyyy')}` : null
-
   const value = `${startDate}${endDate !== null ? endDate : ''}`
 
   return <TextField fullWidth inputRef={ref} label={props.label || ''} {...props} value={value} />

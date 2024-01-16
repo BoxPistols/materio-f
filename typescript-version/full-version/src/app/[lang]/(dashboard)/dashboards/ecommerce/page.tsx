@@ -15,6 +15,7 @@ import Table from '@views/dashboards/ecommerce/Table'
 import MeetingSchedule from '@views/dashboards/ecommerce/MeetingSchedule'
 
 const getData = async () => {
+  // Vars
   const res = await fetch(`${process.env.API_URL}/apps/invoice`)
 
   if (!res.ok) {
@@ -25,6 +26,7 @@ const getData = async () => {
 }
 
 const DashboardECommerce = async () => {
+  // Vars
   const data = await getData()
 
   return (

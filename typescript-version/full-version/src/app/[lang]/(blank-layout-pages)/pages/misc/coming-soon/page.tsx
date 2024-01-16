@@ -5,6 +5,7 @@ import ComingSoon from '@views/pages/misc/ComingSoon'
 import { getServerMode } from '@core/server/actions'
 
 const ComingSoonPage = () => {
+  // Vars
   const mode = getServerMode()
 
   return <ComingSoon mode={mode} />

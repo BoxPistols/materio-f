@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 }
 
 const ForgotPasswordPage = () => {
+  // Vars
   const mode = getServerMode()
 
   return <ForgotPassword mode={mode} />

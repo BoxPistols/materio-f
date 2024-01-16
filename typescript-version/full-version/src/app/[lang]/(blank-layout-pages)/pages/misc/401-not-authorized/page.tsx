@@ -5,6 +5,7 @@ import NotAuthorized from '@views/NotAuthorized'
 import { getServerMode } from '@core/server/actions'
 
 const Error401 = () => {
+  // Vars
   const mode = getServerMode()
 
   return <NotAuthorized mode={mode} />

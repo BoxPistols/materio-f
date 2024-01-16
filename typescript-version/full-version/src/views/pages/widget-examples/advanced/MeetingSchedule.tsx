@@ -21,6 +21,7 @@ type DataType = {
   chipColor?: ThemeColor
 }
 
+// Vars
 const data: DataType[] = [
   {
     avatarSrc: '/images/avatars/4.png',

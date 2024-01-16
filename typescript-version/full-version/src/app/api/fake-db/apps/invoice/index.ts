@@ -1,6 +1,7 @@
 // Type Imports
 import type { InvoiceType } from '@/types/apps/invoiceTypes'
 
+// Vars
 const now = new Date()
 const currentMonth = now.toLocaleString('default', { month: 'short' })
 

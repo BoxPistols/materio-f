@@ -22,6 +22,7 @@ type DataType = {
   alt: string
 }
 
+// Vars
 const data: DataType[] = [
   {
     avatarSrc: '/images/logos/mastercard.png',

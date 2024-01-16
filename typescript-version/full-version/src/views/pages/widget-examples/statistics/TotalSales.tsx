@@ -9,20 +9,19 @@ import { useColorScheme, useTheme } from '@mui/material/styles'
 // Third-party Imports
 import type { ApexOptions } from 'apexcharts'
 
-// Components Imports
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
-
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
+
+// Styled Component Imports
+import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 const TotalSales = () => {
   // Hooks
   const theme = useTheme()
-
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
-
   const textPrimary = rgbaToHex(`rgb(${theme.mainColorChannels[_mode]} / 0.9)`)
 
   const options: ApexOptions = {

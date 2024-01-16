@@ -5,6 +5,7 @@ import UnderMaintenance from '@views/pages/misc/UnderMaintenance'
 import { getServerMode } from '@core/server/actions'
 
 const UnderMaintenancePage = () => {
+  // Vars
   const mode = getServerMode()
 
   return <UnderMaintenance mode={mode} />

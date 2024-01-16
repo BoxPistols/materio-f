@@ -21,15 +21,11 @@ import type { Mode } from '@core/types'
 
 // Component Imports
 import DirectionalIcon from '@components/DirectionalIcon'
-
-// Component Imports
+import Logo from '@core/svg/Logo'
 import Illustrations from '@components/Illustrations'
 
 // Config Imports
 import themeConfig from '@configs/themeConfig'
-
-// Component Imports
-import Logo from '@core/svg/Logo'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
@@ -39,17 +35,17 @@ const ResetPasswordV1 = ({ mode }: { mode: Mode }) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState(false)
 
+  // Vars
+  const darkImg = '/images/pages/auth-v1-mask-dark.png'
+  const lightImg = '/images/pages/auth-v1-mask-light.png'
+
   // Hooks
   const { lang: locale } = useParams()
+  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
   const handleClickShowConfirmPassword = () => setIsConfirmPasswordShown(show => !show)
-
-  const darkImg = '/images/pages/auth-v1-mask-dark.png'
-  const lightImg = '/images/pages/auth-v1-mask-light.png'
-
-  const authBackground = useImageVariant(mode, lightImg, darkImg)
 
   return (
     <div className='flex flex-col justify-center items-center min-bs-[100dvh] relative p-6'>

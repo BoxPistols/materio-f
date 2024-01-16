@@ -13,6 +13,8 @@ import type { ApexOptions } from 'apexcharts'
 
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
+
+// Styled Component Imports
 import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
 
 // Util Imports
@@ -26,6 +28,7 @@ type AnalyticsDataType = {
   trend: 'up' | 'down'
 }
 
+// Vars
 const series = [
   {
     name: 'Revenue',
@@ -70,6 +73,7 @@ const Analytics = () => {
   const theme = useTheme()
   const { mode, systemMode } = useColorScheme()
 
+  // Vars
   const _mode = (mode === 'system' ? systemMode : mode) || 'light'
 
   const options: ApexOptions = {

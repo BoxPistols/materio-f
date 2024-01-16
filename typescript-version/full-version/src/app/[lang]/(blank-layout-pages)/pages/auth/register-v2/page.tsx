@@ -5,6 +5,7 @@ import RegisterV2 from '@views/pages/auth/RegisterV2'
 import { getServerMode } from '@core/server/actions'
 
 const RegisterV2Page = () => {
+  // Vars
   const mode = getServerMode()
 
   return <RegisterV2 mode={mode} />
