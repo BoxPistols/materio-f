@@ -21,7 +21,7 @@ const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '600', '
 const theme = (settings: Settings, mode: SystemMode, direction: Theme['direction']): Theme => {
   return {
     direction,
-    components: overrides(settings.skin as Skin, mode),
+    components: overrides(settings.skin as Skin),
     colorSchemes: colorSchemes(settings.skin as Skin),
     ...spacing,
     shape: {

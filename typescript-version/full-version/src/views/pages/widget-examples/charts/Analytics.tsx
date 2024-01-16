@@ -1,5 +1,8 @@
 'use client'
 
+// Next Imports
+import dynamic from 'next/dynamic'
+
 // MUI Imports
 import Card from '@mui/material/Card'
 import { useColorScheme, useTheme } from '@mui/material/styles'
@@ -14,11 +17,11 @@ import type { ApexOptions } from 'apexcharts'
 // Components Imports
 import OptionsMenu from '@core/components/option-menu'
 
-// Styled Component Imports
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
-
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
+
+// Styled Component Imports
+const AppReactApexCharts = dynamic(() => import('@/libs/styles/AppReactApexCharts'))
 
 type AnalyticsDataType = {
   title: string

@@ -1,5 +1,8 @@
 'use client'
 
+// Next Imports
+import dynamic from 'next/dynamic'
+
 // MUI Imports
 import Card from '@mui/material/Card'
 import Button from '@mui/material/Button'
@@ -18,7 +21,7 @@ import OptionsMenu from '@core/components/option-menu'
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
 // Styled Component Imports
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
+const AppReactApexCharts = dynamic(() => import('@/libs/styles/AppReactApexCharts'))
 
 const WeeklyOverview = () => {
   // Hooks

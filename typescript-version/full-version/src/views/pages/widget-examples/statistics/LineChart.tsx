@@ -1,5 +1,8 @@
 'use client'
 
+// Next Imports
+import dynamic from 'next/dynamic'
+
 //MUI Imports
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -9,13 +12,12 @@ import { useColorScheme, useTheme } from '@mui/material/styles'
 // Third-party Imports
 import type { ApexOptions } from 'apexcharts'
 
-// Components Imports
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
-
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
-// Vars
+// Styled Component Imports
+const AppReactApexCharts = dynamic(() => import('@/libs/styles/AppReactApexCharts'))
+
 const series = [{ data: [0, 20, 5, 30, 15, 45] }]
 
 const LineChart = () => {

@@ -1,5 +1,8 @@
 'use client'
 
+// Next Imports
+import dynamic from 'next/dynamic'
+
 //MUI Imports
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -13,9 +16,8 @@ import type { ApexOptions } from 'apexcharts'
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
 // Styled Component Imports
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
+const AppReactApexCharts = dynamic(() => import('@/libs/styles/AppReactApexCharts'))
 
-// Vars
 const series = [
   {
     name: 'Earning',

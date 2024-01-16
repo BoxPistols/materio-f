@@ -1,5 +1,8 @@
 'use client'
 
+// Next Imports
+import dynamic from 'next/dynamic'
+
 //MUI Imports
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -8,8 +11,8 @@ import { useTheme } from '@mui/material/styles'
 
 import type { ApexOptions } from 'apexcharts'
 
-// Styled Components Imports
-import ReactApexcharts from '@/libs/styles/AppReactApexCharts'
+// Styled Component Imports
+const AppReactApexCharts = dynamic(() => import('@/libs/styles/AppReactApexCharts'))
 
 // Vars
 const series = [
@@ -97,7 +100,7 @@ const LineAreaChart = () => {
     <Card>
       <CardContent>
         <Typography variant='h4'>42.5k</Typography>
-        <ReactApexcharts type='area' height={100} width='100%' options={options} series={series} />
+        <AppReactApexCharts type='area' height={100} width='100%' options={options} series={series} />
         <Typography color='text.primary' className='font-medium text-center'>
           Total Growth
         </Typography>

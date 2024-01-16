@@ -1,7 +1,7 @@
 'use client'
 
 // React Imports
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import type { MouseEvent } from 'react'
 
 // Next Imports
@@ -236,17 +236,6 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
   const handleClose = () => {
     setAnchorEl(null)
   }
-
-  useEffect(() => {
-    const filteredData = invoiceData?.filter(invoice => {
-      if (status && invoice.invoiceStatus.toLowerCase().replace(/\s+/g, '-') !== status) return false
-
-      return true
-    })
-
-    setData(filteredData)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status, invoiceData, setData])
 
   return (
     <Card>

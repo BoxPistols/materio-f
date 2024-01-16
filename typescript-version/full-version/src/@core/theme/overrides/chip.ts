@@ -1,24 +1,9 @@
 // MUI Imports
 import type { Theme } from '@mui/material/styles'
 
-// Type Imports
-import type { SystemMode } from '@core/types'
-
-const chip = (mode: SystemMode): Theme['components'] => ({
+const chip: Theme['components'] = {
   MuiChip: {
     variants: [
-      {
-        props: { variant: 'filled', color: 'default' },
-        style: {
-          backgroundColor: `rgb(var(--mui-mainColorChannels-${mode}) / 0.08)`
-        }
-      },
-      {
-        props: { variant: 'tonal', color: 'default' },
-        style: {
-          backgroundColor: `rgb(var(--mui-mainColorChannels-${mode}) / 0.08)`
-        }
-      },
       {
         props: { variant: 'tonal', color: 'primary' },
         style: {
@@ -122,6 +107,11 @@ const chip = (mode: SystemMode): Theme['components'] => ({
         fontWeight: theme.typography.fontWeightMedium,
         lineHeight: theme.typography.subtitle2.lineHeight,
 
+        ...(ownerState.color === 'default' &&
+          (ownerState.variant === 'filled' || ownerState.variant === 'tonal') && {
+            backgroundColor: `rgb(var(--mui-mainColorChannels-${theme.palette.mode}) / 0.08)`
+          }),
+
         '& .MuiChip-deleteIcon': {
           ...(ownerState.size === 'small'
             ? {
@@ -175,6 +165,6 @@ const chip = (mode: SystemMode): Theme['components'] => ({
       }
     }
   }
-})
+}
 
 export default chip

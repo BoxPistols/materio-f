@@ -1,5 +1,5 @@
 // Type Imports
-import type { Skin, SystemMode } from '@core/types'
+import type { Skin } from '@core/types'
 
 // Override Imports
 import Accordion from './accordion'
@@ -39,7 +39,7 @@ import toggleButton from './toggle-button'
 import tooltip from './tooltip'
 import typography from './typography'
 
-const overrides = (skin: Skin, mode: SystemMode) => {
+const overrides = (skin: Skin) => {
   return Object.assign(
     {},
     Accordion(skin),
@@ -53,7 +53,7 @@ const overrides = (skin: Skin, mode: SystemMode) => {
     buttonGroup,
     card(skin),
     Checkbox,
-    chip(mode),
+    chip,
     dialog(skin),
     drawer(skin),
     fab,

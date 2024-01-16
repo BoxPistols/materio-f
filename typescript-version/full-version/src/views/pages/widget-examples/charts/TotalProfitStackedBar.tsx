@@ -1,5 +1,8 @@
 'use client'
 
+// Next Imports
+import dynamic from 'next/dynamic'
+
 // MUI Imports
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
@@ -23,7 +26,7 @@ import CustomAvatar from '@core/components/mui/Avatar'
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
 // Styled Component Imports
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
+const AppReactApexCharts = dynamic(() => import('@/libs/styles/AppReactApexCharts'))
 
 interface DataType {
   title: string

@@ -1,5 +1,8 @@
 'use client'
 
+// Next Imports
+import dynamic from 'next/dynamic'
+
 // MUI Imports
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader'
@@ -19,8 +22,8 @@ import OptionMenu from '@core/components/option-menu'
 // Styles Imports
 import tableStyles from '@core/styles/table.module.css'
 
-// Styled Components Imports
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
+// Styled Component Imports
+const AppReactApexCharts = dynamic(() => import('@/libs/styles/AppReactApexCharts'))
 
 type DataType = {
   title: string

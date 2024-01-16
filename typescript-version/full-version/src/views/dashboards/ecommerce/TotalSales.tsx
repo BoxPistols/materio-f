@@ -1,5 +1,8 @@
 'use client'
 
+// Next Imports
+import dynamic from 'next/dynamic'
+
 // MUI Imports
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -12,8 +15,8 @@ import type { ApexOptions } from 'apexcharts'
 // Util Imports
 import { rgbaToHex } from '@/utils/rgbaToHex'
 
-// Styled Components Imports
-import AppReactApexCharts from '@/libs/styles/AppReactApexCharts'
+// Styled Component Imports
+const AppReactApexCharts = dynamic(() => import('@/libs/styles/AppReactApexCharts'))
 
 const TotalSales = () => {
   // Hooks
