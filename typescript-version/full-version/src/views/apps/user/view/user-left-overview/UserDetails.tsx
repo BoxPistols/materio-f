@@ -52,7 +52,7 @@ const UserDetails = () => {
             </div>
             <div className='flex items-center justify-around flex-wrap gap-4'>
               <div className='flex items-center gap-4'>
-                <CustomAvatar variant='rounded' skin='light'>
+                <CustomAvatar variant='rounded' color='primary' skin='light'>
                   <i className='ri-check-line' />
                 </CustomAvatar>
                 <div>
@@ -61,7 +61,7 @@ const UserDetails = () => {
                 </div>
               </div>
               <div className='flex items-center gap-4'>
-                <CustomAvatar variant='rounded' skin='light'>
+                <CustomAvatar variant='rounded' color='primary' skin='light'>
                   <i className='ri-star-smile-line' />
                 </CustomAvatar>
                 <div>

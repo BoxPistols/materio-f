@@ -82,7 +82,7 @@ const FAQ = ({ faqData, searchValue }: props) => {
           {filteredData.map((faq, index) => (
             <TabPanel key={index} value={faq.id} className='p-0'>
               <div className='flex items-center gap-4 mbe-4'>
-                <CustomAvatar skin='light' variant='rounded' size={50}>
+                <CustomAvatar skin='light' color='primary' variant='rounded' size={50}>
                   <i className={classnames(faq.icon, 'text-3xl')} />
                 </CustomAvatar>
                 <div>

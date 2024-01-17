@@ -47,12 +47,13 @@ const DashboardAnalytics = () => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <CardStatVertical
-              title='New Project'
               stats='862'
-              avatarIcon='ri-pie-chart-2-line'
-              subtitle='Yearly Profit'
-              trendNumber='18%'
               trend='negative'
+              trendNumber='18%'
+              title='New Project'
+              subtitle='Yearly Project'
+              avatarColor='primary'
+              avatarIcon='ri-file-word-2-line'
             />
           </Grid>
           <Grid item xs={12} sm={6}>

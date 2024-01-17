@@ -28,6 +28,7 @@ const data: DataType[] = [
     height: 20,
     title: '42.8k',
     imgAlt: 'heart',
+    avatarColor: 'primary',
     subtitle: 'Number of like',
     avatarSrc: '/images/cards/heart-medical.png'
   },

@@ -121,7 +121,7 @@ const CardWidgetsSalesOverview = () => {
           </Grid>
           <Grid item xs={12} sm={6} sx={{ my: 'auto' }}>
             <div className='flex items-center gap-3'>
-              <CustomAvatar skin='light' variant='rounded'>
+              <CustomAvatar skin='light' color='primary' variant='rounded'>
                 <i className='ri-wallet-line text-primary' />
               </CustomAvatar>
               <div className='flex flex-col'>

@@ -317,7 +317,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
     if (avatar) {
       return <Avatar src={avatar} />
     } else {
-      return <Avatar>{getInitials(name as string)}</Avatar>
+      return <Avatar color='primary'>{getInitials(name as string)}</Avatar>
     }
   }
 

@@ -55,6 +55,7 @@ const data: DataType[] = [
   },
   {
     avatarSrc: '/images/cards/wallet.png',
+    avatarColor: 'primary',
     title: 'Wallet',
     subtitle: "Mac'D",
     amount: '82',

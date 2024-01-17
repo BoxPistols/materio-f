@@ -77,7 +77,7 @@ const ReferEarn = ({ open, setOpen }: ReferEarnProps) => {
           {options?.map((option, index) => (
             <Grid item xs={12} md={4} key={index}>
               <div className='flex items-center flex-col gap-4'>
-                <CustomAvatar className='bs-[66px] is-[66px] sm:bs-[88px] sm:is-[88px]' skin='light'>
+                <CustomAvatar className='bs-[66px] is-[66px] sm:bs-[88px] sm:is-[88px]' color='primary' skin='light'>
                   {typeof option.icon === 'string' ? (
                     <i className={classnames('text-[32px] sm:text-[40px]', option.icon)} />
                   ) : (

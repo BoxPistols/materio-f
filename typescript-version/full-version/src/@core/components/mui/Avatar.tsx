@@ -19,18 +19,21 @@ export type CustomAvatarProps = AvatarProps & {
 
 const Avatar = styled(MuiAvatar)<CustomAvatarProps>(({ skin, color, size, theme }) => {
   return {
-    ...(skin === 'light' && {
-      backgroundColor: `var(--mui-palette-${color}-lightOpacity)`,
-      color: `var(--mui-palette-${color}-main)`
-    }),
-    ...(skin === 'light-static' && {
-      backgroundColor: lighten(theme.palette[color as ThemeColor].main, 0.84),
-      color: `var(--mui-palette-${color}-main)`
-    }),
-    ...(skin === 'filled' && {
-      backgroundColor: `var(--mui-palette-${color}-main)`,
-      color: `var(--mui-palette-${color}-contrastText)`
-    }),
+    ...(color &&
+      skin === 'light' && {
+        backgroundColor: `var(--mui-palette-${color}-lightOpacity)`,
+        color: `var(--mui-palette-${color}-main)`
+      }),
+    ...(color &&
+      skin === 'light-static' && {
+        backgroundColor: lighten(theme.palette[color as ThemeColor].main, 0.84),
+        color: `var(--mui-palette-${color}-main)`
+      }),
+    ...(color &&
+      skin === 'filled' && {
+        backgroundColor: `var(--mui-palette-${color}-main)`,
+        color: `var(--mui-palette-${color}-contrastText)`
+      }),
     ...(size && {
       height: size,
       width: size
@@ -40,7 +43,7 @@ const Avatar = styled(MuiAvatar)<CustomAvatarProps>(({ skin, color, size, theme 
 
 const CustomAvatar = forwardRef<HTMLDivElement, CustomAvatarProps>((props: CustomAvatarProps, ref) => {
   // Props
-  const { color = 'primary', skin = 'filled', ...rest } = props
+  const { color, skin = 'filled', ...rest } = props
 
   return <Avatar color={color} skin={skin} ref={ref} {...rest} />
 })

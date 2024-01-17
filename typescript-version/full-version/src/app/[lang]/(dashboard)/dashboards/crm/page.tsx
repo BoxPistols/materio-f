@@ -70,6 +70,7 @@ const DashboardCRM = () => {
                   trendNumber='18%'
                   title='New Project'
                   subtitle='Yearly Project'
+                  avatarColor='primary'
                   avatarIcon='ri-file-word-2-line'
                 />
               </Grid>

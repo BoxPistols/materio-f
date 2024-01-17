@@ -73,6 +73,7 @@ const data: DataType[] = [
   },
   {
     avatarLabel: 'CH',
+    avatarColor: 'primary',
     title: '$12k',
     subtitle: 'China',
     sales: '8k',

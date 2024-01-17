@@ -103,7 +103,7 @@ const WeeklySales = () => {
         />
         <div className='flex items-center justify-around'>
           <div className='flex items-center gap-3'>
-            <CustomAvatar skin='light' variant='rounded'>
+            <CustomAvatar skin='light' color='primary' variant='rounded'>
               <i className='ri-pie-chart-2-line text-primary' />
             </CustomAvatar>
             <div className='flex flex-col'>

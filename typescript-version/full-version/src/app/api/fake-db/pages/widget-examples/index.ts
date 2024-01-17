@@ -6,6 +6,7 @@ export const db: CardStatsType = {
     {
       stats: '2,856',
       trendNumber: '10.2%',
+      color: 'primary',
       title: 'New Customers',
       icon: 'ri-group-line'
     },
@@ -40,6 +41,7 @@ export const db: CardStatsType = {
       trendNumber: '18%',
       title: 'New Project',
       subtitle: 'Yearly Project',
+      avatarColor: 'primary',
       avatarIcon: 'ri-file-word-2-line'
     },
     {
