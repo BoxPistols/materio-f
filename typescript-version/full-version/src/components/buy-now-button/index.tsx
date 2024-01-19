@@ -7,7 +7,12 @@ import styles from './styles.module.css'
 const BuyNowButton = () => {
   return (
     <div className={classnames(styles.wrapper, 'mui-fixed')}>
-      <a className={styles.button} role='button' href='https://themeselection.com/buy-now' target='_blank'>
+      <a
+        className={styles.button}
+        role='button'
+        href='https://themeselection.com/item/materio-mui-react-nextjs-admin-template'
+        target='_blank'
+      >
         Buy Now
         <span className={styles.buttonInner} />
       </a>
