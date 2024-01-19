@@ -3,7 +3,7 @@
 Materio admin provides internationalization for navigation only. There might be a time when you might want to translate any text in a page. Here's how you can achieve that:
 
 1. Make sure your have `@formatjs/intl-localematcher`, `@types/negotiator` (Typescript version only), and `negotiator` packages installed
-2. It is important to have locale defined in your path. For eg. `http://localhost:3000/en/apps/chat` where `en` is a locale which refers to the English language
+2. It is important to have locale defined in your path. For eg. `en/apps/calendar` where `en` is a locale which refers to the English language
 3. Create JSON files with language as their file names in locales depending on the languages you need. For example, we're using three languages English, French & Arabic
 
   ```json title="en.json"
