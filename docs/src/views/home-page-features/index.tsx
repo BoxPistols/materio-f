@@ -1,6 +1,8 @@
 // React Imports
 import React from 'react'
 
+import Admonition from '@theme/Admonition'
+
 // Style Imports
 import styles from './styles.module.css'
 
@@ -58,6 +60,9 @@ const HomepageFeatures = (): JSX.Element => {
   return (
     <section className={styles.features}>
       <div className="container">
+        <Admonition type="warning" title='📣 Heads up'>
+          <p>You are viewing <strong>Next.js App Directory Routing</strong> documentation of Materio admin template. For <strong>Next.js Pages Directory Routing</strong> documentation, please visit <a href="https://demos.themeselection.com/materio-mui-react-nextjs-admin-template-old/documentation" target='_blank'>this page</a>.</p>
+        </Admonition>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
