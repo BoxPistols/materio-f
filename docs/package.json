@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "materio-mui-react-nextjs-admin-template-docs",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
