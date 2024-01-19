@@ -250,7 +250,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
             {dictionary['navigation'].reactTable}
           </MenuItem>
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/forms-tables/intro#form-elements`}
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/intro`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-radio-button-line' />}
@@ -292,7 +292,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
             {dictionary['navigation'].components}
           </MenuItem>
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/menu-examples/`}
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}docs/menu-examples/intro`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-menu-search-line' />}

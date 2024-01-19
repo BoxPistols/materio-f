@@ -362,7 +362,7 @@ const horizontalMenuData = (
         label: dictionary['navigation'].formELements,
         icon: 'ri-radio-button-line',
         suffix: <i className='ri-external-link-line text-xl' />,
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/forms-tables/intro#form-elements`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/intro`,
         target: '_blank'
       },
       {
@@ -411,7 +411,7 @@ const horizontalMenuData = (
       {
         label: dictionary['navigation'].menuExamples,
         icon: 'ri-menu-search-line',
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/menu-examples/`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}docs/menu-examples/intro`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
