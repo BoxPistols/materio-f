@@ -92,7 +92,7 @@ const RegisterMultiSteps = () => {
         />
       </div>
       <div className='flex justify-center items-center bs-full is-full bg-backgroundPaper'>
-        <div className='absolute block-start-[33px] !inline-start-6 sm:inline-start-[38px]'>
+        <div className='absolute block-start-5 sm:block-start-[33px] inline-start-6 sm:inline-start-[38px]'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className='text-primary' height={28} width={35} />
             <Typography variant='h4' className='font-semibold tracking-[0.15px]'>
@@ -100,8 +100,8 @@ const RegisterMultiSteps = () => {
             </Typography>
           </div>
         </div>
-        <StepperWrapper className='p-8 is-[700px]'>
-          <Stepper className='mbe-12' activeStep={activeStep}>
+        <StepperWrapper className='p-5 sm:p-8 is-[700px]'>
+          <Stepper className='mbe-12 mbs-16 sm:mbs-0' activeStep={activeStep}>
             {steps.map((step, index) => {
               return (
                 <Step key={index} onClick={() => setActiveStep(index)}>

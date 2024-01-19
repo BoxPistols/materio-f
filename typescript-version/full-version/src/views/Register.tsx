@@ -71,7 +71,7 @@ const RegisterV2 = ({ mode }: { mode: Mode }) => {
         />
       </div>
       <div className='flex justify-center items-center bs-full bg-backgroundPaper !min-is-full p-6 md:!min-is-[unset] md:p-12 md:is-[480px]'>
-        <div className='absolute block-start-[33px] !inline-start-6 sm:inline-start-[38px]'>
+        <div className='absolute block-start-5 sm:block-start-[33px] inline-start-6 sm:inline-start-[38px]'>
           <div className='flex justify-center items-center gap-3 mbe-6'>
             <Logo className='text-primary' height={28} width={35} />
             <Typography variant='h4' className='font-semibold tracking-[0.15px]'>

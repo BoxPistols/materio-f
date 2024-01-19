@@ -6,6 +6,12 @@ import CardContent from '@mui/material/CardContent'
 import InputAdornment from '@mui/material/InputAdornment'
 import MuiTextField from '@mui/material/TextField'
 
+// Third-party Imports
+import classnames from 'classnames'
+
+// Styles imports
+import styles from './styles.module.css'
+
 // Styled TextField component
 const TextField = styled(MuiTextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {
@@ -20,7 +26,7 @@ type Props = {
 
 const FaqHeader = ({ searchValue, setSearchValue }: Props) => {
   return (
-    <Card className='shadow-none bg-transparent bg-cover bg-[url("/images/pages/faq-header.png")]' elevation={0}>
+    <Card className={classnames('shadow-none bg-transparent bg-cover', styles.bgImage)} elevation={0}>
       <CardContent className='flex flex-col items-center is-full text-center !pbs-[4.5625rem] !pbe-[5.9375rem] pli-5'>
         <Typography variant='h4' color='primary' className='mbe-2.5'>
           Hello, how can we help?
