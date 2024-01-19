@@ -250,7 +250,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
             {dictionary['navigation'].reactTable}
           </MenuItem>
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/forms-tables/intro#form-elements`}
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/forms-tables/intro#form-elements`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-radio-button-line' />}
@@ -258,7 +258,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
             {dictionary['navigation'].formELements}
           </MenuItem>
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/tables/mui-table`}
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/tables/mui-table`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-table-2' />}
@@ -276,7 +276,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
         </SubMenu>
         <SubMenu label={dictionary['navigation'].others} icon={<i className='ri-more-line' />}>
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/intro`}
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/user-interface/intro`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-pantone-line' />}
@@ -284,7 +284,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
             {dictionary['navigation'].userInterface}
           </MenuItem>
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/intro`}
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/components/intro`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-toggle-line' />}
@@ -292,7 +292,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
             {dictionary['navigation'].components}
           </MenuItem>
           <MenuItem
-            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/docs/menu-examples/`}
+            href={`${process.env.NEXT_PUBLIC_DOCS_URL}/menu-examples/`}
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-menu-search-line' />}
