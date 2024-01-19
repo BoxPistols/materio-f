@@ -42,7 +42,9 @@ The `themeConfig` object contains various properties and their default values th
     type: 'static',
     contentWidth: 'compact',
     detached: true
-  }
+  },
+  disableRipple: false,
+  toastPosition: 'top-right'
 }`
 }</TsToJsCodeSnippet>
 
@@ -57,7 +59,7 @@ Here is a table that lists all the properties available in the `themeConfig` obj
 | `skin`               | `default`, `bordered`                  | Changes the skin of the template                              |  
 | `semiDark`           | `true`, `false`                        | Enables or disables semi-dark mode for the template           |
 | `layout`             | `vertical`, `horizontal`, `collapsed`  | Defines the layout type                                       |
-| `layoutPadding`      | `24`                                   | Sets the padding for the layout                               |
+| `layoutPadding`      | `24`                                   | Sets the padding for the layout in px.                               |
 | `compactContentWidth`| `number`                               | Specifies the width of the content area                       |
 | `navbar.type`        | `fixed`, `static`                      | Determines the position of the navbar (fixed or static)       |
 | `navbar.contentWidth`| `compact`, `wide`                      | Sets the width of the navbar                                  |
@@ -68,5 +70,7 @@ Here is a table that lists all the properties available in the `themeConfig` obj
 | `footer.type`        | `fixed`, `static`                      | Specifies the type of the footer                              |
 | `footer.contentWidth`| `compact`, `wide`                      | Sets the width of the footer                                  |
 | `footer.detached`    | `true`, `false`                        | Controls whether the footer is detached                       |
+| `disableRipple`      | `true`, `false`                        | Enables or disables ripple effect                             |
+| `toastPosition`      | `top-right`, `top-center`, `top-left`, `bottom-right`, `bottom-center`, `bottom-left` | Specifies the position of the toast message |
 
 You can customize these properties according to your project's requirements to achieve the desired look and feel for your template.
