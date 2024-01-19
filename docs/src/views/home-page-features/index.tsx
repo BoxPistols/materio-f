@@ -12,32 +12,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Based on MUI & Next.js',
     Svg: require('@site/static/images/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        With MUI & Next.js you can build responsive, mobile-first, and ARIA accessible projects on the web.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Hooks Support',
     Svg: require('@site/static/images/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Hooks are functions that let you “hook into” React state and lifecycle features from function components.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Next Auth & Translations',
     Svg: require('@site/static/images/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        With Next Auth you can utilize and auth service and with Translations you can translate your app to any language.
       </>
     ),
   },

@@ -120,12 +120,12 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'faqSidebar', label: 'FAQs', position: 'right', },
         { to: '/articles', label: 'Articles', position: 'right' },
         {
-          href: 'https://themeselection.com/github',
+          href: 'https://github.com/themeselection/materio-mui-react-nextjs-admin-template',
           label: 'GitHub',
           position: 'right',
         },
         {
-          href: 'https://themeselection.com//changelog',
+          href: 'https://themeselection.com/item/materio-mui-react-nextjs-admin-template/?tab=changelog#changelog',
           label: 'Changelog',
           position: 'right',
         },
