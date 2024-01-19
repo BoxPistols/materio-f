@@ -23,7 +23,7 @@ Before you can see the configuration changes reflected in the template, it's ess
 The `themeConfig` object contains various properties and their default values that control the appearance and behavior of the template. Following are the properties with their values that we have used in the theme:
 
 <TsToJsCodeSnippet>{`const themeConfig: Config = {
-  templateName: 'Master',
+  templateName: 'Materio',
   mode: 'system',
   skin: 'default',
   semiDark: false,

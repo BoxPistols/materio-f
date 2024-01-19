@@ -4,7 +4,7 @@ import * as path from 'path';
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const config: Config = {
-  title: 'Master',
+  title: 'Materio',
   tagline: 'MUI React Next.Js Admin Template',
   favicon: 'images/favicon.ico',
 
@@ -86,7 +86,7 @@ const config: Config = {
   themeConfig: {
     image: 'images/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Master',
+      title: 'Materio',
       logo: {
         alt: 'Logo',
         src: 'images/logo.svg',
