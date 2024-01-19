@@ -1,7 +1,12 @@
 const BuyNowButton = () => {
   return (
     <div className='buy-now-wrapper mui-fixed'>
-      <a className='buy-now-button' role='button' href='https://themeselection.com/buy-now' target='_blank'>
+      <a
+        className='buy-now-button'
+        role='button'
+        href='https://themeselection.com/item/materio-mui-react-nextjs-admin-template'
+        target='_blank'
+      >
         Buy Now
         <span className='button-inner' />
       </a>
