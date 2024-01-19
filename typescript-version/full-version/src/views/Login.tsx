@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 // Next Imports
 import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useParams, useRouter, useSearchParams } from 'next/navigation'
 
 // MUI Imports
 import Typography from '@mui/material/Typography'
@@ -28,6 +28,7 @@ import type { Input } from 'valibot'
 
 // Type Imports
 import type { Mode } from '@core/types'
+import type { Locale } from '@/configs/i18n'
 
 // Component Imports
 import Logo from '@core/svg/Logo'
@@ -38,6 +39,9 @@ import themeConfig from '@configs/themeConfig'
 
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
+
+// Util Imports
+import { getLocalizedUrl } from '@/utils/i18n'
 
 type ErrorType = {
   message: string[]
@@ -69,6 +73,7 @@ const LoginV2 = ({ mode }: { mode: Mode }) => {
   // Hooks
   const router = useRouter()
   const searchParams = useSearchParams()
+  const { lang: locale } = useParams()
 
   const {
     control,
@@ -105,7 +110,7 @@ const LoginV2 = ({ mode }: { mode: Mode }) => {
       // Vars
       const redirectURL = searchParams.get('redirectTo') ?? '/'
 
-      router.push(redirectURL)
+      router.push(getLocalizedUrl(redirectURL, locale as Locale))
     } else {
       if (res?.error) {
         const error = JSON.parse(res.error)
