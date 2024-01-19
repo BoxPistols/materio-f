@@ -365,13 +365,13 @@ const verticalMenuData = (
         label: dictionary['navigation'].formELements,
         icon: 'ri-radio-button-line',
         suffix: <i className='ri-external-link-line text-xl' />,
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/forms-tables/intro#form-elements`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/forms-tables/intro#form-elements`,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].muiTables,
         icon: 'ri-table-2',
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/tables/mui-table`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/tables/mui-table`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       }
@@ -402,21 +402,21 @@ const verticalMenuData = (
       {
         label: dictionary['navigation'].userInterface,
         icon: 'ri-pantone-line',
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/user-interface/intro`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/intro`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].components,
         icon: 'ri-toggle-line',
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/components/intro`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/intro`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].menuExamples,
         icon: 'ri-menu-search-line',
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/menu-examples/`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/menu-examples/`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
