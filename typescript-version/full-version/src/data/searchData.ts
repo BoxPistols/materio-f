@@ -345,7 +345,7 @@ const data: SearchData[] = [
   {
     id: '49',
     name: 'Menu Examples',
-    url: `${process.env.NEXT_PUBLIC_DOCS_URL}docs/menu-examples/intro`,
+    url: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/menu-examples/intro`,
     icon: 'ri-menu-add-line',
     section: 'Others'
   },
