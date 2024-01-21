@@ -26,7 +26,7 @@ Build premium quality applications with ease. Use our innovative admin template 
 
 ## Installation ⚒️
 
-Please [visit]($installation_url_in_docs) our docs for installation guide.
+Please [visit](https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation/docs/guide/overview/installation) our docs for installation guide.
 
 ## Documentation 📜
 
