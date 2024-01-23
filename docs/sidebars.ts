@@ -62,6 +62,29 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Components',
+      items: [
+        {
+          "type": "category",
+          "label": "MUI",
+          "items": [
+            "guide/components/mui/avatar",
+            "guide/components/mui/badge",
+            "guide/components/mui/chip",
+            "guide/components/mui/tabs",
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Custom",
+          "items": [
+            "guide/components/custom/card-statistics",
+          ]
+        }
+      ]
+    },
+    {
+      type: 'category',
       label: 'Layout',
       items: [
         'guide/layout/layout-types',
