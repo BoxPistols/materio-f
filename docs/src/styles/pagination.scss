@@ -10,7 +10,7 @@
     color: var(--ifm-color-primary);
     border-color: rgb(var(--mui-palette-dividerChannel) / 0.2);
     transform: translateY(-2px);
-    box-shadow: 0px 12px 13px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--mui-customShadows-md);
     .pagination-nav__icon {
       color: var(--ifm-color-primary);
     }

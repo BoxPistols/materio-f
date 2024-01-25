@@ -13,6 +13,9 @@
   display: flex;
   align-items: center;
   margin-right: 10px;
+  img {
+    height: 1.6rem;
+  }
 }
 
 .navbar__title {
@@ -30,7 +33,7 @@
     font-weight: 600;
     color: var(--ifm-color-primary) !important;
   }
-  &[href='https://themeselection.com/buy-now'] {
+  &[href='https://themeselection.com/item/materio-mui-react-nextjs-admin-template'] {
     background-color: var(--ifm-color-primary);
     color: #fff;
     border-radius: 4px;

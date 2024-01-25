@@ -108,7 +108,7 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'faqSidebar', label: 'FAQs', position: 'left', },
         { to: '/articles', label: 'Articles', position: 'left' },
         {
-          href: 'https://themeselection.com/changelog',
+          href: 'https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/changelog.html',
           position: 'right',
           label: 'Changelog',
         },
@@ -118,12 +118,12 @@ const config: Config = {
           label: 'Hire Us',
         },
         {
-          href: 'https://themeselection.com/item/materio-mui-react-nextjs-admin-template',
+          href: 'https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/demo-1',
           position: 'right',
           label: 'Live Demo',
         },
         {
-          href: 'https://themeselection.com/buy-now',
+          href: 'https://themeselection.com/item/materio-mui-react-nextjs-admin-template',
           position: 'right',
           label: 'Buy Now',
         },

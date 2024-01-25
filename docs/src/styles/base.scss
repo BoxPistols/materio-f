@@ -2,6 +2,14 @@ html, body {
   height: auto !important;
   min-height: 100dvh;
 }
+// Home Page Styles
+body:has(.hero) {
+  background-color: var(--mui-palette-background-paper);
+
+  footer.footer {
+    background-color: var(--mui-palette-background-default);
+  }
+}
 
 #__docusaurus {
   min-height: 100dvh !important;
@@ -27,12 +35,12 @@ h6 {
 }
 
 code {
-  border: 0.1rem solid #EBEBEB;
+  border: 0.1rem solid #DDDFEE;
   border-radius: 5px;
   padding: 3px 8px;
 
   [data-theme='dark'] & {
-    border-color: #36363B;
+    border-color: #423D5C;
   }
 }
 
