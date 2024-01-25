@@ -37,7 +37,7 @@ export default Component
 
 Result:
 
-![CLI image](../../../assets/card-horizontal.png)
+![card-stat-horizontal](../../../assets/card-horizontal.png)
 
 ### Props
 
@@ -73,8 +73,8 @@ import CardStatVertical from '@components/card-statistics/Vertical'
 ```
 Results:
 
-![CLI image](../../../assets/card-vertical.png)
-![CLI image](../../../assets/card-vertical-menu.png)
+![card-stat-vertical](../../../assets/card-vertical.png)
+![card-stat-vertical-menu](../../../assets/card-vertical-menu.png)
 
 ### Props
 
@@ -114,7 +114,7 @@ import CardStatWithImage from '@components/card-statistics/Character'
 
 Results:
 
-![CLI image](../../../assets/card-image.png)
+![card-image](../../../assets/card-image.png)
 
 ### Props
 

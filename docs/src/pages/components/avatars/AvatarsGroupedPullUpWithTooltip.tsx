@@ -3,23 +3,30 @@ import Avatar from '@mui/material/Avatar'
 import Tooltip from '@mui/material/Tooltip'
 import AvatarGroup from '@mui/material/AvatarGroup'
 
+// Image Imports
+import avatar4 from '../../../../docs/assets/images/avatars/4.png'
+import avatar5 from '../../../../docs/assets/images/avatars/5.png'
+import avatar6 from '../../../../docs/assets/images/avatars/6.png'
+import avatar7 from '../../../../docs/assets/images/avatars/7.png'
+import avatar8 from '../../../../docs/assets/images/avatars/8.png'
+
 const AvatarsGroupedPullUpWithTooltip = () => {
   return (
     <AvatarGroup className='pull-up' max={4}>
       <Tooltip title='Olivia Sparks'>
-        <Avatar src='/images/avatars/4.png' alt='Olivia Sparks' />
+        <Avatar src={avatar4} alt='Olivia Sparks' />
       </Tooltip>
       <Tooltip title='Howard Lloyd'>
-        <Avatar src='/images/avatars/5.png' alt='Howard Lloyd' />
+        <Avatar src={avatar5} alt='Howard Lloyd' />
       </Tooltip>
       <Tooltip title='Hallie Richards'>
-        <Avatar src='/images/avatars/6.png' alt='Hallie Richards' />
+        <Avatar src={avatar6} alt='Hallie Richards' />
       </Tooltip>
       <Tooltip title='Alice Cobb'>
-        <Avatar src='/images/avatars/8.png' alt='Alice Cobb' />
+        <Avatar src={avatar8} alt='Alice Cobb' />
       </Tooltip>
       <Tooltip title='Jeffery Warner'>
-        <Avatar src='/images/avatars/7.png' alt='Jeffery Warner' />
+        <Avatar src={avatar7} alt='Jeffery Warner' />
       </Tooltip>
     </AvatarGroup>
   )

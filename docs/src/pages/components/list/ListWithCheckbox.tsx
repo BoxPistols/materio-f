@@ -11,6 +11,11 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
+// Image Imports
+import avatar1 from '../../../../docs/assets/images/avatars/1.png'
+import avatar2 from '../../../../docs/assets/images/avatars/2.png'
+import avatar8 from '../../../../docs/assets/images/avatars/8.png'
+
 const ListWithCheckbox = () => {
   // States
   const [checked, setChecked] = useState<number[]>([0])
@@ -33,7 +38,7 @@ const ListWithCheckbox = () => {
       <ListItem disablePadding>
         <ListItemButton onClick={handleToggle(0)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+            <Avatar src={avatar2} alt='Caroline Black' />
           </ListItemAvatar>
           <ListItemText id='checkbox-list-label-0' primary='Caroline Black' />
           <ListItemSecondaryAction>
@@ -51,7 +56,7 @@ const ListWithCheckbox = () => {
       <ListItem disablePadding>
         <ListItemButton onClick={handleToggle(1)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+            <Avatar src={avatar1} alt='Alfred Copeland' />
           </ListItemAvatar>
           <ListItemText id='checkbox-list-label-1' primary='Alfred Copeland' />
           <ListItemSecondaryAction>
@@ -69,7 +74,7 @@ const ListWithCheckbox = () => {
       <ListItem disablePadding>
         <ListItemButton onClick={handleToggle(2)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+            <Avatar src={avatar8} alt='Celia Schneider' />
           </ListItemAvatar>
           <ListItemText id='checkbox-list-label-2' primary='Celia Schneider' />
           <ListItemSecondaryAction>

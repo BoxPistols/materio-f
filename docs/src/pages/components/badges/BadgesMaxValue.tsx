@@ -2,17 +2,20 @@
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 
+// Image Imports
+import avatar1 from '../../../../docs/assets/images/avatars/1.png'
+
 const BadgesMaxValue = () => {
   return (
     <div className='flex gap-6'>
       <Badge badgeContent={99} color='primary'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
       <Badge badgeContent={100} color='primary'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
       <Badge badgeContent={1000} max={999} color='primary'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
     </div>
   )

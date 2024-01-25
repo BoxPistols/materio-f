@@ -3,14 +3,17 @@ import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 
+// Image Imports
+import avatar1 from '../../../../docs/assets/images/avatars/1.png'
+
 const BadgesDot = () => {
   return (
     <div className='flex items-start gap-4'>
       <Badge variant='dot' color='primary'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
       <Badge variant='dot' color='secondary'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
       <Badge variant='dot' color='error'>
         <Typography>Typography</Typography>

@@ -15,6 +15,9 @@ import type { TimelineProps } from '@mui/lab/Timeline'
 // You don't need to import the image as below. You can directly use the path instead of the image variable.
 // We had to import the images because we are using them in the Documentation.
 import document from '../../../../docs/assets/images/icons/pdf-document.png'
+import avatar1 from '../../../../docs/assets/images/avatars/1.png'
+import avatar6 from '../../../../docs/assets/images/avatars/6.png'
+import avatar8 from '../../../../docs/assets/images/avatars/8.png'
 
 // Styled Timeline component
 const Timeline = styled(MuiTimeline)<TimelineProps>({
@@ -77,7 +80,7 @@ const TimelineFilled = () => {
             Project meeting with john @10:15am
           </Typography>
           <div className='flex items-center gap-2.5'>
-            <Avatar src='/images/avatars/1.png' className='w-8 h-8' />
+            <Avatar src={avatar1} className='w-8 h-8' />
             <div className='flex flex-col flex-wrap'>
               <Typography variant='body2' className='font-medium'>
                 Lester McCarthy (Client)
@@ -106,9 +109,9 @@ const TimelineFilled = () => {
             6 team members in a project
           </Typography>
           <AvatarGroup total={6} className='pull-up'>
-            <Avatar alt='Travis Howard' src='/images/avatars/1.png' />
-            <Avatar alt='Agnes Walker' src='/images/avatars/8.png' />
-            <Avatar alt='John Doe' src='/images/avatars/6.png' />
+            <Avatar alt='Travis Howard' src={avatar1} />
+            <Avatar alt='Agnes Walker' src={avatar8} />
+            <Avatar alt='John Doe' src={avatar6} />
           </AvatarGroup>
         </TimelineContent>
       </TimelineItem>

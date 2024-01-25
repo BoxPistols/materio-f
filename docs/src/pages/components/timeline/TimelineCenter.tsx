@@ -35,6 +35,7 @@ import plant4 from '../../../../docs/assets/images/misc/plant-4.png'
 import zipcar from  '../../../../docs/assets/images/misc/zipcar.png'
 import bitbank from  '../../../../docs/assets/images/misc/bitbank.png'
 import aviato from  '../../../../docs/assets/images/misc/aviato.png'
+import avatar8 from '../../../../docs/assets/images/avatars/8.png'
 
 type DataProps = {
   image: string
@@ -229,7 +230,7 @@ const TimelineCenter = () => {
                   className='uppercase'
                   color='success'
                   label='Verified Buyer'
-                  avatar={<Avatar alt='user' src='/images/avatars/8.png' />}
+                  avatar={<Avatar alt='user' src={avatar8} />}
                 />
               </div>
               <Typography>

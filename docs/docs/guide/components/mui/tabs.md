@@ -52,7 +52,7 @@ import CustomTabList from '@core/components/mui/TabList'
 ```
 Results:
 
-![CLI image](../../../assets/tabs.png)
+![tabs](../../../assets/tabs.png)
 
 ### Props
 

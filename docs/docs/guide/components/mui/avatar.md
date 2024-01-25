@@ -46,7 +46,7 @@ import CustomAvatar from '@core/components/mui/Avatar'
 ```
 Results:
 
-![CLI image](../../../assets/avatar-colors.png)
+![avatar-colors](../../../assets/avatar-colors.png)
 
 ### Avatar Skins
 
@@ -65,7 +65,7 @@ import CustomAvatar from '@core/components/mui/Avatar'
 ```
 Results:
 
-![CLI image](../../../assets/avatar-skins.png)
+![avatar-skins](../../../assets/avatar-skins.png)
 
 ### Avatar Sizes
 
@@ -87,7 +87,7 @@ import CustomAvatar from '@docComponents/mui/Avatar'
 ```
 Results:
 
-![CLI image](../../../assets/avatar-sizes.png)
+![avatar-sizes](../../../assets/avatar-sizes.png)
 
 ### Props
 

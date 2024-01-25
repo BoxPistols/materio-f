@@ -29,7 +29,7 @@ import Chip from '@mui/material/Chip'
 ```
 Results:
 
-![CLI image](../../../assets/chip-skins.png)
+![chip-skins](../../../assets/chip-skins.png)
 
 ### Props
 

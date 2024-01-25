@@ -4,6 +4,9 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Avatar from '@mui/material/Avatar'
 
+// Image Imports
+import avatar6 from '../../../../../docs/assets/images/avatars/6.png'
+
 const CardTwitter = () => {
   return (
     <Card className='bg-[#1d9bf0]'>
@@ -20,7 +23,7 @@ const CardTwitter = () => {
         </Typography>
         <div className='flex align-center justify-between flex-wrap gap-x-4 gap-y-2'>
           <div className='flex items-center gap-2.5'>
-            <Avatar src='/images/avatars/6.png' />
+            <Avatar src={avatar6} />
             <Typography className='text-white'>
               Mary Vaughn
             </Typography>

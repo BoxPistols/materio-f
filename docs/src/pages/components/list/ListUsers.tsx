@@ -11,6 +11,12 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 import type { ListProps } from '@mui/material/List'
 
+// Image Imports
+import avatar1 from '../../../../docs/assets/images/avatars/1.png'
+import avatar2 from '../../../../docs/assets/images/avatars/2.png'
+import avatar5 from '../../../../docs/assets/images/avatars/5.png'
+import avatar8 from '../../../../docs/assets/images/avatars/8.png'
+
 const StyledList = styled(List)<ListProps>(({ theme }) => ({
   '& .MuiListItem-container': {
     border: `1px solid ${theme.palette.divider}`,
@@ -48,28 +54,28 @@ type User = {
 const userList: User[] = [
   {
     name: 'Caroline Black',
-    avatarSrc: '/images/avatars/2.png',
+    avatarSrc: avatar2,
     status: 'Online',
     statusColor: 'success.main',
     lastActive: '13 minutes ago'
   },
   {
     name: 'Alfred Copeland',
-    avatarSrc: '/images/avatars/1.png',
+    avatarSrc: avatar1,
     status: 'Away',
     statusColor: 'warning.main',
     lastActive: '11 minutes ago'
   },
   {
     name: 'Celia Schneider',
-    avatarSrc: '/images/avatars/8.png',
+    avatarSrc: avatar8,
     status: 'Offline',
     statusColor: 'secondary.main',
     lastActive: '9 minutes ago'
   },
   {
     name: 'Max Rogan',
-    avatarSrc: '/images/avatars/5.png',
+    avatarSrc: avatar5,
     status: 'In Meeting',
     statusColor: 'error.main',
     lastActive: '28 minutes ago'

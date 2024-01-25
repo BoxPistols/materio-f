@@ -48,7 +48,7 @@ import CustomBadge from '@core/components/mui/Badge';
 
 Results:
 
-![CLI image](../../../assets/badge-skins.png)
+![badge-skins](../../../assets/badge-skins.png)
 
 ### Props
 

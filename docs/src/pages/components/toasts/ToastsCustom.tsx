@@ -7,13 +7,16 @@ import Typography from '@mui/material/Typography'
 // Third-party Imports
 import { toast } from 'react-toastify'
 
+// Image Imports
+import avatar3 from '../../../../docs/assets/images/avatars/3.png'
+
 const ToastsCustom = () => {
   const handleClick = () => {
     return toast(
       t => (
         <div className='w-full flex items-center justify-between'>
           <div className='flex items-center'>
-            <Avatar alt='Victor Anderson' src='/images/avatars/3.png' className='mie-3'/>
+            <Avatar alt='Victor Anderson' src={avatar3} className='mie-3'/>
             <div>
               <Typography variant='h6'>John Doe</Typography>
               <Typography variant='caption'>Sure! 8:30pm works great!</Typography>

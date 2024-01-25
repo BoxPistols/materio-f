@@ -4,6 +4,9 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Avatar from '@mui/material/Avatar'
 
+// Image Imports
+import avatar1 from '../../../../../docs/assets/images/avatars/1.png'
+
 const CardFacebook = () => {
   return (
     <Card className='bg-[#3b5998]'>
@@ -20,7 +23,7 @@ const CardFacebook = () => {
         </Typography>
         <div className='flex align-center justify-between flex-wrap gap-x-4 gap-y-2'>
           <div className='flex items-center gap-2.5'>
-            <Avatar src='/images/avatars/1.png' />
+            <Avatar src={avatar1} />
             <Typography className='text-white'>
               Eugene Clarke
             </Typography>

@@ -2,26 +2,29 @@
 import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 
+// Image Imports
+import avatar1 from '../../../../docs/assets/images/avatars/1.png'
+
 const BadgesBasic = () => {
   return (
     <div className='flex gap-4'>
       <Badge badgeContent={4} color='primary'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='secondary'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='success'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='error'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='warning'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
       <Badge badgeContent={4} color='info'>
-        <Avatar src='/images/avatars/1.png' alt='User Avatar' />
+        <Avatar src={avatar1} alt='User Avatar' />
       </Badge>
     </div>
   )

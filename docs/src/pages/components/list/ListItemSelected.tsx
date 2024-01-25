@@ -9,7 +9,11 @@ import IconButton from '@mui/material/IconButton'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
-import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
+
+// Image Imports
+import avatar1 from '../../../../docs/assets/images/avatars/1.png'
+import avatar2 from '../../../../docs/assets/images/avatars/2.png'
+import avatar8 from '../../../../docs/assets/images/avatars/8.png'
 
 const ListItemSelected = () => {
   // States
@@ -28,7 +32,7 @@ const ListItemSelected = () => {
       }>
         <ListItemButton selected={selectedIndex === 0} onClick={() => handleListItemClick(0)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+            <Avatar src={avatar2} alt='Caroline Black' />
           </ListItemAvatar>
           <ListItemText primary='Caroline Black' />
         </ListItemButton>
@@ -40,7 +44,7 @@ const ListItemSelected = () => {
       }>
         <ListItemButton selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+            <Avatar src={avatar1} alt='Alfred Copeland' />
           </ListItemAvatar>
           <ListItemText primary='Alfred Copeland' />
         </ListItemButton>
@@ -52,7 +56,7 @@ const ListItemSelected = () => {
       }>
         <ListItemButton selected={selectedIndex === 2} onClick={() => handleListItemClick(2)}>
           <ListItemAvatar>
-            <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+            <Avatar src={avatar8} alt='Celia Schneider' />
           </ListItemAvatar>
           <ListItemText primary='Celia Schneider' />
         </ListItemButton>

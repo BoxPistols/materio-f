@@ -11,6 +11,11 @@ import { useTheme } from '@mui/material/styles'
 // Third-party Imports
 import { useDropzone } from 'react-dropzone'
 
+// Image Imports
+// You don't need to import the image as below. You can directly use the path instead of the image variable.
+// We had to import the images because we are using them in the Documentation.
+import fileUpload from '../../../../docs/assets/images/misc/file-upload.png'
+
 type FileProp = {
   name: string
   type: string
@@ -65,7 +70,7 @@ const FileUploaderSingle = () => {
         img
       ) : (
         <div className='flex items-center flex-col md:flex-row'>
-          <Img alt='Upload img' src='/images/misc/file-upload.png' className='max-bs-[160px] max-is-full bs-full' />
+          <Img alt='Upload img' src={fileUpload} className='max-bs-[160px] max-is-full bs-full' />
           <div className='flex flex-col md:[text-align:unset] text-center'>
             <HeadingTypography variant='h5'>Drop files here or click to upload.</HeadingTypography>
             <Typography>

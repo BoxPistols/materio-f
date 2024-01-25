@@ -3,6 +3,10 @@ import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 import { styled } from '@mui/material/styles'
 
+// Image Imports
+import avatar2 from '../../../../docs/assets/images/avatars/2.png'
+import avatar4 from '../../../../docs/assets/images/avatars/4.png'
+
 // Styled component for badge content area
 const BadgeContentSpan = styled('span')({
   width: 8,
@@ -23,7 +27,7 @@ const AvatarsWithBadge = () => {
           horizontal: 'right'
         }}
       >
-        <Avatar alt='Marie Garza' src='/images/avatars/2.png' />
+        <Avatar alt='Marie Garza' src={avatar2} />
       </Badge>
       <Badge
         overlap='circular'
@@ -34,12 +38,12 @@ const AvatarsWithBadge = () => {
         badgeContent={
           <Avatar
             alt='Marie Garza'
-            src='/images/avatars/2.png'
+            src={avatar2}
             className='bs-[1.375rem] is-[1.375rem] border-2 border-backgroundPaper'
           />
         }
       >
-        <Avatar alt='Olivia Sparks' src='/images/avatars/4.png' />
+        <Avatar alt='Olivia Sparks' src={avatar4} />
       </Badge>
     </div>
   )

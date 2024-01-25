@@ -7,12 +7,17 @@ import ListItemText from '@mui/material/ListItemText'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 
+// Image Imports
+import avatar1 from '../../../../docs/assets/images/avatars/1.png'
+import avatar2 from '../../../../docs/assets/images/avatars/2.png'
+import avatar8 from '../../../../docs/assets/images/avatars/8.png'
+
 const ListSecondary = () => {
   return (
     <List>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+          <Avatar src={avatar2} alt='Caroline Black' />
         </ListItemAvatar>
         <ListItemText primary='Caroline Black' secondary='Sweet dessert brownie.' />
         <ListItemSecondaryAction>
@@ -23,7 +28,7 @@ const ListSecondary = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+          <Avatar src={avatar1} alt='Alfred Copeland' />
         </ListItemAvatar>
         <ListItemText primary='Alfred Copeland' secondary='Pudding pie tiramisu.' />
         <ListItemSecondaryAction>
@@ -34,7 +39,7 @@ const ListSecondary = () => {
       </ListItem>
       <ListItem>
         <ListItemAvatar>
-          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+          <Avatar src={avatar8} alt='Celia Schneider' />
         </ListItemAvatar>
         <ListItemText primary='Celia Schneider' secondary='Muffin pie chupa chups.' />
         <ListItemSecondaryAction>

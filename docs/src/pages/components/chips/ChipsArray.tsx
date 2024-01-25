@@ -5,6 +5,12 @@ import { useState } from 'react'
 import Chip from '@mui/material/Chip'
 import Avatar from '@mui/material/Avatar'
 
+// Image Imports
+import avatar1 from '../../../../docs/assets/images/avatars/1.png'
+import avatar2 from '../../../../docs/assets/images/avatars/2.png'
+import avatar4 from '../../../../docs/assets/images/avatars/4.png'
+import avatar5 from '../../../../docs/assets/images/avatars/5.png'
+
 type ChipData = {
   key: number
   label: string
@@ -13,11 +19,11 @@ type ChipData = {
 }
 
 const data: ChipData[] = [
-  { key: 0, avatar: '/images/avatars/1.png', avatarAlt: 'User Avatar', label: 'Norman Santiago' },
-  { key: 1, avatar: '/images/avatars/2.png', avatarAlt: 'User Avatar', label: 'Cecelia Tucker' },
+  { key: 0, avatar: avatar1, avatarAlt: 'User Avatar', label: 'Norman Santiago' },
+  { key: 1, avatar: avatar2, avatarAlt: 'User Avatar', label: 'Cecelia Tucker' },
   { key: 2, label: 'Max Burns' },
-  { key: 3, avatar: '/images/avatars/4.png', avatarAlt: 'User Avatar', label: 'Ellen Nguyen' },
-  { key: 4, avatar: '/images/avatars/5.png', avatarAlt: 'User Avatar', label: 'Edward Francis' }
+  { key: 3, avatar: avatar4, avatarAlt: 'User Avatar', label: 'Ellen Nguyen' },
+  { key: 4, avatar: avatar5, avatarAlt: 'User Avatar', label: 'Edward Francis' }
 ];
 
 const ChipsArray = () => {
