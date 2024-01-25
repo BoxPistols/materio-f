@@ -12,6 +12,8 @@ import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 import type { ListProps } from '@mui/material/List'
 
 // Image Imports
+// You don't need to import the image as below. You can directly use the path instead of the image variable.
+// We had to import the images because we are using them in the Documentation.
 import avatar1 from '../../../../docs/assets/images/avatars/1.png'
 import avatar2 from '../../../../docs/assets/images/avatars/2.png'
 import avatar5 from '../../../../docs/assets/images/avatars/5.png'

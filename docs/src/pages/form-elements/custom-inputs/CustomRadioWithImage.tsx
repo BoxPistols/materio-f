@@ -10,19 +10,26 @@ import { CustomInputImgData } from '@docComponents/custom-inputs/types'
 // Components Imports
 import CustomInputImg from '@docComponents/custom-inputs/Image'
 
+// Image Imports
+// You don't need to import the image as below. You can directly use the path instead of the image variable.
+// We had to import the images because we are using them in the Documentation.
+import avatar22 from '../../../../docs/assets/images/banners/22.jpg'
+import avatar26 from '../../../../docs/assets/images/banners/26.jpg'
+import avatar27 from '../../../../docs/assets/images/banners/27.jpg'
+
 const data: CustomInputImgData[] = [
   {
     value: 'clock',
     isSelected: true,
-    img: '/images/banners/27.jpg',
+    img: avatar27
   },
   {
     value: 'donuts',
-    img: '/images/banners/26.jpg',
+    img: avatar26
   },
   {
     value: 'flowers',
-    img: '/images/banners/22.jpg',
+    img: avatar22
   },
 ]
 

@@ -212,7 +212,7 @@ const TimelineCenter = () => {
               </Typography>
               <div className='flex items-center gap-4 mbe-3'>
                 <Avatar
-                  src='/images/avatars/8.png'
+                  src={avatar8}
                   className='bs-[38px] is-[38px]'
                 />
                 <div className='flex flex-col flex-wrap'>

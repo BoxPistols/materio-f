@@ -4,6 +4,8 @@ import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 
 // Image Imports
+// You don't need to import the image as below. You can directly use the path instead of the image variable.
+// We had to import the images because we are using them in the Documentation.
 import avatar1 from '../../../../docs/assets/images/avatars/1.png'
 
 const BadgesDot = () => {
