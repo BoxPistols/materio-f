@@ -1,5 +1,6 @@
 footer.footer {
-  background-color: var(--mui-palette-action-hover);
+  background-color: var(--mui-palette-background-paper);
+  border-top: 1px solid var(--mui-palette-divider);
 
   svg[class*='iconExternalLink_'] {
     display: none;
@@ -12,6 +13,14 @@ footer.footer {
     flex-wrap: wrap;
     column-gap: 1.5rem;
     row-gap: 0.5rem;
+  }
+
+  .footer__link-item {
+    color: var(--ifm-menu-color);
+    text-decoration: none;
+    &:hover {
+      color: var(--mui-palette-text-primary);
+    }
   }
 
   .footer__link-separator {

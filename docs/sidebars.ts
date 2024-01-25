@@ -72,40 +72,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Components',
-      items: [
-        'guide/components/form',
-        'guide/components/link',
-        'guide/components/open-dialog-on-element-click',
-        'guide/components/option-menu',
-        'guide/components/overriding-custom-components',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Components',
-      items: [
-        {
-          "type": "category",
-          "label": "MUI",
-          "items": [
-            "guide/components/mui/avatar",
-            "guide/components/mui/badge",
-            "guide/components/mui/chip",
-            "guide/components/mui/tabs",
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Custom",
-          "items": [
-            "guide/components/custom/card-statistics",
-          ]
-        }
-      ]
-    },
-    {
-      type: 'category',
       label: 'Layout',
       items: [
         'guide/layout/layout-types',
@@ -159,18 +125,42 @@ const sidebars: SidebarsConfig = {
         'guide/components/overview',
         {
           type: 'category',
+          label: 'MUI',
+          items: [
+            'guide/components/mui/avatar',
+            'guide/components/mui/badge',
+            'guide/components/mui/chip',
+            'guide/components/mui/tabs',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Custom',
           items: [
             'guide/components/custom/generate-menu',
+            'guide/components/custom/form',
+            'guide/components/custom/link',
+            'guide/components/custom/open-dialog-on-element-click',
+            'guide/components/custom/option-menu',
+            'guide/components/custom/card-statistics',
+            {
+              type: 'category',
+              label: 'Custom-Inputs',
+              items: [
+                'guide/components/custom/custom-inputs/horizontal',
+                'guide/components/custom/custom-inputs/vertical',
+                'guide/components/custom/custom-inputs/image',
+                'guide/components/custom/custom-inputs/override-custom-inputs'
+              ]
+            },
           ]
-        }
+        },
+        'guide/components/overriding-custom-components',
       ]
     },
-    'custom-inputs',
     'guide/credit',
   ],
   userInterfaceSidebar: [
-    "user-interface/intro",
     'user-interface/typography',
     'user-interface/icons',
     'user-interface/cards-basic',

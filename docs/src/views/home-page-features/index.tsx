@@ -3,9 +3,6 @@ import React from 'react'
 
 import Admonition from '@theme/Admonition'
 
-// Style Imports
-import styles from './styles.module.css'
-
 type FeatureItem = {
   title: string
   Svg: React.ComponentType<React.ComponentProps<'svg'>>
@@ -46,7 +43,7 @@ const Feature = ({title, Svg, description}: FeatureItem) => {
   return (
     <div className='col col--4'>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <Svg className='is-[200px] bs-[200px]' role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
@@ -58,7 +55,7 @@ const Feature = ({title, Svg, description}: FeatureItem) => {
 
 const HomepageFeatures = (): JSX.Element => {
   return (
-    <section className={styles.features}>
+    <section className='flex items-center is-full plb-8'>
       <div className="container">
         <Admonition type="warning" title='📣 Heads up'>
           <p>You are viewing <strong>Next.js App Directory Routing</strong> documentation of Materio admin template. For <strong>Next.js Pages Directory Routing</strong> documentation, please visit <a href="https://demos.themeselection.com/materio-mui-react-nextjs-admin-template-old/documentation" target='_blank'>this page</a>.</p>
