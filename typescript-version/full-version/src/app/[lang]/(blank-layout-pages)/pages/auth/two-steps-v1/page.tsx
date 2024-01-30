@@ -2,7 +2,7 @@
 import TwoStepsV1 from '@views/pages/auth/TwoStepsV1'
 
 // Server Action Imports
-import { getServerMode } from '@core/server/actions'
+import { getServerMode } from '@core/utils/serverHelpers'
 
 const TwoStepsV1Page = () => {
   // Vars

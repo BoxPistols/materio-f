@@ -2,7 +2,7 @@
 import NotFound from '@views/NotFound'
 
 // Server Action Imports
-import { getServerMode } from '@core/server/actions'
+import { getServerMode } from '@core/utils/serverHelpers'
 
 const Error = () => {
   // Vars

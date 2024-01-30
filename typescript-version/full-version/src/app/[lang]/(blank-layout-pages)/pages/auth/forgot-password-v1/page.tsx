@@ -2,7 +2,7 @@
 import ForgotPasswordV1 from '@views/pages/auth/ForgotPasswordV1'
 
 // Server Action Imports
-import { getServerMode } from '@core/server/actions'
+import { getServerMode } from '@core/utils/serverHelpers'
 
 const ForgotPasswordV1Page = () => {
   // Vars
