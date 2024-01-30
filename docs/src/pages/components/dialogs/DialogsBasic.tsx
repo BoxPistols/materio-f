@@ -47,7 +47,7 @@ const DialogsBasic = () => {
             <ListItem key={email} disablePadding onClick={() => handleClose(email)}>
               <ListItemButton>
                 <ListItemAvatar>
-                  <CustomAvatar skin='light' >
+                  <CustomAvatar color='primary' skin='light' >
                     <i className='ri-user-3-line' />
                   </CustomAvatar>
                 </ListItemAvatar>
