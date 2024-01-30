@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import Login from '@views/Login'
 
 // Server Action Imports
-import { getServerMode } from '@core/server/actions'
+import { getServerMode } from '@core/utils/serverHelpers'
 
 export const metadata: Metadata = {
   title: 'Login',

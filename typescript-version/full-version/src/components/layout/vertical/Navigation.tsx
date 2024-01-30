@@ -1,13 +1,13 @@
 'use client'
 
 // React Imports
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 // MUI Imports
 import { styled, useColorScheme, useTheme } from '@mui/material/styles'
 
 // Type Imports
-import type { getDictionary } from '@/utils/get-dictionary'
+import type { getDictionary } from '@/utils/getDictionary'
 import type { Settings } from '@core/contexts/settingsContext'
 import type { Mode, Skin, SystemMode } from '@core/types'
 
@@ -63,7 +63,7 @@ const Navigation = (props: Props) => {
   const shadowRef = useRef(null)
 
   // Vars
-  const { isCollapsed, isHovered, isBreakpointReached } = verticalNavOptions
+  const { isCollapsed, isHovered, collapseVerticalNav, isBreakpointReached } = verticalNavOptions
   const isServer = typeof window === 'undefined'
   let isSemiDark, isDark, isSkinBordered
 
@@ -74,7 +74,6 @@ const Navigation = (props: Props) => {
   } else {
     isSemiDark = settings.semiDark
     isDark = muiMode === 'system' ? muiSystemMode === 'dark' : muiMode === 'dark'
-    isSkinBordered = settings.skin === 'bordered'
   }
 
   const scrollMenu = (container: any, isPerfectScrollbar: boolean) => {
@@ -91,6 +90,15 @@ const Navigation = (props: Props) => {
       shadowRef.current.classList.remove('scrolled')
     }
   }
+
+  useEffect(() => {
+    if (settings.layout === 'collapsed') {
+      collapseVerticalNav(true)
+    } else {
+      collapseVerticalNav(false)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [settings.layout])
 
   return (
     // eslint-disable-next-line lines-around-comment

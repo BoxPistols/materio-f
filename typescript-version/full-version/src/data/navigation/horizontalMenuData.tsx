@@ -1,6 +1,6 @@
 // Type Imports
 import type { HorizontalMenuDataType } from '@/types/menuTypes'
-import type { getDictionary } from '@/utils/get-dictionary'
+import type { getDictionary } from '@/utils/getDictionary'
 
 type Params = {
   [key: string]: string | string[]
@@ -362,13 +362,13 @@ const horizontalMenuData = (
         label: dictionary['navigation'].formELements,
         icon: 'ri-radio-button-line',
         suffix: <i className='ri-external-link-line text-xl' />,
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/form-elements/intro`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/form-elements/intro`,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].muiTables,
         icon: 'ri-table-2',
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/tables/mui-table`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/mui-table`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       }
@@ -397,14 +397,14 @@ const horizontalMenuData = (
       {
         label: dictionary['navigation'].userInterface,
         icon: 'ri-pantone-line',
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/intro`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/typography`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
       {
         label: dictionary['navigation'].components,
         icon: 'ri-toggle-line',
-        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/components/intro`,
+        href: `${process.env.NEXT_PUBLIC_DOCS_URL}/docs/user-interface/components/intro`,
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
