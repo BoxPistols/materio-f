@@ -2,8 +2,9 @@
 import React from 'react'
 
 // Docusaurus Imports
-import { useColorMode } from "@docusaurus/theme-common/internal"
 import Admonition from '@theme/Admonition'
+import ThemedImage from '@theme/ThemedImage'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 type FeatureItem = {
   title: string
@@ -16,8 +17,8 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Based on MUI & Next.js',
-    imgLightSrc: require('@site/docs/assets/home-page-light-mui-nextjs.png').default,
-    imgDarkSrc: require('@site/docs/assets/home-page-dark-mui-nextjs.png').default,
+    imgLightSrc: '/images/home-page/light-mui-nextjs.png',
+    imgDarkSrc: '/images/home-page/dark-mui-nextjs.png',
     imgAlt: 'MUI & Next.js',
     description: (
       <>
@@ -27,8 +28,8 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Hooks Support',
-    imgLightSrc: require('@site/docs/assets/home-page-light-hooks-support.png').default,
-    imgDarkSrc: require('@site/docs/assets/home-page-dark-hooks-support.png').default,
+    imgLightSrc: '/images/home-page/light-hooks-support.png',
+    imgDarkSrc: '/images/home-page/dark-hooks-support.png',
     imgAlt: 'Hooks Support',
     description: (
       <>
@@ -38,8 +39,8 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Next Auth & Translations',
-    imgLightSrc: require('@site/docs/assets/home-page-light-next-auth-translations.png').default,
-    imgDarkSrc: require('@site/docs/assets/home-page-dark-next-auth-translations.png').default,
+    imgLightSrc: '/images/home-page/light-next-auth-translations.png',
+    imgDarkSrc: '/images/home-page/dark-next-auth-translations.png',
     imgAlt: 'Next Auth & Translations',
     description: (
       <>
@@ -50,13 +51,14 @@ const FeatureList: FeatureItem[] = [
 ]
 
 const Feature = ({title, imgLightSrc, imgDarkSrc, imgAlt, description}: FeatureItem) => {
-  // Hooks
-  const { colorMode } = useColorMode()
-
   return (
     <div className='col col--4'>
       <div className="text--center">
-        <img src={colorMode === 'dark' ? imgDarkSrc : imgLightSrc} alt={imgAlt} className='is-[350px]' />
+        <ThemedImage
+          alt={imgAlt}
+          className='is-[350px]'
+          sources={{ light: useBaseUrl(imgLightSrc), dark: useBaseUrl(imgDarkSrc) }}
+        />
       </div>
       <div className="text--center padding-horiz--md">
         <h3 className='mbe-2'>{title}</h3>
