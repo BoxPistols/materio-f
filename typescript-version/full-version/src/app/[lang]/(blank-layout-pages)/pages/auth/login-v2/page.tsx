@@ -2,7 +2,7 @@
 import LoginV2 from '@views/pages/auth/LoginV2'
 
 // Server Action Imports
-import { getServerMode } from '@core/server/actions'
+import { getServerMode } from '@core/utils/serverHelpers'
 
 const LoginV2Page = () => {
   // Vars

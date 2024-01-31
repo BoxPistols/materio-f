@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import ForgotPassword from '@views/ForgotPassword'
 
 // Server Action Imports
-import { getServerMode } from '@core/server/actions'
+import { getServerMode } from '@core/utils/serverHelpers'
 
 export const metadata: Metadata = {
   title: 'Forgot Password',

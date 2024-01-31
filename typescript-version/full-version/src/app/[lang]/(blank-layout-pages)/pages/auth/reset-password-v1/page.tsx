@@ -2,7 +2,7 @@
 import ResetPasswordV1 from '@views/pages/auth/ResetPasswordV1'
 
 // Server Action Imports
-import { getServerMode } from '@core/server/actions'
+import { getServerMode } from '@core/utils/serverHelpers'
 
 const ResetPasswordV1Page = () => {
   // Vars

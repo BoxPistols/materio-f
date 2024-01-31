@@ -2,7 +2,7 @@
 import UnderMaintenance from '@views/pages/misc/UnderMaintenance'
 
 // Server Action Imports
-import { getServerMode } from '@core/server/actions'
+import { getServerMode } from '@core/utils/serverHelpers'
 
 const UnderMaintenancePage = () => {
   // Vars

@@ -2,7 +2,7 @@
 import ComingSoon from '@views/pages/misc/ComingSoon'
 
 // Server Action Imports
-import { getServerMode } from '@core/server/actions'
+import { getServerMode } from '@core/utils/serverHelpers'
 
 const ComingSoonPage = () => {
   // Vars
