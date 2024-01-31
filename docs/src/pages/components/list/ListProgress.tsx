@@ -11,7 +11,7 @@ import type { ListProps } from '@mui/material/List'
 import type { ThemeColor } from '@core/types'
 
 // Component Imports
-import CustomAvatar from '@docComponents/mui/Avatar'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 const StyledList = styled(List)<ListProps>(({ theme }) => ({
   '& .MuiListItem-root': {
@@ -86,7 +86,7 @@ const ListProgress = () => {
         return (
           <ListItem key={index}>
             <ListItemAvatar className='flex gap-5 items-center w-full'>
-              <CustomAvatar skin='light' color={course.variant} variant='rounded' className='w-9 h-9'>
+              <CustomAvatar skin='light' color={course.color} variant='rounded' className='w-9 h-9'>
                 <i className={course.icon} />
               </CustomAvatar>
               <div className='w-full'>

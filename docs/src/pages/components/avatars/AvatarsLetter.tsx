@@ -2,7 +2,7 @@
 import MuiAvatar from '@mui/material/Avatar'
 
 // Component Imports
-import CustomAvatar from '@docComponents/mui/Avatar'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 const AvatarsLetter = () => {
   return (

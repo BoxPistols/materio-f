@@ -44,9 +44,6 @@ import CustomAvatar from '@core/components/mui/Avatar'
   <i className='ri-add-box-line' />
 </CustomAvatar>
 ```
-Results:
-
-![avatar-colors](../../../assets/avatar-colors.png)
 
 ### Avatar Skins
 
@@ -63,9 +60,6 @@ import CustomAvatar from '@core/components/mui/Avatar'
 <CustomAvatar color='error' skin='light'>OP</CustomAvatar>
 <CustomAvatar color='error' skin='light-static'>AB</CustomAvatar>
 ```
-Results:
-
-![avatar-skins](../../../assets/avatar-skins.png)
 
 ### Avatar Sizes
 
@@ -85,9 +79,6 @@ import CustomAvatar from '@docComponents/mui/Avatar'
 <Avatar alt='Victor Anderson' /> // If you are not using additional props like size, color, etc, you can use the MUI Avatar component
 <CustomAvatar size={56} alt='Victor Anderson' />
 ```
-Results:
-
-![avatar-sizes](../../../assets/avatar-sizes.png)
 
 ### Props
 

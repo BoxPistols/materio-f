@@ -27,9 +27,6 @@ import Chip from '@mui/material/Chip'
 <Chip label='Warning' color='warning' variant='tonal' />
 <Chip label='Info' color='info' variant='tonal' />
 ```
-Results:
-
-![chip-skins](../../../assets/chip-skins.png)
 
 ### Props
 

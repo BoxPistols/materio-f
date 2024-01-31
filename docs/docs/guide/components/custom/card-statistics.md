@@ -12,6 +12,8 @@ We have created different version of card component to make it easier for you to
 
 The `CardStatHorizontal` component is tailored for presenting statistics in a horizontal layout. It's an ideal choice for showcasing key figures such as customer counts, sales numbers, or any other significant data in a visually appealing and easy-to-read format.
 
+This component is placed inside the `src/components/card-statistics/Horizontal.tsx` file. You may refer to the `src/views/pages/widget-examples/statistics/Horizontal.tsx` file for it's usage.
+
 Usage:
 Here's an example of how to use the `CardStatHorizontal` component:
 
@@ -35,10 +37,6 @@ const Component = () => {
 export default Component
 ```
 
-Result:
-
-![card-stat-horizontal](../../../assets/card-horizontal.png)
-
 ### Props
 
 | Prop         | Type                                                                    | Required | Description                                  |
@@ -53,6 +51,8 @@ Result:
 ### Card Statistics Vertical
 
 The `CardStatVertical` component is adeptly designed for vertically-oriented presentation of key statistics. This format is particularly suitable for detailed data display, where additional information such as subtitles and icons enhances the understanding of the metrics.
+
+This component is placed inside the `src/components/card-statistics/Vertical.tsx` file. You may refer to the `src/app/[lang]/(dashboard)/dashboards/ecommerce/page.tsx` and `src/views/pages/widget-examples/statistics/Vertical.tsx` files for it's usage.
 
 To utilize the `CardStatVertical` component in your application:
 
@@ -71,10 +71,6 @@ import CardStatVertical from '@components/card-statistics/Vertical'
   moreOptions={{ options: ['Add', 'Edit', 'Delete'] }}
 />
 ```
-Results:
-
-![card-stat-vertical](../../../assets/card-vertical.png)
-![card-stat-vertical-menu](../../../assets/card-vertical-menu.png)
 
 ### Props
 
@@ -96,6 +92,8 @@ Results:
 
 The `CardStatWithImage` component offers a creative way to feature statistics along with a related image, providing a visual context that enhances the data representation.
 
+This component is placed inside the `src/components/card-statistics/Character.tsx` file. You may refer to the `src/app/[lang]/(dashboard)/dashboards/crm/page.tsx` and `src/views/pages/widget-examples/statistics/Character.tsx` files for it's usage.
+
 Here's how to implement the `CardStatWithImage` component in your application:
 
 ```tsx
@@ -111,10 +109,6 @@ import CardStatWithImage from '@components/card-statistics/Character'
   chipText={`Year of ${new Date().getFullYear()}`}
 />
 ```
-
-Results:
-
-![card-image](../../../assets/card-image.png)
 
 ### Props
 

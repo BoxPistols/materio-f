@@ -2,7 +2,7 @@
 import React from 'react'
 
 // Component Imports
-import CustomAvatar from '@docComponents/mui/Avatar'
+import CustomAvatar from '@core/components/mui/Avatar'
 
 const AvatarsVariants = () => {
   return (

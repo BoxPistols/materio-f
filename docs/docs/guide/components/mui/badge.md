@@ -46,10 +46,6 @@ import CustomBadge from '@core/components/mui/Badge';
 </CustomBadge>
 ```
 
-Results:
-
-![badge-skins](../../../assets/badge-skins.png)
-
 ### Props
 
 | Prop  | Type    | Default | Required | Description                            |

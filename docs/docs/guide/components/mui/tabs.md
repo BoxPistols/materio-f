@@ -50,9 +50,6 @@ import CustomTabList from '@core/components/mui/TabList'
   </TabPanel>
 </TabContext>
 ```
-Results:
-
-![tabs](../../../assets/tabs.png)
 
 ### Props
 
