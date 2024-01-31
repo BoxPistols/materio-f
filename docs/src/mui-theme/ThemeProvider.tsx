@@ -11,7 +11,6 @@ import {
   StyledEngineProvider
 } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import GlobalStyles from "@mui/material/GlobalStyles";
 import type {} from '@mui/material/themeCssVarsAugmentation'
 import type {} from '@mui/lab/themeAugmentation';
 
@@ -20,9 +19,6 @@ import ChangeMuiMode from "./ChangeMuiMode";
 
 // Config Imports
 import themeConfig from "@configs/themeConfig";
-
-// Style Imports
-import globalStyling from "./globalStyles";
 
 // Theme Overrides Imports
 import overrides from "@core/theme/overrides";
@@ -67,7 +63,6 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
         theme={theme}
         modeStorageKey={`${themeConfig.templateName.toLowerCase().split(' ').join('-')}-mui-docs-mode`}
       >
-        <GlobalStyles styles={() => globalStyling(theme)} />
         <CssBaseline />
         <ChangeMuiMode />
         {children}

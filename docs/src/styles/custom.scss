@@ -10,6 +10,8 @@
   --ifm-color-primary-light: #a379ff;
   --ifm-color-primary-lighter: #af8aff;
   --ifm-color-primary-lightest: #d2beff;
+  --ifm-background-color: var(--mui-palette-background-default);
+  --ifm-background-surface-color: var(--mui-palette-background-paper);
   --ifm-code-font-size: 95%;
   --ifm-code-background: #EDEEF9;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
@@ -64,6 +66,8 @@ html[data-theme='dark']:root {
   --ifm-color-primary-light: #a379ff;
   --ifm-color-primary-lighter: #af8aff;
   --ifm-color-primary-lightest: #d2beff;
+  --ifm-background-color: var(--mui-palette-background-default);
+  --ifm-background-surface-color: var(--mui-palette-background-paper);
   --ifm-code-background: #2F2A47;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-toc-border-color: transparent;
