@@ -21,6 +21,7 @@ import Divider from '@mui/material/Divider'
 import classnames from 'classnames'
 
 // Type Imports
+import type { Locale } from '@configs/i18n'
 import type { Mode } from '@core/types'
 
 // Component Imports
@@ -33,6 +34,9 @@ import themeConfig from '@configs/themeConfig'
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
 import { useSettings } from '@core/hooks/useSettings'
+
+// Util Imports
+import { getLocalizedUrl } from '@/utils/i18n'
 
 const RegisterV2 = ({ mode }: { mode: Mode }) => {
   // States
@@ -134,7 +138,11 @@ const RegisterV2 = ({ mode }: { mode: Mode }) => {
             </Button>
             <div className='flex justify-center items-center flex-wrap gap-2'>
               <Typography>Already have an account?</Typography>
-              <Typography component={Link} href={`/${locale}/pages/auth/login-v2`} color='primary'>
+              <Typography
+                component={Link}
+                href={getLocalizedUrl('pages/auth/login-v2', locale as Locale)}
+                color='primary'
+              >
                 Sign in instead
               </Typography>
             </div>

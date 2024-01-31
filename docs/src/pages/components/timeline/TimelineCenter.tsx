@@ -23,19 +23,7 @@ import type { TimelineProps } from '@mui/lab/Timeline'
 // Type Imports
 import type { ThemeColor } from '@core/types'
 
-// Image Imports
-// You don't need to import the image as below. You can directly use the path instead of the image variable.
-// We had to import the images because we are using them in the Documentation.
-import pdfDocument from '../../../../docs/assets/images/icons/pdf-document.png'
-import xlsDocument from '../../../../docs/assets/images/icons/xls-document.png'
-import plant1 from '../../../../docs/assets/images/misc/plant-1.png'
-import plant2 from '../../../../docs/assets/images/misc/plant-2.png'
-import plant3 from '../../../../docs/assets/images/misc/plant-3.png'
-import plant4 from '../../../../docs/assets/images/misc/plant-4.png'
-import zipcar from  '../../../../docs/assets/images/misc/zipcar.png'
-import bitbank from  '../../../../docs/assets/images/misc/bitbank.png'
-import aviato from  '../../../../docs/assets/images/misc/aviato.png'
-import avatar8 from '../../../../docs/assets/images/avatars/8.png'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 type DataProps = {
   image: string
@@ -62,25 +50,30 @@ const Timeline = styled(MuiTimeline)<TimelineProps>(({ theme }) => ({
   }
 }))
 
-const ImageList = [plant1, plant2, plant3, plant4]
+const ImageList = [
+  '/images/misc/plant-1.png',
+  '/images/misc/plant-2.png',
+  '/images/misc/plant-3.png',
+  '/images/misc/plant-4.png'
+]
 
 const Data: DataProps[] = [
   {
-    image: zipcar,
+    image: '/images/misc/zipcar.png',
     title: 'Zipcar',
     subtitle: 'Vuejs, React & HTML',
     progress: 24895.65,
     progressColor: 'primary'
   },
   {
-    image: bitbank,
+    image: '/images/misc/bitbank.png',
     title: 'Bitbank',
     subtitle: 'Sketch, Figma & XD',
     progress: 86500.2,
     progressColor: 'info'
   },
   {
-    image: aviato,
+    image: '/images/misc/aviato.png',
     title: 'Aviato',
     subtitle: 'HTML & Anguler',
     progress: 12450.8,
@@ -132,7 +125,7 @@ const TimelineCenter = () => {
                 over the course of the project.
               </Typography>
               <div className='flex items-center gap-2.5 w-fit rounded bg-actionHover plb-[5px] pli-2.5'>
-                <img height={20} alt='documentation.pdf' src={pdfDocument} />
+                <img height={20} alt='documentation.pdf' src={useBaseUrl('images/icons/pdf-document.png')} />
                 <Typography className='font-medium'>documentation.pdf</Typography>
               </div>
             </CardContent>
@@ -171,13 +164,7 @@ const TimelineCenter = () => {
               </Typography>
               <div className='flex gap-4 flex-wrap'>
                 {ImageList.map((image, index) => (
-                  <img
-                    key={index}
-                    className='rounded'
-                    height={114}
-                    alt='documentation.pdf'
-                    src={image}
-                  />
+                  <img key={index} className='rounded' height={114} alt='documentation.pdf' src={`${useBaseUrl(image)}`} />
                 ))}
               </div>
             </CardContent>
@@ -211,10 +198,7 @@ const TimelineCenter = () => {
                 Loretta write a review on Themeselection
               </Typography>
               <div className='flex items-center gap-4 mbe-3'>
-                <Avatar
-                  src={avatar8}
-                  className='bs-[38px] is-[38px]'
-                />
+                <Avatar src={useBaseUrl('/images/avatars/2.png')} className='bs-[38px] is-[38px]' />
                 <div className='flex flex-col flex-wrap'>
                   <Typography className='font-medium'>
                     Loretta Moore
@@ -230,7 +214,7 @@ const TimelineCenter = () => {
                   className='uppercase'
                   color='success'
                   label='Verified Buyer'
-                  avatar={<Avatar alt='user' src={avatar8} />}
+                  avatar={<Avatar alt='user' src={useBaseUrl('/images/avatars/1.jpg')} />}
                 />
               </div>
               <Typography>
@@ -284,7 +268,7 @@ const TimelineCenter = () => {
               {Data.map((item, index) => (
                 <div key={index} className='flex justify-between items-center gap-3'>
                   <div className='flex items-center gap-3'>
-                    <img src={item.image} width={40} height={40} />
+                    <img src={`${useBaseUrl(item.image)}`} width={40} height={40} />
                     <div className='flex flex-col flex-wrap gap-0.5'>
                       <Typography className='font-medium'>
                         {item.title}
@@ -340,7 +324,7 @@ const TimelineCenter = () => {
                 corporate objectives and therefore also project objectives. The components of the project process are
               </Typography>
               <div className='mbe-3 flex items-center gap-2 w-fit rounded bg-actionHover plb-[5px] pli-2.5'>
-                <img height={20} alt='progress-report.xls.pdf' src={xlsDocument} />
+                <img height={20} alt='progress-report.xls.pdf' src={useBaseUrl('/images/icons/xls-document.png')} />
                 <Typography className='font-medium'>progress-report.xls</Typography>
               </div>
               <div className='flex items-center gap-2'>

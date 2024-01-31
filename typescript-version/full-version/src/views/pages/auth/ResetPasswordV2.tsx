@@ -19,6 +19,7 @@ import classnames from 'classnames'
 
 // Type Imports
 import type { Mode } from '@core/types'
+import type { Locale } from '@configs/i18n'
 
 // Component Imports
 import DirectionalIcon from '@components/DirectionalIcon'
@@ -31,6 +32,9 @@ import themeConfig from '@configs/themeConfig'
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
 import { useSettings } from '@core/hooks/useSettings'
+
+// Util Imports
+import { getLocalizedUrl } from '@/utils/i18n'
 
 const ResetPasswordV2 = ({ mode }: { mode: Mode }) => {
   // States
@@ -135,7 +139,7 @@ const ResetPasswordV2 = ({ mode }: { mode: Mode }) => {
               Set New Password
             </Button>
             <Typography className='flex justify-center items-center' color='primary'>
-              <Link href={`/${locale}/pages/auth/login-v2`} className='flex items-center gap-1.5'>
+              <Link href={getLocalizedUrl('pages/auth/login-v2', locale as Locale)} className='flex items-center gap-1.5'>
                 <DirectionalIcon
                   ltrIconClass='ri-arrow-left-s-line'
                   rtlIconClass='ri-arrow-right-s-line'

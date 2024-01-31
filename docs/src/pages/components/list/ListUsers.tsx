@@ -11,13 +11,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction'
 import type { ListProps } from '@mui/material/List'
 
-// Image Imports
-// You don't need to import the image as below. You can directly use the path instead of the image variable.
-// We had to import the images because we are using them in the Documentation.
-import avatar1 from '../../../../docs/assets/images/avatars/1.png'
-import avatar2 from '../../../../docs/assets/images/avatars/2.png'
-import avatar5 from '../../../../docs/assets/images/avatars/5.png'
-import avatar8 from '../../../../docs/assets/images/avatars/8.png'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 const StyledList = styled(List)<ListProps>(({ theme }) => ({
   '& .MuiListItem-container': {
@@ -56,34 +50,33 @@ type User = {
 const userList: User[] = [
   {
     name: 'Caroline Black',
-    avatarSrc: avatar2,
+    avatarSrc: '/images/avatars/2.png',
     status: 'Online',
     statusColor: 'success.main',
     lastActive: '13 minutes ago'
   },
   {
     name: 'Alfred Copeland',
-    avatarSrc: avatar1,
+    avatarSrc: '/images/avatars/1.png',
     status: 'Away',
     statusColor: 'warning.main',
     lastActive: '11 minutes ago'
   },
   {
     name: 'Celia Schneider',
-    avatarSrc: avatar8,
+    avatarSrc: '/images/avatars/8.png',
     status: 'Offline',
     statusColor: 'secondary.main',
     lastActive: '9 minutes ago'
   },
   {
     name: 'Max Rogan',
-    avatarSrc: avatar5,
+    avatarSrc: '/images/avatars/5.png',
     status: 'In Meeting',
     statusColor: 'error.main',
     lastActive: '28 minutes ago'
   }
 ]
-
 
 const ListUsers = () => {
   return (
@@ -91,7 +84,7 @@ const ListUsers = () => {
       {userList.map((user, index) => (
         <ListItem key={index}>
           <ListItemAvatar>
-            <Avatar src={user.avatarSrc} alt={user.name} />
+            <Avatar src={`${useBaseUrl(user.avatarSrc)}`} alt={user.name} />
           </ListItemAvatar>
           <div>
             <ListItemText primary={user.name} />

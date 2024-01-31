@@ -9,10 +9,7 @@ import Avatar from '@mui/material/Avatar'
 import ButtonGroup from '@mui/material/ButtonGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 
-// Image Imports
-// You don't need to import the image as below. You can directly use the path instead of the image variable.
-// We had to import the images because we are using them in the Documentation.
-import avatar1 from '../../../../docs/assets/images/avatars/1.png'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 const BadgesVisibility = () => {
   // States
@@ -27,7 +24,7 @@ const BadgesVisibility = () => {
     <>
       <div className='flex mbe-4 gap-6 items-center'>
         <Badge badgeContent={count} color='primary'>
-          <Avatar src={avatar1} alt='User Avatar' />
+          <Avatar src={useBaseUrl('/images/avatars/1.png')} alt='User Avatar' />
         </Badge>
         <ButtonGroup size='small'>
           <Button aria-label='reduce' onClick={() => setCount(Math.max(count - 1, 0))}>
@@ -41,7 +38,7 @@ const BadgesVisibility = () => {
 
       <div className='flex gap-6'>
         <Badge variant='dot' color='primary' invisible={invisible}>
-          <Avatar src={avatar1} alt='User Avatar' />
+          <Avatar src={useBaseUrl('/images/avatars/1.png')} alt='User Avatar' />
         </Badge>
         <FormControlLabel
           label='Show Badge'

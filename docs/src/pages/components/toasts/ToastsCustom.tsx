@@ -7,10 +7,7 @@ import Typography from '@mui/material/Typography'
 // Third-party Imports
 import { toast } from 'react-toastify'
 
-// Image Imports
-// You don't need to import the image as below. You can directly use the path instead of the image variable.
-// We had to import the images because we are using them in the Documentation.
-import avatar3 from '../../../../docs/assets/images/avatars/3.png'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 const ToastsCustom = () => {
   const handleClick = () => {
@@ -18,7 +15,7 @@ const ToastsCustom = () => {
       t => (
         <div className='w-full flex items-center justify-between'>
           <div className='flex items-center'>
-            <Avatar alt='Victor Anderson' src={avatar3} className='mie-3'/>
+            <Avatar alt='Victor Anderson' src={useBaseUrl('/images/avatars/3.png')} className='mie-3 w-10 h-10'/>
             <div>
               <Typography variant='h6'>John Doe</Typography>
               <Typography variant='caption'>Sure! 8:30pm works great!</Typography>

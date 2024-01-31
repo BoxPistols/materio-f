@@ -10,12 +10,7 @@ import ListItemText from '@mui/material/ListItemText'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 
-// Image Imports
-// You don't need to import the image as below. You can directly use the path instead of the image variable.
-// We had to import the images because we are using them in the Documentation.
-import avatar1 from '../../../../docs/assets/images/avatars/1.png'
-import avatar2 from '../../../../docs/assets/images/avatars/2.png'
-import avatar8 from '../../../../docs/assets/images/avatars/8.png'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 const ListItemSelected = () => {
   // States
@@ -34,7 +29,7 @@ const ListItemSelected = () => {
       }>
         <ListItemButton selected={selectedIndex === 0} onClick={() => handleListItemClick(0)}>
           <ListItemAvatar>
-            <Avatar src={avatar2} alt='Caroline Black' />
+            <Avatar src={useBaseUrl('/images/avatars/2.png')} alt='Caroline Black' />
           </ListItemAvatar>
           <ListItemText primary='Caroline Black' />
         </ListItemButton>
@@ -46,7 +41,7 @@ const ListItemSelected = () => {
       }>
         <ListItemButton selected={selectedIndex === 1} onClick={() => handleListItemClick(1)}>
           <ListItemAvatar>
-            <Avatar src={avatar1} alt='Alfred Copeland' />
+            <Avatar src={useBaseUrl('/images/avatars/1.png')} alt='Alfred Copeland' />
           </ListItemAvatar>
           <ListItemText primary='Alfred Copeland' />
         </ListItemButton>
@@ -58,7 +53,7 @@ const ListItemSelected = () => {
       }>
         <ListItemButton selected={selectedIndex === 2} onClick={() => handleListItemClick(2)}>
           <ListItemAvatar>
-            <Avatar src={avatar8} alt='Celia Schneider' />
+            <Avatar src={useBaseUrl('/images/avatars/8.png')} alt='Celia Schneider' />
           </ListItemAvatar>
           <ListItemText primary='Celia Schneider' />
         </ListItemButton>

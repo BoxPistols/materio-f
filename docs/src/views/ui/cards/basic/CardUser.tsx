@@ -7,25 +7,15 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import AvatarGroup from "@mui/material/AvatarGroup";
 
-// Image Imports
-// You don't need to import the image as below. You can directly use the path instead of the image variable.
-// We had to import the images because we are using them in the Documentation.
-import img2 from "../../../../../docs/assets/images/cards/2.png";
-import avatar1 from '../../../../../docs/assets/images/avatars/1.png'
-import avatar3 from '../../../../../docs/assets/images/avatars/3.png'
-import avatar4 from '../../../../../docs/assets/images/avatars/4.png'
-import avatar5 from '../../../../../docs/assets/images/avatars/5.png'
-import avatar6 from '../../../../../docs/assets/images/avatars/6.png'
-import avatar7 from '../../../../../docs/assets/images/avatars/1.png'
-import avatar8 from '../../../../../docs/assets/images/avatars/8.png'
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 const CardUser = () => {
   return (
     <Card>
-      <CardMedia image={img2} className="bs-[180px]" />
+      <CardMedia image={useBaseUrl('/images/cards/2.png')} className="bs-[180px]" />
       <CardContent className="relative">
         <Avatar
-          src={avatar3}
+          src={useBaseUrl('/images/avatars/3.png')}
           alt="Robert Meyer"
           className="is-[78px] bs-[78px] border-[5px] border-backgroundPaper absolute start-[11px] block-start-[-39px]"
         />
@@ -39,12 +29,12 @@ const CardUser = () => {
         <div className='flex justify-between items-center flex-wrap gap-x-4 gap-y-2'>
           <Typography variant='subtitle2'>18 mutual friends</Typography>
           <AvatarGroup max={4}>
-            <Avatar src={avatar1} />
-            <Avatar src={avatar5} />
-            <Avatar src={avatar4} />
-            <Avatar src={avatar7} />
-            <Avatar src={avatar7} />
-            <Avatar src={avatar8} />
+            <Avatar src={useBaseUrl("/images/avatars/1.png")} />
+            <Avatar src={useBaseUrl("/images/avatars/5.png")} />
+            <Avatar src={useBaseUrl("/images/avatars/4.png")} />
+            <Avatar src={useBaseUrl("/images/avatars/6.png")} />
+            <Avatar src={useBaseUrl("/images/avatars/7.png")} />
+            <Avatar src={useBaseUrl("/images/avatars/8.png")} />
           </AvatarGroup>
         </div>
       </CardContent>

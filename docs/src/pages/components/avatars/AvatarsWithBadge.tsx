@@ -3,11 +3,7 @@ import Badge from '@mui/material/Badge'
 import Avatar from '@mui/material/Avatar'
 import { styled } from '@mui/material/styles'
 
-// Image Imports
-// You don't need to import the image as below. You can directly use the path instead of the image variable.
-// We had to import the images because we are using them in the Documentation.
-import avatar2 from '../../../../docs/assets/images/avatars/2.png'
-import avatar4 from '../../../../docs/assets/images/avatars/4.png'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 // Styled component for badge content area
 const BadgeContentSpan = styled('span')({
@@ -29,7 +25,7 @@ const AvatarsWithBadge = () => {
           horizontal: 'right'
         }}
       >
-        <Avatar alt='Marie Garza' src={avatar2} />
+        <Avatar alt='Marie Garza' src={useBaseUrl('/images/avatars/2.png')} />
       </Badge>
       <Badge
         overlap='circular'
@@ -40,12 +36,12 @@ const AvatarsWithBadge = () => {
         badgeContent={
           <Avatar
             alt='Marie Garza'
-            src={avatar2}
+            src={useBaseUrl('/images/avatars/2.png')}
             className='bs-[1.375rem] is-[1.375rem] border-2 border-backgroundPaper'
           />
         }
       >
-        <Avatar alt='Olivia Sparks' src={avatar4} />
+        <Avatar alt='Olivia Sparks' src={useBaseUrl('/images/avatars/4.png')} />
       </Badge>
     </div>
   )

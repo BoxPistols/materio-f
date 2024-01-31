@@ -4,10 +4,7 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Avatar from '@mui/material/Avatar'
 
-// Image Imports
-// You don't need to import the image as below. You can directly use the path instead of the image variable.
-// We had to import the images because we are using them in the Documentation.
-import avatar1 from '../../../../../docs/assets/images/avatars/1.png'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 const CardFacebook = () => {
   return (
@@ -25,7 +22,7 @@ const CardFacebook = () => {
         </Typography>
         <div className='flex align-center justify-between flex-wrap gap-x-4 gap-y-2'>
           <div className='flex items-center gap-2.5'>
-            <Avatar src={avatar1} />
+            <Avatar src={useBaseUrl('/images/avatars/1.png')} />
             <Typography className='text-white'>
               Eugene Clarke
             </Typography>

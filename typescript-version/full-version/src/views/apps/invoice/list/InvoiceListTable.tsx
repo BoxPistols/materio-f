@@ -45,6 +45,7 @@ import type { RankingInfo } from '@tanstack/match-sorter-utils'
 // Type Imports
 import type { ThemeColor } from '@core/types'
 import type { InvoiceType } from '@/types/apps/invoiceTypes'
+import type { Locale } from '@configs/i18n'
 
 // Component Imports
 import OptionMenu from '@core/components/option-menu'
@@ -52,6 +53,7 @@ import CustomAvatar from '@core/components/mui/Avatar'
 
 // Util Imports
 import { getInitials } from '@/utils/getInitials'
+import { getLocalizedUrl } from '@/utils/i18n'
 
 // Style Imports
 import tableStyles from '@core/styles/table.module.css'
@@ -171,7 +173,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
         cell: ({ row }) => (
           <Typography
             component={Link}
-            href={`/${locale}/apps/invoice/preview/${row.original.id}`}
+            href={getLocalizedUrl(`apps/invoice/preview/${row.original.id}`, locale as Locale)}
             color='primary'
           >{`#${row.original.id}`}</Typography>
         )
@@ -244,7 +246,10 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
               <i className='ri-delete-bin-7-line text-[22px] text-textSecondary' />
             </IconButton>
             <IconButton>
-              <Link href={`/${locale}/apps/invoice/preview/${row.original.id}`} className='flex'>
+              <Link
+                href={getLocalizedUrl(`apps/invoice/preview/${row.original.id}`, locale as Locale)}
+                className='flex'
+              >
                 <i className='ri-eye-line text-[22px] text-textSecondary' />
               </Link>
             </IconButton>
@@ -259,7 +264,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
                 {
                   text: 'Edit',
                   icon: 'ri-pencil-line text-[22px]',
-                  href: `/${locale}/apps/invoice/edit/${row.original.id}`,
+                  href: getLocalizedUrl(`apps/invoice/edit/${row.original.id}`, locale as Locale),
                   linkProps: {
                     className: 'flex items-center is-full plb-2 pli-4 gap-2 text-textSecondary'
                   }
@@ -340,7 +345,7 @@ const InvoiceListTable = ({ invoiceData }: { invoiceData: InvoiceType[] }) => {
           variant='contained'
           component={Link}
           startIcon={<i className='ri-add-line' />}
-          href={`/${locale}/apps/invoice/add`}
+          href={getLocalizedUrl('apps/invoice/add', locale as Locale)}
           className='is-full sm:is-auto'
         >
           Create Invoice

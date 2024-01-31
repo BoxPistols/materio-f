@@ -2,7 +2,6 @@
 import { useEffect, useRef } from 'react'
 
 // Next Imports
-// import Img from 'next/image'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 
@@ -10,6 +9,7 @@ import { useParams } from 'next/navigation'
 import styled from '@emotion/styled'
 
 // Type Imports
+import type { Locale } from '@configs/i18n'
 import type { VerticalNavContextProps } from '@menu/contexts/verticalNavContext'
 
 // Component Imports
@@ -21,6 +21,9 @@ import themeConfig from '@configs/themeConfig'
 // Hook Imports
 import useVerticalNav from '@menu/hooks/useVerticalNav'
 import { useSettings } from '@core/hooks/useSettings'
+
+// Util Imports
+import { getLocalizedUrl } from '@/utils/i18n'
 
 type LogoTextProps = {
   isHovered?: VerticalNavContextProps['isHovered']
@@ -71,7 +74,7 @@ const Logo = () => {
   // You may return any JSX here to display a logo in the sidebar header
   // return <Img src='/next.svg' width={100} height={25} alt='logo' /> // for example
   return (
-    <Link href={locale ? `/${locale}` : '/'} className='flex items-center min-bs-[24px]'>
+    <Link href={getLocalizedUrl('/', locale as Locale)} className='flex items-center min-bs-[24px]'>
       <MaterioLogo className='text-[22px] text-primary' />
       <LogoText
         ref={logoTextRef}
