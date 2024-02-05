@@ -445,7 +445,7 @@ const verticalMenuData = (
           {
             label: dictionary['navigation'].externalLink,
             icon: 'ri-circle-line',
-            href: 'https://themeselection.com/',
+            href: 'https://themeselection.com',
             target: '_blank',
             suffix: <i className='ri-external-link-line text-xl' />
           },

@@ -214,7 +214,7 @@ const TimelineCenter = () => {
                   className='uppercase'
                   color='success'
                   label='Verified Buyer'
-                  avatar={<Avatar alt='user' src={useBaseUrl('/images/avatars/1.jpg')} />}
+                  avatar={<Avatar alt='user' src={useBaseUrl('/images/avatars/1.png')} />}
                 />
               </div>
               <Typography>

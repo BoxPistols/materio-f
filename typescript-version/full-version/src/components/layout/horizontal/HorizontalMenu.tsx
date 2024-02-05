@@ -322,7 +322,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
             {dictionary['navigation'].itemWithBadge}
           </MenuItem>
           <MenuItem
-            href='https://themeselection.com/'
+            href='https://themeselection.com'
             target='_blank'
             suffix={<i className='ri-external-link-line text-xl' />}
             icon={<i className='ri-link' />}

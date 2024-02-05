@@ -294,7 +294,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }: Props) => {
               {dictionary['navigation'].itemWithBadge}
             </MenuItem>
             <MenuItem
-              href='https://themeselection.com/'
+              href='https://themeselection.com'
               target='_blank'
               suffix={<i className='ri-external-link-line text-xl' />}
             >
