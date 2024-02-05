@@ -8,7 +8,6 @@ import { styled, useColorScheme, useTheme } from '@mui/material/styles'
 
 // Type Imports
 import type { getDictionary } from '@/utils/getDictionary'
-import type { Settings } from '@core/contexts/settingsContext'
 import type { Mode, Skin, SystemMode } from '@core/types'
 
 // Component Imports
@@ -24,7 +23,6 @@ import { useSettings } from '@core/hooks/useSettings'
 import navigationCustomStyles from '@core/styles/vertical/navigationCustomStyles'
 
 type Props = {
-  settingsCookie: Settings
   dictionary: Awaited<ReturnType<typeof getDictionary>>
   mode: Mode
   systemMode: SystemMode
@@ -51,7 +49,7 @@ const StyledBoxForShadow = styled('div')(({ theme }) => ({
 
 const Navigation = (props: Props) => {
   // Props
-  const { settingsCookie, dictionary, mode, systemMode, skin } = props
+  const { dictionary, mode, systemMode, skin } = props
 
   // Hooks
   const verticalNavOptions = useVerticalNav()
@@ -65,14 +63,13 @@ const Navigation = (props: Props) => {
   // Vars
   const { isCollapsed, isHovered, collapseVerticalNav, isBreakpointReached } = verticalNavOptions
   const isServer = typeof window === 'undefined'
-  let isSemiDark, isDark, isSkinBordered
+  const isSemiDark = settings.semiDark
+  let isDark, isSkinBordered
 
   if (isServer) {
-    isSemiDark = settingsCookie.semiDark || false
     isDark = mode === 'system' ? systemMode === 'dark' : mode === 'dark'
     isSkinBordered = skin === 'bordered'
   } else {
-    isSemiDark = settings.semiDark
     isDark = muiMode === 'system' ? muiSystemMode === 'dark' : muiMode === 'dark'
   }
 

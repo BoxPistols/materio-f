@@ -25,7 +25,7 @@ import { i18n } from '@configs/i18n'
 
 // Util Imports
 import { getDictionary } from '@/utils/getDictionary'
-import { getMode, getSettingsFromCookie, getSkin, getSystemMode } from '@core/utils/serverHelpers'
+import { getMode, getSkin, getSystemMode } from '@core/utils/serverHelpers'
 
 const Layout = async ({ children, params }: ChildrenType & { params: { lang: Locale } }) => {
   // Vars
@@ -33,7 +33,6 @@ const Layout = async ({ children, params }: ChildrenType & { params: { lang: Loc
   const dictionary = await getDictionary(params.lang)
   const mode = getMode()
   const systemMode = getSystemMode()
-  const settingsCookie = getSettingsFromCookie()
   const skin = getSkin()
 
   return (
@@ -42,15 +41,7 @@ const Layout = async ({ children, params }: ChildrenType & { params: { lang: Loc
         systemMode={systemMode}
         verticalLayout={
           <VerticalLayout
-            navigation={
-              <Navigation
-                settingsCookie={settingsCookie}
-                dictionary={dictionary}
-                mode={mode}
-                systemMode={systemMode}
-                skin={skin}
-              />
-            }
+            navigation={<Navigation dictionary={dictionary} mode={mode} systemMode={systemMode} skin={skin} />}
             navbar={<Navbar />}
             footer={<VerticalFooter />}
           >
