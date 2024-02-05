@@ -10,7 +10,7 @@ const BuyNowButton = () => {
       <a
         className={styles.button}
         role='button'
-        href='https://themeselection.com/item/materio-mui-react-nextjs-admin-template'
+        href='https://themeselection.com/item/materio-mui-nextjs-admin-template'
         target='_blank'
       >
         Buy Now

@@ -308,7 +308,7 @@ const HorizontalMenu = ({ dictionary }: { dictionary: Awaited<ReturnType<typeof 
             {dictionary['navigation'].raiseSupport}
           </MenuItem>
           <MenuItem
-            href='https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation'
+            href='https://demos.themeselection.com/materio-mui-nextjs-admin-template/documentation'
             suffix={<i className='ri-external-link-line text-xl' />}
             target='_blank'
             icon={<i className='ri-book-line' />}

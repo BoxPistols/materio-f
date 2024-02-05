@@ -45,7 +45,7 @@ const FooterContent = () => {
             More Themes
           </Link>
           <Link
-            href='https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation/'
+            href='https://demos.themeselection.com/materio-mui-nextjs-admin-template/documentation'
             target='_blank'
             className='text-primary'
           >

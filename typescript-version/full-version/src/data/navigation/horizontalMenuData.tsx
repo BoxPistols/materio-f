@@ -425,7 +425,7 @@ const horizontalMenuData = (
       {
         label: dictionary['navigation'].documentation,
         icon: 'ri-book-line',
-        href: 'https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation',
+        href: 'https://demos.themeselection.com/materio-mui-nextjs-admin-template/documentation',
         suffix: <i className='ri-external-link-line text-xl' />,
         target: '_blank'
       },
