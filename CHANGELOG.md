@@ -4,6 +4,49 @@
 
 All notable changes to this template will be documented in this file.
 
+## v3.1.0 (2024-02-06)
+
+### Added
+
+- Added 6 Demo Configs
+- Added comments in pages
+- Added `settingsCookieName` in theme config
+- Added demoConfigs file in configs folder
+- Added `modeStorageKey` prop to MUI's CssVarsProvider
+
+### Updated
+
+- Updated docs
+- Updated packages
+- Updated Customizer
+- Updated settingsContext
+- Updated file path form `src/@core/server/actions` to `src/@core/utils/serverHelpers`
+- Updated the functions in the `serverHelpers` file
+- Updated file name from `get-dictionary.ts` to `getDictionary.ts`
+- Updated file name from `get-initials` file to `getInitials`
+- Updated links by using `getLocalizedUrl` function and updated links in the whole template accordingly
+- Updated Prisma Scheme to run on multiple platforms like Vercel
+- Defined home page URL and also handled redirections with localization in the middleware file
+- Updated IDs in the template search data
+- Updated Login file's component name
+
+### Fixed
+
+- Fixed all broken links in menu and search
+- Fixed `semi-dark` layout for demos
+- Fixed import paths for `serverHelpers` file
+- Fixed popout overflow issue in the Calendar app
+- Fixed collapsed layout by moving the `useEffect` from the customzier to `src/components/layout/vertical/Navigation.tsx` file
+
+### Removed
+
+- Removed `-react` from all of our links
+- Removed trailing slash from all the links
+- Removed unnecessary util from settings context
+- Removed `getSettingsFromCookie` usage from the `src/app/[lang]/(dashboard)/layout.tsx` file
+- Removed root `page.tsx` file from the `full-version` which was used to handle redirection
+- Removed `localizeUrl` function form the `src/components/GenerateMenu.tsx` file and used `getLocalizedUrl` function instead
+
 ## v3.0.0 (2024-01-18)
 
 ### Added
