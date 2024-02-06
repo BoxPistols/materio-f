@@ -1,6 +1,11 @@
 name: '📋 Deploy - Changelog'
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      is_marketplace:
+        type: boolean
+        description: Is MUI marketplace deployment
 
 jobs:
   deployment:
@@ -22,4 +27,4 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           source: changelog.html
-          target: ${{ secrets.PROD_DIR }}
+          target: ${{ inputs.is_marketplace && secrets.PROD_DIR_MARKETPLACE || secrets.PROD_DIR }}
