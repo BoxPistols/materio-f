@@ -1,20 +1,20 @@
 <p align="center"></p>
 
 <p align="center">
-   <a href="https://themeselection.com/item/materio-mui-react-nextjs-admin-template" target="_blank">
+   <a href="https://themeselection.com/item/materio-mui-nextjs-admin-template" target="_blank">
       <img src="https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/logo/logo.png" alt="materio-logo" width="40px" height="auto">
    </a>
 </p>
 
 <h1 align="center">
-   <a href="https://themeselection.com/item/materio-mui-react-nextjs-admin-template" target="_blank" align="center">
+   <a href="https://themeselection.com/item/materio-mui-nextjs-admin-template" target="_blank" align="center">
       Materio - MUI NextJS Admin Template
    </a>
 </h1>
 
 <p align="center">Most Powerful & Comprehensive MUI NextJS Admin Dashboard Template built for developers!</p>
 
-[![Materio - MUI NextJS Admin Template Demo Screenshot](https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-mui-nextjs-admin-template/banner/banner.png)](https://themeselection.com/item/materio-mui-react-nextjs-admin-template)
+[![Materio - MUI NextJS Admin Template Demo Screenshot](https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-mui-nextjs-admin-template/banner/banner.png)](https://themeselection.com/item/materio-mui-nextjs-admin-template)
 
 ## Introduction
 
@@ -22,15 +22,15 @@ If you're a developer looking for most Powerful & comprehensive **MUI NextJS Adm
 
 Build premium quality applications with ease. Use our innovative admin template to create eye-catching, high-quality WebApps. Your apps will be completely responsive, ensuring they'll look stunning and function flawlessly on desktops, tablets, and mobile devices.
 
-[View Demo](https://themeselection.com/item/materio-mui-react-nextjs-admin-template)
+[View Demo](https://themeselection.com/item/materio-mui-nextjs-admin-template)
 
 ## Installation ⚒️
 
-Please [visit](https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation/docs/guide/overview/installation) our docs for installation guide.
+Please [visit](https://demos.themeselection.com/materio-mui-nextjs-admin-template/documentation/docs/guide/overview/installation) our docs for installation guide.
 
 ## Documentation 📜
 
-Check out our live [Documentation](https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation)
+Check out our live [Documentation](https://demos.themeselection.com/materio-mui-nextjs-admin-template/documentation)
 
 ## Support 👨‍💻
 
