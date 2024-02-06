@@ -27,4 +27,4 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           source: changelog.html
-          target: ${{ inputs.is_marketplace && secrets.PROD_DIR_MARKETPLACE || secrets.PROD_DIR }}
+          target: ${{ inputs.is_marketplace && secrets.PROD_DIR_MARKETPLACE || secrets.PROD_DIR_TS }}
