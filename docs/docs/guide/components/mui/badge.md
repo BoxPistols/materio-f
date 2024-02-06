@@ -1,11 +1,8 @@
----
-hide_table_of_contents: true
----
 # Badge
 
 ### Overview
-To fully understand the `Badge` component, please explore the
-[MUI Badge Documentation](https://mui.com/material-ui/react-badge/).
+
+To fully understand the `Badge` component, please explore the [MUI Badge Documentation](https://mui.com/material-ui/react-badge/).
 
 We've enhanced our custom MUI Badge component by introducing new properties, offering more versatility and a refreshed look. Go ahead and check out the changes.
 

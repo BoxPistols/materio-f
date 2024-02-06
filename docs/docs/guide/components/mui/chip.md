@@ -30,8 +30,6 @@ import Chip from '@mui/material/Chip'
 
 ### Props
 
-| Prop    | Type    | Default | Required | Description
+| Prop    | Type    | Default | Required | Description                             |
 |---------|---------|---------|----------|-----------------------------------------|
 | variant | string  | filled  | No       | Set to 'tonal' to enable the tonal skin |
-
-

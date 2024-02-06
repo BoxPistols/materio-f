@@ -1,7 +1,3 @@
----
-hide_table_of_contents: true
----
-
 # Card Statistics
 
 ### Overview
@@ -22,16 +18,16 @@ Here's an example of how to use the `CardStatHorizontal` component:
 import CardStatHorizontal from '@components/card-statistics/Horizontal'
 
 const Component = () => {
-    return (
-        <CardStatHorizontal
-        title: 'New Customers'
-        stats: '2,856'
-        icon: 'ri-group-line'
-        color?: 'success'
-        trendNumber: '25.8%'
-        trend?: 'up'
-        />
-    )
+  return (
+    <CardStatHorizontal
+      title: 'New Customers'
+      stats: '2,856'
+      icon: 'ri-group-line'
+      color?: 'success'
+      trendNumber: '25.8%'
+      trend?: 'up'
+    />
+  )
 } 
 
 export default Component
@@ -84,9 +80,8 @@ import CardStatVertical from '@components/card-statistics/Vertical'
 | trendNumber  | `string`                                            | Yes      | Percentage showing the change in numbers         |
 | trend        | `positive \| negative`                              | No       | Indicates if the trend is positive or negative   |
 | avatarSkin   | `CustomAvatarProps['skin']`                         | No       | Skin style for the avatar (optional)             |
-| avatarSize   | `number `                                           | No       | Size of the avatar (optional)                    |
+| avatarSize   | `number`                                            | No       | Size of the avatar (optional)                    |
 | moreOptions  | `OptionsMenuType`                                   | No       | Additional options for the card (optional)       |
-
 
 ### Card Statistics Image
 

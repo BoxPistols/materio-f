@@ -57,7 +57,7 @@ const schema = object({
   ])
 })
 
-const LoginV2 = ({ mode }: { mode: Mode }) => {
+const Login = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const [errorState, setErrorState] = useState<ErrorType | null>(null)
@@ -245,4 +245,4 @@ const LoginV2 = ({ mode }: { mode: Mode }) => {
   )
 }
 
-export default LoginV2
+export default Login
