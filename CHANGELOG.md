@@ -4,7 +4,7 @@
 
 All notable changes to this template will be documented in this file.
 
-## v3.1.0 (2024-02-06)
+## v3.1.0 (2024-02-07)
 
 ### Added
 
