@@ -49,5 +49,10 @@
     "iconify",
     "tanstack",
     "customizer"
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#25311F",
+    "titleBar.activeBackground": "#34442C",
+    "titleBar.activeForeground": "#F9FBF8"
+  }
 }
